@@ -1,0 +1,4 @@
+{{- /* Current site version from data/site_version.json (scripts/git-history.mjs). */ -}}
+{{- with index hugo.Data "site_version" -}}
+<span class="site-version" title="{{ if .released }}{{ i18n "version_current" }}{{ else }}{{ i18n "version_dev" }}{{ end }}">{{ .version }}</span>
+{{- end -}}

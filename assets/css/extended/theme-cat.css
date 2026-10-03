@@ -126,3 +126,33 @@ body {
 /* Photo links (gallery/photo shortcodes) shouldn't get the text-link underline */
 .post-content .gallery-grid a,
 .post-content .photo a { box-shadow: none; background: none; }
+
+/* --- Release notes: change history (git-history shortcode) ------------- */
+.post-content .git-release + .git-release { margin-top: 1.5rem; }
+.post-content h3.git-release-title {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem;
+  margin: 0 0 0.75rem; font-size: 1.05rem;
+}
+.git-release-date { font-size: 0.85rem; font-weight: 400; color: var(--secondary); }
+.post-content .git-history {
+  list-style: none; padding: 0; margin: 1rem 0 0;
+  border-inline-start: 2px solid var(--border);
+}
+.post-content .git-commit { position: relative; margin: 0; padding: 0 0 1.4rem 1.4rem; }
+.post-content .git-commit::before {
+  content: ""; position: absolute; left: -6px; top: 0.45rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--theme);
+}
+.git-commit-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem;
+  font-size: 0.85rem; color: var(--secondary);
+}
+.post-content .git-commit-head a { box-shadow: none; }
+.post-content .git-commit-head code { font-size: 0.8rem; color: var(--secondary); }
+.post-content .git-commit-subject { margin: 0.15rem 0 0.3rem; font-weight: 700; color: var(--primary); line-height: 1.45; }
+.git-commit-body { font-size: 0.95rem; }
+.git-commit-body summary { cursor: pointer; font-size: 0.85rem; color: var(--accent); }
+.post-content .git-commit-body ul,
+.post-content .git-commit-body p { margin: 0.5rem 0 0; }
+.footer .site-version { font-variant-numeric: tabular-nums; opacity: 0.8; }

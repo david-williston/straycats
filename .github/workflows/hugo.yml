@@ -1,8 +1,9 @@
 name: Deploy Hugo site to GitHub Pages
 
+# Deploys a release: `npm run deploy` (scripts/release.mjs) tags main vYYYY.MM.DD[.N] and pushes the tag.
 on:
   push:
-    branches: [main]
+    tags: ['v*']
   workflow_dispatch:
 
 permissions:
@@ -26,6 +27,10 @@ jobs:
         with:
           hugo-version: "0.163.1"   # pinned; bump deliberately after checking the build locally
           extended: true
+      # actions/checkout stores the pushed tag as a lightweight tag; refetch the annotated tags
+      # so the release notes show when each release was made.
+      - run: git fetch --force --tags origin
+      - run: node scripts/git-history.mjs
       - id: pages
         uses: actions/configure-pages@v5
       - run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"

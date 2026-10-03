@@ -1,0 +1,13 @@
+{
+  "name": "straycats",
+  "private": true,
+  "description": "Stray Cats project website (Hugo + PaperMod on GitHub Pages)",
+  "scripts": {
+    "history": "node scripts/git-history.mjs",
+    "dev": "npm run history && hugo server",
+    "clean": "rm -rf public resources/_gen",
+    "build": "npm run clean && npm run history && hugo --gc --minify",
+    "deploy": "node scripts/release.mjs",
+    "release:dry-run": "node scripts/release.mjs --dry-run"
+  }
+}

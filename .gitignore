@@ -2,3 +2,6 @@ public/
 resources/_gen/
 .hugo_build.lock
 .DS_Store
+data/git_history.json
+data/site_version.json
+node_modules/
