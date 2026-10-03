@@ -63,6 +63,13 @@ Menus and the home page intro are per language in `hugo.yaml`; the "Respond to t
 box text lives in `i18n/`. In content, link to pages by their English path
 (e.g. `[feedback](/feedback/)`): links resolve to the right language automatically.
 
+## Making changes
+
+Every change goes through a pull request; `main` is protected. Cut a short-lived branch from
+an up-to-date `main` (`content/...`, `fix/...`, `docs/...`, `chore/...`), open a PR, and merge
+it when it's ready. GitHub deletes the branch on merge. Merging doesn't publish the site;
+releasing does (below). See CLAUDE.md for the full conventions.
+
 ## Deploy: versioning and releases
 
 Pushing to `main` does **not** publish the site. Publishing is a release:
