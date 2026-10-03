@@ -14,6 +14,11 @@ cover:
 **Stray Cats** is an open-source, non-profit idea about how the world could remember the
 cats that nobody owns.
 
+## Dedication
+
+This project is dedicated to [Saibo](/saibo/), my cat of sixteen years, who came with me
+to Mexico and died here in September 2026.
+
 ## Where it comes from
 
 I'm living for a while in Puerto Escondido, Mexico, looking after a house full of cats:

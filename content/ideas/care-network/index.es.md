@@ -18,8 +18,6 @@ Alrededor de un solo gato puede haber varias personas: una le da de comer en la 
 en la tarde, un restaurante le deja sobras y alguien alguna vez pagó su desparasitación.
 Ninguna sabe de las demás.
 
-{{< photo src="to-the-vet.jpg" alt="Un gato gris asomándose desde una transportadora en el asiento de un coche" caption="¿Quién paga el veterinario? Normalmente, quien esté ahí en ese momento." >}}
-
 Si pudieran ver que todas cuidan al mismo gato, podrían:
 
 - evitar darle de comer o medicarlo dos veces

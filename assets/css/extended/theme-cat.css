@@ -122,3 +122,6 @@ body {
 /* Narrow screens: the menu scrolls sideways; hide the bar itself */
 .menu { scrollbar-width: none; }
 .menu::-webkit-scrollbar { display: none; }
+/* Photo links (gallery/photo shortcodes) shouldn't get the text-link underline */
+.post-content .gallery-grid a,
+.post-content .photo a { box-shadow: none; background: none; }

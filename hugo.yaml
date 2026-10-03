@@ -67,7 +67,7 @@ languages:
       editPost:
         Text: "Suggest changes"
       footer:
-        text: "Made with care for the cats nobody owns."
+        text: "Made with care for the cats nobody owns. Dedicated to [Saibo](/saibo/), 2010–2026."
       homeInfoParams:
         Title: "How could the world remember the cats nobody owns? 🐈"
         Content: >
@@ -98,7 +98,7 @@ languages:
       editPost:
         Text: "Sugerir cambios"
       footer:
-        text: "Hecho con cariño para los gatos que no son de nadie."
+        text: "Hecho con cariño para los gatos que no son de nadie. Dedicado a [Saibo](/saibo/), 2010–2026."
       homeInfoParams:
         Title: "¿Cómo podría el mundo recordar a los gatos que no son de nadie? 🐈"
         Content: >

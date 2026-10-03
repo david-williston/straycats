@@ -19,8 +19,6 @@ Compro su comida de mi bolsillo. A veces pago una consulta con el veterinario o 
 para desparasitarlos. Nadie me lo pidió; es simplemente lo que haces cuando un gato está
 sentado en tu puerta mirándote.
 
-{{< photo src="vet-visit.jpg" alt="Un gato gris acostado en la mesa de exploración de una clínica veterinaria, con una transportadora en el piso" caption="Una visita al veterinario, pagada de mi bolsillo." >}}
-
 Seguramente no soy la única persona en el mundo que hace esto. De hecho, creo que
 somos muchos: personas que, sin darnos cuenta, nos volvemos **cuidadores informales de gatos
 que técnicamente no son nuestros**. Les damos de comer, reconocemos a cada uno, notamos cuando

@@ -18,8 +18,6 @@ I buy their food out of my own pocket. Sometimes I pay for a vet visit, or dewor
 medication. Nobody asked me to — it's just what you do when a cat is sitting at your door
 looking at you.
 
-{{< photo src="vet-visit.jpg" alt="A grey cat lying on an examination table at a vet clinic, with a pet carrier on the floor" caption="A vet visit, paid out of my own pocket." >}}
-
 I'm sure I'm not the only person in the world doing this. In fact I think there are a lot
 of us: people quietly becoming **informal custodians of cats we don't technically own**.
 We feed them, we recognise individuals, we notice when one disappears or gets sick, we pay

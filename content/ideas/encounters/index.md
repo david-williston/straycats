@@ -6,7 +6,7 @@ tags: ["encounters", "concepts"]
 summary: "Each time someone meets a cat, they add a little to its shared history."
 cover:
   image: "cover.jpg"
-  alt: "A grey-and-white cat half-hidden among tall grass and plants"
+  alt: "A cream-coloured cat in profile, eyes closed, basking in the sun"
 ---
 
 ## The idea

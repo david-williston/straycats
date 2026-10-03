@@ -22,7 +22,7 @@ videos chistosos. Instagram es genial para eso. Pero no está construido alreded
 sino alrededor de mí y de mi cuenta. No permite que el siguiente cuidador herede lo
 que yo sé y lo siga ampliando.
 
-{{< gallery images="black-cat.jpg sunbather.jpg profile.jpg" anchor="Top" alt="Retratos de gatos de la casa" caption="Cada uno tiene un nombre, una historia y una personalidad. Por ahora, todo eso vive en mi cabeza y en Instagram." >}}
+{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alt="Retratos de gatos de la casa" caption="Cada uno tiene un nombre, una historia y una personalidad. Por ahora, todo eso vive en mi cabeza y en Instagram." >}}
 
 ## Ya construí el sistema… a mano
 

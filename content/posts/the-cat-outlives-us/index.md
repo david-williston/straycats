@@ -21,7 +21,7 @@ the funny videos. Instagram is great for that. But it isn't built around **the c
 built around me, the account holder. It can't let the next caretaker inherit what I know
 and keep adding to it.
 
-{{< gallery images="black-cat.jpg sunbather.jpg profile.jpg" anchor="Top" alt="Portraits of cats from the house" caption="Every one of them has a name, a story and a personality. Right now, those live in my head and on Instagram." >}}
+{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alt="Portraits of cats from the house" caption="Every one of them has a name, a story and a personality. Right now, those live in my head and on Instagram." >}}
 
 ## I've already built the system — by hand
 

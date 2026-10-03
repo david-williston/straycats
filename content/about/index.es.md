@@ -15,6 +15,11 @@ cover:
 **Stray Cats** es una idea de código abierto y sin fines de lucro sobre cómo el mundo podría
 recordar a los gatos que no son de nadie.
 
+## Dedicatoria
+
+Este proyecto está dedicado a [Saibo](/saibo/), mi gato durante dieciséis años, que vino
+conmigo a México y murió aquí en septiembre de 2026.
+
 ## De dónde viene
 
 Estoy viviendo una temporada en Puerto Escondido, México, cuidando una casa llena de gatos:

@@ -17,8 +17,6 @@ Around a single cat there may be several people: one feeds it in the morning, an
 the evening, a restaurant leaves out scraps, and someone once paid for its deworming. None
 of them know about each other.
 
-{{< photo src="to-the-vet.jpg" alt="A grey cat looking out from a pet carrier on a car seat" caption="Who pays for the vet? Usually whoever happens to be there." >}}
-
 If they could see that they're all caring for the same cat, they could:
 
 - avoid double-feeding, and avoid double-treating with medication
