@@ -1,0 +1,3 @@
+{{- /* Stray Cats: subtle motion (assets/js/motion.js) */}}
+{{- $motion := resources.Get "js/motion.js" | js.Build | resources.Minify | fingerprint }}
+<script src="{{ $motion.RelPermalink }}" integrity="{{ $motion.Data.Integrity }}" defer></script>

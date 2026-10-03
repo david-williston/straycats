@@ -1,10 +1,18 @@
 {{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial). Text lives in i18n/. */ -}}
 {{- $email := site.Params.feedbackEmail -}}
 <section class="respond">
+  <svg class="perched-cat" viewBox="0 0 60 60" aria-hidden="true">
+    <path class="tail" d="M41 57c11 0 15-7 11-15"/>
+    <path d="M18 60c-4-12-2-24 6-29 4-2 10-2 13 1 7 6 8 18 5 28z"/>
+    <circle cx="30" cy="22" r="10"/>
+    <path d="M21 17l1-11 6 7zM32 13l6-7 1 11z"/>
+  </svg>
   <h2>{{ i18n "respond_title" }}</h2>
   <p>{{ i18n "respond_text" }}</p>
   {{- if $email }}
-  <a class="respond-button" href="mailto:{{ $email }}?subject={{ printf (i18n "respond_subject") .Title | urlquery }}">{{ i18n "respond_button" }}</a>
+  {{- /* urlquery encodes spaces as "+", which some mail apps show literally */}}
+  {{- $subject := printf (i18n "respond_subject") .Title | urlquery }}
+  <a class="respond-button" href="{{ printf "mailto:%s?subject=%s" $email (replace $subject "+" "%20") | safeURL }}">{{ i18n "respond_button" }}</a>
   {{- else }}
   <p><em>{{ i18n "respond_soon" }} <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ end }}">{{ i18n "respond_feedback" }}</a>.</em></p>
   {{- end }}

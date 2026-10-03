@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Stray Cats theme: warm cat palette, rounded type, paw-print details.
+   Overrides PaperMod's colour variables (themes/PaperMod/assets/css/core/theme-vars.css).
+   ========================================================================== */
+
+:root {
+  --theme: #fbf6ef;          /* cream */
+  --entry: #fffdf9;
+  --primary: #2b211b;        /* dark coffee */
+  --secondary: #6e5d50;
+  --tertiary: #e8dccd;
+  --content: #3a2e26;
+  --code-bg: #f3ebe0;
+  --border: #efe5d8;
+  --accent: #b8621a;         /* ginger */
+  --accent-soft: rgba(184, 98, 26, 0.14);
+  --radius: 12px;
+}
+
+:root[data-theme="dark"] {
+  --theme: #1b1714;          /* night */
+  --entry: #25201c;
+  --primary: #f3e9dd;
+  --secondary: #b6a594;
+  --tertiary: #3a322b;
+  --content: #e6dbcf;
+  --code-block-bg: #25201c;
+  --code-bg: #2f2924;
+  --border: #332c26;
+  --accent: #f2a45a;         /* amber cat eyes */
+  --accent-soft: rgba(242, 164, 90, 0.16);
+}
+
+.list { background: var(--theme); }
+
+body {
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+::selection { background: var(--accent-soft); color: var(--primary); }
+
+/* --- Header logo ------------------------------------------------------- */
+.logo a { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; }
+.logo-cat { flex-shrink: 0; }
+.logo-cat-head { fill: var(--accent); }
+.logo-cat-eye, .logo-cat-nose { fill: #2b211b; }
+
+.menu a:hover span { color: var(--accent); }
+.menu .active { border-bottom-color: var(--accent); }
+
+/* --- Links & accents --------------------------------------------------- */
+.post-content a,
+.toc a:hover { box-shadow: 0 1px 0 var(--accent); }
+.post-content a:hover { color: var(--accent); }
+.post-tags a:hover,
+.paginav a:hover .title { color: var(--accent); }
+.post-tags a:hover { border-color: var(--accent); }
+.top-link { background: var(--accent); }
+.top-link svg { color: var(--entry); }
+.searchResults mark,
+.searchResults li:hover { border-color: var(--accent); }
+.searchResults mark { background: var(--accent-soft); color: var(--primary); box-shadow: none; }
+
+/* --- Paw-print bullets ------------------------------------------------- */
+:root {
+  --paw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='16.5' rx='5.2' ry='4.3'/%3E%3Ccircle cx='5.3' cy='10.6' r='2.3'/%3E%3Ccircle cx='9.4' cy='6.4' r='2.4'/%3E%3Ccircle cx='14.6' cy='6.4' r='2.4'/%3E%3Ccircle cx='18.7' cy='10.6' r='2.3'/%3E%3C/svg%3E");
+}
+.post-content ul { list-style: none; padding-inline-start: 1.6em; }
+.post-content ul > li { position: relative; }
+.post-content ul > li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -1.45em;
+  top: 0.45em;
+  width: 0.85em;
+  height: 0.85em;
+  background: var(--accent);
+  opacity: 0.75;
+  -webkit-mask: var(--paw) center / contain no-repeat;
+          mask: var(--paw) center / contain no-repeat;
+  transform: rotate(-12deg);
+}
+.post-content ul > li:nth-child(even)::before { transform: rotate(12deg); }
+
+/* --- Paw-print trail above the footer --------------------------------- */
+.footer::before {
+  content: "";
+  display: block;
+  height: 22px;
+  margin: 0 auto 18px;
+  max-width: 360px;
+  background: var(--accent);
+  opacity: 0.35;
+  --trail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 22'%3E%3Cg transform='translate(4 9) rotate(80 7 7) scale(.55)'%3E%3Cellipse cx='12' cy='16.5' rx='5.2' ry='4.3'/%3E%3Ccircle cx='5.3' cy='10.6' r='2.3'/%3E%3Ccircle cx='9.4' cy='6.4' r='2.4'/%3E%3Ccircle cx='14.6' cy='6.4' r='2.4'/%3E%3Ccircle cx='18.7' cy='10.6' r='2.3'/%3E%3C/g%3E%3Cg transform='translate(32 -1) rotate(100 7 7) scale(.55)'%3E%3Cellipse cx='12' cy='16.5' rx='5.2' ry='4.3'/%3E%3Ccircle cx='5.3' cy='10.6' r='2.3'/%3E%3Ccircle cx='9.4' cy='6.4' r='2.4'/%3E%3Ccircle cx='14.6' cy='6.4' r='2.4'/%3E%3Ccircle cx='18.7' cy='10.6' r='2.3'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask: var(--trail) left center / 60px 22px repeat-x;
+          mask: var(--trail) left center / 60px 22px repeat-x;
+}
+
+/* --- Cards ------------------------------------------------------------- */
+.post-entry { border-color: var(--border); }
+.entry-cover { overflow: hidden; border-radius: var(--radius); }
+.home-info .entry-content { color: var(--secondary); }
+
+/* --- Cat perched on the "Respond to this idea" box --------------------- */
+.respond { position: relative; margin-top: 72px; }
+.perched-cat {
+  position: absolute;
+  top: -55px;
+  inset-inline-end: 28px;
+  width: 60px;
+  height: 60px;
+  fill: var(--secondary);
+  opacity: 0.85;
+}
+.perched-cat .tail { fill: none; stroke: var(--secondary); stroke-width: 4; stroke-linecap: round; }
+.respond-button { background: var(--accent); color: #fffdf9; }
+:root[data-theme="dark"] .respond-button { color: #1b1714; }
+
+/* --- Small fixes ------------------------------------------------------- */
+/* PaperMod clamps the home title to 3 lines; the Spanish one is longer */
+.first-entry .entry-header { display: block; -webkit-line-clamp: unset; overflow: visible; }
+/* Narrow screens: the menu scrolls sideways; hide the bar itself */
+.menu { scrollbar-width: none; }
+.menu::-webkit-scrollbar { display: none; }

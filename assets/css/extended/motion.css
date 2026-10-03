@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Subtle motion, site-wide. Everything here is off when the visitor prefers
+   reduced motion. Scroll reveals rely on assets/js/motion.js (via extend_footer).
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Soft cross-fade between pages (browsers that support it) */
+  @view-transition { navigation: auto; }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Page intro */
+  .home-info, .page-header, .post-header, .first-entry {
+    animation: fade-up 0.5s ease-out both;
+  }
+  .post-single .entry-cover { animation: fade-up 0.6s 0.08s ease-out both; }
+
+  /* Scroll reveal: hidden only once JS has marked the element */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* Cards lift on hover, covers zoom gently */
+  .post-entry { transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; }
+  .post-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px -14px rgba(43, 33, 27, 0.35);
+    border-color: var(--tertiary);
+  }
+  .entry-cover img { transition: transform 0.7s ease; }
+  .post-entry:hover .entry-cover img { transform: scale(1.03); }
+
+  /* Images fade in as they load */
+  img.img-loading { opacity: 0; }
+  .post-content img, .entry-cover img { transition: opacity 0.5s ease, transform 0.7s ease; }
+
+  /* Links: colour eases, underline draws in */
+  a, .menu a span { transition: color 0.2s ease, border-color 0.2s ease; }
+  .post-content a {
+    background: linear-gradient(var(--accent), var(--accent)) no-repeat left bottom / 0 2px;
+    transition: color 0.2s ease, background-size 0.3s ease;
+  }
+  .post-content a:hover { background-size: 100% 2px; }
+
+  /* Buttons & toggles */
+  .respond-button, .top-link { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .respond-button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px -8px var(--accent); }
+  #theme-toggle svg { transition: transform 0.5s ease; }
+  #theme-toggle:hover svg { transform: rotate(-20deg); }
+
+  /* Logo cat blinks now and then, and twitches an ear */
+  .logo-cat-eye { transform-box: fill-box; transform-origin: center; animation: cat-blink 7s infinite; }
+  .logo-cat-ear-r { transform-box: fill-box; transform-origin: 70% 90%; animation: ear-twitch 11s infinite; }
+  @keyframes cat-blink {
+    0%, 94%, 100% { transform: scaleY(1); }
+    96% { transform: scaleY(0.1); }
+  }
+  @keyframes ear-twitch {
+    0%, 90%, 100% { transform: rotate(0); }
+    92% { transform: rotate(-14deg); }
+    94% { transform: rotate(4deg); }
+  }
+
+  /* The perched cat swishes its tail */
+  .perched-cat .tail { transform-box: view-box; transform-origin: 41px 57px; animation: tail-swish 4.5s ease-in-out infinite; }
+  @keyframes tail-swish {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(8deg); }
+  }
+
+  /* Search results arrive one after another */
+  .searchResults li { animation: fade-up 0.35s ease-out both; }
+  .searchResults li:nth-child(2) { animation-delay: 0.04s; }
+  .searchResults li:nth-child(3) { animation-delay: 0.08s; }
+  .searchResults li:nth-child(4) { animation-delay: 0.12s; }
+  .searchResults li:nth-child(5) { animation-delay: 0.16s; }
+  .searchResults li:nth-child(n+6) { animation-delay: 0.2s; }
+
+  /* Paw trail fades in with the footer */
+  .footer::before { animation: fade-up 0.8s ease-out both; }
+}

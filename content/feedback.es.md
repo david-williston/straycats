@@ -33,7 +33,7 @@ escribirme aquí:
 
 - **GitHub Discussions:** [https://github.com/david-williston/straycats/discussions](https://github.com/david-williston/straycats/discussions), el mejor lugar para conversar abiertamente
 - **GitHub Issues:** [https://github.com/david-williston/straycats/issues](https://github.com/david-williston/straycats/issues), para sugerencias o correcciones concretas
-- **Correo:** *(próximamente)*
+- **Correo:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
 
 Cada página también tiene un enlace de **Sugerir cambios** por si quieres proponer una
 edición directamente. Puedes escribir en español o en inglés.

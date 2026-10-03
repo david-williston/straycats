@@ -29,7 +29,7 @@ better.
 
 Every story ends with a **Respond to this idea** box. You can also reach me here:
 
-- **Email:** *(coming soon)*
+- **Email:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
 - **GitHub Discussions:** [https://github.com/david-williston/straycats/discussions](https://github.com/david-williston/straycats/discussions), the best place for open conversation
 - **GitHub Issues:** [https://github.com/david-williston/straycats/issues](https://github.com/david-williston/straycats/issues), for specific suggestions or corrections
 
