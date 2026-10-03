@@ -6,7 +6,8 @@ tags: ["process", "philosophy"]
 summary: "Why I'm deliberately not building anything yet."
 cover:
   image: "cover.jpg"
-  alt: "A tabby-and-white cat and a black cat curled up together on a sofa"
+  alt: "Mika Ella, a tabby-and-white cat, and Ciccio, a black cat, curled up together on a sofa"
+  caption: "Ciccio and Mika Ella."
 ---
 
 We live in a time of incredibly rich technology and very mature development tools. I think

@@ -6,7 +6,8 @@ tags: ["community", "care", "tnr"]
 summary: "Many people quietly care for the same cats with no coordination. What if they could find each other?"
 cover:
   image: "cover.jpg"
-  alt: "An orange-and-white cat sitting next to an empty food bowl"
+  alt: "Mountain Lion, an orange-and-white cat whose real name nobody knows, sitting next to an empty food bowl"
+  caption: "Nobody knows this cat's real name. At the house, it's Mountain Lion."
 ---
 
 *Background: [The cats nobody owns](/posts/the-cats-nobody-owns/)*

@@ -7,8 +7,8 @@ tags: ["historia", "identidad"]
 summary: "Algunos de 'mis' gatos claramente comen muy bien en otro lado. No sé dónde, ni cómo los llaman ahí."
 cover:
   image: "cover.jpg"
-  alt: "Un gato naranja con blanco asomándose detrás de un barandal negro"
-  caption: "¿Ninja? ¿Naranja? ¿Milo? Depende de a quién le preguntes."
+  alt: "Mountain Lion (León de Montaña), un gato naranja con blanco, asomándose detrás de un barandal negro"
+  caption: "¿Ninja? ¿Naranja? ¿Milo? Aquí nadie sabe el nombre real de este gato. En la casa le dicen Mountain Lion (León de Montaña)."
 ---
 
 Algunos de los gatos que me visitan obviamente comen muy bien en otra parte. No sé dónde. No

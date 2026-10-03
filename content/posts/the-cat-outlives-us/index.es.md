@@ -7,7 +7,8 @@ tags: ["historia", "principios", "memoria"]
 summary: "Todo lo que sé de estos gatos vive en mi cabeza y en Instagram. Cuando me vaya, se irá conmigo."
 cover:
   image: "cover.jpg"
-  alt: "Primer plano de una gatita calicó con una mancha negra sobre un ojo"
+  alt: "Primer plano de Lucia, una gatita calicó con una mancha negra sobre un ojo"
+  caption: "Lucia."
 ---
 
 Cuando llegué a Puerto Escondido no conocía a ninguno de los gatos. Luego la gente empezó a
@@ -23,7 +24,7 @@ videos chistosos. Instagram es genial para eso. Pero no está construido alreded
 sino alrededor de mí y de mi cuenta. No permite que el siguiente cuidador herede lo
 que yo sé y lo siga ampliando.
 
-{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alt="Retratos de gatos de la casa" caption="Cada uno tiene un nombre, una historia y una personalidad. Por ahora, todo eso vive en mi cabeza y en Instagram." >}}
+{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alts="Ciccio, un gato negro, sentado sobre una cobija rosa | Tenkilo, un gato color crema, estirado sobre un piso de baldosas" caption="Ciccio y Tenkilo. Cada uno tiene un nombre, una historia y una personalidad. Por ahora, todo eso vive en mi cabeza y en Instagram." >}}
 
 ## Ya construí el sistema… a mano
 

@@ -19,6 +19,20 @@ sitemap:
 Cada actualización lleva como número la fecha en que se publicó (año.mes.día), con `.1`,
 `.2`, etc. para las siguientes actualizaciones del mismo día.
 
+### v2026.10.03.2 · 3 de octubre de 2026
+
+**Conoce a los gatos**
+
+- **Los gatos tienen nombre.** Las fotos ahora dicen quién es quién: Ciccio, Hootie, Lucia,
+  Mika Ella, Ninja y Tenkilo, además de Mountain Lion (León de Montaña), cuyo nombre real
+  nadie conoce. Sus nombres están en los pies de foto y en las descripciones que leen los
+  lectores de pantalla.
+- **El gato correcto en "¿Ninja, Naranja o Milo?"** El gato de la portada de esa historia no
+  es Ninja: es Mountain Lion. El verdadero Ninja está en [Los elementos
+  básicos](/ideas/the-building-blocks/).
+- Algunos gatos aparecen en más de una foto, así que puedes reconocerlos por todo el sitio.
+  Los atigrados de La identidad del gato siguen sin nombre.
+
 ### v2026.10.03.1 · 3 de octubre de 2026
 
 **Escucha la idea**

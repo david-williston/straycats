@@ -7,8 +7,8 @@ tags: ["dueños", "mascotas-perdidas", "identidad"]
 summary: "Muchos 'callejeros' son mascotas de alguien, y muchas mascotas viven como callejeros. Tener dueño es un espectro."
 cover:
   image: "cover.jpg"
-  alt: "Un gato negro con collar, sentado en un jardín junto a una estatua de gato y flores rojas"
-  caption: "Un collar sugiere que tiene casa, pero ¿la de quién?"
+  alt: "Hootie, un gato negro con collar, sentado en un jardín junto a una estatua de gato y flores rojas"
+  caption: "Hootie. Un collar sugiere que tiene casa, pero ¿la de quién?"
 ---
 
 ## La idea

@@ -69,9 +69,11 @@ In the text:
 ```
 {{</* photo src="vet-visit.jpg" alt="…" caption="…" */>}}
 {{</* gallery images="a.jpg b.jpg c.jpg" alt="…" caption="…" */>}}   # add anchor="Top" if heads get cropped
+{{</* gallery images="a.jpg b.jpg" alts="Ciccio, a black cat | Tenkilo, a cream cat" caption="…" */>}}   # one description per photo
 ```
 
-Hugo resizes and converts images at build time. Always write `alt` text (in each language).
+Hugo resizes and converts images at build time. Always write `alt` text (in each language),
+and name the cats in it when you know who they are.
 
 ### Languages
 

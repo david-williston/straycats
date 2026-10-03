@@ -7,7 +7,8 @@ tags: ["conceptos", "modelo"]
 summary: "Diez conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."
 cover:
   image: "cover.jpg"
-  alt: "Un gato naranja con blanco echado en el suelo, a media maullada"
+  alt: "Ninja, un gato naranja con blanco, echado en el suelo, a media maullada"
+  caption: "Ninja."
 ---
 
 Antes de que el software pueda representar un mundo, hay que entender ese mundo. Estos son

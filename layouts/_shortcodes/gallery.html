@@ -1,13 +1,17 @@
 {{- /* A grid of portrait (3:4) thumbnails from the page bundle, each linking to the full photo.
-  Usage: {{< gallery images="a.jpg b.jpg c.jpg" [anchor="Top"] alt="…" caption="…" >}} */ -}}
+  Usage: {{< gallery images="a.jpg b.jpg c.jpg" [anchor="Top"] alt="…" caption="…" >}}
+  For a description per photo, use alts="first | second | third" instead of alt. */ -}}
+{{- $alts := split (.Get "alts" | default "") "|" }}
 <figure class="gallery">
   <div class="gallery-grid">
-  {{- range split (.Get "images") " " }}
-    {{- with $.Page.Resources.Get . }}
+  {{- range $i, $name := split (.Get "images") " " }}
+    {{- $alt := $.Get "alt" }}
+    {{- if and (lt $i (len $alts)) (trim (index $alts $i) " ") }}{{ $alt = trim (index $alts $i) " " }}{{ end }}
+    {{- with $.Page.Resources.Get $name }}
       {{- $thumb := .Fill (printf "600x800 %s webp q80" ($.Get "anchor" | default "smart")) }}
-      <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
+      <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $alt }}" loading="lazy"></a>
     {{- else }}
-      {{- errorf "gallery shortcode: %q not found in %s" . $.Page.File.Path }}
+      {{- errorf "gallery shortcode: %q not found in %s" $name $.Page.File.Path }}
     {{- end }}
   {{- end }}
   </div>

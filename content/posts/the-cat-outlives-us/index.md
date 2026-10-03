@@ -6,7 +6,8 @@ tags: ["story", "principles", "memory"]
 summary: "Everything I know about these cats lives in my head and on Instagram. When I leave, it leaves with me."
 cover:
   image: "cover.jpg"
-  alt: "Close-up of a young calico cat with a black patch over one eye"
+  alt: "Close-up of Lucia, a young calico cat with a black patch over one eye"
+  caption: "Lucia."
 ---
 
 When I arrived in Puerto Escondido I didn't know any of the cats. Then people started
@@ -22,7 +23,7 @@ the funny videos. Instagram is great for that. But it isn't built around **the c
 built around me, the account holder. It can't let the next caretaker inherit what I know
 and keep adding to it.
 
-{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alt="Portraits of cats from the house" caption="Every one of them has a name, a story and a personality. Right now, those live in my head and on Instagram." >}}
+{{< gallery images="black-cat.jpg sunbather.jpg" anchor="Top" alts="Ciccio, a black cat, sitting up on a pink blanket | Tenkilo, a cream cat, stretched out on a tiled floor" caption="Ciccio and Tenkilo. Every one of them has a name, a story and a personality. Right now, those live in my head and on Instagram." >}}
 
 ## I've already built the system — by hand
 

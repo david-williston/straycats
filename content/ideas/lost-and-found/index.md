@@ -6,8 +6,8 @@ tags: ["ownership", "lost-pets", "identity"]
 summary: "Many 'strays' are someone's pet, and many pets live like strays. Ownership is a spectrum."
 cover:
   image: "cover.jpg"
-  alt: "A black cat wearing a collar, sitting in a garden beside a cat statue and red flowers"
-  caption: "A collar suggests a home, but whose?"
+  alt: "Hootie, a black cat wearing a collar, sitting in a garden beside a cat statue and red flowers"
+  caption: "Hootie. A collar suggests a home, but whose?"
 ---
 
 ## The idea

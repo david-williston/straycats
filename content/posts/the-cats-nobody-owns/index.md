@@ -6,14 +6,15 @@ tags: ["story", "puerto-escondido", "origins"]
 summary: "Where this idea started: a house full of cats in Puerto Escondido, and a question about who looks after them."
 cover:
   image: "cover.jpg"
-  alt: "A black cat and a cream cat in a tiled courtyard, with more cats among the potted flowers"
+  alt: "Ciccio, a black cat, and Tenkilo, a cream cat, in a tiled courtyard, with Ninja grooming among the potted flowers"
+  caption: "Ciccio, Tenkilo and Ninja."
 ---
 
 I'm living for a while in Puerto Escondido, on the Pacific coast of Mexico, in a house with
 a lot of cats. Some are pets. Some are strays. Some are of unknown origin. The owner of the
 house is in Italy, so while I'm here, I look after them.
 
-{{< photo src="the-path.jpg" alt="Five cats, black, black-and-white and cream, on a garden path" caption="Pets, strays, or somewhere in between? Some of the cats at the house." >}}
+{{< photo src="the-path.jpg" alt="Ninja, a pale orange-and-white cat, in front; Ciccio, a black cat, behind; and Mika Ella with a black-and-white cat further up the garden path" caption="Ninja, Ciccio and Mika Ella, with a black-and-white friend. Pets, strays, or somewhere in between?" >}}
 
 I buy their food out of my own pocket. Sometimes I pay for a vet visit, or deworming
 medication. Nobody asked me to — it's just what you do when a cat is sitting at your door

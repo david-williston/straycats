@@ -6,8 +6,8 @@ tags: ["identity", "model", "concepts"]
 summary: "How do you model one cat that has three names, two homes and no clear owner?"
 cover:
   image: "cover.jpg"
-  alt: "A calico cat seen from behind, its black, orange and white patches clearly visible"
-  caption: "No two calicos are patched the same way."
+  alt: "Lucia, a calico cat, seen from behind, its black, orange and white patches clearly visible"
+  caption: "Lucia. No two calicos are patched the same way."
 ---
 
 *Background: [Ninja, Naranja, or Milo?](/posts/many-names-one-cat/)*

@@ -6,8 +6,8 @@ tags: ["story", "identity"]
 summary: "Some of 'my' cats are clearly well fed somewhere else. I don't know where, or what those people call them."
 cover:
   image: "cover.jpg"
-  alt: "An orange-and-white cat peering at the camera from behind a black railing"
-  caption: "Ninja? Naranja? Milo? Depends who you ask."
+  alt: "Mountain Lion, an orange-and-white cat, peering at the camera from behind a black railing"
+  caption: "Ninja? Naranja? Milo? Nobody here knows this cat's real name. At the house, it's Mountain Lion."
 ---
 
 Some of the cats that visit me are obviously being fed very well somewhere else. I don't
