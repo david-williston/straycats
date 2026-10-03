@@ -1,0 +1,17 @@
+.respond {
+  margin-top: 40px;
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--entry);
+}
+.respond h2 { margin-bottom: 8px; font-size: 22px; }
+.respond p { margin-bottom: 12px; color: var(--secondary); }
+.respond-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--theme);
+  font-weight: 500;
+}

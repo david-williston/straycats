@@ -1,0 +1,35 @@
+---
+title: "Give Feedback"
+summary: "Tell me what I'm missing."
+ShowToc: false
+ShowReadingTime: false
+comments: false
+---
+
+The readers of this site are the project's first research community. I'm most interested
+in stories like these:
+
+- *"We have exactly the same thing happening here."*
+- *"That cat has four names on my street."*
+- *"I've been paying for a cat's vet bills for years and I don't know who else feeds it."*
+- *"Here's why that idea won't work."*
+
+Disagreement, edge cases and strange situations are all welcome. They're how the idea gets
+better.
+
+## Questions I'd love answered
+
+- Do you look after cats you don't technically own? How do you keep track of them?
+- Have you met a cat with more than one name, or more than one "owner"?
+- What happens to the cats when caretakers move away?
+- Which [ideas](/ideas/) excite you? Which ones worry you?
+- Would you like to help one day: stories, design, code, rescue experience?
+
+## How to reach me
+
+Every story ends with a **Respond to this idea** box. You can also reach me here:
+
+- **Email:** *(coming soon)*
+- **GitHub:** *(coming soon)*
+
+Every page also has a **Suggest changes** link if you'd like to propose an edit directly.

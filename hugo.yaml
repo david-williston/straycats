@@ -1,0 +1,84 @@
+baseURL: "https://example.org/"   # TODO: set to your real domain
+languageCode: en-us
+title: Stray Cats
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home: [HTML, RSS, JSON]   # JSON powers the search page
+
+params:
+  env: production
+  description: "Thinking out loud about how the world could remember the cats that nobody owns. An open-source, non-profit idea."
+  author: David Williston
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowRssButtonInSectionTermList: true
+
+  homeInfoParams:
+    Title: "How could the world remember the cats nobody owns? 🐈"
+    Content: >
+      **Stray Cats** is the working name for an idea — open source, non-profit, and very much
+      unfinished. It starts with the cats I've come to know in Puerto Escondido, Mexico, and
+      a simple question: what if every stray cat had an identity, a history, and a network of
+      people who care about it? There's no app yet, and no code. Just stories, questions and
+      half-formed ideas — and I'd love to hear yours.
+
+  # Each post ends with a "Respond to this idea" box (layouts/partials/comments.html).
+  # Set this to the address that should receive replies.
+  comments: true
+  feedbackEmail: ""   # TODO: e.g. hello@yourdomain.org
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/"   # TODO: link to the project repo
+    - name: rss
+      url: "index.xml"
+
+  editPost:
+    URL: "https://github.com/"     # TODO: e.g. https://github.com/<you>/straycats/edit/main/content
+    Text: "Suggest changes"
+    appendFilePath: true
+
+  fuseOpts:
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 10
+    - identifier: ideas
+      name: Ideas
+      url: /ideas/
+      weight: 20
+    - identifier: posts
+      name: Updates
+      url: /posts/
+      weight: 30
+    - identifier: feedback
+      name: Give Feedback
+      url: /feedback/
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 50
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 60

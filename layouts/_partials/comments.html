@@ -1,0 +1,11 @@
+{{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial). */ -}}
+{{- $email := site.Params.feedbackEmail -}}
+<section class="respond">
+  <h2>Respond to this idea</h2>
+  <p>What did I miss? Do you know a cat like this, or see the same thing where you live? I read every reply.</p>
+  {{- if $email }}
+  <a class="respond-button" href="mailto:{{ $email }}?subject={{ printf "Re: %s" .Title | urlquery }}">Send a reply ✉️</a>
+  {{- else }}
+  <p><em>The reply address is coming soon. In the meantime, see <a href="{{ "feedback/" | relURL }}">Give Feedback</a>.</em></p>
+  {{- end }}
+</section>
