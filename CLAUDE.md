@@ -20,6 +20,7 @@ npm run deploy            # release: tag vYYYY.MM.DD[.N] and publish (see README
     issue — the PR description is the record.
   - Keep PRs to one concern. Something unrelated noticed mid-task gets its own branch/PR, or an
     issue if it can wait — never folded into the current PR unless the current change needs it.
+  - The **Build site** check (`.github/workflows/pr-build.yml`) must pass before merging.
   - Merge only when David says to.
 - **Merging doesn't publish.** Releasing is a separate step from an up-to-date `main`
   (`npm run deploy`), so several merged PRs can go out in one release. Add the release's
