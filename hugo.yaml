@@ -1,7 +1,9 @@
 baseURL: "https://david-williston.github.io/straycats/"
-languageCode: en-us
 title: Stray Cats
 theme: PaperMod
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false   # English at /, Spanish at /es/
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -16,7 +18,6 @@ outputs:
 
 params:
   env: production
-  description: "Thinking out loud about how the world could remember the cats that nobody owns. An open-source, non-profit idea."
   author: David Williston
   defaultTheme: auto
   ShowReadingTime: true
@@ -27,17 +28,9 @@ params:
   ShowToc: true
   TocOpen: false
   ShowRssButtonInSectionTermList: true
+  displayFullLangName: true
 
-  homeInfoParams:
-    Title: "How could the world remember the cats nobody owns? 🐈"
-    Content: >
-      **Stray Cats** is the working name for an idea — open source, non-profit, and very much
-      unfinished. It starts with the cats I've come to know in Puerto Escondido, Mexico, and
-      a simple question: what if every stray cat had an identity, a history, and a network of
-      people who care about it? There's no app yet, and no code. Just stories, questions and
-      half-formed ideas — and I'd love to hear yours.
-
-  # Each post ends with a "Respond to this idea" box (layouts/partials/comments.html).
+  # Each post ends with a "Respond to this idea" box (layouts/_partials/comments.html; text in i18n/).
   # Set this to the address that should receive replies.
   comments: true
   feedbackEmail: ""   # TODO: e.g. hello@yourdomain.org
@@ -50,38 +43,62 @@ params:
 
   editPost:
     URL: "https://github.com/david-williston/straycats/edit/main/content"
-    Text: "Suggest changes"
     appendFilePath: true
 
   fuseOpts:
     keys: ["title", "permalink", "summary", "content"]
 
-menu:
-  main:
-    - identifier: about
-      name: About
-      url: /about/
-      weight: 10
-    - identifier: ideas
-      name: Ideas
-      url: /ideas/
-      weight: 20
-    - identifier: posts
-      name: Updates
-      url: /posts/
-      weight: 30
-    - identifier: feedback
-      name: Give Feedback
-      url: /feedback/
-      weight: 40
-    - identifier: search
-      name: Search
-      url: /search/
-      weight: 50
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 60
+languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    weight: 1
+    params:
+      description: "Thinking out loud about how the world could remember the cats that nobody owns. An open-source, non-profit idea."
+      editPost:
+        Text: "Suggest changes"
+      homeInfoParams:
+        Title: "How could the world remember the cats nobody owns? 🐈"
+        Content: >
+          **Stray Cats** is the working name for an idea — open source, non-profit, and very much
+          unfinished. It starts with the cats I've come to know in Puerto Escondido, Mexico, and
+          a simple question: what if every stray cat had an identity, a history, and a network of
+          people who care about it? There's no app yet, and no code. Just stories, questions and
+          half-formed ideas — and I'd love to hear yours.
+    menus:
+      main:
+        - {identifier: about, name: About, url: about/, weight: 10}
+        - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
+        - {identifier: posts, name: Updates, url: posts/, weight: 30}
+        - {identifier: feedback, name: Give Feedback, url: feedback/, weight: 40}
+        - {identifier: search, name: Search, url: search/, weight: 50}
+        - {identifier: tags, name: Tags, url: tags/, weight: 60}
+
+  es:
+    languageName: Español
+    languageCode: es-mx
+    weight: 2
+    params:
+      description: "Pensando en voz alta sobre cómo el mundo podría recordar a los gatos que no son de nadie. Una idea de código abierto y sin fines de lucro."
+      editPost:
+        Text: "Sugerir cambios"
+      homeInfoParams:
+        Title: "¿Cómo podría el mundo recordar a los gatos que no son de nadie? 🐈"
+        Content: >
+          **Stray Cats** (Gatos Callejeros) es el nombre provisional de una idea: de código abierto,
+          sin fines de lucro y todavía sin terminar. Empieza con los gatos que he llegado a conocer
+          en Puerto Escondido, México, y con una pregunta sencilla: ¿y si cada gato callejero tuviera
+          una identidad, una historia y una red de personas que se preocupan por él? Todavía no hay
+          app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
+          las tuyas.
+    menus:
+      main:
+        - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}
+        - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
+        - {identifier: posts, name: Historias, url: posts/, weight: 30}
+        - {identifier: feedback, name: Comparte tu opinión, url: comparte-tu-opinion/, weight: 40}
+        - {identifier: search, name: Buscar, url: search/, weight: 50}
+        - {identifier: tags, name: Etiquetas, url: tags/, weight: 60}
 
 markup:
   goldmark:

@@ -1,11 +1,11 @@
-{{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial). */ -}}
+{{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial). Text lives in i18n/. */ -}}
 {{- $email := site.Params.feedbackEmail -}}
 <section class="respond">
-  <h2>Respond to this idea</h2>
-  <p>What did I miss? Do you know a cat like this, or see the same thing where you live? I read every reply.</p>
+  <h2>{{ i18n "respond_title" }}</h2>
+  <p>{{ i18n "respond_text" }}</p>
   {{- if $email }}
-  <a class="respond-button" href="mailto:{{ $email }}?subject={{ printf "Re: %s" .Title | urlquery }}">Send a reply ✉️</a>
+  <a class="respond-button" href="mailto:{{ $email }}?subject={{ printf (i18n "respond_subject") .Title | urlquery }}">{{ i18n "respond_button" }}</a>
   {{- else }}
-  <p><em>The reply address is coming soon. In the meantime, see <a href="{{ "feedback/" | relURL }}">Give Feedback</a>.</em></p>
+  <p><em>{{ i18n "respond_soon" }} <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ end }}">{{ i18n "respond_feedback" }}</a>.</em></p>
   {{- end }}
 </section>
