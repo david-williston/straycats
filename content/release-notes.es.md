@@ -19,6 +19,14 @@ sitemap:
 Cada actualización lleva como número la fecha en que se publicó (año.mes.día), con `.1`,
 `.2`, etc. para las siguientes actualizaciones del mismo día.
 
+### v2026.10.03.3 · 3 de octubre de 2026
+
+**Una corrección del número de versión**
+
+- La versión al pie de cada página mostraba la versión anterior, y el historial de cambios
+  de abajo mostraba los cambios más recientes como aún sin publicar. Las dos cosas vuelven a
+  estar bien.
+
 ### v2026.10.03.2 · 3 de octubre de 2026
 
 **Conoce a los gatos**
