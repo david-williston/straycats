@@ -1,4 +1,4 @@
-baseURL: "https://example.org/"   # TODO: set to your real domain
+baseURL: "https://david-williston.github.io/straycats/"
 languageCode: en-us
 title: Stray Cats
 theme: PaperMod
@@ -44,12 +44,12 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/"   # TODO: link to the project repo
+      url: "https://github.com/david-williston/straycats"
     - name: rss
       url: "index.xml"
 
   editPost:
-    URL: "https://github.com/"     # TODO: e.g. https://github.com/<you>/straycats/edit/main/content
+    URL: "https://github.com/david-williston/straycats/edit/main/content"
     Text: "Suggest changes"
     appendFilePath: true
 
@@ -82,3 +82,9 @@ menu:
       name: Tags
       url: /tags/
       weight: 60
+
+markup:
+  goldmark:
+    renderHooks:
+      link:
+        useEmbedded: always   # resolve /path/ links to the page so they work under the /straycats/ subpath

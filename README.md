@@ -8,7 +8,7 @@ thoughts, feedback and ideas — built with [Hugo](https://gohugo.io/) and the
 ## Run locally
 
 ```sh
-git clone --recurse-submodules <repo-url>
+git clone --recurse-submodules https://github.com/david-williston/straycats.git
 cd straycats
 hugo server -D        # http://localhost:1313
 ```

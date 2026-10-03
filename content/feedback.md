@@ -30,6 +30,7 @@ better.
 Every story ends with a **Respond to this idea** box. You can also reach me here:
 
 - **Email:** *(coming soon)*
-- **GitHub:** *(coming soon)*
+- **GitHub Discussions:** [https://github.com/david-williston/straycats/discussions](https://github.com/david-williston/straycats/discussions), the best place for open conversation
+- **GitHub Issues:** [https://github.com/david-williston/straycats/issues](https://github.com/david-williston/straycats/issues), for specific suggestions or corrections
 
 Every page also has a **Suggest changes** link if you'd like to propose an edit directly.
