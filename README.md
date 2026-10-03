@@ -1,11 +1,35 @@
 # Stray Cats 🐾
 
-An open-source, non-profit project to help communities spot, identify and track stray
-cats (and dogs). This repo currently holds the project's website — a place to collect
-thoughts, feedback and ideas — built with [Hugo](https://gohugo.io/) and the
-[PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme.
+An open-source, non-profit idea about how communities could identify, remember and care for
+the cats nobody owns (and, one day, dogs).
 
-## Run locally
+> **There is no app here (yet).** Stray Cats is at the concept stage: the ideas are still
+> being formed, and no software has been written, [on purpose](https://david-williston.github.io/straycats/posts/all-talk-no-code/).
+> This repository holds only the project's **website**, a notebook of stories and ideas.
+> Cloning it won't give you anything to run except that website.
+
+## Get involved
+
+The most useful thing right now is your experience and your opinion, not code:
+
+- **Read** the stories and ideas: <https://david-williston.github.io/straycats/>
+  ([en español](https://david-williston.github.io/straycats/es/))
+- **Tell me what I'm missing**: reply to any story by email, or start a conversation in
+  [Discussions](https://github.com/david-williston/straycats/discussions)
+- **Suggest a correction or a new idea** in [Issues](https://github.com/david-williston/straycats/issues)
+
+If you're a developer, designer or rescuer who'd like to help build it one day, say hi in
+Discussions. When there's software to work on, it will be announced on the site.
+
+---
+
+## Working on the website
+
+The rest of this README is for editing the website itself, built with
+[Hugo](https://gohugo.io/) and the [PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+theme. You only need it to change the site's pages, text or design.
+
+### Run locally
 
 ```sh
 git clone --recurse-submodules https://github.com/david-williston/straycats.git
@@ -15,7 +39,7 @@ npm run dev           # http://localhost:1313 (or: hugo server -D)
 
 If you already cloned without submodules: `git submodule update --init --recursive`.
 
-## Add content
+### Add content
 
 ```sh
 hugo new content ideas/my-idea.md     # a new idea
@@ -28,7 +52,7 @@ The home page lists stories, then ideas, in `weight` order (stories 1–99, idea
 the previous/next links follow the same order. Give a new story the next number after the
 last one, and a new idea a weight in the hundreds.
 
-## Photos
+### Photos
 
 Pages with photos are *page bundles*: a folder holding `index.md`, `index.es.md` and the
 images, shared by both languages.
@@ -49,7 +73,7 @@ In the text:
 
 Hugo resizes and converts images at build time. Always write `alt` text (in each language).
 
-## Languages
+### Languages
 
 The site is in **English** (`/`) and **Spanish** (`/es/`). Each page has a translation
 alongside it with a `.es.md` suffix:
@@ -63,14 +87,14 @@ Menus and the home page intro are per language in `hugo.yaml`; the "Respond to t
 box text lives in `i18n/`. In content, link to pages by their English path
 (e.g. `[feedback](/feedback/)`): links resolve to the right language automatically.
 
-## Making changes
+### Making changes
 
 Every change goes through a pull request; `main` is protected. Cut a short-lived branch from
 an up-to-date `main` (`content/...`, `fix/...`, `docs/...`, `chore/...`), open a PR, and merge
 it once the **Build site** check passes. GitHub deletes the branch on merge. Merging doesn't publish the site;
 releasing does (below). See CLAUDE.md for the full conventions.
 
-## Deploy: versioning and releases
+### Deploy: versioning and releases
 
 Pushing to `main` does **not** publish the site. Publishing is a release:
 
