@@ -1,0 +1,32 @@
+name: Build check
+
+# Builds the site on every pull request, so a broken page is caught before it's merged.
+# Required to pass before merging into main (branch protection). Publishing is separate:
+# see hugo.yml.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.163.1"   # keep in step with hugo.yml
+          extended: true
+      - run: git fetch --force --tags origin
+      - run: node scripts/git-history.mjs
+      - run: hugo --gc --minify
