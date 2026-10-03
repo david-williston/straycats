@@ -1,6 +1,7 @@
 ---
 title: "Naming the thing: Stray Cats"
 date: 2026-10-03T04:00:00Z
+weight: 5
 tags: ["process", "name"]
 summary: "Every project needs a code name. Here's how this one got its name."
 cover:

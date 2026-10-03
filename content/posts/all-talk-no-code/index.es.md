@@ -2,6 +2,7 @@
 title: "Pura plática, nada de código (por ahora)"
 slug: "pura-platica-nada-de-codigo"
 date: 2026-10-03T03:00:00Z
+weight: 4
 tags: ["proceso", "filosofia"]
 summary: "Por qué, a propósito, todavía no estoy construyendo nada."
 cover:
@@ -32,7 +33,7 @@ entender.
 
 Quería un lugar para compartir estas ideas y recibir opiniones, y quería que **la plataforma fuera
 completamente mía**, en vez de ponerla en Facebook o en otra red social manejada por
-algoritmos. Así que esto es un sitio web sencillo, en su propio dominio, con publicaciones
+algoritmos. Así que esto es un sitio web sencillo y propio, con publicaciones
 cortas y una forma de responder directamente.
 
 No estoy vendiendo una app. Cada publicación empieza con algo real (un gato, un nombre, un

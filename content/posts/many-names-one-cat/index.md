@@ -1,6 +1,7 @@
 ---
 title: "Ninja, Naranja, or Milo? Many names, one cat"
 date: 2026-10-03T02:00:00Z
+weight: 3
 tags: ["story", "identity"]
 summary: "Some of 'my' cats are clearly well fed somewhere else. I don't know where, or what those people call them."
 cover:

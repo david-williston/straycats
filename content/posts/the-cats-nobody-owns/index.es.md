@@ -2,6 +2,7 @@
 title: "Los gatos que no son de nadie"
 slug: "los-gatos-que-no-son-de-nadie"
 date: 2026-10-03T00:00:00Z
+weight: 1
 tags: ["historia", "puerto-escondido", "origenes"]
 summary: "Dónde empezó esta idea: una casa llena de gatos en Puerto Escondido y una pregunta sobre quién los cuida."
 cover:

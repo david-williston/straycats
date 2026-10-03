@@ -2,7 +2,7 @@
 title: "Encuentros: cada encuentro suma a la historia"
 slug: "encuentros"
 date: 2026-10-03
-weight: 30
+weight: 300
 tags: ["encuentros", "conceptos"]
 summary: "Cada vez que alguien conoce a un gato, aporta un poco a su historia compartida."
 cover:

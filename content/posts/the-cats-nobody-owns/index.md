@@ -1,6 +1,7 @@
 ---
 title: "The cats nobody owns"
 date: 2026-10-03T00:00:00Z
+weight: 1
 tags: ["story", "puerto-escondido", "origins"]
 summary: "Where this idea started: a house full of cats in Puerto Escondido, and a question about who looks after them."
 cover:

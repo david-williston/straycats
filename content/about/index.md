@@ -24,7 +24,7 @@ to Mexico and died here in September 2026.
 I'm living for a while in Puerto Escondido, Mexico, looking after a house full of cats:
 some pets, some strays, some of unknown origin. I pay for their food and sometimes their
 vet care. I've learned their names and stories from the people who were here before me,
-and I pass them on to whoever arrives next. I keep an Instagram account, [@mimos_cat_santuary](https://www.instagram.com/mimos_cat_santuary/), to show off
+and I pass them on to whoever arrives next. I keep an Instagram account, [@mimos_cat_sanctuary](https://www.instagram.com/mimos_cat_sanctuary/), to show off
 their personalities.
 
 It works. But everything I know lives in my head and on my phone, and when I leave, it
@@ -55,7 +55,7 @@ purpose](/posts/all-talk-no-code/). Right now the job is to understand the probl
 - **Open source.** Ideas, designs and eventually code are public.
 - **Non-profit.** No ads, no selling data. Ever.
 - **The record belongs to the cat**, not to any caretaker or platform.
-- **Owned, not rented.** This site runs on its own domain, not on Facebook or another
+- **Owned, not rented.** This is a site of its own, not a page on Facebook or another
   social network.
 - **Animal welfare and privacy first.**
 - **Cats first.** Dogs later (they're just a different type of cat).

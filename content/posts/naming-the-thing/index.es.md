@@ -2,6 +2,7 @@
 title: "Ponerle nombre: Stray Cats"
 slug: "ponerle-nombre"
 date: 2026-10-03T04:00:00Z
+weight: 5
 tags: ["proceso", "nombre"]
 summary: "Todo proyecto necesita un nombre clave. Así es como este consiguió el suyo."
 cover:

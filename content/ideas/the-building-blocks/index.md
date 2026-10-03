@@ -1,7 +1,7 @@
 ---
 title: "The Building Blocks"
 date: 2026-10-03
-weight: 10
+weight: 100
 tags: ["concepts", "model"]
 summary: "Ten concepts the system will need to understand, long before anyone writes code."
 cover:

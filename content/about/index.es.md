@@ -26,7 +26,7 @@ Estoy viviendo una temporada en Puerto Escondido, México, cuidando una casa lle
 algunos son mascotas, otros son callejeros y de otros no se sabe de dónde vienen. Pago su
 comida y a veces sus visitas al veterinario. Aprendí sus nombres e historias de las personas
 que estuvieron aquí antes que yo, y se los paso a quien llega después. Tengo una cuenta de
-Instagram, [@mimos_cat_santuary](https://www.instagram.com/mimos_cat_santuary/), para presumir su personalidad.
+Instagram, [@mimos_cat_sanctuary](https://www.instagram.com/mimos_cat_sanctuary/), para presumir su personalidad.
 
 Funciona. Pero todo lo que sé vive en mi cabeza y en mi teléfono, y cuando me vaya, se irá
 conmigo. [Lee la historia completa →](/posts/the-cats-nobody-owns/)
@@ -56,7 +56,7 @@ propósito](/posts/all-talk-no-code/). Por ahora el trabajo es entender el probl
 - **Código abierto.** Las ideas, los diseños y, algún día, el código son públicos.
 - **Sin fines de lucro.** Sin anuncios y sin vender datos. Nunca.
 - **El registro le pertenece al gato**, no a ningún cuidador ni plataforma.
-- **Propio, no rentado.** Este sitio tiene su propio dominio; no está en Facebook ni en
+- **Propio, no rentado.** Este es un sitio propio, no una página en Facebook ni en
   otra red social.
 - **Primero el bienestar animal y la privacidad.**
 - **Primero los gatos.** Los perros después (son solo otro tipo de gato).

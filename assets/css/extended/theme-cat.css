@@ -119,9 +119,10 @@ body {
 /* --- Small fixes ------------------------------------------------------- */
 /* PaperMod clamps the home title to 3 lines; the Spanish one is longer */
 .first-entry .entry-header { display: block; -webkit-line-clamp: unset; overflow: visible; }
-/* Narrow screens: the menu scrolls sideways; hide the bar itself */
-.menu { scrollbar-width: none; }
-.menu::-webkit-scrollbar { display: none; }
+/* Narrow screens: wrap the menu onto a second line instead of hiding items off the edge */
+@media (max-width: 768px) {
+  .menu { flex-wrap: wrap; overflow-x: visible; row-gap: 4px; line-height: 2.4; padding-bottom: 8px; }
+}
 /* Photo links (gallery/photo shortcodes) shouldn't get the text-link underline */
 .post-content .gallery-grid a,
 .post-content .photo a { box-shadow: none; background: none; }

@@ -2,7 +2,7 @@
 title: "Datos abiertos y tecnología"
 slug: "datos-abiertos-y-tecnologia"
 date: 2026-10-03
-weight: 70
+weight: 700
 tags: ["codigo-abierto", "tecnologia", "datos"]
 summary: "Ideas sobre cómo podría construirse y alojarse la app, y cómo mantenerla como proyecto sin fines de lucro."
 ---

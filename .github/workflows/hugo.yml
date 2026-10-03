@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: latest
+          hugo-version: "0.163.1"   # pinned; bump deliberately after checking the build locally
           extended: true
       - id: pages
         uses: actions/configure-pages@v5

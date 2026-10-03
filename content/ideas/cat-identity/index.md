@@ -1,7 +1,7 @@
 ---
 title: "Cat Identity & Multiple Names"
 date: 2026-10-03
-weight: 20
+weight: 200
 tags: ["identity", "model", "concepts"]
 summary: "How do you model one cat that has three names, two homes and no clear owner?"
 cover:

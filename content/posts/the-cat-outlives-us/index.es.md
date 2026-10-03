@@ -2,6 +2,7 @@
 title: "El gato sobrevive a sus cuidadores"
 slug: "el-gato-sobrevive-a-sus-cuidadores"
 date: 2026-10-03T01:00:00Z
+weight: 2
 tags: ["historia", "principios", "memoria"]
 summary: "Todo lo que sé de estos gatos vive en mi cabeza y en Instagram. Cuando me vaya, se irá conmigo."
 cover:
@@ -17,7 +18,7 @@ Cuando llega alguien nuevo, le cuento esas historias y le comparto los nombres. 
 transmite lo que sabemos: de persona a persona, en la cena, en la puerta de la casa. Pero no
 llega mucho más lejos.
 
-También abrí una cuenta de Instagram, [@mimos_cat_santuary](https://www.instagram.com/mimos_cat_santuary/), para presumir a los gatos: su belleza, su carácter, los
+También abrí una cuenta de Instagram, [@mimos_cat_sanctuary](https://www.instagram.com/mimos_cat_sanctuary/), para presumir a los gatos: su belleza, su carácter, los
 videos chistosos. Instagram es genial para eso. Pero no está construido alrededor **del gato**,
 sino alrededor de mí y de mi cuenta. No permite que el siguiente cuidador herede lo
 que yo sé y lo siga ampliando.

@@ -19,10 +19,14 @@ If you already cloned without submodules: `git submodule update --init --recursi
 
 ```sh
 hugo new content ideas/my-idea.md     # a new idea
-hugo new content posts/my-update.md   # a news update
+hugo new content posts/my-story.md    # a new story
 ```
 
 New files start as `draft: true`; set it to `false` to publish.
+
+The home page lists stories, then ideas, in `weight` order (stories 1–99, ideas 100+), and
+the previous/next links follow the same order. Give a new story the next number after the
+last one, and a new idea a weight in the hundreds.
 
 ## Photos
 

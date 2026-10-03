@@ -13,6 +13,9 @@ minify:
   disableXML: true
   minifyOutput: true
 
+pagination:
+  pagerSize: 20   # keep the home page on one page
+
 outputs:
   home: [HTML, RSS, JSON]   # JSON powers the search page
 
@@ -30,6 +33,10 @@ params:
   ShowRssButtonInSectionTermList: true
   displayFullLangName: true
 
+  # The home page lists stories, then ideas, each in `weight` order (stories 1–99, ideas 100+).
+  # The same order drives the previous/next links at the bottom of each page.
+  mainSections: [posts, ideas]
+
   label:
     iconSVG: >-
       <svg class="logo-cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
@@ -46,7 +53,7 @@ params:
     - name: github
       url: "https://github.com/david-williston/straycats"
     - name: instagram
-      url: "https://www.instagram.com/mimos_cat_santuary/"
+      url: "https://www.instagram.com/mimos_cat_sanctuary/"
     - name: rss
       url: "index.xml"
 
@@ -59,8 +66,8 @@ params:
 
 languages:
   en:
-    languageName: English
-    languageCode: en-us
+    label: English
+    locale: en-us
     weight: 1
     params:
       description: "Thinking out loud about how the world could remember the cats that nobody owns. An open-source, non-profit idea."
@@ -80,7 +87,7 @@ languages:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
-        - {identifier: posts, name: Updates, url: posts/, weight: 30}
+        - {identifier: posts, name: Stories, url: posts/, weight: 30}
         - {identifier: feedback, name: Give Feedback, url: feedback/, weight: 40}
         - identifier: search
           name: Search
@@ -90,8 +97,8 @@ languages:
         - {identifier: tags, name: Tags, url: tags/, weight: 60}
 
   es:
-    languageName: Español
-    languageCode: es-mx
+    label: Español
+    locale: es-mx
     weight: 2
     params:
       description: "Pensando en voz alta sobre cómo el mundo podría recordar a los gatos que no son de nadie. Una idea de código abierto y sin fines de lucro."

@@ -1,7 +1,7 @@
 ---
 title: "Stray, Pet, or Somewhere in Between?"
 date: 2026-10-03
-weight: 50
+weight: 500
 tags: ["ownership", "lost-pets", "identity"]
 summary: "Many 'strays' are someone's pet, and many pets live like strays. Ownership is a spectrum."
 cover:

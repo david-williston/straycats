@@ -1,6 +1,7 @@
 ---
 title: "The cat outlives its caretakers"
 date: 2026-10-03T01:00:00Z
+weight: 2
 tags: ["story", "principles", "memory"]
 summary: "Everything I know about these cats lives in my head and on Instagram. When I leave, it leaves with me."
 cover:
@@ -16,7 +17,7 @@ When someone new arrives, I tell them those stories and share the names. That's 
 knowledge spreads — person to person, over dinner, on the doorstep. But it doesn't spread
 much further than that.
 
-I also started an Instagram account, [@mimos_cat_santuary](https://www.instagram.com/mimos_cat_santuary/), to show off the cats: their beauty, their characters,
+I also started an Instagram account, [@mimos_cat_sanctuary](https://www.instagram.com/mimos_cat_sanctuary/), to show off the cats: their beauty, their characters,
 the funny videos. Instagram is great for that. But it isn't built around **the cat** — it's
 built around me, the account holder. It can't let the next caretaker inherit what I know
 and keep adding to it.

@@ -1,6 +1,7 @@
 ---
 title: "All talk, no code (for now)"
 date: 2026-10-03T03:00:00Z
+weight: 4
 tags: ["process", "philosophy"]
 summary: "Why I'm deliberately not building anything yet."
 cover:
@@ -31,7 +32,7 @@ will need to understand.
 
 I wanted somewhere to share these ideas and get feedback — and I wanted to **own the
 platform completely**, rather than put it on Facebook or another algorithm-driven social
-network. So this is a simple website on its own domain, with short posts and a way to
+network. So this is a simple website of its own, with short posts and a way to
 reply directly.
 
 I'm not pitching an app here. Each post starts with something real — a cat, a name, a

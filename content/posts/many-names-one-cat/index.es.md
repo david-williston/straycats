@@ -2,6 +2,7 @@
 title: "¿Ninja, Naranja o Milo? Muchos nombres, un solo gato"
 slug: "muchos-nombres-un-solo-gato"
 date: 2026-10-03T02:00:00Z
+weight: 3
 tags: ["historia", "identidad"]
 summary: "Algunos de 'mis' gatos claramente comen muy bien en otro lado. No sé dónde, ni cómo los llaman ahí."
 cover:

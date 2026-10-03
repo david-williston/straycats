@@ -2,7 +2,7 @@
 title: "Privacidad y seguridad de los animales"
 slug: "privacidad-y-seguridad"
 date: 2026-10-03
-weight: 60
+weight: 600
 tags: ["privacidad", "seguridad", "principios"]
 summary: "Los datos de ubicación de animales vulnerables pueden usarse mal. ¿Cómo protegerlos?"
 cover:

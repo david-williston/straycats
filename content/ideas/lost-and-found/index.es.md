@@ -2,7 +2,7 @@
 title: "¿Callejero, mascota o algo intermedio?"
 slug: "callejero-o-mascota"
 date: 2026-10-03
-weight: 50
+weight: 500
 tags: ["dueños", "mascotas-perdidas", "identidad"]
 summary: "Muchos 'callejeros' son mascotas de alguien, y muchas mascotas viven como callejeros. Tener dueño es un espectro."
 cover:
