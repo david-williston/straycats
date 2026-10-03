@@ -19,6 +19,20 @@ sitemap:
 Cada actualización lleva como número la fecha en que se publicó (año.mes.día), con `.1`,
 `.2`, etc. para las siguientes actualizaciones del mismo día.
 
+### v2026.10.03.1 · 3 de octubre de 2026
+
+**Escucha la idea**
+
+- **Resumen en audio de cinco minutos.** La página [Acerca de](/about/#escucha-la-idea)
+  ahora tiene un breve resumen en audio de todo el proyecto, y la página de inicio lo
+  enlaza para quien prefiera escuchar en vez de leer.
+- **Análisis de veinte minutos.** [Los elementos básicos](/ideas/the-building-blocks/)
+  ahora termina con un episodio en audio más largo sobre por qué los gatos callejeros son
+  un problema difícil para el software.
+- Los dos están en inglés y los hice con NotebookLM de Google a partir de las páginas de
+  este sitio, así que las voces son generadas por IA. Se reproducen desde YouTube en modo
+  de privacidad mejorada, que no guarda cookies hasta que le das play.
+
 ### v2026.10.03 · 3 de octubre de 2026
 
 **La primera versión**

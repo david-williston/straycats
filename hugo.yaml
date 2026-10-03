@@ -82,7 +82,8 @@ languages:
           unfinished. It starts with the cats I've come to know in Puerto Escondido, Mexico, and
           a simple question: what if every stray cat had an identity, a history, and a network of
           people who care about it? There's no app yet, and no code. Just stories, questions and
-          half-formed ideas — and I'd love to hear yours.
+          half-formed ideas — and I'd love to hear yours. Prefer to listen? There's a
+          [five-minute audio overview](/about/#listen-to-the-idea).
     menus:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
@@ -114,7 +115,8 @@ languages:
           en Puerto Escondido, México, y con una pregunta sencilla: ¿y si cada gato callejero tuviera
           una identidad, una historia y una red de personas que se preocupan por él? Todavía no hay
           app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
-          las tuyas.
+          las tuyas. ¿Prefieres escuchar? Hay un [resumen en audio de cinco
+          minutos](/about/#escucha-la-idea) (en inglés).
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}
@@ -127,6 +129,10 @@ languages:
           weight: 50
           pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
         - {identifier: tags, name: Etiquetas, url: tags/, weight: 60}
+
+privacy:
+  youtube:
+    privacyEnhanced: true   # embed from youtube-nocookie.com: no cookies until the visitor presses play
 
 markup:
   goldmark:

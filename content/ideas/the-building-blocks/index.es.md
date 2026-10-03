@@ -34,6 +34,16 @@ los conceptos que aparecen una y otra vez:
 4. **Nadie tiene que ser el dueño.** Un gato puede simplemente tener una red de personas que se preocupan por él.
 5. **Primero los gatos.** Los perros después (son solo otro tipo de gato).
 
+## Escucha: por qué los gatos callejeros son un problema difícil
+
+Un análisis en audio de 20 minutos sobre por qué gatos como estos rompen las suposiciones
+habituales del software (un dueño, una dirección, un perfil) y cómo podría ser un modelo que
+sí les funcione. **Está en inglés.** Lo hice con NotebookLM de Google a partir de las
+páginas de este sitio, así que las dos voces son generadas por IA. También hay un
+[resumen de cinco minutos](/about/#escucha-la-idea) de toda la idea.
+
+{{< youtube id="s4oRj-N5Gbg" title="Why Street Cats Is a Hard Problem to Solve (análisis en audio, en inglés)" loading="lazy" >}}
+
 ## Preguntas abiertas
 
 - ¿Qué concepto falta, o cuál debería fusionarse con otro?

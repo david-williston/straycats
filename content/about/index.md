@@ -14,6 +14,15 @@ cover:
 **Stray Cats** is an open-source, non-profit idea about how the world could remember the
 cats that nobody owns.
 
+## Listen to the idea
+
+A five-minute audio overview of the project, if you'd rather listen than read. It was made
+with Google's NotebookLM from the pages on this site, so the two voices are AI-generated.
+
+{{< youtube id="RF8ncyIGUEE" title="A Social Network for Stray-ish Cats (audio overview)" loading="lazy" >}}
+
+For the longer, more technical version, see [The Building Blocks](/ideas/the-building-blocks/#listen-why-street-cats-are-a-hard-problem).
+
 ## Dedication
 
 This project is dedicated to [Saibo](/saibo/), my cat of sixteen years, who came with me

@@ -15,6 +15,16 @@ cover:
 **Stray Cats** es una idea de código abierto y sin fines de lucro sobre cómo el mundo podría
 recordar a los gatos que no son de nadie.
 
+## Escucha la idea
+
+Un resumen en audio de cinco minutos sobre el proyecto, por si prefieres escuchar en vez de
+leer. **Está en inglés.** Lo hice con NotebookLM de Google a partir de las páginas de este
+sitio, así que las dos voces son generadas por IA.
+
+{{< youtube id="RF8ncyIGUEE" title="A Social Network for Stray-ish Cats (resumen en audio, en inglés)" loading="lazy" >}}
+
+Para la versión más larga y técnica, ve [Los elementos básicos](/ideas/the-building-blocks/#escucha-por-qué-los-gatos-callejeros-son-un-problema-difícil).
+
 ## Dedicatoria
 
 Este proyecto está dedicado a [Saibo](/saibo/), mi gato durante dieciséis años, que vino

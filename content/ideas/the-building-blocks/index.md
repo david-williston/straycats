@@ -33,6 +33,16 @@ concepts that keep coming up:
 4. **No one has to be the owner.** A cat can simply have a network of people who care about it.
 5. **Cats first.** Dogs come later (they're just a different type of cat).
 
+## Listen: why street cats are a hard problem
+
+A 20-minute audio deep dive into why cats like these break the usual assumptions of
+software (one owner, one address, one profile) and what a model that fits them might look
+like. It was made with Google's NotebookLM from the pages on this site, so the two voices
+are AI-generated. There's also a [five-minute overview](/about/#listen-to-the-idea) of the
+whole idea.
+
+{{< youtube id="s4oRj-N5Gbg" title="Why Street Cats Is a Hard Problem to Solve (audio deep dive)" loading="lazy" >}}
+
 ## Open questions
 
 - Which of these concepts is missing, or should be merged into another?

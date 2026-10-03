@@ -18,6 +18,19 @@ sitemap:
 Each update is numbered by the date it was published (year.month.day), with `.1`, `.2`
 and so on for later updates the same day.
 
+### v2026.10.03.1 · October 3, 2026
+
+**Listen to the idea**
+
+- **Five-minute audio overview.** The [About](/about/#listen-to-the-idea) page now has a
+  short audio overview of the whole project, and the home page points to it for anyone who
+  would rather listen than read.
+- **Twenty-minute deep dive.** [The Building Blocks](/ideas/the-building-blocks/) now ends
+  with a longer audio episode on why street cats are a hard problem for software.
+- Both were made with Google's NotebookLM from the pages on this site, so the voices are
+  AI-generated. They play from YouTube in privacy-enhanced mode, which doesn't set cookies
+  until you press play.
+
 ### v2026.10.03 · October 3, 2026
 
 **The first release**
