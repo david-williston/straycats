@@ -6,7 +6,8 @@ ShowReadingTime: false
 comments: false
 cover:
   image: "cover.jpg"
-  alt: "A tabby-and-white cat lying on its back on a pink towel, looking at the camera"
+  alt: "Mika Ella, a tabby-and-white cat, lying on a pink towel and looking at the camera"
+  caption: "Mika Ella."
 ---
 
 ## In one sentence

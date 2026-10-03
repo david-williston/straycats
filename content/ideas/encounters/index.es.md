@@ -7,7 +7,8 @@ tags: ["encuentros", "conceptos"]
 summary: "Cada vez que alguien conoce a un gato, aporta un poco a su historia compartida."
 cover:
   image: "cover.jpg"
-  alt: "Un gato color crema de perfil, con los ojos cerrados, tomando el sol"
+  alt: "Tenkilo, un gato color crema, de perfil, con los ojos cerrados, tomando el sol"
+  caption: "Tenkilo."
 ---
 
 ## La idea

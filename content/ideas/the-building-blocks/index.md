@@ -6,7 +6,8 @@ tags: ["concepts", "model"]
 summary: "Ten concepts the system will need to understand, long before anyone writes code."
 cover:
   image: "cover.jpg"
-  alt: "An orange-and-white cat lying on the ground, mid-meow"
+  alt: "Ninja, an orange-and-white cat, lying on the ground, mid-meow"
+  caption: "Ninja."
 ---
 
 Before software can represent a world, you have to understand that world. These are the

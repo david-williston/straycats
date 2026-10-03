@@ -7,7 +7,8 @@ ShowReadingTime: false
 comments: false
 cover:
   image: "cover.jpg"
-  alt: "Un gato atigrado con blanco acostado boca arriba sobre una toalla rosa, mirando a la cámara"
+  alt: "Mika Ella, una gata atigrada con blanco, acostada boca arriba sobre una toalla rosa, mirando a la cámara"
+  caption: "Mika Ella."
 ---
 
 ## En una frase

@@ -18,6 +18,19 @@ sitemap:
 Each update is numbered by the date it was published (year.month.day), with `.1`, `.2`
 and so on for later updates the same day.
 
+### v2026.10.03.2 · October 3, 2026
+
+**Meet the cats**
+
+- **The cats have names.** The photos now say who's who: Ciccio, Hootie, Lucia, Mika Ella,
+  Ninja and Tenkilo, plus Mountain Lion, whose real name nobody knows. Their names are in
+  the captions and in the descriptions read out by screen readers.
+- **The right cat in "Ninja, Naranja, or Milo?"** The cat on the cover of that story isn't
+  Ninja after all: it's Mountain Lion. The real Ninja is on [The Building
+  Blocks](/ideas/the-building-blocks/).
+- Some cats appear in more than one photo, so you can spot them across the site. The tabbies
+  on Cat Identity are still unknown.
+
 ### v2026.10.03.1 · October 3, 2026
 
 **Listen to the idea**

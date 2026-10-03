@@ -7,7 +7,8 @@ tags: ["comunidad", "cuidado", "tnr"]
 summary: "Muchas personas cuidan en silencio a los mismos gatos sin coordinarse. ¿Y si pudieran encontrarse?"
 cover:
   image: "cover.jpg"
-  alt: "Un gato naranja con blanco junto a un plato de comida vacío"
+  alt: "Mountain Lion (León de Montaña), un gato naranja con blanco cuyo nombre real nadie conoce, junto a un plato de comida vacío"
+  caption: "Nadie sabe el nombre real de este gato. En la casa le dicen Mountain Lion (León de Montaña)."
 ---
 
 *Contexto: [Los gatos que no son de nadie](/posts/the-cats-nobody-owns/)*

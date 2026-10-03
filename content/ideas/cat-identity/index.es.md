@@ -7,8 +7,8 @@ tags: ["identidad", "modelo", "conceptos"]
 summary: "¿Cómo se representa a un gato que tiene tres nombres, dos casas y ningún dueño claro?"
 cover:
   image: "cover.jpg"
-  alt: "Una gata calicó vista de espaldas, con sus manchas negras, naranjas y blancas bien visibles"
-  caption: "No hay dos calicós con las mismas manchas."
+  alt: "Lucia, una gata calicó, vista de espaldas, con sus manchas negras, naranjas y blancas bien visibles"
+  caption: "Lucia. No hay dos calicós con las mismas manchas."
 ---
 
 *Contexto: [¿Ninja, Naranja o Milo?](/posts/many-names-one-cat/)*
