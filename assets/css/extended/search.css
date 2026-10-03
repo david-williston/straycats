@@ -1,0 +1,25 @@
+/* Search result previews (see assets/js/fastsearch.js) */
+.searchResults li { align-items: flex-start; gap: 12px; }
+.searchResults li .feather { flex-shrink: 0; margin-top: 2px; }
+.search-result { min-width: 0; }
+.search-result-meta {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--secondary);
+  margin-bottom: 2px;
+}
+.search-result-title { font-size: 18px; line-height: 1.4; }
+.search-result-preview {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--secondary);
+  overflow-wrap: anywhere;
+}
+.searchResults mark {
+  background: color-mix(in srgb, var(--primary) 18%, transparent);
+  color: var(--primary);
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 18%, transparent);
+}

@@ -38,6 +38,8 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/david-williston/straycats"
+    - name: instagram
+      url: "https://www.instagram.com/mimos_cat_santuary/"
     - name: rss
       url: "index.xml"
 
@@ -71,7 +73,11 @@ languages:
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Updates, url: posts/, weight: 30}
         - {identifier: feedback, name: Give Feedback, url: feedback/, weight: 40}
-        - {identifier: search, name: Search, url: search/, weight: 50}
+        - identifier: search
+          name: Search
+          url: search/
+          weight: 50
+          pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
         - {identifier: tags, name: Tags, url: tags/, weight: 60}
 
   es:
@@ -97,7 +103,11 @@ languages:
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Historias, url: posts/, weight: 30}
         - {identifier: feedback, name: Comparte tu opinión, url: comparte-tu-opinion/, weight: 40}
-        - {identifier: search, name: Buscar, url: search/, weight: 50}
+        - identifier: search
+          name: Buscar
+          url: search/
+          weight: 50
+          pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
         - {identifier: tags, name: Etiquetas, url: tags/, weight: 60}
 
 markup:

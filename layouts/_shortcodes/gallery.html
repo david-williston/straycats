@@ -1,0 +1,15 @@
+{{- /* A grid of portrait (3:4) thumbnails from the page bundle, each linking to the full photo.
+  Usage: {{< gallery images="a.jpg b.jpg c.jpg" [anchor="Top"] alt="…" caption="…" >}} */ -}}
+<figure class="gallery">
+  <div class="gallery-grid">
+  {{- range split (.Get "images") " " }}
+    {{- with $.Page.Resources.Get . }}
+      {{- $thumb := .Fill (printf "600x800 %s webp q80" ($.Get "anchor" | default "smart")) }}
+      <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
+    {{- else }}
+      {{- errorf "gallery shortcode: %q not found in %s" . $.Page.File.Path }}
+    {{- end }}
+  {{- end }}
+  </div>
+  {{- with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

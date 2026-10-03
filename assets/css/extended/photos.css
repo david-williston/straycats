@@ -1,0 +1,41 @@
+/* Covers: a consistent landscape frame in lists and on posts */
+.entry-cover img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.post-entry .entry-cover img { aspect-ratio: 16 / 9; }
+
+/* Inline photos (layouts/_shortcodes/photo.html): portrait phone shots shouldn't fill the screen */
+.post-content .photo { margin: 28px 0; text-align: center; }
+.post-content .photo img {
+  display: inline-block;
+  max-height: 560px;
+  width: auto;
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+/* Galleries (layouts/_shortcodes/gallery.html) */
+.post-content .gallery { margin: 28px 0; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+.gallery-grid a { box-shadow: none; }
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.post-content .photo figcaption,
+.post-content .gallery figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--secondary);
+  text-align: center;
+}

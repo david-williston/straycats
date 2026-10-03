@@ -24,6 +24,27 @@ hugo new content posts/my-update.md   # a news update
 
 New files start as `draft: true`; set it to `false` to publish.
 
+## Photos
+
+Pages with photos are *page bundles*: a folder holding `index.md`, `index.es.md` and the
+images, shared by both languages.
+
+```
+content/posts/the-cats-nobody-owns/
+  index.md        index.es.md
+  cover.jpg       # landscape (3:2) cover, set in front matter under `cover:`
+  vet-visit.jpg   # inline photo
+```
+
+In the text:
+
+```
+{{</* photo src="vet-visit.jpg" alt="…" caption="…" */>}}
+{{</* gallery images="a.jpg b.jpg c.jpg" alt="…" caption="…" */>}}   # add anchor="Top" if heads get cropped
+```
+
+Hugo resizes and converts images at build time. Always write `alt` text (in each language).
+
 ## Languages
 
 The site is in **English** (`/`) and **Spanish** (`/es/`). Each page has a translation

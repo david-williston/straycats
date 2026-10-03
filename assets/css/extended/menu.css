@@ -1,0 +1,6 @@
+/* Icons placed before menu labels via `pre:` in hugo.yaml */
+.menu-icon {
+  display: inline-block;
+  vertical-align: -2px;
+  margin-inline-end: 4px;
+}

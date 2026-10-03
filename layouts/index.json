@@ -1,0 +1,12 @@
+{{- /* Search index (overrides PaperMod): adds plain-text summary, section and date for result previews. */ -}}
+{{- $index := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Params.searchHidden) (ne .Layout `archives`) (ne .Layout `search`) }}
+    {{- $section := "" -}}
+    {{- with .CurrentSection }}{{ if not .IsHome }}{{ $section = .Title }}{{ end }}{{ end -}}
+    {{- $date := "" -}}
+    {{- if and (eq .Section "posts") (not .Date.IsZero) }}{{ $date = .Date | time.Format ":date_medium" }}{{ end -}}
+    {{- $index = $index | append (dict "title" (.Title | htmlUnescape) "content" (.Plain | htmlUnescape) "permalink" .Permalink "summary" (.Summary | plainify | htmlUnescape) "section" $section "date" $date) -}}
+  {{- end }}
+{{- end -}}
+{{- $index | jsonify -}}

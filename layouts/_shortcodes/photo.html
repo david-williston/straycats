@@ -1,0 +1,11 @@
+{{- /* A photo from the page bundle with an optional caption.
+  Usage: {{< photo src="vet-visit.jpg" alt="…" caption="…" >}} */ -}}
+{{- with .Page.Resources.Get (.Get "src") -}}
+{{- $img := .Resize "900x webp q80" -}}
+<figure class="photo">
+  <a href="{{ .RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
+  {{- with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
+{{- errorf "photo shortcode: %q not found in %s" (.Get "src") .Page.File.Path -}}
+{{- end -}}
