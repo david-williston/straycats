@@ -2,9 +2,11 @@
 // release notes page (content/release-notes.md, the git-history shortcode).
 // Run automatically by `npm run build` and `npm run dev`.
 //
-// Each commit is assigned to the release it first shipped in: the nearest
-// calendar-version tag (vYYYY.MM.DD or vYYYY.MM.DD.N) at or after it.
-// Commits after the newest tag have `release: null` (not yet released).
+// Each commit is assigned to the release it first shipped in: the oldest
+// calendar-version tag (vYYYY.MM.DD or vYYYY.MM.DD.N) that contains it. Releases
+// are tagged on merge commits (one per pull request), so containment is worked out
+// from the commit graph rather than from the order of the log. Merge commits
+// themselves are left out of the list. Commits in no release have `release: null`.
 
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -18,8 +20,8 @@ const git = (...args) => execFileSync('git', args, { encoding: 'utf8' });
 let log = '';
 try {
     log = git(
-        'log', '--no-merges', '--decorate-refs=refs/tags/',
-        `--format=%H${FIELD}%h${FIELD}%aI${FIELD}%D${FIELD}%s${FIELD}%b${RECORD}`
+        'log', '--no-merges',
+        `--format=%H${FIELD}%h${FIELD}%aI${FIELD}%s${FIELD}%b${RECORD}`
     );
 } catch (error) {
     console.warn(`git-history: could not read git log (${error.message.split('\n')[0]}); writing an empty history`);
@@ -50,20 +52,22 @@ try {
     // No tags yet.
 }
 
-let release = null;
+// Walk the releases oldest first; each claims the commits it contains that no earlier release did.
+const releaseOf = {};
+const released = [];
+for (const tag of Object.keys(tagDates).sort(compareVersions)) {
+    const range = [`${tag}^{commit}`, ...released.map((t) => `^${t}^{commit}`)];
+    for (const hash of git('rev-list', ...range).split('\n').filter(Boolean)) releaseOf[hash] = tag;
+    released.push(tag);
+}
+
 const commits = log
     .split(RECORD)
     .map((entry) => entry.trim())
     .filter(Boolean)
     .map((entry) => {
-        const [hash, short, date, refs, subject, body = ''] = entry.split(FIELD);
-        const tags = refs
-            .split(',')
-            .map((ref) => ref.trim().replace(/^tag: /, ''))
-            .filter((tag) => VERSION_TAG.test(tag))
-            .sort(compareVersions);
-        // Log is newest first, so a tag applies to its commit and everything older, until the next tag.
-        if (tags.length) release = tags[0];
+        const [hash, short, date, subject, body = ''] = entry.split(FIELD);
+        const release = releaseOf[hash] ?? null;
         return {
             hash,
             short,
@@ -75,11 +79,16 @@ const commits = log
         };
     });
 
-// Current site version: the release tag on HEAD, or the latest release plus
+// Group by release, newest first (unreleased commits on top), keeping date order within each.
+// A branch commit can be older than a release it wasn't part of, so log order alone would split groups.
+const rank = (c) => (c.release === null ? Infinity : released.indexOf(c.release));
+commits.sort((a, b) => rank(b) - rank(a));
+
+// Current site version: the newest release tag on HEAD, or the latest release plus
 // "+dev" when building unreleased changes (npm run dev, preview deploys).
-const latest = commits.find((c) => c.release)?.release ?? null;
-const headReleased = commits.length > 0 && commits[0].release !== null &&
-    git('tag', '--points-at', 'HEAD').split('\n').includes(commits[0].release);
+const headTags = released.length ? git('tag', '--points-at', 'HEAD').split('\n').filter((t) => VERSION_TAG.test(t)) : [];
+const headReleased = headTags.length > 0;
+const latest = headReleased ? headTags.sort(compareVersions).at(-1) : released.at(-1) ?? null;
 const siteVersion = {
     version: latest ? (headReleased ? latest : `${latest}+dev`) : 'unreleased',
     released: headReleased

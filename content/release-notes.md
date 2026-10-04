@@ -18,6 +18,13 @@ sitemap:
 Each update is numbered by the date it was published (year.month.day), with `.1`, `.2`
 and so on for later updates the same day.
 
+### v2026.10.04 · October 4, 2026
+
+**A fix for the version number**
+
+- The version at the bottom of each page showed the previous release, and the change
+  history below listed the latest changes as not yet released. Both are correct again.
+
 ### v2026.10.03.2 · October 3, 2026
 
 **Meet the cats**
