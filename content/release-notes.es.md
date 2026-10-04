@@ -19,7 +19,7 @@ sitemap:
 Cada actualización lleva como número la fecha en que se publicó (año.mes.día), con `.1`,
 `.2`, etc. para las siguientes actualizaciones del mismo día.
 
-### v2026.10.03.3 · 3 de octubre de 2026
+### v2026.10.04 · 4 de octubre de 2026
 
 **Una corrección del número de versión**
 

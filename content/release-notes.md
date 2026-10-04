@@ -18,7 +18,7 @@ sitemap:
 Each update is numbered by the date it was published (year.month.day), with `.1`, `.2`
 and so on for later updates the same day.
 
-### v2026.10.03.3 · October 3, 2026
+### v2026.10.04 · October 4, 2026
 
 **A fix for the version number**
 
