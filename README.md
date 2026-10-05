@@ -117,9 +117,15 @@ Releases use calendar versions, tagged in git: `vYYYY.MM.DD` for the first relea
 4. Pushes the tag. `.github/workflows/hugo.yml` then builds and deploys it to GitHub Pages
    (follow it with `gh run watch`). If the build or push fails, the new tag is deleted.
 
-Before releasing, add a `### vYYYY.MM.DD · Month D, YYYY` section to the hand-written notes
-in `content/release-notes.md` and `content/release-notes.es.md`. The change history below
-the notes is built from the commit messages and grouped by release automatically
+Before releasing, add a section at the top of the **What's New** page for readers
+(`content/whats-new.md` and `content/whats-new.es.md`): a `## Month D, YYYY: Title` heading,
+a `*Version vYYYY.MM.DD*` line, and bullets starting with **New:** or **Updated:** that link
+to the pages. On each page you changed meaningfully, set `updated: YYYY-MM-DD` in the front
+matter (both languages) so it shows "Updated …" under its title; pages dated after
+`params.launched` show a "New" badge for 14 days automatically.
+
+The technical **Change history** page (`content/change-history.md`, linked from What's New)
+is built from the commit messages and grouped by release automatically
 (`scripts/git-history.mjs`). The footer shows the current version, with `+dev` on builds
 that include unreleased changes.
 

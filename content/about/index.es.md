@@ -2,6 +2,7 @@
 title: "Acerca de"
 slug: "acerca-de"
 summary: "Qué es Stray Cats, de dónde viene y qué no es (todavía)."
+updated: 2026-10-04
 ShowToc: true
 ShowReadingTime: false
 comments: false

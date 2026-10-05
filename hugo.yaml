@@ -22,6 +22,7 @@ outputs:
 params:
   env: production
   author: David Williston
+  launched: 2026-10-03     # pages dated after this get a "New" badge for 14 days (post_meta.html)
   defaultTheme: auto
   ShowReadingTime: true
   ShowShareButtons: false
@@ -74,7 +75,7 @@ languages:
       editPost:
         Text: "Suggest changes"
       footer:
-        text: "Made with care for the cats nobody owns. Dedicated to [Saibo](/saibo/), 2010–2026. · [Release notes](/release-notes/) {{< site-version >}}"
+        text: "Made with care for the cats nobody owns. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) {{< site-version >}}"
       homeInfoParams:
         Title: "How could the world remember the cats nobody owns? 🐈"
         Content: >
@@ -83,12 +84,14 @@ languages:
           a simple question: what if every stray cat had an identity, a history, and a network of
           people who care about it, and meeting one took nothing more than a photo? There's no app yet, and no code. Just stories, questions and
           half-formed ideas — and I'd love to hear yours. Prefer to listen? There's a
-          [five-minute audio overview](/about/#listen-to-the-idea).
+          [five-minute audio overview](/about/#listen-to-the-idea). Been here before? See
+          [what's new](/whats-new/).
     menus:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Stories, url: posts/, weight: 30}
+        - {identifier: whatsnew, name: "What's New", url: whats-new/, weight: 35}
         - {identifier: feedback, name: Give Feedback, url: feedback/, weight: 40}
         - identifier: search
           name: Search
@@ -106,7 +109,7 @@ languages:
       editPost:
         Text: "Sugerir cambios"
       footer:
-        text: "Hecho con cariño para los gatos que no son de nadie. Dedicado a [Saibo](/saibo/), 2010–2026. · [Notas de versión](/release-notes/) {{< site-version >}}"
+        text: "Hecho con cariño para los gatos que no son de nadie. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) {{< site-version >}}"
       homeInfoParams:
         Title: "¿Cómo podría el mundo recordar a los gatos que no son de nadie? 🐈"
         Content: >
@@ -117,12 +120,13 @@ languages:
           costara más que una foto? Todavía no hay
           app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
           las tuyas. ¿Prefieres escuchar? Hay un [resumen en audio de cinco
-          minutos](/about/#escucha-la-idea) (en inglés).
+          minutos](/about/#escucha-la-idea) (en inglés). ¿Ya habías venido? Mira las [novedades](/whats-new/).
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Historias, url: posts/, weight: 30}
+        - {identifier: whatsnew, name: Novedades, url: novedades/, weight: 35}
         - {identifier: feedback, name: Comparte tu opinión, url: comparte-tu-opinion/, weight: 40}
         - identifier: search
           name: Buscar

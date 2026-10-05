@@ -1,6 +1,7 @@
 ---
 title: "The Care Network"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 400
 tags: ["community", "care", "tnr"]
 summary: "Many people quietly care for the same cats with no coordination. What if they could find each other?"

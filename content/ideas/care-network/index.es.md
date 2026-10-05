@@ -2,6 +2,7 @@
 title: "La red de cuidado"
 slug: "la-red-de-cuidado"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 400
 tags: ["comunidad", "cuidado", "tnr"]
 summary: "Muchas personas cuidan en silencio a los mismos gatos sin coordinarse. ¿Y si pudieran encontrarse?"

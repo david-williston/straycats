@@ -1,6 +1,7 @@
 ---
 title: "About"
 summary: "What Stray Cats is, where it came from, and what it isn't (yet)."
+updated: 2026-10-04
 ShowToc: true
 ShowReadingTime: false
 comments: false

@@ -1,5 +1,5 @@
 // Writes the git commit history to data/git_history.json for the
-// release notes page (content/release-notes.md, the git-history shortcode).
+// Change history page (content/change-history.md, the git-history shortcode).
 // Run automatically by `npm run build` and `npm run dev`.
 //
 // Each commit is assigned to the release it first shipped in: the oldest

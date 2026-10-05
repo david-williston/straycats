@@ -2,6 +2,7 @@
 title: "La identidad del gato y sus muchos nombres"
 slug: "identidad-del-gato"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 200
 tags: ["identidad", "modelo", "conceptos"]
 summary: "¿Cómo se representa a un gato que tiene tres nombres, dos casas y ningún dueño claro?"

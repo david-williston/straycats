@@ -28,7 +28,7 @@ jobs:
           hugo-version: "0.163.1"   # pinned; bump deliberately (also in pr-build.yml) after checking the build locally
           extended: true
       # actions/checkout stores the pushed tag as a lightweight tag; refetch the annotated tags
-      # so the release notes show when each release was made.
+      # so the change history shows when each release was made.
       - run: git fetch --force --tags origin
       - run: node scripts/git-history.mjs
       - id: pages

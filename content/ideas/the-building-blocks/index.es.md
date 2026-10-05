@@ -2,6 +2,7 @@
 title: "Los elementos básicos"
 slug: "los-elementos-basicos"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 100
 tags: ["conceptos", "modelo"]
 summary: "Doce conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."

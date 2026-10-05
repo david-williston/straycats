@@ -1,6 +1,7 @@
 ---
 title: "Encounters: Every Meeting Adds to the Story"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 300
 tags: ["encounters", "concepts"]
 summary: "Each time someone meets a cat, they add a little to its shared history."
