@@ -41,7 +41,7 @@ suggest it does. Your list of cats you've met is a list of acquaintances, not po
 
 That list can still help. When someone is searching for a lost cat, people who've met a
 similar cat nearby recently could be asked: *"Have you seen this cat?"* The answer might be
-in someone's photo from yesterday.
+in someone's photo from yesterday. (More in [When a Cat Goes Missing](/ideas/when-a-cat-goes-missing/).)
 
 ## Open questions
 

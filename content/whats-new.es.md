@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de octubre de 2026: Cuando un gato desaparece
+
+*Versión v2026.10.05.1*
+
+- **Idea nueva:** [Cuando un gato desaparece](/ideas/when-a-cat-goes-missing/), sugerida por
+  Michael, un lector del boletín: llegar a quienes han conocido a un gato desaparecido, notar
+  cuando un callejero deja de aparecer, recordar a un gato que no regresa, que los avisos sean
+  seguros, y si Stray Cats debería ser algún día para todas las mascotas.
+
 ## 5 de octubre de 2026: De la primera conversación
 
 *Versión v2026.10.05.1*
