@@ -88,6 +88,8 @@ languages:
           half-formed ideas — and I'd love to hear yours. Prefer to listen? There's a
           [90-second audio introduction](/about/#listen-to-the-idea). Been here before? See
           [what's new](/whats-new/).
+
+          {{< talk-invite >}}
     menus:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
@@ -100,7 +102,7 @@ languages:
           url: search/
           weight: 50
           pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
-        - {identifier: tags, name: Tags, url: tags/, weight: 60}
+        - {identifier: talk, name: "Let's Talk", url: talk/, weight: 45}
 
   es:
     label: Español
@@ -123,6 +125,8 @@ languages:
           app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
           las tuyas. ¿Prefieres escuchar? Hay una [introducción en audio de 90
           segundos](/about/#escucha-la-idea). ¿Ya habías venido? Mira las [novedades](/whats-new/).
+
+          {{< talk-invite >}}
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}
@@ -135,7 +139,7 @@ languages:
           url: search/
           weight: 50
           pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
-        - {identifier: tags, name: Etiquetas, url: tags/, weight: 60}
+        - {identifier: talk, name: Hablemos, url: hablemos/, weight: 45}
 
 privacy:
   youtube:

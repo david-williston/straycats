@@ -9,6 +9,7 @@
   </svg>
   <h2>{{ i18n "respond_title" }}</h2>
   <p>{{ i18n "respond_text" }}</p>
+  <div class="respond-actions">
   {{- if $email }}
   {{- /* urlquery encodes spaces as "+", which some mail apps show literally */}}
   {{- $subject := printf (i18n "respond_subject") .Title | urlquery }}
@@ -17,6 +18,7 @@
   <p><em>{{ i18n "respond_soon" }} <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ end }}">{{ i18n "respond_feedback" }}</a>.</em></p>
   {{- end }}
   {{- with site.GetPage "/talk" }}
-  <p class="respond-chat">{{ i18n "respond_chat" }} <a href="{{ .RelPermalink }}">{{ i18n "respond_chat_link" }}</a>.</p>
+  <a class="respond-button respond-button-alt" href="{{ .RelPermalink }}">{{ i18n "respond_chat_button" }}</a>
   {{- end }}
+  </div>
 </section>
