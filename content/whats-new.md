@@ -13,7 +13,7 @@ also say **New** or **Updated** under their title.
 
 ## October 5, 2026: When a cat goes missing
 
-*Version v2026.10.05.2*
+*Version v2026.10.05.1*
 
 - **New idea:** [When a Cat Goes Missing](/ideas/when-a-cat-goes-missing/), suggested by
   Michael, a newsletter reader: reaching the people who've met a missing cat, noticing when a

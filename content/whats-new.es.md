@@ -14,7 +14,7 @@ páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su t
 
 ## 5 de octubre de 2026: Cuando un gato desaparece
 
-*Versión v2026.10.05.2*
+*Versión v2026.10.05.1*
 
 - **Idea nueva:** [Cuando un gato desaparece](/ideas/when-a-cat-goes-missing/), sugerida por
   Michael, un lector del boletín: llegar a quienes han conocido a un gato desaparecido, notar
