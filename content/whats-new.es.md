@@ -12,6 +12,16 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 4 de octubre de 2026: Escucha en 90 segundos
+
+*Versión v2026.10.04.4*
+
+- **Nuevo:** una introducción en audio de 90 segundos en la página
+  [Acerca de](/about/#escucha-la-idea), *Un historial colectivo para gatos callejeros*, en
+  español, con botones para escucharla a velocidad normal o a 1.5×. Reemplaza el resumen
+  anterior de cinco minutos, que estaba en inglés.
+- **Nuevo:** el sitio en inglés también tiene su propia introducción, en inglés.
+
 ## 4 de octubre de 2026: Una página de novedades
 
 *Versión v2026.10.04.2*
