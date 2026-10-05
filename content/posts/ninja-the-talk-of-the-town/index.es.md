@@ -15,8 +15,8 @@ Cuando llegué a la casa por primera vez, Ninja estaba en los huesos. Un gatito 
 pelo en partes, lleno de heridas, peleando con los otros gatos cada noche: se le oía gritar.
 No dejaba que me acercara. Claramente hacía tiempo que no conocía a humanos amables.
 
-El dueño de la casa quiere a los gatos. Pero no todos los que quieren a los gatos pueden darle
-de comer a cada gato que aparece, y algunos terminan siendo rechazados. Ninja era uno de ellos.
+No todos los que quieren a los gatos pueden darle de comer a cada gato que aparece, y algunos
+terminan quedándose sin comer. Ninja era uno de ellos.
 
 Así que empecé a darle de comer en las noches. Pronto empezó a venir a mi puerta, luego a
 dormir en mi puerta, porque sabía que yo estaba ahí. Poco a poco, su miedo hacia mí se fue
