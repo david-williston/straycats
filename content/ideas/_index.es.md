@@ -9,3 +9,5 @@ gato](/ideas/meeting-a-cat/) podría ser la puerta de entrada fácil, y cómo to
 siendo por el bien del gato.
 **No son requisitos ni un plan de producto**, solo lo que pienso ahora, escrito para que
 puedas encontrarle los huecos. [Dime qué se me escapa →](/feedback/)
+
+{{< talk-invite >}}

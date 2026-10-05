@@ -2,7 +2,7 @@
 title: "Comparte tu opinión"
 slug: "comparte-tu-opinion"
 summary: "Dime qué se me está escapando."
-updated: 2026-10-04
+updated: 2026-10-05
 ShowToc: false
 ShowReadingTime: false
 comments: false
@@ -28,6 +28,12 @@ idea mejora.
 - ¿Qué haría que te detuvieras a registrar a un gato que conoces?
 - ¿Qué nunca debería mostrar la tarjeta de un gato?
 - ¿Te gustaría ayudar algún día con historias, diseño, código o experiencia en rescate?
+
+## Hablemos
+
+Las ideas y las historias salen mejor conversando. Agenda una conversación relajada de 30
+minutos sobre los gatos de tu vida y tus ideas: [Hablemos](/talk/). Las conversaciones son en
+inglés.
 
 ## Cómo contactarme
 

@@ -8,3 +8,5 @@ cat could have one identity and a growing history, how [meeting a cat](/ideas/me
 could be the easy way in, and how all of it stays for the cat's benefit.
 They're **not requirements or a product plan**, just my current thinking, written down so
 you can poke holes in it. [Tell me what I'm missing →](/feedback/)
+
+{{< talk-invite >}}

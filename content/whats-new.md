@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 5, 2026: Let's talk
+
+*Version v2026.10.05*
+
+- **New:** [Let's talk](/talk/). Book a relaxed 30-minute chat about the cats in your
+  life and your ideas for Stray Cats. The page explains how the conversation is transcribed
+  and how what you say is (and isn't) used.
+- **Updated:** you'll find the invitation in the menu at the top of every page, on the home
+  page, on the [Ideas](/ideas/) page and [Give Feedback](/feedback/), and in the reply box at
+  the end of every story and idea. (Tags moved out of the menu; they're still on each page.)
+
 ## October 4, 2026: The whole idea, in depth
 
 *Version v2026.10.04.5*

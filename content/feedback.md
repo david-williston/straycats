@@ -1,7 +1,7 @@
 ---
 title: "Give Feedback"
 summary: "Tell me what I'm missing."
-updated: 2026-10-04
+updated: 2026-10-05
 ShowToc: false
 ShowReadingTime: false
 comments: false
@@ -27,6 +27,11 @@ better.
 - What would make you stop and record a cat you meet?
 - What should a cat's card never show?
 - Would you like to help one day: stories, design, code, rescue experience?
+
+## Let's talk
+
+Ideas and stories come out best in conversation. Book a relaxed 30-minute chat about
+the cats in your life and your ideas: [Let's talk](/talk/).
 
 ## How to reach me
 

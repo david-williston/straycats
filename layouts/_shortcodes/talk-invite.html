@@ -1,0 +1,8 @@
+{{- /* An invitation to the Let's talk page (content/talk.md), with a button. Text lives in i18n/.
+  Usage: {{< talk-invite >}} */ -}}
+{{- with site.GetPage "/talk" -}}
+<div class="talk-invite">
+  <p class="talk-invite-text"><strong>{{ i18n "invite_title" }}</strong> {{ i18n "invite_text" }}</p>
+  <a class="respond-button" href="{{ .RelPermalink }}">{{ i18n "invite_button" }}</a>
+</div>
+{{- end -}}

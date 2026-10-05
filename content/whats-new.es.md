@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de octubre de 2026: Hablemos
+
+*Versión v2026.10.05*
+
+- **Nuevo:** [Hablemos](/talk/). Agenda una conversación relajada de 30 minutos sobre los gatos
+  de tu vida y tus ideas para Stray Cats. Las conversaciones son en inglés. La página explica
+  cómo se transcribe la conversación y cómo se usa (y cómo no) lo que dices.
+- **Actualizado:** encontrarás la invitación en el menú de arriba de cada página, en la página
+  de inicio, en [Ideas](/ideas/) y en [Comparte tu opinión](/feedback/), y en el recuadro al
+  final de cada historia e idea. (Las etiquetas salieron del menú; siguen en cada página.)
+
 ## 4 de octubre de 2026: Toda la idea, a fondo
 
 *Versión v2026.10.04.5*
