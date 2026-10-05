@@ -1,0 +1,39 @@
+{{- /* The whole site's text in one plain page, for use as a single NotebookLM source
+  (content/notebooklm.md and .es.md, layout: notebooklm). No menus, styles or scripts:
+  just each page's title, address, summary and text, in reading order. See README. */ -}}
+<!doctype html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{{ .Title }} | {{ site.Title }}</title>
+</head>
+<body>
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{- $pages := slice }}
+{{- with site.GetPage "/about" }}{{ $pages = $pages | append . }}{{ end }}
+{{- range (where site.RegularPages "Section" "posts").ByWeight }}{{ $pages = $pages | append . }}{{ end }}
+{{- range (where site.RegularPages "Section" "ideas").ByWeight }}{{ $pages = $pages | append . }}{{ end }}
+{{- range slice "/feedback" "/saibo" }}{{ with site.GetPage . }}{{ $pages = $pages | append . }}{{ end }}{{ end }}
+
+<h2>{{ i18n "notebooklm_contents" }}</h2>
+<ol>
+{{- range $pages }}
+  <li>{{ .Title }}</li>
+{{- end }}
+</ol>
+{{- range $pages }}
+
+<hr>
+<article>
+<h2>{{ .Title }}</h2>
+<p>{{ i18n "notebooklm_address" }}: {{ .Permalink }}</p>
+{{- with .Summary }}<p><em>{{ . | plainify }}</em></p>{{ end }}
+{{- with .Params.cover.caption }}<p>{{ i18n "notebooklm_cover" }}: {{ . }}</p>{{ end }}
+{{ .Content }}
+</article>
+{{- end }}
+</body>
+</html>

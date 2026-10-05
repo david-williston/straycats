@@ -89,6 +89,50 @@ Menus and the home page intro are per language in `hugo.yaml`; the "Respond to t
 box text lives in `i18n/`. In content, link to pages by their English path
 (e.g. `[feedback](/feedback/)`): links resolve to the right language automatically.
 
+### Audio overviews (NotebookLM)
+
+The site publishes its whole text as one hidden page per language, made for NotebookLM:
+
+- English: <https://david-williston.github.io/straycats/notebooklm/>
+- Spanish: <https://david-williston.github.io/straycats/es/notebooklm/>
+
+Each holds every story, idea and the About, Feedback and Saibo pages, with their titles and
+addresses, in reading order (`layouts/notebooklm.html`). They update with every release.
+
+**Set up once** (one notebook per language):
+
+1. In NotebookLM, create a notebook ("Stray Cats" and "Stray Cats en español").
+2. Add a source → **Website** → paste the page address above.
+3. For the Spanish notebook, set NotebookLM's output language to Spanish, so the audio is in
+   Spanish.
+
+**After each release**, delete the website source and add the same address again: NotebookLM
+doesn't refresh website sources by itself.
+
+**To make an overview of one page**, open **Audio Overview → Customize** and paste a prompt
+like this, changing the title (titles are listed at the top of the source page):
+
+> Focus only on the page titled "Meeting a Cat". Explain it for someone who has never heard
+> of Stray Cats, in about five minutes. Mention that Stray Cats is an open-source, non-profit
+> idea at the concept stage, with no app yet. Use the cats' real names from the page.
+
+In Spanish:
+
+> Concéntrate solo en la página titulada "Conocer a un gato". Explícala para alguien que
+> nunca ha oído hablar de Stray Cats, en unos cinco minutos. Menciona que Stray Cats es una
+> idea de código abierto y sin fines de lucro, todavía en etapa de concepto, sin app. Usa los
+> nombres reales de los gatos que aparecen en la página.
+
+For an overview of the whole project, leave the focus line out.
+
+**Then:**
+
+1. Download the audio, make the video, and upload it to YouTube.
+2. Embed it on its page, in the matching language, with a line saying it was made with
+   NotebookLM and the voices are AI-generated (see the About page for the pattern):
+   `{{</* youtube id="VIDEO_ID" title="…" loading="lazy" */>}}`
+3. Set `updated:` on that page and add the overview to What's New (both languages).
+
 ### Making changes
 
 Every change goes through a pull request; `main` is protected. Cut a short-lived branch from
