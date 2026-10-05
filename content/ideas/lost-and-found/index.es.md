@@ -43,7 +43,7 @@ conocidos, no de pertenencias.
 
 Aun así, esa lista puede ayudar. Cuando alguien busca a un gato perdido, se les podría
 preguntar a quienes conocieron a un gato parecido cerca hace poco: *"¿Has visto a este gato?"*
-La respuesta podría estar en la foto que alguien tomó ayer.
+La respuesta podría estar en la foto que alguien tomó ayer. (Más en [Cuando un gato desaparece](/ideas/when-a-cat-goes-missing/).)
 
 ## Preguntas abiertas
 
