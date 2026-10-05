@@ -151,7 +151,7 @@ Estos datos tienen que quedar claros:
 - Stray Cats es una idea, no una app. Es de código abierto, sin fines de lucro y está en etapa de concepto: no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
-- Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia y Mika Ella son gatas; a los demás llámalos por su nombre o "el gato".
+- Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
 
 Evita:
 - No compares Stray Cats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.
@@ -203,7 +203,7 @@ Estos datos tienen que quedar claros:
 - Stray Cats es una idea, no una app. Es de código abierto, sin fines de lucro y está en etapa de concepto: no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
-- Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia y Mika Ella son gatas; a los demás llámalos por su nombre o "el gato".
+- Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
 
 Evita:
 - No compares Stray Cats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.

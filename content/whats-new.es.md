@@ -12,6 +12,28 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de octubre de 2026: De la primera conversación
+
+*Versión v2026.10.05.1*
+
+La primera conversación de [Hablemos](/talk/), con Les, trajo historias e ideas nuevas.
+
+- **Historia nueva:** [Ninja, el gato del que todos hablan](/posts/ninja-the-talk-of-the-town/).
+  Cómo un gato que estaba en los huesos se volvió el favorito del barrio, y por qué querer a
+  los gatos no es lo mismo que poder darles de comer a todos.
+- **Idea nueva:** [Educación y conciencia](/ideas/education-and-awareness/): esterilización,
+  envenenamiento (accidental e intencional), gatos negros, y lo que pasa cuando se deja de
+  darles de comer.
+- **Gato nuevo:** Carlitos, un atigrado gris desconfiado, en las
+  [tarjetas de los gatos](/ideas/meeting-a-cat/). La tarjeta de Tenkilo ahora explica su
+  nombre: casi diez kilos.
+- **Actualizado:** [La red de cuidado](/ideas/care-network/) (querer no es lo mismo que poder),
+  [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/) (envenenamiento),
+  [¿Callejero, mascota o algo intermedio?](/ideas/lost-and-found/) (muchas casas, muchos
+  reclamos), [Encuentros](/ideas/encounters/) (de la cuna a la tumba) y
+  [Los elementos básicos](/ideas/the-building-blocks/).
+- **Corregido:** en español, Ciccio ahora es "gata": se llama Ciccio, pero es hembra.
+
 ## 5 de octubre de 2026: Hablemos
 
 *Versión v2026.10.05*

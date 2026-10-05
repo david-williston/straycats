@@ -2,7 +2,7 @@
 title: "Encuentros: cada encuentro suma a la historia"
 slug: "encuentros"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 300
 tags: ["encuentros", "conceptos"]
 summary: "Cada vez que alguien conoce a un gato, aporta un poco a su historia compartida."
@@ -36,6 +36,13 @@ empezar. Todo lo demás es opcional y se puede agregar con uno o dos toques:
 
 El lugar se registra a nivel de colonia o barrio, nunca el punto exacto (ve
 [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/)).
+
+## De la cuna a la tumba
+
+Algunos encuentros son momentos clave: el nacimiento de un gato o su primera camada, un
+microchip, la esterilización, una herida, una recuperación. Y un día, su muerte. El registro de
+un gato debería poder guardarlo todo, incluido un obituario, para que quienes lo conocieron
+puedan recordarlo juntos.
 
 ## Muchos encuentros pequeños, una sola historia
 

@@ -7,7 +7,7 @@ tags: ["proceso", "filosofia"]
 summary: "Por qué, a propósito, todavía no estoy construyendo nada."
 cover:
   image: "cover.jpg"
-  alt: "Mika Ella, una gata atigrada con blanco, y Ciccio, un gato negro, acurrucados juntos en un sillón"
+  alt: "Mika Ella, una gata atigrada con blanco, y Ciccio, una gata negra, acurrucadas juntos en un sillón"
   caption: "Ciccio y Mika Ella."
 ---
 

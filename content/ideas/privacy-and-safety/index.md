@@ -1,7 +1,7 @@
 ---
 title: "Privacy & Animal Safety"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 600
 tags: ["privacy", "safety", "principles"]
 summary: "Location data about vulnerable animals can be misused. How do we protect them?"
@@ -15,6 +15,11 @@ cover:
 A public map of exactly where stray cats live and get fed is useful to helpers — but also
 to people who want to harm animals, or who object to colonies in their area. Caretakers'
 own locations and routines also need protecting.
+
+Poisoning shows why. Some of it is accidental: cats eat rats that have eaten rat bait. Some
+of it is deliberate, by people who want cats gone. Either way, a map of where cats live and
+eat would make the deliberate kind easier. Awareness is part of the answer too (see
+[Education & Awareness](/ideas/education-and-awareness/)).
 
 ## Possible approaches
 

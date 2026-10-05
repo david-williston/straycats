@@ -1,7 +1,7 @@
 ---
 title: "The Building Blocks"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 100
 tags: ["concepts", "model"]
 summary: "Twelve concepts the system will need to understand, long before anyone writes code."
@@ -25,7 +25,7 @@ concepts that keep coming up:
 | **Person** | Anyone who meets the cat: caretaker, neighbour, visitor, vet, rescuer. |
 | **Care** | Feeding, shelter, deworming, sterilisation, vet visits — and who pays for them. |
 | **Health** | What we know about the cat's condition over time. |
-| **History** | The growing record of everything above, which belongs to the cat. |
+| **History** | The growing record of everything above, from birth to death (with an obituary), which belongs to the cat. |
 | **Relationship** | Cat ↔ person, cat ↔ place, cat ↔ cat (mothers, litters, rivals, companions). |
 | **Trust** | How confident we are in a claim, and in the person making it. |
 

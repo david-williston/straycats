@@ -2,7 +2,7 @@
 title: "La red de cuidado"
 slug: "la-red-de-cuidado"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 400
 tags: ["comunidad", "cuidado", "tnr"]
 summary: "Muchas personas cuidan en silencio a los mismos gatos sin coordinarse. ¿Y si pudieran encontrarse?"
@@ -42,9 +42,22 @@ Todas importan:
 Conocer a un gato debería hacer fácil dar el siguiente paso, si alguien quiere: "hoy le di
 de comer", "puedo ayudar con el veterinario". Nunca a la fuerza, siempre posible.
 
+## Querer no es lo mismo que poder
+
+No todos los que quieren a los gatos pueden darles de comer a todos, ni pagar su
+esterilización. Cuando la comida no alcanza, algunos gatos se quedan fuera. Así terminó
+[Ninja](/posts/ninja-the-talk-of-the-town/) en los huesos, hasta que alguien con un poco más de
+tiempo y de dinero empezó a darle de comer cada noche.
+
+Una red de cuidado podría hacer que ese tipo de ayuda fuera más fácil de encontrar y de
+compartir, sin que nadie tenga que explicar sus finanzas: una persona le da de comer, otra
+cubre el veterinario, otra ayuda cuando quien lo cuida está fuera o enfermo. Porque cuando se
+deja de darles de comer, aunque sea unos días, los gatos empiezan rápido a cazar y a pelear.
+
 ## Preguntas abiertas
 
 - ¿Cómo se conectan los cuidadores sin exponer sus datos personales?
 - ¿Se deberían registrar los gastos compartidos, o eso ya es demasiado?
 - ¿Qué necesitan los grupos de rescate y de TNR que las personas individuales no necesitan?
 - ¿Cómo convertir rápido un "este gato se ve enfermo" de alguien que pasaba en ayuda real?
+- ¿Cómo podrían quienes pueden un poco ayudar a quienes no pueden, sin que nadie se sienta menos?

@@ -2,7 +2,7 @@
 title: "Privacidad y seguridad de los animales"
 slug: "privacidad-y-seguridad"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 600
 tags: ["privacidad", "seguridad", "principios"]
 summary: "Los datos de ubicación de animales vulnerables pueden usarse mal. ¿Cómo protegerlos?"
@@ -17,6 +17,12 @@ Un mapa público que muestre exactamente dónde viven y comen los gatos callejer
 quienes ayudan, pero también para quienes quieren hacerles daño o se oponen a que haya
 colonias en su zona. La ubicación y las rutinas de los propios cuidadores también necesitan
 protección.
+
+El envenenamiento muestra por qué. Una parte es accidental: los gatos se comen ratas que
+comieron veneno. Otra parte es intencional, de gente que quiere que los gatos desaparezcan. En
+cualquier caso, un mapa de dónde viven y comen los gatos facilitaría el envenenamiento
+intencional. La conciencia también es parte de la respuesta (ve
+[Educación y conciencia](/ideas/education-and-awareness/)).
 
 ## Posibles enfoques
 
