@@ -25,7 +25,7 @@ generadas por IA.
 
 {{< listen src="brief-es.m4a" title="*Un historial colectivo para gatos callejeros*, un resumen breve en audio (1½ minutos)" >}}
 
-Para la versión más larga y técnica, ve [Los elementos básicos](/ideas/the-building-blocks/#escucha-por-qué-los-gatos-callejeros-son-un-problema-difícil).
+Para el análisis completo (24 minutos), ve [Los elementos básicos](/ideas/the-building-blocks/#escucha-toda-la-idea-a-fondo).
 
 ## Dedicatoria
 

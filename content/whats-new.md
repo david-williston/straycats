@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 4, 2026: The whole idea, in depth
+
+*Version v2026.10.04.5*
+
+- **New:** a 38-minute audio deep dive on [The Building Blocks](/ideas/the-building-blocks/#listen-the-whole-idea-in-depth),
+  *Remembering the Cats Nobody Owns*: the stories, the ideas, the open questions and what's
+  new. It has the same normal and 1.5× speed buttons, and replaces the earlier 20-minute one.
+- **New:** the Spanish site has its own deep dive, in Spanish.
+
 ## October 4, 2026: Listen in 90 seconds
 
 *Version v2026.10.04.4*

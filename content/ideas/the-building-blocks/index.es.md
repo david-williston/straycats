@@ -40,15 +40,15 @@ los conceptos que aparecen una y otra vez:
 6. **Conocer, no poseer.** La gente conoce gatos; nadie se adueña de ellos ni los reclama.
 7. **La diversión es la puerta de entrada, no el destino.** Conocer a un gato debería ser un gusto, pero cada función existe por el bien del gato. Si la diversión y la seguridad del gato no están de acuerdo, gana el gato.
 
-## Escucha: por qué los gatos callejeros son un problema difícil
+## Escucha: toda la idea a fondo
 
-Un análisis en audio de 20 minutos sobre por qué gatos como estos rompen las suposiciones
-habituales del software (un dueño, una dirección, un perfil) y cómo podría ser un modelo que
-sí les funcione. **Está en inglés.** Lo hice con NotebookLM de Google a partir de las
-páginas de este sitio, así que las dos voces son generadas por IA. También hay un
-[resumen de 90 segundos](/about/#escucha-la-idea) de toda la idea.
+Un análisis en audio de 24 minutos: las historias de Puerto Escondido, luego las ideas, los
+elementos básicos y las preguntas abiertas, y lo nuevo en esta versión. Lo hice con
+NotebookLM de Google a partir de las páginas de este sitio, así que las dos voces son
+generadas por IA. También hay una [introducción de 90 segundos](/about/#escucha-la-idea) a
+toda la idea.
 
-{{< youtube id="s4oRj-N5Gbg" title="Why Street Cats Is a Hard Problem to Solve (análisis en audio, en inglés)" loading="lazy" >}}
+{{< listen src="deep-dive-es.m4a" title="*Memoria colectiva para gatos sin dueño*, un análisis a fondo en audio (24 minutos)" >}}
 
 ## Preguntas abiertas
 

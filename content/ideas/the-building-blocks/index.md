@@ -39,15 +39,14 @@ concepts that keep coming up:
 6. **Meeting, not owning.** People meet cats; no one owns or claims them.
 7. **Fun is the doorway, not the destination.** Meeting a cat should be a pleasure, but every feature is there for the cat's benefit. If fun and the cat's safety disagree, the cat wins.
 
-## Listen: why street cats are a hard problem
+## Listen: the whole idea in depth
 
-A 20-minute audio deep dive into why cats like these break the usual assumptions of
-software (one owner, one address, one profile) and what a model that fits them might look
-like. It was made with Google's NotebookLM from the pages on this site, so the two voices
-are AI-generated. There's also a [90-second overview](/about/#listen-to-the-idea) of the
-whole idea.
+A 38-minute audio deep dive: the stories from Puerto Escondido, then the ideas, the
+building blocks and the open questions, and what's new in this version. It was made with
+Google's NotebookLM from the pages on this site, so the two voices are AI-generated. There's
+also a [90-second introduction](/about/#listen-to-the-idea) to the whole idea.
 
-{{< youtube id="s4oRj-N5Gbg" title="Why Street Cats Is a Hard Problem to Solve (audio deep dive)" loading="lazy" >}}
+{{< listen src="deep-dive-en.m4a" title="*Remembering the Cats Nobody Owns*, an audio deep dive (38 minutes)" >}}
 
 ## Open questions
 

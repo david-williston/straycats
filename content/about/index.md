@@ -23,7 +23,7 @@ with Google's NotebookLM from the pages on this site, so the two voices are AI-g
 
 {{< listen src="brief-en.m4a" title="*Giving Stray Cats a Permanent History*, a brief audio overview (1½ minutes)" >}}
 
-For the longer, more technical version, see [The Building Blocks](/ideas/the-building-blocks/#listen-why-street-cats-are-a-hard-problem).
+For the full deep dive (38 minutes), see [The Building Blocks](/ideas/the-building-blocks/#listen-the-whole-idea-in-depth).
 
 ## Dedication
 
