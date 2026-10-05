@@ -11,6 +11,25 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 5, 2026: From the first conversation
+
+*Version v2026.10.05.1*
+
+The first [Let's talk](/talk/) conversation, with Les, brought new stories and ideas.
+
+- **New story:** [Ninja, the talk of the town](/posts/ninja-the-talk-of-the-town/). How a cat
+  who was skin and bone became the neighbourhood favourite, and why loving cats isn't the
+  same as being able to feed them all.
+- **New idea:** [Education & Awareness](/ideas/education-and-awareness/): sterilisation,
+  poisoning (accidental and deliberate), black cats, and what happens when feeding stops.
+- **New cat:** Carlitos, a skittish grey tabby, on the [cat cards](/ideas/meeting-a-cat/).
+  Tenkilo's card now explains the name: almost ten kilos.
+- **Updated:** [The Care Network](/ideas/care-network/) (love isn't the same as money),
+  [Privacy & Animal Safety](/ideas/privacy-and-safety/) (poisoning),
+  [Stray, Pet, or Somewhere in Between?](/ideas/lost-and-found/) (many homes, many claims),
+  [Encounters](/ideas/encounters/) (from cradle to grave) and
+  [The Building Blocks](/ideas/the-building-blocks/).
+
 ## October 5, 2026: Let's talk
 
 *Version v2026.10.05*

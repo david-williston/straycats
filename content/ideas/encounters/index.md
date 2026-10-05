@@ -1,7 +1,7 @@
 ---
 title: "Encounters: Every Meeting Adds to the Story"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-05
 weight: 300
 tags: ["encounters", "concepts"]
 summary: "Each time someone meets a cat, they add a little to its shared history."
@@ -35,6 +35,12 @@ else is optional and can be added in a tap or two:
 
 The place is recorded at the level of the neighbourhood, never the exact spot (see
 [Privacy & Animal Safety](/ideas/privacy-and-safety/)).
+
+## From cradle to grave
+
+Some encounters are milestones: a cat's birth or first litter, a microchip, sterilisation, an
+injury, a recovery. And one day, its death. A cat's record should be able to hold all of it,
+including an obituary, so the people who knew the cat can remember it together.
 
 ## Many small encounters, one history
 

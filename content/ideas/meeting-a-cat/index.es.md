@@ -7,7 +7,7 @@ tags: ["conocer", "encuentros", "conceptos"]
 summary: "Conocer a un gato debería tomar una foto y sentirse como un pequeño regalo. Pero el regalo es para el gato: cada encuentro suma a su historia y ayuda a quienes lo cuidan."
 cover:
   image: "cover.jpg"
-  alt: "Ninja, un gato naranja claro con blanco, de pie en un camino del jardín, con Ciccio, un gato negro, echado detrás y mirando a la cámara"
+  alt: "Ninja, un gato naranja claro con blanco, de pie en un camino del jardín, con Ciccio, una gata negra, echada detrás y mirando a la cámara"
   caption: "Ninja y Ciccio."
 ---
 

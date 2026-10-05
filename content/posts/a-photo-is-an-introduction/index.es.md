@@ -7,11 +7,11 @@ tags: ["historia", "conocer", "principios"]
 summary: "Cuando alguien conoce a un gato, le toma una foto. ¿Y si esa foto le presentara al gato, y presentara al gato con todas las personas que podrían ayudarlo?"
 cover:
   image: "cover.jpg"
-  alt: "Primer plano de Ciccio, un gato negro de ojos amarillo verdoso, mirando directo a la cámara"
+  alt: "Primer plano de Ciccio, una gata negra de ojos amarillo verdoso, mirando directo a la cámara"
   caption: "Ciccio, saludando."
 ---
 
-Cuando alguien nuevo llega a la casa, le presento a los gatos. Este es Ciccio. Ese es Tenkilo,
+Cuando alguien nuevo llega a la casa, le presento a los gatos. Esta es Ciccio. Ese es Tenkilo,
 en el sol como siempre. ¿El naranja con blanco junto al plato? Le decimos Mountain Lion (León
 de Montaña); nadie sabe su nombre real.
 

@@ -1,11 +1,16 @@
 # The named cats of the house, shown as cards by the cat-cards shortcode.
 # photo: a page bundle path and file name; anchor (optional): where to crop the square from
 # (Top, Center, Bottom…; default: smart); coat and note in each language.
+- name: Carlitos
+  photo: ideas/education-and-awareness/carlitos.jpg
+  anchor: Top
+  coat: { en: "Grey tabby", es: "Atigrado gris" }
+  note: { en: "Skittish and not neutered. After months, finally lets me touch him.", es: "Desconfiado y sin esterilizar. Después de meses, por fin se deja tocar." }
 - name: Ciccio
   photo: posts/the-cat-outlives-us/black-cat.jpg
   anchor: Top
-  coat: { en: "Black", es: "Negro" }
-  note: { en: "Curls up with Mika Ella.", es: "Se acurruca con Mika Ella." }
+  coat: { en: "Black", es: "Negra" }
+  note: { en: "A girl, whatever her name suggests. Curls up with Mika Ella.", es: "Es gata, aunque su nombre diga otra cosa. Se acurruca con Mika Ella." }
 - name: Hootie
   photo: ideas/lost-and-found/cover.jpg
   coat: { en: "Black, with a collar", es: "Negro, con collar" }
@@ -30,4 +35,4 @@
   photo: posts/the-cat-outlives-us/sunbather.jpg
   anchor: Top
   coat: { en: "Cream", es: "Color crema" }
-  note: { en: "Always finds the sun.", es: "Siempre encuentra el sol." }
+  note: { en: "Named for weighing almost ten kilos. Clearly fed somewhere else too.", es: "Se llama así porque pesa casi diez kilos. Claramente también come en otra casa." }
