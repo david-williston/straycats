@@ -49,6 +49,8 @@ params:
   # Set this to the address that should receive replies.
   comments: true
   feedbackEmail: "davidjdwilliston+straycats@gmail.com"
+  # Booking page for 30-minute chats (Let's talk page, Feedback page, reply box). Chats are in English.
+  chatURL: "https://calendly.com/david-williston"
 
   socialIcons:
     - name: github

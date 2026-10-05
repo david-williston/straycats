@@ -16,4 +16,7 @@
   {{- else }}
   <p><em>{{ i18n "respond_soon" }} <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ end }}">{{ i18n "respond_feedback" }}</a>.</em></p>
   {{- end }}
+  {{- with site.GetPage "/talk" }}
+  <p class="respond-chat">{{ i18n "respond_chat" }} <a href="{{ .RelPermalink }}">{{ i18n "respond_chat_link" }}</a>.</p>
+  {{- end }}
 </section>

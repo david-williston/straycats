@@ -1,0 +1,5 @@
+{{- /* A "Book a chat" button linking to site.Params.chatURL. Text lives in i18n/.
+  Usage: {{< book-a-chat >}} */ -}}
+{{- with site.Params.chatURL -}}
+<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "chat_button" }}</a></p>
+{{- end -}}

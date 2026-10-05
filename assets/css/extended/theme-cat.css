@@ -201,3 +201,12 @@ body {
 .listen-speed button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--theme); }
 .listen-speed button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .post-content .listen figcaption { margin: 8px 0 0; font-size: 0.85rem; color: var(--secondary); text-align: start; }
+.respond .respond-chat { margin: 14px 0 0; font-size: 0.95rem; }
+/* The same button inside page text (book-a-chat shortcode): undo the text-link styling */
+.post-content a.respond-button,
+.post-content a.respond-button:hover {
+  padding: 8px 16px; border-radius: var(--radius);
+  background: var(--accent); background-image: none; box-shadow: none;
+  color: #fffdf9; font-weight: 700; text-decoration: none;
+}
+:root[data-theme="dark"] .post-content a.respond-button { color: #1b1714; }
