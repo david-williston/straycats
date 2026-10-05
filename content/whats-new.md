@@ -15,7 +15,7 @@ also say **New** or **Updated** under their title.
 
 *Version v2026.10.05*
 
-- **New:** [Let's talk](/talk/). Book a relaxed 30-minute video chat about the cats in your
+- **New:** [Let's talk](/talk/). Book a relaxed 30-minute chat about the cats in your
   life and your ideas for Stray Cats. The page explains how the conversation is transcribed
   and how what you say is (and isn't) used.
 - **Updated:** [Give Feedback](/feedback/), and the reply box at the end of every story, now

@@ -16,7 +16,7 @@ páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su t
 
 *Versión v2026.10.05*
 
-- **Nuevo:** [Hablemos](/talk/). Agenda una videollamada relajada de 30 minutos sobre los gatos
+- **Nuevo:** [Hablemos](/talk/). Agenda una conversación relajada de 30 minutos sobre los gatos
   de tu vida y tus ideas para Stray Cats. Las conversaciones son en inglés. La página explica
   cómo se transcribe la conversación y cómo se usa (y cómo no) lo que dices.
 - **Actualizado:** [Comparte tu opinión](/feedback/) y el recuadro al final de cada historia

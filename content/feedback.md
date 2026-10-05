@@ -30,7 +30,7 @@ better.
 
 ## Let's talk
 
-Ideas and stories come out best in conversation. Book a relaxed 30-minute video chat about
+Ideas and stories come out best in conversation. Book a relaxed 30-minute chat about
 the cats in your life and your ideas: [Let's talk](/talk/).
 
 ## How to reach me

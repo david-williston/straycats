@@ -31,7 +31,7 @@ idea mejora.
 
 ## Hablemos
 
-Las ideas y las historias salen mejor conversando. Agenda una videollamada relajada de 30
+Las ideas y las historias salen mejor conversando. Agenda una conversación relajada de 30
 minutos sobre los gatos de tu vida y tus ideas: [Hablemos](/talk/). Las conversaciones son en
 inglés.
 

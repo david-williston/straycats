@@ -1,7 +1,7 @@
 ---
 title: "Hablemos"
 slug: "hablemos"
-summary: "Agenda una videollamada relajada de 30 minutos sobre los gatos de tu vida y tus ideas para Stray Cats. Las conversaciones son en inglés."
+summary: "Agenda una conversación relajada de 30 minutos sobre los gatos de tu vida y tus ideas para Stray Cats. Las conversaciones son en inglés."
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -20,6 +20,8 @@ español desde [Comparte tu opinión](/feedback/).
 ## Cómo es una conversación
 
 - **30 minutos, por Google Meet.** Elige la hora que te acomode; el enlace te llega por correo.
+- **La cámara es opcional.** Me gusta saludar cara a cara y luego apagar las cámaras, para que
+  se sienta como una llamada tranquila. Si prefieres, deja la tuya apagada todo el tiempo.
 - **No necesitas preparar nada.** Te preguntaré por los gatos de tu vida y qué opinas de las
   ideas de aquí. Los desacuerdos son bienvenidos.
 - **En inglés.**

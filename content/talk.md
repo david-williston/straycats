@@ -1,6 +1,6 @@
 ---
 title: "Let's Talk"
-summary: "Book a relaxed 30-minute video chat about the cats in your life and your ideas for Stray Cats."
+summary: "Book a relaxed 30-minute chat about the cats in your life and your ideas for Stray Cats."
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -16,6 +16,8 @@ love to talk with you.
 ## What a chat is like
 
 - **30 minutes, on Google Meet.** Pick a time that suits you; the link arrives by email.
+- **Cameras optional.** I like to say hello face to face and then turn the cameras off, so
+  it's more like a relaxed phone call. Keep yours off the whole time if you prefer.
 - **No preparation needed.** I'll ask about the cats in your life and what you think of the
   ideas here. Disagreement is welcome.
 - **In English.**
