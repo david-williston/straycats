@@ -96,8 +96,10 @@ The site publishes its whole text as one hidden page per language, made for Note
 - English: <https://david-williston.github.io/straycats/notebooklm/>
 - Spanish: <https://david-williston.github.io/straycats/es/notebooklm/>
 
-Each holds every story, idea and the About, Feedback and Saibo pages, with their titles and
-addresses, in reading order (`layouts/notebooklm.html`). They update with every release.
+Each starts with **what's new in this version** (the newest What's New entry, picked up
+automatically), then holds every story, idea and the About, Feedback and Saibo pages, with
+their titles and addresses, in reading order (`layouts/notebooklm.html`). They update with
+every release. Instructions for NotebookLM go in its **Customize** box, not in these pages.
 
 **Set up once** (one notebook per language):
 
@@ -106,30 +108,50 @@ addresses, in reading order (`layouts/notebooklm.html`). They update with every 
 3. For the Spanish notebook, set NotebookLM's output language to Spanish, so the audio is in
    Spanish.
 
-**After each release**, delete the website source and add the same address again: NotebookLM
-doesn't refresh website sources by itself.
+**After each major update**, release it, then in each notebook delete the website source and
+add the same address again (NotebookLM doesn't refresh website sources by itself). Make two
+overviews per language:
 
-**To make an overview of one page**, open **Audio Overview → Customize** and paste a prompt
-like this, changing the title (titles are listed at the top of the source page):
+*Brief* — Audio Overview → format **Brief** → Customize:
+
+> Give a short introduction to the whole Stray Cats idea for someone new to it, then end with
+> what's new in this version. Stray Cats is an open-source, non-profit idea at the concept
+> stage, with no app yet. Use the cats' real names.
+
+> Da una introducción breve a toda la idea de Stray Cats para alguien que no la conoce, y
+> termina con lo nuevo en esta versión. Stray Cats es una idea de código abierto y sin fines
+> de lucro, todavía en etapa de concepto, sin app. Usa los nombres reales de los gatos.
+
+*Deep dive* — Audio Overview → format **Deep Dive** → Customize:
+
+> Cover the whole Stray Cats idea in depth for someone new to it: the stories from Puerto
+> Escondido, then the ideas and the open questions. Spend the last part on what's new in this
+> version. Stray Cats is an open-source, non-profit idea at the concept stage, with no app
+> yet; the cat's wellbeing always comes first. Use the cats' real names.
+
+> Explica a fondo toda la idea de Stray Cats para alguien que no la conoce: las historias de
+> Puerto Escondido, luego las ideas y las preguntas abiertas. Dedica la última parte a lo
+> nuevo en esta versión. Stray Cats es una idea de código abierto y sin fines de lucro,
+> todavía en etapa de concepto, sin app; el bienestar del gato siempre va primero. Usa los
+> nombres reales de los gatos.
+
+*One page* (optional, any format) — titles are listed near the top of the source page:
 
 > Focus only on the page titled "Meeting a Cat". Explain it for someone who has never heard
-> of Stray Cats, in about five minutes. Mention that Stray Cats is an open-source, non-profit
-> idea at the concept stage, with no app yet. Use the cats' real names from the page.
-
-In Spanish:
+> of Stray Cats. Mention that it's an open-source, non-profit idea at the concept stage, with
+> no app yet. Use the cats' real names from the page.
 
 > Concéntrate solo en la página titulada "Conocer a un gato". Explícala para alguien que
-> nunca ha oído hablar de Stray Cats, en unos cinco minutos. Menciona que Stray Cats es una
-> idea de código abierto y sin fines de lucro, todavía en etapa de concepto, sin app. Usa los
-> nombres reales de los gatos que aparecen en la página.
-
-For an overview of the whole project, leave the focus line out.
+> nunca ha oído hablar de Stray Cats. Menciona que es una idea de código abierto y sin fines
+> de lucro, todavía en etapa de concepto, sin app. Usa los nombres reales de los gatos que
+> aparecen en la página.
 
 **Then:**
 
 1. Download the audio, make the video, and upload it to YouTube.
-2. Embed it on its page, in the matching language, with a line saying it was made with
-   NotebookLM and the voices are AI-generated (see the About page for the pattern):
+2. Embed it in the matching language, with a line saying it was made with NotebookLM and the
+   voices are AI-generated. The brief overview replaces the one on the About page and the deep
+   dive the one on The Building Blocks (see those pages for the pattern):
    `{{</* youtube id="VIDEO_ID" title="…" loading="lazy" */>}}`
 3. Set `updated:` on that page and add the overview to What's New (both languages).
 

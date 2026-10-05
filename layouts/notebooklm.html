@@ -1,6 +1,7 @@
 {{- /* The whole site's text in one plain page, for use as a single NotebookLM source
   (content/notebooklm.md and .es.md, layout: notebooklm). No menus, styles or scripts:
-  just each page's title, address, summary and text, in reading order. See README. */ -}}
+  the newest What's New entry, then each page's title, address, summary and text, in reading
+  order. See README. */ -}}
 <!doctype html>
 <html lang="{{ site.Language.Lang }}">
 <head>
@@ -12,6 +13,15 @@
 <body>
 <h1>{{ .Title }}</h1>
 {{ .Content }}
+{{- /* The newest section of What's New (everything from its first heading to the next). */}}
+{{- with site.GetPage "/whats-new" }}
+  {{- $sections := split .Content "<h2" }}
+  {{- if gt (len $sections) 1 }}
+
+<h2>{{ i18n "notebooklm_latest" }}</h2>
+{{ printf "<h2%s" (index $sections 1) | replaceRE `<(/?)h2` "<${1}h3" | safeHTML }}
+  {{- end }}
+{{- end }}
 {{- $pages := slice }}
 {{- with site.GetPage "/about" }}{{ $pages = $pages | append . }}{{ end }}
 {{- range (where site.RegularPages "Section" "posts").ByWeight }}{{ $pages = $pages | append . }}{{ end }}
