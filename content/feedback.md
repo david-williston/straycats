@@ -23,6 +23,8 @@ better.
 - Have you met a cat with more than one name, or more than one "owner"?
 - What happens to the cats when caretakers move away?
 - Which [ideas](/ideas/) excite you? Which ones worry you?
+- What would make you stop and record a cat you meet?
+- What should a cat's card never show?
 - Would you like to help one day: stories, design, code, rescue experience?
 
 ## How to reach me

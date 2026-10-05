@@ -23,6 +23,16 @@ Si tener dueño es solo otra **afirmación** y no un hecho, entonces:
 - alguien que busca a su gato perdido podría encontrar coincidencias con encuentros recientes cerca
 - todos podrían ver que un "callejero" en realidad tiene personas pendientes de él
 
+## Conocer no es reclamar
+
+Conocer a un gato, ponerle nombre e incluso darle de comer no lo hace tuyo, y Stray Cats nunca
+debería dar a entender lo contrario. Tu lista de gatos que has conocido es una lista de
+conocidos, no de pertenencias.
+
+Aun así, esa lista puede ayudar. Cuando alguien busca a un gato perdido, se les podría
+preguntar a quienes conocieron a un gato parecido cerca hace poco: *"¿Has visto a este gato?"*
+La respuesta podría estar en la foto que alguien tomó ayer.
+
 ## Preguntas abiertas
 
 - ¿Cómo manejar afirmaciones contradictorias sobre quién es el dueño sin provocar pleitos entre vecinos?

@@ -32,9 +32,24 @@ Cosas que podrían ayudar a reconocer a un individuo:
 
 {{< gallery images="tabby-1.jpg tabby-2.jpg tabby-3.jpg tabby-4.jpg" alt="Gatos atigrados fotografiados desde distintos ángulos" caption="A primera vista los atigrados se parecen, pero las rayas, el color de ojos y las marcas cambian de un gato a otro, si sabes dónde fijarte." >}}
 
+## "¿Es el mismo gato?"
+
+El mejor momento para reconocer a un gato es cuando alguien lo conoce. Después de tomar la
+foto, la persona podría ver: *"Este podría ser Mountain Lion. ¿Lo es?"* Sí, no o no estoy
+seguro. Para ella es un pequeño momento de reconocimiento. Para el gato, es una coincidencia
+confirmada, o una señal de que es otro gato que merece su propio registro.
+
+Conocer los pelajes ayuda a que todos lo hagamos mejor. Atigrado, calicó, carey, "esmoquin",
+negro sólido: el pelaje reduce las posibilidades, y marcas como una oreja recortada o una cola
+chueca terminan de decidir. Ninja y Mountain Lion son los dos naranja con blanco, y justo por
+eso hay que fijarse mejor.
+
+{{< cat-cards names="Mountain Lion, Ninja" >}}
+
 ## Preguntas abiertas
 
 - ¿Cómo se muestra un gato con varios nombres sin elegir un "ganador"?
 - ¿Qué pasa cuando una fusión resulta equivocada? ¿Se pueden volver a separar dos gatos?
 - ¿Cómo se distingue entre gatos completamente negros?
 - ¿Quién puede confirmar que dos registros son el mismo gato?
+- ¿Cómo preguntar "¿es el mismo gato?" sin empujar a la gente a decir que sí?

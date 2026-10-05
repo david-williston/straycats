@@ -31,9 +31,24 @@ Things that might help recognise an individual:
 
 {{< gallery images="tabby-1.jpg tabby-2.jpg tabby-3.jpg tabby-4.jpg" alt="Tabby cats photographed from different angles" caption="Tabbies look alike at a glance, but stripes, eye colour and markings differ from cat to cat, if you know where to look." >}}
 
+## "Is this the same cat?"
+
+The best moment to match a cat is when someone meets it. After taking a photo, the person
+might see: *"This might be Mountain Lion. Is it?"* Yes, no, or not sure. For them it's a
+small moment of recognition. For the cat, it's a confirmed match, or a sign that this is a
+different cat that deserves its own record.
+
+Knowing coats helps everyone get better at this. Tabby, calico, tortoiseshell, tuxedo,
+solid black: a coat narrows the possibilities, and markings like a tipped ear or a kinked
+tail settle them. Ninja and Mountain Lion are both orange and white, which is exactly why
+people need to look closer.
+
+{{< cat-cards names="Mountain Lion, Ninja" >}}
+
 ## Open questions
 
 - How do you show a cat with several names without picking a "winner"?
 - What happens when a merge turns out to be wrong? Can two cats be split apart again?
 - How do you tell solid black cats apart?
 - Who gets to confirm that two records are the same cat?
+- How do you ask "is this the same cat?" without leading people to say yes?

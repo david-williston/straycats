@@ -50,6 +50,8 @@ conmigo. [Lee la historia completa →](/posts/the-cats-nobody-owns/)
 - una **historia** construida a partir de cada encuentro con una persona?
 - una **red de personas** que se preocupan por él, que pueden encontrarse entre sí y
   pasar esa historia a otros?
+- una **puerta de entrada que sea un gusto**: conocer a un gato toma una foto, y cada
+  encuentro suma un poco a su historia ([más](/ideas/meeting-a-cat/))?
 
 ## Qué es este sitio
 
@@ -71,3 +73,8 @@ propósito](/posts/all-talk-no-code/). Por ahora el trabajo es entender el probl
   otra red social.
 - **Primero el bienestar animal y la privacidad.**
 - **Primero los gatos.** Los perros después (son solo otro tipo de gato).
+- **Conocer, no poseer.** Aquí la gente conoce gatos; nadie se adueña de ellos ni los reclama.
+- **La diversión es la puerta de entrada, no el destino.** Conocer a un gato debería ser un
+  gusto, pero cada función existe por el bien del gato y para ayudar a quienes lo cuidan.
+- **Nada de concursos de popularidad.** Ni rankings ni ubicaciones exactas. La atención puede
+  poner en riesgo a un gato.

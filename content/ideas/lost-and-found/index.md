@@ -22,6 +22,15 @@ If ownership is just another **claim**, not a fact, then:
 - an owner looking for a lost cat could be matched against recent encounters nearby
 - everyone could see that a "stray" actually has people looking out for it
 
+## Meeting isn't claiming
+
+Meeting a cat, naming it, even feeding it, doesn't make it yours, and Stray Cats should never
+suggest it does. Your list of cats you've met is a list of acquaintances, not possessions.
+
+That list can still help. When someone is searching for a lost cat, people who've met a
+similar cat nearby recently could be asked: *"Have you seen this cat?"* The answer might be
+in someone's photo from yesterday.
+
 ## Open questions
 
 - How do you handle conflicting ownership claims without starting neighbourhood feuds?

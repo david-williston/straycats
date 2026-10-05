@@ -1,0 +1,24 @@
+{{- /* Cards for the named cats in data/cats.yaml, in the page's language.
+  Usage: {{< cat-cards >}}, or {{< cat-cards names="Ninja, Mountain Lion" >}} for some of them. */ -}}
+{{- $lang := .Page.Language.Lang }}
+{{- $only := slice }}
+{{- with .Get "names" }}{{ range split . "," }}{{ $only = $only | append (trim . " ") }}{{ end }}{{ end }}
+<div class="cat-cards">
+{{- range hugo.Data.cats }}
+  {{- if or (not $only) (in $only .name) }}
+  {{- $cat := . }}
+  {{- $page := site.GetPage (path.Dir .photo) }}
+  {{- $photo := cond (ne $page nil) ($page.Resources.Get (path.Base .photo)) nil }}
+  {{- if not $photo }}{{ errorf "cat-cards: photo %q for %s not found" .photo .name }}{{ end }}
+  {{- $thumb := $photo.Fill (printf "480x480 %s webp q80" (.anchor | default "smart")) }}
+  <figure class="cat-card">
+    <img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $cat.name }}, {{ lower (index $cat.coat $lang) }}" loading="lazy">
+    <figcaption>
+      <span class="cat-card-name">{{ $cat.name }}</span>
+      <span class="cat-card-coat">{{ index $cat.coat $lang }}</span>
+      <span class="cat-card-note">{{ index $cat.note $lang }}</span>
+    </figcaption>
+  </figure>
+  {{- end }}
+{{- end }}
+</div>
