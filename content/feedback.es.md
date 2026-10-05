@@ -2,6 +2,7 @@
 title: "Comparte tu opinión"
 slug: "comparte-tu-opinion"
 summary: "Dime qué se me está escapando."
+updated: 2026-10-04
 ShowToc: false
 ShowReadingTime: false
 comments: false

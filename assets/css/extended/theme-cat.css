@@ -175,3 +175,12 @@ body {
 .cat-card-name { font-weight: 800; font-size: 1.05rem; color: var(--primary); }
 .cat-card-coat { color: var(--accent); font-weight: 600; }
 .cat-card-note { color: var(--secondary); }
+
+/* --- "New" badge and "Updated" date in page meta (layouts/_partials/post_meta.html) --- */
+.badge-new {
+  display: inline-block; padding: 0 7px; border-radius: 999px;
+  background: var(--accent); color: var(--theme);
+  font-size: 0.75em; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase;
+  line-height: 1.6; vertical-align: 1px;
+}
+.meta-updated { color: var(--accent); font-weight: 600; }

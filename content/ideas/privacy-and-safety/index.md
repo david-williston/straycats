@@ -1,6 +1,7 @@
 ---
 title: "Privacy & Animal Safety"
 date: 2026-10-03
+updated: 2026-10-04
 weight: 600
 tags: ["privacy", "safety", "principles"]
 summary: "Location data about vulnerable animals can be misused. How do we protect them?"

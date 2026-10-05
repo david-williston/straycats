@@ -1,0 +1,43 @@
+{{- /* PaperMod's post_meta.html, plus (Stray Cats) a "New" badge for pages published in the
+  last 14 days (but after the site's launch day, params.launched, when everything was new) and
+  an "Updated" date when front matter sets a later `updated:` (not `lastmod`, which Hugo fills
+  in for every page). Text in i18n/. */ -}}
+{{- $scratch := newScratch }}
+{{- $launched := time.AsTime (site.Params.launched | default "2000-01-01") }}
+
+{{- $published := not .Date.IsZero }}
+
+{{- if and $published (gt (.Date.AddDate 0 0 14) now) (gt (.Date.Format "2006-01-02") ($launched.Format "2006-01-02")) -}}
+    {{- $scratch.Add "meta" (slice (printf "<span class='badge-new'>%s</span>" (i18n "new_badge"))) }}
+{{- end }}
+
+{{- if $published -}}
+    {{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- with .Params.updated }}
+    {{- $updated := time.AsTime . }}
+    {{- if or (not $published) (gt ($updated.Format "2006-01-02") ($.Date.Format "2006-01-02")) }}
+        {{- $scratch.Add "meta" (slice (printf "<span class='meta-updated'>%s</span>" (i18n "updated_on" (dict "Date" ($updated | time.Format ":date_long"))))) }}
+    {{- end }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+    {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+    {{- with (partial "author.html" .) }}
+        {{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+    {{- end }}
+{{- end }}
+
+{{/* Combine all meta information into a single string with separators and render it as HTML.*/}}
+
+{{- with ($scratch.Get "meta") }}
+    {{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}
