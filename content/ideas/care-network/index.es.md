@@ -45,7 +45,7 @@ de comer", "puedo ayudar con el veterinario". Nunca a la fuerza, siempre posible
 ## Querer no es lo mismo que poder
 
 No todos los que quieren a los gatos pueden darles de comer a todos, ni pagar su
-esterilización. Cuando la comida no alcanza, algunos gatos se quedan fuera. Así terminó
+esterilización. Cuando la comida no alcanza, algunos gatos se quedan sin comer. Así terminó
 [Ninja](/posts/ninja-the-talk-of-the-town/) en los huesos, hasta que alguien con un poco más de
 tiempo y de dinero empezó a darle de comer cada noche.
 

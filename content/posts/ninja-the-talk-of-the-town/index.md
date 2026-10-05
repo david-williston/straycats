@@ -14,8 +14,8 @@ When I first came to the house, Ninja was skin and bone. A little orange tomcat,
 covered in wounds, fighting the other cats every night: you could hear him screaming. He
 wouldn't let me anywhere near him. He clearly hadn't met many kind humans for a while.
 
-The house's owner loves the cats. But not everyone who loves cats can afford to feed every
-cat that turns up, and some cats end up being turned away. Ninja was one of them.
+Not everyone who loves cats can afford to feed every cat that turns up, and some cats end up
+going without. Ninja was one of them.
 
 So I started feeding him at night. Before long he was coming to my door, then sleeping at my
 door, because he knew I was there. Little by little his fear of me faded.

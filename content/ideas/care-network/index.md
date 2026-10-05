@@ -43,7 +43,7 @@ today", "I can help with the vet bill". Never pushed, always possible.
 ## Love isn't the same as money
 
 Not everyone who loves cats can afford to feed them all, or to pay for sterilisation. When
-food is short, some cats get turned away. That's how [Ninja](/posts/ninja-the-talk-of-the-town/)
+food is short, some cats go without. That's how [Ninja](/posts/ninja-the-talk-of-the-town/)
 ended up skin and bone, until someone with a little more time and money started feeding him
 every night.
 
