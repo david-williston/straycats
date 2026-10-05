@@ -28,12 +28,15 @@ The conversation is **transcribed**, so I can capture your ideas accurately inst
 scribbling notes. Before you book, you'll be asked to confirm that, and to choose how I may
 use what you say.
 
-- **Your transcript is used only to develop Stray Cats.** It isn't shared or sold.
+- **Your transcript is used only to develop Stray Cats.** An AI assistant helps me pick out
+  the ideas and stories you shared. The transcript isn't shared or sold.
+- **Then the transcript is deleted.** Only the ideas and stories are kept.
 - **You choose how you're credited** if I retell something you said on this site: by your
-  first name, anonymously, or only after asking you first.
+  first name, anonymously, or only after asking you first. If you ask for anonymity,
+  everything is anonymised: your name and anything else that could identify you.
 - **I'll never publish where a cat lives or is fed,** or anything that could identify your
   home (see [Privacy & Animal Safety](/ideas/privacy-and-safety/)).
-- **You can ask me to delete your transcript at any time:**
+- **Questions or second thoughts?** Write to me any time:
   [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com).
 
 Ideas that come out of these conversations show up in the [stories](/posts/) and
