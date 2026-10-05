@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 4, 2026: Listen in 90 seconds
+
+*Version v2026.10.04.4*
+
+- **New:** a 90-second audio introduction on the [About](/about/#listen-to-the-idea) page,
+  *Giving Stray Cats a Permanent History*, with buttons to play it at normal or 1.5× speed.
+  It replaces the earlier five-minute overview.
+- **New:** the Spanish site has its own audio introduction, in Spanish.
+
 ## October 4, 2026: A What's New page
 
 *Version v2026.10.04.2*

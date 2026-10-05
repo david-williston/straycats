@@ -1,0 +1,18 @@
+{{- /* An audio player for a file in the page bundle, with 1× and 1.5× speed buttons
+  (assets/js/listen.js). Text lives in i18n/.
+  Usage: {{< listen src="brief-en.m4a" title="…" >}} */ -}}
+{{- with .Page.Resources.Get (.Get "src") -}}
+<figure class="listen">
+  <audio controls preload="metadata" src="{{ .RelPermalink }}" title="{{ $.Get "title" | markdownify | plainify }}">
+    <a href="{{ .RelPermalink }}">{{ i18n "listen_download" }}</a>
+  </audio>
+  <div class="listen-speed" role="group" aria-label="{{ i18n "listen_speed" }}">
+    <span class="listen-speed-label">{{ i18n "listen_speed" }}</span>
+    <button type="button" data-rate="1" aria-pressed="true">1×</button>
+    <button type="button" data-rate="1.5" aria-pressed="false">1.5×</button>
+  </div>
+  {{- with $.Get "title" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
+{{- errorf "listen shortcode: %q not found in %s" (.Get "src") .Page.File.Path -}}
+{{- end -}}

@@ -84,7 +84,7 @@ languages:
           a simple question: what if every stray cat had an identity, a history, and a network of
           people who care about it, and meeting one took nothing more than a photo? There's no app yet, and no code. Just stories, questions and
           half-formed ideas — and I'd love to hear yours. Prefer to listen? There's a
-          [five-minute audio overview](/about/#listen-to-the-idea). Been here before? See
+          [90-second audio introduction](/about/#listen-to-the-idea). Been here before? See
           [what's new](/whats-new/).
     menus:
       main:
@@ -119,8 +119,8 @@ languages:
           una identidad, una historia y una red de personas que se preocupan por él, y conocerlo no
           costara más que una foto? Todavía no hay
           app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
-          las tuyas. ¿Prefieres escuchar? Hay un [resumen en audio de cinco
-          minutos](/about/#escucha-la-idea) (en inglés). ¿Ya habías venido? Mira las [novedades](/whats-new/).
+          las tuyas. ¿Prefieres escuchar? Hay una [introducción en audio de 90
+          segundos](/about/#escucha-la-idea). ¿Ya habías venido? Mira las [novedades](/whats-new/).
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}

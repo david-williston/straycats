@@ -18,10 +18,10 @@ cats that nobody owns.
 
 ## Listen to the idea
 
-A five-minute audio overview of the project, if you'd rather listen than read. It was made
+A 90-second introduction to the project, if you'd rather listen than read. It was made
 with Google's NotebookLM from the pages on this site, so the two voices are AI-generated.
 
-{{< youtube id="RF8ncyIGUEE" title="A Social Network for Stray-ish Cats (audio overview)" loading="lazy" >}}
+{{< listen src="brief-en.m4a" title="*Giving Stray Cats a Permanent History*, a brief audio overview (1½ minutes)" >}}
 
 For the longer, more technical version, see [The Building Blocks](/ideas/the-building-blocks/#listen-why-street-cats-are-a-hard-problem).
 

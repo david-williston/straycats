@@ -1,3 +1,7 @@
 {{- /* Stray Cats: subtle motion (assets/js/motion.js) */}}
 {{- $motion := resources.Get "js/motion.js" | js.Build | resources.Minify | fingerprint }}
 <script src="{{ $motion.RelPermalink }}" integrity="{{ $motion.Data.Integrity }}" defer></script>
+{{- /* Stray Cats: speed buttons for the listen shortcode. Loaded on every page (the theme
+  caches the footer across pages); it does nothing where there's no player. */}}
+{{- $listen := resources.Get "js/listen.js" | js.Build | resources.Minify | fingerprint }}
+<script src="{{ $listen.RelPermalink }}" integrity="{{ $listen.Data.Integrity }}" defer></script>
