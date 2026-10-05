@@ -48,6 +48,8 @@ What if every cat could have:
 - a **history** built up from every human encounter
 - a **network of people** who care about it, who can find each other and pass the
   history on
+- a **way in that's a pleasure**: meeting a cat takes one photo, and every meeting adds a
+  little to its story ([more](/ideas/meeting-a-cat/))
 
 ## What this site is
 
@@ -69,3 +71,8 @@ purpose](/posts/all-talk-no-code/). Right now the job is to understand the probl
   social network.
 - **Animal welfare and privacy first.**
 - **Cats first.** Dogs later (they're just a different type of cat).
+- **Meeting, not owning.** People meet cats here; no one owns or claims them.
+- **Fun is the doorway, not the destination.** Meeting a cat should be a pleasure, but every
+  feature exists for the cat's benefit and to help the people who care for it.
+- **No popularity contests.** No rankings and no exact locations. Attention can put a cat at
+  risk.

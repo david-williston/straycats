@@ -4,7 +4,7 @@ slug: "los-elementos-basicos"
 date: 2026-10-03
 weight: 100
 tags: ["conceptos", "modelo"]
-summary: "Diez conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."
+summary: "Doce conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."
 cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja con blanco, echado en el suelo, a media maullada"
@@ -19,6 +19,8 @@ los conceptos que aparecen una y otra vez:
 | **Gato** | El animal real. Existe aunque nadie lo haya registrado correctamente. |
 | **Identidad** | Lo que hace que este gato sea *este* gato. No es su nombre, ubicación ni dueño, que pueden ser ambiguos. |
 | **Encuentro** | Un momento en que una persona ve, alimenta, fotografía o atiende a un gato. La unidad básica de conocimiento. |
+| **Conocer** | El encuentro más sencillo: alguien conoce a un gato y le toma una foto. La puerta de entrada para la mayoría. |
+| **Tarjeta** | Cómo se muestra y se comparte a un gato: foto, nombres, pelaje, colonia, y solo lo que es seguro mostrar. |
 | **Lugar** | Donde ocurren los encuentros: una casa, una calle, un restaurante, un territorio. |
 | **Persona** | Cualquiera que conoce al gato: cuidador, vecino, visitante, veterinario, rescatista. |
 | **Cuidado** | Comida, refugio, desparasitación, esterilización, visitas al veterinario, y quién las paga. |
@@ -34,6 +36,8 @@ los conceptos que aparecen una y otra vez:
 3. **No forzar el acuerdo demasiado pronto.** Reunir afirmaciones y evidencia, y dejar que la verdad surja.
 4. **Nadie tiene que ser el dueño.** Un gato puede simplemente tener una red de personas que se preocupan por él.
 5. **Primero los gatos.** Los perros después (son solo otro tipo de gato).
+6. **Conocer, no poseer.** La gente conoce gatos; nadie se adueña de ellos ni los reclama.
+7. **La diversión es la puerta de entrada, no el destino.** Conocer a un gato debería ser un gusto, pero cada función existe por el bien del gato. Si la diversión y la seguridad del gato no están de acuerdo, gana el gato.
 
 ## Escucha: por qué los gatos callejeros son un problema difícil
 

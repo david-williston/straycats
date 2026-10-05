@@ -18,6 +18,26 @@ sitemap:
 Each update is numbered by the date it was published (year.month.day), with `.1`, `.2`
 and so on for later updates the same day.
 
+### v2026.10.04.1 · October 4, 2026
+
+**Meeting a cat**
+
+- **A new idea: [Meeting a Cat](/ideas/meeting-a-cat/).** Meeting a cat should take one
+  photo and feel like a small gift, with the cat's card a few seconds later. But every
+  meeting is for the cat: it adds to its history, helps recognise it, and can carry a quick
+  note about its wellbeing. The page shows the cats of the house as example cards.
+- **A new story: [A photo is an introduction](/posts/a-photo-is-an-introduction/).** Why the
+  photo everyone takes when they meet a cat could be where Stray Cats begins.
+- **New principles:** meeting, not owning; fun is the doorway, not the destination; and no
+  popularity contests. They're on the [About](/about/) page and in
+  [The Building Blocks](/ideas/the-building-blocks/), which now has two new concepts,
+  Meeting and Card.
+- **The other ideas grew too:** Encounters (what a meeting can record), Cat Identity ("is
+  this the same cat?"), The Care Network (from meeting to caring), Stray, Pet, or Somewhere
+  in Between? (meeting isn't claiming), Privacy & Animal Safety (celebrating cats without
+  exposing them) and Open Data & Tech.
+- Two new questions on the [Give Feedback](/feedback/) page.
+
 ### v2026.10.04 · October 4, 2026
 
 **A fix for the version number**

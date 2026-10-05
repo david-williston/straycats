@@ -19,6 +19,27 @@ sitemap:
 Cada actualización lleva como número la fecha en que se publicó (año.mes.día), con `.1`,
 `.2`, etc. para las siguientes actualizaciones del mismo día.
 
+### v2026.10.04.1 · 4 de octubre de 2026
+
+**Conocer a un gato**
+
+- **Una idea nueva: [Conocer a un gato](/ideas/meeting-a-cat/).** Conocer a un gato debería
+  tomar una foto y sentirse como un pequeño regalo, con la tarjeta del gato unos segundos
+  después. Pero cada encuentro es para el gato: suma a su historia, ayuda a reconocerlo y
+  puede llevar una nota rápida sobre su bienestar. La página muestra a los gatos de la casa
+  como tarjetas de ejemplo.
+- **Una historia nueva: [Una foto es una presentación](/posts/a-photo-is-an-introduction/).**
+  Por qué la foto que todos toman al conocer a un gato podría ser donde empieza Stray Cats.
+- **Principios nuevos:** conocer, no poseer; la diversión es la puerta de entrada, no el
+  destino; y nada de concursos de popularidad. Están en [Acerca de](/about/) y en
+  [Los elementos básicos](/ideas/the-building-blocks/), que ahora tiene dos conceptos nuevos,
+  Conocer y Tarjeta.
+- **Las demás ideas también crecieron:** Encuentros (qué puede registrar un encuentro), La
+  identidad del gato ("¿es el mismo gato?"), La red de cuidado (de conocer a cuidar),
+  ¿Callejero, mascota o algo intermedio? (conocer no es reclamar), Privacidad y seguridad de
+  los animales (celebrar a los gatos sin exponerlos) y Datos abiertos y tecnología.
+- Dos preguntas nuevas en la página [Comparte tu opinión](/feedback/).
+
 ### v2026.10.04 · 4 de octubre de 2026
 
 **Una corrección del número de versión**

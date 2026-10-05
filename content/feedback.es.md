@@ -24,6 +24,8 @@ idea mejora.
 - ¿Has conocido a un gato con más de un nombre, o con más de un "dueño"?
 - ¿Qué pasa con los gatos cuando sus cuidadores se mudan?
 - ¿Qué [ideas](/ideas/) te emocionan? ¿Cuáles te preocupan?
+- ¿Qué haría que te detuvieras a registrar a un gato que conoces?
+- ¿Qué nunca debería mostrar la tarjeta de un gato?
 - ¿Te gustaría ayudar algún día con historias, diseño, código o experiencia en rescate?
 
 ## Cómo contactarme

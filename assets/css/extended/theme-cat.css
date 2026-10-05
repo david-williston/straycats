@@ -156,3 +156,22 @@ body {
 .post-content .git-commit-body ul,
 .post-content .git-commit-body p { margin: 0.5rem 0 0; }
 .footer .site-version { font-variant-numeric: tabular-nums; opacity: 0.8; }
+
+/* --- Cat cards (cat-cards shortcode, data/cats.yaml) ------------------- */
+.post-content .cat-cards {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px; margin: 1.5rem 0;
+}
+.post-content .cat-card {
+  margin: 0; overflow: hidden;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--entry); box-shadow: 0 2px 0 var(--border);
+}
+.post-content .cat-card img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; margin: 0; border-radius: 0; }
+.post-content .cat-card figcaption {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 12px 12px; margin: 0; text-align: start; font-size: 0.85rem; line-height: 1.35;
+}
+.cat-card-name { font-weight: 800; font-size: 1.05rem; color: var(--primary); }
+.cat-card-coat { color: var(--accent); font-weight: 600; }
+.cat-card-note { color: var(--secondary); }

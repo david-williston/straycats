@@ -1,0 +1,33 @@
+# The named cats of the house, shown as cards by the cat-cards shortcode.
+# photo: a page bundle path and file name; anchor (optional): where to crop the square from
+# (Top, Center, Bottom…; default: smart); coat and note in each language.
+- name: Ciccio
+  photo: posts/the-cat-outlives-us/black-cat.jpg
+  anchor: Top
+  coat: { en: "Black", es: "Negro" }
+  note: { en: "Curls up with Mika Ella.", es: "Se acurruca con Mika Ella." }
+- name: Hootie
+  photo: ideas/lost-and-found/cover.jpg
+  coat: { en: "Black, with a collar", es: "Negro, con collar" }
+  note: { en: "The collar says someone's looking out for Hootie. Who?", es: "El collar dice que alguien cuida a Hootie. ¿Quién?" }
+- name: Lucia
+  photo: posts/the-cat-outlives-us/cover.jpg
+  coat: { en: "Calico", es: "Calicó" }
+  note: { en: "A black patch over one eye.", es: "Una mancha negra sobre un ojo." }
+- name: Mika Ella
+  photo: about/cover.jpg
+  coat: { en: "Tabby and white", es: "Atigrada con blanco" }
+  note: { en: "Curls up with Ciccio.", es: "Se acurruca con Ciccio." }
+- name: Mountain Lion
+  photo: ideas/care-network/cover.jpg
+  coat: { en: "Orange and white", es: "Naranja con blanco" }
+  note: { en: "A nickname. Real name unknown.", es: "Un apodo. Nombre real desconocido." }
+- name: Ninja
+  photo: ideas/the-building-blocks/cover.jpg
+  coat: { en: "Orange and white", es: "Naranja con blanco" }
+  note: { en: "Not Mountain Lion, though they're easy to mix up.", es: "No es Mountain Lion, aunque es fácil confundirlos." }
+- name: Tenkilo
+  photo: posts/the-cat-outlives-us/sunbather.jpg
+  anchor: Top
+  coat: { en: "Cream", es: "Color crema" }
+  note: { en: "Always finds the sun.", es: "Siempre encuentra el sol." }
