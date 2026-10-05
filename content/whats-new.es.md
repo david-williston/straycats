@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 4 de octubre de 2026: Toda la idea, a fondo
+
+*Versión v2026.10.04.5*
+
+- **Nuevo:** un análisis en audio de 24 minutos en
+  [Los elementos básicos](/ideas/the-building-blocks/#escucha-toda-la-idea-a-fondo),
+  *Memoria colectiva para gatos sin dueño*, en español: las historias, las ideas, las
+  preguntas abiertas y lo nuevo. Tiene los mismos botones de velocidad normal y 1.5×, y
+  reemplaza el análisis anterior de 20 minutos, que estaba en inglés.
+- **Nuevo:** el sitio en inglés también tiene su propio análisis a fondo, en inglés.
+
 ## 4 de octubre de 2026: Escucha en 90 segundos
 
 *Versión v2026.10.04.4*
