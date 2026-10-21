@@ -1,0 +1,29 @@
+{{- /*
+  Tells the visitor-notify Worker (tools/visitor-notify) that someone arrived,
+  so the site owner gets a Telegram message with the visitor's city and
+  country. Off until `params.visitorPingURL` is set in hugo.yaml.
+
+  What it sends: the page path, nothing else. The city and country come from
+  the network the request travelled over, on Cloudflare's side. Nothing is
+  stored in a cookie. It sends at most once a day per browser, and not at all
+  for visitors whose browser says Do Not Track or Global Privacy Control, for
+  automated browsers, or for the owner after visiting any page with ?ping=off.
+  It only runs on the published site, never on `npm run dev`.
+*/ -}}
+{{ with site.Params.visitorPingURL }}
+<script>
+  (function () {
+    try {
+      var nav = navigator;
+      if (location.search.indexOf("ping=off") !== -1) localStorage.setItem("visitor-ping-off", "1");
+      if (localStorage.getItem("visitor-ping-off")) return;
+      if (nav.webdriver || nav.doNotTrack === "1" || nav.globalPrivacyControl) return;
+      if (location.hostname !== "david-williston.github.io") return;
+      var today = new Date().toISOString().slice(0, 10);
+      if (localStorage.getItem("visitor-ping-day") === today) return;
+      localStorage.setItem("visitor-ping-day", today);
+      nav.sendBeacon({{ . }}, JSON.stringify({ path: location.pathname }));
+    } catch (e) {}
+  })();
+</script>
+{{ end }}

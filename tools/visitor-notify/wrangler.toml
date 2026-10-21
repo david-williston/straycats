@@ -1,0 +1,7 @@
+name = "straycats-visitor-notify"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# The site is a GitHub Pages project site, so its origin is the account's github.io host.
+ALLOWED_ORIGINS = "https://david-williston.github.io"

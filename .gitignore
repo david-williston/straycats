@@ -5,3 +5,4 @@ resources/_gen/
 data/git_history.json
 data/site_version.json
 node_modules/
+.wrangler/

@@ -10,6 +10,11 @@ npm run release:dry-run   # show the version the next release would get
 npm run deploy            # release: tag vYYYY.MM.DD[.N] and publish (see README)
 ```
 
+Visitor notifications: a Cloudflare Worker in `tools/visitor-notify/` sends a Telegram message
+for each new visitor (city, country, page), switched on by `params.visitorPingURL` in
+`hugo.yaml`. See its README for setup and off-switches. Never write the bot token or chat id
+into any file.
+
 ## Conventions
 
 - **Every change goes through a PR.** No commits directly to `main` (branch-protected: a PR is
