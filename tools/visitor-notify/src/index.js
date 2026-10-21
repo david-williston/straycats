@@ -8,6 +8,7 @@
 //   TELEGRAM_CHAT_ID    the chat that should receive the messages
 // Variable (wrangler.toml):
 //   ALLOWED_ORIGINS     comma separated sites allowed to send hits
+//   PATH_PREFIX         hits for pages outside this path are refused
 
 const BOT_PATTERN =
   /bot|crawl|spider|slurp|facebookexternalhit|preview|monitor|uptime|headless|lighthouse|curl|wget|python|go-http/i;
@@ -25,6 +26,16 @@ export function cleanPath(raw) {
   const text = typeof raw === 'string' ? raw : '/';
   const path = text.split(/[?#]/)[0].replace(/[\r\n\t]/g, ' ').trim();
   return (path.startsWith('/') ? path : '/').slice(0, 120);
+}
+
+// What a real page path looks like: letters, digits, - . _ ~ / and the %
+// escapes a browser uses for anything else. No spaces, so a forged hit cannot
+// put a sentence or a link into the chat.
+const PATH_PATTERN = /^\/[A-Za-z0-9\-._~%/]*$/;
+
+/** True for a cleaned path that could be one of the site's own pages. */
+export function isSitePath(path, prefix = '/') {
+  return PATH_PATTERN.test(path) && path.startsWith(prefix);
 }
 
 /** The site's hostname, taken from an Origin that has already been allowed. */
@@ -64,11 +75,13 @@ export default {
       return new Response('Not configured', { status: 500 });
     }
 
-    let path = '/';
+    // The site's script always sends its page; anything else is not a visit.
+    let path = '';
     try {
       path = cleanPath(JSON.parse((await request.text()).slice(0, 500)).path);
-    } catch {
-      // A hit with no readable body still counts; it just has no page.
+    } catch {}
+    if (!isSitePath(path, env.PATH_PREFIX || '/')) {
+      return new Response('Bad path', { status: 400 });
     }
 
     const cf = request.cf || {};

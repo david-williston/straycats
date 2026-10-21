@@ -80,6 +80,11 @@ kept.
 - `ALLOWED_ORIGINS` is `https://david-williston.github.io`. Every GitHub Pages
   project under that account shares that origin; if the site gets its own
   domain, add it there and change the hostname check in the site script.
+- `PATH_PREFIX` is `/straycats/`. A hit is refused (`400 Bad path`) unless its
+  page is under that path and looks like a real page path: letters, digits,
+  `- . _ ~ /` and `%` escapes, no spaces. Anyone can forge a hit with curl (the
+  Origin header is only enforced by browsers), so this keeps forged hits from
+  putting text or links into the chat. Change it if the site moves.
 
 **Do on each browser you use:** open
 `https://david-williston.github.io/straycats/?ping=off` once.
@@ -93,6 +98,8 @@ kept.
 
 **Changing things** (run from this folder)
 - Message wording: `message()` in `src/index.js`; update the tests to match.
+- After changing `src/index.js` or `wrangler.toml`, redeploy the Worker; the
+  site does not need a release.
 - Update the Worker: `npx wrangler deploy`
 - Replace a secret: `npx wrangler secret put TELEGRAM_BOT_TOKEN` (or
   `TELEGRAM_CHAT_ID`)
