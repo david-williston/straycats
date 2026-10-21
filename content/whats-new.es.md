@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 20 de octubre de 2026: Una identidad abierta para cada gato
+
+*Versión v2026.10.20.1*
+
+- **Idea nueva:** [¿Y si todos los gatos pudieran llevar una identidad abierta?](/ideas/open-cat-identity/)
+  Un collar con cierre de seguridad, un chip NFC y un código QR que cualquiera puede escanear
+  sin app, basado en un estándar abierto que no es de ninguna empresa, conectado con los
+  microchips que ya existen y privado por diseño.
+
 ## 5 de octubre de 2026: Cuando un gato desaparece
 
 *Versión v2026.10.05.1*

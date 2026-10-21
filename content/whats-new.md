@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 20, 2026: An open identity for every cat
+
+*Version v2026.10.20.1*
+
+- **New idea:** [What If Every Cat Could Carry an Open Identity?](/ideas/open-cat-identity/)
+  A breakaway collar with an NFC chip and a QR code that anyone can scan without an app, built
+  on an open standard no single company owns, connected to existing microchips, and private by
+  design.
+
 ## October 5, 2026: When a cat goes missing
 
 *Version v2026.10.05.1*
