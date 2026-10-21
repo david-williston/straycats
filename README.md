@@ -257,6 +257,9 @@ npm run release:dry-run   # show which version would be created
 npm run deploy            # tag, build, and publish
 ```
 
+Or release from GitHub, with no computer: **Actions → Release → Run workflow** on `main`
+(also works from the GitHub mobile app). It runs the same script, and then starts the deploy.
+
 Releases use calendar versions, tagged in git: `vYYYY.MM.DD` for the first release of a day
 (Puerto Escondido time), then `vYYYY.MM.DD.1`, `.2` and so on. `npm run deploy` runs
 `scripts/release.mjs`, which:

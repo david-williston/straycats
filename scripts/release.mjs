@@ -9,10 +9,14 @@
 //      newly created tag is removed.
 //
 // Usage: npm run deploy   (or: node scripts/release.mjs --dry-run)
+//        or run the "Release" workflow from the Actions tab (same script, with --ci)
 
 import { execFileSync } from 'node:child_process';
 
 const DRY_RUN = process.argv.includes('--dry-run');
+// Run by .github/workflows/release.yml. A tag pushed with the workflow's own token doesn't
+// start hugo.yml, so in CI the deploy is always started by hand, as for a redeploy.
+const CI = process.argv.includes('--ci');
 const TIME_ZONE = 'America/Mexico_City'; // Puerto Escondido (Oaxaca) is on Central time
 const VERSION_TAG = /^v\d{4}\.\d{2}\.\d{2}(\.\d+)?$/;
 
@@ -76,11 +80,10 @@ try {
     run('npm', ['run', 'build'], { stdio: 'inherit' });
 
     step(`Pushing tag ${version} (GitHub Actions deploys it)`);
-    if (existing.length) {
-        // Re-running the workflow for an existing tag: trigger it by hand.
+    if (!existing.length) git('push', '--quiet', 'origin', version);
+    if (existing.length || CI) {
+        // Redeploying an existing tag, or a tag pushed from CI: trigger the workflow by hand.
         run('gh', ['workflow', 'run', 'hugo.yml', '--ref', version], { stdio: 'inherit' });
-    } else {
-        git('push', '--quiet', 'origin', version);
     }
 } catch (error) {
     if (created) {
