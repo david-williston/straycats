@@ -5,3 +5,6 @@
   caches the footer across pages); it does nothing where there's no player. */}}
 {{- $listen := resources.Get "js/listen.js" | js.Build | resources.Minify | fingerprint }}
 <script src="{{ $listen.RelPermalink }}" integrity="{{ $listen.Data.Integrity }}" defer></script>
+{{- /* Stray Cats: Telegram note about each new visitor (tools/visitor-notify/README.md).
+  Off while params.visitorPingURL is empty. */}}
+{{- partial "visitor-ping.html" . }}

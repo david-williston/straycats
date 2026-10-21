@@ -52,6 +52,9 @@ params:
   # Booking page for 30-minute chats (Let's talk page, Feedback page, reply box). Chats are in English.
   chatURL: "https://calendly.com/david-williston"
 
+  # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
+  visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
+
   socialIcons:
     - name: github
       url: "https://github.com/david-williston/straycats"
