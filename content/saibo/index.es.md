@@ -1,6 +1,7 @@
 ---
 title: "Para Saibo"
 summary: "Este proyecto está dedicado a Saibo, 1 de agosto de 2010 – 16 de septiembre de 2026."
+updated: 2026-10-21
 cover:
   image: "cover.jpg"
   alt: "Saibo, un gato gris con blanco, entre el pasto y las plantas"
