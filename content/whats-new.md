@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 21, 2026: Saibo, the face of Stray Cats
+
+*Version v2026.10.21*
+
+- **New:** the site has a logo. It's a portrait of [Saibo](/saibo/), the cat this project is
+  dedicated to, resting in front of a sunset over the rooftops. You'll see it at the top of
+  every page, on the home page, in your browser tab, and as the icon if you add the site to
+  your phone's home screen.
+- **New:** sharing a link to Stray Cats now shows a picture: the page's own cover photo, or
+  the logo for pages without one.
+
 ## October 20, 2026: An open identity for every cat
 
 *Version v2026.10.20.1*

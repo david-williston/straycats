@@ -1,6 +1,7 @@
 ---
 title: "For Saibo"
 summary: "This project is dedicated to Saibo, 1 August 2010 – 16 September 2026."
+updated: 2026-10-21
 cover:
   image: "cover.jpg"
   alt: "Saibo, a grey-and-white cat, in tall grass among the plants"
