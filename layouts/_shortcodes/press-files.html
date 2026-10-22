@@ -1,0 +1,30 @@
+{{- /* Download cards for the Press page, from data/press.yaml, then a link to the whole kit
+  as a ZIP (built by scripts/press-kit.mjs). Text lives in i18n/.
+  Usage: {{< press-files >}} */ -}}
+{{- $kit := "press/straycats-brand-kit" }}
+{{- $lang := .Page.Language.Lang }}
+<div class="press-files">
+  {{- range hugo.Data.press }}
+  {{- $title := index .title $lang }}
+  {{- $href := printf "%s/%s" $kit .file | absURL }}
+  <figure class="press-file">
+    <a class="press-file-preview" href="{{ $href }}" download>
+      <img src="{{ .preview | absURL }}" alt="" loading="lazy">
+    </a>
+    <figcaption>
+      <span class="press-file-title">{{ $title }}</span>
+      <span class="press-file-note">{{ index .note $lang }}</span>
+      <a class="press-file-link" href="{{ $href }}" download>{{ i18n "press_download" }}
+        <span class="press-file-size">({{ partial "press-size.html" (printf "static/%s/%s" $kit .file) }})</span></a>
+    </figcaption>
+  </figure>
+  {{- end }}
+</div>
+{{- $zip := printf "static/%s.zip" $kit }}
+{{- if fileExists $zip }}
+<p><a class="respond-button" href="{{ printf "%s.zip" $kit | absURL }}" download>
+  {{- i18n "press_download_all" (dict "Size" (partial "press-size.html" $zip)) -}}
+</a></p>
+{{- else }}
+{{- warnf "press-files: %s is missing; run npm run press-kit" $zip }}
+{{- end }}

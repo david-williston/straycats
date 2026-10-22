@@ -1,0 +1,7 @@
+{{- /* A file's size for download links, e.g. "820 KB" or "8.5 MB".
+  Usage: partial "press-size.html" "static/…" */ -}}
+{{- if fileExists . }}
+{{- $bytes := (os.Stat .).Size }}
+{{- if ge $bytes 1048576 }}{{ lang.FormatNumber 1 (div $bytes 1048576.0) }} MB
+{{- else }}{{ math.Ceil (div $bytes 1024.0) | int }} KB{{ end }}
+{{- end -}}

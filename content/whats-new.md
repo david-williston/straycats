@@ -21,6 +21,8 @@ also say **New** or **Updated** under their title.
   your phone's home screen.
 - **New:** sharing a link to Stray Cats now shows a picture: the page's own cover photo, or
   the logo for pages without one.
+- **New:** a [Press](/press/) page for journalists and bloggers: the project in brief, the
+  logo and artwork to download, and how to get in touch.
 
 ## October 20, 2026: An open identity for every cat
 

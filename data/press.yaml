@@ -1,0 +1,23 @@
+# Downloads on the Press page, shown by the press-files shortcode.
+# file: inside static/press/straycats-brand-kit/; preview: a small image under static/ to show
+# instead (the originals are large, and browsers can't show TIFF); title and note in each language.
+- file: 01_Artwork/straycats-logo-transparent.png
+  preview: images/straycats-logo.webp
+  title: { en: "Logo, transparent background", es: "Logo, fondo transparente" }
+  note: { en: "PNG, 950 × 789. For web pages and layouts on a light background.", es: "PNG, 950 × 789. Para páginas web y diseños sobre fondo claro." }
+- file: 01_Artwork/straycats-logo-on-white.png
+  preview: images/straycats-logo.webp
+  title: { en: "Logo on white", es: "Logo sobre blanco" }
+  note: { en: "PNG, 1055 × 805.", es: "PNG, 1055 × 805." }
+- file: 04_Print/straycats-logo-on-white-300dpi.tif
+  preview: images/straycats-logo.webp
+  title: { en: "Logo for print", es: "Logo para impresión" }
+  note: { en: "TIFF, 300 dpi. Prints sharply up to about 9 × 7 cm.", es: "TIFF, 300 dpi. Se imprime nítido hasta unos 9 × 7 cm." }
+- file: 03_App_Icons/straycats-app-icon-1024.png
+  preview: app-icon-192.png
+  title: { en: "Square icon", es: "Ícono cuadrado" }
+  note: { en: "PNG, 1024 × 1024. Saibo's portrait on dark navy, for avatars and thumbnails.", es: "PNG, 1024 × 1024. El retrato de Saibo sobre azul marino oscuro, para avatares y miniaturas." }
+- file: 02_Web/straycats-social-1200x630.jpg
+  preview: images/straycats-social.jpg
+  title: { en: "Wide card", es: "Tarjeta horizontal" }
+  note: { en: "JPG, 1200 × 630. For social posts and article headers.", es: "JPG, 1200 × 630. Para redes sociales y encabezados de artículos." }
