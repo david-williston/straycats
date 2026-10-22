@@ -1,0 +1,21 @@
+{{- /*
+  The absolute URL of the page's cover image, or "" when it has none.
+  PaperMod's opengraph/twitter_cards templates resolve cover.image against the site root
+  unless cover.relative is set, so a page bundle's "cover.jpg" pointed at /cover.jpg.
+  Look it up the way the theme's cover.html does: page bundle first, then assets/.
+*/ -}}
+{{- $url := "" }}
+{{- with .Params.cover.image }}
+  {{- $pageBundleCover := ($.Resources.ByType "image").GetMatch (printf "*%s*" .) }}
+  {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s*" .) }}
+  {{- with or $pageBundleCover $globalResourcesCover }}
+    {{- $url = .Permalink }}
+  {{- else }}
+    {{- if eq $.Params.cover.relative true }}
+      {{- $url = path.Join $.RelPermalink . | absURL }}
+    {{- else }}
+      {{- $url = . | absURL }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $url }}
