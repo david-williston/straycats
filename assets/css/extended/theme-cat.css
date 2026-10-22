@@ -41,9 +41,12 @@ body {
 
 /* --- Header logo ------------------------------------------------------- */
 .logo a { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; }
-.logo-cat { flex-shrink: 0; }
-.logo-cat-head { fill: var(--accent); }
-.logo-cat-eye, .logo-cat-nose { fill: #2b211b; }
+.logo img { flex-shrink: 0; width: 34px; height: 34px; margin-inline-end: 0; border-radius: 50%; }
+
+/* --- Saibo logo on the home page (layouts/_partials/home_info.html) ---- */
+.home-logo { display: block; width: min(100%, 340px); height: auto; margin: 0 auto 8px; }
+/* The wordmark is dark: give it a light card on the night theme */
+:root[data-theme="dark"] .home-logo { padding: 14px 18px; border-radius: var(--radius); background: #f7f5ef; }
 
 .menu a:hover span { color: var(--accent); }
 .menu .active { border-bottom-color: var(--accent); }
