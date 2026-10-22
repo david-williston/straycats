@@ -38,12 +38,14 @@ params:
   # The same order drives the previous/next links at the bottom of each page.
   mainSections: [posts, ideas]
 
+  # Brand artwork: a portrait of Saibo (raster only; the source kit is kept outside the repo).
+  # Favicons and home-screen icons are in static/ under the names PaperMod links by default.
   label:
-    iconSVG: >-
-      <svg class="logo-cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
-      <g class="logo-cat-head"><path class="logo-cat-ear-l" d="M5 4 13 11 6 15Z"/><path class="logo-cat-ear-r" d="M27 4 19 11 26 15Z"/><ellipse cx="16" cy="18" rx="11" ry="9.5"/></g>
-      <ellipse class="logo-cat-eye" cx="11.8" cy="17.5" rx="1.6" ry="2.2"/><ellipse class="logo-cat-eye" cx="20.2" cy="17.5" rx="1.6" ry="2.2"/>
-      <path class="logo-cat-nose" d="M14.6 21h2.8l-1.4 1.6z"/></svg>
+    icon: images/saibo-badge.png
+    iconHeight: 34
+  images: [images/straycats-social.jpg]   # link preview for pages without a cover photo
+  assets:
+    theme_color: "#fbf6ef"
 
   # Each post ends with a "Respond to this idea" box (layouts/_partials/comments.html; text in i18n/).
   # Set this to the address that should receive replies.

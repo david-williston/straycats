@@ -50,18 +50,9 @@
   #theme-toggle svg { transition: transform 0.5s ease; }
   #theme-toggle:hover svg { transform: rotate(-20deg); }
 
-  /* Logo cat blinks now and then, and twitches an ear */
-  .logo-cat-eye { transform-box: fill-box; transform-origin: center; animation: cat-blink 7s infinite; }
-  .logo-cat-ear-r { transform-box: fill-box; transform-origin: 70% 90%; animation: ear-twitch 11s infinite; }
-  @keyframes cat-blink {
-    0%, 94%, 100% { transform: scaleY(1); }
-    96% { transform: scaleY(0.1); }
-  }
-  @keyframes ear-twitch {
-    0%, 90%, 100% { transform: rotate(0); }
-    92% { transform: rotate(-14deg); }
-    94% { transform: rotate(4deg); }
-  }
+  /* Saibo's badge in the header tilts its head on hover */
+  .logo img { transition: transform 0.3s ease; }
+  .logo a:hover img { transform: rotate(-8deg) scale(1.06); }
 
   /* The perched cat swishes its tail */
   .perched-cat .tail { transform-box: view-box; transform-origin: 41px 57px; animation: tail-swish 4.5s ease-in-out infinite; }

@@ -1,0 +1,17 @@
+{{- /* Stray Cats: PaperMod's home_info.html with the Saibo logo above the title. */}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <img class="home-logo" src="{{ "images/straycats-logo.webp" | absURL }}" width="950" height="789"
+        alt="{{ i18n "logo_alt" }}" fetchpriority="high">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
