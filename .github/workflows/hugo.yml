@@ -31,6 +31,7 @@ jobs:
       # so the change history shows when each release was made.
       - run: git fetch --force --tags origin
       - run: node scripts/git-history.mjs
+      - run: node scripts/press-kit.mjs
       - id: pages
         uses: actions/configure-pages@v5
       - run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"

@@ -6,3 +6,4 @@ data/git_history.json
 data/site_version.json
 node_modules/
 .wrangler/
+static/press/straycats-brand-kit.zip

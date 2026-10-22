@@ -22,6 +22,8 @@ páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su t
   el sitio a la pantalla de inicio de tu teléfono.
 - **Nuevo:** al compartir un enlace de Stray Cats ahora aparece una imagen: la foto de portada
   de la página, o el logo en las páginas que no tienen.
+- **Nuevo:** una página de [Prensa](/press/) para periodistas y blogueros: el proyecto en pocas
+  palabras, el logo y las imágenes para descargar, y cómo contactarme.
 
 ## 20 de octubre de 2026: Una identidad abierta para cada gato
 

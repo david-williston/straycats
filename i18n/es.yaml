@@ -23,3 +23,5 @@ invite_text: "Las ideas salen mejor conversando. Agenda una charla relajada de 3
 invite_button: "Hablemos"
 respond_chat_button: "¿Prefieres conversar? Agenda una charla 💬"
 logo_alt: "Logo de Stray Cats: Saibo, un gato gris de pecho blanco, descansando frente a un atardecer sobre los tejados"
+press_download: "Descargar"
+press_download_all: "Descargar todo (ZIP, {{ .Size }})"
