@@ -1,0 +1,35 @@
+name: Release
+
+# Publishes from GitHub, no computer needed: Actions tab > Release > Run workflow (or the GitHub
+# mobile app). Runs the same scripts/release.mjs as `npm run deploy`: tags main with the next
+# vYYYY.MM.DD[.N], test-builds the site, pushes the tag, then starts hugo.yml for that tag.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # push the version tag
+  actions: write    # start hugo.yml for that tag
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.163.1"   # keep in step with hugo.yml
+          extended: true
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - run: node scripts/release.mjs --ci
