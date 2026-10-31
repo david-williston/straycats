@@ -12,6 +12,18 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Páginas que encajan con la idea
+
+*Versión v2026.10.30.4*
+
+- **Cambio:** las páginas de [Prensa](/press/), [Ideas](/ideas/), [Cómo ayudar](/como-ayudar/),
+  [Opinión](/comparte-tu-opinion/) y [Hablemos](/hablemos/) ahora hablan con cualquiera que cuide
+  a un gato, no solo con quien cuida callejeros. Cómo ayudar pregunta qué situación has vivido:
+  un gato propio, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar o
+  uno que quedó atrás, y qué te lo habría hecho más fácil.
+- **Cambio:** algunas ideas ganaron los casos que faltaban, como dar a un gato, y un vecino que
+  muere y se lleva consigo la historia de un gato.
+
 ## 30 de octubre de 2026: Para quién es esto
 
 *Versión v2026.10.30.3*

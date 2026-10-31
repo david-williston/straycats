@@ -11,6 +11,18 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: Pages that match the idea
+
+*Version v2026.10.30.4*
+
+- **Changed:** the [Press](/press/) page, the [Ideas](/ideas/), [Get involved](/involve/),
+  [Feedback](/feedback/) and [Talk](/talk/) pages now speak to anyone who cares for a cat, not
+  only strays. Get involved asks which situation you've lived, whether that's your own cat,
+  a neighbor's, a stray, a new adoption, a cat you had to give up or one left behind, and what
+  would have made it easier.
+- **Changed:** a few ideas gained the cases that were missing, like giving up a cat, and a
+  neighbor who dies and takes a cat's story with them.
+
 ## October 30, 2026: Who this is for
 
 *Version v2026.10.30.3*
