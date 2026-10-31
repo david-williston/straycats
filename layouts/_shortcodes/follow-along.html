@@ -7,5 +7,5 @@
 {{- end }}
 {{- with site.Params.newsletterURL }}
 <p>{{ i18n "follow_newsletter" }}</p>
-<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "follow_newsletter_button" }}</a></p>
+<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "follow_newsletter_button" }}<span class="sr-only"> {{ i18n "opens_new_tab" }}</span></a></p>
 {{- end -}}

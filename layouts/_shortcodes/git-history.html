@@ -14,10 +14,10 @@
 {{- range $groups }}
 {{- $release := .release }}
 <section class="git-release">
-  <h3 class="git-release-title">
+  <h2 class="git-release-title">
     {{- with $release }}{{ . }}{{ else }}{{ i18n "history_unreleased" }}{{ end -}}
     {{- with .date }} <span class="git-release-date">{{ time.Format ":date_long" . }}</span>{{ end -}}
-  </h3>
+  </h2>
   <ol class="git-history">
     {{- range $commits }}
     {{- if eq (.release | default "") $release }}

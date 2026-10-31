@@ -11,13 +11,13 @@
   <a class="contact-button" href="{{ printf "mailto:%s%s" . (cond (ne $subject "") (printf "?subject=%s" $subject) "") | safeURL }}">{{ i18n "contact_email" }}</a>
   {{- end }}
   {{- with $c.telegramURL }}
-  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.telegramHandle }}title="{{ . }}"{{ end }}>{{ i18n "contact_telegram" }}</a>
+  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.telegramHandle }}title="{{ . }}"{{ end }}>{{ i18n "contact_telegram" }}<span class="sr-only"> {{ i18n "opens_new_tab" }}</span></a>
   {{- end }}
   {{- with $c.whatsappURL }}
-  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.whatsappNumber }}title="{{ . }}"{{ end }}>{{ i18n "contact_whatsapp" }}</a>
+  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.whatsappNumber }}title="{{ . }}"{{ end }}>{{ i18n "contact_whatsapp" }}<span class="sr-only"> {{ i18n "opens_new_tab" }}</span></a>
   {{- end }}
   {{- with $c.githubIssueURL }}
-  <a class="contact-button contact-button-alt" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "contact_github" }}</a>
+  <a class="contact-button contact-button-alt" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "contact_github" }}<span class="sr-only"> {{ i18n "opens_new_tab" }}</span></a>
   {{- end }}
   {{- if .chat }}
   {{- with site.GetPage "/talk" }}

@@ -8,7 +8,7 @@
   {{- $title := index .title $lang }}
   {{- $href := printf "%s/%s" $kit .file | absURL }}
   <figure class="press-file">
-    <a class="press-file-preview" href="{{ $href }}" download>
+    <a class="press-file-preview" href="{{ $href }}" download aria-hidden="true" tabindex="-1">
       <img src="{{ .preview | absURL }}" alt="" loading="lazy">
     </a>
     <figcaption>

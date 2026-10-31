@@ -3,7 +3,7 @@
   Usage: {{< listen src="brief-en.m4a" title="…" >}} */ -}}
 {{- with .Page.Resources.Get (.Get "src") -}}
 <figure class="listen">
-  <audio controls preload="metadata" src="{{ .RelPermalink }}" title="{{ $.Get "title" | markdownify | plainify }}">
+  <audio controls preload="metadata" src="{{ .RelPermalink }}" title="{{ $.Get "title" | markdownify | plainify }}"{{ with $.Get "title" }} aria-label="{{ . | markdownify | plainify }}"{{ end }}>
     <a href="{{ .RelPermalink }}">{{ i18n "listen_download" }}</a>
   </audio>
   <div class="listen-speed" role="group" aria-label="{{ i18n "listen_speed" }}">

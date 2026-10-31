@@ -12,8 +12,8 @@
   --content: #3a2e26;
   --code-bg: #f3ebe0;
   --border: #efe5d8;
-  --accent: #b8621a;         /* ginger */
-  --accent-soft: rgba(184, 98, 26, 0.14);
+  --accent: #9a4f0e;         /* ginger (darkened for 4.5:1 text contrast) */
+  --accent-soft: rgba(154, 79, 14, 0.14);
   --radius: 12px;
 }
 
@@ -132,7 +132,7 @@ body {
 
 /* --- Release notes: change history (git-history shortcode) ------------- */
 .post-content .git-release + .git-release { margin-top: 1.5rem; }
-.post-content h3.git-release-title {
+.post-content h2.git-release-title {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem;
   margin: 0 0 0.75rem; font-size: 1.05rem;
 }

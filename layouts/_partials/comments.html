@@ -16,7 +16,7 @@
   <p class="respond-how">{{ i18n "respond_how" }}</p>
   {{ partial "contact-links.html" (dict "subject" $subject "text" (printf "%s\n" $subject)) }}
   {{- with site.GetPage "/talk" }}
-  <p class="respond-secondary"><a class="respond-button respond-button-alt" href="{{ .RelPermalink }}">{{ i18n "respond_chat_button" }}</a>
+  <p class="respond-secondary"><a class="respond-button respond-button-alt" href="{{ .RelPermalink }}">{{ i18n "respond_chat_button" }} <span aria-hidden="true">💬</span></a>
   {{- with site.GetPage "/involve" }} <a class="respond-more" href="{{ .RelPermalink }}">{{ i18n "contact_involve" }}</a>{{ end }}</p>
   {{- end }}
 </section>

@@ -3,5 +3,5 @@
 {{- with site.Params.fundingURL -}}
 <h2 id="{{ i18n "chip_title" | anchorize }}">{{ i18n "chip_title" }}</h2>
 <p>{{ i18n "chip_text" }}</p>
-<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "chip_button" }}</a></p>
+<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "chip_button" }}<span class="sr-only"> {{ i18n "opens_new_tab" }}</span></a></p>
 {{- end -}}
