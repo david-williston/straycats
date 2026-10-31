@@ -4,6 +4,8 @@ date: 2026-10-04T00:00:00Z
 weight: 6
 tags: ["story", "meeting", "principles"]
 summary: "When people meet a cat, they take a photo. What if that photo introduced them to the cat, and the cat to everyone who could help it?"
+question: "When you meet a cat and take its photo, what do you wish the photo could tell you back?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Close-up of Ciccio, a black cat with yellow-green eyes, looking straight at the camera"

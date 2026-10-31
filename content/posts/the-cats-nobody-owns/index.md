@@ -4,6 +4,8 @@ date: 2026-10-03T00:00:00Z
 weight: 1
 tags: ["story", "puerto-escondido", "origins"]
 summary: "Where this idea started: a house full of cats in Puerto Escondido, and a question about who looks after them."
+question: "Is there a cat you look after without technically owning it, and how do you keep track of who else helps?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ciccio, a black cat, and Tenkilo, a cream cat, in a tiled courtyard, with Ninja grooming among the potted flowers"

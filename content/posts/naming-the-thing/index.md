@@ -4,6 +4,8 @@ date: 2026-10-03T04:00:00Z
 weight: 5
 tags: ["process", "name"]
 summary: "Every project needs a code name. Here's how this one got its name."
+question: "Does \"Stray Cats\" work in your language and your town, or does a better name come to mind?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "A tortoiseshell cat walking across a sunny street with its tail held high"

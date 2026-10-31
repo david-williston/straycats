@@ -5,6 +5,8 @@ date: 2026-10-03T04:00:00Z
 weight: 5
 tags: ["proceso", "nombre"]
 summary: "Todo proyecto necesita un nombre clave. Así es como este consiguió el suyo."
+question: "¿\"Stray Cats\" funciona en tu idioma y en tu pueblo, o se te ocurre un nombre mejor?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Una gata carey cruzando una calle soleada con la cola en alto"

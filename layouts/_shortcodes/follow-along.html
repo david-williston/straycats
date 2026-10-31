@@ -1,0 +1,11 @@
+{{- /* "Follow along" section for the Get involved page: the RSS feed, plus the newsletter when
+  params.newsletterURL is set. Usage: {{< follow-along >}} */ -}}
+<h2 id="{{ i18n "follow_title" | anchorize }}">{{ i18n "follow_title" }}</h2>
+{{- $rss := site.Home.OutputFormats.Get "rss" -}}
+{{- with $rss }}
+<p>{{ i18n "follow_rss" (dict "Link" (printf `<a href="%s">%s</a>` .RelPermalink (i18n "follow_rss_link") | safeHTML)) | safeHTML }}</p>
+{{- end }}
+{{- with site.Params.newsletterURL }}
+<p>{{ i18n "follow_newsletter" }}</p>
+<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "follow_newsletter_button" }}</a></p>
+{{- end -}}

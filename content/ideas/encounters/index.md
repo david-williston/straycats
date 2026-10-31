@@ -1,10 +1,11 @@
 ---
 title: "Encounters: Every Meeting Adds to the Story"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 300
 tags: ["encounters", "concepts"]
 summary: "Each time someone meets a cat, they add a little to its shared history."
+question: "If you could add just one detail after meeting a cat, what would be the most useful one?"
 cover:
   image: "cover.jpg"
   alt: "Tenkilo, a cream-coloured cat, in profile, eyes closed, basking in the sun"

@@ -1,5 +1,8 @@
-{{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial). Text lives in i18n/. */ -}}
-{{- $email := site.Params.feedbackEmail -}}
+{{- /* "Respond to this idea" box shown at the end of each post (overrides PaperMod's comments partial).
+  Text lives in i18n/. The question comes from the page's optional `question:` front matter. Email,
+  Telegram and WhatsApp messages are prefilled with the page title (contact-links.html). */ -}}
+{{- $question := .Params.question | default (i18n "respond_question_default") -}}
+{{- $subject := printf (i18n "respond_subject") .Title -}}
 <section class="respond">
   <svg class="perched-cat" viewBox="0 0 60 60" aria-hidden="true">
     <path class="tail" d="M41 57c11 0 15-7 11-15"/>
@@ -8,17 +11,12 @@
     <path d="M21 17l1-11 6 7zM32 13l6-7 1 11z"/>
   </svg>
   <h2>{{ i18n "respond_title" }}</h2>
+  <p class="respond-question">{{ $question }}</p>
   <p>{{ i18n "respond_text" }}</p>
-  <div class="respond-actions">
-  {{- if $email }}
-  {{- /* urlquery encodes spaces as "+", which some mail apps show literally */}}
-  {{- $subject := printf (i18n "respond_subject") .Title | urlquery }}
-  <a class="respond-button" href="{{ printf "mailto:%s?subject=%s" $email (replace $subject "+" "%20") | safeURL }}">{{ i18n "respond_button" }}</a>
-  {{- else }}
-  <p><em>{{ i18n "respond_soon" }} <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ end }}">{{ i18n "respond_feedback" }}</a>.</em></p>
-  {{- end }}
+  <p class="respond-how">{{ i18n "respond_how" }}</p>
+  {{ partial "contact-links.html" (dict "subject" $subject "text" (printf "%s\n" $subject)) }}
   {{- with site.GetPage "/talk" }}
-  <a class="respond-button respond-button-alt" href="{{ .RelPermalink }}">{{ i18n "respond_chat_button" }}</a>
+  <p class="respond-secondary"><a class="respond-button respond-button-alt" href="{{ .RelPermalink }}">{{ i18n "respond_chat_button" }}</a>
+  {{- with site.GetPage "/involve" }} <a class="respond-more" href="{{ .RelPermalink }}">{{ i18n "contact_involve" }}</a>{{ end }}</p>
   {{- end }}
-  </div>
 </section>

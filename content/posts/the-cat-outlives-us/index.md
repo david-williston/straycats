@@ -4,6 +4,8 @@ date: 2026-10-03T01:00:00Z
 weight: 2
 tags: ["story", "principles", "memory"]
 summary: "Everything I know about these cats lives in my head and on Instagram. When I leave, it leaves with me."
+question: "If you left your town tomorrow, what would you want the next person to know about the cats you look after?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Close-up of Lucia, a young calico cat with a black patch over one eye"

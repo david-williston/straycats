@@ -4,6 +4,8 @@ date: 2026-10-03T02:00:00Z
 weight: 3
 tags: ["story", "identity"]
 summary: "Some of 'my' cats are clearly well fed somewhere else. I don't know where, or what those people call them."
+question: "Do you know a cat with more than one name, and how did you find out it was the same cat?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Mountain Lion, an orange-and-white cat, peering at the camera from behind a black railing"

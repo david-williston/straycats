@@ -2,7 +2,7 @@
 title: "Comparte tu opinión"
 slug: "comparte-tu-opinion"
 summary: "Dime qué se me está escapando."
-updated: 2026-10-05
+updated: 2026-10-30
 ShowToc: false
 ShowReadingTime: false
 comments: false
@@ -42,7 +42,11 @@ escribirme aquí:
 
 - **GitHub Discussions:** [https://github.com/david-williston/straycats/discussions](https://github.com/david-williston/straycats/discussions), el mejor lugar para conversar abiertamente
 - **GitHub Issues:** [https://github.com/david-williston/straycats/issues](https://github.com/david-williston/straycats/issues), para sugerencias o correcciones concretas
-- **Correo:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
+- **Correo:** [david@davidwilliston.com](mailto:david@davidwilliston.com)
+- **Telegram:** [@davidwilliston](https://t.me/davidwilliston)
+- **WhatsApp:** [+1 236 882 2034](https://wa.me/12368822034)
+
+Hay más formas de ayudar, desde un saludo de una línea hasta una charla más larga, en [Cómo ayudar](/involve/).
 
 Cada página también tiene un enlace de **Sugerir cambios** por si quieres proponer una
 edición directamente. Puedes escribir en español o en inglés.

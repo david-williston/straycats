@@ -5,6 +5,8 @@ date: 2026-10-21
 weight: 250
 tags: ["identidad", "estandar-abierto", "tecnologia"]
 summary: "Una idea para un estándar abierto y global de identificación de gatos: un collar que cualquiera puede escanear, sin app y sin que una sola empresa mande."
+question: "Si encontraras a un gato con un collar así, ¿lo escanearías, y qué te gustaría ver en la pantalla?"
+updated: 2026-10-30
 ---
 
 *Una idea para un estándar abierto y global de identificación de gatos.*

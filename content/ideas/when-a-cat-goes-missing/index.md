@@ -4,6 +4,8 @@ date: 2026-10-05
 weight: 550
 tags: ["lost-pets", "community", "care"]
 summary: "A missing cat is one of the hardest things a person who loves cats goes through. The people who've met that cat may be the best chance of finding it."
+question: "If a cat you knew went missing, who would you want alerted first, and who should never see the alert?"
+updated: 2026-10-30
 ---
 
 *Suggested by Michael, a reader of my newsletter. A friend of his lost her cat a week ago and

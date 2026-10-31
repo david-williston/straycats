@@ -2,10 +2,11 @@
 title: "La identidad del gato y sus muchos nombres"
 slug: "identidad-del-gato"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-30
 weight: 200
 tags: ["identidad", "modelo", "conceptos"]
 summary: "¿Cómo se representa a un gato que tiene tres nombres, dos casas y ningún dueño claro?"
+question: "¿Cómo distingues a dos gatos que se parecen, sobre todo si son completamente negros o naranja con blanco?"
 cover:
   image: "cover.jpg"
   alt: "Lucia, una gata calicó, vista de espaldas, con sus manchas negras, naranjas y blancas bien visibles"

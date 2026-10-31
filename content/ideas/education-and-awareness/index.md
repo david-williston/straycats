@@ -4,6 +4,8 @@ date: 2026-10-05
 weight: 450
 tags: ["education", "care", "safety"]
 summary: "Many of the dangers street cats face come from things people simply don't know. Awareness may help cats more than any feature."
+question: "What's one thing about cats you wish people near you knew, and how could someone tell them without lecturing?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Carlitos, a grey tabby with yellow-green eyes, looking up from a tiled floor"

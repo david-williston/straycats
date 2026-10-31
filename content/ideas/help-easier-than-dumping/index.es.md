@@ -5,6 +5,8 @@ date: 2026-10-25
 weight: 800
 tags: ["prevencion", "comunidad", "seguridad"]
 summary: "Si encontrar ayuda fuera tan fácil como encontrar un baño público, menos gatos terminarían abandonados en la carretera. Un gato perdido y un gato abandonado se ven igual, así que la prevención tiene que venir antes que la prueba."
+question: "Si alguien cerca de ti encontrara un gato que no puede quedarse en su casa, ¿adónde iría primero, y qué tan fácil es encontrar esa ayuda?"
+updated: 2026-10-30
 ---
 
 # Que la ayuda sea más fácil de encontrar que el abandono

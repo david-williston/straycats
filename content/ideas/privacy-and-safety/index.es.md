@@ -2,10 +2,11 @@
 title: "Privacidad y seguridad de los animales"
 slug: "privacidad-y-seguridad"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 600
 tags: ["privacidad", "seguridad", "principios"]
 summary: "Los datos de ubicación de animales vulnerables pueden usarse mal. ¿Cómo protegerlos?"
+question: "¿Qué necesitarías para poder compartir a un gato que quieres sin revelar dónde vive?"
 cover:
   image: "cover.jpg"
   alt: "Varios gatos descansando en un patio detrás de una reja"

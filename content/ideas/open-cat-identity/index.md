@@ -4,6 +4,8 @@ date: 2026-10-21
 weight: 250
 tags: ["identity", "open-standard", "tech"]
 summary: "An idea for a global, open standard for cat identification: a collar anyone can scan, with no app and no single company in charge."
+question: "If you found a cat wearing a collar like this, would you scan it, and what would you want to see on the screen?"
+updated: 2026-10-30
 ---
 
 *An idea for a global, open standard for cat identification.*

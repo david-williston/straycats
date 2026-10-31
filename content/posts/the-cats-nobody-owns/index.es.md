@@ -5,6 +5,8 @@ date: 2026-10-03T00:00:00Z
 weight: 1
 tags: ["historia", "puerto-escondido", "origenes"]
 summary: "Dónde empezó esta idea: una casa llena de gatos en Puerto Escondido y una pregunta sobre quién los cuida."
+question: "¿Hay un gato que cuidas sin que sea técnicamente tuyo, y cómo sabes quién más lo ayuda?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ciccio, una gata negra, y Tenkilo, un gato color crema, en un patio de baldosas, con Ninja acicalándose entre las macetas"

@@ -1,10 +1,11 @@
 ---
 title: "The Care Network"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 400
 tags: ["community", "care", "tnr"]
 summary: "Many people quietly care for the same cats with no coordination. What if they could find each other?"
+question: "Who else feeds or looks after a cat you care for, and how would you want to find each other without sharing your address?"
 cover:
   image: "cover.jpg"
   alt: "Mountain Lion, an orange-and-white cat whose real name nobody knows, sitting next to an empty food bowl"

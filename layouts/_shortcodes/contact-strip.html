@@ -1,0 +1,10 @@
+{{- /* A one-line list of ways to reach David: Email · Telegram · WhatsApp · GitHub (· Get involved).
+  Used in the footer and on the home page. Usage: {{< contact-strip >}} or {{< contact-strip involve=true >}} */ -}}
+{{- $c := site.Params.contact | default dict -}}
+{{- $items := slice -}}
+{{- with site.Params.feedbackEmail }}{{ $items = $items | append (printf `<a href="mailto:%s">%s</a>` . (i18n "contact_email")) }}{{ end -}}
+{{- with $c.telegramURL }}{{ $items = $items | append (printf `<a href="%s" rel="noopener">%s</a>` . (i18n "contact_telegram")) }}{{ end -}}
+{{- with $c.whatsappURL }}{{ $items = $items | append (printf `<a href="%s" rel="noopener">%s</a>` . (i18n "contact_whatsapp")) }}{{ end -}}
+{{- with $c.githubIssueURL }}{{ $items = $items | append (printf `<a href="%s" rel="noopener">%s</a>` . (i18n "contact_github")) }}{{ end -}}
+{{- if .Get "involve" }}{{ with site.GetPage "/involve" }}{{ $items = $items | append (printf `<a href="%s">%s</a>` .RelPermalink (i18n "contact_involve")) }}{{ end }}{{ end -}}
+<span class="contact-strip">{{ delimit $items " · " | safeHTML }}</span>

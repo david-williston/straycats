@@ -2,10 +2,11 @@
 title: "La red de cuidado"
 slug: "la-red-de-cuidado"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 400
 tags: ["comunidad", "cuidado", "tnr"]
 summary: "Muchas personas cuidan en silencio a los mismos gatos sin coordinarse. ¿Y si pudieran encontrarse?"
+question: "¿Quién más alimenta o cuida a un gato que tú cuidas, y cómo te gustaría encontrarlo sin compartir tu dirección?"
 cover:
   image: "cover.jpg"
   alt: "Mountain Lion (León de Montaña), un gato naranja con blanco cuyo nombre real nadie conoce, junto a un plato de comida vacío"

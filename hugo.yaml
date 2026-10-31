@@ -50,9 +50,22 @@ params:
   # Each post ends with a "Respond to this idea" box (layouts/_partials/comments.html; text in i18n/).
   # Set this to the address that should receive replies.
   comments: true
-  feedbackEmail: "davidjdwilliston+straycats@gmail.com"
+  feedbackEmail: "david@davidwilliston.com"
   # Booking page for 30-minute chats (Let's talk page, Feedback page, reply box). Chats are in English.
   chatURL: "https://calendly.com/david-williston"
+
+  # Ways to reach David (public). Used by the contact-channels / contact-strip shortcodes, the reply
+  # box under each page, the footer and the Get involved page (layouts/_partials/contact-links.html).
+  contact:
+    telegramURL: "https://t.me/davidwilliston"
+    telegramHandle: "@davidwilliston"
+    whatsappURL: "https://wa.me/12368822034"
+    whatsappNumber: "+1 236 882 2034"
+    githubIssueURL: "https://github.com/david-williston/straycats/issues/new/choose"
+    githubDiscussionsURL: "https://github.com/david-williston/straycats/discussions"
+  # Leave these empty until they exist: everything that depends on them stays hidden.
+  fundingURL: ""      # a page where people can chip in (the "Chip in" section of Get involved)
+  newsletterURL: ""   # a sign-up page (shown under "Follow along" on Get involved)
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
@@ -82,7 +95,7 @@ languages:
       editPost:
         Text: "Suggest changes"
       footer:
-        text: "Made with care for the cats nobody owns. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) · [Press](/press/) {{< site-version >}}"
+        text: "Made with care for the cats nobody owns. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) · [Press](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
       homeInfoParams:
         Title: "How could the world remember the cats nobody owns? 🐈"
         Content: >
@@ -90,7 +103,9 @@ languages:
           unfinished. It starts with the cats I've come to know in Puerto Escondido, Mexico, and
           a simple question: what if every stray cat had an identity, a history, and a network of
           people who care about it, and meeting one took nothing more than a photo? There's no app yet, and no code. Just stories, questions and
-          half-formed ideas — and I'd love to hear yours. Prefer to listen? There's a
+          half-formed ideas — and I'd love to hear yours. **The lightest way to help is a
+          one-line hello:** {{< contact-strip >}}. I read every message myself, and
+          [there are more ways to get involved](/involve/). Prefer to listen? There's a
           [90-second audio introduction](/about/#listen-to-the-idea). Been here before? See
           [what's new](/whats-new/).
 
@@ -101,13 +116,12 @@ languages:
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Stories, url: posts/, weight: 30}
         - {identifier: whatsnew, name: "What's New", url: whats-new/, weight: 35}
-        - {identifier: feedback, name: Give Feedback, url: feedback/, weight: 40}
+        - {identifier: involve, name: Get Involved, url: involve/, weight: 40}
         - identifier: search
           name: Search
           url: search/
           weight: 50
           pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
-        - {identifier: talk, name: "Let's Talk", url: talk/, weight: 45}
 
   es:
     label: Español
@@ -118,7 +132,7 @@ languages:
       editPost:
         Text: "Sugerir cambios"
       footer:
-        text: "Hecho con cariño para los gatos que no son de nadie. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) · [Prensa](/press/) {{< site-version >}}"
+        text: "Hecho con cariño para los gatos que no son de nadie. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) · [Prensa](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
       homeInfoParams:
         Title: "¿Cómo podría el mundo recordar a los gatos que no son de nadie? 🐈"
         Content: >
@@ -128,7 +142,9 @@ languages:
           una identidad, una historia y una red de personas que se preocupan por él, y conocerlo no
           costara más que una foto? Todavía no hay
           app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
-          las tuyas. ¿Prefieres escuchar? Hay una [introducción en audio de 90
+          las tuyas. **La forma más ligera de ayudar es un saludo de una línea:**
+          {{< contact-strip >}}. Leo personalmente cada mensaje, y hay
+          [más formas de participar](/involve/). ¿Prefieres escuchar? Hay una [introducción en audio de 90
           segundos](/about/#escucha-la-idea). ¿Ya habías venido? Mira las [novedades](/whats-new/).
 
           {{< talk-invite >}}
@@ -138,13 +154,12 @@ languages:
         - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
         - {identifier: posts, name: Historias, url: posts/, weight: 30}
         - {identifier: whatsnew, name: Novedades, url: novedades/, weight: 35}
-        - {identifier: feedback, name: Comparte tu opinión, url: comparte-tu-opinion/, weight: 40}
+        - {identifier: involve, name: Cómo ayudar, url: como-ayudar/, weight: 40}
         - identifier: search
           name: Buscar
           url: search/
           weight: 50
           pre: '<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>'
-        - {identifier: talk, name: Hablemos, url: hablemos/, weight: 45}
 
 privacy:
   youtube:

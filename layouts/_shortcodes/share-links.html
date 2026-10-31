@@ -1,0 +1,13 @@
+{{- /* "Pass it on": email / WhatsApp / Telegram share links to the home page, and the plain address
+  to copy. Plain links only, no share widgets or trackers. Usage: {{< share-links >}} */ -}}
+{{- $url := site.Home.Permalink -}}
+{{- $msg := replace (urlquery (printf "%s %s" (i18n "share_message") $url)) "+" "%20" -}}
+{{- $subject := replace (urlquery (i18n "share_email_subject")) "+" "%20" -}}
+<h2 id="{{ i18n "share_title" | anchorize }}">{{ i18n "share_title" }}</h2>
+<p>{{ i18n "share_text" }}</p>
+<div class="contact-channels" role="group" aria-label="{{ i18n "share_title" }}">
+  <a class="contact-button contact-button-alt" href="{{ printf "mailto:?subject=%s&body=%s" $subject $msg | safeURL }}">{{ i18n "share_email" }}</a>
+  <a class="contact-button contact-button-alt" href="{{ printf "https://wa.me/?text=%s" $msg | safeURL }}" target="_blank" rel="noopener">{{ i18n "contact_whatsapp" }}</a>
+  <a class="contact-button contact-button-alt" href="{{ printf "https://t.me/share/url?url=%s&text=%s" (urlquery $url) (replace (urlquery (i18n "share_message")) "+" "%20") | safeURL }}" target="_blank" rel="noopener">{{ i18n "contact_telegram" }}</a>
+</div>
+<p>{{ i18n "share_copy" }} <code>{{ $url }}</code></p>

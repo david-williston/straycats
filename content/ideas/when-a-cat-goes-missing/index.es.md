@@ -5,6 +5,8 @@ date: 2026-10-05
 weight: 550
 tags: ["mascotas-perdidas", "comunidad", "cuidado"]
 summary: "Que un gato desaparezca es de lo más duro que vive quien quiere a los gatos. Las personas que han conocido a ese gato podrían ser la mejor oportunidad de encontrarlo."
+question: "Si desapareciera un gato que conoces, ¿a quién te gustaría avisarle primero, y quién nunca debería enterarse?"
+updated: 2026-10-30
 ---
 
 *Sugerencia de Michael, un lector de mi boletín. Una amiga suya perdió a su gato hace una

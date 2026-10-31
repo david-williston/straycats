@@ -5,6 +5,8 @@ date: 2026-10-04
 weight: 150
 tags: ["conocer", "encuentros", "conceptos"]
 summary: "Conocer a un gato debería tomar una foto y sentirse como un pequeño regalo. Pero el regalo es para el gato: cada encuentro suma a su historia y ayuda a quienes lo cuidan."
+question: "¿Qué haría que te detuvieras a registrar a un gato que conoces, y qué nunca debería mostrar su tarjeta?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja claro con blanco, de pie en un camino del jardín, con Ciccio, una gata negra, echada detrás y mirando a la cámara"

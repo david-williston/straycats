@@ -1,0 +1,34 @@
+/* Contact buttons (layouts/_partials/contact-links.html): the reply box, Get involved page, share links */
+.contact-channels { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 16px; }
+.contact-channels a.contact-button,
+.post-content .contact-channels a.contact-button,
+.post-content .contact-channels a.contact-button:hover {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 8px 18px; box-sizing: border-box;
+  border: 2px solid var(--accent); border-radius: var(--radius);
+  background: var(--accent); background-image: none; box-shadow: none;
+  color: #fffdf9; font-weight: 700; text-decoration: none;
+}
+.contact-channels a.contact-button.contact-button-alt,
+.post-content .contact-channels a.contact-button.contact-button-alt,
+.post-content .contact-channels a.contact-button.contact-button-alt:hover {
+  background: transparent; color: var(--primary);
+}
+.contact-channels a.contact-button:hover { filter: brightness(1.08); }
+.contact-channels a.contact-button:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+:root[data-theme="dark"] .contact-channels a.contact-button,
+:root[data-theme="dark"] .post-content .contact-channels a.contact-button { color: #1b1714; }
+:root[data-theme="dark"] .contact-channels a.contact-button.contact-button-alt,
+:root[data-theme="dark"] .post-content .contact-channels a.contact-button.contact-button-alt { color: var(--primary); }
+@media (max-width: 480px) {
+  .contact-channels a.contact-button { flex: 1 1 calc(50% - 10px); }
+}
+
+/* Reply box: the page's question and the "rather talk?" row */
+.respond .respond-question { margin-bottom: 8px; color: var(--primary); font-size: 1.1rem; font-weight: 700; }
+.respond .respond-how { margin-bottom: 0; font-size: 0.9rem; }
+.respond .respond-secondary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 0; }
+.respond .respond-more { color: var(--secondary); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Footer contact strip (contact-strip shortcode) */
+.footer .contact-strip a { text-decoration: underline; text-underline-offset: 3px; }

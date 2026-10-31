@@ -1,10 +1,11 @@
 ---
 title: "Privacy & Animal Safety"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 600
 tags: ["privacy", "safety", "principles"]
 summary: "Location data about vulnerable animals can be misused. How do we protect them?"
+question: "What would you need in order to share a cat you love without giving away where it lives?"
 cover:
   image: "cover.jpg"
   alt: "Several cats resting in a paved courtyard behind a fence"

@@ -4,6 +4,8 @@ date: 2026-10-03T03:00:00Z
 weight: 4
 tags: ["process", "philosophy"]
 summary: "Why I'm deliberately not building anything yet."
+question: "What would you most want figured out before anyone writes a single line of code?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Mika Ella, a tabby-and-white cat, and Ciccio, a black cat, curled up together on a sofa"

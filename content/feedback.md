@@ -1,7 +1,7 @@
 ---
 title: "Give Feedback"
 summary: "Tell me what I'm missing."
-updated: 2026-10-05
+updated: 2026-10-30
 ShowToc: false
 ShowReadingTime: false
 comments: false
@@ -37,8 +37,12 @@ the cats in your life and your ideas: [Let's talk](/talk/).
 
 Every story ends with a **Respond to this idea** box. You can also reach me here:
 
-- **Email:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
+- **Email:** [david@davidwilliston.com](mailto:david@davidwilliston.com)
+- **Telegram:** [@davidwilliston](https://t.me/davidwilliston)
+- **WhatsApp:** [+1 236 882 2034](https://wa.me/12368822034)
 - **GitHub Discussions:** [https://github.com/david-williston/straycats/discussions](https://github.com/david-williston/straycats/discussions), the best place for open conversation
 - **GitHub Issues:** [https://github.com/david-williston/straycats/issues](https://github.com/david-williston/straycats/issues), for specific suggestions or corrections
+
+More ways to help, from a one-line hello to a longer chat, are on [Get involved](/involve/).
 
 Every page also has a **Suggest changes** link if you'd like to propose an edit directly.

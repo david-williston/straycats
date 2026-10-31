@@ -2,10 +2,11 @@
 title: "Datos abiertos y tecnología"
 slug: "datos-abiertos-y-tecnologia"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-30
 weight: 700
 tags: ["codigo-abierto", "tecnologia", "datos"]
 summary: "Ideas sobre cómo podría construirse y alojarse la app, y cómo mantenerla como proyecto sin fines de lucro."
+question: "¿App, página web o algo más sencillo? ¿Qué funcionaría de verdad donde vives, con señal irregular y celulares muy distintos?"
 ---
 
 ## La idea

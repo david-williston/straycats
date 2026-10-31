@@ -1,10 +1,11 @@
 ---
 title: "Open Data & Tech Stack"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-30
 weight: 700
 tags: ["open-source", "tech", "data"]
 summary: "Thoughts on how the app could be built, hosted and kept sustainable as a non-profit."
+question: "App, web page or something simpler: what would actually work where you live, with patchy signal and very different phones?"
 ---
 
 ## The idea

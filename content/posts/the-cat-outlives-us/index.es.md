@@ -5,6 +5,8 @@ date: 2026-10-03T01:00:00Z
 weight: 2
 tags: ["historia", "principios", "memoria"]
 summary: "Todo lo que sé de estos gatos vive en mi cabeza y en Instagram. Cuando me vaya, se irá conmigo."
+question: "Si mañana te fueras de tu ciudad, ¿qué te gustaría que supiera la siguiente persona sobre los gatos que cuidas?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Primer plano de Lucia, una gatita calicó con una mancha negra sobre un ojo"

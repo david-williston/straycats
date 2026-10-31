@@ -5,6 +5,8 @@ date: 2026-10-04T00:00:00Z
 weight: 6
 tags: ["historia", "conocer", "principios"]
 summary: "Cuando alguien conoce a un gato, le toma una foto. ¿Y si esa foto le presentara al gato, y presentara al gato con todas las personas que podrían ayudarlo?"
+question: "Cuando conoces a un gato y le tomas una foto, ¿qué te gustaría que esa foto te contara de vuelta?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Primer plano de Ciccio, una gata negra de ojos amarillo verdoso, mirando directo a la cámara"

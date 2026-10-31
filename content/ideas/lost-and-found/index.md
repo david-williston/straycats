@@ -1,10 +1,11 @@
 ---
 title: "Stray, Pet, or Somewhere in Between?"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 500
 tags: ["ownership", "lost-pets", "identity"]
 summary: "Many 'strays' are someone's pet, and many pets live like strays. Ownership is a spectrum."
+question: "Have you met a \"stray\" that turned out to be someone's pet, or the other way around, and how did you find out?"
 cover:
   image: "cover.jpg"
   alt: "Hootie, a black cat wearing a collar, sitting in a garden beside a cat statue and red flowers"

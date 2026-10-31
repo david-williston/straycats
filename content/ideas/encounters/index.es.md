@@ -2,10 +2,11 @@
 title: "Encuentros: cada encuentro suma a la historia"
 slug: "encuentros"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 300
 tags: ["encuentros", "conceptos"]
 summary: "Cada vez que alguien conoce a un gato, aporta un poco a su historia compartida."
+question: "Si pudieras agregar un solo dato después de conocer a un gato, ¿cuál sería el más útil?"
 cover:
   image: "cover.jpg"
   alt: "Tenkilo, un gato color crema, de perfil, con los ojos cerrados, tomando el sol"

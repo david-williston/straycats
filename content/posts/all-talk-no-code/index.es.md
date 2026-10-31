@@ -5,6 +5,8 @@ date: 2026-10-03T03:00:00Z
 weight: 4
 tags: ["proceso", "filosofia"]
 summary: "Por qué, a propósito, todavía no estoy construyendo nada."
+question: "¿Qué te gustaría que quedara resuelto antes de que alguien escriba una sola línea de código?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Mika Ella, una gata atigrada con blanco, y Ciccio, una gata negra, acurrucadas juntos en un sillón"

@@ -1,10 +1,11 @@
 ---
 title: "Cat Identity & Multiple Names"
 date: 2026-10-03
-updated: 2026-10-04
+updated: 2026-10-30
 weight: 200
 tags: ["identity", "model", "concepts"]
 summary: "How do you model one cat that has three names, two homes and no clear owner?"
+question: "How do you tell two similar-looking cats apart, especially solid black or orange-and-white ones?"
 cover:
   image: "cover.jpg"
   alt: "Lucia, a calico cat, seen from behind, its black, orange and white patches clearly visible"

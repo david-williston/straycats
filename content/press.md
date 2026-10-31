@@ -5,6 +5,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
+updated: 2026-10-30
 ---
 
 Writing about Stray Cats, or about the cats nobody owns? Here's the project in brief, artwork
@@ -67,5 +68,5 @@ larger, get in touch.
 
 I'm happy to answer questions and talk about the project.
 
-- **Email:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
+- **Email:** [david@davidwilliston.com](mailto:david@davidwilliston.com)
 - **A 30-minute call:** [Let's talk](/talk/) (in English)

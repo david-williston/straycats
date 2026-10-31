@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "What Stray Cats is, where it came from, and what it isn't (yet)."
-updated: 2026-10-04
+updated: 2026-10-30
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -77,3 +77,8 @@ purpose](/posts/all-talk-no-code/). Right now the job is to understand the probl
   feature exists for the cat's benefit and to help the people who care for it.
 - **No popularity contests.** No rankings and no exact locations. Attention can put a cat at
   risk.
+
+## Join in
+
+If any of this rings true for you, I'd love to hear from you. A one-line hello is plenty, and
+every message is read by me personally. See [Get involved](/involve/) for easy ways to take part.

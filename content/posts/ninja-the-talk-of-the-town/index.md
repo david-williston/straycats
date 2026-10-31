@@ -4,6 +4,8 @@ date: 2026-10-05T00:00:00Z
 weight: 7
 tags: ["story", "care", "community"]
 summary: "Ninja was skin and bone when I arrived. Not everyone who loves cats can afford to feed them all, so what happens to the ones left over?"
+question: "When money is tight, how do the people around you share the cost of feeding or sterilising the cats?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ninja, an orange-and-white cat, lying on the ground mid-meow, healthy and well fed"

@@ -2,10 +2,11 @@
 title: "Los elementos básicos"
 slug: "los-elementos-basicos"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 100
 tags: ["conceptos", "modelo"]
 summary: "Doce conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."
+question: "¿Cuál de estos doce conceptos falta, o cuáles dos deberían ser en realidad uno solo?"
 cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja con blanco, echado en el suelo, a media maullada"

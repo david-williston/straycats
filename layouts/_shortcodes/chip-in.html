@@ -1,0 +1,7 @@
+{{- /* "Chip in" section for the Get involved page. Renders nothing until params.fundingURL is set.
+  Text lives in i18n/. Usage: {{< chip-in >}} */ -}}
+{{- with site.Params.fundingURL -}}
+<h2 id="{{ i18n "chip_title" | anchorize }}">{{ i18n "chip_title" }}</h2>
+<p>{{ i18n "chip_text" }}</p>
+<p><a class="respond-button" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "chip_button" }}</a></p>
+{{- end -}}

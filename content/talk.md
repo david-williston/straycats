@@ -5,6 +5,7 @@ ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
+updated: 2026-10-30
 ---
 
 Ideas and stories come out best in conversation. If you look after cats you don't own, have
@@ -37,11 +38,11 @@ use what you say.
 - **I'll never publish where a cat lives or is fed,** or anything that could identify your
   home (see [Privacy & Animal Safety](/ideas/privacy-and-safety/)).
 - **Questions or second thoughts?** Write to me any time:
-  [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com).
+  [david@davidwilliston.com](mailto:david@davidwilliston.com).
 
 Ideas that come out of these conversations show up in the [stories](/posts/) and
 [ideas](/ideas/), and in [What's New](/whats-new/).
 
 {{< book-a-chat >}}
 
-Rather write? See [Give Feedback](/feedback/) for other ways to reach me.
+Rather write? See [Get involved](/involve/) for other ways to reach me.

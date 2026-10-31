@@ -4,6 +4,8 @@ date: 2026-10-04
 weight: 150
 tags: ["meeting", "encounters", "concepts"]
 summary: "Meeting a cat should take one photo and feel like a small gift. But the gift is for the cat: every meeting adds to its story and helps the people who look after it."
+question: "What would make you stop and record a cat you meet, and what should its card never show?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ninja, a pale orange-and-white cat, standing on a garden path, with Ciccio, a black cat, lying behind and looking at the camera"

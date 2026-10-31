@@ -1,10 +1,11 @@
 ---
 title: "The Building Blocks"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 100
 tags: ["concepts", "model"]
 summary: "Twelve concepts the system will need to understand, long before anyone writes code."
+question: "Which of these twelve concepts is missing, or which two should really be one?"
 cover:
   image: "cover.jpg"
   alt: "Ninja, an orange-and-white cat, lying on the ground, mid-meow"

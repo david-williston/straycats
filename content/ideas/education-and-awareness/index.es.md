@@ -5,6 +5,8 @@ date: 2026-10-05
 weight: 450
 tags: ["educacion", "cuidado", "seguridad"]
 summary: "Muchos de los peligros que enfrentan los gatos callejeros vienen de cosas que la gente simplemente no sabe. La conciencia puede ayudar a los gatos más que cualquier función."
+question: "¿Qué cosa sobre los gatos te gustaría que la gente a tu alrededor supiera, y cómo se podría decir sin dar sermones?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Carlitos, un gato atigrado gris de ojos amarillo verdoso, mirando hacia arriba desde un piso de baldosas"

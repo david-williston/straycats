@@ -6,6 +6,7 @@ ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
+updated: 2026-10-30
 ---
 
 Las ideas y las historias salen mejor conversando. Si cuidas gatos que no son tuyos, conoces
@@ -13,7 +14,7 @@ a un gato con demasiados nombres o simplemente tienes una opinión sobre algo de
 me encantaría platicar contigo.
 
 **Las conversaciones son en inglés.** Si prefieres español, escríbeme: puedes hacerlo en
-español desde [Comparte tu opinión](/feedback/).
+español desde [Cómo ayudar](/involve/).
 
 {{< book-a-chat >}}
 
@@ -42,7 +43,7 @@ que digas.
 - **Nunca publicaré dónde vive o come un gato,** ni nada que pueda identificar tu casa (ve
   [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/)).
 - **¿Dudas o cambiaste de opinión?** Escríbeme cuando quieras:
-  [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com).
+  [david@davidwilliston.com](mailto:david@davidwilliston.com).
 
 Las ideas que salen de estas conversaciones aparecen en las [historias](/posts/), las
 [ideas](/ideas/) y en [Novedades](/whats-new/).

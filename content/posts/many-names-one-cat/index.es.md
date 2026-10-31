@@ -5,6 +5,8 @@ date: 2026-10-03T02:00:00Z
 weight: 3
 tags: ["historia", "identidad"]
 summary: "Algunos de 'mis' gatos claramente comen muy bien en otro lado. No sé dónde, ni cómo los llaman ahí."
+question: "¿Conoces a un gato con más de un nombre, y cómo te enteraste de que era el mismo?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Mountain Lion (León de Montaña), un gato naranja con blanco, asomándose detrás de un barandal negro"

@@ -4,6 +4,8 @@ date: 2026-10-25
 weight: 800
 tags: ["prevention", "community", "safety"]
 summary: "If help was as easy to find as a public toilet, fewer cats would end up by the road. A lost cat and a dumped cat look the same, so prevention has to come before proof."
+question: "If someone near you found a cat they couldn't keep, where would they go first, and how easy is that help to find?"
+updated: 2026-10-30
 ---
 
 # Make help easier to find than dumping

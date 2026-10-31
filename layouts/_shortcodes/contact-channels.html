@@ -1,0 +1,3 @@
+{{- /* Friendly buttons to reach David: Email, Telegram, WhatsApp, GitHub. Text lives in i18n/.
+  Usage: {{< contact-channels >}}   or   {{< contact-channels chat=true >}} to add the 30-minute chat. */ -}}
+{{- partial "contact-links.html" (dict "subject" (i18n "contact_subject") "text" (i18n "contact_hello") "chat" (.Get "chat")) -}}

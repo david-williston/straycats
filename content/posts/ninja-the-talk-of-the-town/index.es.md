@@ -5,6 +5,8 @@ date: 2026-10-05T00:00:00Z
 weight: 7
 tags: ["historia", "cuidado", "comunidad"]
 summary: "Ninja estaba en los huesos cuando llegué. No todos los que quieren a los gatos pueden darles de comer a todos, así que, ¿qué pasa con los que se quedan fuera?"
+question: "Cuando el dinero escasea, ¿cómo se reparten las personas a tu alrededor el costo de alimentar o esterilizar a los gatos?"
+updated: 2026-10-30
 cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja con blanco, echado en el suelo a media maullada, sano y bien alimentado"

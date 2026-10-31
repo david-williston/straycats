@@ -2,7 +2,7 @@
 title: "Acerca de"
 slug: "acerca-de"
 summary: "Qué es Stray Cats, de dónde viene y qué no es (todavía)."
-updated: 2026-10-04
+updated: 2026-10-30
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -79,3 +79,8 @@ propósito](/posts/all-talk-no-code/). Por ahora el trabajo es entender el probl
   gusto, pero cada función existe por el bien del gato y para ayudar a quienes lo cuidan.
 - **Nada de concursos de popularidad.** Ni rankings ni ubicaciones exactas. La atención puede
   poner en riesgo a un gato.
+
+## Súmate
+
+Si algo de esto te suena familiar, me encantaría saber de ti. Con un saludo de una línea basta,
+y yo leo personalmente cada mensaje. En [Cómo ayudar](/involve/) hay formas sencillas de participar.

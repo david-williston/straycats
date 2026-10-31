@@ -1,0 +1,27 @@
+{{- /* Contact buttons: Email, Telegram, WhatsApp, GitHub (and optionally the chat).
+  Called by the contact-channels shortcode and the reply box (comments.html).
+  Args (dict): subject (email subject), text (message prefilled where the platform supports it),
+  chat (bool: add the "book a chat" link). Addresses and handles come from params.feedbackEmail and params.contact. */ -}}
+{{- $c := site.Params.contact | default dict -}}
+{{- $email := site.Params.feedbackEmail -}}
+{{- $text := replace (urlquery (.text | default "")) "+" "%20" -}}
+{{- $subject := replace (urlquery (.subject | default "")) "+" "%20" -}}
+<div class="contact-channels" role="group" aria-label="{{ i18n "contact_group" }}">
+  {{- with $email }}
+  <a class="contact-button" href="{{ printf "mailto:%s%s" . (cond (ne $subject "") (printf "?subject=%s" $subject) "") | safeURL }}">{{ i18n "contact_email" }}</a>
+  {{- end }}
+  {{- with $c.telegramURL }}
+  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.telegramHandle }}title="{{ . }}"{{ end }}>{{ i18n "contact_telegram" }}</a>
+  {{- end }}
+  {{- with $c.whatsappURL }}
+  <a class="contact-button contact-button-alt" href="{{ printf "%s%s" . (cond (ne $text "") (printf "?text=%s" $text) "") | safeURL }}" target="_blank" rel="noopener" {{ with $c.whatsappNumber }}title="{{ . }}"{{ end }}>{{ i18n "contact_whatsapp" }}</a>
+  {{- end }}
+  {{- with $c.githubIssueURL }}
+  <a class="contact-button contact-button-alt" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "contact_github" }}</a>
+  {{- end }}
+  {{- if .chat }}
+  {{- with site.GetPage "/talk" }}
+  <a class="contact-button contact-button-alt" href="{{ .RelPermalink }}">{{ i18n "contact_chat" }}</a>
+  {{- end }}
+  {{- end }}
+</div>

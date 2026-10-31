@@ -6,6 +6,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
+updated: 2026-10-30
 ---
 
 ¿Vas a escribir sobre Stray Cats, o sobre los gatos que no son de nadie? Aquí tienes el
@@ -70,5 +71,5 @@ pequeños. Si las necesitas más grandes, escríbeme.
 
 Con gusto respondo preguntas y platico sobre el proyecto.
 
-- **Correo:** [davidjdwilliston+straycats@gmail.com](mailto:davidjdwilliston+straycats@gmail.com)
+- **Correo:** [david@davidwilliston.com](mailto:david@davidwilliston.com)
 - **Una llamada de 30 minutos:** [Hablemos](/talk/) (en inglés)

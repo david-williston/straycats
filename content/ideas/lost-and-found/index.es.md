@@ -2,10 +2,11 @@
 title: "¿Callejero, mascota o algo intermedio?"
 slug: "callejero-o-mascota"
 date: 2026-10-03
-updated: 2026-10-05
+updated: 2026-10-30
 weight: 500
 tags: ["dueños", "mascotas-perdidas", "identidad"]
 summary: "Muchos 'callejeros' son mascotas de alguien, y muchas mascotas viven como callejeros. Tener dueño es un espectro."
+question: "¿Has conocido a un \"callejero\" que resultó ser la mascota de alguien, o al revés, y cómo te enteraste?"
 cover:
   image: "cover.jpg"
   alt: "Hootie, un gato negro con collar, sentado en un jardín junto a una estatua de gato y flores rojas"
