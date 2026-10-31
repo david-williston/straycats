@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: Who this is for
+
+*Version v2026.10.30.3*
+
+- **Changed:** the home page now says who Stray Cats is for: anyone who cares for a cat, whether
+  it's their own, a neighbor's, a stray, a new adoption, one they had to give up or one left
+  behind. The idea is to make caring easier by letting people see a cat's story. The
+  [About](/about/) page and the site description say the same.
+
 ## October 30, 2026: A clearer home page
 
 *Version v2026.10.30.2*

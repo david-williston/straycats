@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Para quién es esto
+
+*Versión v2026.10.30.3*
+
+- **Cambio:** la página de inicio ahora dice para quién es Stray Cats: para quien cuida a un gato,
+  sea el propio, el de un vecino, un callejero, uno recién adoptado, uno que tuvo que dar o uno que
+  quedó atrás. La idea es que cuidar sea más fácil al poder ver la historia de un gato. La página
+  [Acerca de](/about/) y la descripción del sitio dicen lo mismo.
+
 ## 30 de octubre de 2026: Una página de inicio más clara
 
 *Versión v2026.10.30.2*
