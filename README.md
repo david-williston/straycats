@@ -243,10 +243,11 @@ For best results, put this in place of the Structure section of a prompt above:
 
 ### Making changes
 
-Every change goes through a pull request; `main` is protected. Cut a short-lived branch from
-an up-to-date `main` (`content/...`, `fix/...`, `docs/...`, `chore/...`), open a PR, and merge
-it once the **Build site** check passes. GitHub deletes the branch on merge. Merging doesn't publish the site;
-releasing does (below). See CLAUDE.md for the full conventions.
+Routine work is committed straight to `main`, one commit per change, and pushed after
+`npm run build` passes. A branch + PR (`content/...`, `fix/...`, `docs/...`, `chore/...`) is
+optional, for review on GitHub first; the **Build site** check runs on PRs. `main` can't be
+force-pushed or deleted. Pushing doesn't publish the site; releasing does (below). See
+CLAUDE.md for the full conventions.
 
 ### Deploy: versioning and releases
 

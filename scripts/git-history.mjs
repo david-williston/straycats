@@ -4,8 +4,8 @@
 //
 // Each commit is assigned to the release it first shipped in: the oldest
 // calendar-version tag (vYYYY.MM.DD or vYYYY.MM.DD.N) that contains it. Releases
-// are tagged on merge commits (one per pull request), so containment is worked out
-// from the commit graph rather than from the order of the log. Merge commits
+// may be tagged on merge commits as well as direct commits, so containment is worked
+// out from the commit graph rather than from the order of the log. Merge commits
 // themselves are left out of the list. Commits in no release have `release: null`.
 
 import { execFileSync } from 'node:child_process';
