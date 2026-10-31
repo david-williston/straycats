@@ -64,7 +64,7 @@ params:
     githubIssueURL: "https://github.com/david-williston/straycats/issues/new/choose"
     githubDiscussionsURL: "https://github.com/david-williston/straycats/discussions"
   # Leave these empty until they exist: everything that depends on them stays hidden.
-  fundingURL: ""      # a page where people can chip in (the "Chip in" section of Get involved)
+  fundingURL: "https://ko-fi.com/straycatsapp"    # a page where people can chip in (the "Chip in" section of Get involved)
   newsletterURL: ""   # a sign-up page (shown under "Follow along" on Get involved)
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
