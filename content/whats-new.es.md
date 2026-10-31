@@ -12,6 +12,18 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Más fácil de leer y de usar
+
+*Versión v2026.10.30.6*
+
+- **Cambio:** el texto es más grande en todo el sitio, sobre todo en el pie de página, los
+  pies de foto, las etiquetas y los detalles de cada página, y ahora respeta el tamaño de texto
+  de tu navegador.
+- **Cambio:** los colores son un poco más oscuros en modo claro para que el texto pequeño se
+  lea mejor.
+- **Nuevo:** un enlace para saltar al contenido, un foco de teclado más claro y etiquetas para
+  lectores de pantalla, en los dos idiomas.
+
 ## 30 de octubre de 2026: Aportar, si quieres
 
 *Versión v2026.10.30.5*

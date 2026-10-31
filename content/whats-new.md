@@ -11,6 +11,16 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: Easier to read and use
+
+*Version v2026.10.30.6*
+
+- **Changed:** text is larger across the site, especially the footer, captions, tags and
+  page details, and it now follows your browser's text-size setting.
+- **Changed:** colours are a little darker in light mode so small text is easier to read.
+- **New:** a "skip to content" link, clearer keyboard focus, and labels for screen readers,
+  in both languages.
+
 ## October 30, 2026: Chip in, if you like
 
 *Version v2026.10.30.5*
