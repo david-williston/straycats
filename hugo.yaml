@@ -91,20 +91,20 @@ languages:
     locale: en-us
     weight: 1
     params:
-      description: "An open-source, non-profit idea for giving every neighborhood cat a name, a history and people who care: pets, strays, wanderers and lost cats."
+      description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
       editPost:
         Text: "Suggest changes"
       footer:
-        text: "Made with care for the cats in our neighborhoods. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) · [Press](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
+        text: "Made with care for the people who care for cats. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) · [Press](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
       homeInfoParams:
-        Title: "Every neighborhood cat has a story. Let's keep it together. 🐈"
+        Title: "Caring for a cat is easier when you know its story. 🐈"
         Content: >
-          Pets, strays, wanderers, lost cats: some live inside, some outside, some a bit of both,
-          and no one person knows the whole story of any of them. **Stray Cats** is the working
-          name for an idea — open source, non-profit, and very much unfinished — about giving every
-          neighborhood cat a name, a history and the people who care about it, so that meeting one,
-          or losing one, takes nothing more than a photo. It starts with the cats I've come to know
-          in Puerto Escondido, Mexico. There's no app yet, and no code. Just stories, questions and
+          Your own cat, a neighbor's, a stray, a new adoption, a cat you had to give up, or one left
+          behind: whoever cares for a cat has an easier time when they know its story. **Stray Cats** is
+          the working name for an idea — open source, non-profit, and very much unfinished — for
+          letting anyone who cares for a cat see its story, so nothing gets lost when a cat changes
+          hands. It starts with the cats I've come to know in Puerto Escondido, Mexico. There's no
+          app yet, and no code. Just stories, questions and
           half-formed ideas — and I'd love to hear yours. **The lightest way to help is a
           one-line hello:** {{< contact-strip >}}. I read every message myself, and
           [there are more ways to get involved](/involve/). Prefer to listen? There's a
@@ -130,21 +130,21 @@ languages:
     locale: es-mx
     weight: 2
     params:
-      description: "Una idea de código abierto y sin fines de lucro para darle a cada gato del barrio un nombre, una historia y personas que lo cuidan: mascotas, callejeros, andariegos y gatos perdidos."
+      description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
       editPost:
         Text: "Sugerir cambios"
       footer:
-        text: "Hecho con cariño para los gatos de nuestros barrios. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) · [Prensa](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
+        text: "Hecho con cariño para quienes cuidan gatos. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) · [Prensa](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
       homeInfoParams:
-        Title: "Cada gato del barrio tiene una historia. Guardémosla juntos. 🐈"
+        Title: "Cuidar a un gato es más fácil cuando conoces su historia. 🐈"
         Content: >
-          Mascotas, callejeros, andariegos, gatos perdidos: unos viven adentro, otros afuera, otros
-          un poco de ambos, y nadie conoce toda la historia de ninguno. **Stray Cats** (Gatos
-          Callejeros) es el nombre provisional de una idea, de código abierto, sin fines de lucro y
-          todavía sin terminar, para darle a cada gato del barrio un nombre, una historia y las
-          personas que lo cuidan, de modo que conocer a uno, o perderlo, no cueste más que una foto.
-          Empieza con los gatos que he llegado a conocer en Puerto Escondido, México. Todavía no hay
-          app ni código. Solo historias, preguntas e ideas a medio formar, y me encantaría escuchar
+          Tu propio gato, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar
+          o uno que quedó atrás: quien cuida a un gato lo tiene más fácil cuando conoce su historia.
+          **Stray Cats** (Gatos Callejeros) es el nombre provisional de una idea, de código abierto,
+          sin fines de lucro y todavía sin terminar, para que cualquiera que cuide a un gato pueda
+          ver su historia y no se pierda nada cuando el gato cambia de manos. Empieza con los gatos
+          que he llegado a conocer en Puerto Escondido, México. Todavía no hay app ni código. Solo
+          historias, preguntas e ideas a medio formar, y me encantaría escuchar
           las tuyas. **La forma más ligera de ayudar es un saludo de una línea:**
           {{< contact-strip >}}. Leo personalmente cada mensaje, y hay
           [más formas de participar](/involve/). ¿Prefieres escuchar? Hay una [introducción en audio de 90

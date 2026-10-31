@@ -14,9 +14,9 @@ cover:
 
 ## En una frase
 
-**Stray Cats** es una idea de código abierto y sin fines de lucro para darle a cada gato del
-barrio un nombre, una historia y las personas que lo cuidan: mascotas, callejeros, andariegos y
-gatos perdidos por igual.
+**Stray Cats** es una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil,
+dejando que quien cuida a uno vea su historia: el propio, el de un vecino, un callejero, uno recién
+adoptado, uno que tuvo que dar o uno que quedó atrás.
 
 ## Escucha la idea
 

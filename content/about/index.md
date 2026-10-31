@@ -13,8 +13,9 @@ cover:
 
 ## In one sentence
 
-**Stray Cats** is an open-source, non-profit idea for giving every neighborhood cat a name, a
-history and the people who care about it: pets, strays, wanderers and lost cats alike.
+**Stray Cats** is an open-source, non-profit idea to make caring for cats easier, by letting
+anyone who cares for one see its story: their own cat, a neighbor's, a stray, a new adoption,
+a cat they had to give up, or one left behind.
 
 ## Listen to the idea
 
