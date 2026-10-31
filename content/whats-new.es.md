@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Aportar, si quieres
+
+*Versión v2026.10.30.5*
+
+- **Nuevo:** ahora puedes aportar un poquito para mantener el sitio en pie desde
+  [Cómo ayudar](/como-ayudar/). No hay recompensas ni compromisos, y está perfecto si prefieres
+  simplemente saludar.
+
 ## 30 de octubre de 2026: Páginas que encajan con la idea
 
 *Versión v2026.10.30.4*

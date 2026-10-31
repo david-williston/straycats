@@ -11,6 +11,13 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: Chip in, if you like
+
+*Version v2026.10.30.5*
+
+- **New:** you can now chip in toward keeping the site going, from [Get involved](/involve/).
+  There are no rewards and no commitments, and it's completely fine to just say hello instead.
+
 ## October 30, 2026: Pages that match the idea
 
 *Version v2026.10.30.4*
