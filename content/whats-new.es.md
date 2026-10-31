@@ -12,6 +12,21 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Más formas de ponerte en contacto
+
+*Versión v2026.10.30.1*
+
+- **Nuevo:** una página [Cómo ayudar](/como-ayudar/), con formas de colaborar desde un saludo de
+  una línea hasta una buena conversación: correo, Telegram, WhatsApp, GitHub, compartir la
+  historia de un gato, ofrecer una habilidad o pasar la voz.
+- **Nuevo:** cada idea e historia termina ahora con una pregunta concreta y botones para
+  responder por correo, Telegram o WhatsApp. Tu mensaje ya incluye el título de la página.
+- **Nuevo:** una franja de contacto al final de cada página.
+- **Nuevo:** formularios sencillos en GitHub para compartir la historia de un gato, opinar sobre
+  una idea, ofrecer ayuda o avisar de un problema del sitio.
+- **Cambio:** el menú ahora tiene Cómo ayudar en lugar de Comparte tu opinión. La página de
+  [opinión](/comparte-tu-opinion/) sigue ahí.
+
 ## 21 de octubre de 2026: Saibo, la cara de Stray Cats
 
 *Versión v2026.10.21*

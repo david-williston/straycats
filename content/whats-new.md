@@ -11,6 +11,21 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: Easier ways to get in touch
+
+*Version v2026.10.30.1*
+
+- **New:** a [Get involved](/involve/) page, with ways to help from a one-line hello up to a
+  proper chat: email, Telegram, WhatsApp, GitHub, sharing a cat story, offering a skill, or
+  passing the project on.
+- **New:** every idea and story now ends with one specific question, and buttons to reply by
+  email, Telegram or WhatsApp. Your message is prefilled with the page title.
+- **New:** a contact strip at the bottom of every page.
+- **New:** friendly forms on GitHub for sharing a cat story, reacting to an idea, offering to
+  help, or reporting a problem with the site.
+- **Changed:** the menu now has Get involved in place of Give Feedback. The
+  [feedback](/feedback/) page is still here.
+
 ## October 21, 2026: Saibo, the face of Stray Cats
 
 *Version v2026.10.21*
