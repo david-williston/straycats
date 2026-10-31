@@ -1,8 +1,8 @@
 name: Build check
 
 # Builds the site on every pull request, so a broken page is caught before it's merged.
-# Required to pass before merging into main (branch protection). Publishing is separate:
-# see hugo.yml.
+# Pull requests are optional: direct pushes to main are checked by `npm run build` locally
+# and by the release script. Publishing is separate: see hugo.yml.
 on:
   pull_request:
     branches: [main]

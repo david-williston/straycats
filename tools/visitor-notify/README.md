@@ -44,7 +44,7 @@ when Wrangler asks for them, never into a file.
    You should get `204` and a Telegram message. The `-A` matters: curl's own
    user agent is skipped as a bot (still `204`, but no message).
 3. **Turn it on.** Put that address in `visitorPingURL` under `params` in
-   `hugo.yaml`, in a PR, then release the site (`npm run deploy`).
+   `hugo.yaml`, then release the site (`npm run deploy`).
 4. **Opt yourself out** on each browser you use: open
    `https://david-williston.github.io/straycats/?ping=off` once.
 

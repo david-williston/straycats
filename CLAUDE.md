@@ -17,20 +17,23 @@ into any file.
 
 ## Conventions
 
-- **Every change goes through a PR.** No commits directly to `main` (branch-protected: a PR is
-  required, no approval needed while David is the only collaborator).
-  - One short-lived branch per change, cut from an up-to-date `main`: `content/...`,
-    `fix/...`, `docs/...`, `chore/...`. GitHub deletes it on merge; delete the local copy too.
-  - Link the issue (`Fixes #n`) when there is one. Fixes found and made on the spot need no
-    issue — the PR description is the record.
-  - Keep PRs to one concern. Something unrelated noticed mid-task gets its own branch/PR, or an
-    issue if it can wait — never folded into the current PR unless the current change needs it.
-  - The **Build site** check (`.github/workflows/pr-build.yml`) must pass before merging.
-  - Merge only when David says to.
-- **Merging doesn't publish.** Releasing is a separate step from an up-to-date `main`
-  (`npm run deploy`), so several merged PRs can go out in one release. Add the release's
-  section to What's New (`content/whats-new.md` and `.es.md`), and `updated:` dates on
-  changed pages, in a PR before releasing (see README).
+- **Routine work is committed straight to `main`**, one commit per change. Claude shows David
+  the diff and pushes only when David says to.
+  - Run `npm run build` before every push, so `main` always builds.
+  - Keep commits to one concern. Something unrelated noticed mid-task gets its own commit, or
+    an issue if it can wait.
+  - Link the issue (`Fixes #n`) in the commit or PR when there is one.
+  - A branch + PR is optional: for when David wants to review something on GitHub first, or to
+    park an experiment. Name branches `content/...`, `fix/...`, `docs/...`, `chore/...`. The
+    **Build site** check (`.github/workflows/pr-build.yml`) runs on PRs.
+  - `main` is protected only against force-pushes and deletion (the Change history page is built
+    from its history). Never rewrite pushed history.
+- **Pushing doesn't publish.** Releasing is a separate step from an up-to-date `main`
+  (`npm run deploy`), so several commits can go out in one release. `scripts/release.mjs`
+  builds locally before tagging and deletes the tag if the build fails, so nothing broken gets
+  published. Before releasing, add the release's section to What's New (`content/whats-new.md`
+  and `.es.md`), and `updated:` dates on changed pages, as a commit on `main` (no PR needed;
+  see README).
 - **Tags mean shipped**: `vYYYY.MM.DD[.N]` tags are created only by `scripts/release.mjs`.
 - **Commit subjects are public.** The Change history page lists them, so write plain sentences
   for visitors ("Add the NotebookLM audio overviews"), not `feat:`-style prefixes.
@@ -80,17 +83,17 @@ When a request arrives:
 
 ### Workers and the Conventions
 
-- **The Director owns the git workflow.** You cut the branch from an up-to-date `main`, write
-  the commit subjects, and open the PR, keeping one concern per PR. Workers edit files and do
+- **The Director owns the git workflow.** You write the commit subjects and commit to `main`
+  (or to a branch and PR when one is used), one concern per commit. Workers edit files and do
   not commit, push, open PRs, merge, tag or deploy unless the brief says to. A worker in a
-  worktree commits only to its own branch, and you bring that work into the PR branch.
+  worktree commits only to its own branch, and you bring that work into `main`.
 - **Briefs carry the Conventions that apply.** Spell out the ones a worker needs, for example:
   every content change goes into both the `.md` and the `.es.md` with `alt` text in each;
   commit subjects are plain public sentences; `updated:` dates on changed pages; never write the
   Telegram bot token or chat id into any file.
 - **Review checks the Conventions too**, not just correctness: both languages, `alt` text, and
-  that the site builds (`hugo`), since the **Build site** check must pass before merging.
-- Merging and releasing stay with David: merge only when he says to, and only
+  that the site builds (`hugo`), since `npm run build` must pass before pushing.
+- Pushing and releasing stay with David: push only when he says to, and only
   `scripts/release.mjs` (`npm run deploy`) creates tags.
 
 ### Tuning intelligence per worker
