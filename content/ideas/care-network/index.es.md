@@ -27,7 +27,7 @@ Si pudieran ver que todas cuidan al mismo gato, podrían:
 - compartir los gastos del veterinario y de la esterilización
 - notar antes cuando un gato desaparece o se enferma
 - coordinar el programa de captura, esterilización y retorno (TNR) con grupos locales
-- pasar el cuidado a otra persona cuando alguien se va del pueblo, como me tocará a mí algún día
+- pasar el cuidado a otra persona cuando alguien se va del pueblo, como me tocará a mí, o cuando muere un vecino mayor que cuidaba a un gato y nadie sabe qué come ni qué vacunas tiene
 
 ## De conocer a cuidar
 

@@ -17,7 +17,8 @@ cover:
 
 "Callejero" y "mascota" no son dos cajas separadas. Un gato puede ser la mascota de una
 familia, comer en otras tres casas y ser "el callejero" para el restaurante de la esquina.
-Algunos gatos sí están perdidos, y sus dueños los están buscando.
+Algunos gatos sí están perdidos, y sus dueños los están buscando. También funciona al revés: un gato que alguien tuvo que dar,
+o cuya persona murió, puede parecerle un callejero a quien lo encuentre.
 
 Si tener dueño es solo otra **afirmación** y no un hecho, entonces:
 

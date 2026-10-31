@@ -26,7 +26,7 @@ If they could see that they're all caring for the same cat, they could:
 - share vet and sterilisation costs
 - notice sooner when a cat goes missing or gets sick
 - coordinate TNR (trap–neuter–return) with local groups
-- hand over care when someone leaves town, as I eventually will
+- hand over care when someone leaves town, as I eventually will, or when an older neighbor who looked after a cat dies and nobody knows what it eats or what it's had
 
 ## From meeting to caring
 

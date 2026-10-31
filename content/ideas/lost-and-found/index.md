@@ -16,7 +16,9 @@ cover:
 
 "Stray" and "pet" aren't two separate boxes. A cat might be one family's pet, fed by three
 other households, and called a stray by the restaurant on the corner. Some cats really are
-lost, and their owners are searching for them.
+lost, and their owners are searching for them. It goes the other way too: a cat someone had
+to give up, or whose person died, can look exactly like a stray to the next person who meets
+it.
 
 If ownership is just another **claim**, not a fact, then:
 

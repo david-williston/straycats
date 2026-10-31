@@ -15,6 +15,8 @@ Un gato abandonado en la carretera pierde más que un hogar. Pierde toda su hist
 
 Una persona que encuentra a ese gato no tiene forma de saber si está esterilizado, si alguien lo alimenta en algún lugar, si alguien ya lo cuida, o si está perdido o abandonado. En la carretera, un gato perdido y un gato abandonado se ven exactamente igual. Un gato asustado, sin nombre, sin historia, sin nadie que lo conozca.
 
+No es solo quien encuentra a un gato. Quien tiene que dar al suyo, por una mudanza, por dinero o por una muerte en la familia, suele tener toda la historia en la cabeza y ningún lugar donde dejarla. Me gustaría que esa historia viajara con el gato.
+
 ## Por qué la denuncia por sí sola es una respuesta débil
 
 Demostrar un abandono es difícil. Habría que saber quién lo hizo, cuándo y por qué. La mayoría de las personas que encuentran a un gato no tienen esa prueba. Para cuando alguien pudiera demostrar algo, el gato ya quedó abandonado.

@@ -9,9 +9,11 @@ comments: false
 ---
 
 There's no app to download and nothing to sign up for. Stray Cats is a notebook where I'm
-thinking out loud, and the most useful thing you can do is think alongside me. Below are some
-ways to do that, from a single line to a proper conversation. Start wherever feels easy. None
-of it adds up to a commitment, for you or for me.
+thinking out loud, and the most useful thing you can do is think alongside me. I'm most curious
+about your own experience of caring for a cat: your own, a neighbor's, a stray, a new
+adoption, one you had to give up, or one left behind. What would have made it easier? Below
+are some ways to share that, from a single line to a proper conversation. Start wherever
+feels easy. None of it adds up to a commitment, for you or for me.
 
 **Every message is read by me, personally, and I'll do my best to write back.** English or Spanish, either
 is fine.
@@ -29,9 +31,10 @@ already have open.
 If you'd like something to respond to, pick one and answer in a sentence or two. Disagreement
 is welcome. It's how the idea gets better.
 
+- Which of these have you lived: your own cat, a neighbor's, a stray, a new adoption, a cat you gave up, a cat left behind? What would have helped you?
 - Do you look after cats you don't technically own? How do you keep track of them?
 - Have you met a cat with more than one name, or more than one "owner"?
-- What happens to the cats when caretakers move away?
+- What happened to a cat's story when it changed hands, or when its person moved away or died?
 - Which [ideas](/ideas/) excite you? Which ones worry you?
 - What would make you stop and record a cat you meet?
 - What should a cat's card never show?

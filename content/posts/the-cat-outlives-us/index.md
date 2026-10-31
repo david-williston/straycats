@@ -42,5 +42,6 @@ the knowledge disappears**.
 > **The cat persists while the humans around it come and go — so the record should belong,
 > conceptually, to the cat, not to any particular caretaker.**
 
-The opportunity isn't just "tracking stray cats". It's creating a **persistent, shared
-identity for an animal that no single human owns**.
+The opportunity isn't just "tracking stray cats". It's a **persistent, shared story for a
+cat, whoever is looking after it today**: a neighbor, a new adopter, someone who had to give
+it up, or the person who takes over when its owner dies.

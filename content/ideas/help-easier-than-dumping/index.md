@@ -14,6 +14,8 @@ A cat left by the road loses more than a home. It loses its whole story.
 
 A person who finds that cat has no way to know if it was sterilised, if it was fed somewhere, if anyone already cares for it, or if it is lost or abandoned. At the roadside, a lost cat and a dumped cat look exactly the same. A scared cat, no name, no history, no one who knows it.
 
+It isn't only finders. Someone who has to give up their own cat, because of a move, money or a death in the family, usually has the whole story in their head and nowhere to put it. I'd like that story to travel with the cat.
+
 ## Why prosecution alone is a weak answer
 
 Proving dumping is hard. You would need to know who did it, when, and why. Most people who find a cat do not have that proof. By the time anyone could prove anything, the cat has already been left behind.

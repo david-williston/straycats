@@ -43,5 +43,6 @@ van, el conocimiento desaparece**.
 > **El gato permanece mientras las personas a su alrededor van y vienen; por eso el registro
 > debería pertenecer, conceptualmente, al gato, no a un cuidador en particular.**
 
-La oportunidad no es solo "dar seguimiento a gatos callejeros". Es crear una **identidad
-compartida y duradera para un animal que ninguna persona posee**.
+La oportunidad no es solo "rastrear gatos callejeros". Es una **historia persistente y
+compartida para un gato, sea quien sea quien lo cuide hoy**: un vecino, quien lo acaba de
+adoptar, quien tuvo que darlo o quien lo recibe cuando muere su dueño.

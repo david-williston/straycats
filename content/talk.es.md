@@ -9,8 +9,8 @@ comments: false
 updated: 2026-10-30
 ---
 
-Las ideas y las historias salen mejor conversando. Si cuidas gatos que no son tuyos, conoces
-a un gato con demasiados nombres o simplemente tienes una opinión sobre algo de este sitio,
+Las ideas y las historias salen mejor conversando. Si cuidas a un gato, sea tuyo o no, has adoptado a uno o has tenido que dar al tuyo, o has
+conocido a un gato con demasiados nombres o simplemente tienes una opinión sobre algo de este sitio,
 me encantaría platicar contigo.
 
 **Las conversaciones son en inglés.** Si prefieres español, escríbeme: puedes hacerlo en

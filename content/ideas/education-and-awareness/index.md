@@ -3,7 +3,7 @@ title: "Education & Awareness"
 date: 2026-10-05
 weight: 450
 tags: ["education", "care", "safety"]
-summary: "Many of the dangers street cats face come from things people simply don't know. Awareness may help cats more than any feature."
+summary: "Many of the dangers cats face come from things people simply don't know. Awareness may help cats more than any feature."
 question: "What's one thing about cats you wish people near you knew, and how could someone tell them without lecturing?"
 updated: 2026-10-30
 cover:
@@ -16,7 +16,7 @@ cover:
 
 ## The idea
 
-A lot of what goes wrong for street cats isn't cruelty. It's not knowing: about poison,
+A lot of what goes wrong for cats isn't cruelty. It's not knowing: about poison,
 about sterilisation, about black cats, about what happens when feeding stops. Stray Cats
 could help people learn these things a little at a time, at the moment it matters, without
 lecturing anyone.

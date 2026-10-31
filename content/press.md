@@ -8,21 +8,24 @@ comments: false
 updated: 2026-10-30
 ---
 
-Writing about Stray Cats, or about the cats nobody owns? Here's the project in brief, artwork
+Writing about Stray Cats, or about the people who care for cats? Here's the project in brief, artwork
 you're welcome to use, and how to reach me.
 
 ## In brief
 
-**Stray Cats** is an open-source, non-profit idea about how the world could remember the
-cats that nobody owns. It starts with the cats I've come to know in Puerto Escondido, Mexico,
-and a simple question: what if every stray cat had an identity, a history, and a network of
-people who care about it, and meeting one took nothing more than a photo?
+**Stray Cats** is an open-source, non-profit idea to make caring for a cat easier, by
+letting anyone who cares for one see its story, so nothing is lost when a cat changes hands.
+The cat might be your own, a neighbor's, a stray, a new adoption, one you had to give up, or
+one left behind when its owner died. It starts with the cats I've come to know in Puerto
+Escondido, Mexico, and a simple question: what if every cat had an identity, a history, and
+a network of people who care about it, and meeting one took nothing more than a photo?
 
 - **What it is:** an idea at the concept stage. There's no app and no code yet; the
   [ideas](/ideas/) and [stories](/posts/) on this site are where it's being worked out, in
   the open.
 - **Who's behind it:** David Williston, who looks after a house full of cats in Puerto
   Escondido, Oaxaca, Mexico.
+- **Who it's for:** anyone who cares for a cat, whether it's theirs or not.
 - **Open source and non-profit:** everything is public on
   [GitHub](https://github.com/david-williston/straycats).
 - **The cat comes first:** the cat's wellbeing always comes first, then the people who care

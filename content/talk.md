@@ -8,8 +8,8 @@ comments: false
 updated: 2026-10-30
 ---
 
-Ideas and stories come out best in conversation. If you look after cats you don't own, have
-met a cat with too many names, or simply have an opinion about anything on this site, I'd
+Ideas and stories come out best in conversation. If you care for a cat, yours or not, have
+adopted one or had to give one up, have met a cat with too many names, or simply have an opinion about anything on this site, I'd
 love to talk with you.
 
 {{< book-a-chat >}}

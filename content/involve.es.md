@@ -10,9 +10,12 @@ comments: false
 ---
 
 No hay una app que descargar ni nada en lo que inscribirse. Stray Cats es un cuaderno donde
-pienso en voz alta, y lo más útil que puedes hacer es pensar conmigo. Aquí abajo hay algunas
-formas de hacerlo, desde una sola línea hasta una buena conversación. Empieza por donde te
-resulte fácil. Nada de esto se convierte en un compromiso, ni para ti ni para mí.
+pienso en voz alta, y lo más útil que puedes hacer es pensar conmigo. Lo que más me interesa
+es tu propia experiencia cuidando a un gato: uno tuyo, de un vecino, un callejero, uno recién
+adoptado, uno que tuviste que dar o uno que quedó atrás. ¿Qué te lo habría hecho más fácil?
+Aquí abajo hay algunas formas de compartirla, desde una sola línea hasta una buena
+conversación. Empieza por donde te resulte fácil. Nada de esto se convierte en un compromiso,
+ni para ti ni para mí.
 
 **Yo leo personalmente cada mensaje, y haré lo posible por contestarte.** En español o en inglés, como prefieras.
 
@@ -29,9 +32,10 @@ tengas abierto.
 Si quieres algo a lo que responder, elige una y contesta en una o dos frases. Los desacuerdos
 son bienvenidos: así es como la idea mejora.
 
+- ¿Cuáles de estas has vivido: un gato propio, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar, uno que quedó atrás? ¿Qué te habría ayudado?
 - ¿Cuidas gatos que técnicamente no son tuyos? ¿Cómo llevas el control?
 - ¿Has conocido a un gato con más de un nombre, o con más de un "dueño"?
-- ¿Qué pasa con los gatos cuando sus cuidadores se mudan?
+- ¿Qué pasó con la historia de un gato cuando cambió de manos, o cuando su persona se mudó o murió?
 - ¿Qué [ideas](/ideas/) te emocionan? ¿Cuáles te preocupan?
 - ¿Qué haría que te detuvieras a registrar a un gato que conoces?
 - ¿Qué nunca debería mostrar la tarjeta de un gato?

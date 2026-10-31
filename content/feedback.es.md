@@ -14,6 +14,7 @@ sobre todo historias como estas:
 - *"Aquí pasa exactamente lo mismo."*
 - *"En mi calle ese gato tiene cuatro nombres."*
 - *"Llevo años pagando el veterinario de un gato y no sé quién más le da de comer."*
+- *"Cuando adopté a un gato, no sabía nada de dónde venía."*
 - *"Esta es la razón por la que esa idea no va a funcionar."*
 
 Los desacuerdos, los casos raros y las situaciones extrañas son bienvenidos. Así es como la
@@ -21,9 +22,10 @@ idea mejora.
 
 ## Preguntas que me encantaría que respondieras
 
+- ¿Cuáles de estas has vivido: un gato propio, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar, uno que quedó atrás? ¿Qué te habría ayudado?
 - ¿Cuidas gatos que técnicamente no son tuyos? ¿Cómo llevas el control?
 - ¿Has conocido a un gato con más de un nombre, o con más de un "dueño"?
-- ¿Qué pasa con los gatos cuando sus cuidadores se mudan?
+- ¿Qué pasó con la historia de un gato cuando cambió de manos, o cuando su persona se mudó o murió?
 - ¿Qué [ideas](/ideas/) te emocionan? ¿Cuáles te preocupan?
 - ¿Qué haría que te detuvieras a registrar a un gato que conoces?
 - ¿Qué nunca debería mostrar la tarjeta de un gato?

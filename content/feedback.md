@@ -13,6 +13,7 @@ in stories like these:
 - *"We have exactly the same thing happening here."*
 - *"That cat has four names on my street."*
 - *"I've been paying for a cat's vet bills for years and I don't know who else feeds it."*
+- *"When I took in a cat, I knew nothing about where it came from."*
 - *"Here's why that idea won't work."*
 
 Disagreement, edge cases and strange situations are all welcome. They're how the idea gets
@@ -20,9 +21,10 @@ better.
 
 ## Questions I'd love answered
 
+- Which of these have you lived: your own cat, a neighbor's, a stray, a new adoption, a cat you gave up, a cat left behind? What would have helped you?
 - Do you look after cats you don't technically own? How do you keep track of them?
 - Have you met a cat with more than one name, or more than one "owner"?
-- What happens to the cats when caretakers move away?
+- What happened to a cat's story when it changed hands, or when its person moved away or died?
 - Which [ideas](/ideas/) excite you? Which ones worry you?
 - What would make you stop and record a cat you meet?
 - What should a cat's card never show?
