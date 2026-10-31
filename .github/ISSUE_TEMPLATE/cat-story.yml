@@ -1,0 +1,34 @@
+name: Share a cat story
+description: Tell me about a cat you've met, fed or worried about.
+title: "[Story] "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for sharing. Every answer below is optional, so write as much or as little as you like.
+
+        Please don't post exact private locations (a home address, or the exact spot where a cat sleeps) or personal details about other people. A neighbourhood or a street is plenty.
+  - type: input
+    id: where
+    attributes:
+      label: Where did this happen?
+      description: A town, neighbourhood or area is enough.
+      placeholder: "For example: near the market in Puerto Escondido"
+    validations:
+      required: false
+  - type: input
+    id: cat
+    attributes:
+      label: Which cat is this about?
+      description: A name, a nickname or a description ("the orange one by the bakery") all work.
+      placeholder: "For example: Tenkilo, or a grey cat with one torn ear"
+    validations:
+      required: false
+  - type: textarea
+    id: story
+    attributes:
+      label: What happened?
+      description: Tell it in your own words. A few sentences are wonderful.
+    validations:
+      required: false

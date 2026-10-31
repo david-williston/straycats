@@ -1,0 +1,45 @@
+name: Something is wrong on the site
+description: Report a typo, a broken link or a wrong translation.
+title: "[Site] "
+labels: ["site"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping me get it right. A short note is perfect.
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - A typo or mistake in the text
+        - A broken link or picture
+        - A wrong or awkward translation
+        - Something else
+    validations:
+      required: false
+  - type: input
+    id: page
+    attributes:
+      label: Which page?
+      description: Copy the address from your browser, or just describe the page.
+      placeholder: "For example: https://david-williston.github.io/straycats/posts/..."
+    validations:
+      required: false
+  - type: dropdown
+    id: language
+    attributes:
+      label: Which language?
+      options:
+        - English
+        - Español
+        - Both
+    validations:
+      required: false
+  - type: textarea
+    id: details
+    attributes:
+      label: What's wrong, and what should it say?
+      description: Quote the part that's wrong, and tell me the fix if you have one.
+    validations:
+      required: false

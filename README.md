@@ -16,10 +16,16 @@ The most useful thing right now is your experience and your opinion, not code:
   ([en español](https://david-williston.github.io/straycats/es/))
 - **Tell me what I'm missing**: reply to any story by email, or start a conversation in
   [Discussions](https://github.com/david-williston/straycats/discussions)
-- **Suggest a correction or a new idea** in [Issues](https://github.com/david-williston/straycats/issues)
+- **Share a cat story**, react to an idea, or report a typo in an
+  [Issue](https://github.com/david-williston/straycats/issues/new/choose): each one has a
+  short form to fill in, and every question is optional
+- **Prefer not to use GitHub?** Message David directly: email
+  <david@davidwilliston.com>, Telegram [@davidwilliston](https://t.me/davidwilliston), or
+  WhatsApp [+1 236 882 2034](https://wa.me/12368822034)
 
-If you're a developer, designer or rescuer who'd like to help build it one day, say hi in
-Discussions. When there's software to work on, it will be announced on the site.
+If you're a developer, designer or rescuer who'd like to help build it one day, pick
+**I want to help** on the Issues page, or say hi in Discussions. When there's software to
+work on, it will be announced on the site.
 
 ---
 

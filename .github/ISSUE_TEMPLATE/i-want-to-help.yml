@@ -1,0 +1,41 @@
+name: I want to help
+description: Tell me how you could lend a hand, even in a small way.
+title: "[Help] "
+labels: ["help"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you! Nobody has to be an expert. Tick whatever sounds like you, and say how much time you might have. I read every one.
+  - type: checkboxes
+    id: ways
+    attributes:
+      label: How could you help?
+      options:
+        - label: Translation
+        - label: Design
+        - label: Development (code)
+        - label: Rescue, vet or shelter experience
+        - label: Local knowledge (the places and people where cats live)
+        - label: Spreading the word
+        - label: Something else (tell me below)
+    validations:
+      required: false
+  - type: dropdown
+    id: time
+    attributes:
+      label: How much time could you give?
+      options:
+        - A few minutes now and then
+        - A few hours a month
+        - Some time each week, if it helps
+        - Not sure yet
+    validations:
+      required: false
+  - type: textarea
+    id: about
+    attributes:
+      label: Tell me a little about you
+      description: What you'd like to do, what you already know, or anything else you'd like me to know.
+    validations:
+      required: false

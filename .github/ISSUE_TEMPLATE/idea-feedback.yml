@@ -1,0 +1,42 @@
+name: Tell me what you think of an idea
+description: Share your reaction to one of the ideas on the site.
+title: "[Feedback] "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Honest reactions are the most helpful. Nothing here is final, and "I'm not sure" is a useful answer too.
+  - type: input
+    id: idea
+    attributes:
+      label: Which idea page is this about?
+      description: Copy the address from your browser, or just give the title.
+      placeholder: "For example: https://david-williston.github.io/straycats/ideas/..."
+    validations:
+      required: false
+  - type: dropdown
+    id: reaction
+    attributes:
+      label: What's your reaction?
+      options:
+        - I like it
+        - I have doubts
+        - I'm not sure yet
+        - I'd change it
+    validations:
+      required: false
+  - type: textarea
+    id: thoughts
+    attributes:
+      label: What do you think?
+      description: What works for you, what worries you, and why.
+    validations:
+      required: false
+  - type: textarea
+    id: missing
+    attributes:
+      label: What's missing?
+      description: Is there something you'd want to see considered that isn't there yet?
+    validations:
+      required: false

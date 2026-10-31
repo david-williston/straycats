@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Start a conversation
+    url: https://github.com/david-williston/straycats/discussions
+    about: Chat about an idea in GitHub Discussions.
+  - name: Message David on Telegram
+    url: https://t.me/davidwilliston
+    about: Prefer not to use GitHub? Message David directly.
+  - name: Message David on WhatsApp
+    url: https://wa.me/12368822034
+    about: Prefer not to use GitHub? Message David directly.
+  - name: Send David an email
+    url: mailto:david@davidwilliston.com
+    about: Prefer not to use GitHub? Message David directly.
