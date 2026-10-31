@@ -13,7 +13,7 @@ thinking out loud, and the most useful thing you can do is think alongside me. B
 ways to do that, from a single line to a proper conversation. Start wherever feels easy. None
 of it adds up to a commitment, for you or for me.
 
-**Every message is read by me, personally, and I'll write back.** English or Spanish, either
+**Every message is read by me, personally, and I'll do my best to write back.** English or Spanish, either
 is fine.
 
 {{< contact-channels >}}

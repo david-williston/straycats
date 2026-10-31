@@ -14,7 +14,7 @@ pienso en voz alta, y lo más útil que puedes hacer es pensar conmigo. Aquí ab
 formas de hacerlo, desde una sola línea hasta una buena conversación. Empieza por donde te
 resulte fácil. Nada de esto se convierte en un compromiso, ni para ti ni para mí.
 
-**Yo leo personalmente cada mensaje, y te contesto.** En español o en inglés, como prefieras.
+**Yo leo personalmente cada mensaje, y haré lo posible por contestarte.** En español o en inglés, como prefieras.
 
 {{< contact-channels >}}
 
