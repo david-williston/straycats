@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## October 30, 2026: A clearer home page
+
+*Version v2026.10.30.2*
+
+- **Changed:** the home page now says what Stray Cats is for: giving every neighborhood cat a
+  name, a history and the people who care about it. That means pets, strays, wanderers and lost
+  cats, not only strays. The [About](/about/) page and the site description say the same.
+
 ## October 30, 2026: Easier ways to get in touch
 
 *Version v2026.10.30.1*

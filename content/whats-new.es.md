@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 30 de octubre de 2026: Una página de inicio más clara
+
+*Versión v2026.10.30.2*
+
+- **Cambio:** la página de inicio ahora dice para qué es Stray Cats: darle a cada gato del barrio
+  un nombre, una historia y las personas que lo cuidan. Eso incluye mascotas, callejeros,
+  andariegos y gatos perdidos, no solo callejeros. La página [Acerca de](/about/) y la descripción
+  del sitio dicen lo mismo.
+
 ## 30 de octubre de 2026: Más formas de ponerte en contacto
 
 *Versión v2026.10.30.1*
