@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 1 de noviembre de 2026: Una tarjeta del tamaño del teléfono
+
+*Versión v2026.11.01.1*
+
+- **Nuevo:** la tarjeta de Stray Cats ahora tiene un tamaño mediano pensado para teléfonos y
+  columnas angostas, entre la tarjeta completa y la versión pequeña para el pie de página.
+  Mira [cómo agregarla](/embed/).
+
 ## 1 de noviembre de 2026: Agrega la tarjeta de Stray Cats a tu sitio
 
 *Versión v2026.11.01*

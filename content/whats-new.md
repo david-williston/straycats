@@ -11,6 +11,13 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 1, 2026: A card sized for phones
+
+*Version v2026.11.01.1*
+
+- **New:** the Stray Cats card now comes in a medium size made for phones and narrow columns,
+  between the full card and the small footer version. See [how to add it](/embed/).
+
 ## November 1, 2026: Add the Stray Cats card to your site
 
 *Version v2026.11.01*
