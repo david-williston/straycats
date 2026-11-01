@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 1 de noviembre de 2026: Agrega la tarjeta de Stray Cats a tu sitio
+
+*Versión v2026.11.01*
+
+- **Nuevo:** una tarjeta pequeña que cualquier clínica, refugio o rescate puede agregar a su
+  sitio web para enlazar a Stray Cats, con una versión compacta para el pie de página. Se
+  mantiene actualizada sola, en español e inglés. Mira [cómo agregarla](/embed/), o
+  búscala en la página de [Prensa](/press/).
+
 ## 30 de octubre de 2026: Más fácil de leer y de usar
 
 *Versión v2026.10.30.6*

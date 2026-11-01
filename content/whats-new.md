@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 1, 2026: Add the Stray Cats card to your site
+
+*Version v2026.11.01*
+
+- **New:** a small card that any clinic, shelter or rescue can add to its website to link to
+  Stray Cats, with a compact version for footers. It keeps itself up to date, in English and
+  Spanish. See [how to add it](/embed/), or find it on the [Press](/press/) page.
+
 ## October 30, 2026: Easier to read and use
 
 *Version v2026.10.30.6*
