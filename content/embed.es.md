@@ -44,6 +44,15 @@ Para una versión más pequeña de una sola línea, ideal para el pie de página
 <script src="https://david-williston.github.io/straycats/card.js" async></script>
 ```
 
+Para teléfonos y columnas angostas hay una versión mediana, con el logo junto a una descripción corta:
+
+```html
+<straycats-card lang="es" variant="medium">
+  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+</straycats-card>
+<script src="https://david-williston.github.io/straycats/card.js" async></script>
+```
+
 La línea dentro de la etiqueta es una red de seguridad: es lo que ven los visitantes si su navegador
 bloquea los scripts, y se reemplaza por la tarjeta en cuanto esta carga. Puedes pegar la línea
 `<script>` más de una vez, o usar varias tarjetas en una página; sigue funcionando.
@@ -55,7 +64,7 @@ Agrégalas a la etiqueta `<straycats-card>`, por ejemplo `<straycats-card lang="
 | Opción | Valores | Predeterminado |
 |---|---|---|
 | `lang` | `en` o `es` | el idioma de tu página, o `en` |
-| `variant` | `card` (logo, descripción y enlace) o `compact` (una línea) | `card` |
+| `variant` | `card` (logo, descripción y enlace), `medium` (más pequeña, siempre en horizontal, pensada para teléfonos y columnas angostas) o `compact` (una línea) | `card` |
 | `theme` | `light`, `dark` o `auto` (sigue el dispositivo del visitante) | `auto` |
 
 ## Combina los colores

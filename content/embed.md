@@ -41,6 +41,15 @@ For a smaller one-line version, good for a footer:
 <script src="https://david-williston.github.io/straycats/card.js" async></script>
 ```
 
+For phones and narrow columns, a medium version keeps the logo beside a short description:
+
+```html
+<straycats-card variant="medium">
+  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+</straycats-card>
+<script src="https://david-williston.github.io/straycats/card.js" async></script>
+```
+
 The line inside the tag is a safety net: it is what visitors see if their browser blocks scripts, and it
 is replaced by the card as soon as the card loads. You can paste the `<script>` line more than once, or
 use several cards on a page; it still works.
@@ -52,7 +61,7 @@ Add these to the `<straycats-card>` tag, for example `<straycats-card lang="es" 
 | Option | Values | Default |
 |---|---|---|
 | `lang` | `en` or `es` | your page's language, else `en` |
-| `variant` | `card` (logo, description and link) or `compact` (one line) | `card` |
+| `variant` | `card` (logo, description and link), `medium` (smaller, always side by side, made for phones and narrow columns) or `compact` (one line) | `card` |
 | `theme` | `light`, `dark` or `auto` (follows the visitor's device) | `auto` |
 
 ## Match your colors

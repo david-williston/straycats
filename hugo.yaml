@@ -79,7 +79,7 @@ params:
   # changes. Title, call to action and compact text are per language below; the description is each
   # language's `description`.
   card:
-    version: 1
+    version: 2
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
@@ -108,6 +108,7 @@ languages:
       card:
         title: "Stray Cats"
         cta: "Learn about the project"
+        tagline: "An open-source, non-profit idea to make caring for cats easier."
         compactText: "Supports the Stray Cats project"
       description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
       editPost:
@@ -151,6 +152,7 @@ languages:
       card:
         title: "Stray Cats"
         cta: "Conoce el proyecto"
+        tagline: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil."
         compactText: "Apoya el proyecto Stray Cats"
       description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
       editPost:

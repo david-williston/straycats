@@ -22,8 +22,8 @@
   var FALLBACK = {
     logo: BASE + "images/straycats-card-logo.webp",
     langs: {
-      en: { title: "Stray Cats", description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story.", cta: "Learn about the project", compactText: "Supports the Stray Cats project", url: BASE },
-      es: { title: "Stray Cats", description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato.", cta: "Conoce el proyecto", compactText: "Apoya el proyecto Stray Cats", url: BASE + "es/" }
+      en: { title: "Stray Cats", description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story.", tagline: "An open-source, non-profit idea to make caring for cats easier.", cta: "Learn about the project", compactText: "Supports the Stray Cats project", url: BASE },
+      es: { title: "Stray Cats", description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato.", tagline: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil.", cta: "Conoce el proyecto", compactText: "Apoya el proyecto Stray Cats", url: BASE + "es/" }
     }
   };
 
@@ -51,6 +51,11 @@
     ".mini{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .7rem;border:1px solid var(--border);border-radius:999px;background:var(--bg);font:14px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--text)}" +
     ".mini .logo{padding:2px 4px;border-radius:6px}" +
     ".mini .logo img{width:auto;height:20px}" +
+    ".med{display:flex;align-items:center;gap:.75rem;padding:.75rem;border:1px solid var(--border);border-radius:14px;" +
+    "background:var(--bg);color:var(--text);font:15px/1.4 system-ui,-apple-system,'Segoe UI',sans-serif}" +
+    ".med .logo{padding:.3rem;border-radius:10px}.med .logo img{width:64px}.med div{min-width:0}" +
+    ".med strong{font-size:1rem}.med p{margin:.1rem 0 0;overflow-wrap:anywhere}" +
+    ".med a{display:inline-block;padding:.75rem 0}" +
     "@media (max-width:480px){.card{flex-direction:column;text-align:center}}";
 
   var cache;
@@ -98,7 +103,9 @@
       var f = FALLBACK.langs[l];
       var url = https(d.url, f.url);
       var logo = https(data.logo, FALLBACK.logo);
-      var compact = this.getAttribute("variant") === "compact";
+      var variant = this.getAttribute("variant");
+      var compact = variant === "compact";
+      var medium = variant === "medium";
 
       var a = el("a");
       a.href = url;
@@ -120,6 +127,16 @@
         a.textContent = str(d.compactText, f.compactText);
         box.appendChild(tile);
         box.appendChild(a);
+      } else if (medium) {
+        box = el("div", "med");
+        var mt = el("div");
+        mt.appendChild(el("strong", "", str(d.title, f.title)));
+        mt.appendChild(el("p", "", str(d.tagline, f.tagline)));
+        a.textContent = str(d.cta, f.cta) + "\u00a0";
+        a.appendChild(el("span", "", "\u2192")).setAttribute("aria-hidden", "true");
+        mt.appendChild(a);
+        box.appendChild(tile);
+        box.appendChild(mt);
       } else {
         box = el("div", "card");
         var text = el("div");

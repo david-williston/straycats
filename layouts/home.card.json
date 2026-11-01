@@ -5,6 +5,7 @@
   {{- $langs = merge $langs (dict .Language.Lang (dict
     "title" $p.card.title
     "description" $p.description
+    "tagline" $p.card.tagline
     "cta" $p.card.cta
     "compactText" $p.card.compactText
     "url" (.Home.Permalink)
