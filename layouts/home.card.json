@@ -1,0 +1,13 @@
+{{- /* card.json: what static/card.js shows on partner sites. Hugo is the source of truth, so a branding change is an edit here plus a release. */ -}}
+{{- $langs := dict -}}
+{{- range hugo.Sites -}}
+  {{- $p := .Params -}}
+  {{- $langs = merge $langs (dict .Language.Lang (dict
+    "title" $p.card.title
+    "description" $p.description
+    "cta" $p.card.cta
+    "compactText" $p.card.compactText
+    "url" (.Home.Permalink)
+  )) -}}
+{{- end -}}
+{{- dict "version" site.Params.card.version "logo" ("images/straycats-card-logo.webp" | absURL) "logoWidth" 150 "logoHeight" 125 "langs" $langs | jsonify -}}

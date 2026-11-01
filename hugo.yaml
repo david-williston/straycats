@@ -17,7 +17,14 @@ pagination:
   pagerSize: 20   # keep the home page on one page
 
 outputs:
-  home: [HTML, RSS, JSON]   # JSON powers the search page
+  home: [HTML, RSS, JSON, Card]   # JSON powers the search page; Card is card.json for the embeddable supporter card
+
+outputFormats:
+  Card:
+    mediaType: application/json
+    baseName: card
+    isPlainText: true
+    notAlternative: true
 
 params:
   env: production
@@ -67,6 +74,13 @@ params:
   fundingURL: "https://ko-fi.com/straycatsapp"    # a page where people can chip in (the "Chip in" section of Get involved)
   newsletterURL: ""   # a sign-up page (shown under "Follow along" on Get involved)
 
+  # Embeddable supporter card for partner sites (static/card.js reads card.json; see the "embed" page).
+  # `version` is informational only (bumping it does not bust caches); change it when the wording or logo
+  # changes. Title, call to action and compact text are per language below; the description is each
+  # language's `description`.
+  card:
+    version: 1
+
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
 
@@ -91,6 +105,10 @@ languages:
     locale: en-us
     weight: 1
     params:
+      card:
+        title: "Stray Cats"
+        cta: "Learn about the project"
+        compactText: "Supports the Stray Cats project"
       description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
       editPost:
         Text: "Suggest changes"
@@ -130,6 +148,10 @@ languages:
     locale: es-mx
     weight: 2
     params:
+      card:
+        title: "Stray Cats"
+        cta: "Conoce el proyecto"
+        compactText: "Apoya el proyecto Stray Cats"
       description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
       editPost:
         Text: "Sugerir cambios"
