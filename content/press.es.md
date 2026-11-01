@@ -6,7 +6,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-10-30
+updated: 2026-11-01
 ---
 
 ¿Vas a escribir sobre Stray Cats, o sobre las personas que cuidan gatos? Aquí tienes el
@@ -70,6 +70,24 @@ pequeños. Si las necesitas más grandes, escríbeme.
 | Atardecer profundo | `#E77645` |
 | Blanco Saibo | `#F7F5EF` |
 | Ojos dorados | `#E8BD64` |
+
+## Enlaza a Stray Cats
+
+Si tienes una clínica, un blog o un grupo de rescate, puedes agregar a tu sitio web una pequeña tarjeta
+que enlaza al proyecto. Es gratis y se mantiene actualizada sola. Esta es la tarjeta, en vivo:
+
+{{< straycats-card-demo lang="es" >}}
+
+Para agregarla, pega esto donde quieras que aparezca:
+
+```html
+<straycats-card lang="es">
+  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+</straycats-card>
+<script src="https://david-williston.github.io/straycats/card.js" async></script>
+```
+
+Para los colores, la versión de una línea y Hugo, mira [las instrucciones completas](/embed/).
 
 ## Contacto
 

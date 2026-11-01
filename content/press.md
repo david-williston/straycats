@@ -5,7 +5,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-10-30
+updated: 2026-11-01
 ---
 
 Writing about Stray Cats, or about the people who care for cats? Here's the project in brief, artwork
@@ -66,6 +66,24 @@ larger, get in touch.
 | Deep sunset | `#E77645` |
 | Saibo white | `#F7F5EF` |
 | Golden eyes | `#E8BD64` |
+
+## Link to Stray Cats
+
+If you run a clinic, a blog or a rescue, you can add a small card to your website that links to the
+project. It's free, and it keeps itself up to date. This is the card, live:
+
+{{< straycats-card-demo >}}
+
+To add it, paste this where you'd like it to appear:
+
+```html
+<straycats-card>
+  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+</straycats-card>
+<script src="https://david-williston.github.io/straycats/card.js" async></script>
+```
+
+For colours, the one-line version and Hugo, see [the full instructions](/embed/).
 
 ## Contact
 
