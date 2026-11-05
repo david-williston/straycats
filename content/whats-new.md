@@ -11,6 +11,13 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: The logo on the home page
+
+*Version v2026.11.05.3*
+
+- **Changed:** the StrayCats logo is back at the very top of the [home page](/), above the
+  introduction.
+
 ## November 5, 2026: How we describe StrayCats
 
 *Version v2026.11.05.2*

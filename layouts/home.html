@@ -15,6 +15,8 @@
   {{- /* 1. Hero: what it is, who it's for, one clear action, and Saibo */}}
   <section class="home-hero" aria-labelledby="home-title">
     <div class="home-hero-text">
+      <img class="home-hero-logo" src="{{ "images/straycats-logo.webp" | absURL }}" width="950" height="790"
+        alt="{{ i18n "logo_alt" }}" fetchpriority="high">
       <p class="home-eyebrow">{{ i18n "home_eyebrow" }}</p>
       <h1 id="home-title" class="home-title">{{ i18n "home_title" }} <span class="home-title-accent">{{ i18n "home_title_accent" }}</span></h1>
       <p class="home-lede">{{ i18n "home_lede" | markdownify }}</p>
@@ -140,8 +142,6 @@
 
   {{- /* 6. Closing call to action: join the conversation */}}
   <section class="home-section home-closing" aria-labelledby="home-join">
-    <img class="home-closing-logo" src="{{ "images/straycats-logo.webp" | absURL }}" width="950" height="790"
-      alt="{{ i18n "logo_alt" }}" loading="lazy">
     <h2 id="home-join">{{ i18n "home_join_title" }}</h2>
     <p>{{ i18n "home_join_text" }}</p>
     {{ "{{< talk-invite >}}" | .RenderString }}

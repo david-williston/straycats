@@ -12,6 +12,13 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: El logo en la página de inicio
+
+*Versión v2026.11.05.3*
+
+- **Cambió:** el logo de StrayCats vuelve a estar al principio de la [página de inicio](/),
+  arriba de la presentación.
+
 ## 5 de noviembre de 2026: Cómo describimos StrayCats
 
 *Versión v2026.11.05.2*

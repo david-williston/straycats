@@ -32,6 +32,8 @@
   display: grid; gap: 28px; align-items: center;
   margin: 8px 0 var(--home-gap);
 }
+.home-hero-logo { display: block; width: min(100%, 340px); height: auto; margin: 0 0 18px; }
+:root[data-theme="dark"] .home-hero-logo { padding: 12px 16px; border-radius: var(--radius); background: #f7f5ef; }
 .home-eyebrow {
   margin: 0 0 10px; color: var(--accent);
   font-size: 1rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
@@ -132,8 +134,6 @@
   padding: clamp(24px, 5vw, 40px); text-align: center;
   border-radius: calc(var(--radius) * 1.5); background: var(--accent-soft);
 }
-.home-closing-logo { display: block; width: min(60%, 200px); height: auto; margin: 0 auto 12px; }
-:root[data-theme="dark"] .home-closing-logo { padding: 10px 14px; border-radius: var(--radius); background: #f7f5ef; }
 .home-closing > p { max-width: 36em; margin: 0 auto 12px; }
 .home .home-closing .talk-invite { margin: 18px auto 16px; max-width: 640px; text-align: start; }
 .home .talk-invite .respond-button {
