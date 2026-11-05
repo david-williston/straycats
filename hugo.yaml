@@ -1,4 +1,4 @@
-baseURL: "https://david-williston.github.io/straycats/"
+baseURL: "https://straycats.love/"
 title: Stray Cats
 theme: PaperMod
 
@@ -196,4 +196,4 @@ markup:
   goldmark:
     renderHooks:
       link:
-        useEmbedded: always   # resolve /path/ links to the page so they work under the /straycats/ subpath
+        useEmbedded: always   # resolve /path/ links to the page so they work under any subpath

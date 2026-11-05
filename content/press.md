@@ -78,9 +78,9 @@ To add it, paste this where you'd like it to appear:
 
 ```html
 <straycats-card>
-  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+  <a href="https://straycats.love/">Stray Cats project</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 For colours, the one-line version and Hugo, see [the full instructions](/embed/).

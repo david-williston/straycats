@@ -5,7 +5,7 @@ eyes and a white marking beside the nose, against a sunset skyline. The artwork 
 with ChatGPT and exists only as raster images (no vector version).
 
 The same files can be downloaded one at a time from the Press page:
-https://david-williston.github.io/straycats/press/
+https://straycats.love/press/
 
 ## Folders
 

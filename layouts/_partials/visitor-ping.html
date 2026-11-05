@@ -18,7 +18,7 @@
       if (location.search.indexOf("ping=off") !== -1) localStorage.setItem("visitor-ping-off", "1");
       if (localStorage.getItem("visitor-ping-off")) return;
       if (nav.webdriver || nav.doNotTrack === "1" || nav.globalPrivacyControl) return;
-      if (location.hostname !== "david-williston.github.io") return;
+      if (location.hostname !== "straycats.love" && location.hostname !== "david-williston.github.io") return;
       var today = new Date().toISOString().slice(0, 10);
       if (localStorage.getItem("visitor-ping-day") === today) return;
       localStorage.setItem("visitor-ping-day", today);

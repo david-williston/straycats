@@ -15,4 +15,4 @@ otra, para usarla como fuente en NotebookLM. Stray Cats es una idea de código a
 fines de lucro, todavía en etapa de concepto, sobre cómo el mundo podría recordar a los gatos
 que no son de nadie. La escribe David Williston, que cuida una casa llena de gatos en Puerto
 Escondido, México. Todavía no hay app. El sitio está en
-https://david-williston.github.io/straycats/es/.
+https://straycats.love/es/.

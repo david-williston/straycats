@@ -57,7 +57,7 @@ export function message({ city, country, region }, path, host = '') {
 export default {
   async fetch(request, env, ctx) {
     const origin = request.headers.get('Origin') || '';
-    const allowed = (env.ALLOWED_ORIGINS || 'https://david-williston.github.io')
+    const allowed = (env.ALLOWED_ORIGINS || 'https://straycats.love,https://david-williston.github.io')
       .split(',')
       .map((s) => s.trim());
 

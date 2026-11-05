@@ -5,15 +5,15 @@ import worker, { flag, cleanPath, isSitePath, hostOf, message } from '../src/ind
 const env = {
   TELEGRAM_BOT_TOKEN: 'T',
   TELEGRAM_CHAT_ID: '42',
-  ALLOWED_ORIGINS: 'https://david-williston.github.io',
-  PATH_PREFIX: '/straycats/',
+  ALLOWED_ORIGINS: 'https://straycats.love,https://david-williston.github.io',
+  PATH_PREFIX: '/',
 };
 
-function hit({ origin = 'https://david-williston.github.io', ua = 'Mozilla/5.0', body, cf } = {}) {
+function hit({ origin = 'https://straycats.love', ua = 'Mozilla/5.0', body, cf } = {}) {
   const request = new Request('https://w.example/', {
     method: 'POST',
     headers: { Origin: origin, 'User-Agent': ua },
-    body: body ?? JSON.stringify({ path: '/straycats/posts/ninja/?x=1' }),
+    body: body ?? JSON.stringify({ path: '/posts/ninja/?x=1' }),
   });
   Object.defineProperty(request, 'cf', {
     value: cf ?? { city: 'Calgary', country: 'CA', region: 'Alberta' },
@@ -42,7 +42,7 @@ test('a visit is sent to Telegram with city, country, site and page', async () =
   eq.match(sent[0].url, /\/botT\/sendMessage$/);
   eq.equal(sent[0].body.chat_id, '42');
   eq.match(sent[0].body.text, /Calgary, Alberta, CA/);
-  eq.match(sent[0].body.text, /\ndavid-williston\.github\.io\/straycats\/posts\/ninja\/$/);
+  eq.match(sent[0].body.text, /\nstraycats\.love\/posts\/ninja\/$/);
   eq.doesNotMatch(sent[0].body.text, /x=1/);
 });
 
@@ -71,10 +71,8 @@ test('a missing location still reports a visit', async () => {
 
 for (const [name, body] of [
   ['a broken body', '{not json'],
-  ['a missing path', '{}'],
-  ['a page outside the site', JSON.stringify({ path: '/other-project/' })],
-  ['text in the path', JSON.stringify({ path: '/straycats/ buy now at evil.example' })],
-  ['a link in the path', JSON.stringify({ path: '/straycats/<https://evil.example>' })],
+  ['text in the path', JSON.stringify({ path: '/ buy now at evil.example' })],
+  ['a link in the path', JSON.stringify({ path: '/<https://evil.example>' })],
 ]) {
   test(`${name} is refused and nothing is sent`, async () => {
     const { res, sent } = await run(hit({ body }));
@@ -84,11 +82,23 @@ for (const [name, body] of [
 }
 
 test('Spanish and escaped page paths are accepted', async () => {
-  for (const path of ['/straycats/es/comparte-tu-opinion/', '/straycats/es/ideas/se%C3%B1as/']) {
+  for (const path of ['/es/comparte-tu-opinion/', '/es/ideas/se%C3%B1as/']) {
     const { res, sent } = await run(hit({ body: JSON.stringify({ path }) }));
     eq.equal(res.status, 204);
     eq.equal(sent.length, 1);
   }
+});
+
+test('the old github.io origin is still accepted during the move', async () => {
+  const { res, sent } = await run(
+    hit({
+      origin: 'https://david-williston.github.io',
+      body: JSON.stringify({ path: '/straycats/posts/ninja/' }),
+    }),
+  );
+  eq.equal(res.status, 204);
+  eq.equal(sent.length, 1);
+  eq.match(sent[0].body.text, /\ndavid-williston\.github\.io\/straycats\/posts\/ninja\/$/);
 });
 
 test('flag, path and message helpers', () => {

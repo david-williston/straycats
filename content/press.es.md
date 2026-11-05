@@ -82,9 +82,9 @@ Para agregarla, pega esto donde quieras que aparezca:
 
 ```html
 <straycats-card lang="es">
-  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 Para los colores, la versión de una línea y Hugo, mira [las instrucciones completas](/embed/).

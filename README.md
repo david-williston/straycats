@@ -4,7 +4,7 @@ An open-source, non-profit idea about how communities could identify, remember a
 the cats nobody owns (and, one day, dogs).
 
 > **There is no app here (yet).** Stray Cats is at the concept stage: the ideas are still
-> being formed, and no software has been written, [on purpose](https://david-williston.github.io/straycats/posts/all-talk-no-code/).
+> being formed, and no software has been written, [on purpose](https://straycats.love/posts/all-talk-no-code/).
 > This repository holds only the project's **website**, a notebook of stories and ideas.
 > Cloning it won't give you anything to run except that website.
 
@@ -12,8 +12,8 @@ the cats nobody owns (and, one day, dogs).
 
 The most useful thing right now is your experience and your opinion, not code:
 
-- **Read** the stories and ideas: <https://david-williston.github.io/straycats/>
-  ([en español](https://david-williston.github.io/straycats/es/))
+- **Read** the stories and ideas: <https://straycats.love/>
+  ([en español](https://straycats.love/es/))
 - **Tell me what I'm missing**: reply to any story by email, or start a conversation in
   [Discussions](https://github.com/david-williston/straycats/discussions)
 - **Share a cat story**, react to an idea, or report a typo in an
@@ -99,8 +99,8 @@ box text lives in `i18n/`. In content, link to pages by their English path
 
 The site publishes its whole text as one hidden page per language, made for NotebookLM:
 
-- English: <https://david-williston.github.io/straycats/notebooklm/>
-- Spanish: <https://david-williston.github.io/straycats/es/notebooklm/>
+- English: <https://straycats.love/notebooklm/>
+- Spanish: <https://straycats.love/es/notebooklm/>
 
 Each starts with **what's new in this version** (the newest What's New entry, picked up
 automatically), then holds every story, idea and the About, Feedback and Saibo pages, with

@@ -4,7 +4,7 @@ Sends a Telegram message such as
 
 ```
 🇨🇦 New visitor: Calgary, Alberta, CA
-david-williston.github.io/straycats/posts/ninja/
+straycats.love/posts/ninja/
 ```
 
 the first time each browser visits the Stray Cats site in a day.
@@ -38,15 +38,15 @@ when Wrangler asks for them, never into a file.
    `https://straycats-visitor-notify.evnsteven.workers.dev`.
 2. **Test it**:
    ```bash
-   curl -i -X POST -A 'Mozilla/5.0' -H 'Origin: https://david-williston.github.io' \
-     -d '{"path":"/straycats/test/"}' https://straycats-visitor-notify.evnsteven.workers.dev
+   curl -i -X POST -A 'Mozilla/5.0' -H 'Origin: https://straycats.love' \
+     -d '{"path":"/test/"}' https://straycats-visitor-notify.evnsteven.workers.dev
    ```
    You should get `204` and a Telegram message. The `-A` matters: curl's own
    user agent is skipped as a bot (still `204`, but no message).
 3. **Turn it on.** Put that address in `visitorPingURL` under `params` in
    `hugo.yaml`, then release the site (`npm run deploy`).
 4. **Opt yourself out** on each browser you use: open
-   `https://david-williston.github.io/straycats/?ping=off` once.
+   `https://straycats.love/?ping=off` once.
 
 ## Check it
 
@@ -77,17 +77,18 @@ kept.
   page, which has no scripts.
 - Secrets `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` live on Cloudflare only
   (the same values as evnsteven.app). Never commit them.
-- `ALLOWED_ORIGINS` is `https://david-williston.github.io`. Every GitHub Pages
-  project under that account shares that origin; if the site gets its own
-  domain, add it there and change the hostname check in the site script.
-- `PATH_PREFIX` is `/straycats/`. A hit is refused (`400 Bad path`) unless its
-  page is under that path and looks like a real page path: letters, digits,
-  `- . _ ~ /` and `%` escapes, no spaces. Anyone can forge a hit with curl (the
-  Origin header is only enforced by browsers), so this keeps forged hits from
-  putting text or links into the chat. Change it if the site moves.
+- `ALLOWED_ORIGINS` is `https://straycats.love,https://david-williston.github.io`. The
+  site lives at straycats.love; the old github.io origin stays allowed while
+  the move settles (remove it later, and the hostname check in the site script).
+- `PATH_PREFIX` is `/`. A hit is refused (`400 Bad path`) unless its page looks
+  like a real page path: letters, digits, `- . _ ~ /` and `%` escapes, no
+  spaces. Anyone can forge a hit with curl (the Origin header is only enforced
+  by browsers), so this keeps forged hits from putting text or links into the
+  chat. It is `/` rather than `/straycats/` because the site is now at the
+  domain root (the old github.io pages were under `/straycats/`).
 
 **Do on each browser you use:** open
-`https://david-williston.github.io/straycats/?ping=off` once.
+`https://straycats.love/?ping=off` once.
 
 **Off-switches, quickest first**
 1. Mute the chat in Telegram (also mutes evnsteven.app, same chat).

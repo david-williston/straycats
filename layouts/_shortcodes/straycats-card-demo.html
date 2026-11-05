@@ -1,4 +1,4 @@
 {{- /* Live Stray Cats supporter card, exactly as partners embed it (see content/embed.md). Optional: lang="es". */ -}}
 {{- $lang := .Get "lang" | default "en" -}}
-<straycats-card lang="{{ $lang }}"><a href="{{ if eq $lang "es" }}https://david-williston.github.io/straycats/es/{{ else }}https://david-williston.github.io/straycats/{{ end }}">{{ if eq $lang "es" }}Proyecto Stray Cats{{ else }}Stray Cats project{{ end }}</a></straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<straycats-card lang="{{ $lang }}"><a href="{{ if eq $lang "es" }}https://straycats.love/es/{{ else }}https://straycats.love/{{ end }}">{{ if eq $lang "es" }}Proyecto Stray Cats{{ else }}Stray Cats project{{ end }}</a></straycats-card>
+<script src="https://straycats.love/card.js" async></script>

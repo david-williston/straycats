@@ -27,27 +27,27 @@ Paste this where you want the card to appear (a footer, the "About" page, a side
 
 ```html
 <straycats-card>
-  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+  <a href="https://straycats.love/">Stray Cats project</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 For a smaller one-line version, good for a footer:
 
 ```html
 <straycats-card variant="compact">
-  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+  <a href="https://straycats.love/">Stray Cats project</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 For phones and narrow columns, a medium version keeps the logo beside a short description:
 
 ```html
 <straycats-card variant="medium">
-  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+  <a href="https://straycats.love/">Stray Cats project</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 The line inside the tag is a safety net: it is what visitors see if their browser blocks scripts, and it
@@ -86,9 +86,9 @@ Save this as `layouts/_partials/straycats-card.html` (or `layouts/partials/` in 
 
 ```go-html-template
 <straycats-card lang="{{ site.Language.Lang }}">
-  <a href="https://david-williston.github.io/straycats/">Stray Cats project</a>
+  <a href="https://straycats.love/">Stray Cats project</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 Then add one line wherever the card should appear, for example in your footer template:

@@ -30,27 +30,27 @@ lateral):
 
 ```html
 <straycats-card lang="es">
-  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 Para una versión más pequeña de una sola línea, ideal para el pie de página:
 
 ```html
 <straycats-card lang="es" variant="compact">
-  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 Para teléfonos y columnas angostas hay una versión mediana, con el logo junto a una descripción corta:
 
 ```html
 <straycats-card lang="es" variant="medium">
-  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 La línea dentro de la etiqueta es una red de seguridad: es lo que ven los visitantes si su navegador
@@ -91,9 +91,9 @@ de Hugo):
 
 ```go-html-template
 <straycats-card lang="{{ site.Language.Lang }}">
-  <a href="https://david-williston.github.io/straycats/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
 </straycats-card>
-<script src="https://david-williston.github.io/straycats/card.js" async></script>
+<script src="https://straycats.love/card.js" async></script>
 ```
 
 Luego agrega una línea donde deba aparecer la tarjeta, por ejemplo en la plantilla del pie de página:

@@ -1,6 +1,6 @@
 /*!
  * Stray Cats supporter card: <straycats-card>
- * Docs: https://david-williston.github.io/straycats/embed/
+ * Docs: https://straycats.love/embed/
  *
  * VERSIONING: this file's URL is the contract. Breaking changes (renamed attributes,
  * different markup) ship as a NEW filename (card.v2.js), so existing embeds keep working.
@@ -14,7 +14,7 @@
   "use strict";
   if (customElements.get("straycats-card")) return;
 
-  var BASE = "https://david-williston.github.io/straycats/";
+  var BASE = "https://straycats.love/";
   var script = document.currentScript;
   var JSON_URL = (script && script.src ? script.src.replace(/[^\/]*([?#].*)?$/, "") : BASE) + "card.json";
 
