@@ -12,6 +12,16 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: Cómo describimos Stray Cats
+
+*Versión v2026.11.05.2*
+
+- **Cambió:** el sitio ahora describe Stray Cats como un proyecto de código abierto que crece,
+  en vez de una idea en etapa de concepto, en la página de inicio, [Acerca de](/about/),
+  [Prensa](/press/) y la [tarjeta para tu sitio](/embed/). Los hechos no han cambiado: todavía
+  no hay app ni código, y el primer software llegará cuando las ideas se hayan afinado con
+  quienes cuidan gatos.
+
 ## 5 de noviembre de 2026: Un logo nuevo
 
 *Versión v2026.11.05.1*

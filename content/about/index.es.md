@@ -2,7 +2,7 @@
 title: "Acerca de"
 slug: "acerca-de"
 summary: "Qué es Stray Cats, de dónde viene y qué no es (todavía)."
-updated: 2026-10-30
+updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -14,7 +14,7 @@ cover:
 
 ## En una frase
 
-**Stray Cats** es una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil,
+**Stray Cats** es un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil,
 dejando que quien cuida a uno vea su historia: el propio, el de un vecino, un callejero, uno recién
 adoptado, uno que tuvo que dar o uno que quedó atrás.
 
@@ -59,12 +59,15 @@ conmigo. [Lee la historia completa →](/posts/the-cats-nobody-owns/)
 
 Una libreta escrita en público. Cada [historia](/posts/) empieza con algo real y sigue la
 pregunta que surge de ahí. Las páginas de [ideas](/ideas/) reúnen los conceptos y las
-preguntas abiertas que van saliendo.
+preguntas abiertas que van saliendo. Sigue creciendo: las conversaciones con personas que
+cuidan gatos ya se han convertido en historias e ideas nuevas, y las
+[Novedades](/whats-new/) registran cada paso.
 
 ## Qué no es (todavía)
 
-Una app. No hay código, ni plan de producto, ni modelo de negocio, [a
-propósito](/posts/all-talk-no-code/). Por ahora el trabajo es entender el problema.
+Una app. Todavía no hay código, ni plan de producto, ni modelo de negocio, [a
+propósito](/posts/all-talk-no-code/). Por ahora el trabajo es escuchar y diseñar a la vista de
+todos, y el primer software llegará cuando las ideas se hayan afinado con quienes cuidan gatos.
 
 ## Principios
 

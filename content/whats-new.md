@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: How we describe Stray Cats
+
+*Version v2026.11.05.2*
+
+- **Changed:** the site now describes Stray Cats as a growing open-source project instead of
+  an idea at the concept stage, on the home page, [About](/about/), [Press](/press/) and the
+  [card for your site](/embed/). The facts haven't changed: there's still no app or code, and
+  the first software comes after the ideas are shaped with the people who care for cats.
+
 ## November 5, 2026: A new logo
 
 *Version v2026.11.05.1*

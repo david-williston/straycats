@@ -2,7 +2,7 @@
 title: "Cómo ayudar"
 slug: "como-ayudar"
 summary: "No hay una app a la que unirse ni nada en lo que inscribirse. Aquí tienes formas sencillas de ayudar, desde un saludo de una línea hasta una charla más larga."
-updated: 2026-10-30
+updated: 2026-11-05
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -61,7 +61,8 @@ más que suficiente (mira [Privacidad y seguridad de los animales](/ideas/privac
 Traducción, diseño, desarrollo, experiencia en rescate o veterinaria, conocimiento local: el
 veterinario que ayuda a los gatos comunitarios de tu ciudad, dónde se esterilizan a bajo
 costo, cómo funcionan las cosas de verdad donde vives. Todavía no hay código,
-[a propósito](/posts/all-talk-no-code/), así que no hay un equipo al que unirse. Pero si me
+[a propósito](/posts/all-talk-no-code/): el primer software llegará cuando las ideas estén
+afinadas, así que aún no hay un equipo al que unirse. Pero si me
 cuentas en qué eres bueno o buena, sabré a quién preguntarle cuando haya algo real en lo que
 trabajar, y entonces eres libre de decir que no.
 

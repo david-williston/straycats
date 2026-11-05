@@ -79,7 +79,7 @@ params:
   # changes. Title, call to action and compact text are per language below; the description is each
   # language's `description`.
   card:
-    version: 3
+    version: 4
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
@@ -108,9 +108,9 @@ languages:
       card:
         title: "Stray Cats"
         cta: "Learn about the project"
-        tagline: "An open-source, non-profit idea to make caring for cats easier."
+        tagline: "An open-source, non-profit project to make caring for cats easier."
         compactText: "Supports the Stray Cats project"
-      description: "An open-source, non-profit idea to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
+      description: "An open-source, non-profit project, growing in the open, to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
       editPost:
         Text: "Suggest changes"
       footer:
@@ -120,11 +120,12 @@ languages:
         Content: >
           Your own cat, a neighbor's, a stray, a new adoption, a cat you had to give up, or one left
           behind: whoever cares for a cat has an easier time when they know its story. **Stray Cats** is
-          the working name for an idea — open source, non-profit, and very much unfinished — for
+          the working name for an open-source, non-profit project, growing in the open, for
           letting anyone who cares for a cat see its story, so nothing gets lost when a cat changes
-          hands. It starts with the cats I've come to know in Puerto Escondido, Mexico. There's no
-          app yet, and no code. Just stories, questions and
-          half-formed ideas — and I'd love to hear yours. **The lightest way to help is a
+          hands. It starts with the cats I've come to know in Puerto Escondido, Mexico. Right now
+          the work is stories, conversations and design in the open, and each conversation adds
+          to it. There's no app or code yet: the first software comes after the ideas are shaped
+          with the people who care for cats. I'd love to hear yours. **The lightest way to help is a
           one-line hello:** {{< contact-strip >}}. I read every message myself, and
           [there are more ways to get involved](/involve/). Prefer to listen? There's a
           [90-second audio introduction](/about/#listen-to-the-idea). Been here before? See
@@ -152,9 +153,9 @@ languages:
       card:
         title: "Stray Cats"
         cta: "Conoce el proyecto"
-        tagline: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil."
+        tagline: "Un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil."
         compactText: "Apoya el proyecto Stray Cats"
-      description: "Una idea de código abierto y sin fines de lucro para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
+      description: "Un proyecto de código abierto y sin fines de lucro, que crece a la vista de todos, para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
       editPost:
         Text: "Sugerir cambios"
       footer:
@@ -164,12 +165,13 @@ languages:
         Content: >
           Tu propio gato, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar
           o uno que quedó atrás: quien cuida a un gato lo tiene más fácil cuando conoce su historia.
-          **Stray Cats** (Gatos Callejeros) es el nombre provisional de una idea, de código abierto,
-          sin fines de lucro y todavía sin terminar, para que cualquiera que cuide a un gato pueda
-          ver su historia y no se pierda nada cuando el gato cambia de manos. Empieza con los gatos
-          que he llegado a conocer en Puerto Escondido, México. Todavía no hay app ni código. Solo
-          historias, preguntas e ideas a medio formar, y me encantaría escuchar
-          las tuyas. **La forma más ligera de ayudar es un saludo de una línea:**
+          **Stray Cats** (Gatos Callejeros) es el nombre provisional de un proyecto de código abierto y
+          sin fines de lucro que crece a la vista de todos, para que cualquiera que cuide a un gato
+          pueda ver su historia y no se pierda nada cuando el gato cambia de manos. Empieza con los
+          gatos que he llegado a conocer en Puerto Escondido, México. Por ahora el trabajo son
+          historias, conversaciones y diseño a la vista de todos, y cada conversación suma. Todavía
+          no hay app ni código: el primer software llegará cuando las ideas se hayan afinado con
+          quienes cuidan gatos. Me encantaría escuchar las tuyas. **La forma más ligera de ayudar es un saludo de una línea:**
           {{< contact-strip >}}. Leo personalmente cada mensaje, y hay
           [más formas de participar](/involve/). ¿Prefieres escuchar? Hay una [introducción en audio de 90
           segundos](/about/#escucha-la-idea). ¿Ya habías venido? Mira las [novedades](/whats-new/).

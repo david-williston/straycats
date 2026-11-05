@@ -1,10 +1,10 @@
 # Stray Cats 🐾
 
-An open-source, non-profit idea about how communities could identify, remember and care for
+An open-source, non-profit project, growing in the open, about how communities could identify, remember and care for
 the cats nobody owns (and, one day, dogs).
 
-> **There is no app here (yet).** Stray Cats is at the concept stage: the ideas are still
-> being formed, and no software has been written, [on purpose](https://straycats.love/posts/all-talk-no-code/).
+> **There is no app here (yet).** Right now the work is stories, conversations and design in
+> the open, and no software has been written, [on purpose](https://straycats.love/posts/all-talk-no-code/).
 > This repository holds only the project's **website**, a notebook of stories and ideas.
 > Cloning it won't give you anything to run except that website.
 
@@ -128,7 +128,7 @@ If a cat's name comes out wrong, add it to the pronunciation line.
 Audience: people hearing about Stray Cats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
 
 Get these facts right:
-- Stray Cats is an idea, not an app. It's open source, non-profit and at the concept stage: no app or code exists and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
+- Stray Cats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
 - It's written by David Williston, who looks after a house full of cats in Puerto Escondido, Mexico.
 - The cat's wellbeing always comes first, then the people who care for cats. Fun is the doorway, never the destination.
 - Use the cats' real names: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo, and Mountain Lion (a nickname; real name unknown). Call each cat by name or "the cat"; don't guess whether a cat is male or female.
@@ -154,7 +154,7 @@ Spanish (Spanish notebook):
 Público: personas que escuchan sobre Stray Cats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
 
 Estos datos tienen que quedar claros:
-- Stray Cats es una idea, no una app. Es de código abierto, sin fines de lucro y está en etapa de concepto: no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
+- Stray Cats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
 - Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
@@ -180,7 +180,7 @@ Estructura:
 Audience: people hearing about Stray Cats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
 
 Get these facts right:
-- Stray Cats is an idea, not an app. It's open source, non-profit and at the concept stage: no app or code exists and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
+- Stray Cats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
 - It's written by David Williston, who looks after a house full of cats in Puerto Escondido, Mexico.
 - The cat's wellbeing always comes first, then the people who care for cats. Fun is the doorway, never the destination.
 - Use the cats' real names: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo, and Mountain Lion (a nickname; real name unknown). Call each cat by name or "the cat"; don't guess whether a cat is male or female.
@@ -206,7 +206,7 @@ Spanish (Spanish notebook):
 Público: personas que escuchan sobre Stray Cats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
 
 Estos datos tienen que quedar claros:
-- Stray Cats es una idea, no una app. Es de código abierto, sin fines de lucro y está en etapa de concepto: no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
+- Stray Cats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
 - Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
@@ -230,12 +230,12 @@ Estructura:
 For best results, put this in place of the Structure section of a prompt above:
 
 > Focus only on the page titled "Meeting a Cat". Explain it for someone who has never heard
-> of Stray Cats. Mention that it's an open-source, non-profit idea at the concept stage, with
+> of Stray Cats. Mention that it's a growing open-source, non-profit project, with
 > no app yet. Use the cats' real names from the page.
 
 > Concéntrate solo en la página titulada "Conocer a un gato". Explícala para alguien que
-> nunca ha oído hablar de Stray Cats. Menciona que es una idea de código abierto y sin fines
-> de lucro, todavía en etapa de concepto, sin app. Usa los nombres reales de los gatos que
+> nunca ha oído hablar de Stray Cats. Menciona que es un proyecto de código abierto y sin fines
+> de lucro que crece a la vista de todos, sin app todavía. Usa los nombres reales de los gatos que
 > aparecen en la página.
 
 **Then:**

@@ -11,8 +11,8 @@ sitemap:
 ---
 
 Esta página reúne el texto completo del sitio web de Stray Cats en español, una página tras
-otra, para usarla como fuente en NotebookLM. Stray Cats es una idea de código abierto y sin
-fines de lucro, todavía en etapa de concepto, sobre cómo el mundo podría recordar a los gatos
+otra, para usarla como fuente en NotebookLM. Stray Cats es un proyecto de código abierto y sin
+fines de lucro, que crece a la vista de todos, sobre cómo el mundo podría recordar a los gatos
 que no son de nadie. La escribe David Williston, que cuida una casa llena de gatos en Puerto
 Escondido, México. Todavía no hay app. El sitio está en
 https://straycats.love/es/.

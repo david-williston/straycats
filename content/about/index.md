@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "What Stray Cats is, where it came from, and what it isn't (yet)."
-updated: 2026-10-30
+updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -13,7 +13,7 @@ cover:
 
 ## In one sentence
 
-**Stray Cats** is an open-source, non-profit idea to make caring for cats easier, by letting
+**Stray Cats** is an open-source, non-profit project to make caring for cats easier, by letting
 anyone who cares for one see its story: their own cat, a neighbor's, a stray, a new adoption,
 a cat they had to give up, or one left behind.
 
@@ -57,12 +57,14 @@ What if every cat could have:
 
 A notebook kept in public. Each [story](/posts/) starts with something real and follows the
 question it raises. The [ideas](/ideas/) pages collect the concepts and open questions that
-come out of them.
+come out of them. It keeps growing: conversations with people who care for cats have already
+turned into new stories and ideas, and [What's New](/whats-new/) records each step.
 
 ## What it isn't (yet)
 
-An app. There's no code, no product plan and no business model, [on
-purpose](/posts/all-talk-no-code/). Right now the job is to understand the problem.
+An app. There's no code, no product plan and no business model yet, [on
+purpose](/posts/all-talk-no-code/). Right now the work is listening and designing in the open,
+and the first software comes after the ideas are shaped with the people who care for cats.
 
 ## Principles
 

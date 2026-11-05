@@ -1,7 +1,7 @@
 ---
 title: "Get involved"
 summary: "There's no app to join and nothing to sign up for. Here are easy ways to help, from a one-line hello to a longer chat."
-updated: 2026-10-30
+updated: 2026-11-05
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -58,8 +58,8 @@ Please leave out exact locations and home addresses. A cat's neighbourhood is pl
 
 Translation, design, development, rescue or vet experience, local knowledge: the vet who
 helps community cats in your town, where low-cost sterilisation happens, how things really
-work where you live. There's no code yet, [on purpose](/posts/all-talk-no-code/), so there
-isn't a team to join. But if you tell me what you're good at, I'll know who to ask when
+work where you live. There's no code yet, [on purpose](/posts/all-talk-no-code/): the first software comes
+after the ideas are shaped, so there isn't a team to join yet. But if you tell me what you're good at, I'll know who to ask when
 there's something real to work on, and you're free to say no then.
 
 ## Have a chat

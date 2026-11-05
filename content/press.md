@@ -13,16 +13,17 @@ you're welcome to use, and how to reach me.
 
 ## In brief
 
-**Stray Cats** is an open-source, non-profit idea to make caring for a cat easier, by
+**Stray Cats** is an open-source, non-profit project to make caring for a cat easier, by
 letting anyone who cares for one see its story, so nothing is lost when a cat changes hands.
 The cat might be your own, a neighbor's, a stray, a new adoption, one you had to give up, or
 one left behind when its owner died. It starts with the cats I've come to know in Puerto
 Escondido, Mexico, and a simple question: what if every cat had an identity, a history, and
 a network of people who care about it, and meeting one took nothing more than a photo?
 
-- **What it is:** an idea at the concept stage. There's no app and no code yet; the
-  [ideas](/ideas/) and [stories](/posts/) on this site are where it's being worked out, in
-  the open.
+- **What it is:** a growing open-source project, worked out in the open. The
+  [ideas](/ideas/) and [stories](/posts/) on this site keep growing as people share what
+  they know, and [What's New](/whats-new/) records each step. There's no app or code yet; the first
+  software comes after the ideas are shaped with the people who care for cats.
 - **Who's behind it:** David Williston, who looks after a house full of cats in Puerto
   Escondido, Oaxaca, Mexico.
 - **Who it's for:** anyone who cares for a cat, whether it's theirs or not.

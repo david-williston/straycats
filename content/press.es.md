@@ -14,7 +14,7 @@ proyecto en pocas palabras, imágenes que puedes usar y cómo contactarme.
 
 ## En pocas palabras
 
-**Stray Cats** (Gatos Callejeros) es una idea de código abierto y sin fines de lucro para
+**Stray Cats** (Gatos Callejeros) es un proyecto de código abierto y sin fines de lucro para
 que cuidar a un gato sea más fácil, dejando que cualquiera que cuide a uno pueda ver su
 historia, para que no se pierda nada cuando el gato cambia de manos. Puede ser tu propio
 gato, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar, o uno que
@@ -23,9 +23,11 @@ Escondido, México, y con una pregunta sencilla: ¿y si cada gato tuviera una id
 historia y una red de personas que se preocupan por él, y conocerlo no costara más que una
 foto?
 
-- **Qué es:** una idea en etapa de concepto. Todavía no hay app ni código; las
-  [ideas](/ideas/) y las [historias](/posts/) de este sitio son donde se va desarrollando, a
-  la vista de todos.
+- **Qué es:** un proyecto de código abierto que crece a la vista de todos. Las
+  [ideas](/ideas/) y las [historias](/posts/) de este sitio siguen creciendo a medida que la
+  gente comparte lo que sabe, y las [Novedades](/whats-new/) registran cada paso. Todavía no hay
+  app ni código; el primer software llegará cuando las ideas se hayan afinado con quienes cuidan
+  gatos.
 - **Quién está detrás:** David Williston, que cuida una casa llena de gatos en Puerto
   Escondido, Oaxaca, México.
 - **Para quién es:** cualquiera que cuide a un gato, sea suyo o no.
