@@ -79,7 +79,7 @@ params:
   # changes. Title, call to action and compact text are per language below; the description is each
   # language's `description`.
   card:
-    version: 2
+    version: 3
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"

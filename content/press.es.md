@@ -43,7 +43,7 @@ Para saber más, mira [Acerca de](/about/) o escucha la
 ## Logo e imágenes
 
 El logo es un retrato de Saibo descansando frente a un atardecer sobre los tejados, con el
-nombre "Straycats". Haz clic en una imagen o en **Descargar** para guardar el archivo en
+nombre "Straycats" y un corazón ".love". Haz clic en una imagen o en **Descargar** para guardar el archivo en
 tamaño completo.
 
 {{< press-files >}}
@@ -56,7 +56,7 @@ Puedes usar el logo y las imágenes en artículos, publicaciones y programas sob
 Por favor no cambies los colores, no lo deformes y no separes a Saibo del nombre.
 
 Las imágenes se generaron con ChatGPT y solo existen como imágenes rasterizadas (no hay
-versión vectorial). Miden unos 1000 px de ancho, así que solo se imprimen nítidas en tamaños
+versión vectorial). Miden unos 1400 px de ancho, así que solo se imprimen nítidas en tamaños
 pequeños. Si las necesitas más grandes, escríbeme.
 
 ### Colores

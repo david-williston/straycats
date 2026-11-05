@@ -40,7 +40,7 @@ For more, see [About](/about/), or listen to the
 ## Logo and artwork
 
 The logo is a portrait of Saibo resting in front of a sunset over the rooftops, with the
-"Straycats" wordmark. Click a picture or **Download** to save the full-size file.
+"Straycats" wordmark and a ".love" heart. Click a picture or **Download** to save the full-size file.
 
 {{< press-files >}}
 
@@ -52,7 +52,7 @@ You're welcome to use the logo and artwork in articles, posts and broadcasts abo
 Cats. Please don't change the colours, distort it, or separate Saibo from the wordmark.
 
 The artwork was generated with ChatGPT and exists only as raster images (there's no vector
-version). It's about 1000 px wide, so it prints sharply only at small sizes. If you need it
+version). It's about 1400 px wide, so it prints sharply only at small sizes. If you need it
 larger, get in touch.
 
 ### Colours
