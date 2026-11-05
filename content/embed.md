@@ -5,7 +5,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-01
+updated: 2026-11-05
 ---
 
 If you run a clinic, shelter or rescue and want to show you support the cats' side of things, you

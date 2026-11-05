@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: Una casa propia
+
+*Versión v2026.11.05*
+
+- **Cambió:** Stray Cats ahora vive en **straycats.love**. La dirección anterior sigue
+  funcionando y te lleva a la nueva.
+- **Actualizado:** la [tarjeta para tu sitio](/embed/) y la página de [Prensa](/press/) ahora
+  usan la dirección nueva. Las tarjetas que ya están en otros sitios siguen funcionando.
+
 ## 1 de noviembre de 2026: Una tarjeta del tamaño del teléfono
 
 *Versión v2026.11.01.1*

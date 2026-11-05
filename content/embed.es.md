@@ -6,7 +6,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-01
+updated: 2026-11-05
 ---
 
 Si tienes una clínica, un refugio o un grupo de rescate y quieres mostrar que apoyas a los gatos, puedes

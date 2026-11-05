@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: A home of our own
+
+*Version v2026.11.05*
+
+- **Changed:** Stray Cats now lives at **straycats.love**. The old address keeps working and
+  sends you to the new one.
+- **Updated:** the [card for your site](/embed/) and the [Press](/press/) page now use the new
+  address. Cards already on other sites keep working.
+
 ## November 1, 2026: A card sized for phones
 
 *Version v2026.11.01.1*

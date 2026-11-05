@@ -6,7 +6,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-01
+updated: 2026-11-05
 ---
 
 ¿Vas a escribir sobre Stray Cats, o sobre las personas que cuidan gatos? Aquí tienes el

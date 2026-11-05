@@ -5,7 +5,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-01
+updated: 2026-11-05
 ---
 
 Writing about Stray Cats, or about the people who care for cats? Here's the project in brief, artwork
