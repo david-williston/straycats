@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: A new logo
+
+*Version v2026.11.05.1*
+
+- **Changed:** the Stray Cats logo now includes the **.love** in a heart, and Saibo's portrait
+  is a little larger and sharper. The tab icon is his face on sunset orange.
+- **Updated:** the [Press](/press/) page and its brand kit have the new logo, icons and
+  link-preview image, in both languages.
+
 ## November 5, 2026: A home of our own
 
 *Version v2026.11.05*

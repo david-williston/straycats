@@ -12,6 +12,16 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: Un logo nuevo
+
+*Versión v2026.11.05.1*
+
+- **Cambió:** el logo de Stray Cats ahora incluye **.love** dentro de un corazón, y el retrato
+  de Saibo es un poco más grande y nítido. El ícono de la pestaña es su cara sobre naranja
+  atardecer.
+- **Actualizado:** la página de [Prensa](/press/) y su kit de marca tienen el logo, los íconos
+  y la imagen de vista previa nuevos, en los dos idiomas.
+
 ## 5 de noviembre de 2026: Una casa propia
 
 *Versión v2026.11.05*
