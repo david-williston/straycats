@@ -32,6 +32,9 @@
   border-radius: var(--radius);
 }
 
+.gallery-uncropped { align-items: start; }
+.gallery-uncropped img { aspect-ratio: auto; object-fit: contain; }
+
 .post-content .photo figcaption,
 .post-content .gallery figcaption {
   margin-top: 8px;

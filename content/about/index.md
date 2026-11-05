@@ -5,11 +5,9 @@ updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
 comments: false
-cover:
-  image: "cover.jpg"
-  alt: "Mika Ella, a tabby-and-white cat, lying on a pink towel and looking at the camera"
-  caption: "Mika Ella."
 ---
+
+{{< gallery images="saibo-step.jpg saibo-paw.jpg saibo-doorway.jpg" uncropped="true" alts="Saibo, a grey cat with a white chest, sitting up straight on a stone step and looking off to the side | Saibo looking at the camera with one white paw resting on a hand | Saibo in a wooden doorway, sitting tall with his eyes half closed" caption="Saibo, 2010–2026. This project is dedicated to him. May he rest in peace." >}}
 
 ## In one sentence
 

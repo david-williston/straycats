@@ -6,11 +6,9 @@ updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
 comments: false
-cover:
-  image: "cover.jpg"
-  alt: "Mika Ella, una gata atigrada con blanco, acostada boca arriba sobre una toalla rosa, mirando a la cámara"
-  caption: "Mika Ella."
 ---
+
+{{< gallery images="saibo-step.jpg saibo-paw.jpg saibo-doorway.jpg" uncropped="true" alts="Saibo, un gato gris con el pecho blanco, sentado derecho sobre un escalón de piedra y mirando hacia un lado | Saibo mirando a la cámara con una pata blanca apoyada sobre una mano | Saibo en una puerta de madera, sentado muy derecho con los ojos entrecerrados" caption="Saibo, 2010–2026. Este proyecto está dedicado a él. Que descanse en paz." >}}
 
 ## En una frase
 
