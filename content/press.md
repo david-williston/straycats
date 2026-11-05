@@ -1,6 +1,6 @@
 ---
 title: "Press"
-summary: "For journalists and bloggers: Stray Cats in brief, the logo and artwork to download, and how to reach me."
+summary: "For journalists and bloggers: StrayCats in brief, the logo and artwork to download, and how to reach me."
 ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -8,12 +8,12 @@ comments: false
 updated: 2026-11-05
 ---
 
-Writing about Stray Cats, or about the people who care for cats? Here's the project in brief, artwork
+Writing about StrayCats, or about the people who care for cats? Here's the project in brief, artwork
 you're welcome to use, and how to reach me.
 
 ## In brief
 
-**Stray Cats** is an open-source, non-profit project to make caring for a cat easier, by
+**StrayCats** is an open-source, non-profit project to make caring for a cat easier, by
 letting anyone who cares for one see its story, so nothing is lost when a cat changes hands.
 The cat might be your own, a neighbor's, a stray, a new adoption, one you had to give up, or
 one left behind when its owner died. It starts with the cats I've come to know in Puerto
@@ -68,7 +68,7 @@ larger, get in touch.
 | Saibo white | `#F7F5EF` |
 | Golden eyes | `#E8BD64` |
 
-## Link to Stray Cats
+## Link to StrayCats
 
 If you run a clinic, a blog or a rescue, you can add a small card to your website that links to the
 project. It's free, and it keeps itself up to date. This is the card, live:
@@ -79,7 +79,7 @@ To add it, paste this where you'd like it to appear:
 
 ```html
 <straycats-card>
-  <a href="https://straycats.love/">Stray Cats project</a>
+  <a href="https://straycats.love/">StrayCats project</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```

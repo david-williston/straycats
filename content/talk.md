@@ -1,6 +1,6 @@
 ---
 title: "Let's Talk"
-summary: "Book a relaxed 30-minute chat about the cats in your life and your ideas for Stray Cats."
+summary: "Book a relaxed 30-minute chat about the cats in your life and your ideas for StrayCats."
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -29,7 +29,7 @@ The conversation is **transcribed**, so I can capture your ideas accurately inst
 scribbling notes. Before you book, you'll be asked to confirm that, and to choose how I may
 use what you say.
 
-- **Your transcript is used only to develop Stray Cats.** An AI assistant helps me pick out
+- **Your transcript is used only to develop StrayCats.** An AI assistant helps me pick out
   the ideas and stories you shared. The transcript isn't shared or sold.
 - **Then the transcript is deleted.** Only the ideas and stories are kept.
 - **You choose how you're credited** if I retell something you said on this site: by your

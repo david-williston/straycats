@@ -40,7 +40,7 @@ el gasto, la comida o la cuenta del veterinario.
 **Una persona puede cambiarle la vida a un gato, y luego irse.** Ninja está de maravilla porque
 alguien tuvo el tiempo y los medios para darle de comer cada noche. Pero yo solo estoy aquí por
 un tiempo. Cuando me vaya, ¿quién sabrá que Ninja come en las noches, o que alguna vez estuvo
-tan mal? Esa es toda la razón de Stray Cats:
+tan mal? Esa es toda la razón de StrayCats:
 [el gato sobrevive a sus cuidadores](/posts/the-cat-outlives-us/).
 
 **Cuando se deja de darles de comer, los gatos lo notan rápido.** En los días difíciles, cuando

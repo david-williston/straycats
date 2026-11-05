@@ -1,0 +1,155 @@
+{{- /* StrayCats home page (/ and /es/). Replaces PaperMod's list for the home page only.
+  All visitor-facing text is in i18n/en.yaml and i18n/es.yaml (keys starting with home_).
+  Styles: assets/css/extended/home.css. Links resolve per language with site.GetPage. */ -}}
+{{- define "main" }}
+{{- $about := site.GetPage "/about" }}
+{{- $talk := site.GetPage "/talk" }}
+{{- $posts := site.GetPage "/posts" }}
+{{- $ideas := site.GetPage "/ideas" }}
+{{- $repo := "" }}
+{{- range site.Params.socialIcons }}{{ if eq .name "github" }}{{ $repo = .url }}{{ end }}{{ end }}
+{{- $arrow := `<span aria-hidden="true">&nbsp;→</span>` | safeHTML }}
+
+<div class="home">
+
+  {{- /* 1. Hero: what it is, who it's for, one clear action, and Saibo */}}
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero-text">
+      <p class="home-eyebrow">{{ i18n "home_eyebrow" }}</p>
+      <h1 id="home-title" class="home-title">{{ i18n "home_title" }} <span class="home-title-accent">{{ i18n "home_title_accent" }}</span></h1>
+      <p class="home-lede">{{ i18n "home_lede" | markdownify }}</p>
+      <div class="home-actions">
+        {{- with $talk }}<a class="home-button" href="{{ .RelPermalink }}">{{ i18n "home_cta_primary" }}</a>{{ end }}
+        {{- with $posts }}<a class="home-link" href="{{ .RelPermalink }}">{{ i18n "home_cta_secondary" }}{{ $arrow }}</a>{{ end }}
+      </div>
+      <p class="home-status"><span class="home-status-dot" aria-hidden="true"></span>{{ i18n "home_status" }}</p>
+    </div>
+    {{- with $about }}{{ with .Resources.Get "saibo-paw.jpg" }}
+    {{- $s := .Resize "420x webp q80" }}{{ $m := .Resize "640x webp q80" }}
+    <figure class="home-hero-photo">
+      <img src="{{ $m.RelPermalink }}" srcset="{{ $s.RelPermalink }} 420w, {{ $m.RelPermalink }} 640w"
+        sizes="(min-width: 769px) 260px, 200px" width="{{ $m.Width }}" height="{{ $m.Height }}"
+        alt="{{ i18n "home_photo_alt" }}" fetchpriority="high">
+      <figcaption>{{ with site.GetPage "/saibo" }}<a href="{{ .RelPermalink }}">{{ i18n "home_photo_caption" }}</a>{{ else }}{{ i18n "home_photo_caption" }}{{ end }}</figcaption>
+    </figure>
+    {{- end }}{{ end }}
+  </section>
+
+  {{- /* 2. Who it's for */}}
+  <section class="home-section" aria-labelledby="home-who">
+    <h2 id="home-who">{{ i18n "home_who_title" }}</h2>
+    <p class="home-section-lede">{{ i18n "home_who_lede" }}</p>
+    <ul class="home-who" role="list">
+      {{- range slice "owners" "feeders" "shelters" "travelers" }}
+      <li class="home-card">
+        <h3>{{ i18n (printf "home_who_%s" .) }}</h3>
+        <p>{{ i18n (printf "home_who_%s_text" .) }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+  {{- /* 3. How it will work: three steps, each linked to its idea page */}}
+  <section class="home-section" aria-labelledby="home-how">
+    <h2 id="home-how">{{ i18n "home_how_title" }}</h2>
+    <ol class="home-steps" role="list">
+      {{- range $i, $step := slice (dict "key" "meet" "page" "/ideas/meeting-a-cat") (dict "key" "grow" "page" "/ideas/encounters") (dict "key" "network" "page" "/ideas/care-network") }}
+      <li class="home-step">
+        <span class="home-step-number" aria-hidden="true">{{ add $i 1 }}</span>
+        <div>
+          <h3>{{ i18n (printf "home_how_%s" $step.key) }}</h3>
+          <p>{{ i18n (printf "home_how_%s_text" $step.key) }}</p>
+          {{- with site.GetPage $step.page }}
+          <a class="home-more" href="{{ .RelPermalink }}">{{ i18n "home_read_idea" }}<span class="sr-only">: {{ .Title }}</span>{{ $arrow }}</a>
+          {{- end }}
+        </div>
+      </li>
+      {{- end }}
+    </ol>
+    {{- $privacy := site.GetPage "/ideas/privacy-and-safety" }}
+    {{- $open := site.GetPage "/ideas/open-data-and-tech" }}
+    <p class="home-note">{{ i18n "home_how_principles" (dict "Privacy" $privacy.RelPermalink "Open" $open.RelPermalink) | markdownify }}</p>
+  </section>
+
+  {{- /* 4. Where things stand: honest momentum, no numbers */}}
+  <section class="home-section" aria-labelledby="home-now">
+    <h2 id="home-now">{{ i18n "home_now_title" }}</h2>
+    <p class="home-section-lede">{{ i18n "home_now_lede" (dict "Why" (site.GetPage "/posts/all-talk-no-code").RelPermalink) | markdownify }}</p>
+    <ul class="home-now" role="list">
+      {{- $items := slice
+        (dict "key" "notebook" "links" (slice (dict "url" $posts.RelPermalink "label" "home_now_notebook_link")))
+        (dict "key" "talks" "links" (slice (dict "url" $talk.RelPermalink "label" "home_now_talks_link")))
+        (dict "key" "open" "links" (slice (dict "url" $repo "label" "home_now_open_link" "external" true)))
+        (dict "key" "news" "links" (slice (dict "url" (site.GetPage "/whats-new").RelPermalink "label" "home_now_news_link")))
+        (dict "key" "press" "links" (slice (dict "url" (site.GetPage "/press").RelPermalink "label" "home_now_press_link") (dict "url" (site.GetPage "/embed").RelPermalink "label" "home_now_embed_link")))
+      }}
+      {{- range $items }}
+      <li class="home-card">
+        <h3>{{ i18n (printf "home_now_%s" .key) }}</h3>
+        <p>{{ i18n (printf "home_now_%s_text" .key) }}</p>
+        <p class="home-card-links">
+          {{- range $j, $l := .links }}{{ if $j }} · {{ end }}<a class="home-more" href="{{ $l.url }}"{{ if $l.external }} rel="noopener"{{ end }}>{{ i18n $l.label }}{{ if not $l.external }}{{ $arrow }}{{ end }}</a>{{ end -}}
+        </p>
+      </li>
+      {{- end }}
+      {{- with $about }}{{ with .Resources.Get (printf "brief-%s.m4a" site.Language.Lang) }}
+      <li class="home-card home-card-listen">
+        <h3>{{ i18n "home_listen_title" }}</h3>
+        <p>{{ i18n "home_listen_text" }}</p>
+        <figure class="listen">
+          <audio controls preload="none" src="{{ .RelPermalink }}" aria-label="{{ i18n "home_listen_title" }}">
+            <a href="{{ .RelPermalink }}">{{ i18n "listen_download" }}</a>
+          </audio>
+          <div class="listen-speed" role="group" aria-label="{{ i18n "listen_speed" }}">
+            <span class="listen-speed-label">{{ i18n "listen_speed" }}</span>
+            <button type="button" data-rate="1" aria-pressed="true">1×</button>
+            <button type="button" data-rate="1.5" aria-pressed="false">1.5×</button>
+          </div>
+        </figure>
+      </li>
+      {{- end }}{{ end }}
+    </ul>
+  </section>
+
+  {{- /* 5. Latest stories: the three newest, in the site's usual card style */}}
+  <section class="home-section" aria-labelledby="home-latest">
+    <h2 id="home-latest">{{ i18n "home_latest_title" }}</h2>
+    <div class="home-latest">
+    {{- range first 3 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+    <article class="post-entry">
+      {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+      {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h3>{{ .Title }}</h3>
+      </header>
+      <div class="entry-content">
+        <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+      </div>
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      <a class="entry-link" aria-label="{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+    </div>
+    <p class="home-all">
+      {{- with $posts }}<a class="home-more" href="{{ .RelPermalink }}">{{ i18n "home_all_stories" }}{{ $arrow }}</a>{{ end }}
+      {{- with $ideas }}<a class="home-more" href="{{ .RelPermalink }}">{{ i18n "home_all_ideas" }}{{ $arrow }}</a>{{ end -}}
+    </p>
+  </section>
+
+  {{- /* 6. Closing call to action: join the conversation */}}
+  <section class="home-section home-closing" aria-labelledby="home-join">
+    <img class="home-closing-logo" src="{{ "images/straycats-logo.webp" | absURL }}" width="950" height="790"
+      alt="{{ i18n "logo_alt" }}" loading="lazy">
+    <h2 id="home-join">{{ i18n "home_join_title" }}</h2>
+    <p>{{ i18n "home_join_text" }}</p>
+    {{ "{{< talk-invite >}}" | .RenderString }}
+    <p class="home-hello">{{ i18n "home_join_hello" }} {{ "{{< contact-strip involve=true >}}" | .RenderString }}</p>
+    {{- with site.GetPage "/posts/the-cats-nobody-owns" }}
+    <p class="home-origin">{{ i18n "home_origin" }} <a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+    {{- end }}
+  </section>
+
+</div>
+{{- end }}{{- /* end main */ -}}

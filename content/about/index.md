@@ -1,6 +1,6 @@
 ---
 title: "About"
-summary: "What Stray Cats is, where it came from, and what it isn't (yet)."
+summary: "What StrayCats is, where it came from, and what it isn't (yet)."
 updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
@@ -9,18 +9,18 @@ comments: false
 
 {{< gallery images="saibo-step.jpg saibo-paw.jpg saibo-doorway.jpg" uncropped="true" alts="Saibo, a grey cat with a white chest, sitting up straight on a stone step and looking off to the side | Saibo looking at the camera with one white paw resting on a hand | Saibo in a wooden doorway, sitting tall with his eyes half closed" caption="Saibo, 2010–2026. This project is dedicated to him. May he rest in peace." >}}
 
-## In one sentence
+## What StrayCats is
 
-**Stray Cats** is an open-source, non-profit project to make caring for cats easier, by letting
-anyone who cares for one see its story: their own cat, a neighbor's, a stray, a new adoption,
-a cat they had to give up, or one left behind.
+**StrayCats** is a non-profit, open-source app that's being built in the open to make caring for
+cats easier. It will let anyone who cares for a cat see its story: their own cat, a neighbor's,
+a stray, a new adoption, a cat they had to give up, or one left behind.
 
 ## Listen to the idea
 
 A 90-second introduction to the project, if you'd rather listen than read. It was made
 with Google's NotebookLM from the pages on this site, so the two voices are AI-generated.
 
-{{< listen src="brief-en.m4a" title="*Giving Stray Cats a Permanent History*, a brief audio overview (1½ minutes)" >}}
+{{< listen src="brief-en.m4a" title="*Giving StrayCats a Permanent History*, a brief audio overview (1½ minutes)" >}}
 
 For the full deep dive (38 minutes), see [The Building Blocks](/ideas/the-building-blocks/#listen-the-whole-idea-in-depth).
 

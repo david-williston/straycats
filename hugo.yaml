@@ -1,5 +1,5 @@
 baseURL: "https://straycats.love/"
-title: Stray Cats
+title: StrayCats
 theme: PaperMod
 
 defaultContentLanguage: en
@@ -14,7 +14,7 @@ minify:
   minifyOutput: true
 
 pagination:
-  pagerSize: 20   # keep the home page on one page
+  pagerSize: 20
 
 outputs:
   home: [HTML, RSS, JSON, Card]   # JSON powers the search page; Card is card.json for the embeddable supporter card
@@ -41,13 +41,15 @@ params:
   ShowRssButtonInSectionTermList: true
   displayFullLangName: true
 
-  # The home page lists stories, then ideas, each in `weight` order (stories 1–99, ideas 100+).
-  # The same order drives the previous/next links at the bottom of each page.
+  # Stories, then ideas, each in `weight` order (stories 1–99, ideas 100+): drives the RSS feed,
+  # the archive and the previous/next links at the bottom of each page. The home page has its own
+  # layout (layouts/home.html, text in i18n/ under home_) and shows the three newest stories.
   mainSections: [posts, ideas]
 
   # Brand artwork: a portrait of Saibo (raster only; the source kit is kept outside the repo).
   # Favicons and home-screen icons are in static/ under the names PaperMod links by default.
   label:
+    text: StrayCats.love   # the site name in the header, with the domain
     icon: images/saibo-badge.png
     iconHeight: 34
   images: [images/straycats-social.jpg]   # link preview for pages without a cover photo
@@ -79,7 +81,7 @@ params:
   # changes. Title, call to action and compact text are per language below; the description is each
   # language's `description`.
   card:
-    version: 4
+    version: 5
 
   # Telegram note about each new visitor (see tools/visitor-notify/README.md). Set to "" to turn it off.
   visitorPingURL: "https://straycats-visitor-notify.evnsteven.workers.dev"
@@ -106,32 +108,15 @@ languages:
     weight: 1
     params:
       card:
-        title: "Stray Cats"
+        title: "StrayCats"
         cta: "Learn about the project"
         tagline: "An open-source, non-profit project to make caring for cats easier."
-        compactText: "Supports the Stray Cats project"
+        compactText: "Supports the StrayCats project"
       description: "An open-source, non-profit project, growing in the open, to make caring for cats easier by letting anyone see a cat's story: your own, a neighbor's, a stray, a new adoption or one left behind."
       editPost:
         Text: "Suggest changes"
       footer:
         text: "Made with care for the people who care for cats. Dedicated to [Saibo](/saibo/), 2010–2026. · [What's new](/whats-new/) · [Press](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
-      homeInfoParams:
-        Title: "Caring for a cat is easier when you know its story. 🐈"
-        Content: >
-          Your own cat, a neighbor's, a stray, a new adoption, a cat you had to give up, or one left
-          behind: whoever cares for a cat has an easier time when they know its story. **Stray Cats** is
-          the working name for an open-source, non-profit project, growing in the open, for
-          letting anyone who cares for a cat see its story, so nothing gets lost when a cat changes
-          hands. It starts with the cats I've come to know in Puerto Escondido, Mexico. Right now
-          the work is stories, conversations and design in the open, and each conversation adds
-          to it. There's no app or code yet: the first software comes after the ideas are shaped
-          with the people who care for cats. I'd love to hear yours. **The lightest way to help is a
-          one-line hello:** {{< contact-strip >}}. I read every message myself, and
-          [there are more ways to get involved](/involve/). Prefer to listen? There's a
-          [90-second audio introduction](/about/#listen-to-the-idea). Been here before? See
-          [what's new](/whats-new/).
-
-          {{< talk-invite >}}
     menus:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
@@ -151,32 +136,15 @@ languages:
     weight: 2
     params:
       card:
-        title: "Stray Cats"
+        title: "StrayCats"
         cta: "Conoce el proyecto"
         tagline: "Un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil."
-        compactText: "Apoya el proyecto Stray Cats"
+        compactText: "Apoya el proyecto StrayCats"
       description: "Un proyecto de código abierto y sin fines de lucro, que crece a la vista de todos, para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato: el propio, el de un vecino, un callejero, uno recién adoptado o uno que quedó atrás."
       editPost:
         Text: "Sugerir cambios"
       footer:
         text: "Hecho con cariño para quienes cuidan gatos. Dedicado a [Saibo](/saibo/), 2010–2026. · [Novedades](/whats-new/) · [Prensa](/press/) {{< site-version >}} · {{< contact-strip involve=true >}}"
-      homeInfoParams:
-        Title: "Cuidar a un gato es más fácil cuando conoces su historia. 🐈"
-        Content: >
-          Tu propio gato, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar
-          o uno que quedó atrás: quien cuida a un gato lo tiene más fácil cuando conoce su historia.
-          **Stray Cats** (Gatos Callejeros) es el nombre provisional de un proyecto de código abierto y
-          sin fines de lucro que crece a la vista de todos, para que cualquiera que cuide a un gato
-          pueda ver su historia y no se pierda nada cuando el gato cambia de manos. Empieza con los
-          gatos que he llegado a conocer en Puerto Escondido, México. Por ahora el trabajo son
-          historias, conversaciones y diseño a la vista de todos, y cada conversación suma. Todavía
-          no hay app ni código: el primer software llegará cuando las ideas se hayan afinado con
-          quienes cuidan gatos. Me encantaría escuchar las tuyas. **La forma más ligera de ayudar es un saludo de una línea:**
-          {{< contact-strip >}}. Leo personalmente cada mensaje, y hay
-          [más formas de participar](/involve/). ¿Prefieres escuchar? Hay una [introducción en audio de 90
-          segundos](/about/#escucha-la-idea). ¿Ya habías venido? Mira las [novedades](/whats-new/).
-
-          {{< talk-invite >}}
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}

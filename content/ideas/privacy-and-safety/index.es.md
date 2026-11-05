@@ -34,7 +34,7 @@ intencional. La conciencia también es parte de la respuesta (ve
 
 ## Celebrar a los gatos sin exponerlos
 
-A la gente le encantan los gatos de su colonia, y Stray Cats debería permitir disfrutarlos y
+A la gente le encantan los gatos de su colonia, y StrayCats debería permitir disfrutarlos y
 compartirlos. Pero algunas cosas que hacen emocionante a una app pondrían en riesgo a los
 gatos, así que quedan descartadas:
 

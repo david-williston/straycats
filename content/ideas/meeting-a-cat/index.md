@@ -17,7 +17,7 @@ cover:
 ## The idea
 
 When people meet a cat, most of them take a photo. That photo is the easiest way in there
-will ever be, so Stray Cats should start there:
+will ever be, so StrayCats should start there:
 
 1. **See a cat, take one photo.** That's the whole first step. No form to fill in.
 2. **Get the cat's card in seconds:** its photo, a name, its coat, and where it was met, at
@@ -33,7 +33,7 @@ photo of a real cat that someone actually met.
 
 ## Cats you've met
 
-Everyone who uses Stray Cats would keep a list of the cats they've met. Not cats they own
+Everyone who uses StrayCats would keep a list of the cats they've met. Not cats they own
 or have claimed: cats they've *met*. It's a small, warm thing to look back on, and it's
 the start of a relationship with each one.
 
@@ -55,7 +55,7 @@ after a delay, so it can never lead anyone to a cat.
 ## Learning to see cats
 
 Once you start meeting cats, you start *seeing* them: the tabby's M on the forehead, the
-tuxedo's white chest, the calico's three colours, the notched ear. Stray Cats could help
+tuxedo's white chest, the calico's three colours, the notched ear. StrayCats could help
 people learn coats and markings a little at a time, and keep track of the ones they've met.
 
 That isn't only for fun. Coats and markings are exactly what helps tell one cat from another

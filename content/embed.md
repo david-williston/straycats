@@ -1,6 +1,6 @@
 ---
-title: "Add the Stray Cats card to your site"
-summary: "A small, free card that links your website to the Stray Cats project. Paste two lines of HTML, and it keeps itself up to date."
+title: "Add the StrayCats card to your site"
+summary: "A small, free card that links your website to the StrayCats project. Paste two lines of HTML, and it keeps itself up to date."
 ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -9,15 +9,15 @@ updated: 2026-11-05
 ---
 
 If you run a clinic, shelter or rescue and want to show you support the cats' side of things, you
-can add a small **Stray Cats card** to your website. It works on any site (WordPress, Wix, Squarespace,
+can add a small **StrayCats card** to your website. It works on any site (WordPress, Wix, Squarespace,
 Hugo or plain HTML), costs nothing, and you never have to update it: when the project's wording or
 logo changes, your card changes too.
 
-![The Stray Cats logo](../images/straycats-card-logo.webp "The Stray Cats logo that appears on the card: a grey cat with a white chest resting in front of a sunset.")
+![The StrayCats logo](../images/straycats-card-logo.webp "The StrayCats logo that appears on the card: a grey cat with a white chest resting in front of a sunset.")
 
 ## What it is
 
-The card is a small piece of code that shows the Stray Cats logo, a one-sentence description and a link
+The card is a small piece of code that shows the StrayCats logo, a one-sentence description and a link
 to this site. It does not use cookies, does not track your visitors and does not load anything except
 the card text and the logo from this site. If it can't load, your visitors still see a plain link.
 
@@ -27,7 +27,7 @@ Paste this where you want the card to appear (a footer, the "About" page, a side
 
 ```html
 <straycats-card>
-  <a href="https://straycats.love/">Stray Cats project</a>
+  <a href="https://straycats.love/">StrayCats project</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -36,7 +36,7 @@ For a smaller one-line version, good for a footer:
 
 ```html
 <straycats-card variant="compact">
-  <a href="https://straycats.love/">Stray Cats project</a>
+  <a href="https://straycats.love/">StrayCats project</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -45,7 +45,7 @@ For phones and narrow columns, a medium version keeps the logo beside a short de
 
 ```html
 <straycats-card variant="medium">
-  <a href="https://straycats.love/">Stray Cats project</a>
+  <a href="https://straycats.love/">StrayCats project</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -86,7 +86,7 @@ Save this as `layouts/_partials/straycats-card.html` (or `layouts/partials/` in 
 
 ```go-html-template
 <straycats-card lang="{{ site.Language.Lang }}">
-  <a href="https://straycats.love/">Stray Cats project</a>
+  <a href="https://straycats.love/">StrayCats project</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```

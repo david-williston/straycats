@@ -18,7 +18,7 @@ cover:
 ## La idea
 
 Cuando alguien conoce a un gato, casi siempre le toma una foto. Esa foto es la entrada más
-fácil que podría existir, así que Stray Cats debería empezar ahí:
+fácil que podría existir, así que StrayCats debería empezar ahí:
 
 1. **Ves un gato y le tomas una foto.** Ese es todo el primer paso. Sin formularios.
 2. **En segundos recibes la tarjeta del gato:** su foto, un nombre, su pelaje y dónde lo
@@ -34,7 +34,7 @@ foto real de un gato real que alguien conoció de verdad.
 
 ## Los gatos que has conocido
 
-Cada persona que use Stray Cats llevaría una lista de los gatos que ha conocido. No gatos que
+Cada persona que use StrayCats llevaría una lista de los gatos que ha conocido. No gatos que
 sean suyos o que haya reclamado: gatos que ha *conocido*. Es algo pequeño y cálido para
 recordar, y el comienzo de una relación con cada uno.
 
@@ -57,7 +57,7 @@ gato.
 ## Aprender a ver a los gatos
 
 Cuando empiezas a conocer gatos, empiezas a *verlos*: la M en la frente del atigrado, el pecho
-blanco del "esmoquin", los tres colores de la calicó, la oreja con muesca. Stray Cats podría
+blanco del "esmoquin", los tres colores de la calicó, la oreja con muesca. StrayCats podría
 ayudar a aprender los pelajes y las marcas poco a poco, y a llevar la cuenta de los que ya
 conociste.
 

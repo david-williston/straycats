@@ -1,4 +1,4 @@
-# Stray Cats 🐾
+# StrayCats 🐾
 
 An open-source, non-profit project, growing in the open, about how communities could identify, remember and care for
 the cats nobody owns (and, one day, dogs).
@@ -54,8 +54,8 @@ hugo new content posts/my-story.md    # a new story
 
 New files start as `draft: true`; set it to `false` to publish.
 
-The home page lists stories, then ideas, in `weight` order (stories 1–99, ideas 100+), and
-the previous/next links follow the same order. Give a new story the next number after the
+Stories and ideas are ordered by `weight` (stories 1–99, ideas 100+), and the previous/next
+links follow the same order. The home page shows the three newest stories by date. Give a new story the next number after the
 last one, and a new idea a weight in the hundreds.
 
 ### Photos
@@ -91,7 +91,7 @@ content/posts/the-cats-nobody-owns.md      # English
 content/posts/the-cats-nobody-owns.es.md   # Español (give it a Spanish `slug:`)
 ```
 
-Menus and the home page intro are per language in `hugo.yaml`; the "Respond to this idea"
+Menus are per language in `hugo.yaml`; the home page (`layouts/home.html`) takes all its text from `i18n/` (keys starting with `home_`); the "Respond to this idea"
 box text lives in `i18n/`. In content, link to pages by their English path
 (e.g. `[feedback](/feedback/)`): links resolve to the right language automatically.
 
@@ -109,7 +109,7 @@ every release. Instructions for NotebookLM go in its **Customize** box, not in t
 
 **Set up once** (one notebook per language):
 
-1. In NotebookLM, create a notebook ("Stray Cats" and "Stray Cats en español").
+1. In NotebookLM, create a notebook ("StrayCats" and "StrayCats en español").
 2. Add a source → **Website** → paste the page address above.
 3. For the Spanish notebook, set NotebookLM's output language to Spanish, so the audio is in
    Spanish.
@@ -125,16 +125,16 @@ If a cat's name comes out wrong, add it to the pronunciation line.
 *Brief* — Audio Overview → format **Brief** → Customize. English:
 
 ```text
-Audience: people hearing about Stray Cats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
+Audience: people hearing about StrayCats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
 
 Get these facts right:
-- Stray Cats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
+- StrayCats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
 - It's written by David Williston, who looks after a house full of cats in Puerto Escondido, Mexico.
 - The cat's wellbeing always comes first, then the people who care for cats. Fun is the doorway, never the destination.
 - Use the cats' real names: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo, and Mountain Lion (a nickname; real name unknown). Call each cat by name or "the cat"; don't guess whether a cat is male or female.
 
 Avoid:
-- Don't compare Stray Cats to any other app, game, product or company, or use analogies to them. Describe it in its own terms.
+- Don't compare StrayCats to any other app, game, product or company, or use analogies to them. Describe it in its own terms.
 - Don't invent details, numbers or stories that aren't in the source.
 - Don't discuss the audio overviews or videos mentioned on the pages.
 
@@ -145,22 +145,22 @@ Structure:
 2. The core idea: every cat gets an identity, a growing history and a network of people who care, and meeting a cat could take just one photo, for the cat's benefit.
 3. What's new in this version.
 4. One gentle line: the project is dedicated to Saibo, David's cat of sixteen years, who died in September 2026.
-5. Invite listeners to share their cat stories on the Stray Cats website.
+5. Invite listeners to share their cat stories on the StrayCats website.
 ```
 
 Spanish (Spanish notebook):
 
 ```text
-Público: personas que escuchan sobre Stray Cats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
+Público: personas que escuchan sobre StrayCats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
 
 Estos datos tienen que quedar claros:
-- Stray Cats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
+- StrayCats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
 - Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
 
 Evita:
-- No compares Stray Cats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.
+- No compares StrayCats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.
 - No inventes detalles, cifras ni historias que no estén en la fuente.
 - No hables de los resúmenes en audio ni de los videos que se mencionan en las páginas.
 
@@ -171,22 +171,22 @@ Estructura:
 2. La idea central: cada gato tiene una identidad, una historia que crece y una red de personas que se preocupan por él, y conocer a un gato podría tomar solo una foto, por el bien del gato.
 3. Lo nuevo en esta versión.
 4. Una línea cuidadosa: el proyecto está dedicado a Saibo, el gato de David durante dieciséis años, que murió en septiembre de 2026.
-5. Invita a quienes escuchan a compartir sus historias de gatos en el sitio web de Stray Cats.
+5. Invita a quienes escuchan a compartir sus historias de gatos en el sitio web de StrayCats.
 ```
 
 *Deep dive* — Audio Overview → format **Deep Dive** → Customize. English:
 
 ```text
-Audience: people hearing about Stray Cats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
+Audience: people hearing about StrayCats for the first time. Tone: warm and curious, like two friends who love cats exploring a thoughtful idea. Light humour is welcome; hype is not.
 
 Get these facts right:
-- Stray Cats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
+- StrayCats is a growing open-source project, not an app. It's non-profit and worked out in the open: no app or code exists yet and nothing is launching. Describe features as "could" or "the idea is", never as if they exist.
 - It's written by David Williston, who looks after a house full of cats in Puerto Escondido, Mexico.
 - The cat's wellbeing always comes first, then the people who care for cats. Fun is the doorway, never the destination.
 - Use the cats' real names: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo, and Mountain Lion (a nickname; real name unknown). Call each cat by name or "the cat"; don't guess whether a cat is male or female.
 
 Avoid:
-- Don't compare Stray Cats to any other app, game, product or company, or use analogies to them. Describe it in its own terms.
+- Don't compare StrayCats to any other app, game, product or company, or use analogies to them. Describe it in its own terms.
 - Don't invent details, numbers or stories that aren't in the source.
 - Don't discuss the audio overviews or videos mentioned on the pages.
 
@@ -197,22 +197,22 @@ Structure:
 2. The ideas: identity, encounters, meeting a cat, the care network, privacy and safety. Treat the open questions as genuinely unresolved, and spend time on them.
 3. What's new in this version.
 4. Near the end, mention briefly and gently that the project is dedicated to Saibo, David's cat of sixteen years, who died in Puerto Escondido in September 2026.
-5. End by inviting listeners to share their own cat stories and opinions on the Stray Cats website, leaving them with one or two open questions to think about.
+5. End by inviting listeners to share their own cat stories and opinions on the StrayCats website, leaving them with one or two open questions to think about.
 ```
 
 Spanish (Spanish notebook):
 
 ```text
-Público: personas que escuchan sobre Stray Cats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
+Público: personas que escuchan sobre StrayCats por primera vez. Tono: cálido y curioso, como dos amigos a quienes les encantan los gatos explorando una idea bien pensada. Se vale un poco de humor; nada de exageraciones ni tono publicitario.
 
 Estos datos tienen que quedar claros:
-- Stray Cats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
+- StrayCats es un proyecto de código abierto que crece a la vista de todos, no una app. Es sin fines de lucro: todavía no existe ninguna app ni código, y no se va a lanzar nada. Habla de las funciones como algo que "podría" existir o como "la idea es", nunca como si ya existieran.
 - La escribe David Williston, que cuida una casa llena de gatos en Puerto Escondido, México.
 - El bienestar del gato siempre va primero, y después las personas que cuidan a los gatos. La diversión es la puerta de entrada, nunca el destino.
 - Usa los nombres reales de los gatos: Ciccio, Hootie, Lucia, Mika Ella, Ninja, Tenkilo y Mountain Lion (un apodo en inglés que significa León de Montaña; su nombre real nadie lo conoce). Lucia, Mika Ella y Ciccio son gatas (Ciccio es nombre de macho, pero es gata); a los demás llámalos por su nombre o "el gato".
 
 Evita:
-- No compares Stray Cats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.
+- No compares StrayCats con ninguna otra app, juego, producto o empresa, ni uses analogías con ellos. Descríbela con sus propias palabras.
 - No inventes detalles, cifras ni historias que no estén en la fuente.
 - No hables de los resúmenes en audio ni de los videos que se mencionan en las páginas.
 
@@ -223,18 +223,18 @@ Estructura:
 2. Las ideas: identidad, encuentros, conocer a un gato, la red de cuidado, privacidad y seguridad. Trata las preguntas abiertas como preguntas de verdad sin resolver, y dedícales tiempo.
 3. Lo nuevo en esta versión.
 4. Cerca del final, menciona de forma breve y cuidadosa que el proyecto está dedicado a Saibo, el gato de David durante dieciséis años, que murió en Puerto Escondido en septiembre de 2026.
-5. Termina invitando a quienes escuchan a compartir sus propias historias de gatos y sus opiniones en el sitio web de Stray Cats, y déjales una o dos preguntas abiertas para pensar.
+5. Termina invitando a quienes escuchan a compartir sus propias historias de gatos y sus opiniones en el sitio web de StrayCats, y déjales una o dos preguntas abiertas para pensar.
 ```
 
 *One page* (optional, any format) — titles are listed near the top of the source page.
 For best results, put this in place of the Structure section of a prompt above:
 
 > Focus only on the page titled "Meeting a Cat". Explain it for someone who has never heard
-> of Stray Cats. Mention that it's a growing open-source, non-profit project, with
+> of StrayCats. Mention that it's a growing open-source, non-profit project, with
 > no app yet. Use the cats' real names from the page.
 
 > Concéntrate solo en la página titulada "Conocer a un gato". Explícala para alguien que
-> nunca ha oído hablar de Stray Cats. Menciona que es un proyecto de código abierto y sin fines
+> nunca ha oído hablar de StrayCats. Menciona que es un proyecto de código abierto y sin fines
 > de lucro que crece a la vista de todos, sin app todavía. Usa los nombres reales de los gatos que
 > aparecen en la página.
 

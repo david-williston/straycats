@@ -13,7 +13,7 @@
   }
 
   /* Page intro */
-  .home-info, .page-header, .post-header, .first-entry {
+  .home-hero, .page-header, .post-header, .first-entry {
     animation: fade-up 0.5s ease-out both;
   }
   .post-single .entry-cover { animation: fade-up 0.6s 0.08s ease-out both; }

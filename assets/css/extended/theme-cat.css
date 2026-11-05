@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Stray Cats theme: warm cat palette, rounded type, paw-print details.
+   StrayCats theme: warm cat palette, rounded type, paw-print details.
    Overrides PaperMod's colour variables (themes/PaperMod/assets/css/core/theme-vars.css).
    ========================================================================== */
 
@@ -37,16 +37,15 @@ body {
   font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* The ".love" in the header name is heart red (the red of the logo's heart; lighter in dark mode for contrast) */
+.logo-love { color: #c4262a; }
+:root[data-theme="dark"] .logo-love { color: #ff7a7a; }
+
 ::selection { background: var(--accent-soft); color: var(--primary); }
 
 /* --- Header logo ------------------------------------------------------- */
 .logo a { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; }
 .logo img { flex-shrink: 0; width: 34px; height: 34px; margin-inline-end: 0; border-radius: 50%; }
-
-/* --- Saibo logo on the home page (layouts/_partials/home_info.html) ---- */
-.home-logo { display: block; width: min(100%, 340px); height: auto; margin: 0 auto 8px; }
-/* The wordmark is dark: give it a light card on the night theme */
-:root[data-theme="dark"] .home-logo { padding: 14px 18px; border-radius: var(--radius); background: #f7f5ef; }
 
 .menu a:hover span { color: var(--accent); }
 .menu .active { border-bottom-color: var(--accent); }
@@ -102,7 +101,6 @@ body {
 /* --- Cards ------------------------------------------------------------- */
 .post-entry { border-color: var(--border); }
 .entry-cover { overflow: hidden; border-radius: var(--radius); }
-.home-info .entry-content { color: var(--secondary); }
 
 /* --- Cat perched on the "Respond to this idea" box --------------------- */
 .respond { position: relative; margin-top: 72px; }
@@ -120,8 +118,6 @@ body {
 :root[data-theme="dark"] .respond-button { color: #1b1714; }
 
 /* --- Small fixes ------------------------------------------------------- */
-/* PaperMod clamps the home title to 3 lines; the Spanish one is longer */
-.first-entry .entry-header { display: block; -webkit-line-clamp: unset; overflow: visible; }
 /* Narrow screens: wrap the menu onto a second line instead of hiding items off the edge */
 @media (max-width: 768px) {
   .menu { flex-wrap: wrap; overflow-x: visible; row-gap: 4px; line-height: 2.4; padding-bottom: 8px; }
@@ -218,15 +214,12 @@ body {
 .talk-invite .talk-invite-text { flex: 1 1 260px; margin: 0; }
 /* The same button inside page text (book-a-chat shortcode): undo the text-link styling */
 .post-content a.respond-button,
-.post-content a.respond-button:hover,
-.home-info a.respond-button,
-.home-info a.respond-button:hover {
+.post-content a.respond-button:hover {
   padding: 8px 16px; border-radius: var(--radius);
   background: var(--accent); background-image: none; box-shadow: none;
   color: #fffdf9; font-weight: 700; text-decoration: none;
 }
-:root[data-theme="dark"] .post-content a.respond-button,
-:root[data-theme="dark"] .home-info a.respond-button { color: #1b1714; }
+:root[data-theme="dark"] .post-content a.respond-button { color: #1b1714; }
 
 /* --- Press page downloads (press-files shortcode, data/press.yaml) ------ */
 .post-content .press-files {

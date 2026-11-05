@@ -1,7 +1,7 @@
 ---
 title: "Prensa"
 slug: "prensa"
-summary: "Para periodistas y blogueros: Stray Cats en pocas palabras, el logo y las imágenes para descargar, y cómo contactarme."
+summary: "Para periodistas y blogueros: StrayCats en pocas palabras, el logo y las imágenes para descargar, y cómo contactarme."
 ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -9,12 +9,12 @@ comments: false
 updated: 2026-11-05
 ---
 
-¿Vas a escribir sobre Stray Cats, o sobre las personas que cuidan gatos? Aquí tienes el
+¿Vas a escribir sobre StrayCats, o sobre las personas que cuidan gatos? Aquí tienes el
 proyecto en pocas palabras, imágenes que puedes usar y cómo contactarme.
 
 ## En pocas palabras
 
-**Stray Cats** (Gatos Callejeros) es un proyecto de código abierto y sin fines de lucro para
+**StrayCats** (Gatos Callejeros) es un proyecto de código abierto y sin fines de lucro para
 que cuidar a un gato sea más fácil, dejando que cualquiera que cuide a uno pueda ver su
 historia, para que no se pierda nada cuando el gato cambia de manos. Puede ser tu propio
 gato, el de un vecino, un callejero, uno recién adoptado, uno que tuviste que dar, o uno que
@@ -54,7 +54,7 @@ El ZIP también incluye íconos de app de 72 a 1024 px, favicons y una guía bre
 
 ### Cómo usar las imágenes
 
-Puedes usar el logo y las imágenes en artículos, publicaciones y programas sobre Stray Cats.
+Puedes usar el logo y las imágenes en artículos, publicaciones y programas sobre StrayCats.
 Por favor no cambies los colores, no lo deformes y no separes a Saibo del nombre.
 
 Las imágenes se generaron con ChatGPT y solo existen como imágenes rasterizadas (no hay
@@ -73,7 +73,7 @@ pequeños. Si las necesitas más grandes, escríbeme.
 | Blanco Saibo | `#F7F5EF` |
 | Ojos dorados | `#E8BD64` |
 
-## Enlaza a Stray Cats
+## Enlaza a StrayCats
 
 Si tienes una clínica, un blog o un grupo de rescate, puedes agregar a tu sitio web una pequeña tarjeta
 que enlaza al proyecto. Es gratis y se mantiene actualizada sola. Esta es la tarjeta, en vivo:
@@ -84,7 +84,7 @@ Para agregarla, pega esto donde quieras que aparezca:
 
 ```html
 <straycats-card lang="es">
-  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto StrayCats</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```

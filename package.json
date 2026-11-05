@@ -1,7 +1,7 @@
 {
   "name": "straycats",
   "private": true,
-  "description": "Stray Cats project website (Hugo + PaperMod on GitHub Pages)",
+  "description": "StrayCats project website (Hugo + PaperMod on GitHub Pages)",
   "scripts": {
     "history": "node scripts/git-history.mjs",
     "press-kit": "node scripts/press-kit.mjs",

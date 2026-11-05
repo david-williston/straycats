@@ -19,7 +19,7 @@ cover:
 
 Mucho de lo que les sale mal a los gatos no es crueldad. Es no saber: sobre el
 veneno, sobre la esterilización, sobre los gatos negros, sobre lo que pasa cuando se deja de
-darles de comer. Stray Cats podría ayudar a la gente a aprender estas cosas poco a poco, en el
+darles de comer. StrayCats podría ayudar a la gente a aprender estas cosas poco a poco, en el
 momento en que importan, sin sermonear a nadie.
 
 ## Lo que la gente podría aprender
@@ -35,7 +35,7 @@ accidental muy común: un gato se come una rata envenenada y también se envenen
 gatos eran justamente el control natural de las ratas (gracias a Les por señalarlo). Hay
 también quien envenena gatos a propósito. Conocer formas más seguras de controlar las ratas, y
 reconocer las señales de envenenamiento, podría salvar vidas. El envenenamiento intencional es
-también la razón por la que Stray Cats nunca mostrará dónde vive un gato (ve
+también la razón por la que StrayCats nunca mostrará dónde vive un gato (ve
 [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/)).
 
 **Los gatos negros merecen algo mejor.** Se suele decir que a los gatos negros los adoptan
@@ -49,7 +49,7 @@ también cazan fauna silvestre: la gata carey de Les una vez llevó a casa un co
 comer con regularidad, y tener a alguien que cubra cuando quien los cuida no puede, importa
 para los gatos y para los pájaros.
 
-## Cómo podría ayudar Stray Cats
+## Cómo podría ayudar StrayCats
 
 - **Un consejo en el momento justo.** Conoces a un gato sin la oreja recortada y aprendes qué
   implica la esterilización y dónde hacerla cerca.
@@ -66,4 +66,4 @@ para los gatos y para los pájaros.
   no puede pagar?
 - ¿Quién mantiene la información local (campañas, veterinarios, precios) correcta y al día?
 - ¿Cómo hablar del envenenamiento intencional sin asustar a la gente, ni darle ideas a nadie?
-- ¿Debería Stray Cats ayudar a reportar envenenamientos, y a quién?
+- ¿Debería StrayCats ayudar a reportar envenenamientos, y a quién?

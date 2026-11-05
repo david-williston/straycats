@@ -38,7 +38,7 @@ or the food, or the vet bill.
 **One person can change a cat's life, and then leave.** Ninja is thriving because someone
 had the time and the means to feed him every night. But I'm only here for a while. When I go,
 who will know that Ninja eats at night, or that he was once in such a bad way? That's the
-whole reason for Stray Cats: [the cat outlives its caretakers](/posts/the-cat-outlives-us/).
+whole reason for StrayCats: [the cat outlives its caretakers](/posts/the-cat-outlives-us/).
 
 **When feeding stops, cats notice fast.** On the hard days, when Saibo was ill and when I
 was sick myself, feeding slipped. The cats started hunting and biting almost immediately.

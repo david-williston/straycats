@@ -17,7 +17,7 @@ cover:
 ## The idea
 
 A lot of what goes wrong for cats isn't cruelty. It's not knowing: about poison,
-about sterilisation, about black cats, about what happens when feeding stops. Stray Cats
+about sterilisation, about black cats, about what happens when feeding stops. StrayCats
 could help people learn these things a little at a time, at the moment it matters, without
 lecturing anyone.
 
@@ -33,7 +33,7 @@ old enough, could prevent a lot of hunger.
 a cat eats a poisoned rat and is poisoned too, even though cats were the natural rat
 control in the first place (thanks to Les for that point). Some people also poison cats
 deliberately. Knowing safer ways to deal with rats, and recognising the signs of poisoning,
-could save lives. The deliberate kind is also why Stray Cats will never show where a cat
+could save lives. The deliberate kind is also why StrayCats will never show where a cat
 lives (see [Privacy & Animal Safety](/ideas/privacy-and-safety/)).
 
 **Black cats deserve better.** Black cats are often said to be adopted less and put down
@@ -45,7 +45,7 @@ ill, cats quickly start hunting and fighting. Cats also catch wildlife: Les's to
 once brought in a hummingbird. Regular feeding, and someone to cover when a caretaker can't,
 matters for the cats and for the birds.
 
-## How Stray Cats could help
+## How StrayCats could help
 
 - **A tip at the right moment.** Meet a cat whose ear isn't tipped, and learn what
   sterilisation involves and where to find it nearby.
@@ -63,4 +63,4 @@ matters for the cats and for the birds.
 - Who keeps local information (campaigns, vets, prices) accurate and up to date?
 - How do you talk about deliberate poisoning without frightening people, or giving anyone
   ideas?
-- Should Stray Cats help people report poisoning, and to whom?
+- Should StrayCats help people report poisoning, and to whom?

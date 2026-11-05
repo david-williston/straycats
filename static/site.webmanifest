@@ -1,6 +1,6 @@
 {
-  "name": "Stray Cats",
-  "short_name": "Stray Cats",
+  "name": "StrayCats",
+  "short_name": "StrayCats",
   "start_url": "./",
   "scope": "./",
   "display": "browser",

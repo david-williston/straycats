@@ -30,9 +30,9 @@ What if getting help was just as easy as finding a public toilet? You open your 
 
 Groups like the SPCA have done great work. But the system feels stuck in one way. Help is out there, but it is hard to find when you need it fast. That is where there is room for something simpler and more open.
 
-## What Stray Cats could add
+## What StrayCats could add
 
-For context, I am working on an idea called Stray Cats. There is no app. But the plans are being worked out in the open, and anyone can read them and comment on them. It is open source and non profit.
+For context, I am working on an idea called StrayCats. There is no app. But the plans are being worked out in the open, and anyone can read them and comment on them. It is open source and non profit.
 
 The idea is simple. Each cat gets its own record. The record belongs to the cat, not to one person. If you meet a cat, you can see what people already know about it. If you need help, you can find local help in the same place.
 
@@ -44,7 +44,7 @@ There are a lot of hard problems to solve first. Bad people could use a system l
 
 So we have to protect both the cats and the people. That means no exact spots, ever. No home addresses. People can use just a nickname at first. And we have to think hard about who can see what, before we build anything.
 
-That is why Stray Cats is deliberately not building an app yet. The safety problems have to come first, not after.
+That is why StrayCats is deliberately not building an app yet. The safety problems have to come first, not after.
 
 ## What this would not do
 
@@ -59,4 +59,4 @@ The goal is narrower. If help is easier to find than dumping, fewer cats will en
 - How do you keep a cat's record useful when the person who made it leaves, while keeping both cats and caretakers safe from malicious actors?
 - What should a finder be able to learn about a cat, and what must stay private?
 
-Feedback is welcome through the channels already on the Stray Cats site: a 30 minute "Let's talk" chat, email, and GitHub Discussions or Issues. This page is not a promise of a product. It is an open question, and it needs collaborators, not just readers.
+Feedback is welcome through the channels already on the StrayCats site: a 30 minute "Let's talk" chat, email, and GitHub Discussions or Issues. This page is not a promise of a product. It is an open question, and it needs collaborators, not just readers.

@@ -1,7 +1,7 @@
 ---
 title: "Acerca de"
 slug: "acerca-de"
-summary: "Qué es Stray Cats, de dónde viene y qué no es (todavía)."
+summary: "Qué es StrayCats, de dónde viene y qué no es (todavía)."
 updated: 2026-11-05
 ShowToc: true
 ShowReadingTime: false
@@ -10,11 +10,12 @@ comments: false
 
 {{< gallery images="saibo-step.jpg saibo-paw.jpg saibo-doorway.jpg" uncropped="true" alts="Saibo, un gato gris con el pecho blanco, sentado derecho sobre un escalón de piedra y mirando hacia un lado | Saibo mirando a la cámara con una pata blanca apoyada sobre una mano | Saibo en una puerta de madera, sentado muy derecho con los ojos entrecerrados" caption="Saibo, 2010–2026. Este proyecto está dedicado a él. Que descanse en paz." >}}
 
-## En una frase
+## Qué es StrayCats
 
-**Stray Cats** es un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil,
-dejando que quien cuida a uno vea su historia: el propio, el de un vecino, un callejero, uno recién
-adoptado, uno que tuvo que dar o uno que quedó atrás.
+**StrayCats** es una app sin fines de lucro y de código abierto que se está construyendo a la vista
+de todos para que cuidar gatos sea más fácil. Permitirá que quien cuida a un gato vea su historia:
+el propio, el de un vecino, un callejero, uno recién adoptado, uno que tuvo que dar o uno que
+quedó atrás.
 
 ## Escucha la idea
 

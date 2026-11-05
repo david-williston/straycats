@@ -39,7 +39,7 @@ the people in each may not know about, or approve of, the others.
 
 ## Meeting isn't claiming
 
-Meeting a cat, naming it, even feeding it, doesn't make it yours, and Stray Cats should never
+Meeting a cat, naming it, even feeding it, doesn't make it yours, and StrayCats should never
 suggest it does. Your list of cats you've met is a list of acquaintances, not possessions.
 
 That list can still help. When someone is searching for a lost cat, people who've met a

@@ -31,7 +31,7 @@ eat would make the deliberate kind easier. Awareness is part of the answer too (
 
 ## Celebrate cats without exposing them
 
-People love the cats in their neighbourhood, and Stray Cats should let them enjoy and share
+People love the cats in their neighbourhood, and StrayCats should let them enjoy and share
 them. But some things that make an app exciting would put cats at risk, so they're ruled out:
 
 - **No popularity.** No rankings, no "most-met" or "favourite" cat, no counts that make a cat

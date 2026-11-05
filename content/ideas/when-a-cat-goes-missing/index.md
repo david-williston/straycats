@@ -15,7 +15,7 @@ has been crying for days.*
 
 When a cat goes missing, the people most likely to have seen it are the ones who already know
 it: the neighbour who feeds it in the morning, the restaurant on the corner, someone who met
-it last week and took its photo. Today there's no way to reach them. Stray Cats already
+it last week and took its photo. Today there's no way to reach them. StrayCats already
 connects a cat with everyone who has [met it](/ideas/meeting-a-cat/), so it could:
 
 1. **Let the people who care for a cat mark it as missing,** with when and roughly where it
@@ -56,7 +56,7 @@ theirs (see [Privacy & Animal Safety](/ideas/privacy-and-safety/) and
 ## Not just cats?
 
 Michael also asked whether this should be for all pets. Dogs go missing too, and so do
-rabbits, parrots and tortoises. Stray Cats is starting with cats, on purpose: they're the
+rabbits, parrots and tortoises. StrayCats is starting with cats, on purpose: they're the
 animals most likely to live between homes. But nearly everything here (identity,
 encounters, the care network, missing alerts) would work for any animal. Dogs come later;
 they're just a different type of cat.
@@ -67,6 +67,6 @@ they're just a different type of cat.
 - How do you alert people without overwhelming them, or alarming them about every cat that
   stays away for a day?
 - How do you stop scams, such as people asking for a reward for a cat they don't have?
-- Should Stray Cats connect to local shelters and existing lost-pet services, rather than
+- Should StrayCats connect to local shelters and existing lost-pet services, rather than
   replace them?
 - How should a cat's record end: with "missing", "found" or "remembered"?

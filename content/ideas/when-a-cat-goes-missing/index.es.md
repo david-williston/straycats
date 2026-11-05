@@ -17,7 +17,7 @@ semana y lleva días llorando.*
 Cuando un gato desaparece, quienes tienen más probabilidad de haberlo visto son quienes ya lo
 conocen: la vecina que le da de comer en la mañana, el restaurante de la esquina, alguien que
 lo conoció la semana pasada y le tomó una foto. Hoy no hay forma de llegar a esas personas.
-Stray Cats ya conecta a un gato con todas las personas que lo han
+StrayCats ya conecta a un gato con todas las personas que lo han
 [conocido](/ideas/meeting-a-cat/), así que podría:
 
 1. **Permitir que quienes cuidan a un gato lo marquen como desaparecido,** con cuándo y más o
@@ -59,7 +59,7 @@ que un gato encontrado es suyo debería tener que demostrarlo (ve
 ## ¿Solo gatos?
 
 Michael también preguntó si esto debería ser para todas las mascotas. Los perros también se
-pierden, y los conejos, los loros y las tortugas. Stray Cats empieza con los gatos a propósito:
+pierden, y los conejos, los loros y las tortugas. StrayCats empieza con los gatos a propósito:
 son los animales que más viven entre varias casas. Pero casi todo lo que hay aquí (identidad,
 encuentros, la red de cuidado, los avisos de desaparición) funcionaría para cualquier animal.
 Los perros vendrán después; son solo otro tipo de gato.
@@ -70,7 +70,7 @@ Los perros vendrán después; son solo otro tipo de gato.
   haya conocido?
 - ¿Cómo avisar a la gente sin abrumarla, ni alarmarla por cada gato que se ausenta un día?
 - ¿Cómo evitar estafas, como gente que pide una recompensa por un gato que no tiene?
-- ¿Debería Stray Cats conectarse con los refugios y los servicios de mascotas perdidas que ya
+- ¿Debería StrayCats conectarse con los refugios y los servicios de mascotas perdidas que ya
   existen, en vez de reemplazarlos?
 - ¿Cómo debería terminar el registro de un gato: con "desaparecido", "encontrado" o
   "recordado"?

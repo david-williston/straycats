@@ -28,7 +28,7 @@
                 {{- else if hasPrefix site.Params.label.iconSVG "<svg" }}
                     {{ site.Params.label.iconSVG | safeHTML }}
                 {{- end -}}
-                {{- $label_text -}}
+                {{- if strings.HasSuffix $label_text ".love" -}}<span>{{ strings.TrimSuffix ".love" $label_text }}<span class="logo-love">.love</span></span>{{- else -}}{{ $label_text }}{{- end -}}
             </a>
             {{- end }}
 
@@ -60,7 +60,7 @@
                 
                 {{- if (not site.Params.disableLangToggle) }}
                     {{- $lang := .Lang}}
-                    {{- /* Stray Cats: link to this page's translation when it has one, else the home page. */}}
+                    {{- /* StrayCats: link to this page's translation when it has one, else the home page. */}}
                     {{- with or .Translations site.Home.Translations }}
                     {{- $separator := or $label_text (not site.Params.disableThemeToggle)}}
                     {{- if $separator }}<span class="nav-sep">|</span>{{ end }}

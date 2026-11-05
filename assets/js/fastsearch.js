@@ -65,7 +65,7 @@ const setActiveResult = (element) => {
     currentElement = element;
 };
 
-// --- Result previews (Stray Cats override of PaperMod's fastsearch.js) ---
+// --- Result previews (StrayCats override of PaperMod's fastsearch.js) ---
 
 const PREVIEW_LENGTH = 180;
 

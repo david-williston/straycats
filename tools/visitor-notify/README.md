@@ -7,7 +7,7 @@ Sends a Telegram message such as
 straycats.love/posts/ninja/
 ```
 
-the first time each browser visits the Stray Cats site in a day.
+the first time each browser visits the StrayCats site in a day.
 
 This is a separate copy of the Worker built for evnsteven.app. It has its own
 Cloudflare Worker (`straycats-visitor-notify`) but sends to the same Telegram bot

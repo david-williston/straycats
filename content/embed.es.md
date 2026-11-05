@@ -1,7 +1,7 @@
 ---
-title: "Agrega la tarjeta de Stray Cats a tu sitio"
+title: "Agrega la tarjeta de StrayCats a tu sitio"
 slug: "incrustar"
-summary: "Una tarjeta pequeña y gratuita que enlaza tu sitio web con el proyecto Stray Cats. Pega dos líneas de HTML y se mantiene actualizada sola."
+summary: "Una tarjeta pequeña y gratuita que enlaza tu sitio web con el proyecto StrayCats. Pega dos líneas de HTML y se mantiene actualizada sola."
 ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
@@ -10,15 +10,15 @@ updated: 2026-11-05
 ---
 
 Si tienes una clínica, un refugio o un grupo de rescate y quieres mostrar que apoyas a los gatos, puedes
-agregar una pequeña **tarjeta de Stray Cats** a tu sitio web. Funciona en cualquier sitio (WordPress, Wix,
+agregar una pequeña **tarjeta de StrayCats** a tu sitio web. Funciona en cualquier sitio (WordPress, Wix,
 Squarespace, Hugo o HTML simple), no cuesta nada y nunca tienes que actualizarla: cuando cambia el texto
 o el logo del proyecto, tu tarjeta cambia también.
 
-![El logo de Stray Cats](../../images/straycats-card-logo.webp "El logo de Stray Cats que aparece en la tarjeta: un gato gris de pecho blanco descansando frente a un atardecer.")
+![El logo de StrayCats](../../images/straycats-card-logo.webp "El logo de StrayCats que aparece en la tarjeta: un gato gris de pecho blanco descansando frente a un atardecer.")
 
 ## Qué es
 
-La tarjeta es un pequeño fragmento de código que muestra el logo de Stray Cats, una descripción de una
+La tarjeta es un pequeño fragmento de código que muestra el logo de StrayCats, una descripción de una
 frase y un enlace a este sitio. No usa cookies, no rastrea a tus visitantes y no carga nada más que el
 texto de la tarjeta y el logo desde este sitio. Si no puede cargar, tus visitantes siguen viendo un
 enlace sencillo.
@@ -30,7 +30,7 @@ lateral):
 
 ```html
 <straycats-card lang="es">
-  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto StrayCats</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -39,7 +39,7 @@ Para una versión más pequeña de una sola línea, ideal para el pie de página
 
 ```html
 <straycats-card lang="es" variant="compact">
-  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto StrayCats</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -48,7 +48,7 @@ Para teléfonos y columnas angostas hay una versión mediana, con el logo junto 
 
 ```html
 <straycats-card lang="es" variant="medium">
-  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto StrayCats</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```
@@ -91,7 +91,7 @@ de Hugo):
 
 ```go-html-template
 <straycats-card lang="{{ site.Language.Lang }}">
-  <a href="https://straycats.love/es/">Proyecto Stray Cats</a>
+  <a href="https://straycats.love/es/">Proyecto StrayCats</a>
 </straycats-card>
 <script src="https://straycats.love/card.js" async></script>
 ```

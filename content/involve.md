@@ -8,7 +8,7 @@ ShowPostNavLinks: false
 comments: false
 ---
 
-There's no app to download and nothing to sign up for. Stray Cats is a notebook where I'm
+There's no app to download and nothing to sign up for. StrayCats is a notebook where I'm
 thinking out loud, and the most useful thing you can do is think alongside me. I'm most curious
 about your own experience of caring for a cat: your own, a neighbor's, a stray, a new
 adoption, one you had to give up, or one left behind. What would have made it easier? Below

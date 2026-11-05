@@ -1,4 +1,4 @@
-// Tells you on Telegram which city and country a visitor of the Stray Cats
+// Tells you on Telegram which city and country a visitor of the StrayCats
 // site is in. The site sends one small "hit" per browser per day (see
 // layouts/_partials/visitor-ping.html); Cloudflare adds the visitor's city and
 // country to the request, so no IP address is read, kept or sent on.

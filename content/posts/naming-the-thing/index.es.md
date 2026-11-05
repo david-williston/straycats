@@ -1,11 +1,11 @@
 ---
-title: "Ponerle nombre: Stray Cats"
+title: "Ponerle nombre: StrayCats"
 slug: "ponerle-nombre"
 date: 2026-10-03T04:00:00Z
 weight: 5
 tags: ["proceso", "nombre"]
 summary: "Todo proyecto necesita un nombre clave. Así es como este consiguió el suyo."
-question: "¿\"Stray Cats\" funciona en tu idioma y en tu pueblo, o se te ocurre un nombre mejor?"
+question: "¿\"StrayCats\" funciona en tu idioma y en tu pueblo, o se te ocurre un nombre mejor?"
 updated: 2026-10-30
 cover:
   image: "cover.jpg"
@@ -25,11 +25,11 @@ Algunos de los candidatos:
 - **Straybook**: me gusta, pero suena a imitación de Facebook, y eso es prácticamente lo
   contrario de lo que quiero que sea esto.
 
-Al final me quedé con el más sencillo: **Stray Cats**, "gatos callejeros" en inglés.
+Al final me quedé con el más sencillo: **StrayCats**, "gatos callejeros" en inglés.
 
 Todo el mundo entiende de inmediato de qué se trata. No pretende saber cómo será el producto
 final. Y me gusta la ironía: le decimos gato *callejero* al animal, pero este proyecto quizá
 termine demostrando que no es tan callejero después de todo. Tiene a su alrededor toda una red
 de personas, lugares, nombres y relaciones.
 
-Así que se queda **Stray Cats**, por ahora. Si tienes un mejor nombre, [dímelo](/feedback/).
+Así que se queda **StrayCats**, por ahora. Si tienes un mejor nombre, [dímelo](/feedback/).

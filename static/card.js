@@ -1,5 +1,5 @@
 /*!
- * Stray Cats supporter card: <straycats-card>
+ * StrayCats supporter card: <straycats-card>
  * Docs: https://straycats.love/embed/
  *
  * VERSIONING: this file's URL is the contract. Breaking changes (renamed attributes,
@@ -22,8 +22,8 @@
   var FALLBACK = {
     logo: BASE + "images/straycats-card-logo.webp",
     langs: {
-      en: { title: "Stray Cats", description: "An open-source, non-profit project, growing in the open, to make caring for cats easier by letting anyone see a cat's story.", tagline: "An open-source, non-profit project to make caring for cats easier.", cta: "Learn about the project", compactText: "Supports the Stray Cats project", url: BASE },
-      es: { title: "Stray Cats", description: "Un proyecto de código abierto y sin fines de lucro, que crece a la vista de todos, para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato.", tagline: "Un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil.", cta: "Conoce el proyecto", compactText: "Apoya el proyecto Stray Cats", url: BASE + "es/" }
+      en: { title: "StrayCats", description: "An open-source, non-profit project, growing in the open, to make caring for cats easier by letting anyone see a cat's story.", tagline: "An open-source, non-profit project to make caring for cats easier.", cta: "Learn about the project", compactText: "Supports the StrayCats project", url: BASE },
+      es: { title: "StrayCats", description: "Un proyecto de código abierto y sin fines de lucro, que crece a la vista de todos, para que cuidar gatos sea más fácil, dejando que cualquiera vea la historia de un gato.", tagline: "Un proyecto de código abierto y sin fines de lucro para que cuidar gatos sea más fácil.", cta: "Conoce el proyecto", compactText: "Apoya el proyecto StrayCats", url: BASE + "es/" }
     }
   };
 

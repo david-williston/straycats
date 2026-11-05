@@ -1,6 +1,6 @@
-# Stray Cats brand kit (Saibo)
+# StrayCats brand kit (Saibo)
 
-The Stray Cats identity is a portrait of Saibo: charcoal-grey fur, white chest and paws, golden
+The StrayCats identity is a portrait of Saibo: charcoal-grey fur, white chest and paws, golden
 eyes and a white marking beside the nose, resting his paws on the lettering against a sunset
 skyline. Beneath it sits the wordmark "Straycats" (with a paw print in the "a") followed by
 ".love" in white inside a red glossy heart. The artwork was generated with ChatGPT and exists

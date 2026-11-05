@@ -1,10 +1,10 @@
 ---
-title: "Naming the thing: Stray Cats"
+title: "Naming the thing: StrayCats"
 date: 2026-10-03T04:00:00Z
 weight: 5
 tags: ["process", "name"]
 summary: "Every project needs a code name. Here's how this one got its name."
-question: "Does \"Stray Cats\" work in your language and your town, or does a better name come to mind?"
+question: "Does \"StrayCats\" work in your language and your town, or does a better name come to mind?"
 updated: 2026-10-30
 cover:
   image: "cover.jpg"
@@ -23,11 +23,11 @@ Some of the contenders:
 - **Straybook** — I like it, but it sounds like a Facebook spin-off, and that's pretty
   much the opposite of what I want this to be.
 
-In the end I settled on the simplest one: **Stray Cats**.
+In the end I settled on the simplest one: **StrayCats**.
 
 Everyone knows straight away what it's about. It doesn't pretend to know what the finished
 product will be. And I like the irony in it: we call the animal a *stray* cat, but this
 whole project might end up showing that it isn't really stray at all. It has a whole
 network of humans, places, names and relationships around it.
 
-So, **Stray Cats** it is — for now. If you have a better name, [tell me](/feedback/).
+So, **StrayCats** it is — for now. If you have a better name, [tell me](/feedback/).

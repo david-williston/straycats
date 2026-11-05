@@ -9,7 +9,7 @@ ShowPostNavLinks: false
 comments: false
 ---
 
-No hay una app que descargar ni nada en lo que inscribirse. Stray Cats es un cuaderno donde
+No hay una app que descargar ni nada en lo que inscribirse. StrayCats es un cuaderno donde
 pienso en voz alta, y lo más útil que puedes hacer es pensar conmigo. Lo que más me interesa
 es tu propia experiencia cuidando a un gato: uno tuyo, de un vecino, un callejero, uno recién
 adoptado, uno que tuviste que dar o uno que quedó atrás. ¿Qué te lo habría hecho más fácil?

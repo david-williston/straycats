@@ -39,7 +39,7 @@ tener varias casas, y las personas de cada una quizá no sepan de las otras, o n
 
 ## Conocer no es reclamar
 
-Conocer a un gato, ponerle nombre e incluso darle de comer no lo hace tuyo, y Stray Cats nunca
+Conocer a un gato, ponerle nombre e incluso darle de comer no lo hace tuyo, y StrayCats nunca
 debería dar a entender lo contrario. Tu lista de gatos que has conocido es una lista de
 conocidos, no de pertenencias.
 

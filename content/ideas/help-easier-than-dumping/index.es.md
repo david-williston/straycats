@@ -31,9 +31,9 @@ Eso no significa que el abandono deba ignorarse. Significa que un sistema constr
 
 Grupos como la SPCA han hecho un gran trabajo. Pero el sistema se siente atascado en un aspecto. La ayuda existe, pero es difícil de encontrar cuando la necesitas rápido. Ahí hay espacio para algo más simple y más abierto.
 
-## Qué podría aportar Stray Cats
+## Qué podría aportar StrayCats
 
-Para contexto, estoy trabajando en una idea llamada Stray Cats. No hay una app. Pero los planes se están desarrollando abiertamente, y cualquiera puede leerlos y comentarlos. Es de código abierto y sin fines de lucro.
+Para contexto, estoy trabajando en una idea llamada StrayCats. No hay una app. Pero los planes se están desarrollando abiertamente, y cualquiera puede leerlos y comentarlos. Es de código abierto y sin fines de lucro.
 
 La idea es simple. Cada gato tiene su propio registro. El registro pertenece al gato, no a una sola persona. Si conoces a un gato, puedes ver lo que otras personas ya saben de él. Si necesitas ayuda, puedes encontrar ayuda local en el mismo lugar.
 
@@ -45,7 +45,7 @@ Hay muchos problemas difíciles que resolver primero. Personas malas podrían us
 
 Así que tenemos que proteger tanto a los gatos como a las personas. Eso significa que nunca se publican lugares exactos. No hay direcciones de casas. Las personas pueden usar solo un apodo al principio. Y tenemos que pensar bien quién puede ver qué, antes de construir nada.
 
-Por eso Stray Cats deliberadamente todavía no está construyendo una app. Los problemas de seguridad tienen que venir primero, no después.
+Por eso StrayCats deliberadamente todavía no está construyendo una app. Los problemas de seguridad tienen que venir primero, no después.
 
 ## Qué no haría esto
 
@@ -60,4 +60,4 @@ El objetivo es más limitado. Si la ayuda es más fácil de encontrar que el aba
 - ¿Cómo se mantiene útil el registro de un gato cuando la persona que lo creó se va, mientras se mantiene a salvo tanto a los gatos como a las personas que los cuidan frente a actores maliciosos?
 - ¿Qué debería poder aprender quien encuentra a un gato, y qué debe mantenerse privado?
 
-Los comentarios son bienvenidos a través de los canales que ya están en el sitio de Stray Cats: un chat de 30 minutos "Hablemos", correo electrónico y GitHub Discussions o Issues. Esta página no es una promesa de un producto. Es una pregunta abierta, y necesita colaboradores, no solo lectores.
+Los comentarios son bienvenidos a través de los canales que ya están en el sitio de StrayCats: un chat de 30 minutos "Hablemos", correo electrónico y GitHub Discussions o Issues. Esta página no es una promesa de un producto. Es una pregunta abierta, y necesita colaboradores, no solo lectores.
