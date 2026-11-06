@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 6, 2026: A picture for the open identity idea
+
+*Version v2026.11.06*
+
+- **Updated:** [What If Every Cat Could Carry an Open Identity?](/ideas/open-cat-identity/) now
+  has a cover image, a concept mockup of reversible breakaway collars with a QR code and an NFC
+  tag. They are an idea, not a product yet.
+
 ## November 5, 2026: A picture for the dumping idea
 
 *Version v2026.11.05.5*

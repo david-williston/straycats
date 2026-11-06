@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 6 de noviembre de 2026: Una imagen para la idea de la identidad abierta
+
+*Versión v2026.11.06*
+
+- **Actualizado:** [¿Y si todos los gatos pudieran llevar una identidad abierta?](/ideas/open-cat-identity/)
+  ahora tiene una imagen de portada, un mockup de concepto de collares reversibles de seguridad
+  con un código QR y una etiqueta NFC. Son una idea, todavía no un producto.
+
 ## 5 de noviembre de 2026: Una imagen para la idea sobre el abandono
 
 *Versión v2026.11.05.5*
