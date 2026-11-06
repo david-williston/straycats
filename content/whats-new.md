@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: The Paper Collar
+
+*Version v2026.11.05.4*
+
+- **New:** [The Paper Collar](/ideas/paper-collar/), an idea for a loose, tear-away paper
+  strip that asks a friendly cat's owner to get in touch, and that could bring people who don't
+  use StrayCats to the site.
+
 ## November 5, 2026: The logo on the home page
 
 *Version v2026.11.05.3*

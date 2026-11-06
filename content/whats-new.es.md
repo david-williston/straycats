@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: El collar de papel
+
+*Versión v2026.11.05.4*
+
+- **Nuevo:** [El collar de papel](/ideas/paper-collar/), una idea de tira de papel suelta que se
+  rompe con facilidad y le pide al dueño de un gato amistoso que se ponga en contacto, y que
+  podría acercar a StrayCats a quienes todavía no lo usan.
+
 ## 5 de noviembre de 2026: El logo en la página de inicio
 
 *Versión v2026.11.05.3*
