@@ -5,7 +5,7 @@ weight: 520
 tags: ["lost-and-found", "safety", "community"]
 summary: "A loose paper strip around a friendly cat's neck asks, \"Is this cat yours?\" It isn't a new idea, but StrayCats could make it a bridge between people who use the platform and people who don't."
 question: "If you found a friendly cat wandering and weren't sure whose it was, would you try a paper collar, and what would you want written on it?"
-updated: 2026-11-05
+updated: 2026-11-06
 cover:
   image: "cover.jpg"
   alt: "A tabby-and-white cat with green eyes wearing a white paper collar printed with the straycats.love logo, beside a printed sheet of paper cat collars with one strip torn out"
@@ -49,6 +49,11 @@ need an app.)
 
 The picture at the top is a concept mockup, not a photo and not a real product. It shows the
 idea: a sheet of strips, one torn out and on the cat.
+
+A strip could also be reversible: an attractive pattern on one side for everyday wear, and the
+StrayCats details on the other.
+
+{{< photo src="reversible-collar.jpg" alt="A tabby-and-white cat looking up, wearing a leaf-patterned paper collar. Beside it, three reversible paper collar designs (leaves, cherry blossom and a starry night), each with a pattern on one side and the StrayCats identification on the other" caption="Concept mockup, not a photo and not a real product. The QR code and NFC marks come from the [open identity idea](/ideas/open-cat-identity/); the paper collar itself wouldn't carry a QR code." >}}
 
 Here is how it could grow, from cheapest to most ambitious:
 

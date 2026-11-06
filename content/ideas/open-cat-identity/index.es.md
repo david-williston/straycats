@@ -35,6 +35,8 @@ engancha), con un diminuto chip NFC y un código QR impreso.
 Cualquiera con un teléfono inteligente podría escanear el collar y acceder a información sobre
 el gato sin instalar ninguna app.
 
+{{< photo src="reversible-collar.jpg" alt="Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas con un pequeño código QR y una marca NFC. A su lado, tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro" caption="Imagen de concepto, no es una foto ni un producto real: un collar reversible con un estampado para el uso diario por un lado y la identificación de StrayCats por el otro." >}}
+
 Según lo que los cuidadores decidan compartir, esa información podría incluir:
 
 - El nombre del gato, su fotografía y sus rasgos distintivos.

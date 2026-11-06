@@ -6,7 +6,7 @@ weight: 520
 tags: ["perdidos-y-encontrados", "seguridad", "comunidad"]
 summary: "Una tira de papel suelta al cuello de un gato amistoso pregunta: \"¿Este gato es tuyo?\" No es una idea nueva, pero StrayCats podría convertirla en un puente entre quienes usan la plataforma y quienes no."
 question: "Si encontraras a un gato amistoso y no supieras de quién es, ¿probarías un collar de papel, y qué querrías que dijera?"
-updated: 2026-11-05
+updated: 2026-11-06
 cover:
   image: "cover.jpg"
   alt: "Un gato atigrado y blanco de ojos verdes con un collar de papel blanco impreso con el logo de straycats.love, junto a una hoja impresa de collares de papel para gatos con una tira ya arrancada"
@@ -52,6 +52,11 @@ quien encuentra al gato no necesitaría una app.)
 
 La imagen de arriba es un mockup de concepto, no una foto ni un producto real. Muestra la idea:
 una hoja de tiras, una arrancada y puesta en el gato.
+
+Una tira también podría ser reversible: un estampado atractivo por un lado para el uso diario, y
+los datos de StrayCats por el otro.
+
+{{< photo src="reversible-collar.jpg" alt="Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas. A su lado, tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro" caption="Imagen de concepto, no es una foto ni un producto real. El código QR y las marcas NFC vienen de la [idea de la identidad abierta](/ideas/open-cat-identity/); el collar de papel en sí no llevaría código QR." >}}
 
 Así podría crecer, de lo más barato a lo más ambicioso:
 

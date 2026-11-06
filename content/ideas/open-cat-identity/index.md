@@ -33,6 +33,8 @@ QR code.
 Anyone with a smartphone could scan the collar and access information about the cat without
 installing an app.
 
+{{< photo src="reversible-collar.jpg" alt="A tabby-and-white cat looking up, wearing a leaf-patterned paper collar with a small QR code and NFC mark. Beside it, three reversible paper collar designs (leaves, cherry blossom and a starry night), each with a pattern on one side and the StrayCats identification on the other" caption="Concept mockup, not a photo and not a real product: a reversible collar with a pattern for everyday wear on one side and the StrayCats identification on the other." >}}
+
 Depending on what caregivers choose to share, that information might include:
 
 - The cat's name, photograph, and identifying features.
