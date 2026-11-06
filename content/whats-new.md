@@ -11,6 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 6, 2026: Reversible collars
+
+*Version v2026.11.06.1*
+
+- **Updated:** [The Paper Collar](/ideas/paper-collar/) and
+  [What If Every Cat Could Carry an Open Identity?](/ideas/open-cat-identity/) now show a
+  concept mockup of reversible collars, with a pattern on one side and the StrayCats details on
+  the other. Both are ideas, not products yet.
+
 ## November 6, 2026: A picture for the open identity idea
 
 *Version v2026.11.06*

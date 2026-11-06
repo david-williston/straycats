@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 6 de noviembre de 2026: Collares reversibles
+
+*Versión v2026.11.06.1*
+
+- **Actualizado:** [El collar de papel](/ideas/paper-collar/) y
+  [¿Y si todos los gatos pudieran llevar una identidad abierta?](/ideas/open-cat-identity/)
+  ahora muestran un mockup de concepto de collares reversibles, con un estampado por un lado y
+  los datos de StrayCats por el otro. Ambos son ideas, todavía no productos.
+
 ## 6 de noviembre de 2026: Una imagen para la idea de la identidad abierta
 
 *Versión v2026.11.06*
