@@ -6,7 +6,11 @@ weight: 250
 tags: ["identidad", "estandar-abierto", "tecnologia"]
 summary: "Una idea para un estándar abierto y global de identificación de gatos: un collar que cualquiera puede escanear, sin app y sin que una sola empresa mande."
 question: "Si encontraras a un gato con un collar así, ¿lo escanearías, y qué te gustaría ver en la pantalla?"
-updated: 2026-10-30
+updated: 2026-11-06
+cover:
+  image: "cover.jpg"
+  alt: "Un gato atigrado y blanco que mira hacia arriba, con un collar de seguridad estampado de hojas con un pequeño código QR y una marca NFC, junto a un panel con tres diseños de collar reversible: hojas, flores de cerezo y una noche estrellada, cada uno con un lado de identificación de StrayCats por detrás"
+  caption: "Imagen de concepto, no es una foto ni un producto real. Los collares reversibles son un diseño posible."
 ---
 
 *Una idea para un estándar abierto y global de identificación de gatos.*

@@ -5,7 +5,11 @@ weight: 250
 tags: ["identity", "open-standard", "tech"]
 summary: "An idea for a global, open standard for cat identification: a collar anyone can scan, with no app and no single company in charge."
 question: "If you found a cat wearing a collar like this, would you scan it, and what would you want to see on the screen?"
-updated: 2026-10-30
+updated: 2026-11-06
+cover:
+  image: "cover.jpg"
+  alt: "A tabby-and-white cat looking up, wearing a leaf-patterned breakaway collar with a small QR code and NFC mark, beside a panel showing three reversible collar designs: leaves, cherry blossom and a starry night, each with a StrayCats identification side on the back"
+  caption: "Concept mockup, not a photo and not a real product. The reversible collars are one possible design."
 ---
 
 *An idea for a global, open standard for cat identification.*
