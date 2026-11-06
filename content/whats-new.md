@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 5, 2026: A picture for the dumping idea
+
+*Version v2026.11.05.5*
+
+- **Updated:** [Make Help Easier to Find Than Dumping](/ideas/help-easier-than-dumping/) now has
+  a cover image, a concept mockup of what finding help could look like on a phone. There is
+  still no app.
+
 ## November 5, 2026: The Paper Collar
 
 *Version v2026.11.05.4*

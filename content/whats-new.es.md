@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 5 de noviembre de 2026: Una imagen para la idea sobre el abandono
+
+*Versión v2026.11.05.5*
+
+- **Actualizado:** [Que la ayuda sea más fácil de encontrar que el abandono](/ideas/help-easier-than-dumping/)
+  ahora tiene una imagen de portada, un mockup de concepto de cómo podría verse encontrar ayuda
+  en un teléfono. Todavía no hay app.
+
 ## 5 de noviembre de 2026: El collar de papel
 
 *Versión v2026.11.05.4*
