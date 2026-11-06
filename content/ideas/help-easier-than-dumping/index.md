@@ -5,7 +5,11 @@ weight: 800
 tags: ["prevention", "community", "safety"]
 summary: "If help was as easy to find as a public toilet, fewer cats would end up by the road. A lost cat and a dumped cat look the same, so prevention has to come before proof."
 question: "If someone near you found a cat they couldn't keep, where would they go first, and how easy is that help to find?"
-updated: 2026-10-30
+updated: 2026-11-05
+cover:
+  image: "cover.jpg"
+  alt: "A tabby-and-white cat sitting on the gravel verge beside a road at sunset, with an arrow pointing to a hand holding a phone showing a StrayCats screen with three options: Find or add a cat's record, Get help, and Local resources"
+  caption: "Concept mockup, not a photo and not a real app. There is no app yet."
 ---
 
 # Make help easier to find than dumping

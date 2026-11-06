@@ -6,7 +6,11 @@ weight: 800
 tags: ["prevencion", "comunidad", "seguridad"]
 summary: "Si encontrar ayuda fuera tan fácil como encontrar un baño público, menos gatos terminarían abandonados en la carretera. Un gato perdido y un gato abandonado se ven igual, así que la prevención tiene que venir antes que la prueba."
 question: "Si alguien cerca de ti encontrara un gato que no puede conservar, ¿adónde iría primero, y qué tan fácil es encontrar esa ayuda?"
-updated: 2026-10-30
+updated: 2026-11-05
+cover:
+  image: "cover.jpg"
+  alt: "Un gato atigrado y blanco sentado en la grava junto a una carretera al atardecer, con una flecha que apunta a una mano que sostiene un teléfono con una pantalla de StrayCats con tres opciones: Buscar o añadir el registro de un gato, Pedir ayuda y Recursos locales"
+  caption: "Imagen de concepto, no es una foto ni una app real. Todavía no hay app."
 ---
 
 # Que la ayuda sea más fácil de encontrar que el abandono
