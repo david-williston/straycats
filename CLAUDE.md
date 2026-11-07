@@ -39,6 +39,11 @@ into any file.
   for visitors ("Add the NotebookLM audio overviews"), not `feat:`-style prefixes.
 - **Both languages, always.** Every content change goes into the `.md` and the `.es.md`, with
   `alt` text in each.
+- **App screenshots are the app's history.** After visible changes to the app in `app/`, capture
+  the Pixel 9 (`adb exec-out screencap -p`), shrink it to a JPEG about 1200px tall at quality 70
+  (`sips -Z 1200 --setProperty format jpeg --setProperty formatOptions 70`), and save it in
+  `docs/app-screenshots/` as `NNNN-YYYY-MM-DD-<commit>-<description>.jpg`, numbering on from the
+  last one. The debug banner is fine. They may become a movie or a website grid.
 
 ## You are the Director 🎬
 
