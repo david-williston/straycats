@@ -1,0 +1,20 @@
+{{- /* Every app screenshot in the page bundle, oldest first, as phone-shaped thumbnails linking to
+  the full image. Picks up files named NNNN-YYYY-MM-DD-<commit>-<description>.jpg, so adding a
+  screenshot needs only the file. Label and alt text are in i18n/ (app_screen_label, app_screen_alt).
+  Usage: {{< app-screens >}} */ -}}
+{{- $shots := slice }}
+{{- range .Page.Resources.ByType "image" }}
+  {{- if findRE `^\d{4}-\d{4}-\d{2}-\d{2}-.+\.jpg$` (path.Base .Name) }}{{ $shots = $shots | append . }}{{ end }}
+{{- end }}
+<div class="app-screens">
+{{- range sort $shots "Name" "desc" }}
+  {{- $name := path.Base .Name }}
+  {{- $number := strings.TrimLeft "0" (substr $name 0 4) | default "0" }}
+  {{- $date := time.AsTime (substr $name 5 10) | time.Format "2 Jan 2006" }}
+  {{- $thumb := .Resize "600x webp q80" }}
+  <figure class="app-screen">
+    <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ i18n "app_screen_alt" (dict "Number" $number "Date" $date) }}" loading="lazy"></a>
+    <figcaption>{{ i18n "app_screen_label" (dict "Number" $number "Date" $date) }}</figcaption>
+  </figure>
+{{- end }}
+</div>
