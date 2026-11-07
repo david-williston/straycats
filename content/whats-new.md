@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 7, 2026: The app, under construction
+
+*Version v2026.11.07.1*
+
+- **New:** the StrayCats app is now being built, in the open. It's an early, very simple first
+  version, and you can watch it take shape in [The App, Under Construction](/app/), with
+  screenshots of each step, newest first.
+
 ## November 6, 2026: Reversible collars
 
 *Version v2026.11.06.1*

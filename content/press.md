@@ -5,7 +5,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-05
+updated: 2026-11-07
 ---
 
 Writing about StrayCats, or about the people who care for cats? Here's the project in brief, artwork
@@ -22,8 +22,8 @@ a network of people who care about it, and meeting one took nothing more than a 
 
 - **What it is:** a growing open-source project, worked out in the open. The
   [ideas](/ideas/) and [stories](/posts/) on this site keep growing as people share what
-  they know, and [What's New](/whats-new/) records each step. There's no app or code yet; the first
-  software comes after the ideas are shaped with the people who care for cats.
+  they know, and [What's New](/whats-new/) records each step. An early app is
+  [under construction](/app/), in the open.
 - **Who's behind it:** David Williston, who looks after a house full of cats in Puerto
   Escondido, Oaxaca, Mexico.
 - **Who it's for:** anyone who cares for a cat, whether it's theirs or not.

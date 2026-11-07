@@ -1,7 +1,7 @@
 ---
 title: "Open Data & Tech Stack"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-07
 weight: 700
 tags: ["open-source", "tech", "data"]
 summary: "Thoughts on how the app could be built, hosted and kept sustainable as a non-profit."
@@ -10,8 +10,8 @@ question: "App, web page or something simpler: what would actually work where yo
 
 ## The idea
 
-*Not yet! I'm [deliberately not building anything](/posts/all-talk-no-code/) while
-the idea takes shape. But these are the constraints I expect:*
+*Building has started! After a month of [all talk and no code](/posts/all-talk-no-code/), a
+first, very simple app is [under construction](/app/). These are the constraints I expect:*
 
 - **Open source** under a permissive or copyleft licence (to be decided).
 - **Mobile-first** — most sightings happen on the street; a cross-platform app or a

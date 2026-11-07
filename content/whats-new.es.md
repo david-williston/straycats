@@ -12,6 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 7 de noviembre de 2026: La app, en construcción
+
+*Versión v2026.11.07.1*
+
+- **Nuevo:** la app de StrayCats ya se está construyendo, a la vista de todos. Es una primera
+  versión temprana y muy sencilla, y puedes verla tomar forma en
+  [La app, en construcción](/app/), con capturas de cada paso, de la más reciente a la más
+  antigua.
+
 ## 6 de noviembre de 2026: Collares reversibles
 
 *Versión v2026.11.06.1*

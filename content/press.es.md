@@ -6,7 +6,7 @@ ShowToc: true
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-11-05
+updated: 2026-11-07
 ---
 
 ¿Vas a escribir sobre StrayCats, o sobre las personas que cuidan gatos? Aquí tienes el
@@ -25,9 +25,8 @@ foto?
 
 - **Qué es:** un proyecto de código abierto que crece a la vista de todos. Las
   [ideas](/ideas/) y las [historias](/posts/) de este sitio siguen creciendo a medida que la
-  gente comparte lo que sabe, y las [Novedades](/whats-new/) registran cada paso. Todavía no hay
-  app ni código; el primer software llegará cuando las ideas se hayan afinado con quienes cuidan
-  gatos.
+  gente comparte lo que sabe, y las [Novedades](/whats-new/) registran cada paso. Una primera
+  app está [en construcción](/app/), a la vista de todos.
 - **Quién está detrás:** David Williston, que cuida una casa llena de gatos en Puerto
   Escondido, Oaxaca, México.
 - **Para quién es:** cualquiera que cuide a un gato, sea suyo o no.

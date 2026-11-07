@@ -2,7 +2,7 @@
 title: "Datos abiertos y tecnología"
 slug: "datos-abiertos-y-tecnologia"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-07
 weight: 700
 tags: ["codigo-abierto", "tecnologia", "datos"]
 summary: "Ideas sobre cómo podría construirse y alojarse la app, y cómo mantenerla como proyecto sin fines de lucro."
@@ -11,8 +11,9 @@ question: "¿App, página web o algo más sencillo? ¿Qué funcionaría de verda
 
 ## La idea
 
-*¡Todavía no! [A propósito no estoy construyendo nada](/posts/all-talk-no-code/) mientras la
-idea toma forma. Pero estas son las condiciones que espero:*
+*¡Ya empezó la construcción! Después de un mes de [pura plática y nada de
+código](/posts/all-talk-no-code/), una primera app muy sencilla está
+[en construcción](/app/). Estas son las condiciones que espero:*
 
 - **Código abierto**, con una licencia permisiva o copyleft (por decidir).
 - **Pensada primero para el celular**: la mayoría de los avistamientos ocurren en la calle;
