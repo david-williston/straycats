@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "What StrayCats is, where it came from, and what it isn't (yet)."
-updated: 2026-11-05
+updated: 2026-11-07
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -60,13 +60,14 @@ turned into new stories and ideas, and [What's New](/whats-new/) records each st
 
 ## What it isn't (yet)
 
-An app. There's no code, no product plan and no business model yet, [on
-purpose](/posts/all-talk-no-code/). Right now the work is listening and designing in the open,
-and the first software comes after the ideas are shaped with the people who care for cats.
+An app you can use. A first, very simple app is now [under construction](/app/), but it's an
+early prototype, and there's still no product plan and no business model, [on
+purpose](/posts/all-talk-no-code/). Most of the work is still listening and designing in the
+open, and the app grows as the ideas are shaped with the people who care for cats.
 
 ## Principles
 
-- **Open source.** Ideas, designs and eventually code are public.
+- **Open source.** Ideas, designs and code are public.
 - **Non-profit.** No ads, no selling data. Ever.
 - **The record belongs to the cat**, not to any caretaker or platform.
 - **Owned, not rented.** This is a site of its own, not a page on Facebook or another

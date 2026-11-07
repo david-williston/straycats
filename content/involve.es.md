@@ -1,15 +1,16 @@
 ---
 title: "Cómo ayudar"
 slug: "como-ayudar"
-summary: "No hay una app a la que unirse ni nada en lo que inscribirse. Aquí tienes formas sencillas de ayudar, desde un saludo de una línea hasta una charla más larga."
-updated: 2026-11-05
+summary: "Todavía no hay una app a la que unirse ni nada en lo que inscribirse. Aquí tienes formas sencillas de ayudar, desde un saludo de una línea hasta una charla más larga."
+updated: 2026-11-07
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
 ---
 
-No hay una app que descargar ni nada en lo que inscribirse. StrayCats es un cuaderno donde
+Todavía no hay una app que descargar (una primera está [en construcción](/app/)) ni nada en lo
+que inscribirse. StrayCats es un cuaderno donde
 pienso en voz alta, y lo más útil que puedes hacer es pensar conmigo. Lo que más me interesa
 es tu propia experiencia cuidando a un gato: uno tuyo, de un vecino, un callejero, uno recién
 adoptado, uno que tuviste que dar o uno que quedó atrás. ¿Qué te lo habría hecho más fácil?
@@ -60,9 +61,10 @@ más que suficiente (mira [Privacidad y seguridad de los animales](/ideas/privac
 
 Traducción, diseño, desarrollo, experiencia en rescate o veterinaria, conocimiento local: el
 veterinario que ayuda a los gatos comunitarios de tu ciudad, dónde se esterilizan a bajo
-costo, cómo funcionan las cosas de verdad donde vives. Todavía no hay código,
-[a propósito](/posts/all-talk-no-code/): el primer software llegará cuando las ideas estén
-afinadas, así que aún no hay un equipo al que unirse. Pero si me
+costo, cómo funcionan las cosas de verdad donde vives. Ya empecé a construir una
+primera app, muy sencilla, a la vista de todos: puedes seguirla [en su página de
+avances](/app/), y ver o hacer un fork del código. Es un prototipo personal temprano, así que
+aún no hay un equipo al que unirse. Pero si me
 cuentas en qué eres bueno o buena, sabré a quién preguntarle cuando haya algo real en lo que
 trabajar, y entonces eres libre de decir que no.
 

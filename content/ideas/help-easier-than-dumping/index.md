@@ -5,11 +5,11 @@ weight: 800
 tags: ["prevention", "community", "safety"]
 summary: "If help was as easy to find as a public toilet, fewer cats would end up by the road. A lost cat and a dumped cat look the same, so prevention has to come before proof."
 question: "If someone near you found a cat they couldn't keep, where would they go first, and how easy is that help to find?"
-updated: 2026-11-05
+updated: 2026-11-07
 cover:
   image: "cover.jpg"
   alt: "A tabby-and-white cat sitting on the gravel verge beside a road at sunset, with an arrow pointing to a hand holding a phone showing a StrayCats screen with three options: Find or add a cat's record, Get help, and Local resources"
-  caption: "Concept mockup, not a photo and not a real app. There is no app yet."
+  caption: "Concept mockup of an idea, not a photo and not a real app screen."
 ---
 
 # Make help easier to find than dumping
@@ -36,7 +36,7 @@ Groups like the SPCA have done great work. But the system feels stuck in one way
 
 ## What StrayCats could add
 
-For context, I am working on an idea called StrayCats. There is no app. But the plans are being worked out in the open, and anyone can read them and comment on them. It is open source and non profit.
+For context, I am working on an idea called StrayCats. There is no app you can use yet, only an early prototype [under construction](/app/). But the plans are being worked out in the open, and anyone can read them and comment on them. It is open source and non profit.
 
 The idea is simple. Each cat gets its own record. The record belongs to the cat, not to one person. If you meet a cat, you can see what people already know about it. If you need help, you can find local help in the same place.
 
@@ -48,7 +48,7 @@ There are a lot of hard problems to solve first. Bad people could use a system l
 
 So we have to protect both the cats and the people. That means no exact spots, ever. No home addresses. People can use just a nickname at first. And we have to think hard about who can see what, before we build anything.
 
-That is why StrayCats is deliberately not building an app yet. The safety problems have to come first, not after.
+That is why StrayCats is deliberately not building an app for the public yet. The early app is only a personal prototype. The safety problems have to come first, before anyone else uses it.
 
 ## What this would not do
 

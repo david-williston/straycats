@@ -2,7 +2,7 @@
 title: "Acerca de"
 slug: "acerca-de"
 summary: "Qué es StrayCats, de dónde viene y qué no es (todavía)."
-updated: 2026-11-05
+updated: 2026-11-07
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -64,13 +64,14 @@ cuidan gatos ya se han convertido en historias e ideas nuevas, y las
 
 ## Qué no es (todavía)
 
-Una app. Todavía no hay código, ni plan de producto, ni modelo de negocio, [a
-propósito](/posts/all-talk-no-code/). Por ahora el trabajo es escuchar y diseñar a la vista de
-todos, y el primer software llegará cuando las ideas se hayan afinado con quienes cuidan gatos.
+Una app que puedas usar. Una primera app, muy sencilla, ya está [en construcción](/app/), pero
+es un prototipo temprano, y todavía no hay plan de producto ni modelo de negocio, [a
+propósito](/posts/all-talk-no-code/). La mayor parte del trabajo sigue siendo escuchar y diseñar
+a la vista de todos, y la app crece a medida que las ideas se afinan con quienes cuidan gatos.
 
 ## Principios
 
-- **Código abierto.** Las ideas, los diseños y, algún día, el código son públicos.
+- **Código abierto.** Las ideas, los diseños y el código son públicos.
 - **Sin fines de lucro.** Sin anuncios y sin vender datos. Nunca.
 - **El registro le pertenece al gato**, no a ningún cuidador ni plataforma.
 - **Propio, no rentado.** Este es un sitio propio, no una página en Facebook ni en

@@ -6,11 +6,11 @@ weight: 800
 tags: ["prevencion", "comunidad", "seguridad"]
 summary: "Si encontrar ayuda fuera tan fácil como encontrar un baño público, menos gatos terminarían abandonados en la carretera. Un gato perdido y un gato abandonado se ven igual, así que la prevención tiene que venir antes que la prueba."
 question: "Si alguien cerca de ti encontrara un gato que no puede conservar, ¿adónde iría primero, y qué tan fácil es encontrar esa ayuda?"
-updated: 2026-11-05
+updated: 2026-11-07
 cover:
   image: "cover.jpg"
   alt: "Un gato atigrado y blanco sentado en la grava junto a una carretera al atardecer, con una flecha que apunta a una mano que sostiene un teléfono con una pantalla de StrayCats con tres opciones: Buscar o añadir el registro de un gato, Pedir ayuda y Recursos locales"
-  caption: "Imagen de concepto, no es una foto ni una app real. Todavía no hay app."
+  caption: "Imagen de concepto de una idea, no es una foto ni una pantalla real de la app."
 ---
 
 # Que la ayuda sea más fácil de encontrar que el abandono
@@ -37,7 +37,7 @@ Grupos como la SPCA han hecho un gran trabajo. Pero el sistema se siente atascad
 
 ## Qué podría aportar StrayCats
 
-Para contexto, estoy trabajando en una idea llamada StrayCats. No hay una app. Pero los planes se están desarrollando abiertamente, y cualquiera puede leerlos y comentarlos. Es de código abierto y sin fines de lucro.
+Para contexto, estoy trabajando en una idea llamada StrayCats. Todavía no hay una app que puedas usar, solo un prototipo temprano [en construcción](/app/). Pero los planes se están desarrollando abiertamente, y cualquiera puede leerlos y comentarlos. Es de código abierto y sin fines de lucro.
 
 La idea es simple. Cada gato tiene su propio registro. El registro pertenece al gato, no a una sola persona. Si conoces a un gato, puedes ver lo que otras personas ya saben de él. Si necesitas ayuda, puedes encontrar ayuda local en el mismo lugar.
 
@@ -49,7 +49,7 @@ Hay muchos problemas difíciles que resolver primero. Personas malas podrían us
 
 Así que tenemos que proteger tanto a los gatos como a las personas. Eso significa que nunca se publican lugares exactos. No hay direcciones de casas. Las personas pueden usar solo un apodo al principio. Y tenemos que pensar bien quién puede ver qué, antes de construir nada.
 
-Por eso StrayCats deliberadamente todavía no está construyendo una app. Los problemas de seguridad tienen que venir primero, no después.
+Por eso StrayCats deliberadamente todavía no está construyendo una app para el público. La app temprana es solo un prototipo personal. Los problemas de seguridad tienen que venir primero, antes de que alguien más la use.
 
 ## Qué no haría esto
 

@@ -1,14 +1,15 @@
 ---
 title: "Get involved"
-summary: "There's no app to join and nothing to sign up for. Here are easy ways to help, from a one-line hello to a longer chat."
-updated: 2026-11-05
+summary: "There's no app to join yet and nothing to sign up for. Here are easy ways to help, from a one-line hello to a longer chat."
+updated: 2026-11-07
 ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
 ---
 
-There's no app to download and nothing to sign up for. StrayCats is a notebook where I'm
+There's no app to download yet (an early one is [under construction](/app/)) and nothing to sign
+up for. StrayCats is a notebook where I'm
 thinking out loud, and the most useful thing you can do is think alongside me. I'm most curious
 about your own experience of caring for a cat: your own, a neighbor's, a stray, a new
 adoption, one you had to give up, or one left behind. What would have made it easier? Below
@@ -58,8 +59,9 @@ Please leave out exact locations and home addresses. A cat's neighbourhood is pl
 
 Translation, design, development, rescue or vet experience, local knowledge: the vet who
 helps community cats in your town, where low-cost sterilisation happens, how things really
-work where you live. There's no code yet, [on purpose](/posts/all-talk-no-code/): the first software comes
-after the ideas are shaped, so there isn't a team to join yet. But if you tell me what you're good at, I'll know who to ask when
+work where you live. Building has started on a first, very simple app, in the open: you can follow it
+[on its progress page](/app/), and look at or fork the code. It's an early personal prototype,
+so there isn't a team to join yet. But if you tell me what you're good at, I'll know who to ask when
 there's something real to work on, and you're free to say no then.
 
 ## Have a chat
