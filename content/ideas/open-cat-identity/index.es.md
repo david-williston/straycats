@@ -9,8 +9,8 @@ question: "Si encontraras a un gato con un collar así, ¿lo escanearías, y qu�
 updated: 2026-11-06
 cover:
   image: "cover.jpg"
-  alt: "Un gato atigrado y blanco que mira hacia arriba, con un collar de seguridad estampado de hojas con un pequeño código QR y una marca NFC, junto a un panel con tres diseños de collar reversible: hojas, flores de cerezo y una noche estrellada, cada uno con un lado de identificación de StrayCats por detrás"
-  caption: "Imagen de concepto, no es una foto ni un producto real. Los collares reversibles son un diseño posible."
+  alt: "Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas, junto a tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro"
+  caption: "Imagen de concepto, no es una foto ni un producto real: un collar reversible con un estampado para el uso diario por un lado y la identificación de StrayCats por el otro."
 ---
 
 *Una idea para un estándar abierto y global de identificación de gatos.*
@@ -34,8 +34,6 @@ engancha), con un diminuto chip NFC y un código QR impreso.
 
 Cualquiera con un teléfono inteligente podría escanear el collar y acceder a información sobre
 el gato sin instalar ninguna app.
-
-{{< photo src="reversible-collar.jpg" alt="Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas con un pequeño código QR y una marca NFC. A su lado, tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro" caption="Imagen de concepto, no es una foto ni un producto real: un collar reversible con un estampado para el uso diario por un lado y la identificación de StrayCats por el otro." >}}
 
 Según lo que los cuidadores decidan compartir, esa información podría incluir:
 
