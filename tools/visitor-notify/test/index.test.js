@@ -5,7 +5,7 @@ import worker, { flag, cleanPath, isSitePath, hostOf, message } from '../src/ind
 const env = {
   TELEGRAM_BOT_TOKEN: 'T',
   TELEGRAM_CHAT_ID: '42',
-  ALLOWED_ORIGINS: 'https://straycats.love,https://david-williston.github.io',
+  ALLOWED_ORIGINS: 'https://straycats.love',
   PATH_PREFIX: '/',
 };
 
@@ -89,16 +89,15 @@ test('Spanish and escaped page paths are accepted', async () => {
   }
 });
 
-test('the old github.io origin is still accepted during the move', async () => {
+test('the old github.io origin is refused', async () => {
   const { res, sent } = await run(
     hit({
       origin: 'https://david-williston.github.io',
       body: JSON.stringify({ path: '/straycats/posts/ninja/' }),
     }),
   );
-  eq.equal(res.status, 204);
-  eq.equal(sent.length, 1);
-  eq.match(sent[0].body.text, /\ndavid-williston\.github\.io\/straycats\/posts\/ninja\/$/);
+  eq.equal(res.status, 403);
+  eq.equal(sent.length, 0);
 });
 
 test('flag, path and message helpers', () => {
@@ -110,11 +109,11 @@ test('flag, path and message helpers', () => {
   eq.ok(!isSitePath('/', '/straycats/'));
   eq.ok(!isSitePath('/straycats/a b/', '/straycats/'));
   eq.ok(isSitePath('/anything/'));
-  eq.equal(hostOf('https://david-williston.github.io'), 'david-williston.github.io');
+  eq.equal(hostOf('https://straycats.love'), 'straycats.love');
   eq.equal(hostOf('not a url'), '');
   eq.equal(message({ city: 'Paris', country: 'FR' }, '/'), '🇫🇷 New visitor: Paris, FR\n/');
   eq.equal(
-    message({ city: 'Calgary', region: 'Alberta', country: 'CA' }, '/straycats/', 'david-williston.github.io'),
-    '🇨🇦 New visitor: Calgary, Alberta, CA\ndavid-williston.github.io/straycats/',
+    message({ city: 'Calgary', region: 'Alberta', country: 'CA' }, '/posts/ninja/', 'straycats.love'),
+    '🇨🇦 New visitor: Calgary, Alberta, CA\nstraycats.love/posts/ninja/',
   );
 });

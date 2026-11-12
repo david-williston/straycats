@@ -77,15 +77,13 @@ kept.
   page, which has no scripts.
 - Secrets `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` live on Cloudflare only
   (the same values as evnsteven.app). Never commit them.
-- `ALLOWED_ORIGINS` is `https://straycats.love,https://david-williston.github.io`. The
-  site lives at straycats.love; the old github.io origin stays allowed while
-  the move settles (remove it later, and the hostname check in the site script).
+- `ALLOWED_ORIGINS` is `https://straycats.love`, the only site allowed to send
+  hits. The site script also runs only on that hostname.
 - `PATH_PREFIX` is `/`. A hit is refused (`400 Bad path`) unless its page looks
   like a real page path: letters, digits, `- . _ ~ /` and `%` escapes, no
   spaces. Anyone can forge a hit with curl (the Origin header is only enforced
   by browsers), so this keeps forged hits from putting text or links into the
-  chat. It is `/` rather than `/straycats/` because the site is now at the
-  domain root (the old github.io pages were under `/straycats/`).
+  chat. It is `/` because the site is at the domain root.
 
 **Do on each browser you use:** open
 `https://straycats.love/?ping=off` once.

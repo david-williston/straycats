@@ -3,7 +3,7 @@ main = "src/index.js"
 compatibility_date = "2026-10-01"
 
 [vars]
-# The site lives at straycats.love; the old github.io origin stays allowed during the move.
-ALLOWED_ORIGINS = "https://straycats.love,https://david-williston.github.io"
-# Only hits for well-formed page paths are passed on. "/" covers both the new domain and the old /straycats/ paths.
+# Only the site itself may send hits.
+ALLOWED_ORIGINS = "https://straycats.love"
+# Only hits for well-formed page paths are passed on. The site is at the domain root, so "/" covers every page.
 PATH_PREFIX = "/"
