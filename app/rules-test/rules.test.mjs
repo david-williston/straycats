@@ -7,7 +7,7 @@ import {
   assertFails,
 } from '@firebase/rules-unit-testing';
 import {
-  doc, getDoc, getDocs, collection, setDoc, writeBatch, deleteDoc,
+  doc, getDoc, getDocs, collection, setDoc, updateDoc, deleteField, writeBatch, deleteDoc,
   serverTimestamp, Timestamp, GeoPoint,
 } from 'firebase/firestore';
 import { ref, uploadBytes, getBytes } from 'firebase/storage';
@@ -89,6 +89,51 @@ describe('firestore cats', () => {
     await assertFails(setDoc(catDoc(alice()), cat({ name: 42 })));
     await assertFails(setDoc(catDoc(alice()), cat({ name: 'x'.repeat(101) })));
     await assertFails(setDoc(catDoc(alice()), cat({ updatedAt: Timestamp.fromDate(new Date('2020-01-01')) })));
+  });
+  test('a cat can be missing, found or remembered, with a date and a note', async () => {
+    const since = Timestamp.fromDate(new Date());
+    for (const status of ['missing', 'found', 'remembered']) {
+      await assertSucceeds(setDoc(catDoc(alice()), cat({ status, statusSince: since })));
+      await assertSucceeds(setDoc(catDoc(alice()), cat({
+        status, statusSince: since, statusNote: 'Last seen near the market on Tuesday',
+      })));
+    }
+    await assertSucceeds(setDoc(catDoc(alice()), cat({ statusNote: 'x'.repeat(1000) })));
+  });
+  test('a status can be changed and cleared with an update', async () => {
+    await seedCat();
+    const since = Timestamp.fromDate(new Date());
+    await assertSucceeds(updateDoc(catDoc(alice()), {
+      status: 'missing', statusSince: since, updatedAt: serverTimestamp(),
+    }));
+    await assertSucceeds(updateDoc(catDoc(alice()), {
+      status: deleteField(), statusSince: deleteField(), statusNote: deleteField(),
+      updatedAt: serverTimestamp(),
+    }));
+    await assertSucceeds(updateDoc(catDoc(alice()), { name: 'Ciccio', updatedAt: serverTimestamp() }));
+  });
+  test('a bad status, date or note is denied', async () => {
+    const since = Timestamp.fromDate(new Date());
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'dead', statusSince: since })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'known' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 42 })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusSince: 'yesterday' })));
+    await assertFails(setDoc(catDoc(alice()), cat({
+      status: 'missing', statusSince: Timestamp.fromDate(new Date(Date.now() + 3 * 86400000)),
+    })));
+    await assertFails(setDoc(catDoc(alice()), cat({
+      status: 'missing', statusSince: Timestamp.fromDate(new Date('1990-01-01')),
+    })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusNote: 'x'.repeat(1001) })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusNote: 42 })));
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', exactPlace: '1 Main St' })));
+  });
+  test('other users and admins cannot change a status', async () => {
+    await seedCat();
+    const change = { status: 'missing', statusSince: Timestamp.fromDate(new Date()), updatedAt: serverTimestamp() };
+    await assertFails(updateDoc(catDoc(bob()), change));
+    await assertFails(updateDoc(catDoc(admin()), change));
+    await assertSucceeds(getDoc(catDoc(admin())));
   });
   test('bad cat id denied', async () => {
     await assertFails(setDoc(catDoc(alice(), 'bad id!'), cat()));

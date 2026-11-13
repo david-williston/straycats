@@ -8,6 +8,7 @@ import '../application/photo_uploader.dart';
 import '../data/cat_repository.dart';
 import '../data/photo_files.dart';
 import '../domain/cat.dart';
+import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
 import '../domain/sighting.dart';
 
@@ -31,6 +32,32 @@ class CatsController extends _$CatsController {
     final cat = cats.where((c) => c.id == catId).firstOrNull;
     if (cat == null || cat.name == name) return;
     _log(ref.read(catRepositoryProvider).renameCat(catId, name));
+  }
+
+  /// Marks the cat as [status] since the date the person chose (not in the
+  /// future), with an optional note. [CatStatus.known] puts it back to normal.
+  /// Its encounters are untouched, and more can still be added.
+  Future<void> setStatus(
+    String catId,
+    CatStatus status, {
+    DateTime? since,
+    String note = '',
+  }) async {
+    final now = DateTime.now();
+    final date = since == null || since.isAfter(now) ? now : since;
+    final trimmed = note.trim();
+    _log(
+      ref
+          .read(catRepositoryProvider)
+          .setStatus(
+            catId,
+            status,
+            since: date,
+            note: trimmed.length > CatStatus.maxNoteLength
+                ? trimmed.substring(0, CatStatus.maxNoteLength)
+                : trimmed,
+          ),
+    );
   }
 
   /// Records [photo] as an encounter with the cat in [sighting], or with a

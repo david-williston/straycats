@@ -607,6 +607,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Seen recently'**
   String get seenRecently;
+
+  /// Badge on a cat that someone has marked as missing. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing since {date}'**
+  String statusMissingSince(String date);
+
+  /// Badge on a cat that was missing and has been found. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'Found {date}'**
+  String statusFoundOn(String date);
+
+  /// Quiet badge on a cat that has died and is remembered. Gentle, respectful.
+  ///
+  /// In en, this message translates to:
+  /// **'Remembered'**
+  String get statusRemembered;
+
+  /// The span of a remembered cat's life as we knew it: the date it was first met, then the date it died. Both already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{first} – {last}'**
+  String statusRememberedDates(String first, String last);
+
+  /// Button on a cat's card that opens the choices for marking the cat as missing, found or remembered.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get statusButton;
+
+  /// Choice and dialog title: say that the cat has gone missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as missing'**
+  String get statusMarkMissing;
+
+  /// Help text in the dialog for marking a cat as missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Say when it was last seen. If you like, add a few words about where. Please don\'t write an address.'**
+  String get statusMissingHelp;
+
+  /// Label of the optional note when marking a cat as missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Last seen (optional)'**
+  String get statusMissingNoteLabel;
+
+  /// Hint in the optional note when marking a cat as missing. It must not ask for an exact place.
+  ///
+  /// In en, this message translates to:
+  /// **'For example, near the market on Tuesday'**
+  String get statusMissingNoteHint;
+
+  /// Label of the date button when marking a cat as missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Last seen'**
+  String get statusMissingDate;
+
+  /// Choice and dialog title on a missing cat: it has been found. Joyful.
+  ///
+  /// In en, this message translates to:
+  /// **'Found!'**
+  String get statusMarkFound;
+
+  /// Help text in the dialog for marking a missing cat as found.
+  ///
+  /// In en, this message translates to:
+  /// **'What good news. When was it found?'**
+  String get statusFoundHelp;
+
+  /// Label of the date button when marking a cat as found.
+  ///
+  /// In en, this message translates to:
+  /// **'Found on'**
+  String get statusFoundDate;
+
+  /// Label of the optional note when marking a cat as found.
+  ///
+  /// In en, this message translates to:
+  /// **'A note (optional)'**
+  String get statusFoundNoteLabel;
+
+  /// Message of the small celebration after a named missing cat is marked as found.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is found. Welcome home!'**
+  String statusCelebrationNamed(String name);
+
+  /// Message of the small celebration after a cat with no name is marked as found.
+  ///
+  /// In en, this message translates to:
+  /// **'This cat is found. Welcome home!'**
+  String get statusCelebrationUnnamed;
+
+  /// Button that closes the celebration after a cat is found.
+  ///
+  /// In en, this message translates to:
+  /// **'Wonderful'**
+  String get statusCelebrationClose;
+
+  /// Choice and dialog title: keep the cat's record in memory after it has died. Gentle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember this cat'**
+  String get statusRemember;
+
+  /// Help text in the dialog for remembering a cat that has died. Gentle and respectful.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?'**
+  String get statusRememberHelp;
+
+  /// Label of the date button when remembering a cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get statusRememberDate;
+
+  /// Label of the optional memorial note when remembering a cat.
+  ///
+  /// In en, this message translates to:
+  /// **'A few words in memory (optional)'**
+  String get statusRememberNoteLabel;
+
+  /// Choice and button that clears the cat's status (missing, found or remembered).
+  ///
+  /// In en, this message translates to:
+  /// **'Back to normal'**
+  String get statusBackToNormal;
+
+  /// Body of the confirmation when clearing a cat's status.
+  ///
+  /// In en, this message translates to:
+  /// **'The cat will show as usual, with no status. Its photos and encounters all stay.'**
+  String get statusBackToNormalBody;
 }
 
 class _AppLocalizationsDelegate

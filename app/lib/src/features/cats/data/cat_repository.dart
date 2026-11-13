@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../data/firebase_providers.dart';
 import '../../startup/application/app_startup.dart';
 import '../domain/cat.dart';
+import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
 import 'firestore_cat_repository.dart';
 
@@ -30,6 +31,15 @@ abstract class CatRepository {
   Future<void> deleteEncounter(String encounterId);
 
   Future<void> renameCat(String catId, String name);
+
+  /// Sets what is known of the cat's situation. [CatStatus.known] clears the
+  /// status, its date and its note. Nothing else about the cat changes.
+  Future<void> setStatus(
+    String catId,
+    CatStatus status, {
+    DateTime? since,
+    String note = '',
+  });
 
   /// Writes [cats] under their own ids, so running it again rewrites the same
   /// documents with the same values. Used only by the one-time import.

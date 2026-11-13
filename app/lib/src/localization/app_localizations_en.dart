@@ -284,4 +284,84 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seenRecently => 'Seen recently';
+
+  @override
+  String statusMissingSince(String date) {
+    return 'Missing since $date';
+  }
+
+  @override
+  String statusFoundOn(String date) {
+    return 'Found $date';
+  }
+
+  @override
+  String get statusRemembered => 'Remembered';
+
+  @override
+  String statusRememberedDates(String first, String last) {
+    return '$first – $last';
+  }
+
+  @override
+  String get statusButton => 'Status';
+
+  @override
+  String get statusMarkMissing => 'Mark as missing';
+
+  @override
+  String get statusMissingHelp =>
+      'Say when it was last seen. If you like, add a few words about where. Please don\'t write an address.';
+
+  @override
+  String get statusMissingNoteLabel => 'Last seen (optional)';
+
+  @override
+  String get statusMissingNoteHint => 'For example, near the market on Tuesday';
+
+  @override
+  String get statusMissingDate => 'Last seen';
+
+  @override
+  String get statusMarkFound => 'Found!';
+
+  @override
+  String get statusFoundHelp => 'What good news. When was it found?';
+
+  @override
+  String get statusFoundDate => 'Found on';
+
+  @override
+  String get statusFoundNoteLabel => 'A note (optional)';
+
+  @override
+  String statusCelebrationNamed(String name) {
+    return '$name is found. Welcome home!';
+  }
+
+  @override
+  String get statusCelebrationUnnamed => 'This cat is found. Welcome home!';
+
+  @override
+  String get statusCelebrationClose => 'Wonderful';
+
+  @override
+  String get statusRemember => 'Remember this cat';
+
+  @override
+  String get statusRememberHelp =>
+      'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?';
+
+  @override
+  String get statusRememberDate => 'Date';
+
+  @override
+  String get statusRememberNoteLabel => 'A few words in memory (optional)';
+
+  @override
+  String get statusBackToNormal => 'Back to normal';
+
+  @override
+  String get statusBackToNormalBody =>
+      'The cat will show as usual, with no status. Its photos and encounters all stay.';
 }

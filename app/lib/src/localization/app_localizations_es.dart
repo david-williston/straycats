@@ -287,4 +287,87 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get seenRecently => 'Visto hace poco';
+
+  @override
+  String statusMissingSince(String date) {
+    return 'Desaparecido desde el $date';
+  }
+
+  @override
+  String statusFoundOn(String date) {
+    return 'Encontrado el $date';
+  }
+
+  @override
+  String get statusRemembered => 'Recordado';
+
+  @override
+  String statusRememberedDates(String first, String last) {
+    return '$first – $last';
+  }
+
+  @override
+  String get statusButton => 'Estado';
+
+  @override
+  String get statusMarkMissing => 'Marcar como desaparecido';
+
+  @override
+  String get statusMissingHelp =>
+      'Di cuándo se vio por última vez. Si quieres, añade unas palabras sobre dónde. Por favor, no escribas una dirección.';
+
+  @override
+  String get statusMissingNoteLabel => 'Visto por última vez (opcional)';
+
+  @override
+  String get statusMissingNoteHint =>
+      'Por ejemplo, cerca del mercado el martes';
+
+  @override
+  String get statusMissingDate => 'Visto por última vez';
+
+  @override
+  String get statusMarkFound => '¡Apareció!';
+
+  @override
+  String get statusFoundHelp => 'Qué buena noticia. ¿Cuándo apareció?';
+
+  @override
+  String get statusFoundDate => 'Encontrado el';
+
+  @override
+  String get statusFoundNoteLabel => 'Una nota (opcional)';
+
+  @override
+  String statusCelebrationNamed(String name) {
+    return '¡$name apareció! ¡Bienvenido a casa!';
+  }
+
+  @override
+  String get statusCelebrationUnnamed =>
+      '¡Este gato apareció! ¡Bienvenido a casa!';
+
+  @override
+  String get statusCelebrationClose => 'Qué alegría';
+
+  @override
+  String get statusRemember => 'Recordar a este gato';
+
+  @override
+  String get statusRememberHelp =>
+      'Lo sentimos mucho. El registro sigue abierto y puedes seguir añadiendo cosas. ¿Cuándo murió este gato?';
+
+  @override
+  String get statusRememberDate => 'Fecha';
+
+  @override
+  String get statusRememberNoteLabel =>
+      'Unas palabras en su memoria (opcional)';
+
+  @override
+  String get statusBackToNormal => 'Volver a la normalidad';
+
+  @override
+  String get statusBackToNormalBody =>
+      'El gato se mostrará como siempre, sin estado. Sus fotos y encuentros se quedan.';
 }

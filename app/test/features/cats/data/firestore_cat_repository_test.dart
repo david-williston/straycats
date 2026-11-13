@@ -3,6 +3,7 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/data/firestore_cat_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
+import 'package:straycats/src/features/cats/domain/cat_status.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
 import 'package:straycats/src/features/cats/domain/encounter_details.dart';
 
@@ -203,5 +204,90 @@ void main() {
 
     expect((await docs('cats')).docs, hasLength(600));
     expect((await docs('encounters')).docs, hasLength(600));
+  });
+
+  group('status', () {
+    final since = DateTime(2026, 11, 10);
+
+    test('a cat with no status field is known', () async {
+      await repo.addCat(cat('1', 'Ciccio', [1000]));
+      final c = (await repo.watchCats().first).single;
+      expect(c.status, CatStatus.known);
+      expect(c.statusSince, isNull);
+      expect(c.statusNote, '');
+    });
+
+    test('a status round trips with its date and note', () async {
+      await repo.addCat(cat('1', 'Ninja', [1000]));
+      await repo.setStatus(
+        '1',
+        CatStatus.missing,
+        since: since,
+        note: ' near the market ',
+      );
+
+      final data = (await db.doc('users/u1/cats/1').get()).data()!;
+      expect(data['status'], 'missing');
+      expect(data['statusSince'], Timestamp.fromDate(since));
+      expect(data['statusNote'], 'near the market');
+      expect(data['name'], 'Ninja');
+      final c = (await repo.watchCats().first).single;
+      expect(c.status, CatStatus.missing);
+      expect(c.statusSince, since);
+      expect(c.statusNote, 'near the market');
+      expect(c.encounters, hasLength(1));
+    });
+
+    test('an empty note is not stored', () async {
+      await repo.addCat(cat('1', 'Ninja', [1000]));
+      await repo.setStatus('1', CatStatus.found, since: since);
+      final data = (await db.doc('users/u1/cats/1').get()).data()!;
+      expect(data.containsKey('statusNote'), isFalse);
+    });
+
+    test('status moves on and back to normal removes every field', () async {
+      await repo.addCat(cat('1', 'Ninja', [1000]));
+      await repo.setStatus('1', CatStatus.missing, since: since, note: 'a');
+      await repo.setStatus('1', CatStatus.found, since: since);
+      expect((await repo.watchCats().first).single.status, CatStatus.found);
+      await repo.setStatus('1', CatStatus.known);
+
+      final data = (await db.doc('users/u1/cats/1').get()).data()!;
+      expect(data.keys.toSet(), {'name', 'updatedAt'});
+    });
+
+    test('renaming keeps the status', () async {
+      await repo.addCat(cat('1', 'Ciccio', [1000]));
+      await repo.setStatus('1', CatStatus.remembered, since: since, note: 'x');
+      await repo.renameCat('1', 'Ninja');
+
+      final c = (await repo.watchCats().first).single;
+      expect(c.name, 'Ninja');
+      expect(c.status, CatStatus.remembered);
+      expect(c.statusNote, 'x');
+    });
+
+    test('importing again keeps a status set since', () async {
+      final cats = [
+        cat('1', 'Ciccio', [1000]),
+      ];
+      await repo.importCats(cats);
+      await repo.setStatus('1', CatStatus.missing, since: since);
+      await repo.importCats(cats);
+
+      expect((await repo.watchCats().first).single.status, CatStatus.missing);
+    });
+
+    test('a cat added with a status writes it', () async {
+      await repo.addCat(
+        cat('1', 'Saibo', [
+          1000,
+        ]).withStatus(CatStatus.remembered, since: since, note: 'x'),
+      );
+      expect(
+        (await repo.watchCats().first).single.status,
+        CatStatus.remembered,
+      );
+    });
   });
 }

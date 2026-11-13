@@ -17,6 +17,7 @@ import '../../share/presentation/share_card_page.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
+import 'cat_status_section.dart';
 import 'cat_tile.dart';
 import 'cats_controller.dart';
 import 'encounter_details_form.dart';
@@ -322,6 +323,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                     : (_) => Navigator.of(context).pop(),
               ),
             ),
+            CatStatusSection(cat: cat, readOnly: widget.readOnly),
             _seenAround(history, l10n, theme),
             ConstrainedBox(
               constraints: BoxConstraints(

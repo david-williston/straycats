@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart' show visibleForTesting;
 import '../../places/domain/coarse_area.dart';
 import '../../places/domain/place.dart';
 import '../domain/cat.dart';
+import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
 import '../domain/encounter_details.dart';
 import 'cat_repository.dart';
@@ -75,6 +76,9 @@ class FirestoreCatRepository implements CatRepository {
           id: doc.id,
           name: doc.data()['name'] as String? ?? '',
           encounters: byCat[doc.id] ?? const [],
+          status: CatStatus.fromStored(doc.data()['status'] as String?),
+          statusSince: (doc.data()['statusSince'] as Timestamp?)?.toDate(),
+          statusNote: doc.data()['statusNote'] as String? ?? '',
         ),
     ];
   }
@@ -85,8 +89,14 @@ class FirestoreCatRepository implements CatRepository {
     return Place(area: area, neighbourhood: data['neighbourhood'] as String?);
   }
 
-  Map<String, dynamic> _catData(String name) => {
-    'name': name,
+  Map<String, dynamic> _catData(Cat cat) => {
+    'name': cat.name,
+    if (cat.status != CatStatus.known) ...{
+      'status': cat.status.name,
+      if (cat.statusSince != null)
+        'statusSince': Timestamp.fromDate(cat.statusSince!),
+      if (cat.statusNote.isNotEmpty) 'statusNote': cat.statusNote,
+    },
     'updatedAt': FieldValue.serverTimestamp(),
   };
 
@@ -112,7 +122,7 @@ class FirestoreCatRepository implements CatRepository {
   @override
   Future<void> addCat(Cat cat) async {
     final batch = _db.batch();
-    batch.set(_cats.doc(cat.id), _catData(cat.name));
+    batch.set(_cats.doc(cat.id), _catData(cat));
     for (final e in cat.encounters) {
       final data = _encounterData(cat.id, e);
       assertCoarse(data);
@@ -138,14 +148,40 @@ class FirestoreCatRepository implements CatRepository {
 
   @override
   Future<void> renameCat(String catId, String name) =>
-      _cats.doc(catId).set(_catData(name));
+      _cats.doc(catId)
+      // Merged, so the cat's status stays.
+      .set({
+        'name': name,
+        'updatedAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+
+  /// An update, so the name and the encounters stay. A known cat has its
+  /// status fields deleted. A cat that does not exist makes it fail.
+  @override
+  Future<void> setStatus(
+    String catId,
+    CatStatus status, {
+    DateTime? since,
+    String note = '',
+  }) {
+    final known = status == CatStatus.known;
+    final trimmed = note.trim();
+    return _cats.doc(catId).update({
+      'status': known ? FieldValue.delete() : status.name,
+      'statusSince': known || since == null
+          ? FieldValue.delete()
+          : Timestamp.fromDate(since),
+      'statusNote': known || trimmed.isEmpty ? FieldValue.delete() : trimmed,
+      'updatedAt': FieldValue.serverTimestamp(),
+    });
+  }
 
   @override
   Future<void> importCats(List<Cat> cats) async {
     final writes =
         <(DocumentReference<Map<String, dynamic>>, Map<String, dynamic>)>[
           for (final cat in cats) ...[
-            (_cats.doc(cat.id), _catData(cat.name)),
+            (_cats.doc(cat.id), _catData(cat)),
             for (final e in cat.encounters)
               (_encounters.doc(e.id), _encounterData(cat.id, e)),
           ],
@@ -154,7 +190,8 @@ class FirestoreCatRepository implements CatRepository {
       final batch = _db.batch();
       for (final (ref, data) in writes.skip(i).take(_batchSize)) {
         if (ref.parent.id == 'encounters') assertCoarse(data);
-        batch.set(ref, data);
+        // Merged, so running the import again keeps any status since set.
+        batch.set(ref, data, SetOptions(merge: true));
       }
       await batch.commit();
     }

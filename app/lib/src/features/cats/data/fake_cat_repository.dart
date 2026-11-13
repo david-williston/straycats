@@ -1,13 +1,14 @@
 import 'dart:async';
 
 import '../domain/cat.dart';
+import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
 import 'cat_repository.dart';
 
 /// Keeps cats in memory, for tests. [watchCats] emits the current cats and
 /// again after each change, like Firestore's listener. The calls are
 /// recorded in [added], [addedEncounters], [updated], [deleted], [renamed]
-/// and [imported].
+/// [statusChanges] and [imported].
 class FakeCatRepository implements CatRepository {
   FakeCatRepository([List<Cat> cats = const []]) : cats = [...cats];
 
@@ -17,6 +18,7 @@ class FakeCatRepository implements CatRepository {
   final updated = <(String, Encounter)>[];
   final deleted = <String>[];
   final renamed = <(String, String)>[];
+  final statusChanges = <(String, CatStatus, DateTime?, String)>[];
   final imported = <Cat>[];
 
   /// When set, [watchCats] fails with it.
@@ -34,6 +36,7 @@ class FakeCatRepository implements CatRepository {
       updated.isNotEmpty ||
       deleted.isNotEmpty ||
       renamed.isNotEmpty ||
+      statusChanges.isNotEmpty ||
       imported.isNotEmpty;
 
   void _emit() {
@@ -115,6 +118,23 @@ class FakeCatRepository implements CatRepository {
   Future<void> renameCat(String catId, String name) async {
     renamed.add((catId, name));
     cats = [for (final c in cats) c.id == catId ? c.copyWith(name: name) : c];
+    _emit();
+  }
+
+  @override
+  Future<void> setStatus(
+    String catId,
+    CatStatus status, {
+    DateTime? since,
+    String note = '',
+  }) async {
+    statusChanges.add((catId, status, since, note));
+    cats = [
+      for (final c in cats)
+        c.id == catId
+            ? c.withStatus(status, since: since, note: note.trim())
+            : c,
+    ];
     _emit();
   }
 
