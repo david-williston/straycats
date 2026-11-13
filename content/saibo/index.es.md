@@ -1,7 +1,7 @@
 ---
 title: "Para Saibo"
 summary: "Este proyecto está dedicado a Saibo, 1 de agosto de 2010 – 16 de septiembre de 2026."
-updated: 2026-10-21
+updated: 2026-11-13
 cover:
   image: "cover.jpg"
   alt: "Saibo, un gato gris con blanco, entre el pasto y las plantas"
@@ -14,6 +14,8 @@ comments: false
 **Saibo** · 1 de agosto de 2010 – 16 de septiembre de 2026
 
 Este proyecto está dedicado a Saibo, mi gato gris con blanco.
+
+{{< photo src="into-the-light.jpg" alt="Saibo, un gato gris visto de espaldas, mirando una franja de luz de sol sobre un piso de madera" >}}
 
 Estuvo conmigo dieciséis años. Cuando vine a México, vino conmigo. Aquí en Puerto Escondido
 enfermó de cáncer de estómago, y el 16 de septiembre de 2026 murió.

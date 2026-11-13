@@ -1,7 +1,7 @@
 ---
 title: "For Saibo"
 summary: "This project is dedicated to Saibo, 1 August 2010 – 16 September 2026."
-updated: 2026-10-21
+updated: 2026-11-13
 cover:
   image: "cover.jpg"
   alt: "Saibo, a grey-and-white cat, in tall grass among the plants"
@@ -14,6 +14,8 @@ comments: false
 **Saibo** · 1 August 2010 – 16 September 2026
 
 This project is dedicated to Saibo, my grey-and-white cat.
+
+{{< photo src="into-the-light.jpg" alt="Saibo, a grey cat seen from behind, looking into a bright strip of sunlight across a wooden floor" >}}
 
 He was with me for sixteen years. When I came to Mexico, he came with me. Here in Puerto
 Escondido he fell ill with stomach cancer, and on 16 September 2026 he died.
