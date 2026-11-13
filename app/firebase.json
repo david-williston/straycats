@@ -1,0 +1,52 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": false
+    },
+    "singleProjectMode": false
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "straycats-love",
+          "appId": "1:844522920451:android:f4bdb9ae96321009e10c36",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "straycats-love",
+          "appId": "1:844522920451:ios:1fa47b93b4481376e10c36",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "straycats-love",
+          "configurations": {
+            "android": "1:844522920451:android:f4bdb9ae96321009e10c36",
+            "ios": "1:844522920451:ios:1fa47b93b4481376e10c36"
+          }
+        }
+      }
+    }
+  }
+}

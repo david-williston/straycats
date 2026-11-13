@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'cat_repository.dart';
+import 'cats_folder.dart';
 import 'device_photo_repository.dart';
 import 'image_picker_service.dart';
 
@@ -17,9 +17,6 @@ abstract class PhotoRepository {
 
   /// Deletes a photo taken by [takePhoto] that was not kept.
   Future<void> discard(File photo);
-
-  /// The file for an encounter's photo name.
-  File photoFile(String name);
 }
 
 @Riverpod(keepAlive: true)

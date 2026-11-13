@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "844522920451",
+    "project_id": "straycats-love",
+    "storage_bucket": "straycats-love.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844522920451:android:f4bdb9ae96321009e10c36",
+        "android_client_info": {
+          "package_name": "com.straycats.straycats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuARH0LLPsEYLIhoR2o31du2yj4Ui0ljo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

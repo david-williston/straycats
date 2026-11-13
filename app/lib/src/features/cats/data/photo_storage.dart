@@ -1,0 +1,59 @@
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../../data/firebase_providers.dart';
+import '../../auth/data/auth_repository.dart';
+
+part 'photo_storage.g.dart';
+
+/// The remote photos, `users/{uid}/photos/{photoId}.jpg`. Photos are private:
+/// they are read only through the owner-checked Storage API, never through a
+/// download URL.
+abstract class PhotoStorage {
+  Future<void> upload(String photoId, File file);
+
+  /// Saves the photo to [to]. False if there is no such photo.
+  Future<bool> download(String photoId, File to);
+}
+
+class FirebasePhotoStorage implements PhotoStorage {
+  /// [uid] is read at each call, so the uploader can exist before sign-in.
+  FirebasePhotoStorage(this._storage, this._uid);
+
+  final FirebaseStorage _storage;
+  final String? Function() _uid;
+
+  Reference _ref(String photoId) {
+    final uid = _uid();
+    if (uid == null) throw StateError('Not signed in');
+    return _storage.ref('users/$uid/photos/$photoId.jpg');
+  }
+
+  @override
+  Future<void> upload(String photoId, File file) async {
+    await _ref(photoId)
+        .putFile(file, SettableMetadata(contentType: 'image/jpeg'));
+  }
+
+  @override
+  Future<bool> download(String photoId, File to) async {
+    try {
+      await _ref(photoId).writeToFile(to);
+      return true;
+    } on FirebaseException catch (e) {
+      if (e.code == 'object-not-found') return false;
+      rethrow;
+    }
+  }
+}
+
+@Riverpod(keepAlive: true)
+PhotoStorage photoStorage(Ref ref) {
+  final auth = ref.watch(authRepositoryProvider);
+  return FirebasePhotoStorage(
+    ref.watch(firebaseStorageProvider),
+    () => auth.uid,
+  );
+}

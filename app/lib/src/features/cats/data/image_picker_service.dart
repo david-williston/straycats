@@ -12,7 +12,11 @@ abstract class ImagePickerService {
 class DeviceImagePickerService implements ImagePickerService {
   @override
   Future<String?> takePhoto() async {
-    final shot = await ImagePicker().pickImage(source: ImageSource.camera);
+    final shot = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+      maxWidth: 2048,
+      imageQuality: 85,
+    );
     return shot?.path;
   }
 }

@@ -13,7 +13,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appTitle => 'Stray Cats';
 
   @override
-  String get cantOpenCatsFolder => 'No se pudo abrir la carpeta de gatos.';
+  String get cantOpenCatsFolder => 'No se pudieron cargar tus gatos.';
 
   @override
   String get noCatsYet =>
@@ -75,4 +75,25 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get phoneLanguage => 'Idioma del teléfono';
+
+  @override
+  String get startupLoading => 'Preparando tus gatos…';
+
+  @override
+  String get firstLaunchNeedsInternet =>
+      'Conéctate a internet para configurar la app. Solo hace falta una vez.';
+
+  @override
+  String get importNeedsInternet =>
+      'Conéctate a internet para traer tus gatos.';
+
+  @override
+  String get importFailed =>
+      'No se pudieron leer tus gatos guardados, así que no se movió nada. Tus fotos siguen intactas.';
+
+  @override
+  String get startupFailed => 'Algo salió mal al iniciar la app.';
+
+  @override
+  String get retry => 'Reintentar';
 }

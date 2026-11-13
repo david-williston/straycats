@@ -1,7 +1,7 @@
 {
   "@@locale": "es",
   "appTitle": "Stray Cats",
-  "cantOpenCatsFolder": "No se pudo abrir la carpeta de gatos.",
+  "cantOpenCatsFolder": "No se pudieron cargar tus gatos.",
   "noCatsYet": "Aún no hay gatos. Toca la cámara para conocer a uno.",
   "meetACat": "Conocer a un gato",
   "noNameYet": "Aún sin nombre",
@@ -23,5 +23,17 @@
   "language": "Idioma",
   "@language": {"description": "Tooltip of the app bar button that opens the language choices, and title of that dialog."},
   "phoneLanguage": "Idioma del teléfono",
-  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."}
+  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."},
+  "startupLoading": "Preparando tus gatos…",
+  "@startupLoading": {"description": "Quiet text under the spinner while the app signs in and brings the cats over at start-up."},
+  "firstLaunchNeedsInternet": "Conéctate a internet para configurar la app. Solo hace falta una vez.",
+  "@firstLaunchNeedsInternet": {"description": "Shown at start-up when the very first launch has no connection and sign-in failed."},
+  "importNeedsInternet": "Conéctate a internet para traer tus gatos.",
+  "@importNeedsInternet": {"description": "Shown at start-up when moving the cats saved on this phone to the cloud did not finish for lack of a connection."},
+  "importFailed": "No se pudieron leer tus gatos guardados, así que no se movió nada. Tus fotos siguen intactas.",
+  "@importFailed": {"description": "Shown at start-up when the old cats file on the phone is damaged and the import stops."},
+  "startupFailed": "Algo salió mal al iniciar la app.",
+  "@startupFailed": {"description": "Shown at start-up for any other failure, with Retry."},
+  "retry": "Reintentar",
+  "@retry": {"description": "Button on the start-up message that tries again."}
 }

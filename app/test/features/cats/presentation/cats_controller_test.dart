@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/encounter_type.dart';
@@ -13,19 +14,23 @@ import '../../../helpers.dart';
 
 void main() {
   group('CatsController', () {
-    test('loads the cats from the repository', () async {
+    test('follows the cats from the repository', () async {
       final repo = FakeCatRepository([
         cat('1', 'Ciccio', [1000]),
       ]);
       final container = makeContainer(cats: repo);
+      final sub = container.listen(catsControllerProvider, (_, _) {});
 
       final cats = await container.read(catsControllerProvider.future);
-
       expect(cats.single.name, 'Ciccio');
+
+      await repo.addCat(cat('2', 'Saibo', [2000]));
+      await pumpEventQueue();
+      expect(sub.read().value!.map((c) => c.name), ['Ciccio', 'Saibo']);
     });
 
-    test('a failed load is an error, and nothing is saved', () async {
-      final repo = FakeCatRepository()..loadError = StateError('no folder');
+    test('a failed stream is an error, and nothing is written', () async {
+      final repo = FakeCatRepository()..watchError = StateError('no cats');
       final container = makeContainer(cats: repo);
       final sub = container.listen(catsControllerProvider, (_, _) {});
 
@@ -38,40 +43,40 @@ void main() {
           .rename('1', 'Ninja');
 
       expect(sub.read().hasError, isTrue);
-      expect(repo.saved, isNull);
+      expect(repo.wroteAnything, isFalse);
     });
 
-    test('rename changes the name and saves', () async {
+    test('rename changes the name through the repository', () async {
       final repo = FakeCatRepository([
         cat('1', 'Ciccio', [1000]),
         cat('2', '', [2000]),
       ]);
       final container = makeContainer(cats: repo);
+      final sub = container.listen(catsControllerProvider, (_, _) {});
       await container.read(catsControllerProvider.future);
 
       await container
           .read(catsControllerProvider.notifier)
           .rename('2', 'Ninja');
+      await pumpEventQueue();
 
-      expect(container.read(catsControllerProvider).value!.map((c) => c.name), [
-        'Ciccio',
-        'Ninja',
-      ]);
-      expect(repo.saved!.map((c) => c.name), ['Ciccio', 'Ninja']);
+      expect(repo.renamed, [('2', 'Ninja')]);
+      expect(sub.read().value!.map((c) => c.name), ['Ciccio', 'Ninja']);
     });
 
-    test('rename to the same name saves nothing', () async {
+    test('rename to the same name writes nothing', () async {
       final repo = FakeCatRepository([
         cat('1', 'Ciccio', [1000]),
       ]);
       final container = makeContainer(cats: repo);
+      container.listen(catsControllerProvider, (_, _) {});
       await container.read(catsControllerProvider.future);
 
       await container
           .read(catsControllerProvider.notifier)
           .rename('1', 'Ciccio');
 
-      expect(repo.saved, isNull);
+      expect(repo.wroteAnything, isFalse);
     });
 
     test('a sighting of an existing cat adds an encounter', () async {
@@ -79,7 +84,9 @@ void main() {
         cat('1', 'Ciccio', [1000]),
         cat('2', 'Saibo', [2000]),
       ]);
-      final container = makeContainer(cats: repo);
+      final uploader = FakePhotoUploader();
+      final container = makeContainer(cats: repo, uploader: uploader);
+      container.listen(catsControllerProvider, (_, _) {});
       await container.read(catsControllerProvider.future);
 
       await container
@@ -89,23 +96,23 @@ void main() {
             const Sighting(catId: '1', type: EncounterType.fed),
           );
 
-      final ciccio = repo.saved!.firstWhere((c) => c.id == '1');
-      expect(ciccio.encounters, hasLength(2));
-      expect(ciccio.latest!.photo, '9000.jpg');
-      expect(ciccio.latest!.type, EncounterType.fed);
-      expect(ciccio.latest!.time, DateTime.fromMillisecondsSinceEpoch(9000));
-      expect(
-        repo.saved!.firstWhere((c) => c.id == '2').encounters,
-        hasLength(1),
-      );
-      expect(container.read(catsControllerProvider).value, repo.saved);
+      final (catId, encounter) = repo.addedEncounters.single;
+      expect(catId, '1');
+      expect(encounter.id, '9000');
+      expect(encounter.photoId, '9000');
+      expect(encounter.type, EncounterType.fed);
+      expect(encounter.time, DateTime.fromMillisecondsSinceEpoch(9000));
+      expect(repo.added, isEmpty);
+      expect(uploader.enqueued, ['9000']);
     });
 
     test('a sighting without a cat creates one with its name', () async {
       final repo = FakeCatRepository([
         cat('1', 'Ciccio', [1000]),
       ]);
-      final container = makeContainer(cats: repo);
+      final uploader = FakePhotoUploader();
+      final container = makeContainer(cats: repo, uploader: uploader);
+      container.listen(catsControllerProvider, (_, _) {});
       await container.read(catsControllerProvider.future);
 
       await container
@@ -115,11 +122,12 @@ void main() {
             const Sighting(name: 'Ninja'),
           );
 
-      expect(repo.saved, hasLength(2));
-      final ninja = repo.saved!.firstWhere((c) => c.name == 'Ninja');
+      final ninja = repo.added.single;
+      expect(ninja.name, 'Ninja');
       expect(ninja.id, '9000');
-      expect(ninja.encounters.single.photo, '9000.jpg');
+      expect(ninja.encounters.single.photoId, '9000');
       expect(ninja.encounters.single.type, isNull);
+      expect(uploader.enqueued, ['9000']);
     });
   });
 

@@ -24,7 +24,4 @@ class DevicePhotoRepository implements PhotoRepository {
   Future<void> discard(File photo) async {
     if (photo.existsSync()) await photo.delete();
   }
-
-  @override
-  File photoFile(String name) => _folder.file(name);
 }

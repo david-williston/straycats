@@ -15,7 +15,4 @@ class FakePhotoRepository implements PhotoRepository {
 
   @override
   Future<void> discard(File photo) async => discarded.add(photo);
-
-  @override
-  File photoFile(String name) => File('/cats/$name');
 }

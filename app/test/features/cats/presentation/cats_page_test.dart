@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/encounter_type.dart';
@@ -22,13 +23,12 @@ void main() {
   });
 
   testWidgets('says so when the cats cannot be loaded', (tester) async {
-    final repo = FakeCatRepository()..loadError = StateError('no folder');
+    final repo = FakeCatRepository()..watchError = StateError('no cats');
     await pumpApp(tester, cats: repo);
     await tester.pump();
-    await tester.pump();
 
-    expect(find.text('Could not open the cats folder.'), findsOneWidget);
-    expect(repo.saved, isNull);
+    expect(find.text('Could not load your cats.'), findsOneWidget);
+    expect(repo.wroteAnything, isFalse);
   });
 
   testWidgets('shows one tile per cat and saves a new name', (tester) async {
@@ -50,7 +50,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Ninja'), findsOneWidget);
-    expect(repo.saved!.map((c) => c.name), ['Ciccio', 'Ninja']);
+    expect(repo.renamed, [('2', 'Ninja')]);
   });
 
   testWidgets('a new photo of an existing cat adds an encounter', (
@@ -61,7 +61,8 @@ void main() {
       cat('2', 'Saibo', [2000]),
     ]);
     final photos = FakePhotoRepository(nextPhoto: File('/cats/9000.jpg'));
-    await pumpApp(tester, cats: repo, photos: photos);
+    final uploader = FakePhotoUploader();
+    await pumpApp(tester, cats: repo, photos: photos, uploader: uploader);
     await tester.pump();
 
     await tester.tap(find.byTooltip('Meet a cat'));
@@ -82,10 +83,14 @@ void main() {
 
     expect(find.text('Stray Cats'), findsOneWidget);
     expect(find.byType(CatTile), findsNWidgets(2));
-    final ciccio = repo.saved!.firstWhere((c) => c.id == '1');
+    expect(repo.added, isEmpty);
+    final (catId, encounter) = repo.addedEncounters.single;
+    expect(catId, '1');
+    final ciccio = repo.cats.firstWhere((c) => c.id == '1');
     expect(ciccio.encounters, hasLength(2));
-    expect(ciccio.latest!.photo, '9000.jpg');
-    expect(ciccio.latest!.type, EncounterType.fed);
+    expect(ciccio.latest!.photoId, '9000');
+    expect(encounter.type, EncounterType.fed);
+    expect(uploader.enqueued, ['9000']);
     expect(photos.discarded, isEmpty);
   });
 
@@ -106,8 +111,10 @@ void main() {
 
     expect(find.byType(CatTile), findsNWidgets(2));
     expect(find.text('Ninja'), findsOneWidget);
-    final ninja = repo.saved!.firstWhere((c) => c.name == 'Ninja');
-    expect(ninja.encounters.single.photo, '9000.jpg');
+    final ninja = repo.added.single;
+    expect(ninja.name, 'Ninja');
+    expect(ninja.id, '9000');
+    expect(ninja.encounters.single.photoId, '9000');
     expect(ninja.encounters.single.type, isNull);
   });
 
@@ -130,7 +137,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(photos.discarded.single.path, '/cats/9000.jpg');
-    expect(repo.saved, isNull);
+    expect(repo.wroteAnything, isFalse);
   });
 
   testWidgets('a cancelled camera changes nothing', (tester) async {
@@ -144,7 +151,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Who is this?'), findsNothing);
-    expect(repo.saved, isNull);
+    expect(repo.wroteAnything, isFalse);
   });
 
   testWidgets('follows the language: Spanish', (tester) async {

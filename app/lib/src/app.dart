@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/cats/presentation/cats_page.dart';
 import 'features/settings/presentation/language_controller.dart';
+import 'features/startup/presentation/app_startup_widget.dart';
 import 'localization/app_localizations.dart';
 
 class StrayCatsApp extends ConsumerWidget {
@@ -22,7 +22,7 @@ class StrayCatsApp extends ConsumerWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
       ),
-      home: const CatsPage(),
+      home: const AppStartupWidget(),
     );
   }
 }

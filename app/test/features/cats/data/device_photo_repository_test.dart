@@ -34,7 +34,6 @@ void main() {
     expect(kept!.parent.path, dir.path);
     expect(RegExp(r'^\d+\.jpg$').hasMatch(kept.uri.pathSegments.last), isTrue);
     expect(kept.readAsBytesSync(), [7]);
-    expect(photos.photoFile('5.jpg').path, '${dir.path}/5.jpg');
   });
 
   test('a cancelled camera gives no photo', () async {

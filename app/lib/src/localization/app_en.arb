@@ -2,7 +2,7 @@
   "@@locale": "en",
   "appTitle": "Stray Cats",
   "@appTitle": {"description": "The app name, shown in the title bar of the home screen."},
-  "cantOpenCatsFolder": "Could not open the cats folder.",
+  "cantOpenCatsFolder": "Could not load your cats.",
   "@cantOpenCatsFolder": {"description": "Shown on the home screen when the saved cats cannot be loaded."},
   "noCatsYet": "No cats yet. Tap the camera to meet one.",
   "@noCatsYet": {"description": "Empty state of the home screen."},
@@ -43,5 +43,17 @@
   "language": "Language",
   "@language": {"description": "Tooltip of the app bar button that opens the language choices, and title of that dialog."},
   "phoneLanguage": "Phone's language",
-  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."}
+  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."},
+  "startupLoading": "Getting your cats ready…",
+  "@startupLoading": {"description": "Quiet text under the spinner while the app signs in and brings the cats over at start-up."},
+  "firstLaunchNeedsInternet": "Connect to the internet to set up the app. This is needed only once.",
+  "@firstLaunchNeedsInternet": {"description": "Shown at start-up when the very first launch has no connection and sign-in failed."},
+  "importNeedsInternet": "Connect to the internet to bring your cats over.",
+  "@importNeedsInternet": {"description": "Shown at start-up when moving the cats saved on this phone to the cloud did not finish for lack of a connection."},
+  "importFailed": "Your saved cats could not be read, so nothing was moved. Your photos are untouched.",
+  "@importFailed": {"description": "Shown at start-up when the old cats file on the phone is damaged and the import stops."},
+  "startupFailed": "Something went wrong starting the app.",
+  "@startupFailed": {"description": "Shown at start-up for any other failure, with Retry."},
+  "retry": "Retry",
+  "@retry": {"description": "Button on the start-up message that tries again."}
 }

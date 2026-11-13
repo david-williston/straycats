@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
 import '../../../localization/encounter_labels.dart';
-import '../data/photo_repository.dart';
+import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import 'cats_controller.dart';
 
@@ -37,7 +37,6 @@ class _CatCardState extends ConsumerState<CatCard> {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toString();
-    final photos = ref.watch(photoRepositoryProvider);
     return PopScope(
       onPopInvokedWithResult: (_, _) => ref
           .read(catsControllerProvider.notifier)
@@ -51,7 +50,9 @@ class _CatCardState extends ConsumerState<CatCard> {
                 child: CatPhoto(
                   _history.isEmpty
                       ? null
-                      : photos.photoFile(_history[_shown].photo),
+                      : ref
+                            .watch(photoFileProvider(_history[_shown].photoId))
+                            .value,
                   fit: BoxFit.contain,
                 ),
               ),
@@ -98,7 +99,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                               ),
                             ),
                             child: CatPhoto(
-                              photos.photoFile(e.photo),
+                              ref.watch(photoFileProvider(e.photoId)).value,
                               cacheWidth: 200,
                             ),
                           ),

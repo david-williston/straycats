@@ -107,7 +107,7 @@ abstract class AppLocalizations {
   /// Shown on the home screen when the saved cats cannot be loaded.
   ///
   /// In en, this message translates to:
-  /// **'Could not open the cats folder.'**
+  /// **'Could not load your cats.'**
   String get cantOpenCatsFolder;
 
   /// Empty state of the home screen.
@@ -229,6 +229,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Phone\'s language'**
   String get phoneLanguage;
+
+  /// Quiet text under the spinner while the app signs in and brings the cats over at start-up.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting your cats ready…'**
+  String get startupLoading;
+
+  /// Shown at start-up when the very first launch has no connection and sign-in failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to the internet to set up the app. This is needed only once.'**
+  String get firstLaunchNeedsInternet;
+
+  /// Shown at start-up when moving the cats saved on this phone to the cloud did not finish for lack of a connection.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to the internet to bring your cats over.'**
+  String get importNeedsInternet;
+
+  /// Shown at start-up when the old cats file on the phone is damaged and the import stops.
+  ///
+  /// In en, this message translates to:
+  /// **'Your saved cats could not be read, so nothing was moved. Your photos are untouched.'**
+  String get importFailed;
+
+  /// Shown at start-up for any other failure, with Retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong starting the app.'**
+  String get startupFailed;
+
+  /// Button on the start-up message that tries again.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate

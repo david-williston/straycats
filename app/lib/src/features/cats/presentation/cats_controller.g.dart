@@ -8,24 +8,30 @@ part of 'cats_controller.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// Every cat, loaded once; the screens show it and change it through here.
+/// Every cat, kept up to date by the repository's listener; the screens show
+/// it and change it through here.
 ///
-/// A failed load is an error state and nothing is saved after it, so a
-/// failed load can never overwrite the stored cats.
+/// Writes are not awaited: Firestore applies them locally at once (the
+/// listener shows them) and syncs when it can. A failure is logged, since it
+/// means a rules or app bug (`permission-denied`), not a missing connection.
 
 @ProviderFor(CatsController)
 final catsControllerProvider = CatsControllerProvider._();
 
-/// Every cat, loaded once; the screens show it and change it through here.
+/// Every cat, kept up to date by the repository's listener; the screens show
+/// it and change it through here.
 ///
-/// A failed load is an error state and nothing is saved after it, so a
-/// failed load can never overwrite the stored cats.
+/// Writes are not awaited: Firestore applies them locally at once (the
+/// listener shows them) and syncs when it can. A failure is logged, since it
+/// means a rules or app bug (`permission-denied`), not a missing connection.
 final class CatsControllerProvider
-    extends $AsyncNotifierProvider<CatsController, List<Cat>> {
-  /// Every cat, loaded once; the screens show it and change it through here.
+    extends $StreamNotifierProvider<CatsController, List<Cat>> {
+  /// Every cat, kept up to date by the repository's listener; the screens show
+  /// it and change it through here.
   ///
-  /// A failed load is an error state and nothing is saved after it, so a
-  /// failed load can never overwrite the stored cats.
+  /// Writes are not awaited: Firestore applies them locally at once (the
+  /// listener shows them) and syncs when it can. A failure is logged, since it
+  /// means a rules or app bug (`permission-denied`), not a missing connection.
   CatsControllerProvider._()
     : super(
         from: null,
@@ -45,15 +51,17 @@ final class CatsControllerProvider
   CatsController create() => CatsController();
 }
 
-String _$catsControllerHash() => r'b068bac4391d7d771ae80a5f87cc5ff4b7191cdf';
+String _$catsControllerHash() => r'c4c4e0f3573b36749e4cb8fce49966a514287f0f';
 
-/// Every cat, loaded once; the screens show it and change it through here.
+/// Every cat, kept up to date by the repository's listener; the screens show
+/// it and change it through here.
 ///
-/// A failed load is an error state and nothing is saved after it, so a
-/// failed load can never overwrite the stored cats.
+/// Writes are not awaited: Firestore applies them locally at once (the
+/// listener shows them) and syncs when it can. A failure is logged, since it
+/// means a rules or app bug (`permission-denied`), not a missing connection.
 
-abstract class _$CatsController extends $AsyncNotifier<List<Cat>> {
-  FutureOr<List<Cat>> build();
+abstract class _$CatsController extends $StreamNotifier<List<Cat>> {
+  Stream<List<Cat>> build();
   @$mustCallSuper
   @override
   WhenComplete runBuild() {

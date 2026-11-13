@@ -1,12 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'firebase_options.dart';
 import 'src/app.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
-    // A failed load shows "Could not open the cats folder" at once, rather
-    // than being retried behind a spinner.
+    // A failed start shows its message with Retry at once, rather than being
+    // retried behind a spinner.
     ProviderScope(retry: (_, _) => null, child: const StrayCatsApp()),
   );
 }
