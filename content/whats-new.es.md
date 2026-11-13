@@ -12,6 +12,18 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026 (más noche): La historia de un gato, y quién podría ser
+
+*Versión v2026.11.13.3*
+
+- **En la app:** cuando conoces a un gato en un lugar donde ya conociste a uno, la app pregunta
+  "Podría ser Ninja. ¿Es este?", y tú siempre decides. La historia de un gato ahora puede guardar
+  los grandes momentos de su vida: nació, desapareció, apareció, fue esterilizado, falleció, cada
+  uno con una fecha tan aproximada como la sepas ("alrededor de 2019"). Si dos entradas no
+  coinciden, como dos fechas distintas para la misma muerte, la app lo señala con cuidado y deja
+  que las personas lo resuelvan; nunca decide quién tiene la razón. También puedes cerrar sesión y
+  cambiar de cuenta. Mira la foto nueva en [La app, en construcción](/es/app/).
+
 ## 13 de noviembre de 2026 (noche): Fotos que se abren, y tarjetas de gato para compartir
 
 *Versión v2026.11.13.2*

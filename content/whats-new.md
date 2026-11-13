@@ -11,6 +11,18 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026 (night): A cat's story, and who it might be
+
+*Version v2026.11.13.3*
+
+- **In the app:** when you meet a cat in a place where you've met one before, the app asks
+  "This might be Ninja. Is it?", and you always decide. A cat's story can now hold the big
+  moments of its life: born, went missing, found, sterilised, passed away, each with a date as
+  rough as you know it ("around 2019"). If two entries disagree, like two different dates for
+  the same death, the app gently points it out and leaves it to people to sort out; it never
+  decides who's right. You can also sign out and switch accounts. See the new photo in
+  [The App, Under Construction](/app/).
+
 ## November 13, 2026 (evening): Photos you can open, and cat cards to share
 
 *Version v2026.11.13.2*
