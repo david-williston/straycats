@@ -2,7 +2,7 @@
 title: "Datos abiertos y tecnología"
 slug: "datos-abiertos-y-tecnologia"
 date: 2026-10-03
-updated: 2026-11-07
+updated: 2026-11-13
 weight: 700
 tags: ["codigo-abierto", "tecnologia", "datos"]
 summary: "Ideas sobre cómo podría construirse y alojarse la app, y cómo mantenerla como proyecto sin fines de lucro."
@@ -34,6 +34,10 @@ código](/posts/all-talk-no-code/), una primera app muy sencilla está
 - **Tarjetas que viajan.** La tarjeta de un gato debería poder mandarse fácilmente por
   mensaje, y verse bien para quien todavía no tiene la app.
 - **Varios idiomas desde el principio,** empezando por inglés y español.
+
+## Lo que hace hoy la primera versión
+
+La app habla inglés y español, y puedes entrar con Google. Los gatos de cada persona se guardan en línea, de forma privada, con reglas que dejan fuera a los demás. El dueño del proyecto tiene una vista de solo lectura de los registros de todos, para sacar adelante el proyecto. Las fotos nunca son públicas. Su código es abierto. {{< app-link >}}
 
 ## Preguntas abiertas
 

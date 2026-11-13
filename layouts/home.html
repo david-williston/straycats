@@ -37,6 +37,9 @@
     {{- end }}{{ end }}
   </section>
 
+  {{- /* 1b. The app being built: newest progress photo, linking to /app/ */}}
+  {{- partial "app-progress.html" . }}
+
   {{- /* 2. Who it's for */}}
   <section class="home-section" aria-labelledby="home-who">
     <h2 id="home-who">{{ i18n "home_who_title" }}</h2>
@@ -76,7 +79,7 @@
   {{- /* 4. Where things stand: honest momentum, no numbers */}}
   <section class="home-section" aria-labelledby="home-now">
     <h2 id="home-now">{{ i18n "home_now_title" }}</h2>
-    <p class="home-section-lede">{{ i18n "home_now_lede" (dict "Why" (site.GetPage "/posts/all-talk-no-code").RelPermalink) | markdownify }}</p>
+    <p class="home-section-lede">{{ i18n "home_now_lede" (dict "Why" (site.GetPage "/posts/all-talk-no-code").RelPermalink "App" (site.GetPage "/app").RelPermalink) | markdownify }}</p>
     <ul class="home-now" role="list">
       {{- $items := slice
         (dict "key" "notebook" "links" (slice (dict "url" $posts.RelPermalink "label" "home_now_notebook_link")))

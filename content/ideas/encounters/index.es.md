@@ -2,7 +2,7 @@
 title: "Encuentros: cada encuentro suma a la historia"
 slug: "encuentros"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 300
 tags: ["encuentros", "conceptos"]
 summary: "Cada vez que alguien conoce a un gato, aporta un poco a su historia compartida."
@@ -37,6 +37,10 @@ empezar. Todo lo demás es opcional y se puede agregar con uno o dos toques:
 
 El lugar se registra a nivel de colonia o barrio, nunca el punto exacto (ve
 [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/)).
+
+Esta parte ya existe en la primera versión de la app: puedes registrar qué estaba haciendo el gato, cómo se veía, cómo lo ayudaste y una nota tuya, y volver después a editar o borrar cualquiera de esos datos.
+
+{{< app-link >}}
 
 ## De la cuna a la tumba
 

@@ -1,0 +1,30 @@
+{{- /* "The app is being built" block: the newest screenshot from the app progress page bundle
+  (content/app/NNNN-YYYY-MM-DD-<commit>-<description>.jpg, highest number = newest), linking to
+  the progress page. Adding a screenshot to content/app/ updates it automatically.
+  Text is in i18n/ (app_progress_*). Used by layouts/home.html. */ -}}
+{{- $app := site.GetPage "/app" }}
+{{- with $app }}
+{{- $shots := slice }}
+{{- range .Resources.ByType "image" }}
+  {{- if findRE `^\d{4}-\d{4}-\d{2}-\d{2}-.+\.jpg$` (path.Base .Name) }}{{ $shots = $shots | append . }}{{ end }}
+{{- end }}
+{{- with index (sort $shots "Name" "desc") 0 }}
+  {{- $name := path.Base .Name }}
+  {{- $number := strings.TrimLeft "0" (substr $name 0 4) | default "0" }}
+  {{- $date := time.AsTime (substr $name 5 10) | time.Format "2 Jan 2006" }}
+  {{- $img := .Resize "560x webp q80" }}
+  {{- $arrow := `<span aria-hidden="true">&nbsp;→</span>` | safeHTML }}
+  <section class="app-progress" aria-labelledby="app-progress-title">
+    <div class="app-progress-text">
+      <p class="app-progress-eyebrow">{{ i18n "app_progress_eyebrow" }}</p>
+      <h2 id="app-progress-title">{{ i18n "app_progress_title" }}</h2>
+      <p>{{ i18n "app_progress_text" }}</p>
+      <a class="home-button" href="{{ $app.RelPermalink }}">{{ i18n "app_progress_button" }}{{ $arrow }}</a>
+    </div>
+    <figure class="app-progress-shot">
+      <a href="{{ $app.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ i18n "app_screen_alt" (dict "Number" $number "Date" $date) }}" loading="lazy"></a>
+      <figcaption>{{ i18n "app_progress_newest" (dict "Date" $date) }}</figcaption>
+    </figure>
+  </section>
+{{- end }}
+{{- end }}

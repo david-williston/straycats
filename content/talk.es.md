@@ -6,7 +6,7 @@ ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-10-30
+updated: 2026-11-13
 ---
 
 Las ideas y las historias salen mejor conversando. Si cuidas a un gato, sea tuyo o no, has adoptado a uno o has tenido que dar al tuyo, o has
@@ -17,6 +17,8 @@ me encantaría platicar contigo.
 español desde [Cómo ayudar](/involve/).
 
 {{< book-a-chat >}}
+
+¿Quieres ver de qué platicaríamos? Una primera app se está construyendo a la vista de todos. {{< app-link >}}
 
 ## Cómo es una conversación
 

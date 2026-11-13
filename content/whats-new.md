@@ -11,6 +11,24 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026: The app gets a front-page spot
+
+*Version v2026.11.13*
+
+- **New:** the home page now has a block showing the newest photo of the app being built, with a
+  button to the progress page. A few ideas pages also link to it, wherever the app already does
+  what they describe.
+- **Updated:** the home page no longer says there's no app or code: an early app is being built
+  in the open, and its code is public. [Privacy & Animal Safety](/ideas/privacy-and-safety/) and
+  [Open Data & Tech Stack](/ideas/open-data-and-tech/) now say what the app does today.
+- **In the app:** it speaks English and Spanish, with a language picker. Your cats are kept
+  online, private to you, and photos are never public. You can sign in with Google. For each
+  meeting you can record what the cat was doing, how it looked, how you helped and a note, and
+  edit or delete it later. The project owner can look at everyone's records, read-only, to run
+  the project. It's now called StrayCats, like this site. Each person keeps their own record of a
+  cat under their own name; nothing is merged. See the new photos in
+  [The App, Under Construction](/app/).
+
 ## November 7, 2026: The app, under construction
 
 *Version v2026.11.07.1*

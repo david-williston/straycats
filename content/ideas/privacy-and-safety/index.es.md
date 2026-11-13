@@ -2,7 +2,7 @@
 title: "Privacidad y seguridad de los animales"
 slug: "privacidad-y-seguridad"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 600
 tags: ["privacidad", "seguridad", "principios"]
 summary: "Los datos de ubicación de animales vulnerables pueden usarse mal. ¿Cómo protegerlos?"
@@ -31,6 +31,10 @@ intencional. La conciencia también es parte de la respuesta (ve
 - **Roles de confianza**: rescatistas y cuidadores verificados ven los datos precisos.
 - **Publicación con retraso**: los avistamientos se hacen públicos después de un tiempo.
 - **Datos personales mínimos**: recopilar lo menos posible sobre los usuarios.
+
+**En la app hasta ahora:** tus registros de los gatos que conoces son privados, solo tuyos. El dueño del proyecto puede ver los registros de todas las personas, solo para sacar adelante el proyecto. Las fotos nunca se hacen públicas.
+
+{{< app-link >}}
 
 ## Celebrar a los gatos sin exponerlos
 

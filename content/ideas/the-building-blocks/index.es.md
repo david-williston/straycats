@@ -2,7 +2,7 @@
 title: "Los elementos básicos"
 slug: "los-elementos-basicos"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 100
 tags: ["conceptos", "modelo"]
 summary: "Doce conceptos que el sistema tendrá que entender, mucho antes de que alguien escriba código."
@@ -30,6 +30,8 @@ los conceptos que aparecen una y otra vez:
 | **Historia** | El registro creciente de todo lo anterior, del nacimiento a la muerte (con un obituario), que le pertenece al gato. |
 | **Relación** | Gato ↔ persona, gato ↔ lugar, gato ↔ gato (madres, camadas, rivales, compañeros). |
 | **Confianza** | Qué tan seguros estamos de una afirmación, y de la persona que la hace. |
+
+La primera versión de la app ya usa algunas de estas piezas: gatos, encuentros, tarjetas y la historia que cada persona lleva de un gato. {{< app-link >}}
 
 ## Principios hasta ahora
 

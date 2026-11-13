@@ -1,7 +1,7 @@
 ---
 title: "Encounters: Every Meeting Adds to the Story"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 300
 tags: ["encounters", "concepts"]
 summary: "Each time someone meets a cat, they add a little to its shared history."
@@ -36,6 +36,10 @@ else is optional and can be added in a tap or two:
 
 The place is recorded at the level of the neighbourhood, never the exact spot (see
 [Privacy & Animal Safety](/ideas/privacy-and-safety/)).
+
+This part already exists in the first version of the app: you can record what the cat was doing, how it looked, how you helped and a note of your own, and come back later to edit or delete any of it.
+
+{{< app-link >}}
 
 ## From cradle to grave
 

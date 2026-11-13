@@ -1,7 +1,7 @@
 ---
 title: "The Building Blocks"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 100
 tags: ["concepts", "model"]
 summary: "Twelve concepts the system will need to understand, long before anyone writes code."
@@ -29,6 +29,8 @@ concepts that keep coming up:
 | **History** | The growing record of everything above, from birth to death (with an obituary), which belongs to the cat. |
 | **Relationship** | Cat ↔ person, cat ↔ place, cat ↔ cat (mothers, litters, rivals, companions). |
 | **Trust** | How confident we are in a claim, and in the person making it. |
+
+The first version of the app already uses a few of these: cats, meetings, cards and each person's own history of a cat. {{< app-link >}}
 
 ## Principles so far
 

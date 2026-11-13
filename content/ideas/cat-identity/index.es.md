@@ -2,7 +2,7 @@
 title: "La identidad del gato y sus muchos nombres"
 slug: "identidad-del-gato"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 200
 tags: ["identidad", "modelo", "conceptos"]
 summary: "¿Cómo se representa a un gato que tiene tres nombres, dos casas y ningún dueño claro?"
@@ -24,6 +24,8 @@ dueño. Las afirmaciones pueden contradecirse, y está bien.
 Con el tiempo, el sistema podría notar que dos registros probablemente describen **el mismo
 gato**: fotos parecidas, el mismo patrón de pelaje, territorios que se cruzan, la misma oreja
 con muesca. Podría sugerir unirlos, y las personas confirmarían o rechazarían la coincidencia.
+
+*La primera versión de la app todavía no hace nada de esto: cada persona guarda su propio registro de un gato, con su propio nombre, y el sistema nunca une gatos ni nombres.* {{< app-link >}}
 
 Cosas que podrían ayudar a reconocer a un individuo:
 

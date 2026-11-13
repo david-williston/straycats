@@ -1,7 +1,7 @@
 ---
 title: "Open Data & Tech Stack"
 date: 2026-10-03
-updated: 2026-11-07
+updated: 2026-11-13
 weight: 700
 tags: ["open-source", "tech", "data"]
 summary: "Thoughts on how the app could be built, hosted and kept sustainable as a non-profit."
@@ -30,6 +30,10 @@ first, very simple app is [under construction](/app/). These are the constraints
 - **Cards that travel.** A cat's card should be easy to send in a message, and open nicely
   for someone who doesn't have the app yet.
 - **Many languages from the start,** beginning with English and Spanish.
+
+## What the first version does today
+
+The app speaks English and Spanish, and you can sign in with Google. Each person's cats are stored online, private to them, with rules that keep other people out. The project owner has a read-only view of everyone's records, to run the project. Photos are never public. Its code is open. {{< app-link >}}
 
 ## Open questions
 

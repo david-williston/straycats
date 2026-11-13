@@ -1,0 +1,5 @@
+{{- /* A small "see it being built" aside linking to the app progress page. Text is in i18n/
+  (app_link_text). Usage: {{< app-link >}} */ -}}
+{{- with site.GetPage "/app" -}}
+<p class="app-link"><a href="{{ .RelPermalink }}">{{ i18n "app_link_text" }}<span aria-hidden="true">&nbsp;→</span></a></p>
+{{- end -}}

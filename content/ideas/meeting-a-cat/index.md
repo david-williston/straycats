@@ -5,7 +5,7 @@ weight: 150
 tags: ["meeting", "encounters", "concepts"]
 summary: "Meeting a cat should take one photo and feel like a small gift. But the gift is for the cat: every meeting adds to its story and helps the people who look after it."
 question: "What would make you stop and record a cat you meet, and what should its card never show?"
-updated: 2026-10-30
+updated: 2026-11-13
 cover:
   image: "cover.jpg"
   alt: "Ninja, a pale orange-and-white cat, standing on a garden path, with Ciccio, a black cat, lying behind and looking at the camera"
@@ -30,6 +30,10 @@ will ever be, so StrayCats should start there:
 
 You can start with just a nickname: no email, no password. And every card starts from a real
 photo of a real cat that someone actually met.
+
+The first version of the app already does the first steps: you meet a cat, give it your own name, and see its card.
+
+{{< app-link >}}
 
 ## Cats you've met
 

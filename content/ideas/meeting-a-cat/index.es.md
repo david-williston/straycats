@@ -6,7 +6,7 @@ weight: 150
 tags: ["conocer", "encuentros", "conceptos"]
 summary: "Conocer a un gato debería tomar una foto y sentirse como un pequeño regalo. Pero el regalo es para el gato: cada encuentro suma a su historia y ayuda a quienes lo cuidan."
 question: "¿Qué haría que te detuvieras a registrar a un gato que conoces, y qué nunca debería mostrar su tarjeta?"
-updated: 2026-10-30
+updated: 2026-11-13
 cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja claro con blanco, de pie en un camino del jardín, con Ciccio, una gata negra, echada detrás y mirando a la cámara"
@@ -31,6 +31,10 @@ fácil que podría existir, así que StrayCats debería empezar ahí:
 
 Puedes empezar solo con un apodo: sin correo y sin contraseña. Y cada tarjeta empieza con una
 foto real de un gato real que alguien conoció de verdad.
+
+La primera versión de la app ya hace los primeros pasos: conoces a un gato, le pones tu propio nombre y ves su tarjeta.
+
+{{< app-link >}}
 
 ## Los gatos que has conocido
 

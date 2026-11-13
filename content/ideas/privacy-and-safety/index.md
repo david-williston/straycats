@@ -1,7 +1,7 @@
 ---
 title: "Privacy & Animal Safety"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 600
 tags: ["privacy", "safety", "principles"]
 summary: "Location data about vulnerable animals can be misused. How do we protect them?"
@@ -28,6 +28,10 @@ eat would make the deliberate kind easier. Awareness is part of the answer too (
 - **Trusted roles** — verified rescuers/caretakers see precise data.
 - **Delayed publishing** — sightings appear publicly after a delay.
 - **Minimal personal data** — collect as little about users as possible.
+
+**In the app so far:** your records of the cats you meet are private to you. The project owner can see everyone's records, only to run the project. Photos are never made public.
+
+{{< app-link >}}
 
 ## Celebrate cats without exposing them
 

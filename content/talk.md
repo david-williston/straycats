@@ -5,7 +5,7 @@ ShowToc: false
 ShowReadingTime: false
 ShowPostNavLinks: false
 comments: false
-updated: 2026-10-30
+updated: 2026-11-13
 ---
 
 Ideas and stories come out best in conversation. If you care for a cat, yours or not, have
@@ -13,6 +13,8 @@ adopted one or had to give one up, have met a cat with too many names, or simply
 love to talk with you.
 
 {{< book-a-chat >}}
+
+Want to see what you'd be talking about? A first app is being built in the open. {{< app-link >}}
 
 ## What a chat is like
 

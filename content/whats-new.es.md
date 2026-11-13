@@ -12,6 +12,25 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026: La app llega a la portada
+
+*Versión v2026.11.13*
+
+- **Nuevo:** la página de inicio ahora tiene un bloque con la foto más reciente de la app en
+  construcción, con un botón hacia la página de avances. Algunas páginas de ideas también la
+  enlazan, donde la app ya hace lo que describen.
+- **Actualizado:** la página de inicio ya no dice que no hay app ni código: una primera app se
+  está construyendo a la vista de todos, y su código es público.
+  [Privacidad y seguridad de los animales](/ideas/privacy-and-safety/) y
+  [Datos abiertos y tecnología](/ideas/open-data-and-tech/) ahora cuentan qué hace hoy la app.
+- **En la app:** habla inglés y español, con un selector de idioma. Tus gatos se guardan en
+  línea, de forma privada, y las fotos nunca son públicas. Puedes entrar con Google. En cada
+  encuentro puedes anotar qué estaba haciendo el gato, cómo se veía, cómo lo ayudaste y una nota,
+  y editarlo o borrarlo después. El dueño del proyecto puede ver los registros de todos, solo
+  lectura, para sacar adelante el proyecto. Ahora se llama StrayCats, como este sitio. Cada
+  persona lleva su propio registro de un gato con su propio nombre; nada se une. Mira las fotos
+  nuevas en [La app, en construcción](/app/).
+
 ## 7 de noviembre de 2026: La app, en construcción
 
 *Versión v2026.11.07.1*

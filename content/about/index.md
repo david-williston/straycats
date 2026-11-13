@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "What StrayCats is, where it came from, and what it isn't (yet)."
-updated: 2026-11-07
+updated: 2026-11-13
 ShowToc: true
 ShowReadingTime: false
 comments: false
@@ -61,7 +61,7 @@ turned into new stories and ideas, and [What's New](/whats-new/) records each st
 ## What it isn't (yet)
 
 An app you can use. A first, very simple app is now [under construction](/app/), but it's an
-early prototype, and there's still no product plan and no business model, [on
+early prototype that already speaks English and Spanish, and there's still no product plan and no business model, [on
 purpose](/posts/all-talk-no-code/). Most of the work is still listening and designing in the
 open, and the app grows as the ideas are shaped with the people who care for cats.
 

@@ -1,7 +1,7 @@
 ---
 title: "Cat Identity & Multiple Names"
 date: 2026-10-03
-updated: 2026-10-30
+updated: 2026-11-13
 weight: 200
 tags: ["identity", "model", "concepts"]
 summary: "How do you model one cat that has three names, two homes and no clear owner?"
@@ -23,6 +23,8 @@ owned. Claims can disagree, and that's fine.
 Over time, the system may notice that two records probably describe the **same cat**:
 similar photos, same coat pattern, overlapping territory, the same notched ear. It could
 suggest merging them, and people would confirm or reject the match.
+
+*The first version of the app doesn't do any of this yet: each person keeps their own record of a cat, under their own name, and the system never merges cats or names.* {{< app-link >}}
 
 Things that might help recognise an individual:
 
