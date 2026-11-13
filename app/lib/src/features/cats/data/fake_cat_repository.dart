@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import '../domain/cat.dart';
-import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
+import '../domain/life_event.dart';
 import 'cat_repository.dart';
 
 /// Keeps cats in memory, for tests. [watchCats] emits the current cats and
 /// again after each change, like Firestore's listener. The calls are
 /// recorded in [added], [addedEncounters], [updated], [deleted], [renamed]
-/// and [statusChanges].
+/// [addedEvents], [updatedEvents] and [deletedEvents].
 class FakeCatRepository implements CatRepository {
   FakeCatRepository([List<Cat> cats = const []]) : cats = [...cats];
 
@@ -18,7 +18,9 @@ class FakeCatRepository implements CatRepository {
   final updated = <(String, Encounter)>[];
   final deleted = <String>[];
   final renamed = <(String, String)>[];
-  final statusChanges = <(String, CatStatus, DateTime?, String)>[];
+  final addedEvents = <(String, LifeEvent)>[];
+  final updatedEvents = <(String, LifeEvent)>[];
+  final deletedEvents = <String>[];
 
   /// When set, [watchCats] fails with it.
   Object? watchError;
@@ -32,7 +34,9 @@ class FakeCatRepository implements CatRepository {
       updated.isNotEmpty ||
       deleted.isNotEmpty ||
       renamed.isNotEmpty ||
-      statusChanges.isNotEmpty;
+      addedEvents.isNotEmpty ||
+      updatedEvents.isNotEmpty ||
+      deletedEvents.isNotEmpty;
 
   void _emit() {
     for (final listener in _listeners) {
@@ -117,20 +121,43 @@ class FakeCatRepository implements CatRepository {
   }
 
   @override
-  Future<void> setStatus(
-    String catId,
-    CatStatus status, {
-    DateTime? since,
-    String note = '',
-  }) async {
-    statusChanges.add((catId, status, since, note));
+  Future<void> addEvent(String catId, LifeEvent event) async {
+    addedEvents.add((catId, event));
+    cats = [
+      for (final c in cats)
+        c.id == catId ? c.copyWith(events: [...c.events, event]) : c,
+    ];
+    _emit();
+  }
+
+  @override
+  Future<void> updateEvent(String catId, LifeEvent event) async {
+    updatedEvents.add((catId, event));
     cats = [
       for (final c in cats)
         c.id == catId
-            ? c.withStatus(status, since: since, note: note.trim())
+            ? c.copyWith(
+                events: [
+                  for (final e in c.events) e.id == event.id ? event : e,
+                ],
+              )
             : c,
     ];
     _emit();
   }
 
+  @override
+  Future<void> deleteEvent(String eventId) async {
+    deletedEvents.add(eventId);
+    cats = [
+      for (final c in cats)
+        c.copyWith(
+          events: [
+            for (final e in c.events)
+              if (e.id != eventId) e,
+          ],
+        ),
+    ];
+    _emit();
+  }
 }

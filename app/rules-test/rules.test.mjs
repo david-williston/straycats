@@ -7,7 +7,7 @@ import {
   assertFails,
 } from '@firebase/rules-unit-testing';
 import {
-  doc, getDoc, getDocs, collection, setDoc, updateDoc, deleteField, writeBatch, deleteDoc,
+  doc, getDoc, getDocs, collection, setDoc, writeBatch, deleteDoc,
   serverTimestamp, Timestamp, GeoPoint,
 } from 'firebase/firestore';
 import { ref, uploadBytes, getBytes } from 'firebase/storage';
@@ -37,6 +37,12 @@ const anon = () => env.unauthenticatedContext().firestore();
 
 const catDoc = (db, id = 'c1') => doc(db, 'users/alice/cats', id);
 const encDoc = (db, id = 'e1') => doc(db, 'users/alice/encounters', id);
+const evDoc = (db, id = 'v1') => doc(db, 'users/alice/events', id);
+// An undefined value drops the field, so a test can leave `around` out.
+const ev = (extra = {}) => Object.fromEntries(Object.entries({
+  catId: 'c1', type: 'born', on: '2019', around: true,
+  createdAt: serverTimestamp(), updatedAt: serverTimestamp(), ...extra,
+}).filter(([, v]) => v !== undefined));
 const cat = (extra = {}) => ({ name: 'Ninja', updatedAt: serverTimestamp(), ...extra });
 const enc = (extra = {}) => ({
   catId: 'c1',
@@ -90,50 +96,10 @@ describe('firestore cats', () => {
     await assertFails(setDoc(catDoc(alice()), cat({ name: 'x'.repeat(101) })));
     await assertFails(setDoc(catDoc(alice()), cat({ updatedAt: Timestamp.fromDate(new Date('2020-01-01')) })));
   });
-  test('a cat can be missing, found or remembered, with a date and a note', async () => {
-    const since = Timestamp.fromDate(new Date());
-    for (const status of ['missing', 'found', 'remembered']) {
-      await assertSucceeds(setDoc(catDoc(alice()), cat({ status, statusSince: since })));
-      await assertSucceeds(setDoc(catDoc(alice()), cat({
-        status, statusSince: since, statusNote: 'Last seen near the market on Tuesday',
-      })));
-    }
-    await assertSucceeds(setDoc(catDoc(alice()), cat({ statusNote: 'x'.repeat(1000) })));
-  });
-  test('a status can be changed and cleared with an update', async () => {
-    await seedCat();
-    const since = Timestamp.fromDate(new Date());
-    await assertSucceeds(updateDoc(catDoc(alice()), {
-      status: 'missing', statusSince: since, updatedAt: serverTimestamp(),
-    }));
-    await assertSucceeds(updateDoc(catDoc(alice()), {
-      status: deleteField(), statusSince: deleteField(), statusNote: deleteField(),
-      updatedAt: serverTimestamp(),
-    }));
-    await assertSucceeds(updateDoc(catDoc(alice()), { name: 'Ciccio', updatedAt: serverTimestamp() }));
-  });
-  test('a bad status, date or note is denied', async () => {
-    const since = Timestamp.fromDate(new Date());
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'dead', statusSince: since })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'known' })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 42 })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusSince: 'yesterday' })));
-    await assertFails(setDoc(catDoc(alice()), cat({
-      status: 'missing', statusSince: Timestamp.fromDate(new Date(Date.now() + 3 * 86400000)),
-    })));
-    await assertFails(setDoc(catDoc(alice()), cat({
-      status: 'missing', statusSince: Timestamp.fromDate(new Date('1990-01-01')),
-    })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusNote: 'x'.repeat(1001) })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', statusNote: 42 })));
-    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing', exactPlace: '1 Main St' })));
-  });
-  test('other users and admins cannot change a status', async () => {
-    await seedCat();
-    const change = { status: 'missing', statusSince: Timestamp.fromDate(new Date()), updatedAt: serverTimestamp() };
-    await assertFails(updateDoc(catDoc(bob()), change));
-    await assertFails(updateDoc(catDoc(admin()), change));
-    await assertSucceeds(getDoc(catDoc(admin())));
+  test('the old status fields are no longer accepted', async () => {
+    await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ statusSince: Timestamp.now() })));
+    await assertFails(setDoc(catDoc(alice()), cat({ statusNote: 'x' })));
   });
   test('bad cat id denied', async () => {
     await assertFails(setDoc(catDoc(alice(), 'bad id!'), cat()));
@@ -270,6 +236,111 @@ describe('firestore encounters', () => {
   test('client-supplied updatedAt denied', async () => {
     await seedCat();
     await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ updatedAt: Timestamp.now() })));
+  });
+});
+
+describe('firestore life events', () => {
+  const thisYear = new Date().getFullYear();
+  test('owner records, reads, edits and deletes an event', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice()), ev()));
+    await assertSucceeds(getDoc(evDoc(alice())));
+    await assertSucceeds(getDocs(collection(alice(), 'users/alice/events')));
+    const created = (await getDoc(evDoc(alice()))).data().createdAt;
+    await assertSucceeds(setDoc(evDoc(alice()), ev({ on: '2019-03', around: undefined, createdAt: created })));
+    await assertSucceeds(deleteDoc(evDoc(alice())));
+  });
+  test('cat and event in one batch', async () => {
+    const db = alice();
+    const b = writeBatch(db);
+    b.set(catDoc(db), cat());
+    b.set(evDoc(db), ev());
+    await assertSucceeds(b.commit());
+  });
+  test('every type is allowed, others are not', async () => {
+    await seedCat();
+    for (const type of ['born', 'missing', 'found', 'sterilised', 'died']) {
+      await assertSucceeds(setDoc(evDoc(alice(), `t-${type}`), ev({ type, on: '2024-05-06', around: undefined })));
+    }
+    await assertFails(setDoc(evDoc(alice(), 'x1'), ev({ type: 'dead' })));
+    await assertFails(setDoc(evDoc(alice(), 'x1'), ev({ type: 7 })));
+  });
+  test('dates: year, month, day, from 1980, not a future year', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice(), 'd1'), ev({ on: '1980', around: undefined })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'd2'), ev({ on: '2021-03', around: undefined })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'd3'), ev({ on: '2021-03-14', around: undefined })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'd4'), ev({ on: `${thisYear}`, around: undefined })));
+    for (const on of ['1979', `${thisYear + 1}`, '2021-3', '2021-13', '2021-00', '2021-03-32',
+      '2021-03-00', '2021-03-1', '21', '2021/03/14', '2021-03-14T10:00', '', 2021, null]) {
+      await assertFails(setDoc(evDoc(alice(), 'bad'), ev({ on, around: undefined })));
+    }
+  });
+  test('around only with a bare year, and only a boolean', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice(), 'a1'), ev({ on: '2019', around: true })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'a2'), ev({ on: '2019-03', around: false })));
+    await assertFails(setDoc(evDoc(alice(), 'a3'), ev({ on: '2019-03', around: true })));
+    await assertFails(setDoc(evDoc(alice(), 'a3'), ev({ on: '2019-03-14', around: true })));
+    await assertFails(setDoc(evDoc(alice(), 'a3'), ev({ around: 'yes' })));
+  });
+  test('note at most 1000 characters; place only as a coarse area', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice(), 'n1'), ev({ note: 'x'.repeat(1000) })));
+    await assertFails(setDoc(evDoc(alice(), 'n2'), ev({ note: 'x'.repeat(1001) })));
+    await assertFails(setDoc(evDoc(alice(), 'n2'), ev({ note: 42 })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'p1'), ev({ type: 'missing', area: '9g3q4k' })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'p2'), ev({ type: 'missing', area: '9g3q4k', neighbourhood: 'x'.repeat(80) })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ area: '9g3q4kx' })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ area: '9g3q4' })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ area: '9G3Q4K' })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ area: new GeoPoint(19.43, -99.13) })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ area: '9g3q4k', neighbourhood: 'x'.repeat(81) })));
+    await assertFails(setDoc(evDoc(alice(), 'p3'), ev({ lat: 19.43, lng: -99.13 })));
+  });
+  test('extra, missing or wrongly typed fields denied', async () => {
+    await seedCat();
+    await assertFails(setDoc(evDoc(alice(), 'f1'), ev({ mood: 'sad' })));
+    for (const key of ['catId', 'type', 'on', 'createdAt', 'updatedAt']) {
+      const rest = ev({ [key]: undefined });
+      await assertFails(setDoc(evDoc(alice(), 'f2'), rest));
+    }
+    await assertFails(setDoc(evDoc(alice(), 'f3'), ev({ catId: 7 })));
+    await assertFails(setDoc(evDoc(alice(), 'bad id!'), ev()));
+  });
+  test('event for a missing cat denied', async () => {
+    await assertFails(setDoc(evDoc(alice()), ev({ catId: 'ghost' })));
+  });
+  test('createdAt is set once, updatedAt is server time', async () => {
+    await seedCat();
+    await assertFails(setDoc(evDoc(alice()), ev({ createdAt: Timestamp.now() })));
+    await assertFails(setDoc(evDoc(alice()), ev({ updatedAt: Timestamp.now() })));
+    await assertSucceeds(setDoc(evDoc(alice()), ev()));
+    await assertFails(setDoc(evDoc(alice()), ev({ createdAt: serverTimestamp() })));
+    await assertFails(setDoc(evDoc(alice()), ev({ createdAt: Timestamp.fromDate(new Date('2020-01-01')) })));
+  });
+  test('duplicates of a once-only type are allowed (they are shown, not refused)', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice(), 'd1'), ev({ type: 'died', on: '2024', around: undefined })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'd2'), ev({ type: 'died', on: '2025-02', around: undefined })));
+  });
+  test('other users and signed-out are denied; admin reads only', async () => {
+    await seedCat();
+    await env.withSecurityRulesDisabled((ctx) =>
+      setDoc(doc(ctx.firestore(), 'users/alice/events/v1'), {
+        catId: 'c1', type: 'born', on: '2019', around: true, createdAt: Timestamp.now(), updatedAt: Timestamp.now(),
+      }));
+    for (const db of [bob(), anon(), notAdmin()]) {
+      await assertFails(getDoc(evDoc(db)));
+      await assertFails(getDocs(collection(db, 'users/alice/events')));
+      await assertFails(setDoc(evDoc(db, 'v9'), ev()));
+      await assertFails(deleteDoc(evDoc(db)));
+    }
+    await assertSucceeds(getDoc(evDoc(admin())));
+    await assertSucceeds(getDocs(collection(admin(), 'users/alice/events')));
+    await assertFails(setDoc(evDoc(admin(), 'v9'), ev()));
+    await assertFails(setDoc(evDoc(admin()), ev({ note: 'x' })));
+    await assertFails(deleteDoc(evDoc(admin())));
   });
 });
 

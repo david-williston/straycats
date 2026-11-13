@@ -2,65 +2,101 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../localization/app_localizations.dart';
+import '../../../localization/life_labels.dart';
 import '../domain/cat.dart';
-import '../domain/cat_status.dart';
+import '../domain/life.dart';
+import '../domain/life_event.dart';
 
-/// What a cat's status says, as a small label: "Missing since `date`" in the
-/// accent colour, "Found `date`", or a quiet heart and "Remembered". Nothing
-/// at all for a known cat. Only a date is ever shown, never a place.
+/// What the story says about the cat, as a small label derived from its
+/// entries: "Missing since `date`" in the accent colour, "Found `date`", or
+/// a quiet heart and "Passed away `date`". Nothing at all for a cat with no
+/// state. Only a date is ever shown, never a place.
 ///
-/// With [compact] (on the grid tile) a remembered cat shows just the word;
-/// the card adds its dates, "`first met` – `date`", on a line below.
-class CatStatusBadge extends StatelessWidget {
-  const CatStatusBadge({super.key, required this.cat, this.compact = false});
+/// With [compact] (on the grid tile) a remembered cat shows just
+/// "Remembered"; the card adds its dates, "`first met` – `date`", on a line
+/// below.
+class LifeBadge extends StatelessWidget {
+  const LifeBadge({super.key, required this.cat, this.compact = false});
 
   final Cat cat;
   final bool compact;
 
+  /// "start – end" for a remembered cat. The start is its birth entry when
+  /// there is one (as rough as it was given), else the first encounter. Two
+  /// different deaths are said, not picked between.
+  String? _range(
+    AppLocalizations l10n,
+    LifeView life,
+    LifeEvent death,
+    String locale,
+  ) {
+    final births = life.ofType(LifeEventType.born);
+    final birthAgrees = !life.conflicts.any(
+      (c) => c.kind == ConflictKind.duplicate && c.type == LifeEventType.born,
+    );
+    String? start;
+    if (births.isNotEmpty && birthAgrees) {
+      final b = births.last.on;
+      final text = b.format(locale);
+      start = b.around ? l10n.lifeRangeAround(text) : text;
+    } else if (cat.firstMet != null) {
+      start = DateFormat.yMMMd(locale).format(cat.firstMet!);
+    }
+    final twoDeaths = life.conflicts.any(
+      (c) => c.kind == ConflictKind.duplicate && c.type == LifeEventType.died,
+    );
+    if (twoDeaths) {
+      return start == null
+          ? l10n.lifeRememberedConflictOnly
+          : l10n.lifeRememberedConflict(start);
+    }
+    final end = death.on.format(locale);
+    return start == null ? end : l10n.lifeRememberedDates(start, end);
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (cat.status == CatStatus.known) return const SizedBox.shrink();
+    final life = cat.life;
+    final event = life.stateEvent;
+    if (life.state == LifeState.known || event == null) {
+      return const SizedBox.shrink();
+    }
     final l10n = AppLocalizations.of(context);
     final scheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final format = DateFormat.yMMMd(Localizations.localeOf(context).toString());
-    final since = cat.statusSince;
-    final date = since == null ? '' : format.format(since);
+    final locale = Localizations.localeOf(context).toString();
+    final sentence = lifeEventLabel(l10n, event, locale);
     final (
       String label,
       IconData icon,
       Color fg,
       Color bg,
       Color? border,
-    ) = switch (cat.status) {
-      CatStatus.missing => (
-        since == null ? l10n.statusMarkMissing : l10n.statusMissingSince(date),
+    ) = switch (life.state) {
+      LifeState.missing => (
+        sentence,
         Icons.search,
         scheme.primary,
         scheme.primary.withValues(alpha: 0.14),
         scheme.primary,
       ),
-      CatStatus.found => (
-        since == null ? l10n.statusMarkFound : l10n.statusFoundOn(date),
+      LifeState.found => (
+        sentence,
         Icons.check_circle_outline,
         scheme.onSecondaryContainer,
         scheme.secondaryContainer,
         null,
       ),
       _ => (
-        l10n.statusRemembered,
+        compact ? l10n.lifeRemembered : sentence,
         Icons.favorite_border,
         scheme.onSurfaceVariant,
         Colors.transparent,
         null,
       ),
     };
-    final first = cat.firstMet;
-    final dates =
-        cat.status == CatStatus.remembered && !compact && since != null
-        ? (first == null
-              ? date
-              : l10n.statusRememberedDates(format.format(first), date))
+    final dates = life.state == LifeState.remembered && !compact
+        ? _range(l10n, life, event, locale)
         : null;
     final style = (compact ? textTheme.labelSmall : textTheme.labelLarge)
         ?.copyWith(color: fg, fontWeight: FontWeight.w600);
@@ -89,8 +125,9 @@ class CatStatusBadge extends StatelessWidget {
                 Flexible(
                   child: Text(
                     label,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                    // The card lets a long sentence wrap; the tile keeps one line.
+                    maxLines: compact ? 1 : null,
+                    overflow: compact ? TextOverflow.ellipsis : null,
                     style: style,
                   ),
                 ),

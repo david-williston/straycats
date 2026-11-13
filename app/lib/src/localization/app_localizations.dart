@@ -656,143 +656,305 @@ abstract class AppLocalizations {
   /// **'Seen recently'**
   String get seenRecently;
 
-  /// Badge on a cat that someone has marked as missing. date is already formatted.
+  /// An entry in a cat's story: when it was born. kind is day, month, year or around (a rough year); date is already formatted to that precision.
   ///
   /// In en, this message translates to:
-  /// **'Missing since {date}'**
-  String statusMissingSince(String date);
+  /// **'{kind, select, day{Born {date}} month{Born {date}} year{Born in {date}} around{Born around {date}} other{Born {date}}}'**
+  String lifeBorn(String kind, String date);
 
-  /// Badge on a cat that was missing and has been found. date is already formatted.
+  /// An entry in a cat's story: when it was sterilised (neutered or spayed). kind is day, month, year or around; date is already formatted.
   ///
   /// In en, this message translates to:
-  /// **'Found {date}'**
-  String statusFoundOn(String date);
+  /// **'{kind, select, day{Sterilised on {date}} month{Sterilised in {date}} year{Sterilised in {date}} around{Sterilised around {date}} other{Sterilised on {date}}}'**
+  String lifeSterilised(String kind, String date);
 
-  /// Quiet badge on a cat that has died and is remembered. Gentle, respectful.
+  /// An entry in a cat's story: when it passed away. Gentle and respectful. kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{Passed away {date}} month{Passed away in {date}} year{Passed away in {date}} around{Passed away around {date}} other{Passed away {date}}}'**
+  String lifeDied(String kind, String date);
+
+  /// Badge and story entry on a cat that has gone missing. kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{Missing since {date}} month{Missing since {date}} year{Missing since {date}} around{Missing since around {date}} other{Missing since {date}}}'**
+  String lifeMissing(String kind, String date);
+
+  /// Badge and story entry on a cat that was missing and has been found. kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{Found {date}} month{Found in {date}} year{Found in {date}} around{Found around {date}} other{Found {date}}}'**
+  String lifeFound(String kind, String date);
+
+  /// Quiet badge on a grid tile of a cat that has passed away. Gentle, respectful.
   ///
   /// In en, this message translates to:
   /// **'Remembered'**
-  String get statusRemembered;
+  String get lifeRemembered;
 
-  /// The span of a remembered cat's life as we knew it: the date it was first met, then the date it died. Both already formatted.
+  /// The span of a remembered cat's life as we knew it: the date it was first met, then the date it passed away. Both already formatted.
   ///
   /// In en, this message translates to:
   /// **'{first} – {last}'**
-  String statusRememberedDates(String first, String last);
+  String lifeRememberedDates(String first, String last);
 
-  /// Button on a cat's card that opens the choices for marking the cat as missing, found or remembered.
+  /// Button on a cat's card that opens the choices for adding something to the cat's story.
   ///
   /// In en, this message translates to:
-  /// **'Status'**
-  String get statusButton;
+  /// **'Add to story'**
+  String get storyAdd;
 
   /// Choice and dialog title: say that the cat has gone missing.
   ///
   /// In en, this message translates to:
-  /// **'Mark as missing'**
-  String get statusMarkMissing;
+  /// **'Went missing'**
+  String get storyAddMissing;
 
-  /// Help text in the dialog for marking a cat as missing.
+  /// Choice and dialog title: the cat has been found.
   ///
   /// In en, this message translates to:
-  /// **'Say when it was last seen. If you like, add a few words about where. Please don\'t write an address.'**
-  String get statusMissingHelp;
+  /// **'Found'**
+  String get storyAddFound;
 
-  /// Label of the optional note when marking a cat as missing.
+  /// Choice and dialog title: when the cat was born.
   ///
   /// In en, this message translates to:
-  /// **'Last seen (optional)'**
-  String get statusMissingNoteLabel;
+  /// **'Born'**
+  String get storyAddBorn;
 
-  /// Hint in the optional note when marking a cat as missing. It must not ask for an exact place.
+  /// Choice and dialog title: the cat was sterilised (neutered or spayed). The Spanish is a noun so it has no gender.
   ///
   /// In en, this message translates to:
-  /// **'For example, near the market on Tuesday'**
-  String get statusMissingNoteHint;
+  /// **'Sterilised'**
+  String get storyAddSterilised;
 
-  /// Label of the date button when marking a cat as missing.
+  /// Choice and dialog title: the cat has passed away. Gentle.
   ///
   /// In en, this message translates to:
-  /// **'Last seen'**
-  String get statusMissingDate;
+  /// **'Passed away'**
+  String get storyAddDied;
 
-  /// Choice and dialog title on a missing cat: it has been found. Joyful.
+  /// Under a choice that happens once in a cat's life, when the story already has it. entry is the entry's sentence, already formatted.
   ///
   /// In en, this message translates to:
-  /// **'Found!'**
-  String get statusMarkFound;
+  /// **'Already in the story: {entry}'**
+  String storyAlreadyIn(String entry);
 
-  /// Help text in the dialog for marking a missing cat as found.
+  /// Dialog title when changing the date of an entry already in the story.
   ///
   /// In en, this message translates to:
-  /// **'What good news. When was it found?'**
-  String get statusFoundHelp;
+  /// **'Change the date'**
+  String get storyChangeDate;
 
-  /// Label of the date button when marking a cat as found.
+  /// Small link in the change-the-date dialog: add a second entry instead of changing the first.
   ///
   /// In en, this message translates to:
-  /// **'Found on'**
-  String get statusFoundDate;
+  /// **'Add another anyway'**
+  String get storyAddAnother;
 
-  /// Label of the optional note when marking a cat as found.
+  /// Segment: the date is known to the day.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get storyPrecisionDay;
+
+  /// Segment: the date is known to the month.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get storyPrecisionMonth;
+
+  /// Segment: the date is known to the year.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get storyPrecisionYear;
+
+  /// Chip: the year is approximate (around 2019).
+  ///
+  /// In en, this message translates to:
+  /// **'Around'**
+  String get storyAround;
+
+  /// Label of the year picker in the story date dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get storyDateYear;
+
+  /// Label of the month picker in the story date dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get storyDateMonth;
+
+  /// Label of the day picker in the story date dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get storyDateDay;
+
+  /// Label of the optional note when adding an entry to a cat's story.
   ///
   /// In en, this message translates to:
   /// **'A note (optional)'**
-  String get statusFoundNoteLabel;
+  String get storyNoteLabel;
 
-  /// Message of the small celebration after a named missing cat is marked as found.
+  /// Help text in the dialog for saying a cat went missing.
+  ///
+  /// In en, this message translates to:
+  /// **'Say when it was last seen. If you like, add a few words about where. Please don\'t write an address.'**
+  String get storyMissingHelp;
+
+  /// Hint in the optional note when a cat went missing. It must not ask for an exact place.
+  ///
+  /// In en, this message translates to:
+  /// **'For example, near the market on Tuesday'**
+  String get storyMissingNoteHint;
+
+  /// Help text in the dialog for saying a missing cat was found.
+  ///
+  /// In en, this message translates to:
+  /// **'What good news. When was it found?'**
+  String get storyFoundHelp;
+
+  /// Help text in the dialog for the date a cat was born.
+  ///
+  /// In en, this message translates to:
+  /// **'When was this cat born? A year is fine, or around a year.'**
+  String get storyBornHelp;
+
+  /// Help text in the dialog for the date a cat was sterilised.
+  ///
+  /// In en, this message translates to:
+  /// **'When was this cat sterilised, if you know? A year is fine.'**
+  String get storySterilisedHelp;
+
+  /// Help text in the dialog for a cat that passed away. Gentle and respectful.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?'**
+  String get storyDiedHelp;
+
+  /// Hint in the optional note when a cat passed away.
+  ///
+  /// In en, this message translates to:
+  /// **'A few words in memory'**
+  String get storyNoteHintDied;
+
+  /// Message of the small celebration after a named missing cat is found.
   ///
   /// In en, this message translates to:
   /// **'{name} is found. Welcome home!'**
-  String statusCelebrationNamed(String name);
+  String storyCelebrationNamed(String name);
 
-  /// Message of the small celebration after a cat with no name is marked as found.
+  /// Message of the small celebration after a cat with no name is found.
   ///
   /// In en, this message translates to:
   /// **'This cat is found. Welcome home!'**
-  String get statusCelebrationUnnamed;
+  String get storyCelebrationUnnamed;
 
   /// Button that closes the celebration after a cat is found.
   ///
   /// In en, this message translates to:
   /// **'Wonderful'**
-  String get statusCelebrationClose;
+  String get storyCelebrationClose;
 
-  /// Choice and dialog title: keep the cat's record in memory after it has died. Gentle.
+  /// Under an entry in a cat's story: you wrote it.
   ///
   /// In en, this message translates to:
-  /// **'Remember this cat'**
-  String get statusRemember;
+  /// **'You recorded this'**
+  String get storyYouRecorded;
 
-  /// Help text in the dialog for remembering a cat that has died. Gentle and respectful.
+  /// Accessibility label of a story entry that can be tapped to edit or delete it.
   ///
   /// In en, this message translates to:
-  /// **'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?'**
-  String get statusRememberHelp;
+  /// **'Edit or delete this entry'**
+  String get storyEntryOptions;
 
-  /// Label of the date button when remembering a cat.
+  /// Title of the sheet for editing an entry in a cat's story.
   ///
   /// In en, this message translates to:
-  /// **'Date'**
-  String get statusRememberDate;
+  /// **'Edit this entry'**
+  String get storyEditTitle;
 
-  /// Label of the optional memorial note when remembering a cat.
+  /// Title of the confirmation before deleting an entry of a cat's story.
   ///
   /// In en, this message translates to:
-  /// **'A few words in memory (optional)'**
-  String get statusRememberNoteLabel;
+  /// **'Delete this entry?'**
+  String get storyDeleteTitle;
 
-  /// Choice and button that clears the cat's status (missing, found or remembered).
+  /// Body of the confirmation before deleting an entry of a cat's story.
   ///
   /// In en, this message translates to:
-  /// **'Back to normal'**
-  String get statusBackToNormal;
+  /// **'It will be removed from the story. The cat, its photos and its other entries stay.'**
+  String get storyDeleteBody;
 
-  /// Body of the confirmation when clearing a cat's status.
+  /// Quiet heading above entries in a cat's story that may disagree.
   ///
   /// In en, this message translates to:
-  /// **'The cat will show as usual, with no status. Its photos and encounters all stay.'**
-  String get statusBackToNormalBody;
+  /// **'Possible conflict — check these'**
+  String get storyConflictTitle;
+
+  /// Gentle question when a once-only entry has two different dates. type is born, sterilised or died.
+  ///
+  /// In en, this message translates to:
+  /// **'{type, select, born{Two dates for when this cat was born. Is one of them wrong?} sterilised{Two dates for when this cat was sterilised. Is one of them wrong?} other{Two dates for when this cat passed away. Is one of them wrong?}}'**
+  String storyConflictDuplicate(String type);
+
+  /// Gentle question when a photo is dated after a recorded death. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'There\'s a sighting on {date}, after this cat was recorded as having passed away. Is one of them wrong?'**
+  String storyConflictSighting(String date);
+
+  /// Gentle question when a found entry is dated after a recorded death.
+  ///
+  /// In en, this message translates to:
+  /// **'This cat is recorded as found after it was recorded as having passed away. Is one of them wrong?'**
+  String get storyConflictFoundAfterDeath;
+
+  /// Tappable nudge on a missing cat that was photographed later: tap to record it as found on that date. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen on {date}. Found?'**
+  String storyNudgeFound(String date);
+
+  /// Offer on a cat card when an encounter says the ear is tipped and the story has no sterilisation. Nothing is added unless the person agrees.
+  ///
+  /// In en, this message translates to:
+  /// **'Ear-tipped: add sterilisation to the story?'**
+  String get storyEarTipOffer;
+
+  /// Button accepting the ear-tip offer; opens the sterilisation dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get storyEarTipAdd;
+
+  /// Button declining the ear-tip offer. It is not offered again for this cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get storyEarTipNotNow;
+
+  /// Start of a remembered cat's life range when its birth is only a rough year: 'around 2019 – Nov 13, 2026'. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'around {date}'**
+  String lifeRangeAround(String date);
+
+  /// Life range of a remembered cat when the story has two different dates for its passing. first is the already formatted start.
+  ///
+  /// In en, this message translates to:
+  /// **'{first} – two dates recorded'**
+  String lifeRememberedConflict(String first);
+
+  /// Life line of a remembered cat with no known start and two different dates for its passing.
+  ///
+  /// In en, this message translates to:
+  /// **'Two dates recorded for when this cat passed away'**
+  String get lifeRememberedConflictOnly;
 }
 
 class _AppLocalizationsDelegate

@@ -25,16 +25,10 @@ service cloud.firestore {
 
     function isCat() {
       let d = request.resource.data;
-      return d.keys().hasOnly(['name', 'status', 'statusSince', 'statusNote', 'updatedAt'])
+      return d.keys().hasOnly(['name', 'updatedAt'])
         && d.keys().hasAll(['name', 'updatedAt'])
         && d.name is string
         && d.name.size() <= 100
-        // No status means a known cat. The date is chosen by the person.
-        && (!('status' in d) || d.status in ['missing', 'found', 'remembered'])
-        && (!('statusSince' in d) || (d.statusSince is timestamp
-            && d.statusSince > timestamp.date(2000, 1, 1)
-            && d.statusSince < request.time + duration.value(1, 'd')))
-        && (!('statusNote' in d) || (d.statusNote is string && d.statusNote.size() <= 1000))
         && d.updatedAt == request.time;
     }
 
@@ -60,6 +54,32 @@ service cloud.firestore {
         && (!('care' in d) || isListOf(d.care, ['fed', 'gave_water', 'took_to_vet', 'gave_medicine']))
         && (!('note' in d) || (d.note is string && d.note.size() <= 1000))
         // A geohash of exactly 6 characters (about 1.2 x 0.6 km), never a point.
+        && (!('area' in d) || (d.area is string && d.area.matches('^[0-9b-hjkmnp-z]{6}$')))
+        && (!('neighbourhood' in d) || (d.neighbourhood is string && d.neighbourhood.size() <= 80))
+        && d.updatedAt == request.time;
+    }
+
+    // "YYYY", "YYYY-MM" or "YYYY-MM-DD", from 1980, the year not in the future.
+    // `around` only goes with a bare year. Month and day are checked in the app.
+    function isPartialDate(d) {
+      return d.on is string
+        && d.on.matches('^(19[89][0-9]|20[0-9]{2})(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?$')
+        && int(d.on.split('-')[0]) <= request.time.year()
+        && (!('around' in d) || (d.around is bool && (!d.around || d.on.size() == 4)));
+    }
+
+    // A life event in a cat's story. Once-only types are not enforced here:
+    // duplicates are meant to be visible, not refused. A place, if any, is only
+    // a 6-character geohash and a neighbourhood name, never a point.
+    function isEvent(uid) {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['catId', 'type', 'on', 'around', 'note', 'area', 'neighbourhood', 'createdAt', 'updatedAt'])
+        && d.keys().hasAll(['catId', 'type', 'on', 'createdAt', 'updatedAt'])
+        && isId(d.catId)
+        && existsAfter(/databases/$(database)/documents/users/$(uid)/cats/$(d.catId))
+        && d.type in ['born', 'missing', 'found', 'sterilised', 'died']
+        && isPartialDate(d)
+        && (!('note' in d) || (d.note is string && d.note.size() <= 1000))
         && (!('area' in d) || (d.area is string && d.area.matches('^[0-9b-hjkmnp-z]{6}$')))
         && (!('neighbourhood' in d) || (d.neighbourhood is string && d.neighbourhood.size() <= 80))
         && d.updatedAt == request.time;
@@ -96,6 +116,15 @@ service cloud.firestore {
     match /users/{uid}/encounters/{encounterId} {
       allow read: if canRead(uid);
       allow create, update: if isOwner(uid) && isId(encounterId) && isEncounter(uid);
+      allow delete: if isOwner(uid);
+    }
+
+    match /users/{uid}/events/{eventId} {
+      allow read: if canRead(uid);
+      allow create: if isOwner(uid) && isId(eventId) && isEvent(uid)
+        && request.resource.data.createdAt == request.time;
+      allow update: if isOwner(uid) && isEvent(uid)
+        && request.resource.data.createdAt == resource.data.createdAt;
       allow delete: if isOwner(uid);
     }
   }

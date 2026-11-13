@@ -320,82 +320,226 @@ class AppLocalizationsEn extends AppLocalizations {
   String get seenRecently => 'Seen recently';
 
   @override
-  String statusMissingSince(String date) {
-    return 'Missing since $date';
+  String lifeBorn(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Born $date',
+      'month': 'Born $date',
+      'year': 'Born in $date',
+      'around': 'Born around $date',
+      'other': 'Born $date',
+    });
+    return '$_temp0';
   }
 
   @override
-  String statusFoundOn(String date) {
-    return 'Found $date';
+  String lifeSterilised(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Sterilised on $date',
+      'month': 'Sterilised in $date',
+      'year': 'Sterilised in $date',
+      'around': 'Sterilised around $date',
+      'other': 'Sterilised on $date',
+    });
+    return '$_temp0';
   }
 
   @override
-  String get statusRemembered => 'Remembered';
+  String lifeDied(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Passed away $date',
+      'month': 'Passed away in $date',
+      'year': 'Passed away in $date',
+      'around': 'Passed away around $date',
+      'other': 'Passed away $date',
+    });
+    return '$_temp0';
+  }
 
   @override
-  String statusRememberedDates(String first, String last) {
+  String lifeMissing(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Missing since $date',
+      'month': 'Missing since $date',
+      'year': 'Missing since $date',
+      'around': 'Missing since around $date',
+      'other': 'Missing since $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String lifeFound(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Found $date',
+      'month': 'Found in $date',
+      'year': 'Found in $date',
+      'around': 'Found around $date',
+      'other': 'Found $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get lifeRemembered => 'Remembered';
+
+  @override
+  String lifeRememberedDates(String first, String last) {
     return '$first – $last';
   }
 
   @override
-  String get statusButton => 'Status';
+  String get storyAdd => 'Add to story';
 
   @override
-  String get statusMarkMissing => 'Mark as missing';
+  String get storyAddMissing => 'Went missing';
 
   @override
-  String get statusMissingHelp =>
+  String get storyAddFound => 'Found';
+
+  @override
+  String get storyAddBorn => 'Born';
+
+  @override
+  String get storyAddSterilised => 'Sterilised';
+
+  @override
+  String get storyAddDied => 'Passed away';
+
+  @override
+  String storyAlreadyIn(String entry) {
+    return 'Already in the story: $entry';
+  }
+
+  @override
+  String get storyChangeDate => 'Change the date';
+
+  @override
+  String get storyAddAnother => 'Add another anyway';
+
+  @override
+  String get storyPrecisionDay => 'Day';
+
+  @override
+  String get storyPrecisionMonth => 'Month';
+
+  @override
+  String get storyPrecisionYear => 'Year';
+
+  @override
+  String get storyAround => 'Around';
+
+  @override
+  String get storyDateYear => 'Year';
+
+  @override
+  String get storyDateMonth => 'Month';
+
+  @override
+  String get storyDateDay => 'Day';
+
+  @override
+  String get storyNoteLabel => 'A note (optional)';
+
+  @override
+  String get storyMissingHelp =>
       'Say when it was last seen. If you like, add a few words about where. Please don\'t write an address.';
 
   @override
-  String get statusMissingNoteLabel => 'Last seen (optional)';
+  String get storyMissingNoteHint => 'For example, near the market on Tuesday';
 
   @override
-  String get statusMissingNoteHint => 'For example, near the market on Tuesday';
+  String get storyFoundHelp => 'What good news. When was it found?';
 
   @override
-  String get statusMissingDate => 'Last seen';
+  String get storyBornHelp =>
+      'When was this cat born? A year is fine, or around a year.';
 
   @override
-  String get statusMarkFound => 'Found!';
+  String get storySterilisedHelp =>
+      'When was this cat sterilised, if you know? A year is fine.';
 
   @override
-  String get statusFoundHelp => 'What good news. When was it found?';
+  String get storyDiedHelp =>
+      'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?';
 
   @override
-  String get statusFoundDate => 'Found on';
+  String get storyNoteHintDied => 'A few words in memory';
 
   @override
-  String get statusFoundNoteLabel => 'A note (optional)';
-
-  @override
-  String statusCelebrationNamed(String name) {
+  String storyCelebrationNamed(String name) {
     return '$name is found. Welcome home!';
   }
 
   @override
-  String get statusCelebrationUnnamed => 'This cat is found. Welcome home!';
+  String get storyCelebrationUnnamed => 'This cat is found. Welcome home!';
 
   @override
-  String get statusCelebrationClose => 'Wonderful';
+  String get storyCelebrationClose => 'Wonderful';
 
   @override
-  String get statusRemember => 'Remember this cat';
+  String get storyYouRecorded => 'You recorded this';
 
   @override
-  String get statusRememberHelp =>
-      'We\'re so sorry. The record stays open, and you can keep adding to it. When did this cat pass away?';
+  String get storyEntryOptions => 'Edit or delete this entry';
 
   @override
-  String get statusRememberDate => 'Date';
+  String get storyEditTitle => 'Edit this entry';
 
   @override
-  String get statusRememberNoteLabel => 'A few words in memory (optional)';
+  String get storyDeleteTitle => 'Delete this entry?';
 
   @override
-  String get statusBackToNormal => 'Back to normal';
+  String get storyDeleteBody =>
+      'It will be removed from the story. The cat, its photos and its other entries stay.';
 
   @override
-  String get statusBackToNormalBody =>
-      'The cat will show as usual, with no status. Its photos and encounters all stay.';
+  String get storyConflictTitle => 'Possible conflict — check these';
+
+  @override
+  String storyConflictDuplicate(String type) {
+    String _temp0 = intl.Intl.selectLogic(type, {
+      'born': 'Two dates for when this cat was born. Is one of them wrong?',
+      'sterilised':
+          'Two dates for when this cat was sterilised. Is one of them wrong?',
+      'other': 'Two dates for when this cat passed away. Is one of them wrong?',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String storyConflictSighting(String date) {
+    return 'There\'s a sighting on $date, after this cat was recorded as having passed away. Is one of them wrong?';
+  }
+
+  @override
+  String get storyConflictFoundAfterDeath =>
+      'This cat is recorded as found after it was recorded as having passed away. Is one of them wrong?';
+
+  @override
+  String storyNudgeFound(String date) {
+    return 'Seen on $date. Found?';
+  }
+
+  @override
+  String get storyEarTipOffer => 'Ear-tipped: add sterilisation to the story?';
+
+  @override
+  String get storyEarTipAdd => 'Add';
+
+  @override
+  String get storyEarTipNotNow => 'Not now';
+
+  @override
+  String lifeRangeAround(String date) {
+    return 'around $date';
+  }
+
+  @override
+  String lifeRememberedConflict(String first) {
+    return '$first – two dates recorded';
+  }
+
+  @override
+  String get lifeRememberedConflictOnly =>
+      'Two dates recorded for when this cat passed away';
 }

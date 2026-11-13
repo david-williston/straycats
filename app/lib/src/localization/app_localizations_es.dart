@@ -323,85 +323,227 @@ class AppLocalizationsEs extends AppLocalizations {
   String get seenRecently => 'Visto hace poco';
 
   @override
-  String statusMissingSince(String date) {
-    return 'Desaparecido desde el $date';
+  String lifeBorn(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Nació el $date',
+      'month': 'Nació en $date',
+      'year': 'Nació en $date',
+      'around': 'Nació alrededor de $date',
+      'other': 'Nació el $date',
+    });
+    return '$_temp0';
   }
 
   @override
-  String statusFoundOn(String date) {
-    return 'Encontrado el $date';
+  String lifeSterilised(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Esterilización el $date',
+      'month': 'Esterilización en $date',
+      'year': 'Esterilización en $date',
+      'around': 'Esterilización alrededor de $date',
+      'other': 'Esterilización el $date',
+    });
+    return '$_temp0';
   }
 
   @override
-  String get statusRemembered => 'Recordado';
+  String lifeDied(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Falleció el $date',
+      'month': 'Falleció en $date',
+      'year': 'Falleció en $date',
+      'around': 'Falleció alrededor de $date',
+      'other': 'Falleció el $date',
+    });
+    return '$_temp0';
+  }
 
   @override
-  String statusRememberedDates(String first, String last) {
+  String lifeMissing(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Se perdió el $date',
+      'month': 'Se perdió en $date',
+      'year': 'Se perdió en $date',
+      'around': 'Se perdió alrededor de $date',
+      'other': 'Se perdió el $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String lifeFound(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Apareció el $date',
+      'month': 'Apareció en $date',
+      'year': 'Apareció en $date',
+      'around': 'Apareció alrededor de $date',
+      'other': 'Apareció el $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get lifeRemembered => 'En su memoria';
+
+  @override
+  String lifeRememberedDates(String first, String last) {
     return '$first – $last';
   }
 
   @override
-  String get statusButton => 'Estado';
+  String get storyAdd => 'Añadir a su historia';
 
   @override
-  String get statusMarkMissing => 'Marcar como desaparecido';
+  String get storyAddMissing => 'Se perdió';
 
   @override
-  String get statusMissingHelp =>
+  String get storyAddFound => 'Apareció';
+
+  @override
+  String get storyAddBorn => 'Nació';
+
+  @override
+  String get storyAddSterilised => 'Esterilización';
+
+  @override
+  String get storyAddDied => 'Falleció';
+
+  @override
+  String storyAlreadyIn(String entry) {
+    return 'Ya está en su historia: $entry';
+  }
+
+  @override
+  String get storyChangeDate => 'Cambiar la fecha';
+
+  @override
+  String get storyAddAnother => 'Añadir otra de todos modos';
+
+  @override
+  String get storyPrecisionDay => 'Día';
+
+  @override
+  String get storyPrecisionMonth => 'Mes';
+
+  @override
+  String get storyPrecisionYear => 'Año';
+
+  @override
+  String get storyAround => 'Alrededor';
+
+  @override
+  String get storyDateYear => 'Año';
+
+  @override
+  String get storyDateMonth => 'Mes';
+
+  @override
+  String get storyDateDay => 'Día';
+
+  @override
+  String get storyNoteLabel => 'Una nota (opcional)';
+
+  @override
+  String get storyMissingHelp =>
       'Di cuándo se vio por última vez. Si quieres, añade unas palabras sobre dónde. Por favor, no escribas una dirección.';
 
   @override
-  String get statusMissingNoteLabel => 'Visto por última vez (opcional)';
+  String get storyMissingNoteHint => 'Por ejemplo, cerca del mercado el martes';
 
   @override
-  String get statusMissingNoteHint =>
-      'Por ejemplo, cerca del mercado el martes';
+  String get storyFoundHelp => 'Qué buena noticia. ¿Cuándo apareció?';
 
   @override
-  String get statusMissingDate => 'Visto por última vez';
+  String get storyBornHelp =>
+      '¿Cuándo nació este gato? Basta con el año, o más o menos.';
 
   @override
-  String get statusMarkFound => '¡Apareció!';
+  String get storySterilisedHelp =>
+      '¿Cuándo se esterilizó este gato, si lo sabes? Basta con el año.';
 
   @override
-  String get statusFoundHelp => 'Qué buena noticia. ¿Cuándo apareció?';
+  String get storyDiedHelp =>
+      'Lo sentimos mucho. El registro sigue abierto y puedes seguir añadiendo cosas. ¿Cuándo falleció este gato?';
 
   @override
-  String get statusFoundDate => 'Encontrado el';
+  String get storyNoteHintDied => 'Unas palabras en su memoria';
 
   @override
-  String get statusFoundNoteLabel => 'Una nota (opcional)';
-
-  @override
-  String statusCelebrationNamed(String name) {
+  String storyCelebrationNamed(String name) {
     return '¡$name apareció! ¡Bienvenido a casa!';
   }
 
   @override
-  String get statusCelebrationUnnamed =>
+  String get storyCelebrationUnnamed =>
       '¡Este gato apareció! ¡Bienvenido a casa!';
 
   @override
-  String get statusCelebrationClose => 'Qué alegría';
+  String get storyCelebrationClose => 'Qué alegría';
 
   @override
-  String get statusRemember => 'Recordar a este gato';
+  String get storyYouRecorded => 'Lo registraste tú';
 
   @override
-  String get statusRememberHelp =>
-      'Lo sentimos mucho. El registro sigue abierto y puedes seguir añadiendo cosas. ¿Cuándo murió este gato?';
+  String get storyEntryOptions => 'Editar o eliminar esta entrada';
 
   @override
-  String get statusRememberDate => 'Fecha';
+  String get storyEditTitle => 'Editar esta entrada';
 
   @override
-  String get statusRememberNoteLabel =>
-      'Unas palabras en su memoria (opcional)';
+  String get storyDeleteTitle => '¿Eliminar esta entrada?';
 
   @override
-  String get statusBackToNormal => 'Volver a la normalidad';
+  String get storyDeleteBody =>
+      'Se quitará de su historia. El gato, sus fotos y sus otras entradas se quedan.';
 
   @override
-  String get statusBackToNormalBody =>
-      'El gato se mostrará como siempre, sin estado. Sus fotos y encuentros se quedan.';
+  String get storyConflictTitle => 'Puede que no coincidan — revísalos';
+
+  @override
+  String storyConflictDuplicate(String type) {
+    String _temp0 = intl.Intl.selectLogic(type, {
+      'born': 'Hay dos fechas de su nacimiento. ¿Alguna está mal?',
+      'sterilised': 'Hay dos fechas de su esterilización. ¿Alguna está mal?',
+      'other': 'Hay dos fechas de su fallecimiento. ¿Alguna está mal?',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String storyConflictSighting(String date) {
+    return 'Hay una foto del $date, posterior a su fallecimiento. ¿Alguna de las dos está mal?';
+  }
+
+  @override
+  String get storyConflictFoundAfterDeath =>
+      'Se registró que apareció después de su fallecimiento. ¿Alguna de las dos está mal?';
+
+  @override
+  String storyNudgeFound(String date) {
+    return 'Visto el $date. ¿Apareció?';
+  }
+
+  @override
+  String get storyEarTipOffer =>
+      'Oreja cortada: ¿añadir la esterilización a su historia?';
+
+  @override
+  String get storyEarTipAdd => 'Añadir';
+
+  @override
+  String get storyEarTipNotNow => 'Ahora no';
+
+  @override
+  String lifeRangeAround(String date) {
+    return 'alrededor de $date';
+  }
+
+  @override
+  String lifeRememberedConflict(String first) {
+    return '$first – hay dos fechas registradas';
+  }
+
+  @override
+  String get lifeRememberedConflictOnly =>
+      'Hay dos fechas registradas de su fallecimiento';
 }

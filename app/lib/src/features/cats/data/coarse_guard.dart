@@ -28,32 +28,53 @@ const _allowedKeys = {
   'updatedAt',
 };
 
+const _eventKeys = {
+  'catId',
+  'type',
+  'on',
+  'around',
+  'note',
+  'area',
+  'neighbourhood',
+  'createdAt',
+  'updatedAt',
+};
+
 const _latLngKeys = {'lat', 'lng', 'lon', 'latitude', 'longitude', 'geo'};
 
 /// Run just before every encounter write. Throws (after logging) unless the
 /// map has only known keys, `area` is a geohash of at most 6 characters,
 /// `neighbourhood` is a short string, and nothing in it is a GeoPoint, a
 /// lat/lng field, or a pair of numbers that looks like a position.
-void assertCoarse(Map<String, dynamic> data) {
+void assertCoarse(Map<String, dynamic> data) => _assert(data, _allowedKeys);
+
+/// The same check for a life event (a missing entry may carry the last-seen
+/// area), run just before every event write.
+void assertCoarseEvent(Map<String, dynamic> data) => _assert(data, _eventKeys);
+
+void _assert(Map<String, dynamic> data, Set<String> allowedKeys) {
   try {
     for (final key in data.keys) {
-      if (!_allowedKeys.contains(key)) {
+      if (!allowedKeys.contains(key)) {
         throw CoarseGuardException('unexpected field "$key"');
       }
     }
     final area = data['area'];
+    // A FieldValue (a delete, in an update) carries no value to check.
     if (area != null &&
+        area is! FieldValue &&
         (area is! String || CoarseArea.tryParse(area) == null)) {
       throw const CoarseGuardException('area is not a geohash of 6 or fewer');
     }
     final name = data['neighbourhood'];
     if (name != null &&
+        name is! FieldValue &&
         (name is! String || name.length > maxNeighbourhoodLength)) {
       throw const CoarseGuardException('neighbourhood is not a short string');
     }
     data.forEach((key, value) => _scan(key, value));
   } on CoarseGuardException catch (e) {
-    developer.log('Refused encounter write: $e', name: 'straycats');
+    developer.log('Refused write: $e', name: 'straycats');
     rethrow;
   }
 }

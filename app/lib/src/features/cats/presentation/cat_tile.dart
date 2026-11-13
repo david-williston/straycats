@@ -7,8 +7,8 @@ import '../../../localization/app_localizations.dart';
 import '../../admin/data/other_photo_cache.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
-import '../domain/cat_status.dart';
-import 'cat_status_badge.dart';
+import '../domain/life.dart';
+import 'life_badge.dart';
 
 /// A grid tile: the cat's latest photo with its name (or a quiet hint)
 /// beneath. With [ownerUid] the photo is another person's (an admin viewing),
@@ -96,10 +96,10 @@ class CatTile extends ConsumerWidget {
                       color: scheme.onSurfaceVariant,
                     ),
             ),
-            if (cat.status != CatStatus.known)
+            if (cat.life.state != LifeState.known)
               Padding(
                 padding: const EdgeInsets.only(top: 4),
-                child: Center(child: CatStatusBadge(cat: cat, compact: true)),
+                child: Center(child: LifeBadge(cat: cat, compact: true)),
               ),
             const SizedBox(height: 2),
           ],

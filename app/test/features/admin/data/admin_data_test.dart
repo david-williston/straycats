@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:straycats/src/features/cats/domain/life.dart';
 import 'package:straycats/src/features/admin/data/is_admin.dart';
 import 'package:straycats/src/features/admin/data/other_photo_cache.dart';
 import 'package:straycats/src/features/admin/data/people_repository.dart';
@@ -46,6 +47,12 @@ void main() {
         'photoId': '1',
         'takenAt': Timestamp(50, 0),
       });
+      await db.doc('users/u1/events/7').set({
+        'catId': '1',
+        'type': 'died',
+        'on': '2025-02',
+        'createdAt': Timestamp(60, 0),
+      });
       final repo = FirestorePeopleRepository(db);
 
       final people = await repo.listPeople();
@@ -61,6 +68,8 @@ void main() {
       final cats = await repo.catsOf('u1');
       expect(cats.single.name, 'Ninja');
       expect(cats.single.encounters.single.photoId, '1');
+      expect(cats.single.life.state, LifeState.remembered);
+      expect(cats.single.events.single.on.stored, '2025-02');
       expect(await repo.catsOf('u2'), isEmpty);
     });
   });

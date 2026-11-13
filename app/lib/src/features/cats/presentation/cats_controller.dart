@@ -8,8 +8,9 @@ import '../application/photo_uploader.dart';
 import '../data/cat_repository.dart';
 import '../data/photo_files.dart';
 import '../domain/cat.dart';
-import '../domain/cat_status.dart';
 import '../domain/encounter.dart';
+import '../domain/life_event.dart';
+import '../domain/partial_date.dart';
 import '../domain/sighting.dart';
 
 part 'cats_controller.g.dart';
@@ -34,30 +35,77 @@ class CatsController extends _$CatsController {
     _log(ref.read(catRepositoryProvider).renameCat(catId, name));
   }
 
-  /// Marks the cat as [status] since the date the person chose (not in the
-  /// future), with an optional note. [CatStatus.known] puts it back to normal.
-  /// Its encounters are untouched, and more can still be added.
-  Future<void> setStatus(
+  /// Adds an entry of [type] to the story of [catId], on [on] (never later
+  /// than today), with an optional note. A missing entry keeps the cat's
+  /// last-seen neighbourhood-level place, taken from its latest encounter
+  /// that has one: it is already coarse, and nothing new is read from the
+  /// phone. Nothing is checked against the story: duplicates are shown, not
+  /// refused. Returns the new entry.
+  Future<LifeEvent?> addEvent(
     String catId,
-    CatStatus status, {
-    DateTime? since,
+    LifeEventType type,
+    PartialDate on, {
     String note = '',
   }) async {
-    final now = DateTime.now();
-    final date = since == null || since.isAfter(now) ? now : since;
-    final trimmed = note.trim();
+    final cat = state.value?.where((c) => c.id == catId).firstOrNull;
+    if (cat == null) return null;
+    final event = LifeEvent(
+      id: _newEventId(),
+      type: type,
+      on: _notFuture(on),
+      note: _clip(note),
+      place: type == LifeEventType.missing
+          ? cat.history.map((e) => e.place).nonNulls.firstOrNull
+          : null,
+    );
+    _log(ref.read(catRepositoryProvider).addEvent(catId, event));
+    return event;
+  }
+
+  /// Saves a new date and note for [event]; nothing else about it changes.
+  Future<void> updateEvent(
+    String catId,
+    LifeEvent event,
+    PartialDate on, {
+    String note = '',
+  }) async {
     _log(
       ref
           .read(catRepositoryProvider)
-          .setStatus(
+          .updateEvent(
             catId,
-            status,
-            since: date,
-            note: trimmed.length > CatStatus.maxNoteLength
-                ? trimmed.substring(0, CatStatus.maxNoteLength)
-                : trimmed,
+            event.copyWith(on: _notFuture(on), note: _clip(note)),
           ),
     );
+  }
+
+  /// Deletes one entry of the story. The cat and its encounters stay.
+  Future<void> deleteEvent(String eventId) async {
+    _log(ref.read(catRepositoryProvider).deleteEvent(eventId));
+  }
+
+  static int _lastEventId = 0;
+
+  /// The current time in milliseconds, made unique: two entries added in the
+  /// same millisecond must not share an id.
+  static String _newEventId() {
+    final now = DateTime.now().millisecondsSinceEpoch;
+    _lastEventId = now > _lastEventId ? now : _lastEventId + 1;
+    return '$_lastEventId';
+  }
+
+  /// A date in the future becomes today, at the same precision.
+  static PartialDate _notFuture(PartialDate on) {
+    final now = DateTime.now();
+    if (!on.isInFuture(now)) return on;
+    return PartialDate.fromDate(now, on.precision, around: on.around);
+  }
+
+  static String _clip(String note) {
+    final t = note.trim();
+    return t.length > LifeEventType.maxNoteLength
+        ? t.substring(0, LifeEventType.maxNoteLength)
+        : t;
   }
 
   /// Records [photo] as an encounter with the cat in [sighting], or with a

@@ -17,10 +17,12 @@ import '../../share/presentation/share_card_page.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
-import 'cat_status_section.dart';
 import 'cat_tile.dart';
 import 'cats_controller.dart';
 import 'encounter_details_form.dart';
+import 'story_widgets.dart';
+import '../domain/life_event.dart';
+import 'story_actions.dart';
 
 /// The cat card: a photo large (pinch to zoom), its name, and every
 /// encounter newest first with its details and note (tap one to show its
@@ -251,6 +253,113 @@ class _CatCardState extends ConsumerState<CatCard> {
     ).push(MaterialPageRoute<void>(builder: (_) => ShareCardPage(data: data)));
   }
 
+  /// The entries of the story, newest first: encounters (by [index] into
+  /// the cat's history) and the entries of its life, on one timeline.
+  List<_StoryItem> _story(Cat cat, List<Encounter> history) {
+    final items = [
+      for (var i = 0; i < history.length; i++)
+        _StoryItem(history[i].time, index: i),
+      for (final e in cat.events) _StoryItem(e.on.start, event: e),
+    ]..sort((a, b) => b.when.compareTo(a.when));
+    return items;
+  }
+
+  Widget _storyCard(
+    Cat cat,
+    _StoryItem item,
+    int shown,
+    ThemeData theme,
+    AppLocalizations l10n,
+    String locale,
+  ) {
+    final ev = item.event;
+    if (ev == null) {
+      return _encounterCard(cat, item.index!, shown, theme, l10n, locale);
+    }
+    return StoryEventCard(
+      event: ev,
+      conflicted: cat.life.inConflict(ev),
+      onTap: widget.readOnly
+          ? null
+          : () => editStoryEntry(context, ref, cat, ev),
+    );
+  }
+
+  /// One encounter of the timeline: its photo, date, place and details.
+  Widget _encounterCard(
+    Cat cat,
+    int i,
+    int shown,
+    ThemeData theme,
+    AppLocalizations l10n,
+    String locale,
+  ) {
+    final e = cat.history[i];
+    final selected = i == shown;
+    return SizedBox(
+      width: 148,
+      child: Card(
+        color: selected ? theme.colorScheme.surfaceContainerHighest : null,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(catRadius),
+          side: BorderSide(
+            width: selected ? 2 : 1,
+            color: selected
+                ? theme.colorScheme.primary
+                : theme.colorScheme.outlineVariant,
+          ),
+        ),
+        child: InkWell(
+          onTap: () {
+            setState(() => _shown = i);
+            if (!widget.readOnly) _edit(cat, e);
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: 72,
+                    child: CatPhoto(_photo(e), cacheWidth: 300),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  DateFormat.yMMMd(locale).format(e.time),
+                  style: theme.textTheme.labelLarge?.copyWith(
+                    color: theme.colorScheme.onSurface,
+                  ),
+                ),
+                if (e.place != null)
+                  _PlaceLine(e.place!.neighbourhood ?? l10n.placeAroundUnnamed),
+                if (e.details.summary(l10n).isNotEmpty)
+                  Text(
+                    e.details.summary(l10n),
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                if (e.details.note.isNotEmpty)
+                  Text(
+                    e.details.note,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.bodySmall,
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   void dispose() {
     _name.dispose();
@@ -265,6 +374,7 @@ class _CatCardState extends ConsumerState<CatCard> {
     final cat = _cat;
     final history = cat.history;
     final shown = _shown < history.length ? _shown : 0;
+    final story = _story(cat, history);
     return PopScope(
       onPopInvokedWithResult: (_, _) {
         if (widget.readOnly) return;
@@ -323,7 +433,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                     : (_) => Navigator.of(context).pop(),
               ),
             ),
-            CatStatusSection(cat: cat, readOnly: widget.readOnly),
+            StorySection(cat: cat, readOnly: widget.readOnly),
             _seenAround(history, l10n, theme),
             ConstrainedBox(
               constraints: BoxConstraints(
@@ -337,100 +447,16 @@ class _CatCardState extends ConsumerState<CatCard> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        for (var i = 0; i < history.length; i++)
+                        for (var n = 0; n < story.length; n++)
                           Padding(
-                            padding: EdgeInsets.only(left: i == 0 ? 0 : 12),
-                            child: Builder(
-                              builder: (context) {
-                                final e = history[i];
-                                final selected = i == shown;
-                                return SizedBox(
-                                  width: 148,
-                                  child: Card(
-                                    color: selected
-                                        ? theme
-                                              .colorScheme
-                                              .surfaceContainerHighest
-                                        : null,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                        catRadius,
-                                      ),
-                                      side: BorderSide(
-                                        width: selected ? 2 : 1,
-                                        color: selected
-                                            ? theme.colorScheme.primary
-                                            : theme.colorScheme.outlineVariant,
-                                      ),
-                                    ),
-                                    child: InkWell(
-                                      onTap: () {
-                                        setState(() => _shown = i);
-                                        if (!widget.readOnly) _edit(cat, e);
-                                      },
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                              child: SizedBox(
-                                                width: double.infinity,
-                                                height: 72,
-                                                child: CatPhoto(
-                                                  _photo(e),
-                                                  cacheWidth: 300,
-                                                ),
-                                              ),
-                                            ),
-                                            const SizedBox(height: 8),
-                                            Text(
-                                              DateFormat.yMMMd(locale)
-                                                  .format(e.time),
-                                              style: theme.textTheme.labelLarge
-                                                  ?.copyWith(
-                                                    color: theme
-                                                        .colorScheme
-                                                        .onSurface,
-                                                  ),
-                                            ),
-                                            if (e.place != null)
-                                              _PlaceLine(
-                                                e.place!.neighbourhood ??
-                                                    l10n.placeAroundUnnamed,
-                                              ),
-                                            if (e.details
-                                                .summary(l10n)
-                                                .isNotEmpty)
-                                              Text(
-                                                e.details.summary(l10n),
-                                                maxLines: 3,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: theme.textTheme.bodySmall
-                                                    ?.copyWith(
-                                                      color: theme
-                                                          .colorScheme
-                                                          .onSurfaceVariant,
-                                                    ),
-                                              ),
-                                            if (e.details.note.isNotEmpty)
-                                              Text(
-                                                e.details.note,
-                                                maxLines: 4,
-                                                overflow: TextOverflow.ellipsis,
-                                                style:
-                                                    theme.textTheme.bodySmall,
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                );
-                              },
+                            padding: EdgeInsets.only(left: n == 0 ? 0 : 12),
+                            child: _storyCard(
+                              cat,
+                              story[n],
+                              shown,
+                              theme,
+                              l10n,
+                              locale,
                             ),
                           ),
                       ],
@@ -447,6 +473,16 @@ class _CatCardState extends ConsumerState<CatCard> {
 }
 
 enum _EditAction { save, removePlace, delete }
+
+/// An entry of the card's timeline: an encounter ([index] into the cat's
+/// history) or a [event] of its story, at [when].
+class _StoryItem {
+  const _StoryItem(this.when, {this.index, this.event});
+
+  final DateTime when;
+  final int? index;
+  final LifeEvent? event;
+}
 
 /// A small place icon and a neighbourhood name, on an encounter's tile.
 class _PlaceLine extends StatelessWidget {

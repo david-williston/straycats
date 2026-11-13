@@ -21,6 +21,7 @@ import 'package:straycats/src/features/cats/data/fake_local_photo_cache.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_storage.dart';
 import 'package:straycats/src/features/cats/data/local_photo_cache.dart';
+import 'package:straycats/src/features/cats/data/offer_repository.dart';
 import 'package:straycats/src/features/cats/data/photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
@@ -57,6 +58,7 @@ List<Override> fakeOverrides({
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
   FakePlaceService? places,
+  FakeOfferRepository? offers,
 }) {
   final firestore = db ?? FakeFirebaseFirestore();
   final fakeAuth = auth ?? FakeAuthRepository(uid: 'test-uid');
@@ -87,6 +89,7 @@ List<Override> fakeOverrides({
     ),
     photoUploaderProvider.overrideWithValue(uploader ?? FakePhotoUploader()),
     localPhotoCacheProvider.overrideWithValue(FakeLocalPhotoCache()),
+    offerRepositoryProvider.overrideWithValue(offers ?? FakeOfferRepository()),
     languageRepositoryProvider.overrideWithValue(
       language ?? FakeLanguageRepository(),
     ),
@@ -103,6 +106,7 @@ ProviderContainer makeContainer({
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
   FakePlaceService? places,
+  FakeOfferRepository? offers,
 }) {
   final container = ProviderContainer(
     retry: (_, _) => null,
@@ -115,6 +119,7 @@ ProviderContainer makeContainer({
       db: db,
       otherPhotos: otherPhotos,
       places: places,
+      offers: offers,
     ),
   );
   addTearDown(container.dispose);
@@ -133,6 +138,7 @@ Future<void> pumpApp(
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
   FakePlaceService? places,
+  FakeOfferRepository? offers,
   Locale? locale,
 }) async {
   tester.view.physicalSize = const Size(1080, 2400);
@@ -150,6 +156,7 @@ Future<void> pumpApp(
         db: db,
         otherPhotos: otherPhotos,
         places: places,
+        offers: offers,
       ),
       child: StrayCatsApp(locale: locale),
     ),

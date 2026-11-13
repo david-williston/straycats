@@ -3,9 +3,13 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/data/firestore_cat_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
-import 'package:straycats/src/features/cats/domain/cat_status.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
 import 'package:straycats/src/features/cats/domain/encounter_details.dart';
+import 'package:straycats/src/features/cats/data/coarse_guard.dart';
+import 'package:straycats/src/features/cats/domain/life_event.dart';
+import 'package:straycats/src/features/cats/domain/partial_date.dart';
+import 'package:straycats/src/features/places/domain/coarse_area.dart';
+import 'package:straycats/src/features/places/domain/place.dart';
 
 import '../../../helpers.dart';
 
@@ -183,79 +187,203 @@ void main() {
     expect(await other.watchCats().first, isEmpty);
   });
 
+  group('life events', () {
+    LifeEvent event(
+      String id,
+      LifeEventType type,
+      PartialDate on, {
+      String note = '',
+      Place? place,
+    }) => LifeEvent(id: id, type: type, on: on, note: note, place: place);
 
+    test(
+      'an event round trips with its date, around, note and place',
+      () async {
+        await repo.addCat(cat('1', 'Ninja', [1000]));
+        await repo.addEvent(
+          '1',
+          event(
+            '10',
+            LifeEventType.born,
+            const PartialDate.year(2019, around: true),
+            note: 'Under the porch',
+          ),
+        );
+        await repo.addEvent(
+          '1',
+          event(
+            '11',
+            LifeEventType.missing,
+            const PartialDate.day(2026, 11, 3),
+            place: Place(
+              area: CoarseArea.fromGeohash('9g3q4k'),
+              neighbourhood: 'Rinconada',
+            ),
+          ),
+        );
 
-  group('status', () {
-    final since = DateTime(2026, 11, 10);
+        final born = (await db.doc('users/u1/events/10').get()).data()!;
+        expect(born['catId'], '1');
+        expect(born['type'], 'born');
+        expect(born['on'], '2019');
+        expect(born['around'], isTrue);
+        expect(born['note'], 'Under the porch');
+        expect(born.containsKey('area'), isFalse);
+        expect(born.keys, containsAll(['createdAt', 'updatedAt']));
+        final missing = (await db.doc('users/u1/events/11').get()).data()!;
+        expect(missing['on'], '2026-11-03');
+        expect(missing.containsKey('around'), isFalse);
+        expect(missing['area'], '9g3q4k');
+        expect(missing['neighbourhood'], 'Rinconada');
 
-    test('a cat with no status field is known', () async {
+        final c = (await repo.watchCats().first).single;
+        expect(c.events, hasLength(2));
+        final back = c.events.firstWhere((e) => e.id == '10');
+        expect(back.type, LifeEventType.born);
+        expect(back.on, const PartialDate.year(2019, around: true));
+        expect(back.note, 'Under the porch');
+        expect(back.createdAt, isNotNull);
+        final m = c.events.firstWhere((e) => e.id == '11');
+        expect(m.place?.area.geohash, '9g3q4k');
+        expect(m.place?.neighbourhood, 'Rinconada');
+        expect(c.encounters, hasLength(1));
+      },
+    );
+
+    test('a cat with no events has none', () async {
       await repo.addCat(cat('1', 'Ciccio', [1000]));
-      final c = (await repo.watchCats().first).single;
-      expect(c.status, CatStatus.known);
-      expect(c.statusSince, isNull);
-      expect(c.statusNote, '');
+      expect((await repo.watchCats().first).single.events, isEmpty);
     });
 
-    test('a status round trips with its date and note', () async {
+    test(
+      'updating keeps the type and creation time, and clears what is gone',
+      () async {
+        await repo.addCat(cat('1', 'Ninja', [1000]));
+        await repo.addEvent(
+          '1',
+          event(
+            '10',
+            LifeEventType.born,
+            const PartialDate.year(2019, around: true),
+            note: 'x',
+          ),
+        );
+        final before = (await db.doc('users/u1/events/10').get()).data()!;
+        await repo.updateEvent(
+          '1',
+          event('10', LifeEventType.born, const PartialDate.month(2019, 3)),
+        );
+        final after = (await db.doc('users/u1/events/10').get()).data()!;
+        expect(after['on'], '2019-03');
+        expect(after.containsKey('around'), isFalse);
+        expect(after.containsKey('note'), isFalse);
+        expect(after['type'], 'born');
+        expect(after['createdAt'], before['createdAt']);
+        expect((await docs('events')).docs, hasLength(1));
+      },
+    );
+
+    test('deleting an event keeps the cat and its encounters', () async {
       await repo.addCat(cat('1', 'Ninja', [1000]));
-      await repo.setStatus(
+      await repo.addEvent(
         '1',
-        CatStatus.missing,
-        since: since,
-        note: ' near the market ',
+        event('10', LifeEventType.died, const PartialDate.year(2025)),
       );
-
-      final data = (await db.doc('users/u1/cats/1').get()).data()!;
-      expect(data['status'], 'missing');
-      expect(data['statusSince'], Timestamp.fromDate(since));
-      expect(data['statusNote'], 'near the market');
-      expect(data['name'], 'Ninja');
-      final c = (await repo.watchCats().first).single;
-      expect(c.status, CatStatus.missing);
-      expect(c.statusSince, since);
-      expect(c.statusNote, 'near the market');
-      expect(c.encounters, hasLength(1));
-    });
-
-    test('an empty note is not stored', () async {
-      await repo.addCat(cat('1', 'Ninja', [1000]));
-      await repo.setStatus('1', CatStatus.found, since: since);
-      final data = (await db.doc('users/u1/cats/1').get()).data()!;
-      expect(data.containsKey('statusNote'), isFalse);
-    });
-
-    test('status moves on and back to normal removes every field', () async {
-      await repo.addCat(cat('1', 'Ninja', [1000]));
-      await repo.setStatus('1', CatStatus.missing, since: since, note: 'a');
-      await repo.setStatus('1', CatStatus.found, since: since);
-      expect((await repo.watchCats().first).single.status, CatStatus.found);
-      await repo.setStatus('1', CatStatus.known);
-
-      final data = (await db.doc('users/u1/cats/1').get()).data()!;
-      expect(data.keys.toSet(), {'name', 'updatedAt'});
-    });
-
-    test('renaming keeps the status', () async {
-      await repo.addCat(cat('1', 'Ciccio', [1000]));
-      await repo.setStatus('1', CatStatus.remembered, since: since, note: 'x');
-      await repo.renameCat('1', 'Ninja');
-
+      await repo.deleteEvent('10');
+      expect((await docs('events')).docs, isEmpty);
       final c = (await repo.watchCats().first).single;
       expect(c.name, 'Ninja');
-      expect(c.status, CatStatus.remembered);
-      expect(c.statusNote, 'x');
+      expect(c.encounters, hasLength(1));
+      expect(c.events, isEmpty);
     });
 
+    test(
+      'events of another cat or a missing cat go where they belong',
+      () async {
+        await repo.addCat(cat('1', 'A', [1000]));
+        await repo.addCat(cat('2', 'B', [2000]));
+        await repo.addEvent(
+          '2',
+          event('10', LifeEventType.found, const PartialDate.day(2026, 1, 2)),
+        );
+        await repo.addEvent(
+          'nobody',
+          event('11', LifeEventType.found, const PartialDate.day(2026, 1, 2)),
+        );
+        final cats = await repo.watchCats().first;
+        expect(cats.firstWhere((c) => c.id == '1').events, isEmpty);
+        expect(cats.firstWhere((c) => c.id == '2').events.single.id, '10');
+      },
+    );
 
-    test('a cat added with a status writes it', () async {
+    test('an unreadable event document is ignored', () async {
+      await repo.addCat(cat('1', 'A', [1000]));
+      await db.doc('users/u1/events/bad').set({
+        'catId': '1',
+        'type': 'died',
+        'on': '2021-02-30',
+      });
+      await db.doc('users/u1/events/odd').set({
+        'catId': '1',
+        'type': 'shrugged',
+        'on': '2021',
+      });
+      expect((await repo.watchCats().first).single.events, isEmpty);
+    });
+
+    test('a cat added with events writes them in the same batch', () async {
       await repo.addCat(
-        cat('1', 'Saibo', [
-          1000,
-        ]).withStatus(CatStatus.remembered, since: since, note: 'x'),
+        Cat(
+          id: '1',
+          name: 'Saibo',
+          events: [
+            event('10', LifeEventType.died, const PartialDate.year(2025)),
+          ],
+        ),
+      );
+      expect((await repo.watchCats().first).single.events, hasLength(1));
+    });
+
+    test('another user does not see these events', () async {
+      await repo.addCat(cat('1', 'A', [1000]));
+      await repo.addEvent(
+        '1',
+        event('10', LifeEventType.died, const PartialDate.year(2025)),
+      );
+      expect(await FirestoreCatRepository(db, 'u2').watchCats().first, isEmpty);
+    });
+
+    test('the coarse guard checks events: no unknown or exact fields', () {
+      final ok = {
+        'catId': '1',
+        'type': 'missing',
+        'on': '2026-11-03',
+        'area': '9g3q4k',
+        'neighbourhood': 'Rinconada',
+        'createdAt': 1,
+        'updatedAt': 1,
+      };
+      expect(() => assertCoarseEvent(ok), returnsNormally);
+      expect(
+        () => assertCoarseEvent({...ok, 'area': '9g3q4kx'}),
+        throwsA(isA<CoarseGuardException>()),
       );
       expect(
-        (await repo.watchCats().first).single.status,
-        CatStatus.remembered,
+        () => assertCoarseEvent({...ok, 'lat': 19.4, 'lng': -99.1}),
+        throwsA(isA<CoarseGuardException>()),
+      );
+      expect(
+        () => assertCoarseEvent({...ok, 'location': const GeoPoint(1, 2)}),
+        throwsA(isA<CoarseGuardException>()),
+      );
+      expect(
+        () => assertCoarseEvent({...ok, 'neighbourhood': 'x' * 81}),
+        throwsA(isA<CoarseGuardException>()),
+      );
+      expect(
+        () => assertCoarse({...ok}),
+        throwsA(isA<CoarseGuardException>()),
+        reason: 'event fields are not valid on an encounter',
       );
     });
   });

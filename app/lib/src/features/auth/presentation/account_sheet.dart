@@ -45,6 +45,10 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
   bool _nicknameLoaded = false;
   bool _busy = false;
 
+  /// Something is actually running (not waiting on the person): shows the
+  /// progress indicator.
+  bool _working = false;
+
   @override
   void dispose() {
     _nickname.dispose();
@@ -58,18 +62,18 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
         (ref.read(catsControllerProvider).value ?? const []).isNotEmpty;
     // Kept now: the sheet's ref stops working once the sheet is gone.
     final container = ProviderScope.containerOf(context);
-    setState(() => _busy = true);
+    setState(() => _busy = _working = true);
     try {
       final result = await ref.read(authRepositoryProvider).signInWithGoogle();
       if (!mounted) return;
       switch (result) {
         case GoogleSignInResult.cancelled:
-          setState(() => _busy = false);
+          setState(() => _busy = _working = false);
           return;
         case GoogleSignInResult.linked:
           container.invalidate(isAdminProvider);
           messenger.showSnackBar(SnackBar(content: Text(l10n.googleLinked)));
-          setState(() => _busy = false);
+          setState(() => _busy = _working = false);
         case GoogleSignInResult.switchedAccount:
           messenger.showSnackBar(
             SnackBar(
@@ -85,7 +89,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
     } catch (_) {
       if (!mounted) return;
       messenger.showSnackBar(SnackBar(content: Text(l10n.signInFailed)));
-      setState(() => _busy = false);
+      setState(() => _busy = _working = false);
     }
   }
 
@@ -94,18 +98,21 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
     final messenger = ScaffoldMessenger.of(context);
     final navigator = Navigator.of(context);
     final service = ref.read(signOutServiceProvider);
-    setState(() => _busy = true);
+    setState(() => _busy = _working = true);
     try {
       final pending = await service.pendingUploads();
       if (!mounted) return;
+      // The dialog is waiting for the person, not working.
+      setState(() => _working = false);
       final choice = await showDialog<_SignOutChoice>(
         context: context,
         builder: (_) => _SignOutDialog(pending: pending),
       );
       if (!mounted) return;
+      if (choice != null) setState(() => _working = true);
       switch (choice) {
         case null:
-          setState(() => _busy = false);
+          setState(() => _busy = _working = false);
         case _SignOutChoice.wait:
           final left = await service.uploadPending();
           if (!mounted) return;
@@ -116,7 +123,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
               ),
             ),
           );
-          setState(() => _busy = false);
+          setState(() => _busy = _working = false);
         case _SignOutChoice.signOut:
           await service.signOut();
           // The app starts again as a new anonymous user.
@@ -124,7 +131,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
       }
     } catch (_) {
       messenger.showSnackBar(SnackBar(content: Text(l10n.signOutFailed)));
-      if (mounted) setState(() => _busy = false);
+      if (mounted) setState(() => _busy = _working = false);
     }
   }
 
@@ -170,6 +177,12 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
           children: [
             Text(l10n.account, style: theme.textTheme.titleLarge),
             const SizedBox(height: 12),
+            // Signing in or out can take seconds: show that it is working.
+            if (_working)
+              const Padding(
+                padding: EdgeInsets.only(bottom: 12),
+                child: LinearProgressIndicator(),
+              ),
             if (signedIn) ...[
               Text(l10n.signedInAs(who)),
               if (account.email != null && account.email != who)
@@ -184,7 +197,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
                 alignment: Alignment.centerLeft,
                 child: OutlinedButton.icon(
                   onPressed: _busy ? null : _signOut,
-                  icon: const Icon(Icons.logout),
+                  icon: _working ? const _Spinner() : const Icon(Icons.logout),
                   label: Text(l10n.signOut),
                 ),
               ),
@@ -193,7 +206,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
               const SizedBox(height: 12),
               FilledButton.icon(
                 onPressed: _busy ? null : _signIn,
-                icon: const Icon(Icons.login),
+                icon: _working ? const _Spinner() : const Icon(Icons.login),
                 label: Text(l10n.signInWithGoogle),
               ),
               const SizedBox(height: 8),
@@ -239,6 +252,17 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
       ),
     );
   }
+}
+
+class _Spinner extends StatelessWidget {
+  const _Spinner();
+
+  @override
+  Widget build(BuildContext context) => const SizedBox(
+    width: 18,
+    height: 18,
+    child: CircularProgressIndicator(strokeWidth: 2),
+  );
 }
 
 enum _SignOutChoice { signOut, wait }
