@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// The app name, shown in the title bar of the home screen.
   ///
   /// In en, this message translates to:
-  /// **'Stray Cats'**
+  /// **'StrayCats'**
   String get appTitle;
 
   /// Shown on the home screen when the saved cats cannot be loaded.

@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Stray Cats uses the camera to photograph cats you meet.</string>
+	<string>StrayCats uses the camera to photograph cats you meet.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Stray Cats saves photos of cats you meet.</string>
+	<string>StrayCats saves photos of cats you meet.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Straycats</string>
+	<string>StrayCats</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

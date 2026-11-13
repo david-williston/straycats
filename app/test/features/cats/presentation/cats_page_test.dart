@@ -22,7 +22,7 @@ void main() {
     await pumpApp(tester, cats: FakeCatRepository());
     await tester.pump();
 
-    expect(find.text('Stray Cats'), findsOneWidget);
+    expect(find.text('StrayCats'), findsOneWidget);
     expect(
       find.text('No cats yet. Tap the camera to meet one.'),
       findsOneWidget,
@@ -93,7 +93,7 @@ void main() {
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Stray Cats'), findsOneWidget);
+    expect(find.text('StrayCats'), findsOneWidget);
     expect(find.byType(CatTile), findsNWidgets(2));
     expect(repo.added, isEmpty);
     final (catId, encounter) = repo.addedEncounters.single;

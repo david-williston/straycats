@@ -10,7 +10,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Stray Cats';
+  String get appTitle => 'StrayCats';
 
   @override
   String get cantOpenCatsFolder => 'No se pudieron cargar tus gatos.';

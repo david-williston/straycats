@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Stray Cats",
+  "appTitle": "StrayCats",
   "@appTitle": {"description": "The app name, shown in the title bar of the home screen."},
   "cantOpenCatsFolder": "Could not load your cats.",
   "@cantOpenCatsFolder": {"description": "Shown on the home screen when the saved cats cannot be loaded."},
