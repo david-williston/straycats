@@ -7,10 +7,12 @@ import 'package:intl/intl.dart';
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
 import '../../../localization/encounter_labels.dart';
+import '../../../theme/app_theme.dart';
 import '../../admin/data/other_photo_cache.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
+import 'cat_tile.dart';
 import 'cats_controller.dart';
 import 'encounter_details_form.dart';
 
@@ -59,7 +61,7 @@ class _CatCardState extends ConsumerState<CatCard> {
           bottom: MediaQuery.viewInsetsOf(context).bottom,
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -71,7 +73,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                     children: [
                       Text(
                         l10n.editEncounter,
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                       EncounterDetailsForm(
                         initial: e.details,
@@ -81,7 +83,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                   ),
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               Row(
                 children: [
                   TextButton.icon(
@@ -170,10 +172,22 @@ class _CatCardState extends ConsumerState<CatCard> {
         body: Column(
           children: [
             Expanded(
-              child: InteractiveViewer(
-                child: CatPhoto(
-                  history.isEmpty ? null : _photo(history[shown]),
-                  fit: BoxFit.contain,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(catRadius * 1.5),
+                  child: ColoredBox(
+                    color: theme.colorScheme.surfaceContainerHighest,
+                    child: Hero(
+                      tag: CatTile.heroTag(widget.cat, widget.ownerUid),
+                      child: InteractiveViewer(
+                        child: CatPhoto(
+                          history.isEmpty ? null : _photo(history[shown]),
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -187,71 +201,119 @@ class _CatCardState extends ConsumerState<CatCard> {
                 decoration: InputDecoration(
                   labelText: l10n.name,
                   hintText: l10n.giveCatAName,
-                  border: const OutlineInputBorder(),
                 ),
                 onSubmitted: widget.readOnly
                     ? null
                     : (_) => Navigator.of(context).pop(),
               ),
             ),
-            SizedBox(
-              height: 240,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                itemCount: history.length,
-                separatorBuilder: (_, _) => const SizedBox(width: 8),
-                itemBuilder: (context, i) {
-                  final e = history[i];
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() => _shown = i);
-                      if (!widget.readOnly) _edit(cat, e);
-                    },
-                    child: SizedBox(
-                      width: 120,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 120,
-                            height: 72,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                width: 2,
-                                color: i == shown
-                                    ? theme.colorScheme.primary
-                                    : Colors.transparent,
-                              ),
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                maxHeight: MediaQuery.sizeOf(context).height * 0.4,
+              ),
+              child: SingleChildScrollView(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                  child: IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        for (var i = 0; i < history.length; i++)
+                          Padding(
+                            padding: EdgeInsets.only(left: i == 0 ? 0 : 12),
+                            child: Builder(
+                              builder: (context) {
+                                final e = history[i];
+                                final selected = i == shown;
+                                return SizedBox(
+                                  width: 148,
+                                  child: Card(
+                                    color: selected
+                                        ? theme
+                                              .colorScheme
+                                              .surfaceContainerHighest
+                                        : null,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                        catRadius,
+                                      ),
+                                      side: BorderSide(
+                                        width: selected ? 2 : 1,
+                                        color: selected
+                                            ? theme.colorScheme.primary
+                                            : theme.colorScheme.outlineVariant,
+                                      ),
+                                    ),
+                                    child: InkWell(
+                                      onTap: () {
+                                        setState(() => _shown = i);
+                                        if (!widget.readOnly) _edit(cat, e);
+                                      },
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              child: SizedBox(
+                                                width: double.infinity,
+                                                height: 72,
+                                                child: CatPhoto(
+                                                  _photo(e),
+                                                  cacheWidth: 300,
+                                                ),
+                                              ),
+                                            ),
+                                            const SizedBox(height: 8),
+                                            Text(
+                                              DateFormat.yMMMd(locale)
+                                                  .format(e.time),
+                                              style: theme.textTheme.labelLarge
+                                                  ?.copyWith(
+                                                    color: theme
+                                                        .colorScheme
+                                                        .onSurface,
+                                                  ),
+                                            ),
+                                            if (e.details
+                                                .summary(l10n)
+                                                .isNotEmpty)
+                                              Text(
+                                                e.details.summary(l10n),
+                                                maxLines: 3,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: theme.textTheme.bodySmall
+                                                    ?.copyWith(
+                                                      color: theme
+                                                          .colorScheme
+                                                          .onSurfaceVariant,
+                                                    ),
+                                              ),
+                                            if (e.details.note.isNotEmpty)
+                                              Text(
+                                                e.details.note,
+                                                maxLines: 4,
+                                                overflow: TextOverflow.ellipsis,
+                                                style:
+                                                    theme.textTheme.bodySmall,
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
                             ),
-                            child: CatPhoto(_photo(e), cacheWidth: 200),
                           ),
-                          const SizedBox(height: 4),
-                          Text(
-                            DateFormat.yMMMd(locale).format(e.time),
-                            style: theme.textTheme.bodySmall,
-                          ),
-                          if (e.details.summary(l10n).isNotEmpty)
-                            Text(
-                              e.details.summary(l10n),
-                              maxLines: 3,
-                              overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                color: theme.colorScheme.outline,
-                              ),
-                            ),
-                          if (e.details.note.isNotEmpty)
-                            Text(
-                              e.details.note,
-                              maxLines: 4,
-                              overflow: TextOverflow.ellipsis,
-                              style: theme.textTheme.bodySmall,
-                            ),
-                        ],
-                      ),
+                      ],
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
             ),
           ],

@@ -123,12 +123,12 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(l10n.account, style: theme.textTheme.titleMedium),
+            Text(l10n.account, style: theme.textTheme.titleLarge),
             const SizedBox(height: 12),
             if (signedIn) ...[
               Text(l10n.signedInAs(who)),
@@ -136,7 +136,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
                 Text(
                   account.email!,
                   style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.outline,
+                    color: theme.colorScheme.onSurfaceVariant,
                   ),
                 ),
             ] else ...[
@@ -157,7 +157,6 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
               decoration: InputDecoration(
                 labelText: l10n.nicknameOptional,
                 hintText: l10n.nicknameHint,
-                border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
                   icon: const Icon(Icons.check),
                   tooltip: l10n.save,
@@ -168,7 +167,7 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
             ),
             if (isAdmin)
               ListTile(
-                contentPadding: EdgeInsets.zero,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 4),
                 leading: const Icon(Icons.groups_outlined),
                 title: Text(l10n.people),
                 trailing: const Icon(Icons.chevron_right),

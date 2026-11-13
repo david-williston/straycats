@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
+import '../../../theme/app_theme.dart';
 import '../domain/cat.dart';
 import '../domain/encounter_details.dart';
 import '../domain/sighting.dart';
@@ -60,19 +61,32 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
       child: Scaffold(
         appBar: AppBar(title: Text(_picked ? _title(l10n) : l10n.whoIsThis)),
         body: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
           children: [
-            SizedBox(
-              height: _picked ? 180 : 240,
-              child: CatPhoto(widget.photo, cacheWidth: 800),
+            Container(
+              height: _picked ? 180 : 300,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(catRadius * 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.14),
+                    blurRadius: 14,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(catRadius * 1.5),
+                child: CatPhoto(widget.photo, cacheWidth: 800),
+              ),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             ...(_picked ? _details(context) : _choices(context)),
           ],
         ),
         bottomNavigationBar: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
             child: _picked
                 ? FilledButton(onPressed: _done, child: Text(l10n.done))
                 : FilledButton.icon(
@@ -95,24 +109,31 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
   List<Widget> _choices(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     if (widget.candidates.isEmpty) {
-      return [Text(l10n.noCatsYetFirst)];
+      return [
+        Text(
+          l10n.noCatsYetFirst,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyLarge
+              ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+        ),
+      ];
     }
     return [
       Text(l10n.isItOneOfThese, style: Theme.of(context).textTheme.titleMedium),
-      const SizedBox(height: 8),
+      const SizedBox(height: 12),
       GridView.builder(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          childAspectRatio: 0.8,
+          mainAxisSpacing: 16,
+          crossAxisSpacing: 12,
+          childAspectRatio: 0.72,
         ),
         itemCount: widget.candidates.length,
-        itemBuilder: (context, i) => GestureDetector(
+        itemBuilder: (context, i) => CatTile(
+          cat: widget.candidates[i],
           onTap: () => _pick(widget.candidates[i]),
-          child: CatTile(cat: widget.candidates[i]),
         ),
       ),
     ];

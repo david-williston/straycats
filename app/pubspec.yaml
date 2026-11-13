@@ -63,6 +63,8 @@ dev_dependencies:
   build_runner: ^2.17.1
   shared_preferences_platform_interface: ^2.4.2
   fake_cloud_firestore: ^4.5.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.7
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -75,6 +77,25 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   generate: true
+
+  assets:
+    - assets/icon/icon.png
+
+  # Nunito (SIL Open Font License, see assets/fonts/OFL.txt), the website's
+  # font, bundled so it works offline. One variable file serves every weight.
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Variable.ttf
+          weight: 400
+        - asset: assets/fonts/Nunito-Variable.ttf
+          weight: 500
+        - asset: assets/fonts/Nunito-Variable.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Variable.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-Variable.ttf
+          weight: 800
 
   # To add assets to your application, add an assets section, like this:
   # assets:
@@ -106,3 +127,21 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+# The website's cat icon (static/app-icon-512.png, static/maskable-512.png).
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/icon.png
+  remove_alpha_ios: true
+  adaptive_icon_background: "#fbf6ef"
+  adaptive_icon_foreground: assets/icon/maskable.png
+
+flutter_native_splash:
+  color: "#fbf6ef"
+  color_dark: "#1b1714"
+  image: assets/icon/icon.png
+  android_12:
+    color: "#fbf6ef"
+    color_dark: "#1b1714"
+    image: assets/icon/icon.png

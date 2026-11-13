@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../common_widgets/empty_state.dart';
 import '../../../localization/app_localizations.dart';
 import '../../cats/domain/cat.dart';
 import '../../cats/presentation/cat_card.dart';
@@ -29,36 +30,53 @@ class PersonCatsPage extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          MaterialBanner(
-            content: Text(l10n.viewingSomeoneElse),
-            actions: const [SizedBox.shrink()],
+          Container(
+            width: double.infinity,
+            color: Theme.of(context).colorScheme.surfaceContainerHighest,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.visibility_outlined,
+                  size: 20,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                const SizedBox(width: 12),
+                Expanded(child: Text(l10n.viewingSomeoneElse)),
+              ],
+            ),
           ),
           Expanded(
             child: cats.when(
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (_, _) => Center(child: Text(l10n.cantLoadPeople)),
+              error: (_, _) => EmptyState(
+                icon: Icons.cloud_off_outlined,
+                text: l10n.cantLoadPeople,
+              ),
               data: (list) {
                 final sorted = byLastSeen(list);
                 return sorted.isEmpty
-                    ? Center(child: Text(l10n.personNoCats))
+                    ? EmptyState(icon: Icons.pets, text: l10n.personNoCats)
                     : GridView.builder(
-                        padding: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(16),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
-                              mainAxisSpacing: 8,
-                              crossAxisSpacing: 8,
-                              childAspectRatio: 0.85,
+                              mainAxisSpacing: 16,
+                              crossAxisSpacing: 16,
+                              childAspectRatio: 0.8,
                             ),
                         itemCount: sorted.length,
-                        itemBuilder: (context, i) => GestureDetector(
+                        itemBuilder: (context, i) => CatTile(
+                          cat: sorted[i],
+                          ownerUid: person.uid,
+                          hero: true,
                           onTap: () => Navigator.of(context).push(
                             MaterialPageRoute<void>(
                               builder: (_) =>
                                   CatCard(cat: sorted[i], ownerUid: person.uid),
                             ),
                           ),
-                          child: CatTile(cat: sorted[i], ownerUid: person.uid),
                         ),
                       );
               },

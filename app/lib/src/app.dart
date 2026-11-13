@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/settings/presentation/language_controller.dart';
 import 'features/startup/presentation/app_startup_widget.dart';
 import 'localization/app_localizations.dart';
+import 'theme/app_theme.dart';
 
 class StrayCatsApp extends ConsumerWidget {
   const StrayCatsApp({super.key, this.locale});
@@ -19,9 +20,9 @@ class StrayCatsApp extends ConsumerWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       locale: locale ?? ref.watch(languageControllerProvider).value,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
-      ),
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
+      themeMode: ThemeMode.system,
       home: const AppStartupWidget(),
     );
   }

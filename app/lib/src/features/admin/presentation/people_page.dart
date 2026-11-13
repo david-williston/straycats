@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import '../../../common_widgets/empty_state.dart';
 import '../../../localization/app_localizations.dart';
 import '../data/other_photo_cache.dart';
 import '../data/people_repository.dart';
@@ -41,30 +42,37 @@ class _PeoplePageState extends ConsumerState<PeoplePage> {
       appBar: AppBar(title: Text(l10n.people)),
       body: people.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (_, _) => Center(child: Text(l10n.cantLoadPeople)),
+        error: (_, _) => EmptyState(
+          icon: Icons.cloud_off_outlined,
+          text: l10n.cantLoadPeople,
+        ),
         data: (list) => list.isEmpty
-            ? Center(child: Text(l10n.noPeopleYet))
+            ? EmptyState(icon: Icons.groups_outlined, text: l10n.noPeopleYet)
             : ListView(
+                padding: const EdgeInsets.all(16),
                 children: [
                   for (final person in list)
-                    ListTile(
-                      leading: const Icon(Icons.person_outline),
-                      title: Text(
-                        person.nickname ?? person.uid,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      subtitle: person.createdAt == null
-                          ? null
-                          : Text(
-                              l10n.joinedOn(
-                                DateFormat.yMMMd(locale)
-                                    .format(person.createdAt!),
+                    Card(
+                      margin: const EdgeInsets.only(bottom: 8),
+                      child: ListTile(
+                        leading: const Icon(Icons.person_outline),
+                        title: Text(
+                          person.nickname ?? person.uid,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        subtitle: person.createdAt == null
+                            ? null
+                            : Text(
+                                l10n.joinedOn(
+                                  DateFormat.yMMMd(locale)
+                                      .format(person.createdAt!),
+                                ),
                               ),
-                            ),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (_) => PersonCatsPage(person: person),
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                            builder: (_) => PersonCatsPage(person: person),
+                          ),
                         ),
                       ),
                     ),

@@ -50,6 +50,15 @@ class _Message extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              ClipOval(
+                child: Image.asset(
+                  'assets/icon/icon.png',
+                  width: 96,
+                  height: 96,
+                  excludeFromSemantics: true,
+                ),
+              ),
+              const SizedBox(height: 24),
               if (busy) ...[
                 const CircularProgressIndicator(),
                 const SizedBox(height: 16),
@@ -58,7 +67,9 @@ class _Message extends StatelessWidget {
                 text,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: busy ? Theme.of(context).colorScheme.outline : null,
+                  color: busy
+                      ? Theme.of(context).colorScheme.onSurfaceVariant
+                      : null,
                 ),
               ),
               if (onRetry != null) ...[

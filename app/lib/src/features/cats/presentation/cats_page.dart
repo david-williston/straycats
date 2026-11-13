@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../common_widgets/empty_state.dart';
 import '../../../localization/app_localizations.dart';
 import '../../auth/presentation/account_sheet.dart';
 import '../../settings/presentation/language_picker.dart';
@@ -60,23 +61,27 @@ class CatsPage extends ConsumerWidget {
         actions: const [AccountButton(), LanguageButton()],
       ),
       body: catsState.hasError
-          ? Center(child: Text(l10n.cantOpenCatsFolder))
+          ? EmptyState(
+              icon: Icons.cloud_off_outlined,
+              text: l10n.cantOpenCatsFolder,
+            )
           : cats == null
           ? const SizedBox.shrink()
           : cats.isEmpty
-          ? Center(child: Text(l10n.noCatsYet))
+          ? EmptyState(icon: Icons.pets, text: l10n.noCatsYet)
           : GridView.builder(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                childAspectRatio: 0.85,
+                mainAxisSpacing: 16,
+                crossAxisSpacing: 16,
+                childAspectRatio: 0.8,
               ),
               itemCount: cats.length,
-              itemBuilder: (context, i) => GestureDetector(
+              itemBuilder: (context, i) => CatTile(
+                cat: cats[i],
+                hero: true,
                 onTap: () => _open(context, cats[i]),
-                child: CatTile(cat: cats[i]),
               ),
             ),
       floatingActionButton: FloatingActionButton(

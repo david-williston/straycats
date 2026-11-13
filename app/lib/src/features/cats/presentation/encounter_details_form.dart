@@ -50,8 +50,12 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
   );
 
   Widget _heading(String text) => Padding(
-    padding: const EdgeInsets.only(top: 12, bottom: 6),
-    child: Text(text, style: Theme.of(context).textTheme.titleSmall),
+    padding: const EdgeInsets.only(top: 20, bottom: 8),
+    child: Text(
+      text,
+      style: Theme.of(context).textTheme.titleSmall
+          ?.copyWith(color: Theme.of(context).colorScheme.onSurface),
+    ),
   );
 
   @override
@@ -63,7 +67,7 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
         _heading(l10n.whatWasItDoing),
         Wrap(
           spacing: 8,
-          runSpacing: 4,
+          runSpacing: 8,
           children: [
             for (final a in Activity.values)
               ChoiceChip(
@@ -79,7 +83,7 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
         _heading(l10n.howDidItLook),
         Wrap(
           spacing: 8,
-          runSpacing: 4,
+          runSpacing: 8,
           children: [
             for (final c in Condition.values)
               FilterChip(
@@ -100,7 +104,7 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
         _heading(l10n.howDidYouHelp),
         Wrap(
           spacing: 8,
-          runSpacing: 4,
+          runSpacing: 8,
           children: [
             for (final c in Care.values)
               FilterChip(
@@ -115,7 +119,7 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
               ),
           ],
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 24),
         TextField(
           controller: _note,
           maxLength: maxNoteLength,
@@ -125,7 +129,6 @@ class _EncounterDetailsFormState extends State<EncounterDetailsForm> {
           decoration: InputDecoration(
             labelText: l10n.noteLabel,
             hintText: l10n.noteHint,
-            border: const OutlineInputBorder(),
           ),
           onChanged: (_) => _changed(),
         ),
