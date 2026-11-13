@@ -535,6 +535,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Map of the approximate area'**
   String get approximateAreaMap;
+
+  /// Tooltip of the app bar button on a cat's card that opens the share card preview, and title of that screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Share this cat'**
+  String get shareCard;
+
+  /// Button under the preview of the share card that opens the phone's share sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get shareButton;
+
+  /// Message shown when making or sharing the card image fails.
+  ///
+  /// In en, this message translates to:
+  /// **'The card could not be shared. Please try again.'**
+  String get shareFailed;
+
+  /// On the shareable cat card image: shown in place of the name when the person has not named the cat.
+  ///
+  /// In en, this message translates to:
+  /// **'A cat with no name yet'**
+  String get shareCardNoName;
+
+  /// On the shareable cat card image: the date of the first time the cat was met. date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'Known since {date}'**
+  String shareCardKnownSince(String date);
 }
 
 class _AppLocalizationsDelegate

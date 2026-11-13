@@ -145,5 +145,15 @@
   "placePrivacyNote": "Only this rough area is stored online. Your exact spot is never saved.",
   "@placePrivacyNote": {"description": "Small note under an encounter's place in the edit sheet."},
   "approximateAreaMap": "Map of the approximate area",
-  "@approximateAreaMap": {"description": "Screen reader label for the small map that shows an encounter's approximate area as a circle."}
+  "@approximateAreaMap": {"description": "Screen reader label for the small map that shows an encounter's approximate area as a circle."},
+  "shareCard": "Share this cat",
+  "@shareCard": {"description": "Tooltip of the app bar button on a cat's card that opens the share card preview, and title of that screen."},
+  "shareButton": "Share",
+  "@shareButton": {"description": "Button under the preview of the share card that opens the phone's share sheet."},
+  "shareFailed": "The card could not be shared. Please try again.",
+  "@shareFailed": {"description": "Message shown when making or sharing the card image fails."},
+  "shareCardNoName": "A cat with no name yet",
+  "@shareCardNoName": {"description": "On the shareable cat card image: shown in place of the name when the person has not named the cat."},
+  "shareCardKnownSince": "Known since {date}",
+  "@shareCardKnownSince": {"description": "On the shareable cat card image: the date of the first time the cat was met. date is already formatted.", "placeholders": {"date": {"type": "String"}}}
 }

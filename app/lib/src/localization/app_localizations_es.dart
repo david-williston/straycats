@@ -246,4 +246,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get approximateAreaMap => 'Mapa de la zona aproximada';
+
+  @override
+  String get shareCard => 'Compartir este gato';
+
+  @override
+  String get shareButton => 'Compartir';
+
+  @override
+  String get shareFailed =>
+      'No se pudo compartir la tarjeta. Inténtalo de nuevo.';
+
+  @override
+  String get shareCardNoName => 'Un gato sin nombre todavía';
+
+  @override
+  String shareCardKnownSince(String date) {
+    return 'Conocido desde el $date';
+  }
 }

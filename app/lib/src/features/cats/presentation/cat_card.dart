@@ -12,6 +12,8 @@ import '../../admin/data/other_photo_cache.dart';
 import '../../places/domain/coarse_area.dart';
 import '../../places/domain/place.dart';
 import '../../places/presentation/place_map.dart';
+import '../../share/presentation/share_card.dart';
+import '../../share/presentation/share_card_page.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
@@ -221,6 +223,33 @@ class _CatCardState extends ConsumerState<CatCard> {
     );
   }
 
+  /// The card image's content: the latest photo, the name as typed, the
+  /// most recent neighbourhood and its area, and when the cat was first met.
+  /// Null when there is no photo here to put on it.
+  ShareCardData? _shareData(Cat cat) {
+    final history = cat.history;
+    if (history.isEmpty) return null;
+    final photo = _photo(history.first);
+    if (photo == null) return null;
+    final place = history
+        .map((e) => e.place)
+        .where((p) => p?.neighbourhood != null)
+        .firstOrNull;
+    return ShareCardData(
+      name: _name.text,
+      photo: photo,
+      firstMet: history.last.time,
+      neighbourhood: place?.neighbourhood,
+      area: place?.area,
+    );
+  }
+
+  void _share(ShareCardData data) {
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => ShareCardPage(data: data)));
+  }
+
   @override
   void dispose() {
     _name.dispose();
@@ -243,7 +272,18 @@ class _CatCardState extends ConsumerState<CatCard> {
             .rename(widget.cat.id, _name.text.trim());
       },
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          actions: [
+            // Only your own cats: an admin's read-only view never shares.
+            if (!widget.readOnly)
+              if (_shareData(cat) case final data?)
+                IconButton(
+                  icon: const Icon(Icons.ios_share),
+                  tooltip: l10n.shareCard,
+                  onPressed: () => _share(data),
+                ),
+          ],
+        ),
         body: Column(
           children: [
             Expanded(

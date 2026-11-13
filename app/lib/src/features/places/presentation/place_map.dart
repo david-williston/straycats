@@ -20,6 +20,9 @@ class PlaceMap extends StatefulWidget {
     required this.areas,
     this.height = 180,
     this.tileProvider,
+    this.zoom = 13,
+    this.onTileLoaded,
+    this.onTileFailed,
   });
 
   final List<CoarseArea> areas;
@@ -27,6 +30,14 @@ class PlaceMap extends StatefulWidget {
 
   /// For tests; defaults to OpenStreetMap over the network.
   final TileProvider? tileProvider;
+
+  /// How far in the map starts (a circle of 1 km is bigger at higher zoom).
+  final double zoom;
+
+  /// Called as map tiles arrive or fail, so a caller (the share card) can
+  /// tell when the map is ready, or give up on it.
+  final VoidCallback? onTileLoaded;
+  final VoidCallback? onTileFailed;
 
   /// The circle centres for [areas]: the geohash cell centres.
   static List<LatLng> centres(List<CoarseArea> areas) => [
@@ -41,6 +52,7 @@ class _PlaceMapState extends State<PlaceMap> {
   bool _failed = false;
 
   void _tileFailed() {
+    widget.onTileFailed?.call();
     if (_failed) return;
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) setState(() => _failed = true);
@@ -64,12 +76,12 @@ class _PlaceMapState extends State<PlaceMap> {
                 options: MapOptions(
                   backgroundColor: theme.colorScheme.surfaceContainerHighest,
                   initialCenter: centres.first,
-                  initialZoom: 13,
+                  initialZoom: widget.zoom,
                   initialCameraFit: centres.length > 1
                       ? CameraFit.coordinates(
                           coordinates: centres,
                           padding: const EdgeInsets.all(56),
-                          maxZoom: 13,
+                          maxZoom: widget.zoom,
                         )
                       : null,
                   interactionOptions: const InteractionOptions(
@@ -84,6 +96,17 @@ class _PlaceMapState extends State<PlaceMap> {
                     userAgentPackageName: 'com.straycats.straycats',
                     tileProvider: widget.tileProvider,
                     errorTileCallback: (_, _, _) => _tileFailed(),
+                    tileBuilder: widget.onTileLoaded == null
+                        ? null
+                        : (context, tile, image) {
+                            if (image.loadFinishedAt != null &&
+                                !image.loadError) {
+                              WidgetsBinding.instance.addPostFrameCallback(
+                                (_) => widget.onTileLoaded?.call(),
+                              );
+                            }
+                            return tile;
+                          },
                   ),
                   CircleLayer(
                     circles: [

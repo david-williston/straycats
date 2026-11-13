@@ -98,5 +98,10 @@
   "placeAroundUnnamed": "Por esta zona (aprox. 1 km)",
   "removePlace": "Quitar el lugar",
   "placePrivacyNote": "Solo se guarda en línea esta zona aproximada. Tu ubicación exacta nunca se guarda.",
-  "approximateAreaMap": "Mapa de la zona aproximada"
+  "approximateAreaMap": "Mapa de la zona aproximada",
+  "shareCard": "Compartir este gato",
+  "shareButton": "Compartir",
+  "shareFailed": "No se pudo compartir la tarjeta. Inténtalo de nuevo.",
+  "shareCardNoName": "Un gato sin nombre todavía",
+  "shareCardKnownSince": "Conocido desde el {date}"
 }
