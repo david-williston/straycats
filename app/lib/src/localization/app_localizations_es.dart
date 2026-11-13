@@ -264,4 +264,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String shareCardKnownSince(String date) {
     return 'Conocido desde el $date';
   }
+
+  @override
+  String thisMightBe(String name) {
+    return 'Podría ser $name. ¿Es este?';
+  }
+
+  @override
+  String get yes => 'Sí';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get notSure => 'No estoy seguro';
+
+  @override
+  String get seenInThisArea => 'Visto antes en esta zona';
+
+  @override
+  String get seenNearby => 'Visto cerca de aquí';
+
+  @override
+  String get seenRecently => 'Visto hace poco';
 }

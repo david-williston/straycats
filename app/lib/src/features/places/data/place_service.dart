@@ -127,6 +127,17 @@ class PlaceCapture {
     return pending.timeout(wait, onTimeout: () => null);
   }
 
+  /// Like [take], but leaves the place there for [take] to find again, so it
+  /// can be used before the cat is chosen and still saved with the sighting.
+  Future<Place?> peek(
+    File photo, {
+    Duration wait = const Duration(seconds: 5),
+  }) async {
+    final pending = _pending[photo.path];
+    if (pending == null) return null;
+    return pending.timeout(wait, onTimeout: () => null);
+  }
+
   /// Forgets [photo] (it was not kept).
   void drop(File photo) => _pending.remove(photo.path);
 }

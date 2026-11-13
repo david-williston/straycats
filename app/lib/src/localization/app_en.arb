@@ -155,5 +155,19 @@
   "shareCardNoName": "A cat with no name yet",
   "@shareCardNoName": {"description": "On the shareable cat card image: shown in place of the name when the person has not named the cat."},
   "shareCardKnownSince": "Known since {date}",
-  "@shareCardKnownSince": {"description": "On the shareable cat card image: the date of the first time the cat was met. date is already formatted.", "placeholders": {"date": {"type": "String"}}}
+  "@shareCardKnownSince": {"description": "On the shareable cat card image: the date of the first time the cat was met. date is already formatted.", "placeholders": {"date": {"type": "String"}}},
+  "thisMightBe": "This might be {name}. Is it?",
+  "@thisMightBe": {"description": "Question on the Who is this screen suggesting one of the person's cats for the new photo.", "placeholders": {"name": {"type": "String"}}},
+  "yes": "Yes",
+  "@yes": {"description": "Button answering yes to the suggested cat."},
+  "no": "No",
+  "@no": {"description": "Button answering no to the suggested cat; shows the other cats."},
+  "notSure": "Not sure",
+  "@notSure": {"description": "Button for when the person cannot tell if it is the suggested cat; shows all the cats."},
+  "seenInThisArea": "Seen in this area before",
+  "@seenInThisArea": {"description": "Reason for suggesting a cat that was met in the same neighbourhood as the new photo."},
+  "seenNearby": "Seen nearby",
+  "@seenNearby": {"description": "Reason for suggesting a cat that was met in a neighbouring area."},
+  "seenRecently": "Seen recently",
+  "@seenRecently": {"description": "Reason for suggesting a cat that was met recently."}
 }

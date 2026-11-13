@@ -1,10 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
 import '../../../theme/app_theme.dart';
+import '../application/matching_service.dart';
+import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter_details.dart';
 import '../domain/sighting.dart';
@@ -14,21 +17,31 @@ import 'encounter_details_form.dart';
 /// Shown after taking a photo: pick the cat (or "New cat"), then optionally
 /// what was happening, then Done. Pops with a [Sighting], or null if the
 /// user backs out.
-class WhoIsThisPage extends StatefulWidget {
+///
+/// [matches] are the person's cats, best first. When [suggestion] is given
+/// (one cat is clearly ahead) it is offered first as "This might be ...";
+/// nothing is ever chosen until the person taps.
+class WhoIsThisPage extends ConsumerStatefulWidget {
   const WhoIsThisPage({
     super.key,
     required this.photo,
-    required this.candidates,
+    required this.matches,
+    this.suggestion,
   });
 
   final File photo;
-  final List<Cat> candidates;
+  final List<CatMatch> matches;
+  final CatMatch? suggestion;
 
   @override
-  State<WhoIsThisPage> createState() => _WhoIsThisPageState();
+  ConsumerState<WhoIsThisPage> createState() => _WhoIsThisPageState();
 }
 
-class _WhoIsThisPageState extends State<WhoIsThisPage> {
+class _WhoIsThisPageState extends ConsumerState<WhoIsThisPage> {
+  /// The cat being suggested, until the person answers No or Not sure.
+  late CatMatch? _suggestion = widget.suggestion;
+  Cat? _declined;
+
   final _name = TextEditingController();
   bool _picked = false;
   Cat? _cat;
@@ -106,9 +119,100 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
     return cat.name.isEmpty ? l10n.thisCat : cat.name;
   }
 
+  List<Cat> get _candidates => [
+    for (final m in widget.matches)
+      if (m.cat.id != _declined?.id) m.cat,
+  ];
+
+  List<Widget> _suggestionCard(BuildContext context, CatMatch match) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final cat = match.cat;
+    final latest = cat.latest;
+    final file = latest == null
+        ? null
+        : ref.watch(photoFileProvider(latest.photoId)).value;
+    final name = cat.name.isEmpty ? l10n.noNameYet : cat.name;
+    Widget photo(File? f) => AspectRatio(
+      aspectRatio: 1,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(catRadius),
+        child: CatPhoto(f, cacheWidth: 400),
+      ),
+    );
+    return [
+      Card(
+        key: const Key('suggestion'),
+        color: scheme.secondaryContainer,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Row(
+                children: [
+                  Expanded(child: photo(widget.photo)),
+                  const SizedBox(width: 12),
+                  Expanded(child: photo(file)),
+                ],
+              ),
+              const SizedBox(height: 12),
+              Text(
+                l10n.thisMightBe(name),
+                textAlign: TextAlign.center,
+                style: theme.textTheme.titleMedium,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                _reason(l10n, match.reason),
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: scheme.onSecondaryContainer,
+                ),
+              ),
+              const SizedBox(height: 12),
+              FilledButton(onPressed: () => _pick(cat), child: Text(l10n.yes)),
+              const SizedBox(height: 8),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => setState(() {
+                        _declined = cat;
+                        _suggestion = null;
+                      }),
+                      child: Text(l10n.no),
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => setState(() => _suggestion = null),
+                      child: Text(l10n.notSure),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    ];
+  }
+
+  String _reason(AppLocalizations l10n, MatchReason r) => switch (r) {
+    MatchReason.sameArea => l10n.seenInThisArea,
+    MatchReason.nearbyArea => l10n.seenNearby,
+    MatchReason.recentlySeen => l10n.seenRecently,
+  };
+
   List<Widget> _choices(BuildContext context) {
     final l10n = AppLocalizations.of(context);
-    if (widget.candidates.isEmpty) {
+    final suggestion = _suggestion;
+    if (suggestion != null) return _suggestionCard(context, suggestion);
+    final candidates = _candidates;
+    if (candidates.isEmpty) {
       return [
         Text(
           l10n.noCatsYetFirst,
@@ -130,11 +234,9 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
           crossAxisSpacing: 12,
           childAspectRatio: 0.72,
         ),
-        itemCount: widget.candidates.length,
-        itemBuilder: (context, i) => CatTile(
-          cat: widget.candidates[i],
-          onTap: () => _pick(widget.candidates[i]),
-        ),
+        itemCount: candidates.length,
+        itemBuilder: (context, i) =>
+            CatTile(cat: candidates[i], onTap: () => _pick(candidates[i])),
       ),
     ];
   }

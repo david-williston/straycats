@@ -26,6 +26,8 @@ import 'package:straycats/src/features/cats/domain/cat.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
 import 'package:straycats/src/features/cats/data/fake_place_service.dart';
 import 'package:straycats/src/features/places/data/place_service.dart';
+import 'package:straycats/src/features/places/domain/coarse_area.dart';
+import 'package:straycats/src/features/places/domain/place.dart';
 import 'package:straycats/src/features/settings/data/fake_language_repository.dart';
 import 'package:straycats/src/features/settings/data/language_repository.dart';
 import 'package:straycats/src/features/startup/application/app_startup.dart';
@@ -130,6 +132,7 @@ Future<void> pumpApp(
   FakeAuthRepository? auth,
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
+  FakePlaceService? places,
   Locale? locale,
 }) async {
   tester.view.physicalSize = const Size(1080, 2400);
@@ -146,6 +149,7 @@ Future<void> pumpApp(
         auth: auth,
         db: db,
         otherPhotos: otherPhotos,
+        places: places,
       ),
       child: StrayCatsApp(locale: locale),
     ),
@@ -153,3 +157,18 @@ Future<void> pumpApp(
   await tester.pump(); // startup completes
   await tester.pump(); // the cats arrive
 }
+
+/// A cat whose encounters are at the given (millis, geohash) pairs.
+Cat catAt(String id, String name, List<(int, String?)> met) => Cat(
+  id: id,
+  name: name,
+  encounters: [
+    for (final (t, g) in met)
+      Encounter(
+        id: '$t',
+        photoId: '$t',
+        time: DateTime.fromMillisecondsSinceEpoch(t),
+        place: g == null ? null : Place(area: CoarseArea.fromGeohash(g)),
+      ),
+  ],
+);

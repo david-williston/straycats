@@ -261,4 +261,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String shareCardKnownSince(String date) {
     return 'Known since $date';
   }
+
+  @override
+  String thisMightBe(String name) {
+    return 'This might be $name. Is it?';
+  }
+
+  @override
+  String get yes => 'Yes';
+
+  @override
+  String get no => 'No';
+
+  @override
+  String get notSure => 'Not sure';
+
+  @override
+  String get seenInThisArea => 'Seen in this area before';
+
+  @override
+  String get seenNearby => 'Seen nearby';
+
+  @override
+  String get seenRecently => 'Seen recently';
 }

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../common_widgets/empty_state.dart';
 import '../../../localization/app_localizations.dart';
 import '../../auth/presentation/account_sheet.dart';
+import '../../places/data/place_service.dart';
 import '../../settings/presentation/language_picker.dart';
 import '../application/matching_service.dart';
 import '../domain/cat.dart';
@@ -25,13 +26,17 @@ class CatsPage extends ConsumerWidget {
     final meet = ref.read(meetCatControllerProvider.notifier);
     final photo = await meet.takePhoto();
     if (photo == null || !context.mounted) return;
+    // The place is needed to rank the cats, so wait for it (briefly).
+    final place = await ref.read(placeCaptureProvider).peek(photo);
+    if (!context.mounted) return;
+    final matching = ref.read(matchingServiceProvider);
+    final matches = matching.findMatches(photo, cats, area: place?.area);
     final sighting = await Navigator.of(context).push<Sighting>(
       MaterialPageRoute(
         builder: (_) => WhoIsThisPage(
           photo: photo,
-          candidates: ref
-              .read(matchingServiceProvider)
-              .findMatches(photo, cats),
+          matches: matches,
+          suggestion: matching.suggestion(matches),
         ),
       ),
     );

@@ -565,6 +565,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Known since {date}'**
   String shareCardKnownSince(String date);
+
+  /// Question on the Who is this screen suggesting one of the person's cats for the new photo.
+  ///
+  /// In en, this message translates to:
+  /// **'This might be {name}. Is it?'**
+  String thisMightBe(String name);
+
+  /// Button answering yes to the suggested cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// Button answering no to the suggested cat; shows the other cats.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// Button for when the person cannot tell if it is the suggested cat; shows all the cats.
+  ///
+  /// In en, this message translates to:
+  /// **'Not sure'**
+  String get notSure;
+
+  /// Reason for suggesting a cat that was met in the same neighbourhood as the new photo.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen in this area before'**
+  String get seenInThisArea;
+
+  /// Reason for suggesting a cat that was met in a neighbouring area.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen nearby'**
+  String get seenNearby;
+
+  /// Reason for suggesting a cat that was met recently.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen recently'**
+  String get seenRecently;
 }
 
 class _AppLocalizationsDelegate

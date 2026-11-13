@@ -5,6 +5,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
+import 'package:straycats/src/features/cats/data/fake_place_service.dart';
+import 'package:straycats/src/features/cats/domain/cat.dart';
+import 'package:straycats/src/features/places/domain/geohash.dart';
 import 'package:straycats/src/features/cats/domain/encounter_details.dart';
 import 'package:straycats/src/features/cats/presentation/cat_tile.dart';
 
@@ -18,6 +21,7 @@ Future<void> tapChip(WidgetTester tester, String label) async {
 }
 
 void main() {
+  _suggestionTests();
   testWidgets('shows the title and empty state', (tester) async {
     await pumpApp(tester, cats: FakeCatRepository());
     await tester.pump();
@@ -201,5 +205,85 @@ void main() {
     await tester.tap(find.text('Ciccio'));
     await tester.pumpAndSettle();
     expect(find.text('7 nov 2026'), findsOneWidget);
+  });
+}
+
+// Suggestion flow: the new photo is taken at a fix whose cell matches Ciccio.
+const _lat = 37.7749, _lng = -122.4194;
+
+void _suggestionTests() {
+  final here = encodeGeohash(_lat, _lng);
+  List<Cat> cats() => [
+    catAt('1', 'Ciccio', [(1000, here)]),
+    catAt('2', 'Saibo', [(2000, 'u4pruy')]),
+  ];
+
+  Future<void> meet(WidgetTester tester, {Locale? locale}) async {
+    await pumpApp(
+      tester,
+      cats: FakeCatRepository(cats()),
+      places: FakePlaceService(fix: (lat: _lat, lng: _lng)),
+      locale: locale,
+    );
+    await tester.pump();
+    await tester.tap(
+      find.byTooltip(locale == null ? 'Meet a cat' : 'Conocer a un gato'),
+    );
+    await tester.pumpAndSettle();
+  }
+
+  testWidgets('suggests the cat met here, with the reason', (tester) async {
+    await meet(tester);
+    expect(find.text('This might be Ciccio. Is it?'), findsOneWidget);
+    expect(find.text('Seen in this area before'), findsOneWidget);
+    expect(find.text('Is it one of these?'), findsNothing);
+    expect(find.text('New cat'), findsOneWidget);
+  });
+
+  testWidgets('Yes selects the suggested cat', (tester) async {
+    await meet(tester);
+    await tester.tap(find.text('Yes'));
+    await tester.pumpAndSettle();
+    expect(find.text('Ciccio'), findsOneWidget); // title of the details step
+    expect(find.text('Done'), findsOneWidget);
+    expect(find.text('Name (optional)'), findsNothing);
+  });
+
+  testWidgets('No dismisses it and lists the other cats', (tester) async {
+    await meet(tester);
+    await tester.tap(find.text('No'));
+    await tester.pumpAndSettle();
+    expect(find.text('This might be Ciccio. Is it?'), findsNothing);
+    expect(find.text('Is it one of these?'), findsOneWidget);
+    expect(find.text('Saibo'), findsOneWidget);
+    expect(find.text('Ciccio'), findsNothing);
+    expect(find.text('New cat'), findsOneWidget);
+  });
+
+  testWidgets('Not sure shows every cat, none chosen', (tester) async {
+    await meet(tester);
+    await tester.tap(find.text('Not sure'));
+    await tester.pumpAndSettle();
+    expect(find.text('Is it one of these?'), findsOneWidget);
+    expect(find.text('Ciccio'), findsOneWidget);
+    expect(find.text('Saibo'), findsOneWidget);
+    expect(find.text('Done'), findsNothing);
+  });
+
+  testWidgets('no place: no suggestion, just the list', (tester) async {
+    await pumpApp(tester, cats: FakeCatRepository(cats()));
+    await tester.pump();
+    await tester.tap(find.byTooltip('Meet a cat'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('This might be'), findsNothing);
+    expect(find.text('Is it one of these?'), findsOneWidget);
+  });
+
+  testWidgets('the suggestion is in Spanish', (tester) async {
+    await meet(tester, locale: const Locale('es'));
+    expect(find.text('Podría ser Ciccio. ¿Es este?'), findsOneWidget);
+    expect(find.text('Visto antes en esta zona'), findsOneWidget);
+    expect(find.text('Sí'), findsOneWidget);
+    expect(find.text('No estoy seguro'), findsOneWidget);
   });
 }

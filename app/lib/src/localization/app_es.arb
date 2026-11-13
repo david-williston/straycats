@@ -103,5 +103,12 @@
   "shareButton": "Compartir",
   "shareFailed": "No se pudo compartir la tarjeta. Inténtalo de nuevo.",
   "shareCardNoName": "Un gato sin nombre todavía",
-  "shareCardKnownSince": "Conocido desde el {date}"
+  "shareCardKnownSince": "Conocido desde el {date}",
+  "thisMightBe": "Podría ser {name}. ¿Es este?",
+  "yes": "Sí",
+  "no": "No",
+  "notSure": "No estoy seguro",
+  "seenInThisArea": "Visto antes en esta zona",
+  "seenNearby": "Visto cerca de aquí",
+  "seenRecently": "Visto hace poco"
 }
