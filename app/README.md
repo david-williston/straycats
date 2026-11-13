@@ -1,17 +1,27 @@
-# straycats
+# Stray Cats app
 
-A new Flutter project.
+A personal prototype of the Stray Cats app. Photograph a cat you meet, say who it is,
+and keep its encounters in one place. Photos and encounter records stay on the phone;
+nothing is uploaded.
 
-## Getting Started
+## Run
 
-This project is a starting point for a Flutter application.
+From the repository root:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+cd app
+flutter run
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Test
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+cd app
+flutter test
+flutter analyze
+```
+
+## Spec
+
+The project website at the repository root (Hugo, English and Spanish) is the spec for
+this app. Start with `content/ideas/` for what the app should do and why.
