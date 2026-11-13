@@ -1,17 +1,16 @@
 import 'dart:io';
 
-/// What happened when a cat was seen. Stored as [value]; shown as [label].
+/// What happened when a cat was seen. Stored as [value]; shown through the l10n labels.
 enum EncounterType {
-  seen('seen', 'Just saw it'),
-  fed('fed', 'Fed it'),
-  unwell('unwell', 'Looks unwell or injured'),
-  kittens('kittens', 'With kittens'),
-  earTipped('ear_tipped', 'Ear tipped');
+  seen('seen'),
+  fed('fed'),
+  unwell('unwell'),
+  kittens('kittens'),
+  earTipped('ear_tipped');
 
-  const EncounterType(this.value, this.label);
+  const EncounterType(this.value);
 
   final String value;
-  final String label;
 
   /// The type stored as [value], or null if there is none (or it is unknown).
   static EncounterType? parse(String? value) {

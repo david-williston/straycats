@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/cat.dart';
 import 'package:straycats/cat_store.dart';
 import 'package:straycats/main.dart';
+import 'package:straycats/widgets/cat_tile.dart';
 
 /// Keeps cats in memory; the "camera" hands back [nextPhoto].
 class FakeCatStore implements CatStore {
@@ -46,11 +47,15 @@ Cat cat(String id, String name, List<int> times) => Cat(
 );
 
 /// Shows the app on a phone-sized screen.
-Future<void> pumpApp(WidgetTester tester, CatStore store) async {
+Future<void> pumpApp(
+  WidgetTester tester,
+  CatStore store, {
+  Locale? locale,
+}) async {
   tester.view.physicalSize = const Size(1080, 2400);
   tester.view.devicePixelRatio = 2.625;
   addTearDown(tester.view.reset);
-  await tester.pumpWidget(StrayCatsApp(store: store));
+  await tester.pumpWidget(StrayCatsApp(store: store, locale: locale));
 }
 
 void main() {
@@ -163,5 +168,33 @@ void main() {
 
     expect(store.discarded.single.path, '/cats/9000.jpg');
     expect(store.saved, isNull);
+  });
+
+  testWidgets('follows the language: Spanish', (tester) async {
+    final store = FakeCatStore([]);
+    await pumpApp(tester, store, locale: const Locale('es'));
+    await tester.pump();
+    expect(
+      find.text('Aún no hay gatos. Toca la cámara para conocer a uno.'),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.byTooltip('Conocer a un gato'));
+    await tester.pumpAndSettle();
+    expect(find.text('¿Quién es?'), findsOneWidget);
+    await tester.tap(find.text('Gato nuevo'));
+    await tester.pumpAndSettle();
+    expect(find.text('Le di de comer'), findsOneWidget);
+  });
+
+  testWidgets('dates follow the language', (tester) async {
+    final store = FakeCatStore([
+      cat('1', 'Ciccio', [DateTime(2026, 11, 7).millisecondsSinceEpoch]),
+    ]);
+    await pumpApp(tester, store, locale: const Locale('es'));
+    await tester.pump();
+    await tester.tap(find.text('Ciccio'));
+    await tester.pumpAndSettle();
+    expect(find.text('7 nov 2026'), findsOneWidget);
   });
 }

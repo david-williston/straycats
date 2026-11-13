@@ -1,0 +1,23 @@
+{
+  "@@locale": "es",
+  "appTitle": "Stray Cats",
+  "cantOpenCatsFolder": "No se pudo abrir la carpeta de gatos.",
+  "noCatsYet": "Aún no hay gatos. Toca la cámara para conocer a uno.",
+  "meetACat": "Conocer a un gato",
+  "noNameYet": "Aún sin nombre",
+  "whoIsThis": "¿Quién es?",
+  "isItOneOfThese": "¿Es alguno de estos?",
+  "noCatsYetFirst": "Aún no hay gatos. Este será el primero.",
+  "newCat": "Gato nuevo",
+  "thisCat": "Este gato",
+  "done": "Listo",
+  "nameOptional": "Nombre (opcional)",
+  "whatWasHappening": "¿Qué estaba pasando? (opcional)",
+  "name": "Nombre",
+  "giveCatAName": "Ponle un nombre a este gato",
+  "encounterSeen": "Solo lo vi",
+  "encounterFed": "Le di de comer",
+  "encounterUnwell": "Parece enfermo o herido",
+  "encounterKittens": "Con gatitos",
+  "encounterEarTipped": "Oreja cortada"
+}
