@@ -56,13 +56,14 @@ class DefaultFirebaseOptions {
     projectId: 'straycats-love',
     storageBucket: 'straycats-love.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDgQu-wlJ5CeQpcahu5p9vBNeoAWzMv6eQ',
     appId: '1:844522920451:ios:1fa47b93b4481376e10c36',
     messagingSenderId: '844522920451',
     projectId: 'straycats-love',
     storageBucket: 'straycats-love.firebasestorage.app',
+    androidClientId: '844522920451-k57nus62f5alqe172u304to5t70lm24h.apps.googleusercontent.com',
+    iosClientId: '844522920451-qkceolc9uj6igh4s0fpdna1ncbit6slk.apps.googleusercontent.com',
     iosBundleId: 'com.straycats.straycats',
   );
 }

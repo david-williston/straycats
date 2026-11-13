@@ -391,6 +391,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It will be removed from this cat\'s history.'**
   String get deleteEncounterBody;
+
+  /// Tooltip of the account button in the home screen's title bar, and title of the account sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// Shown in the account sheet when the person has not signed in with Google.
+  ///
+  /// In en, this message translates to:
+  /// **'Not signed in. Your cats are only on this phone\'s account.'**
+  String get accountNotSignedIn;
+
+  /// Button in the account sheet that signs in with a Google account to keep the cats safe.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get signInWithGoogle;
+
+  /// Shown in the account sheet when signed in with Google. who is the person's name or email.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {who}'**
+  String signedInAs(String who);
+
+  /// Message after signing in with Google kept the cats of this phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done. Your cats are now kept in your Google account.'**
+  String get googleLinked;
+
+  /// Message after signing in with a Google account that already had cats, and this phone had none.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in. Your cats from before are back.'**
+  String get googleSwitched;
+
+  /// Message after signing in with a Google account that already had cats, while this phone also had cats of its own.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in to your Google account. The cats on this phone\'s earlier account were not added to it.'**
+  String get googleSwitchedKeptOld;
+
+  /// Message when signing in with Google fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not sign in. Check your connection and try again.'**
+  String get signInFailed;
+
+  /// Label of the nickname field in the account sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Nickname (optional)'**
+  String get nicknameOptional;
+
+  /// Hint inside the nickname field.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we call you?'**
+  String get nicknameHint;
+
+  /// Message after the nickname was saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Nickname saved'**
+  String get nicknameSaved;
+
+  /// Message when saving the nickname fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the nickname'**
+  String get nicknameNotSaved;
+
+  /// Admin only: entry in the account sheet and title of the list of people.
+  ///
+  /// In en, this message translates to:
+  /// **'People'**
+  String get people;
+
+  /// Admin only: empty state of the list of people.
+  ///
+  /// In en, this message translates to:
+  /// **'No people yet.'**
+  String get noPeopleYet;
+
+  /// Admin only: shown when the list of people or someone's cats cannot be loaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the list.'**
+  String get cantLoadPeople;
+
+  /// Admin only: under a person in the list, when their profile was created.
+  ///
+  /// In en, this message translates to:
+  /// **'Joined {date}'**
+  String joinedOn(String date);
+
+  /// Admin only: banner above another person's cats.
+  ///
+  /// In en, this message translates to:
+  /// **'Viewing someone else\'s cats. Read only.'**
+  String get viewingSomeoneElse;
+
+  /// Admin only: empty state when another person has no cats.
+  ///
+  /// In en, this message translates to:
+  /// **'This person has no cats yet.'**
+  String get personNoCats;
 }
 
 class _AppLocalizationsDelegate

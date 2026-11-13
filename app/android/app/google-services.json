@@ -12,7 +12,20 @@
           "package_name": "com.straycats.straycats"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "844522920451-k57nus62f5alqe172u304to5t70lm24h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.straycats.straycats",
+            "certificate_hash": "4f66979b97c5ff4347a813e0c74b3277d3dc03ee"
+          }
+        },
+        {
+          "client_id": "844522920451-088g791sq1qma7afcnddr3duotrgj3pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAuARH0LLPsEYLIhoR2o31du2yj4Ui0ljo"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844522920451-088g791sq1qma7afcnddr3duotrgj3pm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "844522920451-qkceolc9uj6igh4s0fpdna1ncbit6slk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.straycats.straycats"
+              }
+            }
+          ]
         }
       }
     }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../localization/app_localizations.dart';
+import '../../auth/presentation/account_sheet.dart';
 import '../../settings/presentation/language_picker.dart';
 import '../application/matching_service.dart';
 import '../domain/cat.dart';
@@ -56,7 +57,7 @@ class CatsPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.appTitle),
-        actions: const [LanguageButton()],
+        actions: const [AccountButton(), LanguageButton()],
       ),
       body: catsState.hasError
           ? Center(child: Text(l10n.cantOpenCatsFolder))

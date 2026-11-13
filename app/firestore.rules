@@ -6,6 +6,19 @@ service cloud.firestore {
       return request.auth != null && request.auth.uid == uid;
     }
 
+    function isAdmin() {
+      return request.auth != null && request.auth.token.get('admin', false) == true;
+    }
+
+    // Admins can read, never write, other people's data.
+    function canRead(uid) {
+      return isOwner(uid) || isAdmin();
+    }
+
+    function isNickname(n) {
+      return n is string && n.size() >= 1 && n.size() <= 40;
+    }
+
     function isId(id) {
       return id is string && id.matches('^[A-Za-z0-9_-]{1,64}$');
     }
@@ -43,14 +56,36 @@ service cloud.firestore {
         && d.updatedAt == request.time;
     }
 
+    match /users/{uid} {
+      allow read: if canRead(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['createdAt', 'nickname'])
+        && request.resource.data.keys().hasAll(['createdAt'])
+        && request.resource.data.createdAt == request.time
+        && (!('nickname' in request.resource.data) || isNickname(request.resource.data.nickname));
+      allow update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['createdAt', 'nickname'])
+        && request.resource.data.createdAt == resource.data.createdAt
+        && (!('nickname' in request.resource.data) || isNickname(request.resource.data.nickname));
+      // No client deletes.
+    }
+
+    // Roles are written only by the Admin SDK (tools/roles/set-role.mjs).
+    match /roles/{uid} {
+      allow read: if canRead(uid);
+      match /history/{id} {
+        allow read: if canRead(uid);
+      }
+    }
+
     match /users/{uid}/cats/{catId} {
-      allow read: if isOwner(uid);
+      allow read: if canRead(uid);
       allow create, update: if isOwner(uid) && isId(catId) && isCat();
       allow delete: if isOwner(uid);
     }
 
     match /users/{uid}/encounters/{encounterId} {
-      allow read: if isOwner(uid);
+      allow read: if canRead(uid);
       allow create, update: if isOwner(uid) && isId(encounterId) && isEncounter(uid);
       allow delete: if isOwner(uid);
     }

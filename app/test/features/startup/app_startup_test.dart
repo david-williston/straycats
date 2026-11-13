@@ -85,6 +85,9 @@ void main() {
       expect(File('${dir.path}/cats.json.imported').existsSync(), isTrue);
       expect(uploader.started, isTrue);
       expect(c.read(uidProvider), 'anon-uid');
+      await Future<void>.delayed(Duration.zero); // the profile is not awaited
+      final profile = await db.doc('users/anon-uid').get();
+      expect(profile.data()!.keys, ['createdAt']);
     });
 
     test('a signed-in user is not signed in again', () async {

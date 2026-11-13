@@ -16,6 +16,10 @@ abstract class PhotoStorage {
 
   /// Saves the photo to [to]. False if there is no such photo.
   Future<bool> download(String photoId, File to);
+
+  /// Saves a photo of another person, [ownerUid]'s, to [to]. Only an admin
+  /// is allowed to (the Storage rules decide). False if there is no such photo.
+  Future<bool> downloadOwned(String ownerUid, String photoId, File to);
 }
 
 class FirebasePhotoStorage implements PhotoStorage {
@@ -28,8 +32,11 @@ class FirebasePhotoStorage implements PhotoStorage {
   Reference _ref(String photoId) {
     final uid = _uid();
     if (uid == null) throw StateError('Not signed in');
-    return _storage.ref('users/$uid/photos/$photoId.jpg');
+    return _owned(uid, photoId);
   }
+
+  Reference _owned(String ownerUid, String photoId) =>
+      _storage.ref('users/$ownerUid/photos/$photoId.jpg');
 
   @override
   Future<void> upload(String photoId, File file) async {
@@ -38,9 +45,15 @@ class FirebasePhotoStorage implements PhotoStorage {
   }
 
   @override
-  Future<bool> download(String photoId, File to) async {
+  Future<bool> download(String photoId, File to) => _write(_ref(photoId), to);
+
+  @override
+  Future<bool> downloadOwned(String ownerUid, String photoId, File to) =>
+      _write(_owned(ownerUid, photoId), to);
+
+  Future<bool> _write(Reference ref, File to) async {
     try {
-      await _ref(photoId).writeToFile(to);
+      await ref.writeToFile(to);
       return true;
     } on FirebaseException catch (e) {
       if (e.code == 'object-not-found') return false;

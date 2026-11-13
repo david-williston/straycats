@@ -1,16 +1,25 @@
 import 'dart:io';
 
+import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/app.dart';
+import 'package:straycats/src/features/admin/data/is_admin.dart';
+import 'package:straycats/src/features/admin/data/other_photo_cache.dart';
+import 'package:straycats/src/features/admin/data/people_repository.dart';
+import 'package:straycats/src/features/auth/data/auth_repository.dart';
+import 'package:straycats/src/features/auth/data/fake_auth_repository.dart';
+import 'package:straycats/src/features/profile/data/profile_repository.dart';
+import 'package:straycats/src/data/firebase_providers.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/application/photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_local_photo_cache.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
+import 'package:straycats/src/features/cats/data/fake_photo_storage.dart';
 import 'package:straycats/src/features/cats/data/local_photo_cache.dart';
 import 'package:straycats/src/features/cats/data/photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
@@ -40,19 +49,43 @@ List<Override> fakeOverrides({
   FakePhotoRepository? photos,
   FakeLanguageRepository? language,
   FakePhotoUploader? uploader,
-}) => [
-  appStartupProvider.overrideWith((ref) async => 'test-uid'),
-  uidProvider.overrideWithValue('test-uid'),
-  catRepositoryProvider.overrideWithValue(cats ?? FakeCatRepository()),
-  photoRepositoryProvider.overrideWithValue(
-    photos ?? FakePhotoRepository(nextPhoto: File('/cats/9000.jpg')),
-  ),
-  photoUploaderProvider.overrideWithValue(uploader ?? FakePhotoUploader()),
-  localPhotoCacheProvider.overrideWithValue(FakeLocalPhotoCache()),
-  languageRepositoryProvider.overrideWithValue(
-    language ?? FakeLanguageRepository(),
-  ),
-];
+  FakeAuthRepository? auth,
+  FakeFirebaseFirestore? db,
+  OtherPhotoCache? otherPhotos,
+}) {
+  final firestore = db ?? FakeFirebaseFirestore();
+  final fakeAuth = auth ?? FakeAuthRepository(uid: 'test-uid');
+  return [
+    authRepositoryProvider.overrideWithValue(fakeAuth),
+    isAdminProvider.overrideWith((ref) async => fakeAuth.admin),
+    firestoreProvider.overrideWithValue(firestore),
+    profileRepositoryProvider.overrideWithValue(
+      FirestoreProfileRepository(firestore),
+    ),
+    peopleRepositoryProvider.overrideWithValue(
+      FirestorePeopleRepository(firestore),
+    ),
+    otherPhotoCacheProvider.overrideWithValue(
+      otherPhotos ??
+          OtherPhotoCache(
+            // Nothing is there (and nothing is fetched), so clear() is a no-op.
+            () async => Directory('/nonexistent/other-photos'),
+            FakePhotoStorage(),
+          ),
+    ),
+    appStartupProvider.overrideWith((ref) async => 'test-uid'),
+    uidProvider.overrideWithValue('test-uid'),
+    catRepositoryProvider.overrideWithValue(cats ?? FakeCatRepository()),
+    photoRepositoryProvider.overrideWithValue(
+      photos ?? FakePhotoRepository(nextPhoto: File('/cats/9000.jpg')),
+    ),
+    photoUploaderProvider.overrideWithValue(uploader ?? FakePhotoUploader()),
+    localPhotoCacheProvider.overrideWithValue(FakeLocalPhotoCache()),
+    languageRepositoryProvider.overrideWithValue(
+      language ?? FakeLanguageRepository(),
+    ),
+  ];
+}
 
 /// A container with the fakes, for testing controllers without widgets.
 ProviderContainer makeContainer({
@@ -60,6 +93,9 @@ ProviderContainer makeContainer({
   FakePhotoRepository? photos,
   FakeLanguageRepository? language,
   FakePhotoUploader? uploader,
+  FakeAuthRepository? auth,
+  FakeFirebaseFirestore? db,
+  OtherPhotoCache? otherPhotos,
 }) {
   final container = ProviderContainer(
     retry: (_, _) => null,
@@ -68,6 +104,9 @@ ProviderContainer makeContainer({
       photos: photos,
       language: language,
       uploader: uploader,
+      auth: auth,
+      db: db,
+      otherPhotos: otherPhotos,
     ),
   );
   addTearDown(container.dispose);
@@ -82,6 +121,9 @@ Future<void> pumpApp(
   FakePhotoRepository? photos,
   FakeLanguageRepository? language,
   FakePhotoUploader? uploader,
+  FakeAuthRepository? auth,
+  FakeFirebaseFirestore? db,
+  OtherPhotoCache? otherPhotos,
   Locale? locale,
 }) async {
   tester.view.physicalSize = const Size(1080, 2400);
@@ -95,6 +137,9 @@ Future<void> pumpApp(
         photos: photos,
         language: language,
         uploader: uploader,
+        auth: auth,
+        db: db,
+        otherPhotos: otherPhotos,
       ),
       child: StrayCatsApp(locale: locale),
     ),

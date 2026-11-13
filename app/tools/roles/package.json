@@ -1,0 +1,7 @@
+{
+  "name": "straycats-set-role",
+  "private": true,
+  "type": "module",
+  "scripts": { "set-role": "node set-role.mjs" },
+  "dependencies": { "firebase-admin": "^13.0.0" }
+}

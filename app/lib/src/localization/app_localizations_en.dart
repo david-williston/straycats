@@ -159,4 +159,66 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deleteEncounterBody =>
       'It will be removed from this cat\'s history.';
+
+  @override
+  String get account => 'Account';
+
+  @override
+  String get accountNotSignedIn =>
+      'Not signed in. Your cats are only on this phone\'s account.';
+
+  @override
+  String get signInWithGoogle => 'Sign in with Google';
+
+  @override
+  String signedInAs(String who) {
+    return 'Signed in as $who';
+  }
+
+  @override
+  String get googleLinked =>
+      'Done. Your cats are now kept in your Google account.';
+
+  @override
+  String get googleSwitched => 'Signed in. Your cats from before are back.';
+
+  @override
+  String get googleSwitchedKeptOld =>
+      'Signed in to your Google account. The cats on this phone\'s earlier account were not added to it.';
+
+  @override
+  String get signInFailed =>
+      'Could not sign in. Check your connection and try again.';
+
+  @override
+  String get nicknameOptional => 'Nickname (optional)';
+
+  @override
+  String get nicknameHint => 'What should we call you?';
+
+  @override
+  String get nicknameSaved => 'Nickname saved';
+
+  @override
+  String get nicknameNotSaved => 'Could not save the nickname';
+
+  @override
+  String get people => 'People';
+
+  @override
+  String get noPeopleYet => 'No people yet.';
+
+  @override
+  String get cantLoadPeople => 'Could not load the list.';
+
+  @override
+  String joinedOn(String date) {
+    return 'Joined $date';
+  }
+
+  @override
+  String get viewingSomeoneElse => 'Viewing someone else\'s cats. Read only.';
+
+  @override
+  String get personNoCats => 'This person has no cats yet.';
 }

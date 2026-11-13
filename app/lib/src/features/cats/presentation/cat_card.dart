@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -5,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
 import '../../../localization/encounter_labels.dart';
+import '../../admin/data/other_photo_cache.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
@@ -15,10 +18,16 @@ import 'encounter_details_form.dart';
 /// encounter newest first with its details and note (tap one to show its
 /// photo and edit or delete it). The trimmed name is
 /// saved when the card closes; submitting the field closes it.
+///
+/// With [ownerUid] it is another person's cat, shown to an admin: read only
+/// (no rename, no editing or deleting) and with the owner's photos.
 class CatCard extends ConsumerStatefulWidget {
-  const CatCard({super.key, required this.cat});
+  const CatCard({super.key, required this.cat, this.ownerUid});
 
   final Cat cat;
+  final String? ownerUid;
+
+  bool get readOnly => ownerUid != null;
 
   @override
   ConsumerState<CatCard> createState() => _CatCardState();
@@ -29,13 +38,14 @@ class _CatCardState extends ConsumerState<CatCard> {
   int _shown = 0;
 
   /// The cat as it is now, so edits and deletes show at once.
-  Cat get _cat =>
-      ref
-          .watch(catsControllerProvider)
-          .value
-          ?.where((c) => c.id == widget.cat.id)
-          .firstOrNull ??
-      widget.cat;
+  Cat get _cat => widget.readOnly
+      ? widget.cat
+      : ref
+                .watch(catsControllerProvider)
+                .value
+                ?.where((c) => c.id == widget.cat.id)
+                .firstOrNull ??
+            widget.cat;
 
   Future<void> _edit(Cat cat, Encounter e) async {
     final l10n = AppLocalizations.of(context);
@@ -125,6 +135,15 @@ class _CatCardState extends ConsumerState<CatCard> {
     }
   }
 
+  /// The photo of [e], from this person's store or the owner's cache.
+  File? _photo(Encounter e) => ref
+      .watch(
+        widget.ownerUid == null
+            ? photoFileProvider(e.photoId)
+            : ownerPhotoFileProvider(widget.ownerUid!, e.photoId),
+      )
+      .value;
+
   @override
   void dispose() {
     _name.dispose();
@@ -140,9 +159,12 @@ class _CatCardState extends ConsumerState<CatCard> {
     final history = cat.history;
     final shown = _shown < history.length ? _shown : 0;
     return PopScope(
-      onPopInvokedWithResult: (_, _) => ref
-          .read(catsControllerProvider.notifier)
-          .rename(widget.cat.id, _name.text.trim()),
+      onPopInvokedWithResult: (_, _) {
+        if (widget.readOnly) return;
+        ref
+            .read(catsControllerProvider.notifier)
+            .rename(widget.cat.id, _name.text.trim());
+      },
       child: Scaffold(
         appBar: AppBar(),
         body: Column(
@@ -150,11 +172,7 @@ class _CatCardState extends ConsumerState<CatCard> {
             Expanded(
               child: InteractiveViewer(
                 child: CatPhoto(
-                  history.isEmpty
-                      ? null
-                      : ref
-                            .watch(photoFileProvider(history[shown].photoId))
-                            .value,
+                  history.isEmpty ? null : _photo(history[shown]),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -163,6 +181,7 @@ class _CatCardState extends ConsumerState<CatCard> {
               padding: const EdgeInsets.all(16),
               child: TextField(
                 controller: _name,
+                readOnly: widget.readOnly,
                 textCapitalization: TextCapitalization.words,
                 textInputAction: TextInputAction.done,
                 decoration: InputDecoration(
@@ -170,7 +189,9 @@ class _CatCardState extends ConsumerState<CatCard> {
                   hintText: l10n.giveCatAName,
                   border: const OutlineInputBorder(),
                 ),
-                onSubmitted: (_) => Navigator.of(context).pop(),
+                onSubmitted: widget.readOnly
+                    ? null
+                    : (_) => Navigator.of(context).pop(),
               ),
             ),
             SizedBox(
@@ -185,7 +206,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                   return GestureDetector(
                     onTap: () {
                       setState(() => _shown = i);
-                      _edit(cat, e);
+                      if (!widget.readOnly) _edit(cat, e);
                     },
                     child: SizedBox(
                       width: 120,
@@ -203,10 +224,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                                     : Colors.transparent,
                               ),
                             ),
-                            child: CatPhoto(
-                              ref.watch(photoFileProvider(e.photoId)).value,
-                              cacheWidth: 200,
-                            ),
+                            child: CatPhoto(_photo(e), cacheWidth: 200),
                           ),
                           const SizedBox(height: 4),
                           Text(

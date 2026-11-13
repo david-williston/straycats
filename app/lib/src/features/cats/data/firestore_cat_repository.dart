@@ -28,6 +28,11 @@ class FirestoreCatRepository implements CatRepository {
   Stream<List<Cat>> watchCats() =>
       Rx.combineLatest2(_cats.snapshots(), _encounters.snapshots(), _combine);
 
+  /// The same cats once, without a listener. For reading another person's
+  /// cats as an admin.
+  Future<List<Cat>> fetchCats() async =>
+      _combine(await _cats.get(), await _encounters.get());
+
   /// Encounters whose cat does not exist, and ones without a photo, are
   /// ignored.
   static List<Cat> _combine(

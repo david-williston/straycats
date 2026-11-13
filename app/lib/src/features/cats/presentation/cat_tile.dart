@@ -3,22 +3,31 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
+import '../../admin/data/other_photo_cache.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 
 /// A grid tile: the cat's latest photo with its name (or a quiet hint)
-/// beneath.
+/// beneath. With [ownerUid] the photo is another person's (an admin viewing),
+/// read from the separate cache of other people's photos.
 class CatTile extends ConsumerWidget {
-  const CatTile({super.key, required this.cat});
+  const CatTile({super.key, required this.cat, this.ownerUid});
 
   final Cat cat;
+  final String? ownerUid;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final latest = cat.latest;
     final photo = latest == null
         ? null
-        : ref.watch(photoFileProvider(latest.photoId)).value;
+        : ref
+              .watch(
+                ownerUid == null
+                    ? photoFileProvider(latest.photoId)
+                    : ownerPhotoFileProvider(ownerUid!, latest.photoId),
+              )
+              .value;
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final named = cat.name.isNotEmpty;

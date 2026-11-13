@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../../data/firebase_providers.dart';
@@ -5,6 +7,7 @@ import '../../auth/data/auth_repository.dart';
 import '../../cats/application/cat_importer.dart';
 import '../../cats/application/photo_uploader.dart';
 import '../../cats/data/firestore_cat_repository.dart';
+import '../../profile/data/profile_repository.dart';
 
 part 'app_startup.g.dart';
 
@@ -21,8 +24,9 @@ class SignInFailed implements Exception {
 
 /// What must happen before the app shows the cats: sign in anonymously (once),
 /// bring over the cats kept before Firebase (once), and start the photo
-/// uploader. Completes with the user's uid; errors show on the startup screen
-/// with Retry.
+/// uploader. It also starts creating the profile `users/{uid}`, without
+/// waiting (offline, the write waits for a connection). Completes with the
+/// user's uid; errors show on the startup screen with Retry.
 @Riverpod(keepAlive: true)
 Future<String> appStartup(Ref ref) async {
   final auth = ref.watch(authRepositoryProvider);
@@ -37,6 +41,7 @@ Future<String> appStartup(Ref ref) async {
   await ref
       .watch(catImporterProvider)
       .run(FirestoreCatRepository(ref.watch(firestoreProvider), uid));
+  unawaited(ensureProfileQuietly(ref.watch(profileRepositoryProvider), uid));
   ref.watch(photoUploaderProvider).start();
   return uid;
 }

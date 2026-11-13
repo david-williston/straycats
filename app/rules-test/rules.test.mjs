@@ -31,6 +31,8 @@ beforeEach(async () => {
 
 const alice = () => env.authenticatedContext('alice').firestore();
 const bob = () => env.authenticatedContext('bob').firestore();
+const admin = () => env.authenticatedContext('root', { admin: true }).firestore();
+const notAdmin = () => env.authenticatedContext('eve', { admin: false }).firestore();
 const anon = () => env.unauthenticatedContext().firestore();
 
 const catDoc = (db, id = 'c1') => doc(db, 'users/alice/cats', id);
@@ -239,5 +241,132 @@ describe('storage photos', () => {
   test('paths outside users/{uid}/photos denied', async () => {
     await assertFails(put(st('alice'), ref(st('alice'), 'users/alice/other/1.jpg')));
     await assertFails(put(st('alice'), ref(st('alice'), 'stray.jpg')));
+  });
+});
+
+describe('firestore profile', () => {
+  const profile = (db, uid = 'alice') => doc(db, 'users', uid);
+  const seedProfile = (data = {}) => env.withSecurityRulesDisabled((ctx) =>
+    setDoc(doc(ctx.firestore(), 'users/alice'), { createdAt: Timestamp.fromDate(new Date('2025-06-01')), ...data }));
+
+  test('owner creates a profile, with or without nickname', async () => {
+    await assertSucceeds(setDoc(profile(alice()), { createdAt: serverTimestamp() }));
+    await assertSucceeds(getDoc(profile(alice())));
+    await env.clearFirestore();
+    await assertSucceeds(setDoc(profile(alice()), { createdAt: serverTimestamp(), nickname: 'Dave' }));
+  });
+  test('create denied for others, bad createdAt, extra fields, bad nickname', async () => {
+    await assertFails(setDoc(profile(bob(), 'alice'), { createdAt: serverTimestamp() }));
+    await assertFails(setDoc(profile(anon()), { createdAt: serverTimestamp() }));
+    await assertFails(setDoc(profile(alice()), { createdAt: Timestamp.now() }));
+    await assertFails(setDoc(profile(alice()), { nickname: 'Dave' }));
+    await assertFails(setDoc(profile(alice()), { createdAt: serverTimestamp(), admin: true }));
+    await assertFails(setDoc(profile(alice()), { createdAt: serverTimestamp(), nickname: '' }));
+    await assertFails(setDoc(profile(alice()), { createdAt: serverTimestamp(), nickname: 'x'.repeat(41) }));
+    await assertFails(setDoc(profile(alice()), { createdAt: serverTimestamp(), nickname: 5 }));
+  });
+  test('owner updates nickname but createdAt is immutable', async () => {
+    await seedProfile();
+    const created = Timestamp.fromDate(new Date('2025-06-01'));
+    await assertSucceeds(setDoc(profile(alice()), { createdAt: created, nickname: 'Dave' }));
+    await assertSucceeds(setDoc(profile(alice()), { createdAt: created, nickname: 'x'.repeat(40) }));
+    await assertFails(setDoc(profile(alice()), { createdAt: created, nickname: 'x'.repeat(41) }));
+    await assertFails(setDoc(profile(alice()), { createdAt: created, nickname: '' }));
+    await assertFails(setDoc(profile(alice()), { createdAt: Timestamp.now(), nickname: 'Dave' }));
+    await assertFails(setDoc(profile(alice()), { createdAt: serverTimestamp(), nickname: 'Dave' }));
+    await assertFails(setDoc(profile(alice()), { createdAt: created, role: 'admin' }));
+  });
+  test('others cannot update; nobody deletes', async () => {
+    await seedProfile();
+    const created = Timestamp.fromDate(new Date('2025-06-01'));
+    await assertFails(setDoc(profile(bob()), { createdAt: created, nickname: 'Hax' }));
+    await assertFails(deleteDoc(profile(alice())));
+    await assertFails(deleteDoc(profile(bob())));
+    await assertFails(deleteDoc(profile(admin())));
+  });
+  test('only owner and admin read a profile', async () => {
+    await seedProfile();
+    await assertSucceeds(getDoc(profile(alice())));
+    await assertSucceeds(getDoc(profile(admin())));
+    await assertFails(getDoc(profile(bob())));
+    await assertFails(getDoc(profile(notAdmin())));
+    await assertFails(getDoc(profile(anon())));
+  });
+  test('admin can list users; others cannot', async () => {
+    await seedProfile();
+    await assertSucceeds(getDocs(collection(admin(), 'users')));
+    await assertFails(getDocs(collection(bob(), 'users')));
+    await assertFails(getDocs(collection(alice(), 'users')));
+  });
+});
+
+describe('firestore admin access is read-only', () => {
+  test('admin reads other people\'s cats and encounters', async () => {
+    await seedCat();
+    await assertSucceeds(getDoc(catDoc(admin())));
+    await assertSucceeds(getDocs(collection(admin(), 'users/alice/cats')));
+    await assertSucceeds(getDoc(encDoc(admin())));
+    await assertSucceeds(getDocs(collection(admin(), 'users/alice/encounters')));
+  });
+  test('admin false or missing claim does not read', async () => {
+    await seedCat();
+    await assertFails(getDoc(catDoc(notAdmin())));
+    await assertFails(getDoc(encDoc(notAdmin())));
+    await assertFails(getDocs(collection(bob(), 'users/alice/cats')));
+  });
+  test('admin cannot write or delete other people\'s data', async () => {
+    await seedCat();
+    await assertFails(setDoc(catDoc(admin(), 'c2'), cat()));
+    await assertFails(setDoc(catDoc(admin()), cat({ name: 'Renamed' })));
+    await assertFails(deleteDoc(catDoc(admin())));
+    await assertFails(setDoc(encDoc(admin(), 'e9'), enc()));
+    await assertFails(setDoc(encDoc(admin()), enc({ note: 'x' })));
+    await assertFails(deleteDoc(encDoc(admin())));
+  });
+  test('admin writes to own area still follow owner rules', async () => {
+    const root = env.authenticatedContext('root', { admin: true }).firestore();
+    await assertSucceeds(setDoc(doc(root, 'users/root/cats/c1'), cat()));
+  });
+});
+
+describe('firestore roles', () => {
+  const role = (db, uid = 'alice') => doc(db, 'roles', uid);
+  const hist = (db, uid = 'alice') => doc(db, `roles/${uid}/history`, 'h1');
+  beforeEach(async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'roles/alice'), { roles: { admin: false }, updatedAt: Timestamp.now(), updatedBy: 'x' });
+      await setDoc(doc(ctx.firestore(), 'roles/alice/history/h1'), { at: Timestamp.now() });
+    });
+  });
+  test('owner and admin read; others denied', async () => {
+    await assertSucceeds(getDoc(role(alice())));
+    await assertSucceeds(getDoc(role(admin())));
+    await assertSucceeds(getDoc(hist(alice())));
+    await assertSucceeds(getDoc(hist(admin())));
+    await assertFails(getDoc(role(bob())));
+    await assertFails(getDoc(hist(bob())));
+    await assertFails(getDoc(role(anon())));
+  });
+  test('nobody writes roles from a client, not even admin or the owner', async () => {
+    for (const db of [alice(), bob(), admin(), anon()]) {
+      await assertFails(setDoc(role(db), { roles: { admin: true } }));
+      await assertFails(setDoc(role(db, 'bob'), { roles: { admin: true } }));
+      await assertFails(deleteDoc(role(db)));
+      await assertFails(setDoc(hist(db), { at: Timestamp.now() }));
+      await assertFails(deleteDoc(hist(db)));
+    }
+  });
+});
+
+describe('storage admin access', () => {
+  const jpeg = new Uint8Array([0xff, 0xd8, 0xff, 0xd9]);
+  const adminSt = () => env.authenticatedContext('root', { admin: true }).storage();
+  const st = (uid) => env.authenticatedContext(uid).storage();
+  const p = (s, uid = 'alice') => ref(s, `users/${uid}/photos/1.jpg`);
+  test('admin reads others\' photos but cannot write them', async () => {
+    await assertSucceeds(uploadBytes(p(st('alice')), jpeg, { contentType: 'image/jpeg' }));
+    await assertSucceeds(getBytes(p(adminSt())));
+    await assertFails(getBytes(p(st('bob'))));
+    await assertFails(uploadBytes(p(adminSt()), jpeg, { contentType: 'image/jpeg' }));
   });
 });

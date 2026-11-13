@@ -159,4 +159,68 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get deleteEncounterBody => 'Se quitará del historial de este gato.';
+
+  @override
+  String get account => 'Cuenta';
+
+  @override
+  String get accountNotSignedIn =>
+      'Sin iniciar sesión. Tus gatos solo están en la cuenta de este teléfono.';
+
+  @override
+  String get signInWithGoogle => 'Iniciar sesión con Google';
+
+  @override
+  String signedInAs(String who) {
+    return 'Sesión iniciada como $who';
+  }
+
+  @override
+  String get googleLinked =>
+      'Listo. Tus gatos ahora están guardados en tu cuenta de Google.';
+
+  @override
+  String get googleSwitched =>
+      'Sesión iniciada. Tus gatos de antes han vuelto.';
+
+  @override
+  String get googleSwitchedKeptOld =>
+      'Sesión iniciada en tu cuenta de Google. Los gatos de la cuenta anterior de este teléfono no se añadieron a ella.';
+
+  @override
+  String get signInFailed =>
+      'No se pudo iniciar sesión. Revisa tu conexión e inténtalo de nuevo.';
+
+  @override
+  String get nicknameOptional => 'Apodo (opcional)';
+
+  @override
+  String get nicknameHint => '¿Cómo te llamamos?';
+
+  @override
+  String get nicknameSaved => 'Apodo guardado';
+
+  @override
+  String get nicknameNotSaved => 'No se pudo guardar el apodo';
+
+  @override
+  String get people => 'Personas';
+
+  @override
+  String get noPeopleYet => 'Aún no hay personas.';
+
+  @override
+  String get cantLoadPeople => 'No se pudo cargar la lista.';
+
+  @override
+  String joinedOn(String date) {
+    return 'Se unió el $date';
+  }
+
+  @override
+  String get viewingSomeoneElse =>
+      'Viendo los gatos de otra persona. Solo lectura.';
+
+  @override
+  String get personNoCats => 'Esta persona aún no tiene gatos.';
 }
