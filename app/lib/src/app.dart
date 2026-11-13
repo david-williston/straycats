@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'features/cats/presentation/cats_page.dart';
+import 'features/settings/presentation/language_controller.dart';
 import 'localization/app_localizations.dart';
 
-class StrayCatsApp extends StatelessWidget {
+class StrayCatsApp extends ConsumerWidget {
   const StrayCatsApp({super.key, this.locale});
 
-  /// Overrides the device language (for tests); null follows the device.
+  /// Overrides the chosen language (for tests); null uses the user's choice,
+  /// which follows the phone until they pick one.
   final Locale? locale;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      locale: locale,
+      locale: locale ?? ref.watch(languageControllerProvider).value,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),

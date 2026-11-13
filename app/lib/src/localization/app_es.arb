@@ -19,5 +19,9 @@
   "encounterFed": "Le di de comer",
   "encounterUnwell": "Parece enfermo o herido",
   "encounterKittens": "Con gatitos",
-  "encounterEarTipped": "Oreja cortada"
+  "encounterEarTipped": "Oreja cortada",
+  "language": "Idioma",
+  "@language": {"description": "Tooltip of the app bar button that opens the language choices, and title of that dialog."},
+  "phoneLanguage": "Idioma del teléfono",
+  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."}
 }

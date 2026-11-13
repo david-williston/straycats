@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../localization/app_localizations.dart';
+import '../../settings/presentation/language_picker.dart';
 import '../application/matching_service.dart';
 import '../domain/cat.dart';
 import '../domain/sighting.dart';
@@ -53,7 +54,10 @@ class CatsPage extends ConsumerWidget {
     final catsState = ref.watch(catsControllerProvider);
     final cats = catsState.value == null ? null : byLastSeen(catsState.value!);
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.appTitle)),
+      appBar: AppBar(
+        title: Text(l10n.appTitle),
+        actions: const [LanguageButton()],
+      ),
       body: catsState.hasError
           ? Center(child: Text(l10n.cantOpenCatsFolder))
           : cats == null

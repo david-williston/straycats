@@ -39,5 +39,9 @@
   "encounterKittens": "With kittens",
   "@encounterKittens": {"description": "Encounter type: the cat had kittens with it."},
   "encounterEarTipped": "Ear tipped",
-  "@encounterEarTipped": {"description": "Encounter type: the cat has a tipped ear, the sign it was neutered."}
+  "@encounterEarTipped": {"description": "Encounter type: the cat has a tipped ear, the sign it was neutered."},
+  "language": "Language",
+  "@language": {"description": "Tooltip of the app bar button that opens the language choices, and title of that dialog."},
+  "phoneLanguage": "Phone's language",
+  "@phoneLanguage": {"description": "Choice that makes the app follow the language of the phone."}
 }

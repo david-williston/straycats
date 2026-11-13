@@ -10,6 +10,8 @@ import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
 import 'package:straycats/src/features/cats/data/photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
+import 'package:straycats/src/features/settings/data/fake_language_repository.dart';
+import 'package:straycats/src/features/settings/data/language_repository.dart';
 
 /// A cat with one encounter per time (milliseconds since the epoch).
 Cat cat(String id, String name, List<int> times) => Cat(
@@ -29,6 +31,7 @@ Cat cat(String id, String name, List<int> times) => Cat(
 ProviderContainer makeContainer({
   FakeCatRepository? cats,
   FakePhotoRepository? photos,
+  FakeLanguageRepository? language,
 }) {
   final container = ProviderContainer(
     retry: (_, _) => null,
@@ -36,6 +39,9 @@ ProviderContainer makeContainer({
       catRepositoryProvider.overrideWithValue(cats ?? FakeCatRepository()),
       photoRepositoryProvider.overrideWithValue(
         photos ?? FakePhotoRepository(nextPhoto: File('/cats/9000.jpg')),
+      ),
+      languageRepositoryProvider.overrideWithValue(
+        language ?? FakeLanguageRepository(),
       ),
     ],
   );
@@ -49,6 +55,7 @@ Future<void> pumpApp(
   WidgetTester tester, {
   required FakeCatRepository cats,
   FakePhotoRepository? photos,
+  FakeLanguageRepository? language,
   Locale? locale,
 }) async {
   tester.view.physicalSize = const Size(1080, 2400);
@@ -61,6 +68,9 @@ Future<void> pumpApp(
         catRepositoryProvider.overrideWithValue(cats),
         photoRepositoryProvider.overrideWithValue(
           photos ?? FakePhotoRepository(nextPhoto: File('/cats/9000.jpg')),
+        ),
+        languageRepositoryProvider.overrideWithValue(
+          language ?? FakeLanguageRepository(),
         ),
       ],
       child: StrayCatsApp(locale: locale),

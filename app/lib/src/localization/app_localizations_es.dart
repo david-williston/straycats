@@ -69,4 +69,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get encounterEarTipped => 'Oreja cortada';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get phoneLanguage => 'Idioma del teléfono';
 }

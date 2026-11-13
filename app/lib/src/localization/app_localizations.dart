@@ -217,6 +217,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ear tipped'**
   String get encounterEarTipped;
+
+  /// Tooltip of the app bar button that opens the language choices, and title of that dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// Choice that makes the app follow the language of the phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone\'s language'**
+  String get phoneLanguage;
 }
 
 class _AppLocalizationsDelegate

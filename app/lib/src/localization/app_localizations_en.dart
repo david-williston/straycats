@@ -68,4 +68,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get encounterEarTipped => 'Ear tipped';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get phoneLanguage => 'Phone\'s language';
 }
