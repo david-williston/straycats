@@ -46,28 +46,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nameOptional => 'Name (optional)';
 
   @override
-  String get whatWasHappening => 'What was happening? (optional)';
-
-  @override
   String get name => 'Name';
 
   @override
   String get giveCatAName => 'Give this cat a name';
-
-  @override
-  String get encounterSeen => 'Just saw it';
-
-  @override
-  String get encounterFed => 'Fed it';
-
-  @override
-  String get encounterUnwell => 'Looks unwell or injured';
-
-  @override
-  String get encounterKittens => 'With kittens';
-
-  @override
-  String get encounterEarTipped => 'Ear tipped';
 
   @override
   String get language => 'Language';
@@ -95,4 +77,86 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String get whatWasItDoing => 'What was it doing?';
+
+  @override
+  String get howDidItLook => 'How did it look?';
+
+  @override
+  String get howDidYouHelp => 'Did you help?';
+
+  @override
+  String get noteLabel => 'Its story (optional)';
+
+  @override
+  String get noteHint => 'What should the next person know?';
+
+  @override
+  String get activityEating => 'Eating';
+
+  @override
+  String get activitySleeping => 'Sleeping';
+
+  @override
+  String get activityResting => 'Resting';
+
+  @override
+  String get activityWaitingAtDoor => 'Waiting at a door';
+
+  @override
+  String get activityPlaying => 'Playing';
+
+  @override
+  String get activityWalkingBy => 'Walking by';
+
+  @override
+  String get conditionHealthy => 'Looks healthy';
+
+  @override
+  String get conditionThin => 'Thin';
+
+  @override
+  String get conditionLimping => 'Limping';
+
+  @override
+  String get conditionUnwellOrInjured => 'Unwell or injured';
+
+  @override
+  String get conditionWithKittens => 'With kittens';
+
+  @override
+  String get conditionEarTipped => 'Ear tipped';
+
+  @override
+  String get careFed => 'Fed it';
+
+  @override
+  String get careGaveWater => 'Gave water';
+
+  @override
+  String get careTookToVet => 'Took it to the vet';
+
+  @override
+  String get careGaveMedicine => 'Gave medicine';
+
+  @override
+  String get editEncounter => 'Edit encounter';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get deleteEncounterTitle => 'Delete this encounter?';
+
+  @override
+  String get deleteEncounterBody =>
+      'It will be removed from this cat\'s history.';
 }

@@ -19,9 +19,16 @@ service cloud.firestore {
         && d.updatedAt == request.time;
     }
 
+    // A list of at most as many items as there are allowed values, each one allowed.
+    function isListOf(list, allowed) {
+      return list is list
+        && list.size() <= allowed.size()
+        && list.hasOnly(allowed);
+    }
+
     function isEncounter(uid) {
       let d = request.resource.data;
-      return d.keys().hasOnly(['catId', 'photoId', 'takenAt', 'type', 'updatedAt'])
+      return d.keys().hasOnly(['catId', 'photoId', 'takenAt', 'activity', 'conditions', 'care', 'note', 'updatedAt'])
         && d.keys().hasAll(['catId', 'takenAt', 'updatedAt'])
         && isId(d.catId)
         && existsAfter(/databases/$(database)/documents/users/$(uid)/cats/$(d.catId))
@@ -29,7 +36,10 @@ service cloud.firestore {
         && d.takenAt is timestamp
         && d.takenAt > timestamp.date(2000, 1, 1)
         && d.takenAt < request.time + duration.value(1, 'd')
-        && (!('type' in d) || d.type in ['seen', 'fed', 'unwell', 'kittens', 'ear_tipped'])
+        && (!('activity' in d) || d.activity in ['eating', 'sleeping', 'resting', 'waiting_at_door', 'playing', 'walking_by'])
+        && (!('conditions' in d) || isListOf(d.conditions, ['healthy', 'thin', 'limping', 'unwell_or_injured', 'with_kittens', 'ear_tipped']))
+        && (!('care' in d) || isListOf(d.care, ['fed', 'gave_water', 'took_to_vet', 'gave_medicine']))
+        && (!('note' in d) || (d.note is string && d.note.size() <= 1000))
         && d.updatedAt == request.time;
     }
 

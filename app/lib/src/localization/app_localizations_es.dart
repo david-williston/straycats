@@ -47,28 +47,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get nameOptional => 'Nombre (opcional)';
 
   @override
-  String get whatWasHappening => '¿Qué estaba pasando? (opcional)';
-
-  @override
   String get name => 'Nombre';
 
   @override
   String get giveCatAName => 'Ponle un nombre a este gato';
-
-  @override
-  String get encounterSeen => 'Solo lo vi';
-
-  @override
-  String get encounterFed => 'Le di de comer';
-
-  @override
-  String get encounterUnwell => 'Parece enfermo o herido';
-
-  @override
-  String get encounterKittens => 'Con gatitos';
-
-  @override
-  String get encounterEarTipped => 'Oreja cortada';
 
   @override
   String get language => 'Idioma';
@@ -96,4 +78,85 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get retry => 'Reintentar';
+
+  @override
+  String get whatWasItDoing => '¿Qué estaba haciendo?';
+
+  @override
+  String get howDidItLook => '¿Cómo se veía?';
+
+  @override
+  String get howDidYouHelp => '¿Lo ayudaste?';
+
+  @override
+  String get noteLabel => 'Su historia (opcional)';
+
+  @override
+  String get noteHint => '¿Qué debería saber la próxima persona?';
+
+  @override
+  String get activityEating => 'Comiendo';
+
+  @override
+  String get activitySleeping => 'Durmiendo';
+
+  @override
+  String get activityResting => 'Descansando';
+
+  @override
+  String get activityWaitingAtDoor => 'Esperando en una puerta';
+
+  @override
+  String get activityPlaying => 'Jugando';
+
+  @override
+  String get activityWalkingBy => 'Caminando';
+
+  @override
+  String get conditionHealthy => 'Se ve sano';
+
+  @override
+  String get conditionThin => 'Muy delgado';
+
+  @override
+  String get conditionLimping => 'Cojeando';
+
+  @override
+  String get conditionUnwellOrInjured => 'Enfermo o herido';
+
+  @override
+  String get conditionWithKittens => 'Con gatitos';
+
+  @override
+  String get conditionEarTipped => 'Oreja cortada';
+
+  @override
+  String get careFed => 'Le di de comer';
+
+  @override
+  String get careGaveWater => 'Le di agua';
+
+  @override
+  String get careTookToVet => 'Lo llevé al veterinario';
+
+  @override
+  String get careGaveMedicine => 'Le di medicina';
+
+  @override
+  String get editEncounter => 'Editar encuentro';
+
+  @override
+  String get save => 'Guardar';
+
+  @override
+  String get delete => 'Eliminar';
+
+  @override
+  String get cancel => 'Cancelar';
+
+  @override
+  String get deleteEncounterTitle => '¿Eliminar este encuentro?';
+
+  @override
+  String get deleteEncounterBody => 'Se quitará del historial de este gato.';
 }

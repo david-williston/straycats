@@ -23,6 +23,12 @@ abstract class CatRepository {
 
   Future<void> addEncounter(String catId, Encounter encounter);
 
+  /// Saves the edited details of an existing encounter of [catId].
+  Future<void> updateEncounter(String catId, Encounter encounter);
+
+  /// Removes one encounter. Its cat stays, even with none left.
+  Future<void> deleteEncounter(String encounterId);
+
   Future<void> renameCat(String catId, String name);
 
   /// Writes [cats] under their own ids, so running it again rewrites the same

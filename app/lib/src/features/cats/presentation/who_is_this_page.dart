@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 import '../../../common_widgets/cat_photo.dart';
 import '../../../localization/app_localizations.dart';
-import '../../../localization/encounter_labels.dart';
 import '../domain/cat.dart';
-import '../domain/encounter_type.dart';
+import '../domain/encounter_details.dart';
 import '../domain/sighting.dart';
 import 'cat_tile.dart';
+import 'encounter_details_form.dart';
 
 /// Shown after taking a photo: pick the cat (or "New cat"), then optionally
 /// what was happening, then Done. Pops with a [Sighting], or null if the
@@ -31,7 +31,7 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
   final _name = TextEditingController();
   bool _picked = false;
   Cat? _cat;
-  EncounterType? _type;
+  EncounterDetails _chosen = const EncounterDetails();
 
   @override
   void dispose() {
@@ -44,9 +44,9 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
     _cat = cat;
   });
 
-  void _done() =>
-      Navigator.of(context)
-          .pop(Sighting(catId: _cat?.id, name: _name.text.trim(), type: _type));
+  void _done() => Navigator.of(
+    context,
+  ).pop(Sighting(catId: _cat?.id, name: _name.text.trim(), details: _chosen));
 
   @override
   Widget build(BuildContext context) {
@@ -132,23 +132,7 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
         ),
         const SizedBox(height: 16),
       ],
-      Text(
-        l10n.whatWasHappening,
-        style: Theme.of(context).textTheme.titleMedium,
-      ),
-      const SizedBox(height: 8),
-      Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        children: [
-          for (final type in EncounterType.values)
-            ChoiceChip(
-              label: Text(type.label(l10n)),
-              selected: _type == type,
-              onSelected: (on) => setState(() => _type = on ? type : null),
-            ),
-        ],
-      ),
+      EncounterDetailsForm(onChanged: (d) => _chosen = d),
     ];
   }
 }

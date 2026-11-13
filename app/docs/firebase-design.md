@@ -22,7 +22,12 @@ users/{uid}/encounters/{encounterId}
   catId       string   id of a cat in users/{uid}/cats
   photoId     string   optional; the photo is users/{uid}/photos/{photoId}.jpg
   takenAt     timestamp  client time the photo was taken (the user's truth, works offline)
-  type        string   optional; one of seen | fed | unwell | kittens | ear_tipped
+  activity    string   optional; eating | sleeping | resting | waiting_at_door | playing | walking_by
+  conditions  list     optional; healthy | thin | limping | unwell_or_injured | with_kittens | ear_tipped
+  care        list     optional; fed | gave_water | took_to_vet | gave_medicine
+  note        string   optional; the story, at most 1000 chars
+                       (old documents may still have `type`: seen | fed | unwell | kittens | ear_tipped;
+                       it is mapped on read and dropped on the next save; rules no longer accept it)
   updatedAt   timestamp  server time, as above
 ```
 

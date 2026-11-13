@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/data/firestore_cat_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
-import 'package:straycats/src/features/cats/domain/encounter_type.dart';
+import 'package:straycats/src/features/cats/domain/encounter_details.dart';
 
 import '../../../helpers.dart';
 
@@ -31,7 +31,12 @@ void main() {
               id: '1000',
               photoId: '1000',
               time: DateTime.fromMillisecondsSinceEpoch(1000),
-              type: EncounterType.earTipped,
+              details: EncounterDetails(
+                activity: Activity.sleeping,
+                conditions: [Condition.earTipped],
+                care: [Care.fed],
+                note: 'Sleeps on the car',
+              ),
             ),
           ],
         ),
@@ -44,16 +49,69 @@ void main() {
           .data()!;
       expect(encounter['catId'], '1000');
       expect(encounter['photoId'], '1000');
-      expect(encounter['type'], 'ear_tipped');
+      expect(encounter['activity'], 'sleeping');
+      expect(encounter['conditions'], ['ear_tipped']);
+      expect(encounter['care'], ['fed']);
+      expect(encounter['note'], 'Sleeps on the car');
+      expect(encounter.containsKey('type'), isFalse);
       expect(encounter['takenAt'], Timestamp.fromMillisecondsSinceEpoch(1000));
       expect(encounter.containsKey('updatedAt'), isTrue);
     },
   );
 
-  test('an encounter with no type has no type field', () async {
+  test('an encounter with no details has only the basic fields', () async {
     await repo.addCat(cat('1', '', [1000]));
     final e = (await db.doc('users/u1/encounters/1000').get()).data()!;
+    expect(e.keys.toSet(), {'catId', 'photoId', 'takenAt', 'updatedAt'});
+  });
+
+  test('an old document with a type reads as the new fields', () async {
+    await db.doc('users/u1/cats/1').set({'name': 'Old'});
+    await db.doc('users/u1/encounters/1000').set({
+      'catId': '1',
+      'photoId': '1000',
+      'takenAt': Timestamp.fromMillisecondsSinceEpoch(1000),
+      'type': 'unwell',
+    });
+    final cats = await repo.watchCats().first;
+    expect(cats.single.latest!.details.conditions, [Condition.unwellOrInjured]);
+  });
+
+  test('updating replaces the details and drops an old type', () async {
+    await db.doc('users/u1/cats/1').set({'name': 'Old'});
+    await db.doc('users/u1/encounters/1000').set({
+      'catId': '1',
+      'photoId': '1000',
+      'takenAt': Timestamp.fromMillisecondsSinceEpoch(1000),
+      'type': 'fed',
+    });
+    await repo.updateEncounter(
+      '1',
+      Encounter(
+        id: '1000',
+        photoId: '1000',
+        time: DateTime.fromMillisecondsSinceEpoch(1000),
+        details: const EncounterDetails(
+          activity: Activity.playing,
+          note: 'Chased a leaf',
+        ),
+      ),
+    );
+    final e = (await db.doc('users/u1/encounters/1000').get()).data()!;
     expect(e.containsKey('type'), isFalse);
+    expect(e['activity'], 'playing');
+    expect(e['note'], 'Chased a leaf');
+    expect(e.containsKey('conditions'), isFalse);
+    expect((await docs('encounters')).docs, hasLength(1));
+  });
+
+  test('deleting an encounter keeps its cat', () async {
+    await repo.addCat(cat('1', 'Ciccio', [1000]));
+    await repo.deleteEncounter('1000');
+    expect((await docs('encounters')).docs, isEmpty);
+    final cats = await repo.watchCats().first;
+    expect(cats.single.name, 'Ciccio');
+    expect(cats.single.encounters, isEmpty);
   });
 
   test('watchCats combines the cats with their encounters', () async {
@@ -64,7 +122,7 @@ void main() {
         id: '3000',
         photoId: '3000',
         time: DateTime.fromMillisecondsSinceEpoch(3000),
-        type: EncounterType.fed,
+        details: const EncounterDetails(care: [Care.fed]),
       ),
     );
     await repo.addCat(cat('2', '', [2000]));
@@ -75,7 +133,7 @@ void main() {
     final ciccio = cats.firstWhere((c) => c.id == '1');
     expect(ciccio.name, 'Ciccio');
     expect(ciccio.history.map((e) => e.photoId), ['3000', '1000']);
-    expect(ciccio.latest!.type, EncounterType.fed);
+    expect(ciccio.latest!.details.care, [Care.fed]);
     expect(cats.firstWhere((c) => c.id == '2').name, '');
   });
 

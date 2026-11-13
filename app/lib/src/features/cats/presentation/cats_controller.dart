@@ -42,7 +42,7 @@ class CatsController extends _$CatsController {
       id: id,
       photoId: id,
       time: photoTime(photo),
-      type: sighting.type,
+      details: sighting.details,
     );
     final repo = ref.read(catRepositoryProvider);
     final catId = sighting.catId;
@@ -54,6 +54,16 @@ class CatsController extends _$CatsController {
           : repo.addEncounter(catId, encounter),
     );
     await ref.read(photoUploaderProvider).enqueue(id);
+  }
+
+  /// Saves the edited details of one of [catId]'s encounters.
+  Future<void> updateEncounter(String catId, Encounter encounter) async {
+    _log(ref.read(catRepositoryProvider).updateEncounter(catId, encounter));
+  }
+
+  /// Deletes one encounter. The cat stays, with no photo if it was the last.
+  Future<void> deleteEncounter(String encounterId) async {
+    _log(ref.read(catRepositoryProvider).deleteEncounter(encounterId));
   }
 
   void _log(Future<void> write) => write.catchError((Object e, StackTrace s) {

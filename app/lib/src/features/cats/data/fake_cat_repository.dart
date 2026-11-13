@@ -6,13 +6,16 @@ import 'cat_repository.dart';
 
 /// Keeps cats in memory, for tests. [watchCats] emits the current cats and
 /// again after each change, like Firestore's listener. The calls are
-/// recorded in [added], [addedEncounters], [renamed] and [imported].
+/// recorded in [added], [addedEncounters], [updated], [deleted], [renamed]
+/// and [imported].
 class FakeCatRepository implements CatRepository {
   FakeCatRepository([List<Cat> cats = const []]) : cats = [...cats];
 
   List<Cat> cats;
   final added = <Cat>[];
   final addedEncounters = <(String, Encounter)>[];
+  final updated = <(String, Encounter)>[];
+  final deleted = <String>[];
   final renamed = <(String, String)>[];
   final imported = <Cat>[];
 
@@ -28,6 +31,8 @@ class FakeCatRepository implements CatRepository {
   bool get wroteAnything =>
       added.isNotEmpty ||
       addedEncounters.isNotEmpty ||
+      updated.isNotEmpty ||
+      deleted.isNotEmpty ||
       renamed.isNotEmpty ||
       imported.isNotEmpty;
 
@@ -70,6 +75,38 @@ class FakeCatRepository implements CatRepository {
         c.id == catId
             ? c.copyWith(encounters: [...c.encounters, encounter])
             : c,
+    ];
+    _emit();
+  }
+
+  @override
+  Future<void> updateEncounter(String catId, Encounter encounter) async {
+    updated.add((catId, encounter));
+    cats = [
+      for (final c in cats)
+        c.id == catId
+            ? c.copyWith(
+                encounters: [
+                  for (final e in c.encounters)
+                    e.id == encounter.id ? encounter : e,
+                ],
+              )
+            : c,
+    ];
+    _emit();
+  }
+
+  @override
+  Future<void> deleteEncounter(String encounterId) async {
+    deleted.add(encounterId);
+    cats = [
+      for (final c in cats)
+        c.copyWith(
+          encounters: [
+            for (final e in c.encounters)
+              if (e.id != encounterId) e,
+          ],
+        ),
     ];
     _emit();
   }

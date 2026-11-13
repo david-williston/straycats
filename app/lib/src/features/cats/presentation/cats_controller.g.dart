@@ -51,7 +51,7 @@ final class CatsControllerProvider
   CatsController create() => CatsController();
 }
 
-String _$catsControllerHash() => r'c4c4e0f3573b36749e4cb8fce49966a514287f0f';
+String _$catsControllerHash() => r'cacb946e0bd195f7bec1967aff69d91504042174';
 
 /// Every cat, kept up to date by the repository's listener; the screens show
 /// it and change it through here.

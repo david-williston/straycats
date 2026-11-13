@@ -5,10 +5,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
-import 'package:straycats/src/features/cats/domain/encounter_type.dart';
+import 'package:straycats/src/features/cats/domain/encounter_details.dart';
 import 'package:straycats/src/features/cats/presentation/cat_tile.dart';
 
 import '../../../helpers.dart';
+
+Future<void> tapChip(WidgetTester tester, String label) async {
+  await tester.ensureVisible(find.text(label));
+  await tester.pumpAndSettle();
+  await tester.tap(find.text(label));
+  await tester.pump();
+}
 
 void main() {
   testWidgets('shows the title and empty state', (tester) async {
@@ -76,8 +83,13 @@ void main() {
 
     await tester.tap(find.text('Ciccio'));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Fed it'));
-    await tester.pump();
+    await tapChip(tester, 'Fed it');
+    await tapChip(tester, 'Eating');
+    await tapChip(tester, 'Thin');
+    await tapChip(tester, 'Limping');
+    await tapChip(tester, 'Limping'); // chosen, then unchosen
+    await tester.enterText(find.byType(TextField), 'Hungry girl');
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
 
@@ -89,7 +101,10 @@ void main() {
     final ciccio = repo.cats.firstWhere((c) => c.id == '1');
     expect(ciccio.encounters, hasLength(2));
     expect(ciccio.latest!.photoId, '9000');
-    expect(encounter.type, EncounterType.fed);
+    expect(encounter.details.activity, Activity.eating);
+    expect(encounter.details.conditions, [Condition.thin]);
+    expect(encounter.details.care, [Care.fed]);
+    expect(encounter.details.note, 'Hungry girl');
     expect(uploader.enqueued, ['9000']);
     expect(photos.discarded, isEmpty);
   });
@@ -105,7 +120,10 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.text('New cat'));
     await tester.pumpAndSettle();
-    await tester.enterText(find.byType(TextField), ' Ninja ');
+    await tester.enterText(
+      find.widgetWithText(TextField, 'Name (optional)'),
+      ' Ninja ',
+    );
     await tester.tap(find.text('Done'));
     await tester.pumpAndSettle();
 
@@ -115,7 +133,7 @@ void main() {
     expect(ninja.name, 'Ninja');
     expect(ninja.id, '9000');
     expect(ninja.encounters.single.photoId, '9000');
-    expect(ninja.encounters.single.type, isNull);
+    expect(ninja.encounters.single.details.isEmpty, isTrue);
   });
 
   testWidgets('backing out of Who is this? discards the photo', (tester) async {

@@ -40,7 +40,10 @@ const enc = (extra = {}) => ({
   catId: 'c1',
   photoId: 'e1',
   takenAt: Timestamp.fromDate(new Date('2025-06-01T10:00:00Z')),
-  type: 'fed',
+  activity: 'eating',
+  conditions: ['thin', 'limping'],
+  care: ['fed'],
+  note: 'Only eats if you sit with her',
   updatedAt: serverTimestamp(),
   ...extra,
 });
@@ -106,19 +109,38 @@ describe('firestore encounters', () => {
   test('owner reads, updates (move to another cat) and deletes', async () => {
     await seedCat();
     await assertSucceeds(getDoc(encDoc(alice())));
-    await assertSucceeds(setDoc(encDoc(alice()), enc({ type: 'seen' })));
+    await assertSucceeds(setDoc(encDoc(alice()), enc({ activity: 'sleeping', conditions: [], care: [], note: '' })));
     await assertSucceeds(deleteDoc(encDoc(alice())));
   });
-  test('encounter without photo or type is allowed', async () => {
+  test('encounter without photo or details is allowed', async () => {
     await seedCat();
-    const { photoId, type, ...rest } = enc();
+    const { photoId, activity, conditions, care, note, ...rest } = enc();
     await assertSucceeds(setDoc(encDoc(alice(), 'e2'), rest));
   });
-  test('every known type is allowed', async () => {
+  test('every known activity, condition and care value is allowed', async () => {
     await seedCat();
-    for (const type of ['seen', 'fed', 'unwell', 'kittens', 'ear_tipped']) {
-      await assertSucceeds(setDoc(encDoc(alice(), `t-${type}`), enc({ type })));
+    const activities = ['eating', 'sleeping', 'resting', 'waiting_at_door', 'playing', 'walking_by'];
+    const conditions = ['healthy', 'thin', 'limping', 'unwell_or_injured', 'with_kittens', 'ear_tipped'];
+    const care = ['fed', 'gave_water', 'took_to_vet', 'gave_medicine'];
+    for (const activity of activities) {
+      await assertSucceeds(setDoc(encDoc(alice(), `a-${activity}`), enc({ activity })));
     }
+    await assertSucceeds(setDoc(encDoc(alice(), 'all-c'), enc({ conditions })));
+    await assertSucceeds(setDoc(encDoc(alice(), 'all-k'), enc({ care })));
+  });
+  test('an old document with a type can still be read, but not written', async () => {
+    await env.withSecurityRulesDisabled(async (ctx) => {
+      await setDoc(doc(ctx.firestore(), 'users/alice/cats/c1'), { name: 'Ninja', updatedAt: Timestamp.now() });
+      await setDoc(doc(ctx.firestore(), 'users/alice/encounters/old'), {
+        catId: 'c1', photoId: 'old', takenAt: Timestamp.now(), type: 'fed', updatedAt: Timestamp.now(),
+      });
+    });
+    await assertSucceeds(getDoc(encDoc(alice(), 'old')));
+    await assertSucceeds(getDocs(collection(alice(), 'users/alice/encounters')));
+    await assertFails(setDoc(encDoc(alice(), 'old'), enc({ type: 'fed' })));
+    // Saving it again with the new fields replaces the whole document.
+    await assertSucceeds(setDoc(encDoc(alice(), 'old'), enc({ photoId: 'old' })));
+    await assertSucceeds(deleteDoc(encDoc(alice(), 'old')));
   });
   test('other user and signed-out are denied', async () => {
     await seedCat();
@@ -129,13 +151,35 @@ describe('firestore encounters', () => {
       await assertFails(deleteDoc(encDoc(db)));
     }
   });
-  test('unknown type denied', async () => {
+  test('unknown activity, condition or care value denied', async () => {
     await seedCat();
-    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ type: 'petted' })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ activity: 'petted' })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ activity: ['eating'] })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ conditions: ['fed'] })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ care: ['thin'] })));
+  });
+  test('lists must be lists and no longer than the allowed values', async () => {
+    await seedCat();
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ conditions: 'thin' })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ care: 'fed' })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ care: ['fed', 'fed', 'fed', 'fed', 'fed'] })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({
+      conditions: ['healthy', 'thin', 'limping', 'unwell_or_injured', 'with_kittens', 'ear_tipped', 'thin'],
+    })));
+  });
+  test('note must be a string of at most 1000 characters', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(encDoc(alice(), 'e2'), enc({ note: 'x'.repeat(1000) })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ note: 'x'.repeat(1001) })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ note: 42 })));
+  });
+  test('the old type field is no longer accepted', async () => {
+    await seedCat();
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ type: 'fed' })));
   });
   test('extra field, missing field, wrong types denied', async () => {
     await seedCat();
-    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ note: 'hi' })));
+    await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ mood: 'hi' })));
     const { takenAt, ...noTaken } = enc();
     await assertFails(setDoc(encDoc(alice(), 'e2'), noTaken));
     await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ takenAt: '2025-06-01' })));

@@ -170,12 +170,6 @@ abstract class AppLocalizations {
   /// **'Name (optional)'**
   String get nameOptional;
 
-  /// Heading above the chips describing the encounter.
-  ///
-  /// In en, this message translates to:
-  /// **'What was happening? (optional)'**
-  String get whatWasHappening;
-
   /// Label of the name field on a cat's card.
   ///
   /// In en, this message translates to:
@@ -187,36 +181,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Give this cat a name'**
   String get giveCatAName;
-
-  /// Encounter type: the cat was only seen.
-  ///
-  /// In en, this message translates to:
-  /// **'Just saw it'**
-  String get encounterSeen;
-
-  /// Encounter type: the cat was fed.
-  ///
-  /// In en, this message translates to:
-  /// **'Fed it'**
-  String get encounterFed;
-
-  /// Encounter type: the cat looked sick or hurt.
-  ///
-  /// In en, this message translates to:
-  /// **'Looks unwell or injured'**
-  String get encounterUnwell;
-
-  /// Encounter type: the cat had kittens with it.
-  ///
-  /// In en, this message translates to:
-  /// **'With kittens'**
-  String get encounterKittens;
-
-  /// Encounter type: the cat has a tipped ear, the sign it was neutered.
-  ///
-  /// In en, this message translates to:
-  /// **'Ear tipped'**
-  String get encounterEarTipped;
 
   /// Tooltip of the app bar button that opens the language choices, and title of that dialog.
   ///
@@ -265,6 +229,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retry'**
   String get retry;
+
+  /// Heading above the activity chips on the encounter form.
+  ///
+  /// In en, this message translates to:
+  /// **'What was it doing?'**
+  String get whatWasItDoing;
+
+  /// Heading above the condition chips (healthy, thin, limping...).
+  ///
+  /// In en, this message translates to:
+  /// **'How did it look?'**
+  String get howDidItLook;
+
+  /// Heading above the care chips (fed, gave water...).
+  ///
+  /// In en, this message translates to:
+  /// **'Did you help?'**
+  String get howDidYouHelp;
+
+  /// Label of the free-text note field on an encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Its story (optional)'**
+  String get noteLabel;
+
+  /// Hint inside the note field.
+  ///
+  /// In en, this message translates to:
+  /// **'What should the next person know?'**
+  String get noteHint;
+
+  /// Activity: the cat was eating.
+  ///
+  /// In en, this message translates to:
+  /// **'Eating'**
+  String get activityEating;
+
+  /// Activity: the cat was asleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleeping'**
+  String get activitySleeping;
+
+  /// Activity: the cat was resting, awake.
+  ///
+  /// In en, this message translates to:
+  /// **'Resting'**
+  String get activityResting;
+
+  /// Activity: the cat was waiting at a door.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting at a door'**
+  String get activityWaitingAtDoor;
+
+  /// Activity: the cat was playing.
+  ///
+  /// In en, this message translates to:
+  /// **'Playing'**
+  String get activityPlaying;
+
+  /// Activity: the cat was just passing by.
+  ///
+  /// In en, this message translates to:
+  /// **'Walking by'**
+  String get activityWalkingBy;
+
+  /// Condition: the cat looked healthy.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks healthy'**
+  String get conditionHealthy;
+
+  /// Condition: the cat looked thin.
+  ///
+  /// In en, this message translates to:
+  /// **'Thin'**
+  String get conditionThin;
+
+  /// Condition: the cat was limping.
+  ///
+  /// In en, this message translates to:
+  /// **'Limping'**
+  String get conditionLimping;
+
+  /// Condition: the cat looked sick or hurt.
+  ///
+  /// In en, this message translates to:
+  /// **'Unwell or injured'**
+  String get conditionUnwellOrInjured;
+
+  /// Condition: the cat had kittens with it.
+  ///
+  /// In en, this message translates to:
+  /// **'With kittens'**
+  String get conditionWithKittens;
+
+  /// Condition: the cat has a tipped ear, the sign it was neutered.
+  ///
+  /// In en, this message translates to:
+  /// **'Ear tipped'**
+  String get conditionEarTipped;
+
+  /// Care: the person fed the cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Fed it'**
+  String get careFed;
+
+  /// Care: the person gave the cat water.
+  ///
+  /// In en, this message translates to:
+  /// **'Gave water'**
+  String get careGaveWater;
+
+  /// Care: the person took the cat to the vet.
+  ///
+  /// In en, this message translates to:
+  /// **'Took it to the vet'**
+  String get careTookToVet;
+
+  /// Care: the person gave the cat medicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Gave medicine'**
+  String get careGaveMedicine;
+
+  /// Title of the sheet for editing one encounter on a cat's card.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit encounter'**
+  String get editEncounter;
+
+  /// Button that saves the edited encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// Button that deletes an encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// Button that closes a dialog without doing anything.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// Title of the confirm dialog before deleting an encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this encounter?'**
+  String get deleteEncounterTitle;
+
+  /// Body of the confirm dialog before deleting an encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'It will be removed from this cat\'s history.'**
+  String get deleteEncounterBody;
 }
 
 class _AppLocalizationsDelegate

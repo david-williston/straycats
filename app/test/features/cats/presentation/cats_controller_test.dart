@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
-import 'package:straycats/src/features/cats/domain/encounter_type.dart';
+import 'package:straycats/src/features/cats/domain/encounter_details.dart';
 import 'package:straycats/src/features/cats/domain/sighting.dart';
 import 'package:straycats/src/features/cats/presentation/cats_controller.dart';
 import 'package:straycats/src/features/cats/presentation/meet_cat_controller.dart';
@@ -93,14 +93,23 @@ void main() {
           .read(catsControllerProvider.notifier)
           .recordSighting(
             File('/cats/9000.jpg'),
-            const Sighting(catId: '1', type: EncounterType.fed),
+            const Sighting(
+              catId: '1',
+              details: EncounterDetails(
+                activity: Activity.eating,
+                care: [Care.fed],
+                note: 'Hungry',
+              ),
+            ),
           );
 
       final (catId, encounter) = repo.addedEncounters.single;
       expect(catId, '1');
       expect(encounter.id, '9000');
       expect(encounter.photoId, '9000');
-      expect(encounter.type, EncounterType.fed);
+      expect(encounter.details.activity, Activity.eating);
+      expect(encounter.details.care, [Care.fed]);
+      expect(encounter.details.note, 'Hungry');
       expect(encounter.time, DateTime.fromMillisecondsSinceEpoch(9000));
       expect(repo.added, isEmpty);
       expect(uploader.enqueued, ['9000']);
@@ -126,8 +135,52 @@ void main() {
       expect(ninja.name, 'Ninja');
       expect(ninja.id, '9000');
       expect(ninja.encounters.single.photoId, '9000');
-      expect(ninja.encounters.single.type, isNull);
+      expect(ninja.encounters.single.details.isEmpty, isTrue);
       expect(uploader.enqueued, ['9000']);
+    });
+  });
+
+  group('editing encounters', () {
+    test('updateEncounter saves new details', () async {
+      final repo = FakeCatRepository([
+        cat('1', 'Ciccio', [1000, 2000]),
+      ]);
+      final container = makeContainer(cats: repo);
+      container.listen(catsControllerProvider, (_, _) {});
+      final cats = await container.read(catsControllerProvider.future);
+
+      final e = cats.single.encounters.first;
+      await container
+          .read(catsControllerProvider.notifier)
+          .updateEncounter(
+            '1',
+            e.withDetails(const EncounterDetails(care: [Care.gaveWater])),
+          );
+      await pumpEventQueue();
+
+      expect(repo.updated.single.$1, '1');
+      final now = container.read(catsControllerProvider).value!.single;
+      expect(now.encounters.first.details.care, [Care.gaveWater]);
+      expect(now.encounters.last.details.isEmpty, isTrue);
+    });
+
+    test('deleting the last encounter keeps the cat', () async {
+      final repo = FakeCatRepository([
+        cat('1', 'Ciccio', [1000]),
+      ]);
+      final container = makeContainer(cats: repo);
+      container.listen(catsControllerProvider, (_, _) {});
+      await container.read(catsControllerProvider.future);
+
+      await container
+          .read(catsControllerProvider.notifier)
+          .deleteEncounter('1000');
+      await pumpEventQueue();
+
+      expect(repo.deleted, ['1000']);
+      final cats = container.read(catsControllerProvider).value!;
+      expect(cats.single.name, 'Ciccio');
+      expect(cats.single.encounters, isEmpty);
     });
   });
 

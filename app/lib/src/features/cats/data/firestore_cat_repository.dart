@@ -3,7 +3,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
-import '../domain/encounter_type.dart';
+import '../domain/encounter_details.dart';
 import 'cat_repository.dart';
 
 /// Cats in `users/{uid}/cats` and their encounters in the flat
@@ -48,7 +48,13 @@ class FirestoreCatRepository implements CatRepository {
               id: doc.id,
               photoId: photoId,
               time: takenAt.toDate(),
-              type: EncounterType.parse(data['type'] as String?),
+              details: EncounterDetails.fromStored(
+                activity: data['activity'] as String?,
+                conditions: data['conditions'] as List<dynamic>?,
+                care: data['care'] as List<dynamic>?,
+                note: data['note'] as String?,
+                legacyType: data['type'] as String?,
+              ),
             ),
           );
     }
@@ -71,7 +77,7 @@ class FirestoreCatRepository implements CatRepository {
     'catId': catId,
     'photoId': e.photoId,
     'takenAt': Timestamp.fromDate(e.time),
-    if (e.type != null) 'type': e.type!.value,
+    ...e.details.toStored(),
     'updatedAt': FieldValue.serverTimestamp(),
   };
 
@@ -88,6 +94,16 @@ class FirestoreCatRepository implements CatRepository {
   @override
   Future<void> addEncounter(String catId, Encounter encounter) =>
       _encounters.doc(encounter.id).set(_encounterData(catId, encounter));
+
+  /// Replaces the whole document, so an old `type` field is dropped (its
+  /// meaning was mapped into the new fields when read).
+  @override
+  Future<void> updateEncounter(String catId, Encounter encounter) =>
+      _encounters.doc(encounter.id).set(_encounterData(catId, encounter));
+
+  @override
+  Future<void> deleteEncounter(String encounterId) =>
+      _encounters.doc(encounterId).delete();
 
   @override
   Future<void> renameCat(String catId, String name) =>
