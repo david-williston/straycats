@@ -1,21 +1,21 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../cat.dart';
-import '../l10n/app_localizations.dart';
-import 'cat_photo.dart';
+import '../../../common_widgets/cat_photo.dart';
+import '../../../localization/app_localizations.dart';
+import '../data/photo_repository.dart';
+import '../domain/cat.dart';
 
 /// A grid tile: the cat's latest photo with its name (or a quiet hint)
 /// beneath.
-class CatTile extends StatelessWidget {
-  const CatTile({super.key, required this.cat, required this.photoFile});
+class CatTile extends ConsumerWidget {
+  const CatTile({super.key, required this.cat});
 
   final Cat cat;
-  final File Function(String name) photoFile;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final photos = ref.watch(photoRepositoryProvider);
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final latest = cat.latest;
@@ -25,7 +25,7 @@ class CatTile extends StatelessWidget {
       children: [
         Expanded(
           child: CatPhoto(
-            latest == null ? null : photoFile(latest.photo),
+            latest == null ? null : photos.photoFile(latest.photo),
             cacheWidth: 600,
           ),
         ),

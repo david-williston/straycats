@@ -2,21 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import '../cat.dart';
-import '../l10n/app_localizations.dart';
-import '../l10n/encounter_labels.dart';
-import '../widgets/cat_photo.dart';
-import '../widgets/cat_tile.dart';
-
-/// The answer from "Who is this?": an existing [cat], or a new cat (null)
-/// with an optional [name]; and what was happening, if anything.
-class Sighting {
-  const Sighting({this.cat, this.name = '', this.type});
-
-  final Cat? cat;
-  final String name;
-  final EncounterType? type;
-}
+import '../../../common_widgets/cat_photo.dart';
+import '../../../localization/app_localizations.dart';
+import '../../../localization/encounter_labels.dart';
+import '../domain/cat.dart';
+import '../domain/encounter_type.dart';
+import '../domain/sighting.dart';
+import 'cat_tile.dart';
 
 /// Shown after taking a photo: pick the cat (or "New cat"), then optionally
 /// what was happening, then Done. Pops with a [Sighting], or null if the
@@ -26,12 +18,10 @@ class WhoIsThisPage extends StatefulWidget {
     super.key,
     required this.photo,
     required this.candidates,
-    required this.photoFile,
   });
 
   final File photo;
   final List<Cat> candidates;
-  final File Function(String name) photoFile;
 
   @override
   State<WhoIsThisPage> createState() => _WhoIsThisPageState();
@@ -56,7 +46,7 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
 
   void _done() =>
       Navigator.of(context)
-          .pop(Sighting(cat: _cat, name: _name.text.trim(), type: _type));
+          .pop(Sighting(catId: _cat?.id, name: _name.text.trim(), type: _type));
 
   @override
   Widget build(BuildContext context) {
@@ -122,10 +112,7 @@ class _WhoIsThisPageState extends State<WhoIsThisPage> {
         itemCount: widget.candidates.length,
         itemBuilder: (context, i) => GestureDetector(
           onTap: () => _pick(widget.candidates[i]),
-          child: CatTile(
-            cat: widget.candidates[i],
-            photoFile: widget.photoFile,
-          ),
+          child: CatTile(cat: widget.candidates[i]),
         ),
       ),
     ];

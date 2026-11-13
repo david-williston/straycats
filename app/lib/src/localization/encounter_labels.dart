@@ -1,4 +1,4 @@
-import '../cat.dart';
+import '../features/cats/domain/encounter_type.dart';
 import 'app_localizations.dart';
 
 extension EncounterTypeLabel on EncounterType {

@@ -2,65 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:straycats/cat.dart';
-import 'package:straycats/cat_store.dart';
-import 'package:straycats/main.dart';
-import 'package:straycats/widgets/cat_tile.dart';
+import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
+import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
+import 'package:straycats/src/features/cats/domain/encounter_type.dart';
+import 'package:straycats/src/features/cats/presentation/cat_tile.dart';
 
-/// Keeps cats in memory; the "camera" hands back [nextPhoto].
-class FakeCatStore implements CatStore {
-  FakeCatStore(this.cats);
-
-  List<Cat> cats;
-  List<Cat>? saved;
-  File? nextPhoto = File('/cats/9000.jpg');
-  final discarded = <File>[];
-
-  @override
-  Future<List<Cat>> load() async => cats;
-
-  @override
-  Future<void> save(List<Cat> cats) async =>
-      saved = [for (final c in cats) Cat.fromJson(c.toJson())];
-
-  @override
-  Future<File?> takePhoto() async => nextPhoto;
-
-  @override
-  Future<void> discard(File photo) async => discarded.add(photo);
-
-  @override
-  File photoFile(String name) => File('/cats/$name');
-}
-
-Cat cat(String id, String name, List<int> times) => Cat(
-  id: id,
-  name: name,
-  encounters: [
-    for (final t in times)
-      Encounter(
-        id: '$t',
-        photo: '$t.jpg',
-        time: DateTime.fromMillisecondsSinceEpoch(t),
-      ),
-  ],
-);
-
-/// Shows the app on a phone-sized screen.
-Future<void> pumpApp(
-  WidgetTester tester,
-  CatStore store, {
-  Locale? locale,
-}) async {
-  tester.view.physicalSize = const Size(1080, 2400);
-  tester.view.devicePixelRatio = 2.625;
-  addTearDown(tester.view.reset);
-  await tester.pumpWidget(StrayCatsApp(store: store, locale: locale));
-}
+import '../../../helpers.dart';
 
 void main() {
   testWidgets('shows the title and empty state', (tester) async {
-    await pumpApp(tester, FakeCatStore([]));
+    await pumpApp(tester, cats: FakeCatRepository());
     await tester.pump();
 
     expect(find.text('Stray Cats'), findsOneWidget);
@@ -70,12 +21,22 @@ void main() {
     );
   });
 
+  testWidgets('says so when the cats cannot be loaded', (tester) async {
+    final repo = FakeCatRepository()..loadError = StateError('no folder');
+    await pumpApp(tester, cats: repo);
+    await tester.pump();
+    await tester.pump();
+
+    expect(find.text('Could not open the cats folder.'), findsOneWidget);
+    expect(repo.saved, isNull);
+  });
+
   testWidgets('shows one tile per cat and saves a new name', (tester) async {
-    final store = FakeCatStore([
+    final repo = FakeCatRepository([
       cat('1', 'Ciccio', [1000, 3000]),
       cat('2', '', [2000]),
     ]);
-    await pumpApp(tester, store);
+    await pumpApp(tester, cats: repo);
     await tester.pump();
 
     expect(find.byType(CatTile), findsNWidgets(2));
@@ -89,17 +50,18 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Ninja'), findsOneWidget);
-    expect(store.saved!.map((c) => c.name), ['Ciccio', 'Ninja']);
+    expect(repo.saved!.map((c) => c.name), ['Ciccio', 'Ninja']);
   });
 
   testWidgets('a new photo of an existing cat adds an encounter', (
     tester,
   ) async {
-    final store = FakeCatStore([
+    final repo = FakeCatRepository([
       cat('1', 'Ciccio', [1000]),
       cat('2', 'Saibo', [2000]),
     ]);
-    await pumpApp(tester, store);
+    final photos = FakePhotoRepository(nextPhoto: File('/cats/9000.jpg'));
+    await pumpApp(tester, cats: repo, photos: photos);
     await tester.pump();
 
     await tester.tap(find.byTooltip('Meet a cat'));
@@ -120,18 +82,18 @@ void main() {
 
     expect(find.text('Stray Cats'), findsOneWidget);
     expect(find.byType(CatTile), findsNWidgets(2));
-    final ciccio = store.saved!.firstWhere((c) => c.id == '1');
+    final ciccio = repo.saved!.firstWhere((c) => c.id == '1');
     expect(ciccio.encounters, hasLength(2));
     expect(ciccio.latest!.photo, '9000.jpg');
     expect(ciccio.latest!.type, EncounterType.fed);
-    expect(store.discarded, isEmpty);
+    expect(photos.discarded, isEmpty);
   });
 
   testWidgets('New cat creates a cat with its name', (tester) async {
-    final store = FakeCatStore([
+    final repo = FakeCatRepository([
       cat('1', 'Ciccio', [1000]),
     ]);
-    await pumpApp(tester, store);
+    await pumpApp(tester, cats: repo);
     await tester.pump();
 
     await tester.tap(find.byTooltip('Meet a cat'));
@@ -144,16 +106,17 @@ void main() {
 
     expect(find.byType(CatTile), findsNWidgets(2));
     expect(find.text('Ninja'), findsOneWidget);
-    final ninja = store.saved!.firstWhere((c) => c.name == 'Ninja');
+    final ninja = repo.saved!.firstWhere((c) => c.name == 'Ninja');
     expect(ninja.encounters.single.photo, '9000.jpg');
     expect(ninja.encounters.single.type, isNull);
   });
 
   testWidgets('backing out of Who is this? discards the photo', (tester) async {
-    final store = FakeCatStore([
+    final repo = FakeCatRepository([
       cat('1', 'Ciccio', [1000]),
     ]);
-    await pumpApp(tester, store);
+    final photos = FakePhotoRepository(nextPhoto: File('/cats/9000.jpg'));
+    await pumpApp(tester, cats: repo, photos: photos);
     await tester.pump();
 
     await tester.tap(find.byTooltip('Meet a cat'));
@@ -166,13 +129,30 @@ void main() {
     await tester.pageBack();
     await tester.pumpAndSettle();
 
-    expect(store.discarded.single.path, '/cats/9000.jpg');
-    expect(store.saved, isNull);
+    expect(photos.discarded.single.path, '/cats/9000.jpg');
+    expect(repo.saved, isNull);
+  });
+
+  testWidgets('a cancelled camera changes nothing', (tester) async {
+    final repo = FakeCatRepository([
+      cat('1', 'Ciccio', [1000]),
+    ]);
+    await pumpApp(tester, cats: repo, photos: FakePhotoRepository());
+    await tester.pump();
+
+    await tester.tap(find.byTooltip('Meet a cat'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Who is this?'), findsNothing);
+    expect(repo.saved, isNull);
   });
 
   testWidgets('follows the language: Spanish', (tester) async {
-    final store = FakeCatStore([]);
-    await pumpApp(tester, store, locale: const Locale('es'));
+    await pumpApp(
+      tester,
+      cats: FakeCatRepository(),
+      locale: const Locale('es'),
+    );
     await tester.pump();
     expect(
       find.text('Aún no hay gatos. Toca la cámara para conocer a uno.'),
@@ -188,10 +168,10 @@ void main() {
   });
 
   testWidgets('dates follow the language', (tester) async {
-    final store = FakeCatStore([
+    final repo = FakeCatRepository([
       cat('1', 'Ciccio', [DateTime(2026, 11, 7).millisecondsSinceEpoch]),
     ]);
-    await pumpApp(tester, store, locale: const Locale('es'));
+    await pumpApp(tester, cats: repo, locale: const Locale('es'));
     await tester.pump();
     await tester.tap(find.text('Ciccio'));
     await tester.pumpAndSettle();

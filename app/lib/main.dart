@@ -1,30 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'cat_store.dart';
-import 'l10n/app_localizations.dart';
-import 'screens/cats_page.dart';
+import 'src/app.dart';
 
-void main() => runApp(StrayCatsApp(store: DeviceCatStore()));
-
-class StrayCatsApp extends StatelessWidget {
-  const StrayCatsApp({super.key, required this.store, this.locale});
-
-  final CatStore store;
-
-  /// Overrides the device language (for tests); null follows the device.
-  final Locale? locale;
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      locale: locale,
-      supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
-      ),
-      home: CatsPage(store: store),
-    );
-  }
+void main() {
+  runApp(
+    // A failed load shows "Could not open the cats folder" at once, rather
+    // than being retried behind a spinner.
+    ProviderScope(retry: (_, _) => null, child: const StrayCatsApp()),
+  );
 }

@@ -1,33 +1,27 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../cat.dart';
-import '../l10n/app_localizations.dart';
-import '../l10n/encounter_labels.dart';
-import '../widgets/cat_photo.dart';
+import '../../../common_widgets/cat_photo.dart';
+import '../../../localization/app_localizations.dart';
+import '../../../localization/encounter_labels.dart';
+import '../data/photo_repository.dart';
+import '../domain/cat.dart';
+import 'cats_controller.dart';
 
 /// The cat card: a photo large (pinch to zoom), its name, and every
-/// encounter newest first (tap one to show its photo). Calls [onClose] with
-/// the trimmed name when the card closes; submitting the field closes it.
-class CatCard extends StatefulWidget {
-  const CatCard({
-    super.key,
-    required this.cat,
-    required this.photoFile,
-    required this.onClose,
-  });
+/// encounter newest first (tap one to show its photo). The trimmed name is
+/// saved when the card closes; submitting the field closes it.
+class CatCard extends ConsumerStatefulWidget {
+  const CatCard({super.key, required this.cat});
 
   final Cat cat;
-  final File Function(String name) photoFile;
-  final void Function(String name) onClose;
 
   @override
-  State<CatCard> createState() => _CatCardState();
+  ConsumerState<CatCard> createState() => _CatCardState();
 }
 
-class _CatCardState extends State<CatCard> {
+class _CatCardState extends ConsumerState<CatCard> {
   late final _name = TextEditingController(text: widget.cat.name);
   late final _history = widget.cat.history;
   int _shown = 0;
@@ -43,8 +37,11 @@ class _CatCardState extends State<CatCard> {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toString();
+    final photos = ref.watch(photoRepositoryProvider);
     return PopScope(
-      onPopInvokedWithResult: (_, _) => widget.onClose(_name.text.trim()),
+      onPopInvokedWithResult: (_, _) => ref
+          .read(catsControllerProvider.notifier)
+          .rename(widget.cat.id, _name.text.trim()),
       child: Scaffold(
         appBar: AppBar(),
         body: Column(
@@ -54,7 +51,7 @@ class _CatCardState extends State<CatCard> {
                 child: CatPhoto(
                   _history.isEmpty
                       ? null
-                      : widget.photoFile(_history[_shown].photo),
+                      : photos.photoFile(_history[_shown].photo),
                   fit: BoxFit.contain,
                 ),
               ),
@@ -101,7 +98,7 @@ class _CatCardState extends State<CatCard> {
                               ),
                             ),
                             child: CatPhoto(
-                              widget.photoFile(e.photo),
+                              photos.photoFile(e.photo),
                               cacheWidth: 200,
                             ),
                           ),
