@@ -499,6 +499,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This person has no cats yet.'**
   String get personNoCats;
+
+  /// Header on a cat's card listing the neighbourhoods where it was met. places is a comma-separated list.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen around {places}'**
+  String seenAround(String places);
+
+  /// Label of an encounter's place: a neighbourhood name and a note that it is only approximate.
+  ///
+  /// In en, this message translates to:
+  /// **'Around {name} (approx. 1 km)'**
+  String placeAround(String name);
+
+  /// Label of an encounter's place when only the rough area is known, not a neighbourhood name.
+  ///
+  /// In en, this message translates to:
+  /// **'Around here (approx. 1 km)'**
+  String get placeAroundUnnamed;
+
+  /// Button in the edit sheet that clears the saved place of an encounter.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove place'**
+  String get removePlace;
+
+  /// Small note under an encounter's place in the edit sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Only this rough area is stored online. Your exact spot is never saved.'**
+  String get placePrivacyNote;
+
+  /// Screen reader label for the small map that shows an encounter's approximate area as a circle.
+  ///
+  /// In en, this message translates to:
+  /// **'Map of the approximate area'**
+  String get approximateAreaMap;
 }
 
 class _AppLocalizationsDelegate

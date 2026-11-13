@@ -41,7 +41,7 @@ service cloud.firestore {
 
     function isEncounter(uid) {
       let d = request.resource.data;
-      return d.keys().hasOnly(['catId', 'photoId', 'takenAt', 'activity', 'conditions', 'care', 'note', 'updatedAt'])
+      return d.keys().hasOnly(['catId', 'photoId', 'takenAt', 'activity', 'conditions', 'care', 'note', 'area', 'neighbourhood', 'updatedAt'])
         && d.keys().hasAll(['catId', 'takenAt', 'updatedAt'])
         && isId(d.catId)
         && existsAfter(/databases/$(database)/documents/users/$(uid)/cats/$(d.catId))
@@ -53,6 +53,9 @@ service cloud.firestore {
         && (!('conditions' in d) || isListOf(d.conditions, ['healthy', 'thin', 'limping', 'unwell_or_injured', 'with_kittens', 'ear_tipped']))
         && (!('care' in d) || isListOf(d.care, ['fed', 'gave_water', 'took_to_vet', 'gave_medicine']))
         && (!('note' in d) || (d.note is string && d.note.size() <= 1000))
+        // A geohash of exactly 6 characters (about 1.2 x 0.6 km), never a point.
+        && (!('area' in d) || (d.area is string && d.area.matches('^[0-9b-hjkmnp-z]{6}$')))
+        && (!('neighbourhood' in d) || (d.neighbourhood is string && d.neighbourhood.size() <= 80))
         && d.updatedAt == request.time;
     }
 

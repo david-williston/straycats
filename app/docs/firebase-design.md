@@ -26,6 +26,8 @@ users/{uid}/encounters/{encounterId}
   conditions  list     optional; healthy | thin | limping | unwell_or_injured | with_kittens | ear_tipped
   care        list     optional; fed | gave_water | took_to_vet | gave_medicine
   note        string   optional; the story, at most 1000 chars
+  area        string   optional; geohash of exactly 6 chars (about 1.2 x 0.6 km), never a point
+  neighbourhood string optional; at most 80 chars, from on-device geocoding (sub-locality, else locality)
                        (old documents may still have `type`: seen | fed | unwell | kittens | ear_tipped;
                        it is mapped on read and dropped on the next save; rules no longer accept it)
   updatedAt   timestamp  server time, as above
@@ -54,8 +56,9 @@ snapshots with `ServerTimestampBehavior.estimate`; nothing sorts on `updatedAt`.
 `name` is the user's own words, not app text.
 
 **Room for later (do not add now; each needs a rules change):**
-- Location, per encounter: `exactPlace` (GeoPoint, owner-only, never copied anywhere) and
-  `area` (a coarse neighbourhood id or geohash prefix, the only thing a card may show).
+- Location, per encounter: built. Only `area` and `neighbourhood` exist; the exact position is
+  read once, rounded on the phone and never stored anywhere (no GeoPoint, no local file). Photos
+  are stripped of EXIF/GPS at capture and before upload.
 - Cross-user links ("your Ninja is my Güero"): a separate top-level `links/{linkId}`
   collection, e.g. `{members: [uidA, uidB], records: {uidA: catId, uidB: catId}, status}`,
   created and confirmed by people. Users' own records are never edited by a link, and each

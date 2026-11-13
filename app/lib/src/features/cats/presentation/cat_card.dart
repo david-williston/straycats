@@ -9,6 +9,9 @@ import '../../../localization/app_localizations.dart';
 import '../../../localization/encounter_labels.dart';
 import '../../../theme/app_theme.dart';
 import '../../admin/data/other_photo_cache.dart';
+import '../../places/domain/coarse_area.dart';
+import '../../places/domain/place.dart';
+import '../../places/presentation/place_map.dart';
 import '../data/local_photo_cache.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
@@ -38,6 +41,7 @@ class CatCard extends ConsumerStatefulWidget {
 class _CatCardState extends ConsumerState<CatCard> {
   late final _name = TextEditingController(text: widget.cat.name);
   int _shown = 0;
+  bool _showMap = false;
 
   /// The cat as it is now, so edits and deletes show at once.
   Cat get _cat => widget.readOnly
@@ -75,6 +79,13 @@ class _CatCardState extends ConsumerState<CatCard> {
                         l10n.editEncounter,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
+                      if (e.place != null)
+                        _PlaceSection(
+                          place: e.place!,
+                          onRemove: () =>
+                              Navigator.of(context)
+                                  .pop(_EditAction.removePlace),
+                        ),
                       EncounterDetailsForm(
                         initial: e.details,
                         onChanged: (d) => details = d,
@@ -112,6 +123,9 @@ class _CatCardState extends ConsumerState<CatCard> {
         if (details != e.details) {
           controller.updateEncounter(cat.id, e.withDetails(details));
         }
+      case _EditAction.removePlace:
+        // Keeps any other edits made in the sheet.
+        controller.removePlace(cat.id, e.withDetails(details));
       case _EditAction.delete:
         final sure = await showDialog<bool>(
           context: context,
@@ -145,6 +159,67 @@ class _CatCardState extends ConsumerState<CatCard> {
             : ownerPhotoFileProvider(widget.ownerUid!, e.photoId),
       )
       .value;
+
+  /// "Seen around X, Y" over the encounters; tap to show the approximate
+  /// areas on a small map.
+  Widget _seenAround(
+    List<Encounter> history,
+    AppLocalizations l10n,
+    ThemeData theme,
+  ) {
+    final places = [
+      for (final e in history)
+        if (e.place != null) e.place!,
+    ];
+    if (places.isEmpty) return const SizedBox.shrink();
+    final names = <String>[];
+    final areas = <CoarseArea>[];
+    for (final p in places) {
+      final n = p.neighbourhood;
+      if (n != null && !names.contains(n)) names.add(n);
+      if (!areas.contains(p.area)) areas.add(p.area);
+    }
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          InkWell(
+            onTap: () => setState(() => _showMap = !_showMap),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.place_outlined,
+                  size: 18,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    names.isEmpty
+                        ? l10n.placeAroundUnnamed
+                        : l10n.seenAround(names.join(', ')),
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ),
+                Icon(
+                  _showMap ? Icons.expand_less : Icons.expand_more,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ],
+            ),
+          ),
+          if (_showMap)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: PlaceMap(areas: areas, height: 160),
+            ),
+        ],
+      ),
+    );
+  }
 
   @override
   void dispose() {
@@ -207,6 +282,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                     : (_) => Navigator.of(context).pop(),
               ),
             ),
+            _seenAround(history, l10n, theme),
             ConstrainedBox(
               constraints: BoxConstraints(
                 maxHeight: MediaQuery.sizeOf(context).height * 0.4,
@@ -279,6 +355,11 @@ class _CatCardState extends ConsumerState<CatCard> {
                                                         .onSurface,
                                                   ),
                                             ),
+                                            if (e.place != null)
+                                              _PlaceLine(
+                                                e.place!.neighbourhood ??
+                                                    l10n.placeAroundUnnamed,
+                                              ),
                                             if (e.details
                                                 .summary(l10n)
                                                 .isNotEmpty)
@@ -323,4 +404,91 @@ class _CatCardState extends ConsumerState<CatCard> {
   }
 }
 
-enum _EditAction { save, delete }
+enum _EditAction { save, removePlace, delete }
+
+/// A small place icon and a neighbourhood name, on an encounter's tile.
+class _PlaceLine extends StatelessWidget {
+  const _PlaceLine(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Row(
+      children: [
+        Icon(
+          Icons.place_outlined,
+          size: 14,
+          color: theme.colorScheme.onSurfaceVariant,
+        ),
+        const SizedBox(width: 2),
+        Expanded(
+          child: Text(
+            text,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+/// In the edit sheet: where the encounter was, read only, as text and an
+/// approximate-area map.
+class _PlaceSection extends StatelessWidget {
+  const _PlaceSection({required this.place, required this.onRemove});
+
+  final Place place;
+  final VoidCallback onRemove;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final name = place.neighbourhood;
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.place_outlined, color: theme.colorScheme.primary),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  name == null
+                      ? l10n.placeAroundUnnamed
+                      : l10n.placeAround(name),
+                  style: theme.textTheme.bodyLarge,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          PlaceMap(areas: [place.area], height: 160),
+          const SizedBox(height: 4),
+          Text(
+            l10n.placePrivacyNote,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              onPressed: onRemove,
+              icon: const Icon(Icons.location_off_outlined),
+              label: Text(l10n.removePlace),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

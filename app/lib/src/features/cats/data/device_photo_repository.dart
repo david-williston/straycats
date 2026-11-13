@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'cats_folder.dart';
 import 'image_picker_service.dart';
+import 'photo_metadata.dart';
 import 'photo_repository.dart';
 
 /// Keeps photos as `<millis>.jpg` in the cats folder.
@@ -17,7 +18,10 @@ class DevicePhotoRepository implements PhotoRepository {
     if (path == null) return null;
     final dir = await _folder.open();
     final stamp = DateTime.now().millisecondsSinceEpoch;
-    return File(path).copy('${dir.path}/$stamp.jpg');
+    final kept = await File(path).copy('${dir.path}/$stamp.jpg');
+    // The camera plugin may have copied GPS into the file: remove it now.
+    await stripPhotoFile(kept);
+    return kept;
   }
 
   @override

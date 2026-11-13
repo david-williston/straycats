@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../places/data/place_service.dart';
 import '../application/photo_uploader.dart';
 import '../data/cat_repository.dart';
 import '../data/photo_files.dart';
@@ -38,11 +39,14 @@ class CatsController extends _$CatsController {
     final cats = state.value;
     if (cats == null) return;
     final id = photoName(photo).split('.').first;
+    // Found while the user chose the cat; null if denied, off or slow.
+    final place = await ref.read(placeCaptureProvider).take(photo);
     final encounter = Encounter(
       id: id,
       photoId: id,
       time: photoTime(photo),
       details: sighting.details,
+      place: place,
     );
     final repo = ref.read(catRepositoryProvider);
     final catId = sighting.catId;
@@ -59,6 +63,16 @@ class CatsController extends _$CatsController {
   /// Saves the edited details of one of [catId]'s encounters.
   Future<void> updateEncounter(String catId, Encounter encounter) async {
     _log(ref.read(catRepositoryProvider).updateEncounter(catId, encounter));
+  }
+
+  /// Clears the place of [encounter] (area and neighbourhood). Nothing else
+  /// about it changes; no exact position was ever kept.
+  Future<void> removePlace(String catId, Encounter encounter) async {
+    _log(
+      ref
+          .read(catRepositoryProvider)
+          .updateEncounter(catId, encounter.withPlace(null)),
+    );
   }
 
   /// Deletes one encounter. The cat stays, with no photo if it was the last.

@@ -133,5 +133,17 @@
   "viewingSomeoneElse": "Viewing someone else's cats. Read only.",
   "@viewingSomeoneElse": {"description": "Admin only: banner above another person's cats."},
   "personNoCats": "This person has no cats yet.",
-  "@personNoCats": {"description": "Admin only: empty state when another person has no cats."}
+  "@personNoCats": {"description": "Admin only: empty state when another person has no cats."},
+  "seenAround": "Seen around {places}",
+  "@seenAround": {"description": "Header on a cat's card listing the neighbourhoods where it was met. places is a comma-separated list.", "placeholders": {"places": {"type": "String"}}},
+  "placeAround": "Around {name} (approx. 1 km)",
+  "@placeAround": {"description": "Label of an encounter's place: a neighbourhood name and a note that it is only approximate.", "placeholders": {"name": {"type": "String"}}},
+  "placeAroundUnnamed": "Around here (approx. 1 km)",
+  "@placeAroundUnnamed": {"description": "Label of an encounter's place when only the rough area is known, not a neighbourhood name."},
+  "removePlace": "Remove place",
+  "@removePlace": {"description": "Button in the edit sheet that clears the saved place of an encounter."},
+  "placePrivacyNote": "Only this rough area is stored online. Your exact spot is never saved.",
+  "@placePrivacyNote": {"description": "Small note under an encounter's place in the edit sheet."},
+  "approximateAreaMap": "Map of the approximate area",
+  "@approximateAreaMap": {"description": "Screen reader label for the small map that shows an encounter's approximate area as a circle."}
 }

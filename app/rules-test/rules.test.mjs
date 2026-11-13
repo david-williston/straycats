@@ -8,7 +8,7 @@ import {
 } from '@firebase/rules-unit-testing';
 import {
   doc, getDoc, getDocs, collection, setDoc, writeBatch, deleteDoc,
-  serverTimestamp, Timestamp,
+  serverTimestamp, Timestamp, GeoPoint,
 } from 'firebase/firestore';
 import { ref, uploadBytes, getBytes } from 'firebase/storage';
 
@@ -174,6 +174,32 @@ describe('firestore encounters', () => {
     await assertSucceeds(setDoc(encDoc(alice(), 'e2'), enc({ note: 'x'.repeat(1000) })));
     await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ note: 'x'.repeat(1001) })));
     await assertFails(setDoc(encDoc(alice(), 'e2'), enc({ note: 42 })));
+  });
+  test('area must be a geohash of exactly 6 characters, neighbourhood at most 80', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(encDoc(alice(), 'p1'), enc({ area: '9g3q4k' })));
+    await assertSucceeds(setDoc(encDoc(alice(), 'p2'), enc({ area: '9g3q4k', neighbourhood: 'Rinconada' })));
+    await assertSucceeds(setDoc(encDoc(alice(), 'p3'), enc({ area: 'ezs42b', neighbourhood: 'x'.repeat(80) })));
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9g3q4kx' })));   // 7 chars: too fine
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9g3q4' })));     // 5 chars
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9g3q4a' })));    // 'a' not in the alphabet
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9G3Q4K' })));    // upper case
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: 123456 })));
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9g3q4k', neighbourhood: 'x'.repeat(81) })));
+    await assertFails(setDoc(encDoc(alice(), 'p4'), enc({ area: '9g3q4k', neighbourhood: 7 })));
+  });
+  test('exact coordinates are denied in any form', async () => {
+    await seedCat();
+    await assertFails(setDoc(encDoc(alice(), 'g1'), enc({ location: new GeoPoint(19.43, -99.13) })));
+    await assertFails(setDoc(encDoc(alice(), 'g2'), enc({ lat: 19.43, lng: -99.13 })));
+    await assertFails(setDoc(encDoc(alice(), 'g3'), enc({ area: new GeoPoint(19.43, -99.13) })));
+  });
+  test('place can be removed by saving without it, and admin can read it', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(encDoc(alice(), 'p1'), enc({ area: '9g3q4k', neighbourhood: 'Rinconada' })));
+    await assertSucceeds(setDoc(encDoc(alice(), 'p1'), enc()));
+    await assertSucceeds(getDoc(doc(admin(), 'users/alice/encounters/p1')));
+    await assertFails(getDoc(doc(bob(), 'users/alice/encounters/p1')));
   });
   test('the old type field is no longer accepted', async () => {
     await seedCat();

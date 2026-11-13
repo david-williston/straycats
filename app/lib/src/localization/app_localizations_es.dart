@@ -223,4 +223,27 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get personNoCats => 'Esta persona aún no tiene gatos.';
+
+  @override
+  String seenAround(String places) {
+    return 'Visto por $places';
+  }
+
+  @override
+  String placeAround(String name) {
+    return 'Cerca de $name (aprox. 1 km)';
+  }
+
+  @override
+  String get placeAroundUnnamed => 'Por esta zona (aprox. 1 km)';
+
+  @override
+  String get removePlace => 'Quitar el lugar';
+
+  @override
+  String get placePrivacyNote =>
+      'Solo se guarda en línea esta zona aproximada. Tu ubicación exacta nunca se guarda.';
+
+  @override
+  String get approximateAreaMap => 'Mapa de la zona aproximada';
 }

@@ -24,6 +24,8 @@ import 'package:straycats/src/features/cats/data/local_photo_cache.dart';
 import 'package:straycats/src/features/cats/data/photo_repository.dart';
 import 'package:straycats/src/features/cats/domain/cat.dart';
 import 'package:straycats/src/features/cats/domain/encounter.dart';
+import 'package:straycats/src/features/cats/data/fake_place_service.dart';
+import 'package:straycats/src/features/places/data/place_service.dart';
 import 'package:straycats/src/features/settings/data/fake_language_repository.dart';
 import 'package:straycats/src/features/settings/data/language_repository.dart';
 import 'package:straycats/src/features/startup/application/app_startup.dart';
@@ -45,13 +47,14 @@ Cat cat(String id, String name, List<int> times) => Cat(
 /// The overrides that put fakes in place of Firebase, the device's storage
 /// and the camera. Startup is already done, as user `test-uid`.
 List<Override> fakeOverrides({
-  FakeCatRepository? cats,
-  FakePhotoRepository? photos,
+  CatRepository? cats,
+  PhotoRepository? photos,
   FakeLanguageRepository? language,
   FakePhotoUploader? uploader,
   FakeAuthRepository? auth,
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
+  FakePlaceService? places,
 }) {
   final firestore = db ?? FakeFirebaseFirestore();
   final fakeAuth = auth ?? FakeAuthRepository(uid: 'test-uid');
@@ -76,6 +79,7 @@ List<Override> fakeOverrides({
     appStartupProvider.overrideWith((ref) async => 'test-uid'),
     uidProvider.overrideWithValue('test-uid'),
     catRepositoryProvider.overrideWithValue(cats ?? FakeCatRepository()),
+    placeServiceProvider.overrideWithValue(places ?? FakePlaceService()),
     photoRepositoryProvider.overrideWithValue(
       photos ?? FakePhotoRepository(nextPhoto: File('/cats/9000.jpg')),
     ),
@@ -96,6 +100,7 @@ ProviderContainer makeContainer({
   FakeAuthRepository? auth,
   FakeFirebaseFirestore? db,
   OtherPhotoCache? otherPhotos,
+  FakePlaceService? places,
 }) {
   final container = ProviderContainer(
     retry: (_, _) => null,
@@ -107,6 +112,7 @@ ProviderContainer makeContainer({
       auth: auth,
       db: db,
       otherPhotos: otherPhotos,
+      places: places,
     ),
   );
   addTearDown(container.dispose);

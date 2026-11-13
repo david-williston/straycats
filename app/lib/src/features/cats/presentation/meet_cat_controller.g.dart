@@ -47,7 +47,7 @@ final class MeetCatControllerProvider
   }
 }
 
-String _$meetCatControllerHash() => r'a30b621ef1056cbaf7b194247ef23e8bf8933e64';
+String _$meetCatControllerHash() => r'a4dc5bae05c516eadc7dc91ae2058ee1030d4b09';
 
 /// The camera side of meeting a cat: take a photo, and throw it away if it
 /// is not kept. (Keeping it is [CatsController.recordSighting].)

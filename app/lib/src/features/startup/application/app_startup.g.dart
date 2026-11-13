@@ -56,7 +56,7 @@ final class AppStartupProvider
   }
 }
 
-String _$appStartupHash() => r'8da5919c110af9e2ef2157fe41249158ca6f3462';
+String _$appStartupHash() => r'cbf5697a56802f37c53014ab97d2146d6156f80d';
 
 /// The signed-in user's id. Only valid once [appStartup] has completed, which
 /// the startup screen guarantees before anything else is built.

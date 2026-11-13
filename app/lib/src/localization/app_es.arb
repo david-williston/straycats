@@ -92,5 +92,11 @@
   "viewingSomeoneElse": "Viendo los gatos de otra persona. Solo lectura.",
   "@viewingSomeoneElse": {"description": "Admin only: banner above another person's cats."},
   "personNoCats": "Esta persona aún no tiene gatos.",
-  "@personNoCats": {"description": "Admin only: empty state when another person has no cats."}
+  "@personNoCats": {"description": "Admin only: empty state when another person has no cats."},
+  "seenAround": "Visto por {places}",
+  "placeAround": "Cerca de {name} (aprox. 1 km)",
+  "placeAroundUnnamed": "Por esta zona (aprox. 1 km)",
+  "removePlace": "Quitar el lugar",
+  "placePrivacyNote": "Solo se guarda en línea esta zona aproximada. Tu ubicación exacta nunca se guarda.",
+  "approximateAreaMap": "Mapa de la zona aproximada"
 }

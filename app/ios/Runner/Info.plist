@@ -6,6 +6,10 @@
 		<string>StrayCats uses the camera to photograph cats you meet.</string>
 		<key>NSPhotoLibraryUsageDescription</key>
 		<string>StrayCats saves photos of cats you meet.</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>StrayCats remembers roughly where you met each cat.</string>
+		<key>NSLocationDefaultAccuracyReduced</key>
+		<true/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
 		<true/>
 		<key>CFBundleDevelopmentRegion</key>

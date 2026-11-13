@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'package:flutter/foundation.dart' show visibleForTesting;
+
+import '../../places/domain/coarse_area.dart';
+import '../../places/domain/place.dart';
 import '../domain/cat.dart';
 import '../domain/encounter.dart';
 import '../domain/encounter_details.dart';
 import 'cat_repository.dart';
+import 'coarse_guard.dart';
 
 /// Cats in `users/{uid}/cats` and their encounters in the flat
 /// `users/{uid}/encounters`. The Firestore mapping lives here, not in the
@@ -60,6 +65,7 @@ class FirestoreCatRepository implements CatRepository {
                 note: data['note'] as String?,
                 legacyType: data['type'] as String?,
               ),
+              place: _placeFrom(data),
             ),
           );
     }
@@ -73,6 +79,12 @@ class FirestoreCatRepository implements CatRepository {
     ];
   }
 
+  static Place? _placeFrom(Map<String, dynamic> data) {
+    final area = CoarseArea.tryParse(data['area'] as String?);
+    if (area == null) return null;
+    return Place(area: area, neighbourhood: data['neighbourhood'] as String?);
+  }
+
   Map<String, dynamic> _catData(String name) => {
     'name': name,
     'updatedAt': FieldValue.serverTimestamp(),
@@ -83,28 +95,42 @@ class FirestoreCatRepository implements CatRepository {
     'photoId': e.photoId,
     'takenAt': Timestamp.fromDate(e.time),
     ...e.details.toStored(),
+    // Only the neighbourhood-level place. No exact position exists to write.
+    if (e.place != null) 'area': e.place!.area.geohash,
+    if (e.place?.neighbourhood != null) 'neighbourhood': e.place!.neighbourhood,
     'updatedAt': FieldValue.serverTimestamp(),
   };
 
+  /// Every encounter write goes through here, so the coarse-location check
+  /// runs on exactly what is sent. A refused write fails the returned future.
+  @visibleForTesting
+  Future<void> writeEncounterMap(String id, Map<String, dynamic> data) async {
+    assertCoarse(data);
+    await _encounters.doc(id).set(data);
+  }
+
   @override
-  Future<void> addCat(Cat cat) {
+  Future<void> addCat(Cat cat) async {
     final batch = _db.batch();
     batch.set(_cats.doc(cat.id), _catData(cat.name));
     for (final e in cat.encounters) {
-      batch.set(_encounters.doc(e.id), _encounterData(cat.id, e));
+      final data = _encounterData(cat.id, e);
+      assertCoarse(data);
+      batch.set(_encounters.doc(e.id), data);
     }
-    return batch.commit();
+    await batch.commit();
   }
 
   @override
   Future<void> addEncounter(String catId, Encounter encounter) =>
-      _encounters.doc(encounter.id).set(_encounterData(catId, encounter));
+      writeEncounterMap(encounter.id, _encounterData(catId, encounter));
 
   /// Replaces the whole document, so an old `type` field is dropped (its
-  /// meaning was mapped into the new fields when read).
+  /// meaning was mapped into the new fields when read), and a removed place
+  /// disappears.
   @override
   Future<void> updateEncounter(String catId, Encounter encounter) =>
-      _encounters.doc(encounter.id).set(_encounterData(catId, encounter));
+      writeEncounterMap(encounter.id, _encounterData(catId, encounter));
 
   @override
   Future<void> deleteEncounter(String encounterId) =>
@@ -127,6 +153,7 @@ class FirestoreCatRepository implements CatRepository {
     for (var i = 0; i < writes.length; i += _batchSize) {
       final batch = _db.batch();
       for (final (ref, data) in writes.skip(i).take(_batchSize)) {
+        if (ref.parent.id == 'encounters') assertCoarse(data);
         batch.set(ref, data);
       }
       await batch.commit();

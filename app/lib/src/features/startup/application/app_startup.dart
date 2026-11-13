@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../data/firebase_providers.dart';
 import '../../auth/data/auth_repository.dart';
 import '../../cats/application/cat_importer.dart';
+import '../../cats/application/photo_privacy_cleaner.dart';
 import '../../cats/application/photo_uploader.dart';
 import '../../cats/data/firestore_cat_repository.dart';
 import '../../profile/data/profile_repository.dart';
@@ -43,6 +44,7 @@ Future<String> appStartup(Ref ref) async {
       .run(FirestoreCatRepository(ref.watch(firestoreProvider), uid));
   unawaited(ensureProfileQuietly(ref.watch(profileRepositoryProvider), uid));
   ref.watch(photoUploaderProvider).start();
+  unawaited(ref.watch(photoPrivacyCleanerProvider).run());
   return uid;
 }
 

@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../data/cats_folder.dart';
+import '../data/photo_metadata.dart';
 import '../data/photo_outbox.dart';
 import '../data/photo_storage.dart';
 
@@ -90,6 +91,8 @@ class PhotoUploader with WidgetsBindingObserver {
           await _outbox.remove(id);
           continue;
         }
+        // Belt and braces: nothing with GPS data ever leaves the phone.
+        await stripPhotoFile(file);
         await _storage.upload(id, file);
         await _outbox.remove(id);
       }
