@@ -65,14 +65,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Connect to the internet to set up the app. This is needed only once.';
 
   @override
-  String get importNeedsInternet =>
-      'Connect to the internet to bring your cats over.';
-
-  @override
-  String get importFailed =>
-      'Your saved cats could not be read, so nothing was moved. Your photos are untouched.';
-
-  @override
   String get startupFailed => 'Something went wrong starting the app.';
 
   @override
@@ -189,6 +181,48 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get signInFailed =>
       'Could not sign in. Check your connection and try again.';
+
+  @override
+  String get signOut => 'Sign out';
+
+  @override
+  String get signOutTitle => 'Sign out?';
+
+  @override
+  String get signOutBody =>
+      'Your cats stay safe in your Google account. Sign in with Google again to get them back.';
+
+  @override
+  String signOutPendingBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count photos haven\'t finished uploading.',
+      one: '1 photo hasn\'t finished uploading.',
+    );
+    return '$_temp0 They wait on this phone and upload the next time you sign in to this account.';
+  }
+
+  @override
+  String get signOutWait => 'Wait';
+
+  @override
+  String get signOutAnyway => 'Sign out anyway';
+
+  @override
+  String get signOutFailed => 'Could not sign out. Try again.';
+
+  @override
+  String get uploadsDone =>
+      'All your photos are uploaded. You can sign out now.';
+
+  @override
+  String get uploadsStillWaiting =>
+      'Some photos are still waiting for a connection.';
+
+  @override
+  String get accountKeepSafeHint =>
+      'Sign in with Google to keep your cats safe. Then you can also sign out, for example to try the app as someone else.';
 
   @override
   String get nicknameOptional => 'Nickname (optional)';

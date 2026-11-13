@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/admin/presentation/people_page.dart';
 import 'package:straycats/src/features/auth/data/fake_auth_repository.dart';
 import 'package:straycats/src/features/auth/domain/account.dart';
+import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 
 import '../../../helpers.dart';
@@ -32,6 +33,103 @@ void main() {
       find.text('Done. Your cats are now kept in your Google account.'),
       findsOneWidget,
     );
+  });
+
+  testWidgets('not linked to Google: no sign out, and why', (tester) async {
+    await pumpApp(tester, cats: FakeCatRepository());
+    await openSheet(tester);
+
+    expect(find.text('Sign out'), findsNothing);
+    expect(find.textContaining('keep your cats safe'), findsOneWidget);
+  });
+
+  testWidgets('linked to Google: shows who, and asks before signing out', (
+    tester,
+  ) async {
+    final auth = FakeAuthRepository(uid: 'test-uid', email: 'dave@example.com');
+    final uploader = FakePhotoUploader();
+    await pumpApp(
+      tester,
+      cats: FakeCatRepository(),
+      auth: auth,
+      uploader: uploader,
+    );
+    await openSheet(tester);
+
+    expect(find.text('Signed in as dave@example.com'), findsOneWidget);
+    await tester.tap(find.text('Sign out'));
+    await tester.pumpAndSettle();
+    expect(find.text('Sign out?'), findsOneWidget);
+    expect(find.textContaining("haven't finished"), findsNothing);
+
+    await tester.tap(find.text('Cancel'));
+    await tester.pumpAndSettle();
+    expect(auth.signOuts, 0);
+
+    await tester.tap(find.text('Sign out'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(FilledButton, 'Sign out'));
+    await tester.pumpAndSettle();
+
+    expect(auth.signOuts, 1);
+    expect(find.text('Account'), findsNothing); // the sheet closed
+  });
+
+  testWidgets(
+    'photos still uploading: Wait uploads, Sign out anyway signs out',
+    (tester) async {
+      final auth = FakeAuthRepository(
+        uid: 'test-uid',
+        email: 'dave@example.com',
+      );
+      final uploader = FakePhotoUploader()..pending = 2;
+      await pumpApp(
+        tester,
+        cats: FakeCatRepository(),
+        auth: auth,
+        uploader: uploader,
+      );
+      await openSheet(tester);
+
+      await tester.tap(find.text('Sign out'));
+      await tester.pumpAndSettle();
+      expect(
+        find.textContaining("2 photos haven't finished uploading"),
+        findsOneWidget,
+      );
+
+      await tester.tap(find.text('Wait'));
+      await tester.pumpAndSettle();
+      expect(uploader.drains, 1);
+      expect(auth.signOuts, 0);
+      expect(
+        find.text('All your photos are uploaded. You can sign out now.'),
+        findsOneWidget,
+      );
+
+      uploader.pending = 1;
+      await tester.tap(find.text('Sign out'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('1 photo hasn'), findsOneWidget);
+      await tester.tap(find.text('Sign out anyway'));
+      await tester.pumpAndSettle();
+
+      expect(auth.signOuts, 1);
+    },
+  );
+
+  testWidgets('a failed sign-out says so and keeps the sheet', (tester) async {
+    final auth = FakeAuthRepository(uid: 'test-uid', email: 'dave@example.com')
+      ..signOutError = StateError('boom');
+    await pumpApp(tester, cats: FakeCatRepository(), auth: auth);
+    await openSheet(tester);
+
+    await tester.tap(find.text('Sign out'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(FilledButton, 'Sign out'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Could not sign out. Try again.'), findsOneWidget);
   });
 
   testWidgets('a failed sign-in says so', (tester) async {

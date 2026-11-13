@@ -31,14 +31,24 @@ abstract class AuthRepository {
   /// [forceRefresh] the token is fetched again so a new claim shows at once;
   /// offline, the token the phone already has is used.
   Future<bool> isAdmin({bool forceRefresh = false});
+
+  /// Signs out of Google (so the next sign-in shows the account picker) and of
+  /// Firebase. Nobody is signed in afterwards; startup signs in a new
+  /// anonymous user.
+  Future<void> signOut();
 }
 
 class FirebaseAuthRepository implements AuthRepository {
-  FirebaseAuthRepository(this._auth, [GoogleCredentialSource? google])
-    : _google = google ?? googleCredential;
+  FirebaseAuthRepository(
+    this._auth, [
+    GoogleCredentialSource? google,
+    GoogleSignOut? googleSignOut,
+  ]) : _google = google ?? googleCredential,
+       _googleSignOut = googleSignOut ?? signOutOfGoogle;
 
   final FirebaseAuth _auth;
   final GoogleCredentialSource _google;
+  final GoogleSignOut _googleSignOut;
 
   @override
   String? get uid => _auth.currentUser?.uid;
@@ -85,6 +95,17 @@ class FirebaseAuthRepository implements AuthRepository {
       await _auth.signInWithCredential(e.credential ?? credential);
       return GoogleSignInResult.switchedAccount;
     }
+  }
+
+  @override
+  Future<void> signOut() async {
+    try {
+      await _googleSignOut();
+    } catch (e) {
+      // Not fatal: the Firebase sign-out below is what ends the session.
+      developer.log('Could not sign out of Google: $e', name: 'straycats');
+    }
+    await _auth.signOut();
   }
 
   @override

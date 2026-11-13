@@ -8,7 +8,7 @@ import 'cat_repository.dart';
 /// Keeps cats in memory, for tests. [watchCats] emits the current cats and
 /// again after each change, like Firestore's listener. The calls are
 /// recorded in [added], [addedEncounters], [updated], [deleted], [renamed]
-/// [statusChanges] and [imported].
+/// and [statusChanges].
 class FakeCatRepository implements CatRepository {
   FakeCatRepository([List<Cat> cats = const []]) : cats = [...cats];
 
@@ -19,13 +19,9 @@ class FakeCatRepository implements CatRepository {
   final deleted = <String>[];
   final renamed = <(String, String)>[];
   final statusChanges = <(String, CatStatus, DateTime?, String)>[];
-  final imported = <Cat>[];
 
   /// When set, [watchCats] fails with it.
   Object? watchError;
-
-  /// When set, [importCats] waits for it, like a write made offline.
-  Completer<void>? importGate;
 
   final _listeners = <StreamController<List<Cat>>>[];
 
@@ -36,8 +32,7 @@ class FakeCatRepository implements CatRepository {
       updated.isNotEmpty ||
       deleted.isNotEmpty ||
       renamed.isNotEmpty ||
-      statusChanges.isNotEmpty ||
-      imported.isNotEmpty;
+      statusChanges.isNotEmpty;
 
   void _emit() {
     for (final listener in _listeners) {
@@ -138,9 +133,4 @@ class FakeCatRepository implements CatRepository {
     _emit();
   }
 
-  @override
-  Future<void> importCats(List<Cat> cats) async {
-    imported.addAll(cats);
-    await importGate?.future;
-  }
 }

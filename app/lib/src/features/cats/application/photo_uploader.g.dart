@@ -48,4 +48,4 @@ final class PhotoUploaderProvider
   }
 }
 
-String _$photoUploaderHash() => r'72648502ab5fd1e42ce086bc9d4506282f7a8fc7';
+String _$photoUploaderHash() => r'70a050d0fed921deaac9526d7cb7f0e5d357a04b';

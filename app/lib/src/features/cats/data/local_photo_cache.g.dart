@@ -49,7 +49,7 @@ final class LocalPhotoCacheProvider
   }
 }
 
-String _$localPhotoCacheHash() => r'fdf1ef4224691f331abb3c89ee206d91d395e8f7';
+String _$localPhotoCacheHash() => r'4cbd73b5bc045cfac9b1fb1b5bdce9d563da323c';
 
 /// The file for an encounter's photo, or null for the placeholder.
 

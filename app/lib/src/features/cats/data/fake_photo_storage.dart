@@ -6,6 +6,11 @@ import 'photo_storage.dart';
 /// [failWith] makes every call throw, as without a connection.
 class FakePhotoStorage implements PhotoStorage {
   final uploaded = <String>[];
+
+  /// The same uploads as `'$uid/$photoId'`.
+  final uploadedBy = <String>[];
+
+  /// Photos by id (the same for every uid; tests use one uid at a time).
   final remote = <String, List<int>>{};
   Object? failWith;
 
@@ -14,15 +19,16 @@ class FakePhotoStorage implements PhotoStorage {
   final downloadedOwned = <String>[];
 
   @override
-  Future<void> upload(String photoId, File file) async {
+  Future<void> upload(String uid, String photoId, File file) async {
     final error = failWith;
     if (error != null) throw error;
     uploaded.add(photoId);
+    uploadedBy.add('$uid/$photoId');
     remote[photoId] = file.readAsBytesSync();
   }
 
   @override
-  Future<bool> download(String photoId, File to) async {
+  Future<bool> download(String uid, String photoId, File to) async {
     final error = failWith;
     if (error != null) throw error;
     final bytes = remote[photoId];

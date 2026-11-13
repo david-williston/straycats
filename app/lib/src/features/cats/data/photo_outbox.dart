@@ -2,17 +2,14 @@ import 'dart:io';
 
 import 'cats_folder.dart';
 
-/// Empty marker files in `<cats>/outbox/`, one per photo still to upload.
+/// Empty marker files in the person's outbox folder, one per photo still to upload.
 /// They survive an app restart, which the SDK's own uploads do not.
 class PhotoOutbox {
   PhotoOutbox(this._folder);
 
   final CatsFolder _folder;
 
-  Future<Directory> _dir() async {
-    final dir = await _folder.open();
-    return Directory('${dir.path}/outbox').create();
-  }
+  Future<Directory> _dir() => _folder.openOutbox();
 
   Future<void> enqueue(String photoId) async {
     await File('${(await _dir()).path}/$photoId').create();

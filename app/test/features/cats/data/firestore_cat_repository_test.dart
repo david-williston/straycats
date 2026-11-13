@@ -183,28 +183,7 @@ void main() {
     expect(await other.watchCats().first, isEmpty);
   });
 
-  test('importing twice writes the same documents once', () async {
-    final cats = [
-      cat('1', 'Ciccio', [1000, 3000]),
-      cat('2', '', [2000]),
-    ];
-    await repo.importCats(cats);
-    await repo.importCats(cats);
 
-    expect((await docs('cats')).docs, hasLength(2));
-    expect((await docs('encounters')).docs, hasLength(3));
-    expect(await repo.watchCats().first, unorderedEquals(cats));
-  });
-
-  test('a big import is split into batches of 500', () async {
-    final cats = [
-      for (var i = 0; i < 600; i++) cat('c$i', 'n$i', [i + 1]),
-    ];
-    await repo.importCats(cats);
-
-    expect((await docs('cats')).docs, hasLength(600));
-    expect((await docs('encounters')).docs, hasLength(600));
-  });
 
   group('status', () {
     final since = DateTime(2026, 11, 10);
@@ -267,16 +246,6 @@ void main() {
       expect(c.statusNote, 'x');
     });
 
-    test('importing again keeps a status set since', () async {
-      final cats = [
-        cat('1', 'Ciccio', [1000]),
-      ];
-      await repo.importCats(cats);
-      await repo.setStatus('1', CatStatus.missing, since: since);
-      await repo.importCats(cats);
-
-      expect((await repo.watchCats().first).single.status, CatStatus.missing);
-    });
 
     test('a cat added with a status writes it', () async {
       await repo.addCat(

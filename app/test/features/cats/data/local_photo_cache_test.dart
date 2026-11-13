@@ -12,7 +12,7 @@ void main() {
   setUp(() {
     dir = Directory.systemTemp.createTempSync('cats');
     storage = FakePhotoStorage();
-    cache = LocalPhotoCache(CatsFolder(dir: () async => dir), storage);
+    cache = LocalPhotoCache('u1', CatsFolder(dir: () async => dir), storage);
   });
   tearDown(() => dir.deleteSync(recursive: true));
 

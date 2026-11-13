@@ -11,12 +11,21 @@ void main() {
   late PhotoOutbox outbox;
   late FakePhotoStorage storage;
   late PhotoUploader uploader;
+  String? signedIn = 'u1';
   setUp(() {
+    signedIn = 'u1';
     dir = Directory.systemTemp.createTempSync('cats');
     final folder = CatsFolder(dir: () async => dir);
     outbox = PhotoOutbox(folder);
     storage = FakePhotoStorage();
-    uploader = PhotoUploader(folder, outbox, storage, interval: null);
+    uploader = PhotoUploader(
+      'u1',
+      () => signedIn,
+      folder,
+      outbox,
+      storage,
+      interval: null,
+    );
   });
   tearDown(() => dir.deleteSync(recursive: true));
 
@@ -91,5 +100,45 @@ void main() {
     await Future.wait([uploader.drain(), uploader.drain()]);
 
     expect(storage.uploaded, ['1']);
+  });
+
+  test('uploads under the uid whose folder the photo came from', () async {
+    photo('1');
+    await outbox.enqueue('1');
+
+    await uploader.drain();
+
+    expect(storage.uploadedBy, ['u1/1']);
+  });
+
+  test(
+    'another account signed in: nothing uploads, and stays queued',
+    () async {
+      photo('1');
+      await outbox.enqueue('1');
+      signedIn = 'u2';
+
+      await uploader.drain();
+
+      expect(storage.uploaded, isEmpty);
+      expect(await outbox.pending(), ['1']);
+
+      signedIn = null; // signed out
+      await uploader.drain();
+      expect(storage.uploaded, isEmpty);
+
+      signedIn = 'u1'; // the account signs in again
+      await uploader.drain();
+      expect(storage.uploadedBy, ['u1/1']);
+      expect(await outbox.pending(), isEmpty);
+    },
+  );
+
+  test('counts the photos still waiting', () async {
+    photo('1');
+    await outbox.enqueue('1');
+    await outbox.enqueue('2');
+
+    expect(await uploader.pendingCount(), 2);
   });
 }

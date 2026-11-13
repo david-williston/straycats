@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../localization/app_localizations.dart';
-import '../../cats/application/cat_importer.dart';
-import '../../cats/data/legacy_cats_reader.dart';
+import '../../cats/application/photo_uploader.dart';
 import '../../cats/presentation/cats_page.dart';
 import '../application/app_startup.dart';
 
@@ -18,13 +17,16 @@ class AppStartupWidget extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     return startup.when(
       skipLoadingOnReload: false,
-      data: (_) => const CatsPage(),
+      data: (_) {
+        // The uploader is per account, so it can only start once the uid is
+        // known. Starting it again is harmless.
+        ref.watch(photoUploaderProvider).start();
+        return const CatsPage();
+      },
       loading: () => _Message(text: l10n.startupLoading, busy: true),
       error: (error, _) => _Message(
         text: switch (error) {
           SignInFailed() => l10n.firstLaunchNeedsInternet,
-          ImportOffline() => l10n.importNeedsInternet,
-          LegacyCatsCorrupt() => l10n.importFailed,
           _ => l10n.startupFailed,
         },
         onRetry: () => ref.invalidate(appStartupProvider),

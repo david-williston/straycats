@@ -8,6 +8,7 @@ import '../../cats/presentation/cats_controller.dart';
 import '../../profile/data/profile_repository.dart';
 import '../../startup/application/app_startup.dart';
 import '../application/account_providers.dart';
+import '../application/sign_out_service.dart';
 import '../data/auth_repository.dart';
 import '../domain/account.dart';
 
@@ -88,6 +89,45 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
     }
   }
 
+  Future<void> _signOut() async {
+    final l10n = AppLocalizations.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+    final navigator = Navigator.of(context);
+    final service = ref.read(signOutServiceProvider);
+    setState(() => _busy = true);
+    try {
+      final pending = await service.pendingUploads();
+      if (!mounted) return;
+      final choice = await showDialog<_SignOutChoice>(
+        context: context,
+        builder: (_) => _SignOutDialog(pending: pending),
+      );
+      if (!mounted) return;
+      switch (choice) {
+        case null:
+          setState(() => _busy = false);
+        case _SignOutChoice.wait:
+          final left = await service.uploadPending();
+          if (!mounted) return;
+          messenger.showSnackBar(
+            SnackBar(
+              content: Text(
+                left == 0 ? l10n.uploadsDone : l10n.uploadsStillWaiting,
+              ),
+            ),
+          );
+          setState(() => _busy = false);
+        case _SignOutChoice.signOut:
+          await service.signOut();
+          // The app starts again as a new anonymous user.
+          if (navigator.mounted) navigator.pop();
+      }
+    } catch (_) {
+      messenger.showSnackBar(SnackBar(content: Text(l10n.signOutFailed)));
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
   Future<void> _saveNickname() async {
     final l10n = AppLocalizations.of(context);
     final messenger = ScaffoldMessenger.of(context);
@@ -139,6 +179,15 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
                 ),
+              const SizedBox(height: 12),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: OutlinedButton.icon(
+                  onPressed: _busy ? null : _signOut,
+                  icon: const Icon(Icons.logout),
+                  label: Text(l10n.signOut),
+                ),
+              ),
             ] else ...[
               Text(l10n.accountNotSignedIn),
               const SizedBox(height: 12),
@@ -146,6 +195,13 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
                 onPressed: _busy ? null : _signIn,
                 icon: const Icon(Icons.login),
                 label: Text(l10n.signInWithGoogle),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                l10n.accountKeepSafeHint,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
               ),
             ],
             const SizedBox(height: 16),
@@ -181,6 +237,45 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
           ],
         ),
       ),
+    );
+  }
+}
+
+enum _SignOutChoice { signOut, wait }
+
+/// Asks before signing out. With photos still uploading it offers to wait.
+class _SignOutDialog extends StatelessWidget {
+  const _SignOutDialog({required this.pending});
+
+  final int pending;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    void pop(_SignOutChoice? c) => Navigator.of(context).pop(c);
+    return AlertDialog(
+      title: Text(l10n.signOutTitle),
+      content: Text(
+        pending > 0 ? l10n.signOutPendingBody(pending) : l10n.signOutBody,
+      ),
+      actions: pending > 0
+          ? [
+              TextButton(
+                onPressed: () => pop(_SignOutChoice.signOut),
+                child: Text(l10n.signOutAnyway),
+              ),
+              FilledButton(
+                onPressed: () => pop(_SignOutChoice.wait),
+                child: Text(l10n.signOutWait),
+              ),
+            ]
+          : [
+              TextButton(onPressed: () => pop(null), child: Text(l10n.cancel)),
+              FilledButton(
+                onPressed: () => pop(_SignOutChoice.signOut),
+                child: Text(l10n.signOut),
+              ),
+            ],
     );
   }
 }

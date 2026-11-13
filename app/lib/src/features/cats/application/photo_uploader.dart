@@ -5,6 +5,8 @@ import 'dart:io';
 import 'package:flutter/widgets.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../auth/data/auth_repository.dart';
+import '../../startup/application/app_startup.dart';
 import '../data/cats_folder.dart';
 import '../data/photo_metadata.dart';
 import '../data/photo_outbox.dart';
@@ -16,14 +18,21 @@ part 'photo_uploader.g.dart';
 /// later: when started, for each new photo, on app resume, and every
 /// [interval] while the app is in the foreground. Uploading again after a
 /// crash is harmless, since Storage overwrites.
+///
+/// It belongs to one account: it uploads the photos of [uid]'s folder, under
+/// [uid], and only while [uid] is the signed-in user.
 class PhotoUploader with WidgetsBindingObserver {
   PhotoUploader(
+    this.uid,
+    this._signedInUid,
     this._folder,
     this._outbox,
     this._storage, {
     this.interval = const Duration(minutes: 5),
   });
 
+  final String uid;
+  final String? Function() _signedInUid;
   final CatsFolder _folder;
   final PhotoOutbox _outbox;
   final PhotoStorage _storage;
@@ -81,10 +90,15 @@ class PhotoUploader with WidgetsBindingObserver {
   Future<void> drain() =>
       _draining ??= _drain().whenComplete(() => _draining = null);
 
+  /// How many photos are still waiting to upload.
+  Future<int> pendingCount() async => (await _outbox.pending()).length;
+
   Future<void> _drain() async {
     try {
       final dir = await _folder.open();
       for (final id in await _outbox.pending()) {
+        // Another account is signed in: leave these photos queued for [uid].
+        if (_signedInUid() != uid) return;
         final file = File('${dir.path}/$id.jpg');
         if (!file.existsSync()) {
           developer.log('Photo $id is gone, dropped', name: 'straycats');
@@ -93,7 +107,7 @@ class PhotoUploader with WidgetsBindingObserver {
         }
         // Belt and braces: nothing with GPS data ever leaves the phone.
         await stripPhotoFile(file);
-        await _storage.upload(id, file);
+        await _storage.upload(uid, id, file);
         await _outbox.remove(id);
       }
     } catch (e) {
@@ -104,8 +118,11 @@ class PhotoUploader with WidgetsBindingObserver {
 
 @Riverpod(keepAlive: true)
 PhotoUploader photoUploader(Ref ref) {
+  final auth = ref.watch(authRepositoryProvider);
   final folder = ref.watch(catsFolderProvider);
   final uploader = PhotoUploader(
+    ref.watch(uidProvider),
+    () => auth.uid,
     folder,
     PhotoOutbox(folder),
     ref.watch(photoStorageProvider),

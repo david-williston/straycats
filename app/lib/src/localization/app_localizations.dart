@@ -206,18 +206,6 @@ abstract class AppLocalizations {
   /// **'Connect to the internet to set up the app. This is needed only once.'**
   String get firstLaunchNeedsInternet;
 
-  /// Shown at start-up when moving the cats saved on this phone to the cloud did not finish for lack of a connection.
-  ///
-  /// In en, this message translates to:
-  /// **'Connect to the internet to bring your cats over.'**
-  String get importNeedsInternet;
-
-  /// Shown at start-up when the old cats file on the phone is damaged and the import stops.
-  ///
-  /// In en, this message translates to:
-  /// **'Your saved cats could not be read, so nothing was moved. Your photos are untouched.'**
-  String get importFailed;
-
   /// Shown at start-up for any other failure, with Retry.
   ///
   /// In en, this message translates to:
@@ -439,6 +427,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not sign in. Check your connection and try again.'**
   String get signInFailed;
+
+  /// Button in the account sheet that signs out of the Google account, and the confirm button of its dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get signOut;
+
+  /// Title of the confirm dialog before signing out of the Google account.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out?'**
+  String get signOutTitle;
+
+  /// Body of the sign-out confirm dialog when every photo has been uploaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cats stay safe in your Google account. Sign in with Google again to get them back.'**
+  String get signOutBody;
+
+  /// Body of the sign-out confirm dialog when some photos have not been uploaded yet.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 photo hasn\'t finished uploading.} other{{count} photos haven\'t finished uploading.}} They wait on this phone and upload the next time you sign in to this account.'**
+  String signOutPendingBody(int count);
+
+  /// Button in the sign-out dialog that does not sign out and instead tries to upload the waiting photos.
+  ///
+  /// In en, this message translates to:
+  /// **'Wait'**
+  String get signOutWait;
+
+  /// Button in the sign-out dialog that signs out although some photos have not uploaded yet.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out anyway'**
+  String get signOutAnyway;
+
+  /// Message when signing out fails.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not sign out. Try again.'**
+  String get signOutFailed;
+
+  /// Message after waiting for photos to upload, when none are left.
+  ///
+  /// In en, this message translates to:
+  /// **'All your photos are uploaded. You can sign out now.'**
+  String get uploadsDone;
+
+  /// Message after waiting for photos to upload, when some could not be uploaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Some photos are still waiting for a connection.'**
+  String get uploadsStillWaiting;
+
+  /// Shown in the account sheet when not signed in with Google, where there is no sign out because the cats would be left behind.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google to keep your cats safe. Then you can also sign out, for example to try the app as someone else.'**
+  String get accountKeepSafeHint;
 
   /// Label of the nickname field in the account sheet.
   ///

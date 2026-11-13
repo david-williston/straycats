@@ -66,14 +66,6 @@ class AppLocalizationsEs extends AppLocalizations {
       'Conéctate a internet para configurar la app. Solo hace falta una vez.';
 
   @override
-  String get importNeedsInternet =>
-      'Conéctate a internet para traer tus gatos.';
-
-  @override
-  String get importFailed =>
-      'No se pudieron leer tus gatos guardados, así que no se movió nada. Tus fotos siguen intactas.';
-
-  @override
   String get startupFailed => 'Algo salió mal al iniciar la app.';
 
   @override
@@ -190,6 +182,48 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get signInFailed =>
       'No se pudo iniciar sesión. Revisa tu conexión e inténtalo de nuevo.';
+
+  @override
+  String get signOut => 'Cerrar sesión';
+
+  @override
+  String get signOutTitle => '¿Cerrar sesión?';
+
+  @override
+  String get signOutBody =>
+      'Tus gatos siguen a salvo en tu cuenta de Google. Inicia sesión con Google de nuevo para recuperarlos.';
+
+  @override
+  String signOutPendingBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count fotos no han terminado de subirse.',
+      one: '1 foto no ha terminado de subirse.',
+    );
+    return '$_temp0 Esperan en este teléfono y se suben la próxima vez que inicies sesión en esta cuenta.';
+  }
+
+  @override
+  String get signOutWait => 'Esperar';
+
+  @override
+  String get signOutAnyway => 'Cerrar sesión igualmente';
+
+  @override
+  String get signOutFailed =>
+      'No se pudo cerrar la sesión. Inténtalo de nuevo.';
+
+  @override
+  String get uploadsDone =>
+      'Todas tus fotos están subidas. Ya puedes cerrar la sesión.';
+
+  @override
+  String get uploadsStillWaiting => 'Algunas fotos siguen esperando conexión.';
+
+  @override
+  String get accountKeepSafeHint =>
+      'Inicia sesión con Google para mantener a salvo tus gatos. Así también podrás cerrar sesión, por ejemplo para probar la app como otra persona.';
 
   @override
   String get nicknameOptional => 'Apodo (opcional)';

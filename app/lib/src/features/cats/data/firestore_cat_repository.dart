@@ -22,7 +22,6 @@ class FirestoreCatRepository implements CatRepository {
   final String _uid;
 
   /// Firestore limits a batch to 500 writes.
-  static const _batchSize = 500;
 
   CollectionReference<Map<String, dynamic>> get _cats =>
       _db.collection('users').doc(_uid).collection('cats');
@@ -176,24 +175,4 @@ class FirestoreCatRepository implements CatRepository {
     });
   }
 
-  @override
-  Future<void> importCats(List<Cat> cats) async {
-    final writes =
-        <(DocumentReference<Map<String, dynamic>>, Map<String, dynamic>)>[
-          for (final cat in cats) ...[
-            (_cats.doc(cat.id), _catData(cat)),
-            for (final e in cat.encounters)
-              (_encounters.doc(e.id), _encounterData(cat.id, e)),
-          ],
-        ];
-    for (var i = 0; i < writes.length; i += _batchSize) {
-      final batch = _db.batch();
-      for (final (ref, data) in writes.skip(i).take(_batchSize)) {
-        if (ref.parent.id == 'encounters') assertCoarse(data);
-        // Merged, so running the import again keeps any status since set.
-        batch.set(ref, data, SetOptions(merge: true));
-      }
-      await batch.commit();
-    }
-  }
 }

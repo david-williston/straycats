@@ -41,9 +41,6 @@ abstract class CatRepository {
     String note = '',
   });
 
-  /// Writes [cats] under their own ids, so running it again rewrites the same
-  /// documents with the same values. Used only by the one-time import.
-  Future<void> importCats(List<Cat> cats);
 }
 
 @Riverpod(keepAlive: true)

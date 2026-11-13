@@ -3,8 +3,6 @@ import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:image/image.dart' as img;
-import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
-import 'package:straycats/src/features/cats/application/photo_privacy_cleaner.dart';
 import 'package:straycats/src/features/cats/data/cats_folder.dart';
 import 'package:straycats/src/features/cats/data/device_photo_repository.dart';
 import 'package:straycats/src/features/cats/data/image_picker_service.dart';
@@ -88,27 +86,6 @@ void main() {
 
       expect(await photoHasGps(kept), isFalse);
       expect(img.decodeJpg(kept.readAsBytesSync()), isNotNull);
-    });
-
-    test('start-up cleans old photos with GPS once, and queues them', () async {
-      final old = File('${dir.path}/1000.jpg')..writeAsBytesSync(jpegWithGps());
-      final clean = File('${dir.path}/2000.jpg')
-        ..writeAsBytesSync(stripJpegMetadata(jpegWithGps()));
-      File('${dir.path}/legacy.json').writeAsStringSync('{}');
-      final uploader = FakePhotoUploader();
-      final cleaner = PhotoPrivacyCleaner(
-        CatsFolder(dir: () async => dir),
-        uploader,
-      );
-
-      expect(await cleaner.run(), 1);
-      expect(await photoHasGps(old), isFalse);
-      expect(uploader.enqueued, ['1000']);
-      expect(await photoHasGps(clean), isFalse);
-
-      // Idempotent: nothing is left to do.
-      expect(await cleaner.run(), 0);
-      expect(uploader.enqueued, ['1000']);
     });
   });
 }

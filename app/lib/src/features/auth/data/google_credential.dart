@@ -1,3 +1,5 @@
+import 'dart:developer' as developer;
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -28,4 +30,22 @@ Future<AuthCredential?> googleCredential() async {
     }
     rethrow;
   }
+}
+
+/// Signs out of the Google account on this phone, and disconnects it, so the
+/// next sign-in asks which account to use.
+typedef GoogleSignOut = Future<void> Function();
+
+Future<void> signOutOfGoogle() async {
+  final signIn = GoogleSignIn.instance;
+  if (!_initialized) {
+    await signIn.initialize();
+    _initialized = true;
+  }
+  try {
+    await signIn.disconnect();
+  } catch (e) {
+    developer.log('Could not disconnect Google: $e', name: 'straycats');
+  }
+  await signIn.signOut();
 }

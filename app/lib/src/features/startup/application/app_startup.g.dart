@@ -8,29 +8,32 @@ part of 'app_startup.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// What must happen before the app shows the cats: sign in anonymously (once),
-/// bring over the cats kept before Firebase (once), and start the photo
-/// uploader. It also starts creating the profile `users/{uid}`, without
-/// waiting (offline, the write waits for a connection). Completes with the
-/// user's uid; errors show on the startup screen with Retry.
+/// What must happen before the app shows the cats: sign in anonymously if
+/// nobody is signed in (the first launch, or after signing out). It also
+/// starts creating the profile `users/{uid}`, without waiting (offline, the
+/// write waits for a connection). Completes with the user's uid; errors show
+/// on the startup screen with Retry. The photo uploader is started by the
+/// startup screen once this is done, since it needs the uid.
 
 @ProviderFor(appStartup)
 final appStartupProvider = AppStartupProvider._();
 
-/// What must happen before the app shows the cats: sign in anonymously (once),
-/// bring over the cats kept before Firebase (once), and start the photo
-/// uploader. It also starts creating the profile `users/{uid}`, without
-/// waiting (offline, the write waits for a connection). Completes with the
-/// user's uid; errors show on the startup screen with Retry.
+/// What must happen before the app shows the cats: sign in anonymously if
+/// nobody is signed in (the first launch, or after signing out). It also
+/// starts creating the profile `users/{uid}`, without waiting (offline, the
+/// write waits for a connection). Completes with the user's uid; errors show
+/// on the startup screen with Retry. The photo uploader is started by the
+/// startup screen once this is done, since it needs the uid.
 
 final class AppStartupProvider
     extends $FunctionalProvider<AsyncValue<String>, String, FutureOr<String>>
     with $FutureModifier<String>, $FutureProvider<String> {
-  /// What must happen before the app shows the cats: sign in anonymously (once),
-  /// bring over the cats kept before Firebase (once), and start the photo
-  /// uploader. It also starts creating the profile `users/{uid}`, without
-  /// waiting (offline, the write waits for a connection). Completes with the
-  /// user's uid; errors show on the startup screen with Retry.
+  /// What must happen before the app shows the cats: sign in anonymously if
+  /// nobody is signed in (the first launch, or after signing out). It also
+  /// starts creating the profile `users/{uid}`, without waiting (offline, the
+  /// write waits for a connection). Completes with the user's uid; errors show
+  /// on the startup screen with Retry. The photo uploader is started by the
+  /// startup screen once this is done, since it needs the uid.
   AppStartupProvider._()
     : super(
         from: null,
@@ -56,7 +59,7 @@ final class AppStartupProvider
   }
 }
 
-String _$appStartupHash() => r'cbf5697a56802f37c53014ab97d2146d6156f80d';
+String _$appStartupHash() => r'f4161a79f68d13341e85bde3df6dab4d228f449f';
 
 /// The signed-in user's id. Only valid once [appStartup] has completed, which
 /// the startup screen guarantees before anything else is built.

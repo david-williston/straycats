@@ -12,10 +12,13 @@ part 'photo_storage.g.dart';
 /// they are read only through the owner-checked Storage API, never through a
 /// download URL.
 abstract class PhotoStorage {
-  Future<void> upload(String photoId, File file);
+  /// Uploads [photoId] under [uid]. Throws unless [uid] is the signed-in
+  /// user, so a photo never goes up under another account.
+  Future<void> upload(String uid, String photoId, File file);
 
-  /// Saves the photo to [to]. False if there is no such photo.
-  Future<bool> download(String photoId, File to);
+  /// Saves [uid]'s photo to [to]. Throws unless [uid] is the signed-in user.
+  /// False if there is no such photo.
+  Future<bool> download(String uid, String photoId, File to);
 
   /// Saves a photo of another person, [ownerUid]'s, to [to]. Only an admin
   /// is allowed to (the Storage rules decide). False if there is no such photo.
@@ -23,15 +26,14 @@ abstract class PhotoStorage {
 }
 
 class FirebasePhotoStorage implements PhotoStorage {
-  /// [uid] is read at each call, so the uploader can exist before sign-in.
+  /// [_uid] is read at each call, to check who is signed in.
   FirebasePhotoStorage(this._storage, this._uid);
 
   final FirebaseStorage _storage;
   final String? Function() _uid;
 
-  Reference _ref(String photoId) {
-    final uid = _uid();
-    if (uid == null) throw StateError('Not signed in');
+  Reference _ref(String uid, String photoId) {
+    if (_uid() != uid) throw StateError('Not signed in as $uid');
     return _owned(uid, photoId);
   }
 
@@ -39,13 +41,16 @@ class FirebasePhotoStorage implements PhotoStorage {
       _storage.ref('users/$ownerUid/photos/$photoId.jpg');
 
   @override
-  Future<void> upload(String photoId, File file) async {
-    await _ref(photoId)
-        .putFile(file, SettableMetadata(contentType: 'image/jpeg'));
+  Future<void> upload(String uid, String photoId, File file) async {
+    await _ref(
+      uid,
+      photoId,
+    ).putFile(file, SettableMetadata(contentType: 'image/jpeg'));
   }
 
   @override
-  Future<bool> download(String photoId, File to) => _write(_ref(photoId), to);
+  Future<bool> download(String uid, String photoId, File to) =>
+      _write(_ref(uid, photoId), to);
 
   @override
   Future<bool> downloadOwned(String ownerUid, String photoId, File to) =>
