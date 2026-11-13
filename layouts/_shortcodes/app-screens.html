@@ -11,9 +11,10 @@
   {{- $name := path.Base .Name }}
   {{- $number := strings.TrimLeft "0" (substr $name 0 4) | default "0" }}
   {{- $date := time.AsTime (substr $name 5 10) | time.Format "2 Jan 2006" }}
+  {{- $big := .Resize (printf "%dx webp q85" (math.Min .Width 2400 | int)) -}}
   {{- $thumb := .Resize "600x webp q80" }}
   <figure class="app-screen">
-    <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ i18n "app_screen_alt" (dict "Number" $number "Date" $date) }}" loading="lazy"></a>
+    <a href="{{ .RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ i18n "app_screen_alt" (dict "Number" $number "Date" $date) }}" loading="lazy"></a>
     <figcaption>{{ i18n "app_screen_label" (dict "Number" $number "Date" $date) }}</figcaption>
   </figure>
 {{- end }}

@@ -120,3 +120,5 @@ app_progress_text: "A first, very simple StrayCats app is being built in the ope
 app_progress_button: "See the progress photos"
 app_progress_newest: "The newest photo, {{ .Date }}"
 app_link_text: "See the app being built"
+zoom_open: "Enlarge photo"
+zoom_close: "Close enlarged photo"

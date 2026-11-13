@@ -2,8 +2,9 @@
   Usage: {{< photo src="vet-visit.jpg" alt="…" caption="…" >}} */ -}}
 {{- with .Page.Resources.Get (.Get "src") -}}
 {{- $img := .Resize "900x webp q80" -}}
+{{- $big := .Resize (printf "%dx webp q85" (math.Min .Width 2400 | int)) -}}
 <figure class="photo">
-  <a href="{{ .RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
+  <a href="{{ .RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
   {{- with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
 </figure>
 {{- else -}}

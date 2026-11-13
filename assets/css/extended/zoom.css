@@ -1,0 +1,21 @@
+/* Animated photo zoom (assets/js/zoom.js) */
+a[data-zoom], .zoomable { cursor: zoom-in; }
+.zoom-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--theme);
+  opacity: 0;
+  cursor: zoom-out;
+}
+.zoom-image {
+  position: fixed;
+  z-index: 1001;
+  margin: 0;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  border-radius: var(--radius);
+  cursor: zoom-out;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}

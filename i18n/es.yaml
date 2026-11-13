@@ -120,3 +120,5 @@ app_progress_text: "Una primera app de StrayCats, muy sencilla, se está constru
 app_progress_button: "Ver las fotos del avance"
 app_progress_newest: "La foto más reciente, {{ .Date }}"
 app_link_text: "Ve cómo se construye la app"
+zoom_open: "Ampliar foto"
+zoom_close: "Cerrar foto ampliada"

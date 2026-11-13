@@ -9,8 +9,9 @@
     {{- $alt := $.Get "alt" }}
     {{- if and (lt $i (len $alts)) (trim (index $alts $i) " ") }}{{ $alt = trim (index $alts $i) " " }}{{ end }}
     {{- with $.Page.Resources.Get $name }}
+      {{- $big := .Resize (printf "%dx webp q85" (math.Min .Width 2400 | int)) -}}
       {{- $thumb := cond ($.Get "uncropped") (.Resize "600x webp q80") (.Fill (printf "600x800 %s webp q80" ($.Get "anchor" | default "smart"))) }}
-      <a href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $alt }}" loading="lazy"></a>
+      <a href="{{ .RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="{{ $alt }}" loading="lazy"></a>
     {{- else }}
       {{- errorf "gallery shortcode: %q not found in %s" $name $.Page.File.Path }}
     {{- end }}
