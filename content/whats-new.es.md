@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026 (noche): Fotos que se abren, y tarjetas de gato para compartir
+
+*Versión v2026.11.13.2*
+
+- **Nuevo:** toca cualquier foto del sitio y crece hasta llenar la ventana; tócala otra vez y
+  regresa a su lugar.
+- **Actualizado:** [Para Saibo](/es/saibo/) ahora empieza con la foto de él mirando la luz del sol.
+- **En la app:** puedes compartir la tarjeta de un gato como imagen: su foto, el nombre que le
+  pusiste, más o menos dónde se le ve (un círculo de alrededor de un kilómetro) y cuándo lo
+  conociste. La imagen no lleva datos de ubicación. Mírala en [La app, en construcción](/es/app/).
+
 ## 13 de noviembre de 2026 (más tarde): Las fotos de Saibo, y la app encuentra su estilo
 
 *Versión v2026.11.13.1*

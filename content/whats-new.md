@@ -11,6 +11,16 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026 (evening): Photos you can open, and cat cards to share
+
+*Version v2026.11.13.2*
+
+- **New:** tap any photo on the site and it grows to fill the window; tap again and it goes back.
+- **Updated:** [For Saibo](/saibo/) now opens with the photo of him looking into the sunlight.
+- **In the app:** you can share a cat's card as a picture: its photo, your name for it, roughly
+  where it's seen (a circle about a kilometre wide) and when you first met. The picture carries
+  no location data. See it in [The App, Under Construction](/app/).
+
 ## November 13, 2026 (later): Saibo's photos, and the app finds its look
 
 *Version v2026.11.13.1*
