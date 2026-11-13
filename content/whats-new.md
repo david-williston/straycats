@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026 (later): Saibo's photos, and the app finds its look
+
+*Version v2026.11.13.1*
+
+- **Updated:** [For Saibo](/saibo/) has new photos from his last summer, starting with Saibo
+  looking into a strip of sunlight.
+- **In the app:** it now wears this site's warm colours, its Nunito font and Saibo's cat icon.
+  Each meeting can remember roughly where it happened, as a neighbourhood and a circle about a
+  kilometre wide, never the exact spot, and photos no longer carry location data. See the new
+  photos in [The App, Under Construction](/app/).
+
 ## November 13, 2026: The app gets a front-page spot
 
 *Version v2026.11.13*

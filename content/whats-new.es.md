@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026 (más tarde): Las fotos de Saibo, y la app encuentra su estilo
+
+*Versión v2026.11.13.1*
+
+- **Actualizado:** [Para Saibo](/es/saibo/) tiene fotos nuevas de su último verano, empezando por
+  Saibo mirando una franja de luz de sol.
+- **En la app:** ahora usa los colores cálidos de este sitio, su letra Nunito y el ícono del gato
+  Saibo. Cada encuentro puede recordar más o menos dónde pasó, como un barrio y un círculo de
+  alrededor de un kilómetro, nunca el lugar exacto, y las fotos ya no llevan datos de ubicación.
+  Mira las fotos nuevas en [La app, en construcción](/es/app/).
+
 ## 13 de noviembre de 2026: La app llega a la portada
 
 *Versión v2026.11.13*
