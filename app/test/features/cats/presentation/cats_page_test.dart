@@ -42,7 +42,7 @@ void main() {
     expect(find.byIcon(Icons.photo_camera), findsNothing);
     expect(find.byType(FloatingActionButton), findsNothing);
     expect(find.byIcon(Icons.account_circle_outlined), findsNothing);
-    expect(find.text('StrayCats'), findsOneWidget);
+    expect(find.bySemanticsLabel('StrayCats'), findsOneWidget);
     expect(find.text("Let's go meet some cats."), findsOneWidget);
     expect(find.text('Sign in with Google'), findsOneWidget);
 

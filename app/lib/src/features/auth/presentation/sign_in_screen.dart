@@ -7,7 +7,7 @@ import '../../settings/presentation/language_picker.dart';
 import '../application/sign_in_service.dart';
 import '../domain/account.dart';
 
-/// What signed-out people see: the name, a warm line and one way in.
+/// What signed-out people see: the logo, a warm line and one way in.
 class SignInScreen extends ConsumerStatefulWidget {
   const SignInScreen({super.key});
 
@@ -48,13 +48,11 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                l10n.appTitle,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.displaySmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: theme.colorScheme.primary,
-                ),
+              // The logo from the website's home page, which carries the name.
+              Image.asset(
+                'assets/images/straycats-logo.png',
+                height: 240,
+                semanticLabel: l10n.appTitle,
               ),
               const SizedBox(height: 12),
               Text(

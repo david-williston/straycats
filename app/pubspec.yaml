@@ -86,6 +86,7 @@ flutter:
 
   assets:
     - assets/icon/icon.png
+    - assets/images/straycats-logo.png
 
   # Nunito (SIL Open Font License, see assets/fonts/OFL.txt), the website's
   # font, bundled so it works offline. One variable file serves every weight.
