@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026 (late): The app's progress as a slideshow, and health notes
+
+*Version v2026.11.13.4*
+
+- **New:** [The App, Under Construction](/app/) now plays its photos as a slideshow, from the
+  first version to today, with the date of each one.
+- **In the app:** you can note a cat's sex, and its coat in broad strokes (short or long hair,
+  and a general colour), or leave them as "Not sure". A cat's story can hold health visits, like
+  vaccinations, dental care or check-ups, with a date and a note. The note can say which vet to
+  ask; the vet keeps the detailed records.
+
 ## November 13, 2026 (night): A cat's story, and who it might be
 
 *Version v2026.11.13.3*

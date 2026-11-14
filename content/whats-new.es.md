@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026 (tarde en la noche): El avance de la app como presentación, y notas de salud
+
+*Versión v2026.11.13.4*
+
+- **Nuevo:** [La app, en construcción](/es/app/) ahora muestra sus fotos como una presentación,
+  desde la primera versión hasta hoy, con la fecha de cada una.
+- **En la app:** puedes anotar el sexo de un gato y su pelaje a grandes rasgos (pelo corto o
+  largo, y un color general), o dejarlos como "No lo sé". La historia de un gato puede guardar
+  visitas de salud, como vacunas, cuidado dental o revisiones, con una fecha y una nota. La nota
+  puede decir a qué veterinario preguntar; el veterinario guarda los registros detallados.
+
 ## 13 de noviembre de 2026 (más noche): La historia de un gato, y quién podría ser
 
 *Versión v2026.11.13.3*
