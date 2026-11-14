@@ -1,7 +1,7 @@
 {{- /* Every app screenshot in the page bundle, oldest first, as phone-shaped thumbnails linking to
   the full image. Picks up files named NNNN-YYYY-MM-DD-<commit>-<description>.jpg, so adding a
   screenshot needs only the file. Label and alt text are in i18n/ (app_screen_label, app_screen_alt).
-  A slideshow (assets/js/slideshow.js) plays them above the grid, oldest first. Captions come from
+  A slideshow (assets/js/slideshow.js) plays them, oldest first; the grid is only a fallback for browsers without JavaScript. Captions come from
   data/app_screens.yaml (number -> en/es); without an entry the filename description is used.
   Usage: {{< app-screens >}} */ -}}
 {{- $shots := slice }}
@@ -44,6 +44,7 @@
   </div>
   <p class="app-show-live sr-only" aria-live="polite"></p>
 </div>
+<noscript>
 <div class="app-screens">
 {{- range sort $shots "Name" "desc" }}
   {{- $name := path.Base .Name }}
@@ -57,3 +58,4 @@
   </figure>
 {{- end }}
 </div>
+</noscript>
