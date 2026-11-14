@@ -1,6 +1,7 @@
 ---
 title: "The App, Under Construction"
 date: 2026-11-07
+updated: 2026-11-13
 summary: "Progress photos of the StrayCats app as it's being built, newest first."
 ShowToc: false
 ShowReadingTime: false

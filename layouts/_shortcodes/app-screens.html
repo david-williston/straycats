@@ -1,11 +1,48 @@
 {{- /* Every app screenshot in the page bundle, oldest first, as phone-shaped thumbnails linking to
   the full image. Picks up files named NNNN-YYYY-MM-DD-<commit>-<description>.jpg, so adding a
   screenshot needs only the file. Label and alt text are in i18n/ (app_screen_label, app_screen_alt).
+  A slideshow (assets/js/slideshow.js) plays them above the grid, oldest first. Captions come from
+  data/app_screens.yaml (number -> en/es); without an entry the filename description is used.
   Usage: {{< app-screens >}} */ -}}
 {{- $shots := slice }}
 {{- range .Page.Resources.ByType "image" }}
   {{- if findRE `^\d{4}-\d{4}-\d{2}-\d{2}-.+\.jpg$` (path.Base .Name) }}{{ $shots = $shots | append . }}{{ end }}
 {{- end }}
+{{- $lang := site.Language.Lang }}
+{{- $captions := hugo.Data.app_screens | default dict }}
+{{- /* Caption for a screenshot: data file entry in this language, else the humanized filename slug */}}
+{{- $asc := sort $shots "Name" "asc" }}
+{{- $total := len $asc }}
+<div class="app-show" role="region" aria-roledescription="carousel" aria-label="{{ i18n "show_label" }}" data-total="{{ $total }}" data-play="{{ i18n "show_play" }}" data-pause="{{ i18n "show_pause" }}" data-slide="{{ i18n "show_slide_word" }}">
+  <ul class="app-show-slides">
+  {{- range $i, $img := $asc }}
+    {{- $name := path.Base $img.Name }}
+    {{- $key := substr $name 0 4 }}
+    {{- $n := add $i 1 }}
+    {{- $entry := index $captions $key | default dict }}
+    {{- $slug := replace (replaceRE `^\d{4}-\d{4}-\d{2}-\d{2}-[^-]+-` "" (strings.TrimSuffix ".jpg" $name)) "-" " " }}
+    {{- $caption := cond (isset $entry $lang) (index $entry $lang) (cond (isset $entry "en") (index $entry "en") (printf "%s%s" (upper (substr $slug 0 1)) (substr $slug 1))) }}
+    {{- $date := time.AsTime (substr $name 5 10) | time.Format ":date_long" }}
+    {{- $big := $img.Resize (printf "%dx webp q85" (math.Min $img.Width 2400 | int)) }}
+    {{- $s1 := $img.Resize "400x webp q80" }}
+    {{- $s2 := $img.Resize "700x webp q80" }}
+    <li class="app-show-slide" role="group" aria-roledescription="slide" aria-label="{{ i18n "show_slide_label" (dict "Number" $n "Total" $total) }}"{{ if gt $i 0 }} hidden{{ end }} data-date="{{ $date }}" data-caption="{{ $caption }}">
+      <a href="{{ $img.RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $s2.RelPermalink }}" srcset="{{ $s1.RelPermalink }} 400w, {{ $s2.RelPermalink }} 700w" sizes="(max-width: 520px) 70vw, 320px" width="{{ $s2.Width }}" height="{{ $s2.Height }}" alt="{{ $caption }}. {{ $date }}"{{ if gt $i 1 }} loading="lazy"{{ end }}></a>
+    </li>
+  {{- end }}
+  </ul>
+  <div class="app-show-info">
+    <p class="app-show-date"></p>
+    <p class="app-show-caption"></p>
+  </div>
+  <div class="app-show-controls" hidden>
+    <button type="button" class="app-show-prev" aria-label="{{ i18n "show_prev" }}">&#8249;</button>
+    <button type="button" class="app-show-play" aria-label="{{ i18n "show_pause" }}"><span aria-hidden="true"></span></button>
+    <button type="button" class="app-show-next" aria-label="{{ i18n "show_next" }}">&#8250;</button>
+    <span class="app-show-count" aria-hidden="true"></span>
+  </div>
+  <p class="app-show-live sr-only" aria-live="polite"></p>
+</div>
 <div class="app-screens">
 {{- range sort $shots "Name" "desc" }}
   {{- $name := path.Base .Name }}

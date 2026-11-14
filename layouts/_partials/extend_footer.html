@@ -4,6 +4,9 @@
 {{- /* StrayCats: animated photo zoom (assets/js/zoom.js, assets/css/extended/zoom.css). Without JS the photo links still open the full image. */}}
 {{- $zoom := resources.Get "js/zoom.js" | js.Build | resources.Minify | fingerprint }}
 <script src="{{ $zoom.RelPermalink }}" integrity="{{ $zoom.Data.Integrity }}" data-open="{{ i18n "zoom_open" }}" data-close="{{ i18n "zoom_close" }}" defer></script>
+{{- /* StrayCats: app screenshot slideshow (assets/js/slideshow.js, assets/css/extended/slideshow.css). Hidden without JS. */}}
+{{- $show := resources.Get "js/slideshow.js" | js.Build | resources.Minify | fingerprint }}
+<script src="{{ $show.RelPermalink }}" integrity="{{ $show.Data.Integrity }}" defer></script>
 {{- /* StrayCats: speed buttons for the listen shortcode. Loaded on every page (the theme
   caches the footer across pages); it does nothing where there's no player. */}}
 {{- $listen := resources.Get "js/listen.js" | js.Build | resources.Minify | fingerprint }}
