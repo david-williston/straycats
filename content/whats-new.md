@@ -11,6 +11,16 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 14, 2026 (later): Every photo, with its story
+
+*Version v2026.11.14.1*
+
+- **Updated:** the "Now being built" card on the home page flips through every progress photo of
+  the app, one a second, newest first, with its date and caption.
+- **Updated:** [The App, Under Construction](/app/) lists the photos newest first instead of as a
+  slideshow. Each one shows its date and caption, the change it came with, and a link to that
+  change in the code.
+
 ## November 14, 2026: A simpler start in the app
 
 *Version v2026.11.14*

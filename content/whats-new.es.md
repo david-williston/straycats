@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 14 de noviembre de 2026 (más tarde): Cada foto, con su historia
+
+*Versión v2026.11.14.1*
+
+- **Actualizado:** la tarjeta "En construcción" de la portada pasa por todas las fotos del
+  avance de la app, una por segundo, de la más reciente a la más antigua, con su fecha y su
+  descripción.
+- **Actualizado:** [La app, en construcción](/es/app/) muestra las fotos de la más reciente a la
+  más antigua, en lugar de como presentación. Cada una muestra su fecha y su descripción, el
+  cambio con el que llegó y un enlace a ese cambio en el código (en inglés).
+
 ## 14 de noviembre de 2026: Un comienzo más sencillo en la app
 
 *Versión v2026.11.14*
