@@ -10,6 +10,6 @@ comments: false
 ---
 
 This is the StrayCats app as it's being built. Think of these as progress photos from a building
-site: they play from the very first version to today, so you can watch it grow. (The [code is open](https://github.com/david-williston/straycats/tree/main/app), if you're curious.)
+site: the newest is at the top, and scrolling down takes you back to the very first version, so you can watch it grow. (The [code is open](https://github.com/david-williston/straycats/tree/main/app), if you're curious.)
 
 {{< app-screens >}}

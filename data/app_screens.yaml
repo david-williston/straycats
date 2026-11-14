@@ -1,15 +1,19 @@
-# Captions for the app slideshow (layouts/_shortcodes/app-screens.html), keyed by screenshot number.
-# A screenshot without an entry falls back to its filename description, so new ones need nothing here.
-"0001": {en: "The very first version", es: "La primera versión"}
-"0002": {en: "Cats get names", es: "Los gatos ya tienen nombre"}
-"0003": {en: "Who is this cat?", es: "¿Quién es este gato?"}
-"0004": {en: "Ninja's history", es: "La historia de Ninja"}
-"0005": {en: "Choosing a language", es: "Elegir el idioma"}
-"0006": {en: "Ninja's story in Spanish", es: "La historia de Ninja en español"}
-"0007": {en: "Editing an encounter", es: "Editar un encuentro"}
-"0008": {en: "The admin view", es: "La vista de administración"}
-"0009": {en: "A warmer home screen", es: "Una pantalla de inicio más cálida"}
-"0010": {en: "Notes on Ninja's card", es: "Notas en la ficha de Ninja"}
-"0011": {en: "Seen around", es: "Vistos por el barrio"}
-"0012": {en: "Sharing a cat's card", es: "Compartir la ficha de un gato"}
-"0013": {en: "A possible conflict in a cat's story", es: "Un posible conflicto en la historia de un gato"}
+# Spanish captions and alt text for the app screenshots (layouts/_partials/app-shot-caption.html),
+# keyed by screenshot number. English comes from the filename description. Add a line for each new
+# screenshot, or the Spanish page falls back to the English filename.
+"0001": {es: "La primera versión"}
+"0002": {es: "Los gatos ya tienen nombre"}
+"0003": {es: "¿Quién es este gato?"}
+"0004": {es: "La historia de Ninja"}
+"0005": {es: "Elegir el idioma"}
+"0006": {es: "La historia de Ninja en español"}
+"0007": {es: "Editar un encuentro"}
+"0008": {es: "La vista de administración"}
+"0009": {es: "Una pantalla de inicio más cálida"}
+"0010": {es: "Notas en la ficha de Ninja"}
+"0011": {es: "Vistos por el barrio"}
+"0012": {es: "Compartir la ficha de un gato"}
+"0013": {es: "Un posible conflicto en la historia de un gato"}
+"0014": {es: "Una anotación de salud"}
+"0015": {es: "La pantalla de inicio de sesión"}
+"0016": {es: "La pantalla de inicio de sesión, con el logo"}

@@ -1,0 +1,9 @@
+{{- /* Caption for an app screenshot, from its filename: NNNN-YYYY-MM-DD-<commit>-<description>.jpg
+  gives "Description" ("sign-in-logo" becomes "Sign in logo"). Other languages use their entry in
+  data/app_screens.yaml when there is one. Pass the image. Returns a string. */ -}}
+{{- $name := path.Base .Name }}
+{{- $slug := replace (replaceRE `^\d{4}-\d{4}-\d{2}-\d{2}-[^-]+-` "" (strings.TrimSuffix ".jpg" $name)) "-" " " }}
+{{- $caption := printf "%s%s" (upper (substr $slug 0 1)) (substr $slug 1) }}
+{{- $entry := index (hugo.Data.app_screens | default dict) (substr $name 0 4) | default dict }}
+{{- with index $entry site.Language.Lang }}{{ $caption = . }}{{ end }}
+{{- return $caption -}}

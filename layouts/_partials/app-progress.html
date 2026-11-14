@@ -1,4 +1,4 @@
-{{- /* "The app is being built" block: the newest screenshot from the app progress page bundle
+{{- /* "The app is being built" block: every screenshot from the app progress page bundle, newest first
   (content/app/NNNN-YYYY-MM-DD-<commit>-<description>.jpg, highest number = newest), linking to
   the progress page. Adding a screenshot to content/app/ updates it automatically.
   Text is in i18n/ (app_progress_*). Used by layouts/home.html. */ -}}
@@ -8,11 +8,8 @@
 {{- range .Resources.ByType "image" }}
   {{- if findRE `^\d{4}-\d{4}-\d{2}-\d{2}-.+\.jpg$` (path.Base .Name) }}{{ $shots = $shots | append . }}{{ end }}
 {{- end }}
-{{- with index (sort $shots "Name" "desc") 0 }}
-  {{- $name := path.Base .Name }}
-  {{- $number := strings.TrimLeft "0" (substr $name 0 4) | default "0" }}
-  {{- $date := time.AsTime (substr $name 5 10) | time.Format "2 Jan 2006" }}
-  {{- $img := .Resize "560x webp q80" }}
+{{- $latest := sort $shots "Name" "desc" }}
+{{- if $latest }}
   {{- $arrow := `<span aria-hidden="true">&nbsp;→</span>` | safeHTML }}
   <section class="app-progress" aria-labelledby="app-progress-title">
     <div class="app-progress-text">
@@ -21,10 +18,20 @@
       <p>{{ i18n "app_progress_text" }}</p>
       <a class="home-button" href="{{ $app.RelPermalink }}">{{ i18n "app_progress_button" }}{{ $arrow }}</a>
     </div>
-    <figure class="app-progress-shot">
-      <a href="{{ $app.RelPermalink }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ i18n "app_screen_alt" (dict "Number" $number "Date" $date) }}" loading="lazy"></a>
-      <figcaption>{{ i18n "app_progress_newest" (dict "Date" $date) }}</figcaption>
-    </figure>
+    {{- /* All of them, newest first, stacked in one grid cell and cross-faded by assets/js/app-rotate.js.
+      Without JS (or with reduced motion) only the first, newest one shows. */}}
+    <div class="app-progress-shot" data-rotate>
+      {{- range $i, $shot := $latest }}
+      {{- $name := path.Base $shot.Name }}
+      {{- $date := time.AsTime (substr $name 5 10) | time.Format "2 Jan 2006" }}
+      {{- $caption := partial "app-shot-caption.html" $shot }}
+      {{- $img := $shot.Resize "560x webp q80" }}
+      <figure class="app-progress-slide{{ if eq $i 0 }} is-active{{ end }}">
+        <figcaption><span class="app-progress-date">{{ $date }}</span> {{ $caption }}</figcaption>
+        <a href="{{ $app.RelPermalink }}"{{ if gt $i 0 }} tabindex="-1" aria-hidden="true"{{ end }}><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $caption }}. {{ $date }}"{{ if gt $i 0 }} loading="lazy"{{ end }}></a>
+      </figure>
+      {{- end }}
+    </div>
   </section>
 {{- end }}
 {{- end }}

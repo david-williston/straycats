@@ -10,7 +10,7 @@ comments: false
 ---
 
 Así se está construyendo la app de StrayCats. Piensa en estas imágenes como fotos de una obra:
-van desde la primera versión hasta hoy, para que veas cómo crece.
+la más reciente está arriba, y al bajar vuelves a la primera versión, para que veas cómo crece.
 (El [código es abierto](https://github.com/david-williston/straycats/tree/main/app), por si tienes curiosidad.)
 
 {{< app-screens >}}

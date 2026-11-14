@@ -9,7 +9,7 @@
 // themselves are left out of the list. Commits in no release have `release: null`.
 
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 
 const FIELD = '\x1f';
 const RECORD = '\x1e';
@@ -99,3 +99,27 @@ writeFileSync('data/git_history.json', JSON.stringify(commits, null, 2) + '\n');
 writeFileSync('data/site_version.json', JSON.stringify(siteVersion, null, 2) + '\n');
 const releases = new Set(commits.map((c) => c.release).filter(Boolean));
 console.log(`git-history: wrote ${commits.length} commits in ${releases.size} releases; site version ${siteVersion.version}`);
+
+// Commit details for the app progress page (layouts/_shortcodes/app-screens.html): each
+// screenshot in content/app/ is named NNNN-YYYY-MM-DD-<commit>-<description>.jpg, so look up
+// that commit and write data/app_commits.json keyed by the hash as it appears in the filename.
+// A hash git can't find (a shallow clone, say) is skipped and the page shows just date and caption.
+const appCommits = {};
+try {
+    for (const name of readdirSync('content/app')) {
+        const hash = name.match(/^\d{4}-\d{4}-\d{2}-\d{2}-([0-9a-f]{4,40})-.+\.jpg$/)?.[1];
+        if (!hash || appCommits[hash]) continue;
+        try {
+            const [full, date, subject, body = ''] = git(
+                'show', '-s', `--format=%H${FIELD}%aI${FIELD}%s${FIELD}%b`, `${hash}^{commit}`
+            ).split(FIELD);
+            appCommits[hash] = { hash: full, date, subject, body: body.replace(TRAILER, '').trim() };
+        } catch {
+            // Commit not in this clone.
+        }
+    }
+} catch {
+    // No content/app folder.
+}
+writeFileSync('data/app_commits.json', JSON.stringify(appCommits, null, 2) + '\n');
+console.log(`git-history: wrote ${Object.keys(appCommits).length} app commits`);

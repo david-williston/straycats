@@ -44,7 +44,7 @@
   text-align: center;
 }
 
-/* App screenshots (layouts/_shortcodes/app-screens.html): phone-shaped thumbnails, oldest first */
+/* App screenshots (layouts/_shortcodes/app-screens.html): phone-shaped thumbnails, newest first */
 .post-content .app-screens {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 220px));
@@ -67,7 +67,13 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 .app-screen figcaption {
-  margin-top: 10px;
+  margin: 0 0 12px;
   font-size: 14px;
   color: var(--secondary);
 }
+.app-screen-caption { display: grid; gap: 3px; justify-items: center; line-height: 1.35; }
+.app-screen-title { color: var(--primary); font-weight: 600; }
+.app-screen-commit { font-size: 13px; font-weight: 400; }
+.app-screen-note { font-size: 12px; opacity: 0.8; }
+.app-screen a.app-screen-link { display: inline; margin-top: 2px; font-size: 12px; }
+.app-screen-link code { font-size: 12px; background: none; padding: 0; text-decoration: underline; }
