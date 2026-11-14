@@ -160,6 +160,9 @@ class AppLocalizationsEs extends AppLocalizations {
       'Sin iniciar sesión. Tus gatos solo están en la cuenta de este teléfono.';
 
   @override
+  String get welcomeLine => 'Vamos a conocer gatos.';
+
+  @override
   String get signInWithGoogle => 'Iniciar sesión con Google';
 
   @override
@@ -224,18 +227,6 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get accountKeepSafeHint =>
       'Inicia sesión con Google para mantener a salvo tus gatos. Así también podrás cerrar sesión, por ejemplo para probar la app como otra persona.';
-
-  @override
-  String get nicknameOptional => 'Apodo (opcional)';
-
-  @override
-  String get nicknameHint => '¿Cómo te llamamos?';
-
-  @override
-  String get nicknameSaved => 'Apodo guardado';
-
-  @override
-  String get nicknameNotSaved => 'No se pudo guardar el apodo';
 
   @override
   String get people => 'Personas';

@@ -42,10 +42,7 @@ void main() {
     db = FakeFirebaseFirestore();
     otherPhotos = _RecordingCache();
     mine = FakeCatRepository();
-    await db.doc('users/u1').set({
-      'createdAt': Timestamp(1700000000, 0),
-      'nickname': 'Ana',
-    });
+    await db.doc('users/u1').set({'createdAt': Timestamp(1700000000, 0)});
     await db.doc('users/u2').set({'createdAt': Timestamp(1700000000, 0)});
     await db.doc('users/u1/cats/55').set({'name': 'Güero'});
     await db.doc('users/u1/encounters/55').set({
@@ -62,7 +59,11 @@ void main() {
       cats: mine,
       db: db,
       otherPhotos: otherPhotos,
-      auth: FakeAuthRepository(uid: 'test-uid', admin: true),
+      auth: FakeAuthRepository(
+        uid: 'test-uid',
+        email: 'admin@example.com',
+        admin: true,
+      ),
     );
     await tester.tap(find.byIcon(Icons.account_circle_outlined));
     await tester.pumpAndSettle();
@@ -70,10 +71,10 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('lists people by nickname or uid', (tester) async {
+  testWidgets('lists people by uid', (tester) async {
     await openPeople(tester);
 
-    expect(find.text('Ana'), findsOneWidget);
+    expect(find.text('u1'), findsOneWidget);
     expect(find.text('u2'), findsOneWidget);
     expect(find.textContaining('Joined'), findsNWidgets(2));
   });
@@ -82,7 +83,7 @@ void main() {
     tester,
   ) async {
     await openPeople(tester);
-    await tester.tap(find.text('Ana'));
+    await tester.tap(find.text('u1'));
     await tester.pumpAndSettle();
 
     expect(

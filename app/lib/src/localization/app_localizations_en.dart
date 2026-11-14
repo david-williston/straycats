@@ -160,6 +160,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Not signed in. Your cats are only on this phone\'s account.';
 
   @override
+  String get welcomeLine => 'Let\'s go meet some cats.';
+
+  @override
   String get signInWithGoogle => 'Sign in with Google';
 
   @override
@@ -223,18 +226,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get accountKeepSafeHint =>
       'Sign in with Google to keep your cats safe. Then you can also sign out, for example to try the app as someone else.';
-
-  @override
-  String get nicknameOptional => 'Nickname (optional)';
-
-  @override
-  String get nicknameHint => 'What should we call you?';
-
-  @override
-  String get nicknameSaved => 'Nickname saved';
-
-  @override
-  String get nicknameNotSaved => 'Could not save the nickname';
 
   @override
   String get people => 'People';

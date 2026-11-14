@@ -7,7 +7,6 @@ import '../../admin/data/other_photo_cache.dart';
 import '../../cats/application/photo_uploader.dart';
 import '../../cats/data/cat_repository.dart';
 import '../../cats/presentation/cats_controller.dart';
-import '../../profile/data/profile_repository.dart';
 import '../../startup/application/app_startup.dart';
 import '../data/auth_repository.dart';
 import 'account_providers.dart';
@@ -49,7 +48,6 @@ class SignOutService {
     _ref
       ..invalidate(isAdminProvider)
       ..invalidate(accountProvider)
-      ..invalidate(myNicknameProvider)
       ..invalidate(catsControllerProvider)
       ..invalidate(catRepositoryProvider)
       ..invalidate(appStartupProvider);

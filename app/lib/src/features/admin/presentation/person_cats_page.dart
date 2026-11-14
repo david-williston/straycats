@@ -22,11 +22,7 @@ class PersonCatsPage extends ConsumerWidget {
     final cats = ref.watch(personCatsProvider(person.uid));
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          person.nickname ?? person.uid,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
+        title: Text(person.uid, maxLines: 1, overflow: TextOverflow.ellipsis),
       ),
       body: Column(
         children: [

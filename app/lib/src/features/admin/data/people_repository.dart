@@ -31,14 +31,10 @@ class FirestorePeopleRepository implements PeopleRepository {
       for (final doc in snapshot.docs)
         Person(
           uid: doc.id,
-          nickname: _nickname(doc.data()['nickname']),
           createdAt: (doc.data()['createdAt'] as Timestamp?)?.toDate(),
         ),
     ];
   }
-
-  static String? _nickname(Object? value) =>
-      value is String && value.isNotEmpty ? value : null;
 
   @override
   Future<List<Cat>> catsOf(String uid) =>

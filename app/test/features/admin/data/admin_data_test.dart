@@ -36,10 +36,7 @@ void main() {
   group('FirestorePeopleRepository', () {
     test("lists profiles and reads one person's cats once", () async {
       final db = FakeFirebaseFirestore();
-      await db.doc('users/u1').set({
-        'createdAt': Timestamp(100, 0),
-        'nickname': 'Ana',
-      });
+      await db.doc('users/u1').set({'createdAt': Timestamp(100, 0)});
       await db.doc('users/u2').set({'createdAt': Timestamp(200, 0)});
       await db.doc('users/u1/cats/1').set({'name': 'Ninja'});
       await db.doc('users/u1/encounters/1').set({
@@ -56,9 +53,9 @@ void main() {
       final repo = FirestorePeopleRepository(db);
 
       final people = await repo.listPeople();
-      expect(people.map((p) => (p.uid, p.nickname)), [
-        ('u1', 'Ana'),
-        ('u2', null),
+      expect(people.map((p) => (p.uid, p.createdAt)), [
+        ('u1', DateTime.fromMillisecondsSinceEpoch(100000)),
+        ('u2', DateTime.fromMillisecondsSinceEpoch(200000)),
       ]);
       expect(
         people.first.createdAt,

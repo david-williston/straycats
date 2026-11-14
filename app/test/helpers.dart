@@ -61,7 +61,9 @@ List<Override> fakeOverrides({
   FakeOfferRepository? offers,
 }) {
   final firestore = db ?? FakeFirebaseFirestore();
-  final fakeAuth = auth ?? FakeAuthRepository(uid: 'test-uid');
+  // Signed in with Google by default: signed-out people cannot take photos.
+  final fakeAuth =
+      auth ?? FakeAuthRepository(uid: 'test-uid', email: 'test@example.com');
   return [
     authRepositoryProvider.overrideWithValue(fakeAuth),
     isAdminProvider.overrideWith((ref) async => fakeAuth.admin),

@@ -4,12 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../localization/app_localizations.dart';
 import '../../admin/data/is_admin.dart';
 import '../../admin/presentation/people_page.dart';
-import '../../cats/presentation/cats_controller.dart';
-import '../../profile/data/profile_repository.dart';
-import '../../startup/application/app_startup.dart';
 import '../application/account_providers.dart';
+import '../application/sign_in_service.dart';
 import '../application/sign_out_service.dart';
-import '../data/auth_repository.dart';
 import '../domain/account.dart';
 
 /// The app bar button that opens the account sheet.
@@ -21,18 +18,22 @@ class AccountButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(Icons.account_circle_outlined),
       tooltip: AppLocalizations.of(context).account,
-      onPressed: () => showModalBottomSheet<void>(
-        context: context,
-        isScrollControlled: true,
-        showDragHandle: true,
-        builder: (_) => const AccountSheet(),
-      ),
+      onPressed: () => showAccountSheet(context),
     );
   }
 }
 
-/// Who you are signed in as, Google sign-in to keep the cats safe, the
-/// optional nickname and, for an admin, the way to the People list.
+/// Opens the account sheet.
+Future<void> showAccountSheet(BuildContext context) =>
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) => const AccountSheet(),
+    );
+
+/// Who you are signed in as, Google sign-in to keep the cats safe and,
+/// for an admin, the way to the People list.
 class AccountSheet extends ConsumerStatefulWidget {
   const AccountSheet({super.key});
 
@@ -41,54 +42,24 @@ class AccountSheet extends ConsumerStatefulWidget {
 }
 
 class _AccountSheetState extends ConsumerState<AccountSheet> {
-  final _nickname = TextEditingController();
-  bool _nicknameLoaded = false;
   bool _busy = false;
 
   /// Something is actually running (not waiting on the person): shows the
   /// progress indicator.
   bool _working = false;
 
-  @override
-  void dispose() {
-    _nickname.dispose();
-    super.dispose();
-  }
-
   Future<void> _signIn() async {
-    final l10n = AppLocalizations.of(context);
-    final messenger = ScaffoldMessenger.of(context);
-    final hadCats =
-        (ref.read(catsControllerProvider).value ?? const []).isNotEmpty;
-    // Kept now: the sheet's ref stops working once the sheet is gone.
-    final container = ProviderScope.containerOf(context);
     setState(() => _busy = _working = true);
-    try {
-      final result = await ref.read(authRepositoryProvider).signInWithGoogle();
-      if (!mounted) return;
-      switch (result) {
-        case GoogleSignInResult.cancelled:
-          setState(() => _busy = _working = false);
-          return;
-        case GoogleSignInResult.linked:
-          container.invalidate(isAdminProvider);
-          messenger.showSnackBar(SnackBar(content: Text(l10n.googleLinked)));
-          setState(() => _busy = _working = false);
-        case GoogleSignInResult.switchedAccount:
-          messenger.showSnackBar(
-            SnackBar(
-              content: Text(
-                hadCats ? l10n.googleSwitchedKeptOld : l10n.googleSwitched,
-              ),
-            ),
-          );
-          Navigator.of(context).pop();
-          // A new uid: start again so every screen reads the new account.
-          container.invalidate(appStartupProvider);
-      }
-    } catch (_) {
-      if (!mounted) return;
-      messenger.showSnackBar(SnackBar(content: Text(l10n.signInFailed)));
+    final result = await ref
+        .read(signInServiceProvider)
+        .signInWithGoogle(
+          l10n: AppLocalizations.of(context),
+          messenger: ScaffoldMessenger.of(context),
+          mounted: () => mounted,
+          onSwitched: () => Navigator.of(context).pop(),
+        );
+    // After switching, the sheet closes itself and stays busy until then.
+    if (mounted && result != GoogleSignInResult.switchedAccount) {
       setState(() => _busy = _working = false);
     }
   }
@@ -135,34 +106,12 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
     }
   }
 
-  Future<void> _saveNickname() async {
-    final l10n = AppLocalizations.of(context);
-    final messenger = ScaffoldMessenger.of(context);
-    final uid = ref.read(uidProvider);
-    try {
-      // Not awaited past the local write: offline it waits for the server.
-      final write = ref
-          .read(profileRepositoryProvider)
-          .setNickname(uid, _nickname.text);
-      FocusScope.of(context).unfocus();
-      messenger.showSnackBar(SnackBar(content: Text(l10n.nicknameSaved)));
-      await write;
-    } catch (_) {
-      messenger.showSnackBar(SnackBar(content: Text(l10n.nicknameNotSaved)));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final account = ref.watch(accountProvider).value;
     final isAdmin = ref.watch(isAdminProvider).value ?? false;
-    final nickname = ref.watch(myNicknameProvider);
-    if (!_nicknameLoaded && nickname.hasValue) {
-      _nicknameLoaded = true;
-      _nickname.text = nickname.value ?? '';
-    }
     final signedIn = account != null && !account.isAnonymous;
     final who = account?.displayName?.isNotEmpty == true
         ? account!.displayName!
@@ -218,22 +167,6 @@ class _AccountSheetState extends ConsumerState<AccountSheet> {
               ),
             ],
             const SizedBox(height: 16),
-            TextField(
-              controller: _nickname,
-              maxLength: maxNicknameLength,
-              textCapitalization: TextCapitalization.words,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(
-                labelText: l10n.nicknameOptional,
-                hintText: l10n.nicknameHint,
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.check),
-                  tooltip: l10n.save,
-                  onPressed: _saveNickname,
-                ),
-              ),
-              onSubmitted: (_) => _saveNickname(),
-            ),
             if (isAdmin)
               ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 4),

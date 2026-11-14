@@ -392,6 +392,12 @@ abstract class AppLocalizations {
   /// **'Not signed in. Your cats are only on this phone\'s account.'**
   String get accountNotSignedIn;
 
+  /// Warm line under the app name on the sign-in screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Let\'s go meet some cats.'**
+  String get welcomeLine;
+
   /// Button in the account sheet that signs in with a Google account to keep the cats safe.
   ///
   /// In en, this message translates to:
@@ -487,30 +493,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sign in with Google to keep your cats safe. Then you can also sign out, for example to try the app as someone else.'**
   String get accountKeepSafeHint;
-
-  /// Label of the nickname field in the account sheet.
-  ///
-  /// In en, this message translates to:
-  /// **'Nickname (optional)'**
-  String get nicknameOptional;
-
-  /// Hint inside the nickname field.
-  ///
-  /// In en, this message translates to:
-  /// **'What should we call you?'**
-  String get nicknameHint;
-
-  /// Message after the nickname was saved.
-  ///
-  /// In en, this message translates to:
-  /// **'Nickname saved'**
-  String get nicknameSaved;
-
-  /// Message when saving the nickname fails.
-  ///
-  /// In en, this message translates to:
-  /// **'Could not save the nickname'**
-  String get nicknameNotSaved;
 
   /// Admin only: entry in the account sheet and title of the list of people.
   ///

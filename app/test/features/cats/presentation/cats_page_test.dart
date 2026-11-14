@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:straycats/src/features/auth/data/fake_auth_repository.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
@@ -31,6 +32,25 @@ void main() {
       find.text('No cats yet. Tap the camera to meet one.'),
       findsOneWidget,
     );
+  });
+
+  testWidgets('signed out: just the welcome screen, no camera', (tester) async {
+    final auth = FakeAuthRepository(uid: 'test-uid');
+    await pumpApp(tester, cats: FakeCatRepository(), auth: auth);
+    await tester.pump();
+
+    expect(find.byIcon(Icons.photo_camera), findsNothing);
+    expect(find.byType(FloatingActionButton), findsNothing);
+    expect(find.byIcon(Icons.account_circle_outlined), findsNothing);
+    expect(find.text('StrayCats'), findsOneWidget);
+    expect(find.text("Let's go meet some cats."), findsOneWidget);
+    expect(find.text('Sign in with Google'), findsOneWidget);
+
+    // The button signs in directly, without the account sheet.
+    await tester.tap(find.text('Sign in with Google'));
+    await tester.pumpAndSettle();
+    expect(auth.googleSignIns, 1);
+    expect(find.byType(BottomSheet), findsNothing);
   });
 
   testWidgets('says so when the cats cannot be loaded', (tester) async {

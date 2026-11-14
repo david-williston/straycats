@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:straycats/src/features/auth/application/account_providers.dart';
+import 'package:straycats/src/features/auth/data/fake_auth_repository.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_photo_repository.dart';
@@ -188,6 +190,8 @@ void main() {
     test('takes a photo from the camera', () async {
       final photos = FakePhotoRepository(nextPhoto: File('/cats/9000.jpg'));
       final container = makeContainer(photos: photos);
+      container.listen(signedInProvider, (_, _) {});
+      await container.read(accountProvider.future);
 
       final photo = await container
           .read(meetCatControllerProvider.notifier)
@@ -196,8 +200,29 @@ void main() {
       expect(photo!.path, '/cats/9000.jpg');
     });
 
+    test(
+      'signed out, there is no photo and the camera is not opened',
+      () async {
+        final photos = FakePhotoRepository(nextPhoto: File('/cats/9000.jpg'));
+        final container = makeContainer(
+          photos: photos,
+          auth: FakeAuthRepository(uid: 'test-uid'),
+        );
+        container.listen(signedInProvider, (_, _) {});
+        await container.read(accountProvider.future);
+
+        final photo = await container
+            .read(meetCatControllerProvider.notifier)
+            .takePhoto();
+
+        expect(photo, isNull);
+      },
+    );
+
     test('a cancelled camera gives null', () async {
       final container = makeContainer(photos: FakePhotoRepository());
+      container.listen(signedInProvider, (_, _) {});
+      await container.read(accountProvider.future);
 
       expect(
         await container.read(meetCatControllerProvider.notifier).takePhoto(),

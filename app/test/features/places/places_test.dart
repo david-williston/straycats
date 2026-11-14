@@ -9,6 +9,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geocoding/geocoding.dart';
+import 'package:straycats/src/features/auth/application/account_providers.dart';
 import 'package:straycats/src/features/cats/data/cats_folder.dart';
 import 'package:straycats/src/features/cats/data/device_photo_repository.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
@@ -283,6 +284,8 @@ void main() {
       );
       addTearDown(real.dispose);
       real.listen(catsControllerProvider, (_, _) {});
+      real.listen(signedInProvider, (_, _) {});
+      await real.read(accountProvider.future);
       await real.read(catsControllerProvider.future);
 
       final photo = (await real

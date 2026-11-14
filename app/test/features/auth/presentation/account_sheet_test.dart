@@ -1,9 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:straycats/src/features/admin/presentation/people_page.dart';
 import 'package:straycats/src/features/auth/data/fake_auth_repository.dart';
+import 'package:straycats/src/features/auth/presentation/account_sheet.dart';
 import 'package:straycats/src/features/auth/domain/account.dart';
 import 'package:straycats/src/features/cats/application/fake_photo_uploader.dart';
 import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
@@ -11,9 +12,14 @@ import 'package:straycats/src/features/cats/data/fake_cat_repository.dart';
 import '../../../helpers.dart';
 
 Future<void> openSheet(WidgetTester tester) async {
-  await tester.tap(find.byIcon(Icons.account_circle_outlined));
+  // Signed out there is no account button, so open the sheet directly.
+  unawaited(showAccountSheet(tester.element(find.byType(Scaffold).first)));
   await tester.pumpAndSettle();
 }
+
+/// Text inside the sheet (the welcome screen behind it has the same button).
+Finder inSheet(String text) =>
+    find.descendant(of: find.byType(AccountSheet), matching: find.text(text));
 
 void main() {
   testWidgets('not signed in: says so and offers Google', (tester) async {
@@ -25,7 +31,7 @@ void main() {
       find.text("Not signed in. Your cats are only on this phone's account."),
       findsOneWidget,
     );
-    await tester.tap(find.text('Sign in with Google'));
+    await tester.tap(inSheet('Sign in with Google'));
     await tester.pumpAndSettle();
 
     expect(auth.googleSignIns, 1);
@@ -36,7 +42,11 @@ void main() {
   });
 
   testWidgets('not linked to Google: no sign out, and why', (tester) async {
-    await pumpApp(tester, cats: FakeCatRepository());
+    await pumpApp(
+      tester,
+      cats: FakeCatRepository(),
+      auth: FakeAuthRepository(uid: 'test-uid'),
+    );
     await openSheet(tester);
 
     expect(find.text('Sign out'), findsNothing);
@@ -138,7 +148,7 @@ void main() {
     await pumpApp(tester, cats: FakeCatRepository(), auth: auth);
     await openSheet(tester);
 
-    await tester.tap(find.text('Sign in with Google'));
+    await tester.tap(inSheet('Sign in with Google'));
     await tester.pumpAndSettle();
 
     expect(
@@ -161,7 +171,7 @@ void main() {
     );
     await openSheet(tester);
 
-    await tester.tap(find.text('Sign in with Google'));
+    await tester.tap(inSheet('Sign in with Google'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 500));
 
@@ -175,30 +185,11 @@ void main() {
     );
   });
 
-  testWidgets('saves the nickname on the profile', (tester) async {
-    final db = FakeFirebaseFirestore();
-    await db.doc('users/test-uid').set({'createdAt': Timestamp(1, 0)});
-    await pumpApp(tester, cats: FakeCatRepository(), db: db);
+  testWidgets('has no nickname field', (tester) async {
+    await pumpApp(tester, cats: FakeCatRepository());
     await openSheet(tester);
 
-    await tester.enterText(find.byType(TextField), '  Dave ');
-    await tester.tap(find.byTooltip('Save'));
-    await tester.pumpAndSettle();
-
-    expect((await db.doc('users/test-uid').get()).data()?['nickname'], 'Dave');
-    expect(find.text('Nickname saved'), findsOneWidget);
-  });
-
-  testWidgets('shows the saved nickname', (tester) async {
-    final db = FakeFirebaseFirestore();
-    await db.doc('users/test-uid').set({
-      'createdAt': Timestamp(1, 0),
-      'nickname': 'Dave',
-    });
-    await pumpApp(tester, cats: FakeCatRepository(), db: db);
-    await openSheet(tester);
-
-    expect(find.widgetWithText(TextField, 'Dave'), findsOneWidget);
+    expect(find.byType(TextField), findsNothing);
   });
 
   testWidgets('People is only for an admin', (tester) async {
@@ -225,8 +216,10 @@ void main() {
     await pumpApp(
       tester,
       cats: FakeCatRepository(),
+      auth: FakeAuthRepository(uid: 'test-uid'),
       locale: const Locale('es'),
     );
+    expect(find.text('Vamos a conocer gatos.'), findsOneWidget);
     await openSheet(tester);
 
     expect(
@@ -236,7 +229,6 @@ void main() {
       ),
       findsOneWidget,
     );
-    expect(find.text('Iniciar sesión con Google'), findsOneWidget);
-    expect(find.text('Apodo (opcional)'), findsOneWidget);
+    expect(inSheet('Iniciar sesión con Google'), findsOneWidget);
   });
 }

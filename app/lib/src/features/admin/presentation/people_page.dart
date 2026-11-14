@@ -8,7 +8,7 @@ import '../data/other_photo_cache.dart';
 import '../data/people_repository.dart';
 import 'person_cats_page.dart';
 
-/// Admin only: everyone with a profile, by nickname or uid. Read only. The
+/// Admin only: everyone with a profile, by uid. Read only. The
 /// photos of other people that were cached while looking are deleted on the
 /// way out.
 class PeoplePage extends ConsumerStatefulWidget {
@@ -57,7 +57,7 @@ class _PeoplePageState extends ConsumerState<PeoplePage> {
                       child: ListTile(
                         leading: const Icon(Icons.person_outline),
                         title: Text(
-                          person.nickname ?? person.uid,
+                          person.uid,
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                         ),

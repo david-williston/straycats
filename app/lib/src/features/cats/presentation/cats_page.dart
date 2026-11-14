@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../common_widgets/empty_state.dart';
 import '../../../localization/app_localizations.dart';
+import '../../auth/application/account_providers.dart';
 import '../../auth/presentation/account_sheet.dart';
+import '../../auth/presentation/sign_in_screen.dart';
 import '../../places/data/place_service.dart';
 import '../../settings/presentation/language_picker.dart';
 import '../application/matching_service.dart';
@@ -57,6 +59,8 @@ class CatsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Signed out: just the way in, no cats and no camera.
+    if (!ref.watch(signedInProvider)) return const SignInScreen();
     final l10n = AppLocalizations.of(context);
     final catsState = ref.watch(catsControllerProvider);
     final cats = catsState.value == null ? null : byLastSeen(catsState.value!);

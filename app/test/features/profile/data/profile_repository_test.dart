@@ -31,32 +31,6 @@ void main() {
     expect((await profile())!['createdAt'], Timestamp(5, 0));
   });
 
-  test('sets, trims, changes and removes the nickname', () async {
-    await repo.ensureProfile('u1');
-
-    await repo.setNickname('u1', '  Dave ');
-    expect((await profile())!['nickname'], 'Dave');
-    expect(await repo.nickname('u1'), 'Dave');
-
-    await repo.setNickname('u1', 'Davo');
-    expect(await repo.nickname('u1'), 'Davo');
-
-    await repo.setNickname('u1', '   ');
-    expect((await profile())!.containsKey('nickname'), isFalse);
-    expect(await repo.nickname('u1'), isNull);
-    expect((await profile())!.containsKey('createdAt'), isTrue);
-  });
-
-  test('a nickname over 40 characters is refused', () async {
-    await repo.ensureProfile('u1');
-
-    expect(
-      () => repo.setNickname('u1', 'x' * 41),
-      throwsA(isA<ArgumentError>()),
-    );
-    await repo.setNickname('u1', 'x' * 40);
-  });
-
   test('a failure creating the profile does not escape at startup', () async {
     await ensureProfileQuietly(_FailingProfiles(), 'u1');
   });
@@ -65,11 +39,4 @@ void main() {
 class _FailingProfiles implements ProfileRepository {
   @override
   Future<void> ensureProfile(String uid) => throw StateError('offline');
-
-  @override
-  Future<String?> nickname(String uid) => throw UnimplementedError();
-
-  @override
-  Future<void> setNickname(String uid, String nickname) =>
-      throw UnimplementedError();
 }
