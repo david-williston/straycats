@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 14, 2026: A simpler start in the app
+
+*Version v2026.11.14*
+
+- **In the app:** people who aren't signed in now see one simple screen with the StrayCats logo
+  and a button to sign in with Google. Taking photos needs you to be signed in.
+- **In the app:** nicknames are gone for now. We'll bring them back when we know exactly what
+  they're for.
+- **Updated:** [The App, Under Construction](/app/) has two new progress photos of the sign-in
+  screen.
+
 ## November 13, 2026 (last one today): Just the slideshow
 
 *Version v2026.11.13.6*

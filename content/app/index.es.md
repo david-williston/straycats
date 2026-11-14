@@ -1,7 +1,7 @@
 ---
 title: "La app, en construcción"
 date: 2026-11-07
-updated: 2026-11-13
+updated: 2026-11-14
 summary: "Fotos del avance de la app de StrayCats mientras se construye, de la más reciente a la más antigua."
 ShowToc: false
 ShowReadingTime: false

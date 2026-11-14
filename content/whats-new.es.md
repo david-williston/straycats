@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 14 de noviembre de 2026: Un comienzo más sencillo en la app
+
+*Versión v2026.11.14*
+
+- **En la app:** quien no ha iniciado sesión ahora ve una sola pantalla sencilla con el logo de
+  StrayCats y un botón para iniciar sesión con Google. Para tomar fotos hay que iniciar sesión.
+- **En la app:** los apodos desaparecen por ahora. Volverán cuando sepamos exactamente para qué
+  sirven.
+- **Actualizado:** [La app, en construcción](/es/app/) tiene dos fotos nuevas del avance: la
+  pantalla de inicio de sesión.
+
 ## 13 de noviembre de 2026 (la última de hoy): Solo la presentación
 
 *Versión v2026.11.13.6*
