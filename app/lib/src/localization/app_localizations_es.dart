@@ -546,4 +546,135 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get lifeRememberedConflictOnly =>
       'Hay dos fechas registradas de su fallecimiento';
+
+  @override
+  String get catLooksTitle => 'Sobre este gato';
+
+  @override
+  String get catSexLabel => 'Sexo';
+
+  @override
+  String get catSexMale => 'Macho';
+
+  @override
+  String get catSexFemale => 'Hembra';
+
+  @override
+  String get catNotSure => 'No lo sé';
+
+  @override
+  String get catHairLabel => 'Pelo';
+
+  @override
+  String get catHairShort => 'Corto';
+
+  @override
+  String get catHairLong => 'Largo';
+
+  @override
+  String get catColourLabel => 'Color';
+
+  @override
+  String get catColourBlack => 'Negro';
+
+  @override
+  String get catColourWhite => 'Blanco';
+
+  @override
+  String get catColourGrey => 'Gris';
+
+  @override
+  String get catColourOrange => 'Naranja';
+
+  @override
+  String get catColourTabby => 'Atigrado';
+
+  @override
+  String get catColourCalicoTortie => 'Tricolor / carey';
+
+  @override
+  String get catColourMixed => 'Mezclado';
+
+  @override
+  String get catHairShortLine => 'Pelo corto';
+
+  @override
+  String get catHairLongLine => 'Pelo largo';
+
+  @override
+  String lifeNeutered(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Castrado el $date',
+      'month': 'Castrado en $date',
+      'year': 'Castrado en $date',
+      'around': 'Castrado alrededor de $date',
+      'other': 'Castrado el $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String lifeSpayed(String kind, String date) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': 'Esterilizada el $date',
+      'month': 'Esterilizada en $date',
+      'year': 'Esterilizada en $date',
+      'around': 'Esterilizada alrededor de $date',
+      'other': 'Esterilizada el $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get storyAddNeutered => 'Castrado';
+
+  @override
+  String get storyAddSpayed => 'Esterilizada';
+
+  @override
+  String get storyAddHealth => 'Salud';
+
+  @override
+  String get storyHealthKindLabel => '¿De qué se trató?';
+
+  @override
+  String get healthVaccination => 'Vacunación';
+
+  @override
+  String get healthDental => 'Dental';
+
+  @override
+  String get healthCheckup => 'Revisión';
+
+  @override
+  String get healthTests => 'Análisis';
+
+  @override
+  String get healthSurgery => 'Cirugía';
+
+  @override
+  String get healthOther => 'Otro';
+
+  @override
+  String get healthGeneral => 'Salud';
+
+  @override
+  String lifeHealth(String kind, String date, String health) {
+    String _temp0 = intl.Intl.selectLogic(kind, {
+      'day': '$health el $date',
+      'month': '$health en $date',
+      'year': '$health en $date',
+      'around': '$health alrededor de $date',
+      'other': '$health el $date',
+    });
+    return '$_temp0';
+  }
+
+  @override
+  String get storyHealthHelp =>
+      '¿Qué se hizo y cuándo? Basta con el año si no estás seguro.';
+
+  @override
+  String get storyHealthNoteHint =>
+      'Veterinario, medicina, cualquier cosa que valga la pena recordar';
 }

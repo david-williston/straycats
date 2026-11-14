@@ -10,7 +10,8 @@ enum LifeEventType {
   missing,
   found,
   sterilised,
-  died;
+  died,
+  health;
 
   /// Happens once in a cat's life. More than one is shown, not refused.
   bool get onceOnly => this == born || this == sterilised || this == died;
@@ -26,6 +27,23 @@ enum LifeEventType {
   static const maxNoteLength = 1000;
 }
 
+/// What a [LifeEventType.health] entry is about.
+enum HealthKind {
+  vaccination,
+  dental,
+  checkup,
+  tests,
+  surgery,
+  other;
+
+  static HealthKind? fromStored(String? value) {
+    for (final k in values) {
+      if (k.name == value) return k;
+    }
+    return null;
+  }
+}
+
 /// One dated entry in a cat's story, written by one person. It says nothing
 /// about the cat's state by itself: that is derived from all entries by
 /// `lifeOf`.
@@ -37,6 +55,7 @@ class LifeEvent {
     required this.on,
     this.note = '',
     this.place,
+    this.kind,
     this.createdAt,
   });
 
@@ -50,18 +69,23 @@ class LifeEvent {
   /// place. Never exact.
   final Place? place;
 
+  /// Only for [LifeEventType.health]: what it was about.
+  final HealthKind? kind;
+
   /// Server time; null until the server has answered. Breaks ties between
   /// entries on the same date.
   final DateTime? createdAt;
 
-  LifeEvent copyWith({PartialDate? on, String? note}) => LifeEvent(
-    id: id,
-    type: type,
-    on: on ?? this.on,
-    note: note ?? this.note,
-    place: place,
-    createdAt: createdAt,
-  );
+  LifeEvent copyWith({PartialDate? on, String? note, HealthKind? kind}) =>
+      LifeEvent(
+        id: id,
+        type: type,
+        on: on ?? this.on,
+        note: note ?? this.note,
+        place: place,
+        kind: kind ?? this.kind,
+        createdAt: createdAt,
+      );
 
   @override
   bool operator ==(Object other) =>
@@ -71,8 +95,9 @@ class LifeEvent {
       other.on == on &&
       other.note == note &&
       other.place == place &&
+      other.kind == kind &&
       other.createdAt == createdAt;
 
   @override
-  int get hashCode => Object.hash(id, type, on, note, place, createdAt);
+  int get hashCode => Object.hash(id, type, on, note, place, kind, createdAt);
 }

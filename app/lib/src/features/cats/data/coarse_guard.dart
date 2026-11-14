@@ -36,6 +36,7 @@ const _eventKeys = {
   'note',
   'area',
   'neighbourhood',
+  'kind',
   'createdAt',
   'updatedAt',
 };

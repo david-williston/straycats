@@ -3,6 +3,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../data/firebase_providers.dart';
 import '../../startup/application/app_startup.dart';
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/encounter.dart';
 import '../domain/life_event.dart';
 import 'firestore_cat_repository.dart';
@@ -31,6 +32,15 @@ abstract class CatRepository {
   Future<void> deleteEncounter(String encounterId);
 
   Future<void> renameCat(String catId, String name);
+
+  /// Saves the looks of [catId]; a null one is cleared (not sure). The name
+  /// and everything else stays.
+  Future<void> setCatLooks(
+    String catId, {
+    CatSex? sex,
+    CatHair? hair,
+    CatColour? colour,
+  });
 
   /// Adds an entry to the story of [catId].
   Future<void> addEvent(String catId, LifeEvent event);

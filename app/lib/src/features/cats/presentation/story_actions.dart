@@ -5,18 +5,21 @@ import 'package:intl/intl.dart';
 import '../../../localization/app_localizations.dart';
 import '../../../localization/life_labels.dart';
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/life_event.dart';
 import '../domain/partial_date.dart';
 import 'cats_controller.dart';
 
-/// What the person chose in the date dialog: [on] and [note], and the entry
-/// it [replaces] (null when a new entry is being added).
+/// What the person chose in the date dialog: [on] and [note], the [kind] of
+/// a health entry, and the entry it [replaces] (null when a new entry is
+/// being added).
 class LifeEventInput {
-  const LifeEventInput(this.on, this.note, this.replaces);
+  const LifeEventInput(this.on, this.note, this.replaces, {this.kind});
 
   final PartialDate on;
   final String note;
   final LifeEvent? replaces;
+  final HealthKind? kind;
 }
 
 const _typesInOrder = [
@@ -25,9 +28,10 @@ const _typesInOrder = [
   LifeEventType.born,
   LifeEventType.sterilised,
   LifeEventType.died,
+  LifeEventType.health,
 ];
 
-/// "Add to story": the five choices, then the date dialog. A once-only type
+/// "Add to story": the six choices, then the date dialog. A once-only type
 /// that is already in the story says so, and its dialog opens on changing
 /// that entry's date, with "Add another anyway" to add a second. Nothing is
 /// ever refused.
@@ -54,12 +58,17 @@ Future<void> addToStory(
                     final existing = t.onceOnly ? cat.life.latestOf(t) : null;
                     return ListTile(
                       leading: Icon(lifeTypeIcon(t)),
-                      title: Text(lifeTypeName(l10n, t)),
+                      title: Text(lifeTypeName(l10n, t, sex: cat.sex)),
                       subtitle: existing == null
                           ? null
                           : Text(
                               l10n.storyAlreadyIn(
-                                lifeEventLabel(l10n, existing, locale),
+                                lifeEventLabel(
+                                  l10n,
+                                  existing,
+                                  locale,
+                                  sex: cat.sex,
+                                ),
                               ),
                             ),
                       onTap: () => Navigator.of(context).pop(t),
@@ -76,6 +85,7 @@ Future<void> addToStory(
     context: context,
     builder: (context) => LifeEventDialog(
       type: chosen,
+      sex: cat.sex,
       existing: existing,
       offerAnother: existing != null,
     ),
@@ -87,7 +97,13 @@ Future<void> addToStory(
     controller.updateEvent(cat.id, replaces, input.on, note: input.note);
     return;
   }
-  controller.addEvent(cat.id, chosen, input.on, note: input.note);
+  controller.addEvent(
+    cat.id,
+    chosen,
+    input.on,
+    note: input.note,
+    kind: input.kind,
+  );
   if (chosen == LifeEventType.found && context.mounted) {
     await showDialog<void>(
       context: context,
@@ -130,10 +146,17 @@ Future<void> editStoryEntry(
   if (action) {
     final input = await showDialog<LifeEventInput>(
       context: context,
-      builder: (context) => LifeEventDialog(type: event.type, existing: event),
+      builder: (context) =>
+          LifeEventDialog(type: event.type, sex: cat.sex, existing: event),
     );
     if (input == null) return;
-    controller.updateEvent(cat.id, event, input.on, note: input.note);
+    controller.updateEvent(
+      cat.id,
+      event,
+      input.on,
+      note: input.note,
+      kind: input.kind,
+    );
     return;
   }
   final sure = await showDialog<bool>(
@@ -166,11 +189,15 @@ class LifeEventDialog extends StatefulWidget {
   const LifeEventDialog({
     super.key,
     required this.type,
+    this.sex,
     this.existing,
     this.offerAnother = false,
   });
 
   final LifeEventType type;
+
+  /// The cat's sex, for the title of a sterilisation.
+  final CatSex? sex;
   final LifeEvent? existing;
   final bool offerAnother;
 
@@ -184,6 +211,7 @@ class _LifeEventDialogState extends State<LifeEventDialog> {
   late final _note = TextEditingController(text: widget.existing?.note ?? '');
   late DatePrecision _precision;
   late bool _around;
+  late HealthKind? _kind = widget.existing?.kind;
   int? _year;
   late int _month;
   late int _day;
@@ -280,19 +308,21 @@ class _LifeEventDialogState extends State<LifeEventDialog> {
     final locale = Localizations.localeOf(context).toString();
     final type = widget.type;
     final editing = _editing;
-    final title = editing != null
+    final title = editing != null && type != LifeEventType.health
         ? l10n.storyChangeDate
-        : lifeTypeName(l10n, type);
+        : lifeTypeName(l10n, type, sex: widget.sex);
     final help = switch (type) {
       LifeEventType.missing => l10n.storyMissingHelp,
       LifeEventType.found => l10n.storyFoundHelp,
       LifeEventType.born => l10n.storyBornHelp,
       LifeEventType.sterilised => l10n.storySterilisedHelp,
       LifeEventType.died => l10n.storyDiedHelp,
+      LifeEventType.health => l10n.storyHealthHelp,
     };
     final hint = switch (type) {
       LifeEventType.missing => l10n.storyMissingNoteHint,
       LifeEventType.died => l10n.storyNoteHintDied,
+      LifeEventType.health => l10n.storyHealthNoteHint,
       _ => null,
     };
     final years = [for (var y = _now.year; y >= PartialDate.minYear; y--) y];
@@ -310,6 +340,25 @@ class _LifeEventDialogState extends State<LifeEventDialog> {
           children: [
             Text(help),
             const SizedBox(height: 16),
+            if (type == LifeEventType.health) ...[
+              Text(
+                l10n.storyHealthKindLabel,
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                children: [
+                  for (final k in HealthKind.values)
+                    ChoiceChip(
+                      label: Text(healthKindName(l10n, k)),
+                      selected: _kind == k,
+                      onSelected: (_) => setState(() => _kind = k),
+                    ),
+                ],
+              ),
+              const SizedBox(height: 16),
+            ],
             SegmentedButton<DatePrecision>(
               showSelectedIcon: false,
               segments: [
@@ -419,11 +468,17 @@ class _LifeEventDialogState extends State<LifeEventDialog> {
           child: Text(l10n.cancel),
         ),
         FilledButton(
-          onPressed: _date == null
+          onPressed:
+              _date == null || (type == LifeEventType.health && _kind == null)
               ? null
-              : () =>
-                    Navigator.of(context)
-                        .pop(LifeEventInput(_date!, _note.text, editing)),
+              : () => Navigator.of(context).pop(
+                  LifeEventInput(
+                    _date!,
+                    _note.text,
+                    editing,
+                    kind: type == LifeEventType.health ? _kind : null,
+                  ),
+                ),
           child: Text(l10n.save),
         ),
       ],

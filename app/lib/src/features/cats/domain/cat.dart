@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import 'cat_traits.dart';
 import 'encounter.dart';
 import 'life.dart';
 import 'life_event.dart';
@@ -14,12 +15,20 @@ class Cat {
     this.name = '',
     this.encounters = const [],
     this.events = const [],
+    this.sex,
+    this.hair,
+    this.colour,
   });
 
   final String id;
   final String name;
   final List<Encounter> encounters;
   final List<LifeEvent> events;
+
+  /// Optional looks; null means not sure.
+  final CatSex? sex;
+  final CatHair? hair;
+  final CatColour? colour;
 
   Cat copyWith({
     String? name,
@@ -30,6 +39,20 @@ class Cat {
     name: name ?? this.name,
     encounters: encounters ?? this.encounters,
     events: events ?? this.events,
+    sex: sex,
+    hair: hair,
+    colour: colour,
+  );
+
+  /// The same cat with these looks (null clears one).
+  Cat withLooks({CatSex? sex, CatHair? hair, CatColour? colour}) => Cat(
+    id: id,
+    name: name,
+    encounters: encounters,
+    events: events,
+    sex: sex,
+    hair: hair,
+    colour: colour,
   );
 
   /// What the app shows for this cat, derived from its entries and
@@ -57,12 +80,18 @@ class Cat {
       for (final e in json['encounters'] as List<dynamic>)
         Encounter.fromJson(e as Map<String, dynamic>),
     ],
+    sex: CatSex.fromStored(json['sex']),
+    hair: CatHair.fromStored(json['hair']),
+    colour: CatColour.fromStored(json['colour']),
   );
 
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,
     'encounters': [for (final e in encounters) e.toJson()],
+    if (sex != null) 'sex': sex!.stored,
+    if (hair != null) 'hair': hair!.stored,
+    if (colour != null) 'colour': colour!.stored,
   };
 
   @override
@@ -70,12 +99,22 @@ class Cat {
       other is Cat &&
       other.id == id &&
       other.name == name &&
+      other.sex == sex &&
+      other.hair == hair &&
+      other.colour == colour &&
       listEquals(other.events, events) &&
       listEquals(other.encounters, encounters);
 
   @override
-  int get hashCode =>
-      Object.hash(id, name, Object.hashAll(events), Object.hashAll(encounters));
+  int get hashCode => Object.hash(
+    id,
+    name,
+    sex,
+    hair,
+    colour,
+    Object.hashAll(events),
+    Object.hashAll(encounters),
+  );
 }
 
 /// Cats for the grid: missing ones first, remembered ones last, and in each

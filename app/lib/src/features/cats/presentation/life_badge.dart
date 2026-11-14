@@ -65,7 +65,7 @@ class LifeBadge extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
     final locale = Localizations.localeOf(context).toString();
-    final sentence = lifeEventLabel(l10n, event, locale);
+    final sentence = lifeEventLabel(l10n, event, locale, sex: cat.sex);
     final (
       String label,
       IconData icon,

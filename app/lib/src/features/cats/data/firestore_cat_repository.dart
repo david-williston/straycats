@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart' show visibleForTesting;
 import '../../places/domain/coarse_area.dart';
 import '../../places/domain/place.dart';
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/encounter.dart';
 import '../domain/encounter_details.dart';
 import '../domain/life_event.dart';
@@ -73,6 +74,7 @@ class FirestoreCatRepository implements CatRepository {
               on: on,
               note: data['note'] as String? ?? '',
               place: _placeFrom(data),
+              kind: HealthKind.fromStored(data['kind'] as String?),
               createdAt: (data['createdAt'] as Timestamp?)?.toDate(),
             ),
           );
@@ -109,6 +111,9 @@ class FirestoreCatRepository implements CatRepository {
           name: doc.data()['name'] as String? ?? '',
           encounters: byCat[doc.id] ?? const [],
           events: eventsByCat[doc.id] ?? const [],
+          sex: CatSex.fromStored(doc.data()['sex']),
+          hair: CatHair.fromStored(doc.data()['hair']),
+          colour: CatColour.fromStored(doc.data()['colour']),
         ),
     ];
   }
@@ -181,6 +186,21 @@ class FirestoreCatRepository implements CatRepository {
     'updatedAt': FieldValue.serverTimestamp(),
   }, SetOptions(merge: true));
 
+  /// A merge write, so the name and anything else on the document stays; a
+  /// cleared look is deleted.
+  @override
+  Future<void> setCatLooks(
+    String catId, {
+    CatSex? sex,
+    CatHair? hair,
+    CatColour? colour,
+  }) => _cats.doc(catId).set({
+    'sex': sex?.stored ?? FieldValue.delete(),
+    'hair': hair?.stored ?? FieldValue.delete(),
+    'colour': colour?.stored ?? FieldValue.delete(),
+    'updatedAt': FieldValue.serverTimestamp(),
+  }, SetOptions(merge: true));
+
   Map<String, dynamic> _eventData(
     String catId,
     LifeEvent e, {
@@ -208,6 +228,7 @@ class FirestoreCatRepository implements CatRepository {
       'neighbourhood': e.place!.neighbourhood
     else if (!creating)
       'neighbourhood': FieldValue.delete(),
+    if (e.kind != null) 'kind': e.kind!.name,
     if (creating) 'createdAt': FieldValue.serverTimestamp(),
     'updatedAt': FieldValue.serverTimestamp(),
   };

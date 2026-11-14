@@ -1,5 +1,6 @@
 // Run with: firebase emulators:exec --only firestore,storage --project demo-straycats "npm test"
 import { test, before, after, beforeEach, describe } from 'node:test';
+import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
   initializeTestEnvironment,
@@ -8,7 +9,7 @@ import {
 } from '@firebase/rules-unit-testing';
 import {
   doc, getDoc, getDocs, collection, setDoc, writeBatch, deleteDoc,
-  serverTimestamp, Timestamp, GeoPoint,
+  serverTimestamp, Timestamp, GeoPoint, deleteField,
 } from 'firebase/firestore';
 import { ref, uploadBytes, getBytes } from 'firebase/storage';
 
@@ -95,6 +96,31 @@ describe('firestore cats', () => {
     await assertFails(setDoc(catDoc(alice()), cat({ name: 42 })));
     await assertFails(setDoc(catDoc(alice()), cat({ name: 'x'.repeat(101) })));
     await assertFails(setDoc(catDoc(alice()), cat({ updatedAt: Timestamp.fromDate(new Date('2020-01-01')) })));
+  });
+  test('optional sex, hair and colour: exact values only, absent is fine', async () => {
+    await assertSucceeds(setDoc(catDoc(alice()), cat({ sex: 'male', hair: 'long', colour: 'calico_tortie' })));
+    for (const colour of ['black', 'white', 'grey', 'orange', 'tabby', 'calico_tortie', 'mixed']) {
+      await assertSucceeds(setDoc(catDoc(alice()), cat({ colour })));
+    }
+    await assertSucceeds(setDoc(catDoc(alice()), cat({ sex: 'female', hair: 'short' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ sex: 'unknown' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ sex: 'Male' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ hair: 'medium' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ colour: 'calico' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ colour: 'purple' })));
+    await assertFails(setDoc(catDoc(alice()), cat({ sex: 1 })));
+    await assertFails(setDoc(catDoc(alice()), cat({ sex: null })));
+  });
+  test('a merge write keeps the looks, and can clear one', async () => {
+    await assertSucceeds(setDoc(catDoc(alice()), cat({ sex: 'male', colour: 'tabby' })));
+    await assertSucceeds(setDoc(catDoc(alice()), { name: 'Ciccio', updatedAt: serverTimestamp() }, { merge: true }));
+    const kept = (await getDoc(catDoc(alice()))).data();
+    assert.equal(kept.name, 'Ciccio');
+    assert.equal(kept.sex, 'male');
+    assert.equal(kept.colour, 'tabby');
+    await assertSucceeds(setDoc(catDoc(alice()), { sex: deleteField(), updatedAt: serverTimestamp() }, { merge: true }));
+    assert.equal((await getDoc(catDoc(alice()))).data().sex, undefined);
+    await assertFails(setDoc(catDoc(alice()), { sex: 'robot', updatedAt: serverTimestamp() }, { merge: true }));
   });
   test('the old status fields are no longer accepted', async () => {
     await assertFails(setDoc(catDoc(alice()), cat({ status: 'missing' })));
@@ -264,6 +290,27 @@ describe('firestore life events', () => {
     }
     await assertFails(setDoc(evDoc(alice(), 'x1'), ev({ type: 'dead' })));
     await assertFails(setDoc(evDoc(alice(), 'x1'), ev({ type: 7 })));
+  });
+  test('health entries need a kind from the list; other types have none', async () => {
+    await seedCat();
+    for (const kind of ['vaccination', 'dental', 'checkup', 'tests', 'surgery', 'other']) {
+      await assertSucceeds(setDoc(evDoc(alice(), `h-${kind}`), ev({ type: 'health', kind, on: '2024-05-06', around: undefined, note: 'x'.repeat(1000) })));
+    }
+    await assertSucceeds(setDoc(evDoc(alice(), 'h2'), ev({ type: 'health', kind: 'checkup', on: '2024', around: true })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'health' })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'health', kind: 'spa' })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'health', kind: 3 })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'health', kind: 'dental', note: 'x'.repeat(1001) })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'health', kind: 'dental', on: '2024-03', around: true })));
+    await assertFails(setDoc(evDoc(alice(), 'h3'), ev({ type: 'died', kind: 'dental' })));
+  });
+  test('a health entry can be edited and repeated', async () => {
+    await seedCat();
+    await assertSucceeds(setDoc(evDoc(alice(), 'h1'), ev({ type: 'health', kind: 'vaccination', on: '2024-05-06', around: undefined })));
+    await assertSucceeds(setDoc(evDoc(alice(), 'h2'), ev({ type: 'health', kind: 'vaccination', on: '2024-05-06', around: undefined })));
+    const created = (await getDoc(evDoc(alice(), 'h1'))).data().createdAt;
+    await assertSucceeds(setDoc(evDoc(alice(), 'h1'), ev({ type: 'health', kind: 'surgery', on: '2024-06', around: undefined, createdAt: created })));
+    await assertSucceeds(deleteDoc(evDoc(alice(), 'h1')));
   });
   test('dates: year, month, day, from 1980, not a future year', async () => {
     await seedCat();

@@ -22,6 +22,7 @@ import 'cats_controller.dart';
 import 'encounter_details_form.dart';
 import 'story_widgets.dart';
 import '../domain/life_event.dart';
+import 'cat_looks.dart';
 import 'story_actions.dart';
 
 /// The cat card: a photo large (pinch to zoom), its name, and every
@@ -279,6 +280,7 @@ class _CatCardState extends ConsumerState<CatCard> {
     return StoryEventCard(
       event: ev,
       conflicted: cat.life.inConflict(ev),
+      sex: cat.sex,
       onTap: widget.readOnly
           ? null
           : () => editStoryEntry(context, ref, cat, ev),
@@ -433,6 +435,7 @@ class _CatCardState extends ConsumerState<CatCard> {
                     : (_) => Navigator.of(context).pop(),
               ),
             ),
+            CatLooksLine(cat: cat, readOnly: widget.readOnly),
             StorySection(cat: cat, readOnly: widget.readOnly),
             _seenAround(history, l10n, theme),
             ConstrainedBox(

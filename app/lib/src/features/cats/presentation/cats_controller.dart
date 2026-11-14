@@ -8,6 +8,7 @@ import '../application/photo_uploader.dart';
 import '../data/cat_repository.dart';
 import '../data/photo_files.dart';
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/encounter.dart';
 import '../domain/life_event.dart';
 import '../domain/partial_date.dart';
@@ -35,6 +36,33 @@ class CatsController extends _$CatsController {
     _log(ref.read(catRepositoryProvider).renameCat(catId, name));
   }
 
+  /// Says what a cat looks like. Each of [sex], [hair] and [colour] is only
+  /// changed when its flag asks for it (a null then means "not sure"); the
+  /// others keep what the cat has.
+  Future<void> setLooks(
+    String catId, {
+    bool setSex = false,
+    CatSex? sex,
+    bool setHair = false,
+    CatHair? hair,
+    bool setColour = false,
+    CatColour? colour,
+  }) async {
+    final cat = state.value?.where((c) => c.id == catId).firstOrNull;
+    if (cat == null) return;
+    final newSex = setSex ? sex : cat.sex;
+    final newHair = setHair ? hair : cat.hair;
+    final newColour = setColour ? colour : cat.colour;
+    if (newSex == cat.sex && newHair == cat.hair && newColour == cat.colour) {
+      return;
+    }
+    _log(
+      ref
+          .read(catRepositoryProvider)
+          .setCatLooks(catId, sex: newSex, hair: newHair, colour: newColour),
+    );
+  }
+
   /// Adds an entry of [type] to the story of [catId], on [on] (never later
   /// than today), with an optional note. A missing entry keeps the cat's
   /// last-seen neighbourhood-level place, taken from its latest encounter
@@ -46,6 +74,7 @@ class CatsController extends _$CatsController {
     LifeEventType type,
     PartialDate on, {
     String note = '',
+    HealthKind? kind,
   }) async {
     final cat = state.value?.where((c) => c.id == catId).firstOrNull;
     if (cat == null) return null;
@@ -57,24 +86,27 @@ class CatsController extends _$CatsController {
       place: type == LifeEventType.missing
           ? cat.history.map((e) => e.place).nonNulls.firstOrNull
           : null,
+      kind: type == LifeEventType.health ? kind : null,
     );
     _log(ref.read(catRepositoryProvider).addEvent(catId, event));
     return event;
   }
 
-  /// Saves a new date and note for [event]; nothing else about it changes.
+  /// Saves a new date and note (and, for a health entry, kind) for [event];
+  /// nothing else about it changes.
   Future<void> updateEvent(
     String catId,
     LifeEvent event,
     PartialDate on, {
     String note = '',
+    HealthKind? kind,
   }) async {
     _log(
       ref
           .read(catRepositoryProvider)
           .updateEvent(
             catId,
-            event.copyWith(on: _notFuture(on), note: _clip(note)),
+            event.copyWith(on: _notFuture(on), note: _clip(note), kind: kind),
           ),
     );
   }

@@ -25,10 +25,14 @@ service cloud.firestore {
 
     function isCat() {
       let d = request.resource.data;
-      return d.keys().hasOnly(['name', 'updatedAt'])
+      return d.keys().hasOnly(['name', 'sex', 'hair', 'colour', 'updatedAt'])
         && d.keys().hasAll(['name', 'updatedAt'])
         && d.name is string
         && d.name.size() <= 100
+        // Optional looks; absent means not sure.
+        && (!('sex' in d) || d.sex in ['male', 'female'])
+        && (!('hair' in d) || d.hair in ['short', 'long'])
+        && (!('colour' in d) || d.colour in ['black', 'white', 'grey', 'orange', 'tabby', 'calico_tortie', 'mixed'])
         && d.updatedAt == request.time;
     }
 
@@ -68,16 +72,20 @@ service cloud.firestore {
         && (!('around' in d) || (d.around is bool && (!d.around || d.on.size() == 4)));
     }
 
-    // A life event in a cat's story. Once-only types are not enforced here:
+    // A life event in a cat's story (a health entry repeats and has a kind). Once-only types are not enforced here:
     // duplicates are meant to be visible, not refused. A place, if any, is only
     // a 6-character geohash and a neighbourhood name, never a point.
     function isEvent(uid) {
       let d = request.resource.data;
-      return d.keys().hasOnly(['catId', 'type', 'on', 'around', 'note', 'area', 'neighbourhood', 'createdAt', 'updatedAt'])
+      return d.keys().hasOnly(['catId', 'type', 'on', 'around', 'note', 'area', 'neighbourhood', 'kind', 'createdAt', 'updatedAt'])
         && d.keys().hasAll(['catId', 'type', 'on', 'createdAt', 'updatedAt'])
         && isId(d.catId)
         && existsAfter(/databases/$(database)/documents/users/$(uid)/cats/$(d.catId))
-        && d.type in ['born', 'missing', 'found', 'sterilised', 'died']
+        && d.type in ['born', 'missing', 'found', 'sterilised', 'died', 'health']
+        // A health entry says what it is about; no other type has a kind.
+        && (d.type == 'health'
+          ? ('kind' in d && d.kind in ['vaccination', 'dental', 'checkup', 'tests', 'surgery', 'other'])
+          : !('kind' in d))
         && isPartialDate(d)
         && (!('note' in d) || (d.note is string && d.note.size() <= 1000))
         && (!('area' in d) || (d.area is string && d.area.matches('^[0-9b-hjkmnp-z]{6}$')))

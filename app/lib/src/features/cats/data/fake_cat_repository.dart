@@ -1,14 +1,15 @@
 import 'dart:async';
 
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/encounter.dart';
 import '../domain/life_event.dart';
 import 'cat_repository.dart';
 
 /// Keeps cats in memory, for tests. [watchCats] emits the current cats and
 /// again after each change, like Firestore's listener. The calls are
-/// recorded in [added], [addedEncounters], [updated], [deleted], [renamed]
-/// [addedEvents], [updatedEvents] and [deletedEvents].
+/// recorded in [added], [addedEncounters], [updated], [deleted], [renamed],
+/// [looksSet], [addedEvents], [updatedEvents] and [deletedEvents].
 class FakeCatRepository implements CatRepository {
   FakeCatRepository([List<Cat> cats = const []]) : cats = [...cats];
 
@@ -18,6 +19,7 @@ class FakeCatRepository implements CatRepository {
   final updated = <(String, Encounter)>[];
   final deleted = <String>[];
   final renamed = <(String, String)>[];
+  final looksSet = <(String, CatSex?, CatHair?, CatColour?)>[];
   final addedEvents = <(String, LifeEvent)>[];
   final updatedEvents = <(String, LifeEvent)>[];
   final deletedEvents = <String>[];
@@ -34,6 +36,7 @@ class FakeCatRepository implements CatRepository {
       updated.isNotEmpty ||
       deleted.isNotEmpty ||
       renamed.isNotEmpty ||
+      looksSet.isNotEmpty ||
       addedEvents.isNotEmpty ||
       updatedEvents.isNotEmpty ||
       deletedEvents.isNotEmpty;
@@ -117,6 +120,21 @@ class FakeCatRepository implements CatRepository {
   Future<void> renameCat(String catId, String name) async {
     renamed.add((catId, name));
     cats = [for (final c in cats) c.id == catId ? c.copyWith(name: name) : c];
+    _emit();
+  }
+
+  @override
+  Future<void> setCatLooks(
+    String catId, {
+    CatSex? sex,
+    CatHair? hair,
+    CatColour? colour,
+  }) async {
+    looksSet.add((catId, sex, hair, colour));
+    cats = [
+      for (final c in cats)
+        c.id == catId ? c.withLooks(sex: sex, hair: hair, colour: colour) : c,
+    ];
     _emit();
   }
 

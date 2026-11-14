@@ -7,6 +7,7 @@ import '../../../localization/life_labels.dart';
 import '../../../theme/app_theme.dart';
 import '../data/offer_repository.dart';
 import '../domain/cat.dart';
+import '../domain/cat_traits.dart';
 import '../domain/encounter_details.dart';
 import '../domain/life.dart';
 import '../domain/life_event.dart';
@@ -220,10 +221,14 @@ class StoryEventCard extends StatelessWidget {
     super.key,
     required this.event,
     required this.conflicted,
+    this.sex,
     this.onTap,
   });
 
   final LifeEvent event;
+
+  /// The cat's sex, for "Neutered" or "Spayed" instead of "Sterilised".
+  final CatSex? sex;
   final bool conflicted;
   final VoidCallback? onTap;
 
@@ -233,7 +238,7 @@ class StoryEventCard extends StatelessWidget {
     final theme = Theme.of(context);
     final locale = Localizations.localeOf(context).toString();
     final scheme = theme.colorScheme;
-    final label = lifeEventLabel(l10n, event, locale);
+    final label = lifeEventLabel(l10n, event, locale, sex: sex);
     final hood = event.place?.neighbourhood;
     return SizedBox(
       width: 148,

@@ -955,6 +955,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Two dates recorded for when this cat passed away'**
   String get lifeRememberedConflictOnly;
+
+  /// Quiet line on a cat's card, shown when nothing is set, that opens sex and coat choices. Nothing is required.
+  ///
+  /// In en, this message translates to:
+  /// **'About this cat'**
+  String get catLooksTitle;
+
+  /// Label of the optional sex choice on a cat's card.
+  ///
+  /// In en, this message translates to:
+  /// **'Sex'**
+  String get catSexLabel;
+
+  /// Choice for a male cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get catSexMale;
+
+  /// Choice for a female cat.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get catSexFemale;
+
+  /// Choice meaning the person does not know (sex, hair or colour). Selected by default.
+  ///
+  /// In en, this message translates to:
+  /// **'Not sure'**
+  String get catNotSure;
+
+  /// Label of the optional hair length choice.
+  ///
+  /// In en, this message translates to:
+  /// **'Hair'**
+  String get catHairLabel;
+
+  /// Choice: short hair.
+  ///
+  /// In en, this message translates to:
+  /// **'Short'**
+  String get catHairShort;
+
+  /// Choice: long hair.
+  ///
+  /// In en, this message translates to:
+  /// **'Long'**
+  String get catHairLong;
+
+  /// Label of the optional coat colour choice.
+  ///
+  /// In en, this message translates to:
+  /// **'Colour'**
+  String get catColourLabel;
+
+  /// Coat colour choice.
+  ///
+  /// In en, this message translates to:
+  /// **'Black'**
+  String get catColourBlack;
+
+  /// Coat colour choice.
+  ///
+  /// In en, this message translates to:
+  /// **'White'**
+  String get catColourWhite;
+
+  /// Coat colour choice.
+  ///
+  /// In en, this message translates to:
+  /// **'Grey'**
+  String get catColourGrey;
+
+  /// Coat colour choice (ginger cats).
+  ///
+  /// In en, this message translates to:
+  /// **'Orange'**
+  String get catColourOrange;
+
+  /// Coat colour choice: striped or spotted pattern.
+  ///
+  /// In en, this message translates to:
+  /// **'Tabby'**
+  String get catColourTabby;
+
+  /// Coat colour choice: calico or tortoiseshell.
+  ///
+  /// In en, this message translates to:
+  /// **'Calico / tortie'**
+  String get catColourCalicoTortie;
+
+  /// Coat colour choice: several colours that fit none of the others.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed'**
+  String get catColourMixed;
+
+  /// Compact line on a cat's card: short hair. Followed by the colour, e.g. 'Short hair · tabby'.
+  ///
+  /// In en, this message translates to:
+  /// **'Short hair'**
+  String get catHairShortLine;
+
+  /// Compact line on a cat's card: long hair. Followed by the colour, e.g. 'Long hair · black'.
+  ///
+  /// In en, this message translates to:
+  /// **'Long hair'**
+  String get catHairLongLine;
+
+  /// An entry in a male cat's story: when it was neutered. kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{Neutered on {date}} month{Neutered in {date}} year{Neutered in {date}} around{Neutered around {date}} other{Neutered on {date}}}'**
+  String lifeNeutered(String kind, String date);
+
+  /// An entry in a female cat's story: when it was spayed. kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{Spayed on {date}} month{Spayed in {date}} year{Spayed in {date}} around{Spayed around {date}} other{Spayed on {date}}}'**
+  String lifeSpayed(String kind, String date);
+
+  /// Choice and dialog title for a male cat: it was neutered.
+  ///
+  /// In en, this message translates to:
+  /// **'Neutered'**
+  String get storyAddNeutered;
+
+  /// Choice and dialog title for a female cat: it was spayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Spayed'**
+  String get storyAddSpayed;
+
+  /// Choice and dialog title: a health entry in the cat's story (vaccination, vet visit, surgery...).
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get storyAddHealth;
+
+  /// Label above the choices of what a health entry is about.
+  ///
+  /// In en, this message translates to:
+  /// **'What was it?'**
+  String get storyHealthKindLabel;
+
+  /// Health entry kind.
+  ///
+  /// In en, this message translates to:
+  /// **'Vaccination'**
+  String get healthVaccination;
+
+  /// Health entry kind: teeth and mouth.
+  ///
+  /// In en, this message translates to:
+  /// **'Dental'**
+  String get healthDental;
+
+  /// Health entry kind: a vet check-up.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-up'**
+  String get healthCheckup;
+
+  /// Health entry kind: lab or other tests.
+  ///
+  /// In en, this message translates to:
+  /// **'Tests'**
+  String get healthTests;
+
+  /// Health entry kind: an operation.
+  ///
+  /// In en, this message translates to:
+  /// **'Surgery'**
+  String get healthSurgery;
+
+  /// Health entry kind: something else; choice chip.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get healthOther;
+
+  /// Name of a health entry whose kind is 'other' or unknown, used in its sentence.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get healthGeneral;
+
+  /// An entry in a cat's story about its health. health is the kind (Vaccination, Surgery...); kind is day, month, year or around; date is already formatted.
+  ///
+  /// In en, this message translates to:
+  /// **'{kind, select, day{{health} on {date}} month{{health} in {date}} year{{health} in {date}} around{{health} around {date}} other{{health} on {date}}}'**
+  String lifeHealth(String kind, String date, String health);
+
+  /// Help text in the dialog for a health entry.
+  ///
+  /// In en, this message translates to:
+  /// **'What was done, and when? A year is fine if you\'re not sure.'**
+  String get storyHealthHelp;
+
+  /// Hint in the optional note of a health entry.
+  ///
+  /// In en, this message translates to:
+  /// **'Vet, medicine, anything worth remembering'**
+  String get storyHealthNoteHint;
 }
 
 class _AppLocalizationsDelegate
