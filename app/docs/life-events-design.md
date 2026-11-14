@@ -247,3 +247,26 @@ with `request.auth.uid + '_'`; `lastSeen/{rid}` only by `rid`. Admin: read only,
 - Not built yet: dismissing a conflict per person, the "Move the sighting" / "Leave it" actions
   on the sighting-after-death question (the entry itself can be edited or deleted), the site
   pages (step 6), the app screenshot, and everything under "When linking arrives".
+
+## 9. Decided later (Nov 13)
+
+- **Sex:** an optional cat field, `sex`: male, female or not sure (unset means unknown). This
+  supersedes the "Sterilised, not neutered/spayed" note in section 1. The `sterilised` event is
+  shown as **"Neutered"** for male, **"Spayed"** for female and **"Sterilised"** otherwise (ES:
+  "Castrado", "Esterilizada", "Esterilización"). No data change to the event.
+- **Coat:** optional cat fields, the same as in cross-person-matching-design: hair (short / long)
+  and colour (black, white, grey, orange, tabby, calico/tortoiseshell, mixed), each with "Not
+  sure". Never required.
+- **Health:** one general, repeatable type `health`. It is not once-only, so it stays out of
+  `LifeEventType.onceOnly`. It adds one field, `kind`, and reuses `on` and `note`:
+  ```
+  type   health
+  kind   vaccination | dental | check-up | tests | surgery | other   required for health
+  on     same partial date as other events
+  note   free text, at most 1000 chars
+  ```
+  Rules: `health` joins the type list, and `kind` joins the keys (required when type is `health`).
+  Blood work, x-rays, diagnoses and second opinions are written in the note, not modelled fields,
+  so the story stays complete without becoming a chore. The note can name the vet and how to reach
+  them (name, phone, clinic). The vet keeps the detailed records, since vets already have software
+  for that. StrayCats does not store medical paperwork.
