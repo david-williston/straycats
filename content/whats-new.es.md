@@ -12,6 +12,13 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 13 de noviembre de 2026 (todavía más tarde): Una presentación más suave
+
+*Versión v2026.11.13.5*
+
+- **Actualizado:** la presentación de [La app, en construcción](/es/app/) muestra una pequeña
+  barra que cuenta el tiempo hasta la siguiente foto, y las fotos ahora se funden suavemente.
+
 ## 13 de noviembre de 2026 (tarde en la noche): El avance de la app como presentación, y notas de salud
 
 *Versión v2026.11.13.4*

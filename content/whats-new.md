@@ -11,6 +11,13 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 13, 2026 (later still): A gentler slideshow
+
+*Version v2026.11.13.5*
+
+- **Updated:** the slideshow on [The App, Under Construction](/app/) shows a small bar counting
+  down to the next photo, and the photos now fade gently into each other.
+
 ## November 13, 2026 (late): The app's progress as a slideshow, and health notes
 
 *Version v2026.11.13.4*
