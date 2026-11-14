@@ -9,9 +9,10 @@
   border-radius: var(--radius);
 }
 .app-show:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
-.app-show-slides { list-style: none; margin: 0; padding: 0; }
-.app-show-slide { margin: 0; padding: 0; }
-.app-show-slide[hidden] { display: none; }
+/* Slides are stacked in one grid cell and cross-faded, so nothing jumps or flashes empty */
+.app-show-slides { list-style: none; margin: 0; padding: 0; display: grid; }
+.app-show-slide { grid-area: 1 / 1; margin: 0; padding: 0; opacity: 0; visibility: hidden; pointer-events: none; }
+.app-show-slide.is-active { opacity: 1; visibility: visible; pointer-events: auto; }
 .app-show-slide a { display: block; box-shadow: none; }
 /* Fixed box so the page never jumps between slides */
 .app-show-slide img {
@@ -29,7 +30,28 @@
   background: var(--entry);
 }
 :root[data-theme="dark"] .app-show-slide img { border-color: #3a322b; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); }
-.app-show-info { min-height: 5.2em; margin-top: 16px; }
+/* Countdown to the next photo: a thin bar that fills over the slide interval (JS sets
+   --show-interval and advances on animationend; it only runs while playing). */
+.app-show-bar {
+  width: 96px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--border);
+}
+.app-show-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: show-bar var(--show-interval, 4000ms) linear both paused;
+}
+.app-show.is-running .app-show-bar i { animation-play-state: running; }
+@keyframes show-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.app-show-info { min-height: 5.2em; margin-top: 12px; }
 .app-show-info p { margin: 0; }
 .app-show-date { font-size: 14px; color: var(--secondary); }
 .app-show-caption { margin-top: 4px; font-size: 18px; font-weight: 700; color: var(--primary); }
@@ -79,8 +101,20 @@
 
 @media (prefers-reduced-motion: no-preference) {
   @keyframes show-in {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: none; }
   }
-  .app-show-slide.is-entering, .app-show-info.is-entering { animation: show-in 0.45s ease-out both; }
+  /* Crossfade with a slow settle: the incoming photo drifts from 1.02 to 1 */
+  .app-show-slide {
+    transition: opacity 0.8s ease-out, visibility 0s linear 0.8s;
+  }
+  .app-show-slide.is-active { transition: opacity 0.8s ease-out, visibility 0s; }
+  .app-show-slide img { transform: scale(1.02); transition: transform 0.8s ease-out; }
+  .app-show-slide.is-active img { transform: none; }
+  /* Date, then caption, ease in just after the photo */
+  .app-show-date.is-entering { animation: show-in 0.6s ease-out 0.1s both; }
+  .app-show-caption.is-entering { animation: show-in 0.6s ease-out 0.2s both; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-show-bar { display: none; }
 }

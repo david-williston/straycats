@@ -1,6 +1,6 @@
 // App screenshot slideshow (layouts/_shortcodes/app-screens.html). Plays oldest to newest and
 // loops. Without JS the slideshow stays hidden and only the grid shows. With reduced motion:
-// no autoplay, no animation, manual stepping only.
+// no autoplay, no countdown, instant changes, manual stepping only.
 (() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const INTERVAL = 4000;
@@ -19,46 +19,73 @@
         let index = 0;
         let playing = !reduce.matches;
         let hovering = false, focusing = false, hidden = document.hidden;
-        let timer = null;
 
         root.tabIndex = 0;
         root.classList.add('is-ready');
         controls.hidden = false;
 
-        function show(i, byUser) {
+        const bar = root.querySelector('.app-show-bar i');
+        root.style.setProperty('--show-interval', `${INTERVAL}ms`);
+        slides.forEach((s) => { s.hidden = false; }); // stacked and cross-faded by CSS instead
+        let token = 0;
+
+        // The countdown bar is the autoplay timer: when its CSS animation ends, the next slide
+        // comes in. Hover, focus, a hidden tab and the pause button just pause the animation,
+        // so bar and slide change cannot drift apart.
+        function updateRunning() {
+            root.classList.toggle('is-running', playing && !hovering && !focusing && !hidden);
+        }
+
+        function restartBar() {
+            bar.style.animationName = 'none';
+            void bar.offsetWidth; // restart the animation from zero
+            bar.style.animationName = '';
+        }
+
+        function show(i, byUser, first) {
             index = (i + slides.length) % slides.length;
-            slides.forEach((s, n) => { s.hidden = n !== index; });
+            slides.forEach((s, n) => { s.classList.toggle('is-active', n === index); });
             const s = slides[index];
             dateEl.textContent = s.dataset.date;
             capEl.textContent = s.dataset.caption;
             countEl.textContent = `${index + 1} / ${slides.length}`;
-            if (!reduce.matches) {
-                [s, info].forEach((el) => {
+            if (!first && !reduce.matches) {
+                [dateEl, capEl].forEach((el) => {
                     el.classList.remove('is-entering');
                     void el.offsetWidth; // restart the animation
                     el.classList.add('is-entering');
                 });
             }
             if (byUser) live.textContent = `${s.dataset.caption}, ${s.dataset.date}. ${index + 1} / ${slides.length}`;
-            const next = slides[(index + 1) % slides.length].querySelector('img');
-            if (next) next.loading = 'eager';
+            restartBar();
+            preload(index + 1);
         }
 
-        function schedule() {
-            clearTimeout(timer);
-            if (playing && !reduce.matches && !hovering && !focusing && !hidden) {
-                timer = setTimeout(() => { show(index + 1, false); schedule(); }, INTERVAL);
-            }
+        function preload(i) {
+            const img = slides[(i + slides.length) % slides.length].querySelector('img');
+            if (img && img.loading !== 'eager') img.loading = 'eager';
+            return img && !img.complete && img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+        }
+
+        // Wait for the incoming image so it never fades in half-loaded
+        function go(i, byUser) {
+            const t = ++token;
+            const ready = preload(i);
+            const done = () => { if (t === token) show(i, byUser); };
+            Promise.race([ready, new Promise((r) => setTimeout(r, 1500))]).then(done);
         }
 
         function setPlaying(on) {
             playing = on;
             playBtn.classList.toggle('is-paused', !on);
             playBtn.setAttribute('aria-label', on ? labels.pause : labels.play);
-            schedule();
+            updateRunning();
         }
 
-        function step(d) { show(index + d, true); schedule(); }
+        function step(d) { go(index + d, true); }
+        const schedule = updateRunning;
+
+        bar.addEventListener('animationend', () => { if (playing && !reduce.matches) go(index + 1, false); });
 
         root.querySelector('.app-show-prev').addEventListener('click', () => step(-1));
         root.querySelector('.app-show-next').addEventListener('click', () => step(1));
@@ -85,7 +112,7 @@
             if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) step(dx < 0 ? 1 : -1);
         }, { passive: true });
 
-        show(0, false);
+        show(0, false, true);
         setPlaying(playing);
     });
 })();
