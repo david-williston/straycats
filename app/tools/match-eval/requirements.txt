@@ -1,0 +1,7 @@
+torch
+torchvision
+transformers
+pillow
+numpy
+firebase-admin
+google-cloud-storage
