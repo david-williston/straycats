@@ -120,8 +120,8 @@ languages:
     menus:
       main:
         - {identifier: about, name: About, url: about/, weight: 10}
-        - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
-        - {identifier: posts, name: Stories, url: posts/, weight: 30}
+        - {identifier: ideas, name: Ideas, url: ideas/, weight: 30}
+        - {identifier: posts, name: Stories, url: posts/, weight: 20}
         - {identifier: whatsnew, name: "What's New", url: whats-new/, weight: 35}
         - {identifier: involve, name: Get Involved, url: involve/, weight: 40}
         - identifier: search
@@ -148,8 +148,8 @@ languages:
     menus:
       main:
         - {identifier: about, name: Acerca de, url: acerca-de/, weight: 10}
-        - {identifier: ideas, name: Ideas, url: ideas/, weight: 20}
-        - {identifier: posts, name: Historias, url: posts/, weight: 30}
+        - {identifier: ideas, name: Ideas, url: ideas/, weight: 30}
+        - {identifier: posts, name: Historias, url: posts/, weight: 20}
         - {identifier: whatsnew, name: Novedades, url: novedades/, weight: 35}
         - {identifier: involve, name: Cómo ayudar, url: como-ayudar/, weight: 40}
         - identifier: search
