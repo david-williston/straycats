@@ -12,7 +12,15 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
-## 15 de noviembre de 2026 (la última de hoy): Una cara más amable
+## 15 de noviembre de 2026 (la última de hoy): Un primer párrafo más claro
+
+*Versión v2026.11.15.3*
+
+- **Actualizado:** el primer párrafo de la [portada](/es/) ahora dice para quién es StrayCats,
+  sean mascotas, callejeros o ferales, por qué importa cuando los gatos y quienes los cuidan se
+  separan, y que tus gatos son privados para ti a menos que decidas compartirlos.
+
+## 15 de noviembre de 2026 (más tarde aún): Una cara más amable
 
 *Versión v2026.11.15.2*
 

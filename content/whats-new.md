@@ -11,7 +11,15 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
-## November 15, 2026 (last one today): A gentler look
+## November 15, 2026 (the last one today): A clearer first paragraph
+
+*Version v2026.11.15.3*
+
+- **Updated:** the first paragraph on the [home page](/) now says who StrayCats is for, whether
+  their cats are pets, strays or ferals, why it matters when cats and their caretakers get
+  separated, and that your cats stay private to you unless you choose to share.
+
+## November 15, 2026 (later still): A gentler look
 
 *Version v2026.11.15.2*
 
