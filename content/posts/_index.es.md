@@ -1,6 +1,7 @@
 ---
 title: "Historias"
 summary: "Cada una empieza con algo real, un gato, un nombre, una cuidadora, y sigue la pregunta que plantea."
+updated: 2026-11-15
 ---
 
 Las historias son necesarias para entender los requisitos de cualquier sistema. Antes de poder

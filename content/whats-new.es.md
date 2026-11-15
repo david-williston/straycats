@@ -12,6 +12,18 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 15 de noviembre de 2026 (más tarde): Las historias llevan a las ideas
+
+*Versión v2026.11.15.1*
+
+- **Actualizado:** [Historias](/es/posts/) ahora empieza diciendo por qué están aquí las
+  historias, e invita a contarme una historia que no se ha contado. La más reciente aparece
+  primero, y la página termina con un enlace a las ideas que surgieron de las historias.
+- **Actualizado:** [Ideas](/es/ideas/) ahora explica en qué se diferencian las ideas de las
+  historias.
+- **Actualizado:** cinco historias terminan con enlaces a las ideas que se conectan con ellas.
+- **Actualizado:** Historias va ahora antes que Ideas en el menú.
+
 ## 15 de noviembre de 2026: Colonias grandes, lo que todavía no sé
 
 *Versión v2026.11.15*

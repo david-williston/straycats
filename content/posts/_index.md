@@ -1,6 +1,7 @@
 ---
 title: "Stories"
 summary: "Each one starts with something real, a cat, a name, a caretaker, and follows the question it raises."
+updated: 2026-11-15
 ---
 
 Stories are necessary for understanding the requirements of any system. Before I can build

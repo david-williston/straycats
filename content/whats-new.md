@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 15, 2026 (later): Stories lead to ideas
+
+*Version v2026.11.15.1*
+
+- **Updated:** [Stories](/posts/) now opens by saying why the stories are here, and invites you
+  to tell me a story that hasn't been told. The newest story is listed first, and the page ends
+  with a link to the ideas that emerged from the stories.
+- **Updated:** [Ideas](/ideas/) now explains how ideas differ from stories.
+- **Updated:** five stories end with links to the ideas that connect to them.
+- **Updated:** Stories now comes before Ideas in the menu.
+
 ## November 15, 2026: Large colonies, what I don't know yet
 
 *Version v2026.11.15*
