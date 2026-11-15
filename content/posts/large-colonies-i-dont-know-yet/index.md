@@ -3,54 +3,46 @@ title: "Large colonies: what I don't know yet"
 date: 2026-11-15T00:00:00Z
 weight: 1
 tags: ["story", "colonies", "question"]
-summary: "I only know a small sanctuary. Here are my guesses about what caring for a big colony is like, and an invitation to tell me where I'm wrong."
-question: "If you look after a colony, what takes the most of your time, and what would you never want an app to get in the way of?"
+summary: "I have no experience with large colonies. Here is what I think I understand, and an invitation to talk if you care for one."
+question: "If you care for a colony, would you talk with me about what matters most to you?"
 updated: 2026-11-15
 cover:
   image: "cover.jpg"
   alt: "More than twenty cats of every colour eating from bowls spread along a cracked concrete lot, beside the front of a large truck"
-  caption: "What a colony can look like at feeding time. I don't know this one; I'm learning from photos like it. Photo: [Best Friends Animal Society](https://bestfriends.org/)."
+  caption: "Cats eating together at a feeding spot. Photo: [Best Friends Animal Society](https://bestfriends.org/)."
 ---
 
-I don't have any experience with large colonies. What I know is a small sanctuary of fewer
-than 10 cats: a mix of pets, strays and ferals. That's the only kind of caring I can speak
-about honestly.
+I don't have any experience with large colonies. My experience is a small sanctuary of
+fewer than 10 cats: a mix of pets, strays and ferals.
 
-But I keep wondering what changes when the number goes up, so here are my guesses so far.
-They are guesses to be tested, not facts. Please correct me.
+Here is what I think I understand about large colonies. I haven't lived it, so please
+correct me where I'm wrong.
 
-## What I think happens
+## What I think I understand
 
-- **Care turns into triage.** With a few cats, I can give each one some one-on-one time.
-  I picture a colony of 20 or more as the difference between a class of 15 students and a
-  class of 35. The teacher can't reach everyone. In a colony, I suspect the cats who are
-  sick or hurt get the attention first, like the squeaky wheel, and the quiet ones get
-  whatever is left.
-- **Feeding is by the bucket, not by the bowl.** I know which cat eats what and where.
-  With dozens, I imagine food goes out in piles, and nobody counts who ate.
-- **Many cats may not have stable names.** "The grey one with the torn ear" might be one cat
-  to you and another to the person who feeds on Thursdays.
-- **Recording everyone takes real time.** If you photographed and noted every cat, I could
-  see it taking 45 minutes or more. Maybe that is one reason colonies outgrow a single
-  caregiver, and friends and neighbours start to help.
-- **Then sharing gets hard.** If several people write down the same colony, the same cats
-  show up more than once, in different people's notes. Who sees what? Who can change
-  things? Can someone take their access back if they stop helping?
-- **You have probably solved this already.** People who look after colonies have likely
-  built their own ways of doing it, over months or years. You know this problem far better
-  than I do.
-
-## What the app is for today
-
-Right now the Stray Cats app is made for something much smaller: a few cats at one house.
-You take one photo, tap once, and the cat has a name, a history and a place in the story.
-That is where I'm staying for now. I would rather do that well than promise something for
-colonies that I haven't learned yet.
+- **Care becomes triage.** In a colony of 20 or more cats, the caretaker can't give each
+  cat the one-on-one care a small group gets. It's like a classroom of 15 students compared
+  with 35: the teacher can't get around to everyone. The squeaky wheel gets the grease, so
+  the cats who are injured or sick get attention first and the others take a back seat.
+- **Feeding is less individual.** There's no time to put out a bowl for each cat. You put
+  out a bucket of food and the cats take what they need before it's gone.
+- **The cats probably don't have names that stick.** With that many, it's hard to remember
+  every name.
+- **Recording every cat takes a long time.** With 35 cats, a photo and some notes for each
+  one would take at least a minute per cat, so 45 minutes or more. That may be why a colony
+  can grow beyond what one caregiver can handle, and why people invite friends to help.
+- **Several caregivers means shared records.** If more than one person logs the same
+  colony, the same cats will show up in each person's account, and the information has to
+  stay in sync. I'm not clear on how that sharing should work, or whether someone's access
+  can be taken back if needed.
+- **Colony caretakers know this better than I do.** People who care for a colony have
+  probably built their own systems, and have likely understood the problem for months or
+  years.
 
 ## If you care for a colony, I'd like to talk
 
-I'd like to hear how you do it today, what matters most, and which features, if any, would
-really help. It's fine if the answer is "none". I'm here to learn, not to sell you
-anything.
+I'm building an app, and I want to make it useful for colonies too. I'd like to talk with
+colony caretakers to find out what the most important features and needs are. If you care
+for a colony, please reach out.
 
 {{< contact-strip involve=true >}}

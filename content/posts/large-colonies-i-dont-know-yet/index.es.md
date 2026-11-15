@@ -4,54 +4,47 @@ slug: "colonias-grandes-lo-que-todavia-no-se"
 date: 2026-11-15T00:00:00Z
 weight: 1
 tags: ["historia", "colonias", "pregunta"]
-summary: "Solo conozco un pequeño santuario. Aquí van mis suposiciones sobre cómo es cuidar una colonia grande, y una invitación a decirme dónde me equivoco."
-question: "Si cuidas una colonia, ¿qué te quita más tiempo y qué no querrías que una app te estorbara jamás?"
+summary: "No tengo experiencia con colonias grandes. Esto es lo que creo entender, y una invitación a hablar si cuidas una."
+question: "Si cuidas una colonia, ¿hablarías conmigo sobre lo que más te importa?"
 updated: 2026-11-15
 cover:
   image: "cover.jpg"
   alt: "Más de veinte gatos de todos los colores comiendo de platos repartidos en un lote de concreto agrietado, junto al frente de un camión grande"
-  caption: "Así puede verse una colonia a la hora de comer. No conozco esta; estoy aprendiendo de fotos como esta. Foto: [Best Friends Animal Society](https://bestfriends.org/)."
+  caption: "Gatos comiendo juntos en un lugar de alimentación. Foto: [Best Friends Animal Society](https://bestfriends.org/)."
 ---
 
-No tengo ninguna experiencia con colonias grandes. Lo que conozco es un pequeño santuario de
-menos de 10 gatos: una mezcla de mascotas, callejeros y ferales. Es el único tipo de
-cuidado del que puedo hablar con honestidad.
+No tengo ninguna experiencia con colonias grandes. Mi experiencia es un pequeño santuario de
+menos de 10 gatos: una mezcla de mascotas, callejeros y ferales.
 
-Pero me sigo preguntando qué cambia cuando el número crece, así que aquí van mis
-suposiciones hasta ahora. Son suposiciones por probar, no hechos. Por favor, corrígeme.
+Esto es lo que creo entender sobre las colonias grandes. No lo he vivido, así que por favor
+corrígeme donde me equivoque.
 
-## Lo que creo que pasa
+## Lo que creo entender
 
-- **Cuidar se vuelve triaje.** Con pocos gatos, puedo dedicarle un rato a cada uno. Me
-  imagino una colonia de 20 o más como la diferencia entre un grupo de 15 estudiantes y uno
-  de 35: el maestro no llega a todos. Sospecho que en una colonia los gatos enfermos o
-  heridos reciben la atención primero, como la rueda que más chilla, y los tranquilos se
-  quedan con lo que sobra.
-- **Se da de comer por cubeta, no por plato.** Yo sé qué come cada gato y dónde. Con
-  decenas, imagino que la comida sale en montones y nadie cuenta quién comió.
-- **Muchos gatos quizás no tengan un nombre fijo.** "El gris de la oreja rota" puede ser un
-  gato para ti y otro distinto para quien da de comer los jueves.
-- **Registrar a todos lleva mucho tiempo.** Si fotografiaras y anotaras a cada gato, me
-  imagino 45 minutos o más. Tal vez sea una razón por la que las colonias le quedan grandes
-  a una sola persona y los amigos y vecinos empiezan a ayudar.
-- **Entonces compartir se complica.** Si varias personas anotan la misma colonia, los mismos
-  gatos aparecen más de una vez, en las notas de cada quien. ¿Quién ve qué? ¿Quién puede
-  cambiar cosas? ¿Se le puede quitar el acceso a alguien que ya no ayuda?
-- **Seguramente ya lo resolviste.** Quienes cuidan colonias probablemente han armado sus
-  propias formas de hacerlo, durante meses o años. Tú conoces este problema mucho mejor que
-  yo.
-
-## Para qué sirve la app hoy
-
-Ahora mismo, la app de Stray Cats está hecha para algo mucho más pequeño: unos cuantos
-gatos en una casa. Tomas una foto, tocas una vez, y el gato tiene un nombre, una historia y
-un lugar en el relato. Ahí me voy a quedar por ahora. Prefiero hacer eso bien que prometer
-algo para colonias que todavía no he aprendido.
+- **Cuidar se vuelve triaje.** En una colonia de 20 o más gatos, quien la cuida no puede
+  darle a cada gato la atención individual que recibe un grupo pequeño. Es como un salón de
+  15 estudiantes comparado con uno de 35: el maestro no puede llegar a todos. La rueda que
+  más chilla es la que recibe el aceite, así que los gatos heridos o enfermos reciben la
+  atención primero y los demás pasan a segundo plano.
+- **La comida es menos individual.** No hay tiempo para poner un plato para cada gato. Se
+  pone una cubeta de comida y los gatos toman lo que necesitan antes de que se acabe.
+- **Es probable que los gatos no tengan nombres que se queden.** Con tantos, es difícil
+  recordar el nombre de cada uno.
+- **Registrar a cada gato lleva mucho tiempo.** Con 35 gatos, una foto y algunas notas de
+  cada uno tomarían al menos un minuto por gato, o sea 45 minutos o más. Tal vez por eso una
+  colonia puede crecer más allá de lo que una sola persona puede atender, y por eso la gente
+  invita a sus amigos a ayudar.
+- **Varias personas cuidando significa registros compartidos.** Si más de una persona
+  registra la misma colonia, los mismos gatos aparecerán en la cuenta de cada una, y la
+  información tiene que mantenerse sincronizada. No tengo claro cómo debería funcionar ese
+  compartir, ni si se puede quitar el acceso a alguien cuando haga falta.
+- **Quienes cuidan colonias lo saben mejor que yo.** Probablemente han armado sus propios
+  sistemas y entienden el problema desde hace meses o años.
 
 ## Si cuidas una colonia, me gustaría hablar contigo
 
-Quiero saber cómo lo haces hoy, qué es lo más importante y qué funciones, si acaso,
-ayudarían de verdad. Está bien si la respuesta es "ninguna". Vengo a aprender, no a
-venderte nada.
+Estoy creando una app y quiero que también sea útil para las colonias. Me gustaría hablar
+con quienes cuidan colonias para saber cuáles son las funciones y necesidades más
+importantes. Si cuidas una colonia, por favor escríbeme.
 
 {{< contact-strip involve=true >}}
