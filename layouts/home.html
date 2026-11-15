@@ -24,15 +24,15 @@
         {{- with $talk }}<a class="home-button" href="{{ .RelPermalink }}">{{ i18n "home_cta_primary" }}</a>{{ end }}
         {{- with $posts }}<a class="home-link" href="{{ .RelPermalink }}">{{ i18n "home_cta_secondary" }}{{ $arrow }}</a>{{ end }}
       </div>
-      <p class="home-status"><span class="home-status-dot" aria-hidden="true"></span>{{ i18n "home_status" }}</p>
     </div>
     {{- with $about }}{{ with .Resources.Get "saibo-paw.jpg" }}
-    {{- $s := .Resize "420x webp q80" }}{{ $m := .Resize "640x webp q80" }}
+    {{- $s := .Resize "420x webp q80" }}{{ $m := .Resize "640x webp q80" }}{{ $big := .Resize "1800x webp q85" }}
     <figure class="home-hero-photo">
-      <img src="{{ $m.RelPermalink }}" srcset="{{ $s.RelPermalink }} 420w, {{ $m.RelPermalink }} 640w"
-        sizes="(min-width: 769px) 260px, 200px" width="{{ $m.Width }}" height="{{ $m.Height }}"
-        alt="{{ i18n "home_photo_alt" }}" fetchpriority="high">
-      <figcaption>{{ with site.GetPage "/saibo" }}<a href="{{ .RelPermalink }}">{{ i18n "home_photo_caption" }}</a>{{ else }}{{ i18n "home_photo_caption" }}{{ end }}</figcaption>
+      <a href="{{ $big.RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $m.RelPermalink }}" srcset="{{ $s.RelPermalink }} 420w, {{ $m.RelPermalink }} 640w"
+        sizes="(min-width: 769px) 130px, 100px" width="{{ $m.Width }}" height="{{ $m.Height }}"
+        alt="{{ i18n "home_photo_alt" }}" fetchpriority="high"></a>
+      {{- $cap := printf `<strong class="home-photo-memory">%s</strong><span class="home-photo-dates">%s</span>` (i18n "home_photo_memory") (i18n "home_photo_caption") | safeHTML }}
+      <figcaption>{{ with site.GetPage "/saibo" }}<a href="{{ .RelPermalink }}">{{ $cap }}</a>{{ else }}{{ $cap }}{{ end }}</figcaption>
     </figure>
     {{- end }}{{ end }}
   </section>

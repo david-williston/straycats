@@ -45,30 +45,25 @@
 .home-title-accent { display: block; color: var(--accent); }
 .home-lede { margin: 0 0 22px; font-size: 1.25rem; line-height: 1.6; color: var(--content); }
 .home-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; margin-bottom: 18px; }
-.home-status {
-  display: flex; gap: 10px; align-items: baseline; margin: 0;
-  color: var(--secondary); font-size: 1rem; line-height: 1.5;
-}
-.home-status-dot {
-  flex: none; width: 10px; height: 10px; border-radius: 50%; transform: translateY(-1px);
-  background: #c4262a; box-shadow: 0 0 0 4px rgba(208, 36, 37, 0.16);
-}
-:root[data-theme="dark"] .home-status-dot { background: #ff7a7a; box-shadow: 0 0 0 4px rgba(255, 122, 122, 0.18); }
 
 /* Saibo: always the whole photo, never cropped; only its height is limited */
 .home-hero-photo { margin: 0; text-align: center; }
 .home-hero-photo img {
   display: inline-block; width: auto; height: auto;
-  max-width: 100%; max-height: 360px;
+  max-width: 100%; max-height: 180px;
   border-radius: var(--radius); background: var(--entry);
   box-shadow: 0 0 0 6px var(--entry), 0 14px 32px -16px rgba(43, 33, 27, 0.5);
 }
 .home-hero-photo figcaption { margin-top: 4px; font-size: 0.9375rem; color: var(--secondary); }
 .home-hero-photo figcaption a { display: inline-block; padding-block: 11px; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+/* The dedication: "In loving memory of Saibo" stands out on its own line; the dates and dedication wrap below it */
+.home-hero-photo figcaption { text-wrap: balance; }
+.home-hero-photo .home-photo-memory { display: block; font-size: 1.125rem; line-height: 1.35; color: var(--primary); font-weight: 700; }
+.home-hero-photo .home-photo-dates { display: block; margin-top: 2px; }
 
 @media (min-width: 769px) {
   .home-hero { grid-template-columns: minmax(0, 1fr) auto; gap: 48px; margin-top: 24px; }
-  .home-hero-photo img { max-height: 470px; }
+  .home-hero-photo img { max-height: 235px; }
 }
 
 /* --- Sections ---------------------------------------------------------- */
