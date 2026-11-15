@@ -71,4 +71,74 @@
 
   /* Paw trail fades in with the footer */
   .footer::before { animation: fade-up 0.8s ease-out both; }
+
+  /* ---- Extra life: glints, softer hovers, small accents ---- */
+  html { scroll-behavior: smooth; }
+  :target { scroll-margin-top: 80px; }
+
+  /* Glint: a soft diagonal light-sweep that crosses call-to-action buttons.
+     A pseudo-element moved with transform only, clipped to the button. */
+  .home .home-button, .home .talk-invite .respond-button, .respond-button,
+  .contact-channels a.contact-button:not(.contact-button-alt) {
+    position: relative; overflow: hidden; isolation: isolate;
+  }
+  .home .home-button::after, .home .talk-invite .respond-button::after, .respond-button::after,
+  .contact-channels a.contact-button:not(.contact-button-alt)::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 45%;
+    background: linear-gradient(105deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
+    transform: translateX(-130%) skewX(-18deg);
+    pointer-events: none; z-index: 1;
+  }
+  .home .home-button:focus-visible::after, .home .talk-invite .respond-button:focus-visible::after,
+  .respond-button:focus-visible::after,
+  .contact-channels a.contact-button:not(.contact-button-alt):focus-visible::after {
+    animation: glint 0.9s ease-out 1;
+  }
+  @keyframes glint {
+    from { transform: translateX(-130%) skewX(-18deg); }
+    to   { transform: translateX(330%) skewX(-18deg); }
+  }
+  /* The single most important button, "Let's talk" in the home hero, glints now and then */
+  .home-hero .home-button::after { animation: glint-idle 9s ease-in-out 3s infinite; }
+  @keyframes glint-idle {
+    0%, 82%  { transform: translateX(-130%) skewX(-18deg); }
+    100%     { transform: translateX(330%) skewX(-18deg); }
+  }
+
+  .home .home-button, .contact-channels a.contact-button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  .home .home-link, .home .home-more { transition: color 0.2s ease, transform 0.2s ease; }
+
+  /* Paw bullets wiggle on hover */
+  .post-content ul > li::before { transition: transform 0.3s ease, opacity 0.3s ease; }
+
+  /* Menu */
+  .menu a { transition: color 0.2s ease; }
+  .menu a span { display: inline-block; transition: color 0.2s ease, transform 0.2s ease; }
+
+  /* The ".love" heart in the brand beats very slowly */
+  .logo-love { display: inline-block; animation: heart-beat 6s ease-in-out infinite; }
+  @keyframes heart-beat {
+    0%, 86%, 100% { transform: scale(1); }
+    91%           { transform: scale(1.06); }
+    95%           { transform: scale(1); }
+  }
+}
+
+/* Hover-only effects: not on touch screens */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .home .home-button:hover::after, .home .talk-invite .respond-button:hover::after,
+  .respond-button:hover::after,
+  .contact-channels a.contact-button:not(.contact-button-alt):hover::after {
+    animation: glint 0.9s ease-out 1;
+  }
+  .home .home-button:hover, .contact-channels a.contact-button:hover {
+    transform: translateY(-2px); box-shadow: 0 6px 16px -8px var(--accent);
+  }
+  .contact-channels a.contact-button.contact-button-alt:hover { background: var(--accent-soft); }
+  .menu a:hover span { transform: translateY(-1px); }
+  .home .home-link:hover, .home .home-more:hover { transform: translateX(2px); }
+  .post-content ul > li:hover::before { transform: rotate(14deg) scale(1.2); opacity: 1; }
+  .post-content ul > li:nth-child(even):hover::before { transform: rotate(-14deg) scale(1.2); opacity: 1; }
 }
