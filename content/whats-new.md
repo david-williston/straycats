@@ -11,6 +11,20 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 15, 2026 (last one today): A gentler look
+
+*Version v2026.11.15.2*
+
+- **Updated:** the home page remembers Saibo with "In loving memory of Saibo". His photo is
+  smaller, and you can click it to see him large. The line about the early app is gone, since
+  the card below it says the same.
+- **Updated:** buttons have a soft glint and a gentle lift, and links, menu items and list
+  paws move a little when you hover. All of it stays still if your device asks for reduced
+  motion.
+- **Updated:** on phones, the logo and the language switch share one line, and the menu is
+  tidier.
+- **Updated:** the footer no longer says "Powered by Hugo & PaperMod".
+
 ## November 15, 2026 (later): Stories lead to ideas
 
 *Version v2026.11.15.1*

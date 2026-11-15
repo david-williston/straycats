@@ -12,6 +12,20 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 15 de noviembre de 2026 (la última de hoy): Una cara más amable
+
+*Versión v2026.11.15.2*
+
+- **Actualizado:** la portada recuerda a Saibo con "En memoria de Saibo, con todo nuestro
+  cariño". Su foto es más pequeña, y puedes tocarla para verlo en grande. Quité la línea sobre
+  la app en construcción, porque la tarjeta de abajo dice lo mismo.
+- **Actualizado:** los botones tienen un brillo suave y se elevan un poco, y los enlaces, el
+  menú y las huellitas de las listas se mueven ligeramente al pasar el cursor. Todo se queda
+  quieto si tu dispositivo pide menos movimiento.
+- **Actualizado:** en el teléfono, el logo y el cambio de idioma comparten una línea, y el
+  menú está más ordenado.
+- **Actualizado:** el pie de página ya no dice "Powered by Hugo & PaperMod".
+
 ## 15 de noviembre de 2026 (más tarde): Las historias llevan a las ideas
 
 *Versión v2026.11.15.1*
