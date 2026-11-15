@@ -11,6 +11,7 @@ cover:
   image: "cover.jpg"
   alt: "Primer plano de Ciccio, una gata negra de ojos amarillo verdoso, mirando directo a la cámara"
   caption: "Ciccio, saludando."
+ideas: ["meeting-a-cat", "encounters"]
 ---
 
 Cuando alguien nuevo llega a la casa, le presento a los gatos. Esta es Ciccio. Ese es Tenkilo,
@@ -53,3 +54,5 @@ de fotos circulando sin la historia del gato.
 Escribí los detalles en una nueva página de ideas, [Conocer a un gato](/ideas/meeting-a-cat/).
 ¿Qué haría que *tú* te detuvieras a registrar a un gato que conoces? ¿Y qué nunca debería
 mostrar la tarjeta de un gato?
+
+{{< story-ideas >}}

@@ -11,6 +11,7 @@ cover:
   image: "cover.jpg"
   alt: "Mika Ella, una gata atigrada con blanco, y Ciccio, una gata negra, acurrucadas juntos en un sillón"
   caption: "Ciccio y Mika Ella."
+ideas: ["the-building-blocks"]
 ---
 
 Vivimos en una época con tecnología increíblemente rica y herramientas de desarrollo muy
@@ -43,3 +44,5 @@ No estoy vendiendo una app. Cada publicación empieza con algo real (un gato, un
 cuidador, una cuenta del veterinario, una desaparición) y sigue la pregunta que surge de ahí.
 Si reconoces el problema porque tú también lo vives, eres justo la persona de quien me
 gustaría saber. Lo interesante es precisamente lo que aún no está terminado.
+
+{{< story-ideas >}}

@@ -10,6 +10,7 @@ cover:
   image: "cover.jpg"
   alt: "Mika Ella, a tabby-and-white cat, and Ciccio, a black cat, curled up together on a sofa"
   caption: "Ciccio and Mika Ella."
+ideas: ["the-building-blocks"]
 ---
 
 We live in a time of incredibly rich technology and very mature development tools. I think
@@ -42,3 +43,5 @@ I'm not pitching an app here. Each post starts with something real — a cat, a 
 caretaker, a vet bill, a disappearance — and follows the question it raises. If you
 recognise the problem because you're living it too, you're exactly who I'd like to hear
 from. The unfinished thinking is the interesting part.
+
+{{< story-ideas >}}

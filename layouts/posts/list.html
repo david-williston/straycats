@@ -118,6 +118,10 @@
 </footer>
 {{- end }}
 
+{{- if and (eq .Section "posts") .IsSection }}
+<p class="stories-ideas-cta"><strong><a href="{{ (site.GetPage "/ideas").RelPermalink }}">{{ i18n "stories_ideas_cta" }}</a></strong></p>
+{{- end }}
+
 {{- end }}{{/* end profileMode */}}
 
 {{- end }}{{- /* end main */ -}}

@@ -11,6 +11,7 @@ cover:
   image: "cover.jpg"
   alt: "Ciccio, una gata negra, y Tenkilo, un gato color crema, en un patio de baldosas, con Ninja acicalándose entre las macetas"
   caption: "Ciccio, Tenkilo y Ninja."
+ideas: ["care-network"]
 ---
 
 Estoy viviendo una temporada en Puerto Escondido, en la costa del Pacífico de México, en una
@@ -45,3 +46,5 @@ donde lo voy a descubrir, en público y con tu ayuda.
 
 (Por ahora me enfoco en los gatos. Los perros serán bienvenidos más adelante: son solo otro
 tipo de gato).
+
+{{< story-ideas >}}

@@ -10,6 +10,7 @@ cover:
   image: "cover.jpg"
   alt: "Ciccio, a black cat, and Tenkilo, a cream cat, in a tiled courtyard, with Ninja grooming among the potted flowers"
   caption: "Ciccio, Tenkilo and Ninja."
+ideas: ["care-network"]
 ---
 
 I'm living for a while in Puerto Escondido, on the Pacific coast of Mexico, in a house with
@@ -43,3 +44,5 @@ where I'm going to find out, in public, with your help.
 
 (I'm focusing on cats for now. Dogs are welcome eventually — they're just a different type
 of cat.)
+
+{{< story-ideas >}}

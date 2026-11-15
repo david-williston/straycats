@@ -10,6 +10,7 @@ cover:
   image: "cover.jpg"
   alt: "Ninja, an orange-and-white cat, lying on the ground mid-meow, healthy and well fed"
   caption: "Ninja today."
+ideas: ["care-network"]
 ---
 
 When I first came to the house, Ninja was skin and bone. A little orange tomcat, missing fur,
@@ -46,3 +47,5 @@ Being fed regularly is the difference between a calm cat and a desperate one.
 
 Do you know a cat like Ninja, one who was turned around by someone who simply kept showing
 up? I'd love to hear about it.
+
+{{< story-ideas >}}

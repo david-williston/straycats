@@ -11,6 +11,7 @@ cover:
   image: "cover.jpg"
   alt: "Ninja, un gato naranja con blanco, echado en el suelo a media maullada, sano y bien alimentado"
   caption: "Ninja hoy."
+ideas: ["care-network"]
 ---
 
 Cuando llegué a la casa por primera vez, Ninja estaba en los huesos. Un gatito naranja, sin
@@ -50,3 +51,5 @@ gato tranquilo y uno desesperado.
 
 ¿Conoces a un gato como Ninja, al que le cambió la vida alguien que simplemente siguió
 apareciendo? Me encantaría saberlo.
+
+{{< story-ideas >}}

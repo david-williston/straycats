@@ -11,6 +11,7 @@ cover:
   image: "cover.jpg"
   alt: "Mountain Lion (León de Montaña), un gato naranja con blanco, asomándose detrás de un barandal negro"
   caption: "¿Ninja? ¿Naranja? ¿Milo? Aquí nadie sabe el nombre real de este gato. En la casa le dicen Mountain Lion (León de Montaña)."
+ideas: ["cat-identity"]
 ---
 
 Algunos de los gatos que me visitan obviamente comen muy bien en otra parte. No sé dónde. No
@@ -49,3 +50,5 @@ armar la verdad fragmentada sobre un animal a partir de muchos encuentros indepe
 personas.**
 
 ¿Conoces a un gato con más de un nombre? Me encantaría saber de él.
+
+{{< story-ideas >}}

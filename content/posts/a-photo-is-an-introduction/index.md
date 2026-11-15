@@ -10,6 +10,7 @@ cover:
   image: "cover.jpg"
   alt: "Close-up of Ciccio, a black cat with yellow-green eyes, looking straight at the camera"
   caption: "Ciccio, saying hello."
+ideas: ["meeting-a-cat", "encounters"]
 ---
 
 When someone new arrives at the house, I introduce them to the cats. This is Ciccio. That's
@@ -50,3 +51,5 @@ cat's story attached.
 
 I've written up the details in a new idea page, [Meeting a Cat](/ideas/meeting-a-cat/). What
 would make *you* stop and record a cat you meet? And what should a cat's card never show?
+
+{{< story-ideas >}}

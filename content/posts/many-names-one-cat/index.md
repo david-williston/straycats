@@ -10,6 +10,7 @@ cover:
   image: "cover.jpg"
   alt: "Mountain Lion, an orange-and-white cat, peering at the camera from behind a black railing"
   caption: "Ninja? Naranja? Milo? Nobody here knows this cat's real name. At the house, it's Mountain Lion."
+ideas: ["cat-identity"]
 ---
 
 Some of the cats that visit me are obviously being fed very well somewhere else. I don't
@@ -47,3 +48,5 @@ piece together the fragmented truth about an animal from many independent human
 encounters.**
 
 Do you know a cat with more than one name? I'd love to hear about it.
+
+{{< story-ideas >}}

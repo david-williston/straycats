@@ -1,0 +1,13 @@
+{{- /* End of a story: links to the ideas that connect to it. Reads the story's front matter `ideas: [slug, ...]`
+   (slugs of pages in content/ideas/). Prints nothing if the story has none. Usage: {{< story-ideas >}} */ -}}
+{{- with .Page.Params.ideas }}
+<aside class="story-ideas">
+  <p><strong>{{ i18n "story_ideas_heading" }}</strong></p>
+  <ul>
+    {{- range . }}{{ with site.GetPage (printf "/ideas/%s" .) }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}{{ end }}
+  </ul>
+  <p><a href="{{ (site.GetPage "/ideas").RelPermalink }}">{{ i18n "story_ideas_all" }}</a></p>
+</aside>
+{{- end }}
