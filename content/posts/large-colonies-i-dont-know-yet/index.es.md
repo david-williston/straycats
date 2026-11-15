@@ -7,6 +7,10 @@ tags: ["historia", "colonias", "pregunta"]
 summary: "Solo conozco un pequeño santuario. Aquí van mis suposiciones sobre cómo es cuidar una colonia grande, y una invitación a decirme dónde me equivoco."
 question: "Si cuidas una colonia, ¿qué te quita más tiempo y qué no querrías que una app te estorbara jamás?"
 updated: 2026-11-15
+cover:
+  image: "cover.jpg"
+  alt: "Más de veinte gatos de todos los colores comiendo de platos repartidos en un lote de concreto agrietado, junto al frente de un camión grande"
+  caption: "Así puede verse una colonia a la hora de comer. No conozco esta; estoy aprendiendo de fotos como esta. Foto: [Best Friends Animal Society](https://bestfriends.org/)."
 ---
 
 No tengo ninguna experiencia con colonias grandes. Lo que conozco es un pequeño santuario de

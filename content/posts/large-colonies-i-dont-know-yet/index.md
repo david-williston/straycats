@@ -6,6 +6,10 @@ tags: ["story", "colonies", "question"]
 summary: "I only know a small sanctuary. Here are my guesses about what caring for a big colony is like, and an invitation to tell me where I'm wrong."
 question: "If you look after a colony, what takes the most of your time, and what would you never want an app to get in the way of?"
 updated: 2026-11-15
+cover:
+  image: "cover.jpg"
+  alt: "More than twenty cats of every colour eating from bowls spread along a cracked concrete lot, beside the front of a large truck"
+  caption: "What a colony can look like at feeding time. I don't know this one; I'm learning from photos like it. Photo: [Best Friends Animal Society](https://bestfriends.org/)."
 ---
 
 I don't have any experience with large colonies. What I know is a small sanctuary of fewer
