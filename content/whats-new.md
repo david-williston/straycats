@@ -11,6 +11,14 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 15, 2026: Large colonies, what I don't know yet
+
+*Version v2026.11.15*
+
+- **New:** [Large colonies: what I don't know yet](/posts/large-colonies-i-dont-know-yet/) says
+  what I think I understand about caring for a large colony, and invites colony caretakers to
+  talk with me about the features and needs that matter most.
+
 ## November 14, 2026 (later): Every photo, with its story
 
 *Version v2026.11.14.1*

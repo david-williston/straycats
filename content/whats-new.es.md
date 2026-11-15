@@ -12,6 +12,14 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 15 de noviembre de 2026: Colonias grandes, lo que todavía no sé
+
+*Versión v2026.11.15*
+
+- **Nuevo:** [Colonias grandes: lo que todavía no sé](/es/posts/colonias-grandes-lo-que-todavia-no-se/)
+  cuenta lo que creo entender sobre cuidar una colonia grande, e invita a quienes cuidan
+  colonias a hablar conmigo sobre las funciones y necesidades más importantes.
+
 ## 14 de noviembre de 2026 (más tarde): Cada foto, con su historia
 
 *Versión v2026.11.14.1*
