@@ -120,7 +120,13 @@ body {
 /* --- Small fixes ------------------------------------------------------- */
 /* Narrow screens: wrap the menu onto a second line instead of hiding items off the edge */
 @media (max-width: 768px) {
-  .menu { flex-wrap: wrap; overflow-x: visible; row-gap: 4px; line-height: 2.4; padding-bottom: 8px; }
+  .menu { flex-wrap: wrap; overflow-x: visible; column-gap: 1.1rem; row-gap: 0; line-height: 1.2; padding-top: 6px; padding-bottom: 6px; }
+  .menu li { margin: 0; }
+  /* Logo and the theme/language switches share one line, and the switches stay small */
+  .logo { flex-wrap: nowrap; align-items: center; justify-content: space-between; }
+  .logo-switches { height: auto; flex: 0 0 auto; align-items: center; }
+  .logo .logo-switches a { font-size: 0.9rem; font-weight: 600; }
+  .logo > a { font-size: 1.25rem; white-space: nowrap; }
 }
 /* Photo links (gallery/photo shortcodes) shouldn't get the text-link underline */
 .post-content .gallery-grid a,
