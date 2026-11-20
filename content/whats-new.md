@@ -11,6 +11,20 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 20, 2026 (latest): Why NFC, and why open source
+
+*Version v2026.11.20.2*
+
+- **Updated:** [What If Every Cat Could Carry an Open Identity?](/ideas/open-cat-identity/)
+  now explains why phones can't read implanted microchips but can read NFC tags, what happens
+  when someone taps a cat's collar with their phone, and how you could program a sheet of cheap
+  paper collars yourself. It also says why StrayCats is open source: so anyone can check it and
+  help improve it, on one shared platform that no company controls.
+- **New:** StrayCats, its code and this website alike, is now licensed under the
+  [GNU Affero General Public License v3.0](https://github.com/david-williston/straycats/blob/main/LICENSE).
+- **Updated:** the [paper collar specification](/ideas/paper-collar-spec/) links to the reasons
+  for NFC.
+
 ## November 20, 2026 (later): A debate about the paper collar specification
 
 *Version v2026.11.20.1*
