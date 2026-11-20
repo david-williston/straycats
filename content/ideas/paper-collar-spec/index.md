@@ -142,6 +142,8 @@ cut with scissors to remove it.
 
 ## 6. NFC
 
+Why NFC and not just microchips? See [What If Every Cat Could Carry an Open Identity?](/ideas/open-cat-identity/).
+
 - Chip: NXP NTAG213, 144 bytes user memory, ISO 14443A, 13.56 MHz.
 - Smallest practical inlay: antenna 10 x 17 mm, die-cut about 12 x 19 mm, 157 µm thick, PET-faced and waterproof to rain and spray (sourced). A round inlay is much bigger (16 mm antenna at the smallest), so a rectangular one fits a narrow strap.
 - Payload: a short NDEF URL, for example straycats.love/c/ plus an 8-character ID. This fits comfortably in 144 bytes. Lock the tag after writing.

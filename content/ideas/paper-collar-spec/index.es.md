@@ -148,6 +148,8 @@ antes de que la carga sea peligrosa.
 
 ## 6. NFC
 
+¿Por qué NFC y no solo microchips? Mira [¿Y si todos los gatos pudieran llevar una identidad abierta?](/es/ideas/identidad-abierta-del-gato/).
+
 - Chip: NXP NTAG213, 144 bytes de memoria de usuario, ISO 14443A, 13,56 MHz.
 - Inlay práctico más pequeño: antena de 10 x 17 mm, troquelado de unos 12 x 19 mm, 157 µm de grosor, con cara de PET e impermeable a la lluvia y las salpicaduras (con fuente). Un inlay redondo es mucho más grande (antena de 16 mm como mínimo), así que uno rectangular cabe en una tira estrecha.
 - Contenido: una URL NDEF corta, por ejemplo straycats.love/c/ más un ID de 8 caracteres. Cabe de sobra en 144 bytes. Bloquear la etiqueta después de escribirla.
