@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 20 de noviembre de 2026 (más tarde): Un debate sobre la especificación del collar de papel
+
+*Versión v2026.11.20.1*
+
+- **Actualizado:** [El collar de papel: una primera especificación](/es/ideas/especificacion-del-collar-de-papel/)
+  ahora empieza diciendo para qué es: una especificación abierta y mundial para collares de gato,
+  desde una tira desechable para un callejero hasta un collar duradero para tu propio gato. Dice
+  claramente que este primer borrador se escribió con IA y probablemente está equivocado en
+  muchas cosas, para abrir la conversación. También puedes escuchar un debate generado por IA
+  sobre sus detalles (unos 19 minutos, en inglés).
+
 ## 20 de noviembre de 2026: Una primera especificación del collar de papel
 
 *Versión v2026.11.20*

@@ -11,6 +11,16 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 20, 2026 (later): A debate about the paper collar specification
+
+*Version v2026.11.20.1*
+
+- **Updated:** [The Paper Collar: a First Specification](/ideas/paper-collar-spec/) now opens
+  with what it's for: one open, worldwide specification for cat collars, from a disposable strip
+  for a stray to a durable collar for your own cat. It says plainly that this first draft was
+  written with AI and is probably wrong in many ways, to get people talking. You can also listen
+  to an AI-generated debate about its details (about 19 minutes, in English).
+
 ## November 20, 2026: A first specification for the paper collar
 
 *Version v2026.11.20*
