@@ -12,6 +12,18 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 20 de noviembre de 2026: Una primera especificación del collar de papel
+
+*Versión v2026.11.20*
+
+- **Nuevo:** [El collar de papel: una primera especificación](/es/ideas/especificacion-del-collar-de-papel/),
+  un diseño en borrador para un collar listo para usar: reversible, resistente al agua, con un
+  punto débil que se suelta, un trinquete de un solo sentido y una etiqueta NFC que solo lleva
+  un identificador. Incluye tallas de gatito a grande, fuerzas objetivo, un plan de pruebas y
+  preguntas abiertas. Todavía no hay nada fabricado ni probado.
+- **Actualizado:** [El collar de papel](/es/ideas/collar-de-papel/) enlaza a la nueva especificación.
+- **Actualizado:** los dibujos del sitio ahora se pueden tocar para verlos en grande, como las fotos.
+
 ## 15 de noviembre de 2026 (la última de hoy): Un primer párrafo más claro
 
 *Versión v2026.11.15.3*

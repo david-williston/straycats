@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 20, 2026: A first specification for the paper collar
+
+*Version v2026.11.20*
+
+- **New:** [The Paper Collar: a First Specification](/ideas/paper-collar-spec/), a draft
+  design for a ready-made collar: reversible, water-resistant, with a breakaway weak link, a
+  one-way ratchet and an NFC tag that carries only an ID. It has sizes from kitten to large,
+  force targets, a test plan and open questions. Nothing is built or tested yet.
+- **Updated:** [The Paper Collar](/ideas/paper-collar/) links to the new specification.
+- **Updated:** drawings on the site can now be tapped to open large, like photos.
+
 ## November 15, 2026 (the last one today): A clearer first paragraph
 
 *Version v2026.11.15.3*
