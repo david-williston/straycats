@@ -26,6 +26,18 @@ ahí, que hace una sola pregunta: **"¿Este gato es tuyo?"** También da los dat
 quien lo encontró. Si el gato tiene un dueño que lo anda buscando, puede ver la tira y
 comunicarse.
 
+## Imprime el tuyo
+
+Ya existe la versión más sencilla. Imprímela en papel normal de impresora, recorta una tira, escribe tu número de teléfono y ponla suelta a un gato amistoso. El papel normal se rompe con facilidad, y de eso se trata. Lee antes [Primero, la seguridad](#primero-la-seguridad).
+
+- [Plantilla de collar de papel, A4 (PDF)](plantilla-collar-de-papel-a4.pdf)
+- [Plantilla de collar de papel, Carta (PDF)](plantilla-collar-de-papel-carta.pdf)
+- Versiones en inglés: [A4](paper-collar-template-a4.pdf) y [US Letter](paper-collar-template-letter.pdf)
+
+Es gratis. Cada tira lleva un código QR que abre una página permanente de StrayCats para quien encuentre al gato, una línea en blanco para tu teléfono y otra para el ID del gato en la app, cuando lo tenga. Sigue sin llevar etiqueta NFC.
+
+{{< photo src="plantilla-collar-de-papel-vista.png" alt="Una página impresa en horizontal con el título Collar de papel para un gato callejero amistoso, instrucciones breves arriba y seis tiras largas con líneas de puntos debajo. Cada tira dice ¿Es tu gato? Por favor, llámame., con líneas en blanco para el teléfono y el ID del gato, straycats.love, una huellita de gato y un código QR, y una zona sombreada de cinta aquí en el extremo derecho" caption="La plantilla en español, tamaño A4. Seis tiras por página, de 277 mm de largo, cada una con un código QR y una línea en blanco para el ID del gato." >}}
+
 ## No es una idea nueva
 
 Muchas organizaciones ya publican versiones imprimibles gratis, entre ellas
@@ -56,12 +68,12 @@ una hoja de tiras, una arrancada y puesta en el gato.
 Una tira también podría ser reversible: un estampado atractivo por un lado para el uso diario, y
 los datos de StrayCats por el otro.
 
-{{< photo src="reversible-collar.jpg" alt="Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas. A su lado, tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro" caption="Imagen de concepto, no es una foto ni un producto real. El código QR y las marcas NFC vienen de la [idea de la identidad abierta](/ideas/open-cat-identity/); el collar de papel en sí no llevaría código QR." >}}
+{{< photo src="reversible-collar.jpg" alt="Un gato atigrado y blanco que mira hacia arriba, con un collar de papel estampado de hojas. A su lado, tres diseños de collar de papel reversible (hojas, flores de cerezo y una noche estrellada), cada uno con un estampado por un lado y la identificación de StrayCats por el otro" caption="Imagen de concepto, no es una foto ni un producto real. El código QR y las marcas NFC vienen de la [idea de la identidad abierta](/ideas/open-cat-identity/); la plantilla imprimible del collar de papel ya lleva un código QR, pero no etiqueta NFC." >}}
 
 Así podría crecer, de lo más barato a lo más ambicioso:
 
-1. **Una plantilla imprimible gratis.** Se imprime en casa, se recorta y se escribe encima. Aún
-   no está hecha.
+1. **Una plantilla imprimible gratis.** Se imprime en casa, se recorta y se escribe encima. Ya existe: mira
+   [Imprime el tuyo](#imprime-el-tuyo).
 2. **Copias para clínicas veterinarias, refugios y grupos de gatos comunitarios**, para
    repartir, idealmente junto con una lectura gratuita de microchip. Cuesta casi nada.
 3. **Hojas ya preparadas.** Tiras impresas que se desprenden limpiamente. *Perforado* quiere

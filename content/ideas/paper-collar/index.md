@@ -23,6 +23,18 @@ It is a strip of paper, worn loosely around the neck of a friendly cat who keeps
 that asks one question: **"Is this cat yours?"** It also gives the finder's contact details. If
 the cat has an owner who has been searching, the owner can see the strip and get in touch.
 
+## Print your own
+
+The simplest version now exists. Print it on plain printer paper, cut out a strip, write your phone number on it and put it loosely on a friendly cat. Plain paper tears easily, which is the point. Please read [Safety comes first](#safety-comes-first) before you use one.
+
+- [Paper collar template, A4 (PDF)](paper-collar-template-a4.pdf)
+- [Paper collar template, US Letter (PDF)](paper-collar-template-letter.pdf)
+- Spanish versions: [A4](plantilla-collar-de-papel-a4.pdf) and [Carta (US Letter)](plantilla-collar-de-papel-carta.pdf)
+
+It is free. Each strip has a QR code that opens a permanent StrayCats page for whoever finds the cat, a blank line for your phone number and another for the cat's ID from the app, once it has one. There is still no NFC tag.
+
+{{< photo src="paper-collar-template-preview.png" alt="A landscape printed page titled Paper collar for a friendly stray, with short instructions at the top and six long dashed-line strips below. Each strip reads Is this your cat? Please call me., with blank Phone and Cat ID lines, straycats.love, a small paw print and a QR code, and a shaded tape here zone at the right-hand end" caption="The English A4 template. Six strips to a page, 277 mm long, each with a QR code and a blank Cat ID line." >}}
+
 ## Not a new idea
 
 Plenty of organizations already publish free printable versions, including
@@ -53,11 +65,11 @@ idea: a sheet of strips, one torn out and on the cat.
 A strip could also be reversible: an attractive pattern on one side for everyday wear, and the
 StrayCats details on the other.
 
-{{< photo src="reversible-collar.jpg" alt="A tabby-and-white cat looking up, wearing a leaf-patterned paper collar. Beside it, three reversible paper collar designs (leaves, cherry blossom and a starry night), each with a pattern on one side and the StrayCats identification on the other" caption="Concept mockup, not a photo and not a real product. The QR code and NFC marks come from the [open identity idea](/ideas/open-cat-identity/); the paper collar itself wouldn't carry a QR code." >}}
+{{< photo src="reversible-collar.jpg" alt="A tabby-and-white cat looking up, wearing a leaf-patterned paper collar. Beside it, three reversible paper collar designs (leaves, cherry blossom and a starry night), each with a pattern on one side and the StrayCats identification on the other" caption="Concept mockup, not a photo and not a real product. The QR code and NFC marks come from the [open identity idea](/ideas/open-cat-identity/); the printable paper collar template now carries a QR code, but no NFC tag." >}}
 
 Here is how it could grow, from cheapest to most ambitious:
 
-1. **A free printable template.** Print it at home, cut it out, write on it. Not built yet.
+1. **A free printable template.** Print it at home, cut it out, write on it. It now exists: see [Print your own](#print-your-own).
 2. **Copies for veterinary clinics, shelters and community cat groups** to hand out, ideally
    alongside a free microchip scan. This costs almost nothing.
 3. **Ready-made sheets.** Pre-printed strips that tear off cleanly. *Perforated* means a line
