@@ -4,7 +4,7 @@ slug: "especificacion-del-collar-de-papel"
 date: 2026-11-20
 weight: 521
 tags: ["perdidos-y-encontrados", "seguridad", "comunidad"]
-summary: "SC-PC-001 Rev A, un borrador de especificación de fabricación de un collar de papel ya hecho: cuatro tallas, un punto débil que cede primero, un trinquete de un solo sentido y una etiqueta NFC que solo guarda un ID. Cada cifra es un objetivo por probar."
+summary: "SC-PC-001 Rev A, un borrador de especificación de fabricación de un collar de papel ya hecho: cuatro tallas, un punto débil que cede primero, un trinquete de un solo sentido y una etiqueta NFC que solo guarda un ID. Redactada con IA para abrir la conversación, y probablemente equivocada en muchas cosas."
 question: "¿Valdría la pena fabricar un collar así, y qué te gustaría ver probado primero?"
 updated: 2026-11-20
 cover:
@@ -12,6 +12,29 @@ cover:
   alt: "Una imagen de un collar de papel para gatos en forma de anillo, con un lado crema estampado con gatos naranjas y grises, flores rosas y hojas verdes y amarillas, y un interior verde azulado con huellas crema. Una pequeña cápsula NFC crema con un símbolo de señal está al frente, una hebilla de trinquete blanca está a la derecha, una fila de pequeñas perforaciones está a la izquierda, y hay gotas de agua sobre el papel"
   caption: "Imagen de concepto, no es un producto real."
 ---
+
+Quien se encuentra con un gato callejero a veces le pone un [collar de papel](/es/ideas/collar-de-papel/)
+con su teléfono, para que el dueño o la próxima persona que vea al gato pueda contactarle.
+Quiero llevar esa idea más lejos: una especificación abierta y mundial para collares de gato que
+cualquiera pueda fabricar, desde una tira barata y desechable para un callejero hasta un collar
+duradero para tu propio gato, para que cualquiera pueda identificar a un gato perdido, herido o
+que ha muerto.
+
+Este primer borrador se escribió con IA y probablemente está equivocado en muchas cosas. Es a
+propósito: está aquí para abrir la conversación. Si sabes de papel, de etiquetas NFC, de
+collares o de gatos, cuéntame qué está mal.
+
+Puedes leerlo abajo, o escuchar primero.
+
+## Escucha el debate
+
+Dos voces generadas por IA discuten los detalles de esta especificación, cada una desde un
+lado. Lo hice con NotebookLM de Google a partir de esta página. Igual que la especificación, puede
+equivocarse, pero es una buena entrada a las preguntas. El audio está en inglés.
+
+{{< listen src="debate-en.m4a" title="*Standardizing Smart Breakaway Cat Collars*, un debate generado por IA sobre los detalles de esta especificación (en inglés, unos 19 minutos)" >}}
+
+## La especificación
 
 **SC-PC-001 Rev A, borrador, 20 nov 2026.** Esto es una idea en borrador, no un producto. Todas
 las cifras y números son objetivos de diseño o suposiciones por probar, salvo que se indique que

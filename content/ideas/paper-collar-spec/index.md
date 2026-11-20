@@ -3,7 +3,7 @@ title: "The Paper Collar: a First Specification"
 date: 2026-11-20
 weight: 521
 tags: ["lost-and-found", "safety", "community"]
-summary: "SC-PC-001 Rev A, a draft manufacturing specification for a ready-made paper collar: four sizes, a weak link that releases first, a one-way ratchet and an NFC tag that holds only an ID. Every number is a target to test."
+summary: "SC-PC-001 Rev A, a draft manufacturing specification for a ready-made paper collar: four sizes, a weak link that releases first, a one-way ratchet and an NFC tag that holds only an ID. Drafted with AI to get people talking, and probably wrong in many ways."
 question: "Would a ready-made collar like this be worth making, and what would you want to see tested first?"
 updated: 2026-11-20
 cover:
@@ -11,6 +11,27 @@ cover:
   alt: "A render of a ring-shaped paper cat collar with a cream side printed with orange and grey cats, pink flowers and green and yellow leaves, and a teal inside with cream paw prints. A small cream NFC pod with a signal symbol sits on the front, a white ratchet buckle is at the right, a row of small perforations is on the left, and water droplets sit on the paper"
   caption: "Concept render, not a real product."
 ---
+
+People who meet a stray cat sometimes put a [paper collar](/ideas/paper-collar/) on it, with
+their phone number, so the owner or the next person who meets the cat can get in touch. I want
+to take that further: one open, worldwide specification for cat collars that anyone can make, from a cheap
+disposable strip for a stray to a durable collar for your own cat, so anyone can identify a cat
+that is lost, injured or has died.
+
+This first draft was written with AI and is probably wrong in many ways. That's on purpose: it's
+here to get people talking. If you know paper, NFC tags, collars or cats, tell me what's wrong.
+
+You can read it below, or listen first.
+
+## Listen to the debate
+
+Two AI-generated voices argue about the details of this specification, taking opposite sides.
+I made it with Google's NotebookLM from this page. Like the spec itself, it may get things
+wrong, but it's a good way into the questions.
+
+{{< listen src="debate-en.m4a" title="*Standardizing Smart Breakaway Cat Collars*, an AI-generated debate about the details of this specification (about 19 minutes)" >}}
+
+## The specification
 
 **SC-PC-001 Rev A, draft, 20 Nov 2026.** This is a draft idea, not a product. All figures and
 numbers are design targets or assumptions to be tested, unless marked as sourced. Nothing has
