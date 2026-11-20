@@ -17,6 +17,9 @@
   border-radius: var(--radius);
 }
 
+/* SVG figures: full content width, never height-capped */
+.post-content .photo-svg img { display: block; width: 100%; max-height: none; }
+
 /* Galleries (layouts/_shortcodes/gallery.html) */
 .post-content .gallery { margin: 28px 0; }
 .gallery-grid {

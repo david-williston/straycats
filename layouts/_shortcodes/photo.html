@@ -1,12 +1,24 @@
 {{- /* A photo from the page bundle with an optional caption.
-  Usage: {{< photo src="vet-visit.jpg" alt="…" caption="…" >}} */ -}}
+  Usage: {{< photo src="vet-visit.jpg" alt="…" caption="…" >}}
+  An .svg is shown as is (no resizing), full width. */ -}}
 {{- with .Page.Resources.Get (.Get "src") -}}
+{{- if or (eq .MediaType.SubType "svg") (strings.HasSuffix .Name ".svg") -}}
+{{- /* SVG figures: no image processing; shown at full content width and zoomed from the original */ -}}
+{{- $vb := findRE `viewBox="0 0 (\d+) (\d+)"` .Content 1 -}}
+{{- $w := 680 -}}{{- $h := 340 -}}
+{{- with $vb }}{{ $m := findRESubmatch `viewBox="0 0 (\d+) (\d+)"` (index . 0) 1 }}{{ $w = index (index $m 0) 1 | int }}{{ $h = index (index $m 0) 2 | int }}{{ end -}}
+<figure class="photo photo-svg">
+  <a href="{{ .RelPermalink }}" data-zoom="{{ .RelPermalink }}" data-zoom-w="{{ mul $w 2 }}" data-zoom-h="{{ mul $h 2 }}"><img src="{{ .RelPermalink }}" width="{{ $w }}" height="{{ $h }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
+  {{- with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>
+{{- else -}}
 {{- $img := .Resize "900x webp q80" -}}
 {{- $big := .Resize (printf "%dx webp q85" (math.Min .Width 2400 | int)) -}}
 <figure class="photo">
   <a href="{{ .RelPermalink }}" data-zoom="{{ $big.RelPermalink }}" data-zoom-w="{{ $big.Width }}" data-zoom-h="{{ $big.Height }}"><img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="{{ $.Get "alt" }}" loading="lazy"></a>
   {{- with $.Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
 </figure>
+{{- end -}}
 {{- else -}}
 {{- errorf "photo shortcode: %q not found in %s" (.Get "src") .Page.File.Path -}}
 {{- end -}}
