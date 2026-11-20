@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 340" role="img"><title>Release force targets by collar size</title><desc>For four sizes, a release window in newtons sits well below the ratchet hold force and far below the cat's body weight.</desc>
+<style>
+.t{font:14px sans-serif;fill:#2C2C2A}.ts{font:12px sans-serif;fill:#5F5E5A}.th{font:500 14px sans-serif;fill:#2C2C2A}
+.leader{stroke:#888780;stroke-width:.5;stroke-dasharray:3 3;fill:none}
+.c-amber>rect{fill:#FAEEDA;stroke:#854F0B}
+.ax{stroke:#B4B2A9;stroke-width:1}
+</style>
+<rect x="0.5" y="0.5" width="679" height="339" rx="8" fill="#FFFFFF" stroke="#D3D1C7"/>
+<line class="leader" x1="250" y1="58" x2="250" y2="256"/>
+<text class="ts" x="256" y="50">20 N (4.5 lb): typical retail breakaway buckle</text>
+<text class="th" x="40" y="80" dominant-baseline="central">Kitten</text>
+<text class="th" x="40" y="130" dominant-baseline="central">Small</text>
+<text class="th" x="40" y="180" dominant-baseline="central">Medium</text>
+<text class="th" x="40" y="230" dominant-baseline="central">Large</text>
+<line class="ax" x1="120" y1="80" x2="640" y2="80"/>
+<line class="ax" x1="120" y1="130" x2="640" y2="130"/>
+<line class="ax" x1="120" y1="180" x2="640" y2="180"/>
+<line class="ax" x1="120" y1="230" x2="640" y2="230"/>
+<g class="c-amber"><rect x="149.3" y="71" width="19.5" height="18" rx="3" stroke-width="0.5"/></g>
+<g class="c-amber"><rect x="168.8" y="121" width="32.5" height="18" rx="3" stroke-width="0.5"/></g>
+<g class="c-amber"><rect x="193.1" y="171" width="48.8" height="18" rx="3" stroke-width="0.5"/></g>
+<g class="c-amber"><rect x="217.5" y="221" width="65" height="18" rx="3" stroke-width="0.5"/></g>
+<line x1="178.5" y1="66" x2="178.5" y2="80" stroke="#0F6E56" stroke-width="3"/>
+<line x1="217.5" y1="116" x2="217.5" y2="130" stroke="#0F6E56" stroke-width="3"/>
+<line x1="263" y1="166" x2="263" y2="180" stroke="#0F6E56" stroke-width="3"/>
+<line x1="315" y1="216" x2="315" y2="230" stroke="#0F6E56" stroke-width="3"/>
+<line x1="183.7" y1="80" x2="183.7" y2="94" stroke="#D85A30" stroke-width="3"/>
+<line x1="311.1" y1="130" x2="311.1" y2="144" stroke="#D85A30" stroke-width="3"/>
+<line x1="438.5" y1="180" x2="438.5" y2="194" stroke="#D85A30" stroke-width="3"/>
+<line x1="565.9" y1="230" x2="565.9" y2="244" stroke="#D85A30" stroke-width="3"/>
+<line class="ax" x1="120" y1="262" x2="640" y2="262"/>
+<line class="ax" x1="120" y1="262" x2="120" y2="267"/><text class="ts" x="120" y="282" text-anchor="middle">0</text>
+<line class="ax" x1="185" y1="262" x2="185" y2="267"/><text class="ts" x="185" y="282" text-anchor="middle">10</text>
+<line class="ax" x1="250" y1="262" x2="250" y2="267"/><text class="ts" x="250" y="282" text-anchor="middle">20</text>
+<line class="ax" x1="315" y1="262" x2="315" y2="267"/><text class="ts" x="315" y="282" text-anchor="middle">30</text>
+<line class="ax" x1="380" y1="262" x2="380" y2="267"/><text class="ts" x="380" y="282" text-anchor="middle">40</text>
+<line class="ax" x1="445" y1="262" x2="445" y2="267"/><text class="ts" x="445" y="282" text-anchor="middle">50</text>
+<line class="ax" x1="510" y1="262" x2="510" y2="267"/><text class="ts" x="510" y="282" text-anchor="middle">60</text>
+<line class="ax" x1="575" y1="262" x2="575" y2="267"/><text class="ts" x="575" y="282" text-anchor="middle">70</text>
+<line class="ax" x1="640" y1="262" x2="640" y2="267"/><text class="ts" x="640" y="282" text-anchor="middle">80</text>
+<text class="ts" x="380" y="300" text-anchor="middle">Force in newtons</text>
+<g class="c-amber"><rect x="40" y="316" width="24" height="10" rx="2" stroke-width="0.5"/></g>
+<text class="ts" x="70" y="322" dominant-baseline="central">Release window, nominal ±25%</text>
+<line x1="300" y1="312" x2="300" y2="326" stroke="#0F6E56" stroke-width="3"/>
+<text class="ts" x="310" y="322" dominant-baseline="central">Ratchet holds at least</text>
+<line x1="470" y1="312" x2="470" y2="326" stroke="#D85A30" stroke-width="3"/>
+<text class="ts" x="480" y="322" dominant-baseline="central">Body weight of the cat</text>
+</svg>

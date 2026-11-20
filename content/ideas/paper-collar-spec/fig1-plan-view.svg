@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 222" role="img"><title>Plan view of the paper collar, size M</title><desc>Horizontal strip 335 mm long with a ratchet head on the left, a calibrated weak link, an NFC pod, and a tooth field and tapered tail on the right.</desc>
+<style>
+.t{font:14px sans-serif;fill:#2C2C2A}.ts{font:12px sans-serif;fill:#5F5E5A}.th{font:500 14px sans-serif;fill:#2C2C2A}
+.box{fill:#F1EFE8;stroke:#888780}.leader{stroke:#888780;stroke-width:.5;stroke-dasharray:3 3;fill:none}.arr{stroke:#5F5E5A;stroke-width:1.5;fill:none}
+.c-purple>rect{fill:#EEEDFE;stroke:#534AB7}.c-amber>rect{fill:#FAEEDA;stroke:#854F0B}.c-teal>rect{fill:#E1F5EE;stroke:#0F6E56}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0.5" y="0.5" width="679" height="221" rx="8" fill="#FFFFFF" stroke="#D3D1C7"/>
+<rect class="box" x="95.8" y="100" width="511.7" height="20.4" stroke-width="0.5"/>
+<polygon class="box" points="607.5,100 624.5,106 624.5,114.4 607.5,120.4" stroke-width="0.5"/>
+<g class="c-purple"><rect x="55" y="95" width="40.8" height="30.4" rx="3" stroke-width="0.5"/></g>
+<g class="c-purple"><rect x="522.5" y="100" width="85" height="20.4" stroke-width="0.5"/></g>
+<line x1="522.5" y1="102" x2="522.5" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="527.6" y1="102" x2="527.6" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="532.7" y1="102" x2="532.7" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="537.8" y1="102" x2="537.8" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="542.9" y1="102" x2="542.9" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="548" y1="102" x2="548" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="553.1" y1="102" x2="553.1" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="558.2" y1="102" x2="558.2" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="563.3" y1="102" x2="563.3" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="568.4" y1="102" x2="568.4" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="573.5" y1="102" x2="573.5" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="578.6" y1="102" x2="578.6" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="583.7" y1="102" x2="583.7" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="588.8" y1="102" x2="588.8" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="593.9" y1="102" x2="593.9" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="599" y1="102" x2="599" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<line x1="604.1" y1="102" x2="604.1" y2="118.4" stroke="#534AB7" stroke-width="0.8"/>
+<g class="c-amber"><rect x="225" y="100" width="20.4" height="20.4" stroke-width="0.5"/></g>
+<line x1="230" y1="100" x2="230" y2="120.4" stroke="#854F0B" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="235.2" y1="100" x2="235.2" y2="120.4" stroke="#854F0B" stroke-width="1" stroke-dasharray="2 2"/>
+<line x1="240.4" y1="100" x2="240.4" y2="120.4" stroke="#854F0B" stroke-width="1" stroke-dasharray="2 2"/>
+<g class="c-teal"><rect x="361" y="98" width="44.2" height="24.4" rx="2" stroke-width="0.5"/></g>
+<rect x="368.6" y="101.7" width="28.9" height="17" fill="none" stroke="#0F6E56" stroke-width="0.8" stroke-dasharray="3 2"/>
+<circle cx="392" cy="110.2" r="2" fill="#0F6E56"/>
+<text class="th" x="75" y="44" text-anchor="middle">Ratchet head</text>
+<text class="ts" x="75" y="60" text-anchor="middle">slot and pawl</text>
+<line class="leader" x1="75" y1="68" x2="75" y2="92"/>
+<text class="th" x="235" y="44" text-anchor="middle">Weak link</text>
+<text class="ts" x="235" y="60" text-anchor="middle">calibrated perforation</text>
+<line class="leader" x1="235" y1="68" x2="235" y2="97"/>
+<text class="th" x="383" y="44" text-anchor="middle">NFC pod</text>
+<text class="ts" x="383" y="60" text-anchor="middle">inlay 12 x 19 mm</text>
+<line class="leader" x1="383" y1="68" x2="383" y2="95"/>
+<text class="th" x="565" y="44" text-anchor="middle">Tooth field</text>
+<text class="ts" x="565" y="60" text-anchor="middle">3 mm pitch</text>
+<line class="leader" x1="565" y1="68" x2="565" y2="97"/>
+<line class="leader" x1="55" y1="126" x2="55" y2="150"/>
+<line class="leader" x1="95.8" y1="126" x2="95.8" y2="150"/>
+<line class="leader" x1="225" y1="122" x2="225" y2="150"/>
+<line class="leader" x1="245.4" y1="122" x2="245.4" y2="150"/>
+<line class="leader" x1="361" y1="124" x2="361" y2="150"/>
+<line class="leader" x1="405.2" y1="124" x2="405.2" y2="150"/>
+<line class="leader" x1="522.5" y1="122" x2="522.5" y2="150"/>
+<line class="leader" x1="607.5" y1="122" x2="607.5" y2="150"/>
+<line class="arr" x1="56" y1="146" x2="95" y2="146" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="75" y="164" text-anchor="middle">24</text>
+<line class="arr" x1="226" y1="146" x2="244.5" y2="146" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="235" y="164" text-anchor="middle">12</text>
+<line class="arr" x1="362" y1="146" x2="404" y2="146" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="383" y="164" text-anchor="middle">26</text>
+<line class="arr" x1="523.5" y1="146" x2="606.5" y2="146" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="565" y="164" text-anchor="middle">50</text>
+<line class="leader" x1="55" y1="170" x2="55" y2="192"/>
+<line class="leader" x1="624.5" y1="122" x2="624.5" y2="192"/>
+<line class="arr" x1="56" y1="188" x2="623.5" y2="188" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="th" x="340" y="206" text-anchor="middle">335 overall</text>
+<line class="arr" x1="300" y1="100" x2="300" y2="120.4" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="308" y="114">W 12</text>
+</svg>

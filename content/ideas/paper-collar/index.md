@@ -5,7 +5,7 @@ weight: 520
 tags: ["lost-and-found", "safety", "community"]
 summary: "A loose paper strip around a friendly cat's neck asks, \"Is this cat yours?\" It isn't a new idea, but StrayCats could make it a bridge between people who use the platform and people who don't."
 question: "If you found a friendly cat wandering and weren't sure whose it was, would you try a paper collar, and what would you want written on it?"
-updated: 2026-11-06
+updated: 2026-11-20
 cover:
   image: "cover.jpg"
   alt: "A tabby-and-white cat with green eyes wearing a white paper collar printed with the straycats.love logo, beside a printed sheet of paper cat collars with one strip torn out"
@@ -74,7 +74,9 @@ Here is how it could grow, from cheapest to most ambitious:
 
 The closure matters too: a slot-and-tab, or a loop through a slit, so there is no tape on
 fur. It should be deliberately weak, so it tears if the cat gets caught. In other words, a
-breakaway design.
+breakaway design. A first engineering sketch of what a ready-made collar could look like,
+with a weak link, a ratchet and an optional NFC tag, is in the
+[specification](/ideas/paper-collar-spec/).
 
 ## Safety comes first
 

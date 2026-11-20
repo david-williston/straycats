@@ -6,7 +6,7 @@ weight: 520
 tags: ["perdidos-y-encontrados", "seguridad", "comunidad"]
 summary: "Una tira de papel suelta al cuello de un gato amistoso pregunta: \"¿Este gato es tuyo?\" No es una idea nueva, pero StrayCats podría convertirla en un puente entre quienes usan la plataforma y quienes no."
 question: "Si encontraras a un gato amistoso y no supieras de quién es, ¿probarías un collar de papel, y qué querrías que dijera?"
-updated: 2026-11-06
+updated: 2026-11-20
 cover:
   image: "cover.jpg"
   alt: "Un gato atigrado y blanco de ojos verdes con un collar de papel blanco impreso con el logo de straycats.love, junto a una hoja impresa de collares de papel para gatos con una tira ya arrancada"
@@ -80,7 +80,9 @@ Así podría crecer, de lo más barato a lo más ambicioso:
 
 El cierre también importa: una lengüeta que entra en una ranura, o un lazo que pasa por un corte,
 para no poner cinta sobre el pelo. Debe ser débil a propósito, para que se rompa si el gato se
-engancha. Es decir, un diseño de cierre de seguridad.
+engancha. Es decir, un diseño de cierre de seguridad. Un primer boceto de ingeniería de cómo podría ser un collar ya
+hecho, con punto débil, trinquete y una etiqueta NFC opcional, está en la
+[especificación](/es/ideas/especificacion-del-collar-de-papel/).
 
 ## Primero, la seguridad
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 236" role="img"><title>Section through the NFC pod</title><desc>Five layers: barrier coat, printed paper, a core layer with adhesive rails and a floating NFC inlay, printed paper, barrier coat.</desc>
+<style>
+.t{font:14px sans-serif;fill:#2C2C2A}.ts{font:12px sans-serif;fill:#5F5E5A}.th{font:500 14px sans-serif;fill:#2C2C2A}
+.leader{stroke:#888780;stroke-width:.5;stroke-dasharray:3 3;fill:none}.arr{stroke:#5F5E5A;stroke-width:1.5;fill:none}
+.c-blue>rect{fill:#E6F1FB;stroke:#185FA5}.c-gray>rect{fill:#F1EFE8;stroke:#5F5E5A}.c-amber>rect{fill:#FAEEDA;stroke:#854F0B}.c-teal>rect{fill:#E1F5EE;stroke:#0F6E56}
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="0.5" y="0.5" width="679" height="235" rx="8" fill="#FFFFFF" stroke="#D3D1C7"/>
+<g class="c-blue"><rect x="60" y="40" width="360" height="14" stroke-width="0.5"/></g>
+<g class="c-gray"><rect x="60" y="58" width="360" height="26" stroke-width="0.5"/></g>
+<g class="c-amber"><rect x="60" y="88" width="80" height="36" stroke-width="0.5"/></g>
+<g class="c-amber"><rect x="340" y="88" width="80" height="36" stroke-width="0.5"/></g>
+<g class="c-teal"><rect x="180" y="93" width="120" height="26" rx="2" stroke-width="0.5"/></g>
+<line class="leader" x1="140" y1="88" x2="140" y2="124"/>
+<line class="leader" x1="340" y1="88" x2="340" y2="124"/>
+<g class="c-gray"><rect x="60" y="128" width="360" height="26" stroke-width="0.5"/></g>
+<g class="c-blue"><rect x="60" y="158" width="360" height="14" stroke-width="0.5"/></g>
+<path class="leader" d="M420 47 L430 47 L440 36"/>
+<text class="th" x="448" y="40">Water-barrier coat</text>
+<text class="ts" x="448" y="56">about 10 µm</text>
+<path class="leader" d="M420 71 L430 71 L440 78"/>
+<text class="th" x="448" y="82">Face paper A, printed</text>
+<text class="ts" x="448" y="98">about 100 µm</text>
+<path class="leader" d="M420 106 L430 106 L440 120"/>
+<text class="th" x="448" y="124">Core: adhesive and inlay</text>
+<text class="ts" x="448" y="140">about 160 µm</text>
+<path class="leader" d="M420 141 L430 141 L440 162"/>
+<text class="th" x="448" y="166">Face paper B, printed</text>
+<text class="ts" x="448" y="182">about 100 µm</text>
+<path class="leader" d="M420 165 L430 165 L440 204"/>
+<text class="th" x="448" y="208">Water-barrier coat</text>
+<text class="ts" x="448" y="224">about 10 µm</text>
+<line class="arr" x1="141" y1="196" x2="179" y2="196" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<line class="arr" x1="301" y1="196" x2="339" y2="196" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text class="ts" x="160" y="214" text-anchor="middle">2 mm</text>
+<text class="ts" x="320" y="214" text-anchor="middle">2 mm</text>
+</svg>
