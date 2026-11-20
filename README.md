@@ -292,3 +292,12 @@ Use `npm run dev` instead of `hugo server` to see the change history and version
 
 The repo's `github-pages` environment must allow deploys from `v*` tags (Settings →
 Environments → github-pages → Deployment branches and tags).
+
+## License
+
+Everything in this repository, the code and the website alike, is licensed under the
+[GNU Affero General Public License v3.0](LICENSE) (AGPL-3.0). The website's stories and ideas
+are the specification the code is built from, so they share one license. It is open so anyone
+can read it, check what it does, and help make it better. The AGPL
+keeps it that way: anyone who changes it and runs it as a service must publish their changes
+under the same license, so no one can turn it into a closed, private version.
