@@ -8,3 +8,4 @@ node_modules/
 .wrangler/
 static/press/straycats-brand-kit.zip
 data/app_commits.json
+_inbox/
