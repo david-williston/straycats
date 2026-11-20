@@ -11,6 +11,17 @@ comments: false
 Been here before? Here's what's new and what's changed, newest first. Pages that changed
 also say **New** or **Updated** under their title.
 
+## November 20, 2026 (newest): Print your own paper collar
+
+*Version v2026.11.20.3*
+
+- **New:** a free paper collar template you can [print at home](/ideas/paper-collar/#print-your-own)
+  on plain paper, in English or Spanish, A4 or US Letter. Each strip asks "Is this your cat?
+  Please call me." and has space for your phone number and the cat's ID, plus a QR code.
+  Short instructions explain how to put it on safely.
+- **New:** a [page for anyone who finds a cat](/c/) wearing a StrayCats collar. The QR code
+  leads there.
+
 ## November 20, 2026 (latest): Why NFC, and why open source
 
 *Version v2026.11.20.2*

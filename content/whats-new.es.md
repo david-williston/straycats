@@ -12,6 +12,17 @@ comments: false
 ¿Ya habías venido? Esto es lo nuevo y lo que ha cambiado, empezando por lo más reciente. Las
 páginas que cambiaron también dicen **Nuevo** o **Actualizado** debajo de su título.
 
+## 20 de noviembre de 2026 (la más reciente): Imprime tu propio collar de papel
+
+*Versión v2026.11.20.3*
+
+- **Nuevo:** una plantilla gratis de collar de papel que puedes [imprimir en casa](/es/ideas/collar-de-papel/#imprime-el-tuyo)
+  en papel normal, en español o inglés, A4 o Carta. Cada tira pregunta "¿Es tu gato? Por
+  favor, llámame." y tiene espacio para tu teléfono y el ID del gato, además de un código QR.
+  Unas instrucciones breves explican cómo ponerlo de forma segura.
+- **Nuevo:** una [página para quien encuentre un gato](/es/c/) con un collar de StrayCats. El
+  código QR lleva ahí.
+
 ## 20 de noviembre de 2026 (la última): Por qué NFC, y por qué código abierto
 
 *Versión v2026.11.20.2*
